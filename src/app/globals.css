@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-verde-musgo: #2E4036;
+  --color-arcilla: #CC5833;
+  --color-crema: #F2F0E9;
+  --color-carbon: #1A1A1A;
+
+  --font-jakarta: var(--font-jakarta), sans-serif;
+  --font-outfit: var(--font-outfit), sans-serif;
+  --font-cormorant: var(--font-cormorant), serif;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-4xl: 3rem;
+}
+
+:root {
+  --background: var(--color-crema);
+  --foreground: var(--color-carbon);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .clip-pill {
+    clip-path: inset(0 round 9999px);
+  }
+}
