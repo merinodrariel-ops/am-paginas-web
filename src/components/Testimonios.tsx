@@ -92,7 +92,7 @@ function VideoCard({ video }: { video: typeof videosTestimonios[0] }) {
                                     animation: "comet-orbit 8.5s linear infinite",
                                 }}
                             />
-                            <svg className="w-6 h-6 text-carbon ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <svg className="relative z-10 ml-1 h-6 w-6 text-carbon" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </button>
