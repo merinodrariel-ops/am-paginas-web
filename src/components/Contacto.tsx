@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Contacto() {
     return (
         <section id="contacto" className="py-32 px-4 bg-carbon-soft relative overflow-hidden">
@@ -53,8 +55,8 @@ export default function Contacto() {
                     {[
                         {
                             label: "Ubicación",
-                            value: "Camila O'Gorman 412",
-                            sub: "Puerto Madero, CABA",
+                            value: "Camila O'Gorman 412, Of. 101",
+                            sub: "Puerto Madero, C1107DED CABA",
                         },
                         {
                             label: "Horario",
@@ -78,6 +80,18 @@ export default function Contacto() {
                 </div>
 
             </div>
+
+            {/* Footer con logo */}
+            <div className="mt-20 pt-10 border-t border-oro/10 flex justify-center">
+                <Image
+                    src="/logo.png"
+                    alt="AM Estética Dental"
+                    width={140}
+                    height={48}
+                    className="h-10 w-auto object-contain opacity-60"
+                />
+            </div>
+
         </section>
     );
 }

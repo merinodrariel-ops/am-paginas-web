@@ -36,7 +36,7 @@ const faqs = [
     },
     {
         pregunta: "¿Dónde está ubicada la clínica?",
-        respuesta: "AM Estética Dental está ubicada en Camila O'Gorman 412, Puerto Madero, CABA. Atendemos de lunes a viernes de 10:00 a 18:00. Podés agendar tu consulta directamente por WhatsApp al +54 9 11 7021-9298.",
+        respuesta: "AM Estética Dental está ubicada en Camila O'Gorman 412, Oficina 101, Puerto Madero, C1107DED CABA. Atendemos de lunes a viernes de 10:00 a 18:00. Podés agendar tu consulta directamente por WhatsApp al +54 9 11 7021-9298.",
     },
 ];
 

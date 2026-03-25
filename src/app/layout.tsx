@@ -16,20 +16,20 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "AM Estética Dental | Dr. Ariel Merino — Puerto Madero",
-  description: "Clínica de estética dental premium en Puerto Madero, Buenos Aires. Diseño de sonrisa digital, carillas, blanqueamiento e implantes. Dr. Ariel Merino.",
+  title: "AM Estética Dental – Diseño de Sonrisas en Puerto Madero",
+  description: "Clínica de estética dental premium en Puerto Madero, Buenos Aires. Diseño de sonrisa digital, carillas, blanqueamiento e implantes. Dr. Ariel Merino. Camila O'Gorman 412, Oficina 101.",
   keywords: "estética dental Buenos Aires, carillas dentales Puerto Madero, diseño de sonrisa, blanqueamiento dental CABA, Dr. Ariel Merino",
   openGraph: {
-    title: "AM Estética Dental | Dr. Ariel Merino — Puerto Madero",
+    title: "AM Estética Dental – Diseño de Sonrisas en Puerto Madero",
     description: "La única clínica dental de Argentina reconocida por Forbes. Diseño de sonrisa digital, carillas, blanqueamiento e implantes en Puerto Madero.",
     url: "https://amesteticadental.com",
-    siteName: "AM Estética Dental",
+    siteName: "AM Estética Dental – Diseño de Sonrisas en Puerto Madero",
     locale: "es_AR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AM Estética Dental | Dr. Ariel Merino",
+    title: "AM Estética Dental – Diseño de Sonrisas en Puerto Madero",
     description: "La única clínica dental de Argentina reconocida por Forbes. Puerto Madero, Buenos Aires.",
   },
   robots: {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 const schemaOrg = {
   "@context": "https://schema.org",
   "@type": ["Dentist", "LocalBusiness"],
-  "name": "AM Estética Dental",
+  "name": "AM Estética Dental – Diseño de Sonrisas en Puerto Madero",
   "description": "Clínica de estética dental premium en Puerto Madero. Diseño de sonrisa digital, carillas, blanqueamiento, implantes y alineadores invisibles.",
   "url": "https://amesteticadental.com",
   "telephone": "+549117021-9298",
@@ -49,10 +49,10 @@ const schemaOrg = {
   "image": "https://amesteticadental.com/og-image.jpg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Camila O'Gorman 412",
+    "streetAddress": "Camila O'Gorman 412, Oficina 101",
     "addressLocality": "Puerto Madero",
     "addressRegion": "Ciudad Autónoma de Buenos Aires",
-    "postalCode": "C1107",
+    "postalCode": "C1107DED",
     "addressCountry": "AR"
   },
   "geo": {

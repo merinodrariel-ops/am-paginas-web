@@ -17,7 +17,7 @@ const diferenciadores = [
     },
     {
         titulo: "Puerto Madero no es un detalle",
-        descripcion: "Camila O'Gorman 412 es la dirección. En el metro cuadrado más caro de Argentina. Esto no es marketing — es un estándar de infraestructura, equipamiento y clientela que define todo lo que hacemos adentro.",
+        descripcion: "Camila O'Gorman 412, Oficina 101, Puerto Madero. En el metro cuadrado más caro de Argentina. Esto no es marketing — es un estándar de infraestructura, equipamiento y clientela que define todo lo que hacemos adentro.",
         icono: "◈",
     },
     {

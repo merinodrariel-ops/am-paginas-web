@@ -4,7 +4,9 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
+import CometButton from "./CometButton";
 
 export default function Navbar() {
     const navRef = useRef<HTMLDivElement>(null);
@@ -46,8 +48,15 @@ export default function Navbar() {
         "
             >
                 <div className="flex-1">
-                    <Link href="/" className="font-manrope font-semibold text-lg tracking-widest uppercase text-crema">
-                        AM
+                    <Link href="/" className="inline-block">
+                        <Image
+                            src="/logo.png"
+                            alt="AM Estética Dental"
+                            width={120}
+                            height={40}
+                            className="h-8 w-auto object-contain"
+                            priority
+                        />
                     </Link>
                 </div>
 
@@ -58,14 +67,17 @@ export default function Navbar() {
                 </div>
 
                 <div className="flex-1 flex justify-end">
-                    <a
-                        href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20gustar%C3%ADa%20agendar%20una%20evaluaci%C3%B3n%20gratuita."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hidden md:block bg-oro text-carbon px-5 py-2 rounded-full text-sm font-semibold font-manrope hover:bg-oro-light transition-colors"
-                    >
-                        Agendar Evaluación
-                    </a>
+                    <div className="hidden md:block">
+                        <CometButton
+                            href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20gustar%C3%ADa%20agendar%20una%20evaluaci%C3%B3n%20gratuita."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            size="sm"
+                            speed={2.2}
+                        >
+                            Agendar Evaluación
+                        </CometButton>
+                    </div>
                     <button className="md:hidden">
                         <Menu className="w-6 h-6" />
                     </button>
