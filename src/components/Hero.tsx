@@ -1,10 +1,10 @@
 "use client";
 
-import { useRef, useMemo } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import PolygonSmile from "./hero/PolygonSmile";
+import CometButton from "./CometButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,7 +38,7 @@ export default function Hero() {
   const headlineRef  = useRef<HTMLHeadingElement>(null);
   const subRef       = useRef<HTMLParagraphElement>(null);
   const ctaRef       = useRef<HTMLDivElement>(null);
-  const smileWrapRef = useRef<HTMLDivElement>(null);
+  const mediaWrapRef = useRef<HTMLDivElement>(null);
   const bgGlowRef    = useRef<HTMLDivElement>(null);
   const particleRef  = useRef<HTMLDivElement>(null);
 
@@ -65,8 +65,8 @@ export default function Hero() {
       ease: "power3.out",
     }, "-=0.45");
 
-    // ── Animación de entrada: smile wrapper
-    tl.from(smileWrapRef.current, {
+    // ── Animación de entrada: media wrapper
+    tl.from(mediaWrapRef.current, {
       opacity: 0,
       scale: 0.94,
       duration: 1.4,
@@ -111,8 +111,8 @@ export default function Hero() {
       scrub: 1.8,
       onUpdate(self) {
         const p = self.progress;
-        // El SVG de sonrisa: sube más rápido (primer plano)
-        gsap.set(smileWrapRef.current, { y: p * -55 });
+        // El video: sube más rápido (primer plano)
+        gsap.set(mediaWrapRef.current, { y: p * -55 });
         // El headline: velocidad media
         gsap.set(headlineRef.current,  { y: p * -28 });
         // El blobs de fondo: suben más lento (profundidad)
@@ -171,16 +171,17 @@ export default function Hero() {
             Diseño de sonrisa digital, carillas de porcelana e implantes al nivel más alto de Buenos Aires. Consultá sin cargo.
           </p>
 
-          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
-            <a
+          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 items-center">
+            <CometButton
               href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Quiero%20agendar%20una%20consulta%20gratuita."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-all hover:scale-[1.02] active:scale-100"
+              size="lg"
+              speed={2.2}
             >
               Agendar consulta gratuita
               <span>→</span>
-            </a>
+            </CometButton>
             <a
               href="#tratamientos"
               className="inline-flex items-center justify-center gap-2 text-crema/60 font-manrope text-sm hover:text-crema transition-colors"
@@ -204,7 +205,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Columna derecha: sonrisa de polígonos */}
+        {/* ── Columna derecha: video hero */}
         <div className="relative flex justify-center lg:justify-end order-first lg:order-last">
 
           {/* Partículas flotantes */}
@@ -228,18 +229,50 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Halo dorado detrás del SVG */}
+          {/* Halo dorado detrás del media card */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div className="w-[70%] h-[55%] rounded-full bg-oro/8 blur-[60px]" />
           </div>
 
-          {/* El SVG de la sonrisa */}
+          {/* Video principal */}
           <div
-            ref={smileWrapRef}
-            className="polygon-smile-wrapper relative w-full max-w-sm lg:max-w-[480px] will-change-transform"
-            style={{ aspectRatio: "480 / 380" }}
+            ref={mediaWrapRef}
+            className="relative w-full max-w-md lg:max-w-[560px] will-change-transform"
           >
-            <PolygonSmile />
+            <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-oro/20 bg-carbon-soft shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(242,185,13,0.14),transparent_52%)] pointer-events-none z-10" />
+              <div className="absolute inset-[1px] rounded-[calc(2rem-1px)] border border-white/5 pointer-events-none z-10" />
+
+              <video
+                className="h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                poster="/videos/generate-3d-veneer-poster.jpg"
+              >
+                <source src="/videos/generate-3d-veneer.webm" type="video/webm" />
+                <source src="/videos/generate-3d-veneer.mp4" type="video/mp4" />
+              </video>
+
+              <div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex items-center justify-between p-4 md:p-5">
+                <div className="rounded-full border border-white/10 bg-carbon/75 px-4 py-2 backdrop-blur-sm">
+                  <span className="text-[11px] font-manrope uppercase tracking-[0.28em] text-oro-light">
+                    Smile preview
+                  </span>
+                </div>
+                <div className="rounded-full border border-oro/20 bg-carbon/70 px-3 py-2 backdrop-blur-sm">
+                  <span className="font-manrope text-xs text-crema/80">8s loop</span>
+                </div>
+              </div>
+
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-carbon via-carbon/72 to-transparent p-5 md:p-6">
+                <p className="max-w-xs font-manrope text-sm font-light leading-relaxed text-crema/86 md:text-[15px]">
+                  Simulacion visual del tratamiento para reforzar el impacto del hero desde el primer scroll.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Badge flotante — Forbes (reposicionado) */}
