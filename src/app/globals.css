@@ -1,14 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-verde-musgo: #2E4036;
-  --color-arcilla: #CC5833;
+  /* Luxury Black & Gold — AM Estética Dental */
+  --color-carbon: #0D0D0D;
+  --color-carbon-soft: #161616;
+  --color-oro: #f2b90d;
+  --color-oro-light: #f7d05a;
   --color-crema: #F2F0E9;
-  --color-carbon: #1A1A1A;
+  --color-crema-muted: #a09e97;
 
-  --font-jakarta: var(--font-jakarta), sans-serif;
-  --font-outfit: var(--font-outfit), sans-serif;
+  /* Aliases para compatibilidad con componentes existentes */
+  --color-arcilla: #f2b90d;      /* arcilla → oro */
+  --color-verde-musgo: #0D0D0D;  /* verde-musgo → carbon */
+
+  --font-manrope: var(--font-manrope), sans-serif;
   --font-cormorant: var(--font-cormorant), serif;
+
+  /* Aliases para compatibilidad */
+  --font-jakarta: var(--font-manrope), sans-serif;
+  --font-outfit: var(--font-manrope), sans-serif;
 
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
@@ -17,8 +27,8 @@
 }
 
 :root {
-  --background: var(--color-crema);
-  --foreground: var(--color-carbon);
+  --background: var(--color-carbon);
+  --foreground: var(--color-crema);
 }
 
 body {
@@ -32,4 +42,14 @@ body {
   .clip-pill {
     clip-path: inset(0 round 9999px);
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollDown {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
 }

@@ -51,14 +51,14 @@ export default function Manifesto() {
             className="bg-carbon text-crema min-h-[80vh] flex items-center justify-center p-8 relative flex-col z-20"
         >
             <div className="max-w-4xl mx-auto text-center">
-                <span className="text-arcilla font-jakarta uppercase tracking-[0.3em] text-xs mb-8 block opacity-80">
+                <span className="text-oro font-manrope uppercase tracking-[0.3em] text-xs mb-8 block opacity-80">
                     Nuestro Manifiesto
                 </span>
                 <h2
                     ref={textRef}
-                    className="text-4xl md:text-6xl lg:text-7xl font-outfit font-light leading-tight tracking-tight"
+                    className="text-4xl md:text-6xl lg:text-7xl font-manrope font-light leading-tight tracking-tight"
                 >
-                    Lo normal es tratar el síntoma. Nosotros diseñamos el estándar del mañana.
+                    No venimos a hacer odontología. Venimos a cambiarle la cara al nivel de lo que se puede esperar de una clínica dental en Argentina.
                 </h2>
             </div>
 

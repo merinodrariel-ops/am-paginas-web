@@ -1,117 +1,142 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useState } from "react";
 
-const cases = [
+// Sección Antes/Después — reemplaza las tarjetas GSAP del template base
+// Diseño basado en el "Antes / Después" del proyecto Stitch
+// TODO: Reemplazar las imágenes placeholder con fotos reales de casos @drarielmerino
+
+const casos = [
     {
         id: "01",
-        title: "Rehabilitación Completa",
-        patient: "Caso M.V.",
-        description: "Diseño de sonrisa 3D con carillas cerámicas disilicato.",
-        image: "https://images.unsplash.com/photo-1606275825272-9e9008bc06d1?q=80&w=2000&auto=format&fit=crop"
+        tratamiento: "Diseño de Sonrisa Digital",
+        antes: "https://images.unsplash.com/photo-1606275825272-9e9008bc06d1?q=80&w=800&auto=format&fit=crop",
+        despues: "https://images.unsplash.com/photo-1598256989410-b4bd697dc2b5?q=80&w=800&auto=format&fit=crop",
+        paciente: "Caso M.V.",
     },
     {
         id: "02",
-        title: "Implantes & Biomecánica",
-        patient: "Caso L.R.",
-        description: "Restauración sobre implantes con flujo 100% digital.",
-        image: "https://images.unsplash.com/photo-1598256989410-b4bd697dc2b5?q=80&w=2000&auto=format&fit=crop"
+        tratamiento: "Carillas de Porcelana",
+        antes: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop",
+        despues: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?q=80&w=800&auto=format&fit=crop",
+        paciente: "Caso L.R.",
     },
     {
         id: "03",
-        title: "Estética Mínimamente Invasiva",
-        patient: "Caso A.C.",
-        description: "Micromodelado de resinas de ultra alta definición.",
-        image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2000&auto=format&fit=crop"
-    }
+        tratamiento: "Blanqueamiento Profesional",
+        antes: "https://images.unsplash.com/photo-1619983081563-430f63602796?q=80&w=800&auto=format&fit=crop",
+        despues: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop",
+        paciente: "Caso A.C.",
+    },
 ];
 
-export default function Archive() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const panelsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        if (!containerRef.current) return;
-
-        const panels = panelsRef.current.filter(Boolean);
-
-        // Pin the container
-        ScrollTrigger.create({
-            trigger: containerRef.current,
-            start: "top top",
-            end: `+=${100 * panels.length}%`,
-            pin: true,
-            anticipatePin: 1,
-        });
-
-        // Create the stacking/blur effect for each panel except the last one
-        panels.forEach((panel, i) => {
-            if (i === panels.length - 1) return;
-
-            gsap.to(panel, {
-                scale: 0.9,
-                opacity: 0.5,
-                filter: "blur(10px)",
-                ease: "none",
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: `top -${i * 100}%`,
-                    end: `top -${(i + 1) * 100}%`,
-                    scrub: true,
-                },
-            });
-        });
-
-        return () => {
-            ScrollTrigger.getAll().forEach(t => t.kill());
-        };
-    }, []);
+function CasoCard({ caso }: { caso: typeof casos[0] }) {
+    const [hover, setHover] = useState(false);
 
     return (
-        <section id="casos" ref={containerRef} className="h-screen w-full relative overflow-hidden bg-carbon">
-            {cases.map((item, idx) => (
-                <div
-                    key={item.id}
-                    ref={(el) => {
-                        panelsRef.current[idx] = el;
-                    }}
-                    className="absolute inset-0 w-full h-full flex items-center justify-center p-4 md:p-8"
-                    style={{ zIndex: idx + 1 }}
-                >
-                    <div className="relative w-full max-w-7xl h-full max-h-[90vh] rounded-3xl md:rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 group">
-                        <img
-                            src={item.image}
-                            alt={item.title}
-                            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.7] transition-transform duration-1000 group-hover:scale-105"
-                        />
+        <div
+            className="group cursor-pointer"
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+        >
+            {/* Imágenes antes/después */}
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-oro/10 mb-5">
 
-                        {/* Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-carbon/90 via-carbon/20 to-transparent" />
+                {/* Imagen ANTES */}
+                <img
+                    src={caso.antes}
+                    alt={`Antes — ${caso.tratamiento}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${hover ? "opacity-0" : "opacity-100"}`}
+                />
 
-                        {/* Content */}
-                        <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 flex flex-col md:flex-row justify-between items-end gap-8">
-                            <div className="text-crema max-w-2xl">
-                                <span className="font-mono text-arcilla mb-4 block text-sm tracking-widest">{item.id} // {item.patient}</span>
-                                <h3 className="text-4xl md:text-6xl font-outfit font-light leading-none mb-4 tracking-tight">
-                                    {item.title}
-                                </h3>
-                                <p className="font-jakarta text-crema/70 text-lg md:text-xl font-light">
-                                    {item.description}
-                                </p>
-                            </div>
+                {/* Imagen DESPUÉS */}
+                <img
+                    src={caso.despues}
+                    alt={`Después — ${caso.tratamiento}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${hover ? "opacity-100" : "opacity-0"}`}
+                />
 
-                            <button className="flex-none bg-crema/10 hover:bg-crema/20 backdrop-blur-md border border-crema/20 text-crema px-6 py-3 rounded-full font-jakarta hover:pr-8 transition-all group/btn flex items-center gap-2">
-                                Ver caso
-                                <span className="inline-block transform group-hover/btn:translate-x-1 transition-transform">→</span>
-                            </button>
-                        </div>
-                    </div>
+                {/* Badge dinámico */}
+                <div className="absolute top-4 left-4">
+                    <span className={`inline-flex items-center gap-1.5 font-manrope text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full transition-all duration-300 ${
+                        hover
+                            ? "bg-oro text-carbon"
+                            : "bg-carbon/70 backdrop-blur-sm text-crema border border-crema/20"
+                    }`}>
+                        {hover ? "Después" : "Antes"}
+                    </span>
                 </div>
-            ))}
+
+                {/* Hover hint */}
+                {!hover && (
+                    <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="text-crema/60 font-manrope text-xs">Hover para ver resultado →</span>
+                    </div>
+                )}
+
+            </div>
+
+            {/* Info */}
+            <div className="flex items-center justify-between">
+                <div>
+                    <span className="text-oro/60 font-manrope text-xs uppercase tracking-widest block mb-1">
+                        {caso.id} — {caso.paciente}
+                    </span>
+                    <span className="text-crema font-manrope font-medium text-sm">
+                        {caso.tratamiento}
+                    </span>
+                </div>
+                <span className="text-crema/30 font-manrope text-xs group-hover:text-oro/60 transition-colors">
+                    @drarielmerino
+                </span>
+            </div>
+        </div>
+    );
+}
+
+export default function Archive() {
+    return (
+        <section id="casos" className="py-32 px-4 bg-carbon-soft relative z-10">
+            <div className="max-w-6xl mx-auto">
+
+                {/* Header */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-20">
+                    <div>
+                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
+                            Resultados reales
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-manrope font-light text-crema leading-tight">
+                            Antes /{" "}
+                            <span className="font-cormorant italic text-oro">Después</span>
+                        </h2>
+                    </div>
+                    <p className="text-crema-muted font-manrope text-lg font-light leading-relaxed">
+                        Cada caso es firmado con nombre y apellido. Sin filtros, sin stock, sin edición digital de resultados.
+                        Pasá el mouse sobre cada imagen para ver la transformación.
+                    </p>
+                </div>
+
+                {/* Grid de casos */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {casos.map((caso) => (
+                        <CasoCard key={caso.id} caso={caso} />
+                    ))}
+                </div>
+
+                {/* CTA */}
+                <div className="mt-16 text-center">
+                    <a
+                        href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Vi%20los%20casos%20antes%2Fdespu%C3%A9s%20y%20quiero%20agendar%20una%20consulta."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-all hover:scale-[1.02]"
+                    >
+                        Quiero un resultado así
+                        <span>→</span>
+                    </a>
+                </div>
+
+            </div>
         </section>
     );
 }
