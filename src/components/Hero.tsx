@@ -148,17 +148,41 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-32 lg:py-0 min-h-[100dvh]">
+      <div className="absolute inset-y-0 right-[-18%] w-[118vw] max-w-none pointer-events-none hidden lg:block">
+        <div className="absolute inset-0 bg-gradient-to-l from-carbon/5 via-carbon/18 to-carbon" />
+        <div
+          ref={mediaWrapRef}
+          className="absolute right-0 top-1/2 h-[86vh] w-[78vw] -translate-y-1/2 will-change-transform"
+        >
+          <div className="absolute inset-y-[2%] right-[6%] w-[88%] rounded-[50%] bg-oro/10 blur-[120px]" />
+          <div className="absolute inset-0 bg-gradient-to-l from-carbon/0 via-carbon/12 to-carbon z-10" />
+          <div className="absolute inset-y-0 left-0 w-[22%] bg-gradient-to-r from-carbon via-carbon/72 to-transparent z-10" />
+          <video
+            className="h-full w-full object-cover object-center"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster="/videos/generate-3d-veneer-poster.jpg"
+          >
+            <source src="/videos/generate-3d-veneer.webm" type="video/webm" />
+            <source src="/videos/generate-3d-veneer.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] gap-8 lg:gap-0 items-center py-28 lg:py-0 min-h-[100dvh]">
 
         {/* ── Columna izquierda: texto */}
-        <div className="flex flex-col justify-center">
+        <div className="relative flex flex-col justify-center max-w-xl lg:max-w-[34rem]">
           <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">
             AM Estética Dental · Puerto Madero
           </span>
 
           <h1
             ref={headlineRef}
-            className="text-5xl md:text-6xl lg:text-7xl font-manrope font-light text-crema leading-[1.05] mb-8 will-change-transform"
+            className="text-5xl md:text-6xl lg:text-[5.25rem] font-manrope font-light text-crema leading-[0.98] mb-7 will-change-transform"
           >
             Mejoramos<br />
             <span className="font-cormorant italic text-oro">Tu Sonrisa.</span>
@@ -166,18 +190,18 @@ export default function Hero() {
 
           <p
             ref={subRef}
-            className="text-crema/70 font-manrope text-lg font-light leading-relaxed max-w-md mb-10"
+            className="text-crema/68 font-manrope text-lg md:text-[1.12rem] font-light leading-relaxed max-w-sm mb-9"
           >
             Diseño de sonrisa digital, carillas de porcelana e implantes al nivel más alto de Buenos Aires. Consultá sin cargo.
           </p>
 
-          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 items-center">
+          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <CometButton
               href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Quiero%20agendar%20una%20consulta%20gratuita."
               target="_blank"
               rel="noopener noreferrer"
               size="lg"
-              speed={2.2}
+              speed={5.8}
             >
               Agendar consulta gratuita
               <span>→</span>
@@ -191,7 +215,7 @@ export default function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="flex items-center gap-8 mt-14 pt-8 border-t border-oro/10">
+          <div className="flex items-center gap-8 mt-12 pt-7 border-t border-oro/10">
             {[
               { v: "4.9★", l: "Google" },
               { v: "Forbes", l: "Argentina" },
@@ -205,8 +229,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Columna derecha: video hero */}
-        <div className="relative flex justify-center lg:justify-end order-first lg:order-last">
+        {/* ── Columna derecha: video hero mobile / spatial anchor desktop */}
+        <div className="relative flex justify-center lg:justify-end order-first lg:order-last min-h-[18rem] lg:min-h-0">
 
           {/* Partículas flotantes */}
           <div
@@ -230,21 +254,21 @@ export default function Hero() {
           </div>
 
           {/* Halo dorado detrás del media card */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-[70%] h-[55%] rounded-full bg-oro/8 blur-[60px]" />
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none lg:hidden">
+            <div className="w-[78%] h-[60%] rounded-full bg-oro/10 blur-[60px]" />
           </div>
 
-          {/* Video principal */}
+          {/* Video principal mobile */}
           <div
             ref={mediaWrapRef}
-            className="relative w-full max-w-md lg:max-w-[560px] will-change-transform"
+            className="relative w-[112%] max-w-none sm:w-full sm:max-w-2xl will-change-transform lg:hidden"
           >
-            <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-oro/20 bg-carbon-soft shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(242,185,13,0.14),transparent_52%)] pointer-events-none z-10" />
-              <div className="absolute inset-[1px] rounded-[calc(2rem-1px)] border border-white/5 pointer-events-none z-10" />
+            <div className="relative aspect-[16/10] overflow-hidden bg-transparent">
+              <div className="absolute inset-0 bg-gradient-to-l from-carbon/0 via-carbon/12 to-carbon z-10" />
+              <div className="absolute inset-x-0 bottom-0 h-[18%] bg-gradient-to-t from-carbon to-transparent z-10" />
 
               <video
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-center"
                 autoPlay
                 muted
                 loop
@@ -255,39 +279,6 @@ export default function Hero() {
                 <source src="/videos/generate-3d-veneer.webm" type="video/webm" />
                 <source src="/videos/generate-3d-veneer.mp4" type="video/mp4" />
               </video>
-
-              <div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex items-center justify-between p-4 md:p-5">
-                <div className="rounded-full border border-white/10 bg-carbon/75 px-4 py-2 backdrop-blur-sm">
-                  <span className="text-[11px] font-manrope uppercase tracking-[0.28em] text-oro-light">
-                    Smile preview
-                  </span>
-                </div>
-                <div className="rounded-full border border-oro/20 bg-carbon/70 px-3 py-2 backdrop-blur-sm">
-                  <span className="font-manrope text-xs text-crema/80">8s loop</span>
-                </div>
-              </div>
-
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-carbon via-carbon/72 to-transparent p-5 md:p-6">
-                <p className="max-w-xs font-manrope text-sm font-light leading-relaxed text-crema/86 md:text-[15px]">
-                  Simulacion visual del tratamiento para reforzar el impacto del hero desde el primer scroll.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Badge flotante — Forbes (reposicionado) */}
-          <div className="absolute -bottom-2 -left-2 bg-carbon-soft border border-oro/30 rounded-2xl p-4 shadow-xl hidden md:block z-10">
-            <div className="text-oro font-manrope text-xs uppercase tracking-widest mb-1">Forbes Argentina</div>
-            <div className="text-crema font-manrope text-sm font-medium leading-snug">
-              Única clínica<br />dental reconocida
-            </div>
-          </div>
-
-          {/* Badge @drarielmerino */}
-          <div className="absolute top-4 right-2 hidden lg:block">
-            <div className="inline-flex items-center gap-2 bg-carbon/80 backdrop-blur-sm border border-oro/20 rounded-full px-4 py-2">
-              <div className="w-2 h-2 rounded-full bg-oro animate-pulse" />
-              <span className="text-crema font-manrope text-xs tracking-wide">@drarielmerino</span>
             </div>
           </div>
         </div>
