@@ -192,18 +192,18 @@ export default function Hero() {
             ref={subRef}
             className="text-crema/68 font-manrope text-lg md:text-[1.12rem] font-light leading-relaxed max-w-sm mb-9"
           >
-            Diseño de sonrisa digital, carillas de porcelana e implantes al nivel más alto de Buenos Aires. Consultá sin cargo.
+            Diseño de sonrisa digital, carillas de porcelana e implantes al nivel más alto de Buenos Aires para pacientes que priorizan precision, criterio estetico y resultados de largo plazo.
           </p>
 
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <CometButton
-              href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Quiero%20agendar%20una%20consulta%20gratuita."
+              href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Quiero%20solicitar%20una%20evaluacion%20inicial."
               target="_blank"
               rel="noopener noreferrer"
               size="lg"
               speed={5.8}
             >
-              Agendar consulta gratuita
+              Solicitar evaluacion inicial
               <span>→</span>
             </CometButton>
             <a
@@ -212,6 +212,13 @@ export default function Hero() {
             >
               Ver tratamientos
             </a>
+          </div>
+
+          <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-oro/15 bg-carbon/55 px-4 py-2 backdrop-blur-sm">
+            <span className="h-2 w-2 rounded-full bg-oro" />
+            <span className="text-[11px] font-manrope uppercase tracking-[0.24em] text-crema/72">
+              Agenda limitada · Solo 4 evaluaciones iniciales disponibles este mes
+            </span>
           </div>
 
           {/* Stats */}

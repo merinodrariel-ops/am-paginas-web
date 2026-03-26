@@ -69,7 +69,7 @@ export default function Navbar() {
                 <div className="flex-1 flex justify-end">
                     <div className="hidden md:block">
                         <CometButton
-                            href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20gustar%C3%ADa%20agendar%20una%20evaluaci%C3%B3n%20gratuita."
+                            href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20gustaria%20solicitar%20una%20evaluacion%20inicial."
                             target="_blank"
                             rel="noopener noreferrer"
                             size="sm"
