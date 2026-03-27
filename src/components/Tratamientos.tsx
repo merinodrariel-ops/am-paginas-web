@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const tratamientos = [
@@ -79,6 +80,14 @@ const tratamientos = [
 
 export default function Tratamientos() {
     const [activo, setActivo] = useState(0);
+    const quickLinks = [
+        { label: "Precio de Carillas", href: "/precio-carillas-dentales-buenos-aires", tone: "Qué influye en el valor real del tratamiento" },
+        { label: "Lentes de Contacto Dental", href: "/lentes-de-contacto-dental", tone: "La opción más conservadora para máxima naturalidad" },
+        { label: "Carillas sin Desgaste", href: "/carillas-sin-desgaste", tone: "Cuándo realmente se puede evitar preparar el diente" },
+        { label: "Porcelana vs Resina", href: "/carillas-de-porcelana-vs-resina", tone: "Compará duración, refinamiento y mantenimiento" },
+        { label: "Carillas vs Alineadores", href: "/carillas-vs-alineadores", tone: "Definí si necesitás cambiar forma o mover dientes" },
+        { label: "Invisalign", href: "/invisalign", tone: "La marca más buscada de ortodoncia invisible" },
+    ];
 
     return (
         <section id="tratamientos" className="py-32 px-4 bg-carbon-soft relative z-10">
@@ -171,16 +180,51 @@ export default function Tratamientos() {
                                 <span>→</span>
                             </a>
                             {tratamientos[activo].href && (
-                                <a
+                                <Link
                                     href={tratamientos[activo].href}
                                     className="inline-flex items-center gap-2 border border-oro/25 text-crema/70 px-6 py-3 rounded-full font-manrope text-sm hover:border-oro/50 hover:text-crema transition-colors"
                                 >
                                     Ver más →
-                                </a>
+                                </Link>
                             )}
                         </div>
                     </div>
 
+                </div>
+
+                <div className="mt-10 rounded-[2rem] border border-oro/10 bg-carbon px-6 py-8 md:px-8">
+                    <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                        <div>
+                            <span className="text-oro/65 font-manrope uppercase tracking-[0.32em] text-[10px] block mb-3">
+                                Explorá por intención
+                            </span>
+                            <h3 className="text-2xl md:text-3xl font-manrope font-light text-crema leading-tight">
+                                Las búsquedas que más acercan
+                                <span className="font-cormorant italic text-oro"> a una decisión real</span>
+                            </h3>
+                        </div>
+                        <p className="max-w-xl text-crema/50 font-manrope text-sm leading-relaxed">
+                            Si ya sabés lo que querés resolver, entrá por precio, por técnica o por comparación clínica en vez de navegar toda la web.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+                        {quickLinks.map((item) => (
+                            <Link
+                                key={item.label}
+                                href={item.href}
+                                className="rounded-2xl border border-oro/12 bg-carbon-soft px-5 py-5 transition-colors hover:border-oro/30 group"
+                            >
+                                <span className="text-crema font-manrope font-medium text-sm block mb-2 group-hover:text-oro transition-colors">
+                                    {item.label}
+                                </span>
+                                <span className="text-crema/45 font-manrope text-xs leading-relaxed block">
+                                    {item.tone}
+                                </span>
+                                <span className="text-oro/40 group-hover:text-oro transition-colors text-sm mt-3 block">→</span>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

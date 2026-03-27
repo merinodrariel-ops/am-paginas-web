@@ -17,6 +17,13 @@ const NAV_LINKS = [
     { label: "FAQ",          href: "/#faq" },
 ];
 
+const FEATURED_LINKS = [
+    { label: "Carillas", href: "/carillas-dentales" },
+    { label: "Lentes", href: "/lentes-de-contacto-dental" },
+    { label: "Invisalign", href: "/invisalign" },
+    { label: "Precio", href: "/precio-carillas-dentales-buenos-aires" },
+];
+
 export default function Navbar() {
     const containerRef = useRef<HTMLDivElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
@@ -103,13 +110,13 @@ export default function Navbar() {
                 {/* Links — hidden on mobile */}
                 <div className="hidden lg:flex flex-1 justify-center gap-7 items-center text-[13px] font-medium tracking-wide font-manrope">
                     {NAV_LINKS.map((l) => (
-                        <a
+                        <Link
                             key={l.label}
                             href={l.href}
                             className="text-crema/65 hover:text-crema transition-colors"
                         >
                             {l.label}
-                        </a>
+                        </Link>
                     ))}
                 </div>
 
@@ -136,6 +143,19 @@ export default function Navbar() {
                 </div>
             </nav>
 
+            <div className="hidden lg:flex items-center gap-2 mt-3 px-4 py-2 rounded-full border border-oro/10 bg-carbon/72 backdrop-blur-md text-[11px] font-manrope uppercase tracking-[0.22em] text-crema/45">
+                <span className="text-oro/65">Explorar</span>
+                {FEATURED_LINKS.map((item) => (
+                    <Link
+                        key={item.label}
+                        href={item.href}
+                        className="rounded-full border border-oro/12 bg-oro/5 px-3 py-1.5 text-crema/70 transition-colors hover:border-oro/30 hover:text-crema"
+                    >
+                        {item.label}
+                    </Link>
+                ))}
+            </div>
+
             {/* ── Mobile dropdown */}
             {mobileOpen && (
                 <div className="lg:hidden w-full max-w-5xl mt-2 rounded-2xl bg-carbon/97 border border-oro/15 backdrop-blur-md overflow-hidden">
@@ -150,6 +170,21 @@ export default function Navbar() {
                                 {l.label}
                             </Link>
                         ))}
+                        <div className="px-6 pt-4 pb-2 border-t border-oro/10 mt-2">
+                            <p className="text-oro/55 font-manrope text-[10px] uppercase tracking-[0.28em] mb-3">Páginas clave</p>
+                            <div className="grid grid-cols-2 gap-2">
+                                {FEATURED_LINKS.map((item) => (
+                                    <Link
+                                        key={item.label}
+                                        href={item.href}
+                                        onClick={() => setMobileOpen(false)}
+                                        className="rounded-xl border border-oro/12 bg-oro/5 px-3 py-2 text-crema/70 hover:text-crema hover:border-oro/30 font-manrope text-xs transition-colors"
+                                    >
+                                        {item.label}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
                         <div className="px-6 pt-3 pb-2 border-t border-oro/10 mt-2">
                             <a
                                 href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20gustaria%20solicitar%20una%20evaluacion%20inicial."

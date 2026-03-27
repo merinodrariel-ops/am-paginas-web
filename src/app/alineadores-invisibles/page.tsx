@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 
@@ -128,12 +129,12 @@ export default function AlineadoresInvisiblesPage() {
                             >
                                 Solicitar evaluación inicial →
                             </a>
-                            <a
+                            <Link
                                 href="/estetica-dental"
                                 className="inline-flex items-center gap-2 text-crema/55 font-manrope text-sm hover:text-crema transition-colors pt-3 sm:pt-4"
                             >
                                 ← Todos los tratamientos
-                            </a>
+                            </Link>
                         </div>
                         <div className="flex flex-wrap items-center gap-6 mt-14 pt-8 border-t border-oro/10">
                             {[
@@ -262,19 +263,19 @@ export default function AlineadoresInvisiblesPage() {
                         <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8 text-center">También puede interesarte</span>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             {[
-                                { nombre: "Carillas Dentales", desc: "Porcelana y lentes de contacto dental para cambiar color, forma y simetría.", href: "/carillas-dentales" },
+                                { nombre: "Invisalign", desc: "La marca más reconocida de alineadores, con criterio clínico y enfoque local.", href: "/invisalign" },
                                 { nombre: "Diseño de Sonrisa Digital", desc: "Planificación 3D completa. Ves el resultado antes de empezar.", href: "/diseno-de-sonrisa" },
-                                { nombre: "Estética Dental", desc: "Todos los tratamientos estéticos en una sola clínica especializada.", href: "/estetica-dental" },
+                                { nombre: "Carillas Dentales", desc: "Porcelana y lentes de contacto dental para el refinamiento final.", href: "/carillas-dentales" },
                             ].map((t) => (
-                                <a
+                                <Link
                                     key={t.nombre}
-                                    href={t.href}
+                                    href={t.href as string}
                                     className="border border-oro/15 rounded-2xl p-6 bg-carbon-soft hover:border-oro/35 transition-colors group"
                                 >
                                     <h3 className="text-crema font-manrope font-medium text-sm mb-2 group-hover:text-oro transition-colors">{t.nombre}</h3>
                                     <p className="text-crema/55 font-manrope text-xs leading-relaxed">{t.desc}</p>
                                     <span className="text-oro/40 group-hover:text-oro transition-colors text-sm mt-3 block">→</span>
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -301,7 +302,7 @@ export default function AlineadoresInvisiblesPage() {
                             Consultar por WhatsApp →
                         </a>
                         <p className="text-crema/30 font-manrope text-xs mt-6">
-                            Camila O'Gorman 412, Oficina 101, Puerto Madero · Lun–Vie 10:00–18:00
+                            Camila O&apos;Gorman 412, Oficina 101, Puerto Madero · Lun–Vie 10:00–18:00
                         </p>
                     </div>
                 </section>

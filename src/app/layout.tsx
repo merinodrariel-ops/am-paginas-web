@@ -111,7 +111,7 @@ const faqSchema = {
       "name": "¿Cuánto cuestan las carillas dentales en Buenos Aires?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El valor de las carillas depende del material (porcelana o resina), la cantidad de piezas y el estado inicial de tu dentición. En AM Estética Dental trabajamos con valores en USD y ofrecemos financiación propia con tasa fija del 12% anual. La evaluación inicial nos permite definir alcance, tiempos y presupuesto con precisión."
+        "text": "El valor de las carillas depende del material (porcelana o resina), la cantidad de piezas y el estado inicial de tu dentición. En AM Estética Dental trabajamos con valores en USD y ofrecemos financiación propia con tasa fija del 18% anual. La evaluación inicial nos permite definir alcance, tiempos y presupuesto con precisión."
       }
     },
     {
@@ -151,7 +151,7 @@ const faqSchema = {
       "name": "¿Cómo funciona la financiación?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Financiamos el 50% del valor del tratamiento con un anticipo del 50% y una tasa fija anual del 12% (1% mensual). Las cuotas son en 3, 6 o 12 meses. Los valores en USD se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago."
+        "text": "Financiamos el 50% del valor del tratamiento con un anticipo del 50% y una tasa fija anual del 18% (1,5% mensual). Las cuotas son en 3, 6 o 12 meses. Los valores en USD se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago."
       }
     },
     {

@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
     root: configDir,
   },
   allowedDevOrigins: ["192.168.1.122", "localhost"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

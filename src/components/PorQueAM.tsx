@@ -12,7 +12,7 @@ const diferenciadores = [
     },
     {
         titulo: "El único simulador financiero del mercado",
-        descripcion: "Calculá exactamente cuánto te cuesta tu tratamiento antes de hablar con nadie. Tasa fija 12% anual, pago en USD o ARS al tipo de cambio oficial del Banco Nación. Transparencia total en un mercado que vive de la opacidad de precios.",
+        descripcion: "Calculá exactamente cuánto te cuesta tu tratamiento antes de hablar con nadie. Tasa fija 18% anual, pago en USD o ARS al tipo de cambio oficial del Banco Nación. Transparencia total en un mercado que vive de la opacidad de precios.",
         icono: "◆",
     },
     {

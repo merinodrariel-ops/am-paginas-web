@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 // Simulador de financiación — 50% anticipo + 50% financiado
-// TNA 18% fija. Mostramos anticipo + cuota, NO el total final.
+// TNA 18% fija. Mostramos anticipo + cuota, no el total final.
 
 const TASA_ANUAL = 0.18;
 const TASA_MENSUAL = TASA_ANUAL / 12;
@@ -21,8 +21,6 @@ export default function Financiacion() {
     const anticipo = monto * 0.5;
     const montoFinanciado = monto * 0.5;
     const cuotaMensual = calcularCuota(montoFinanciado, cuotas);
-    const totalFinal = anticipo + cuotaMensual * cuotas;
-
     const opcionesCuotas = [3, 6, 12];
 
     return (

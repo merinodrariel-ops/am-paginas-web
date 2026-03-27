@@ -8,7 +8,7 @@ import { useState } from "react";
 const faqs = [
     {
         pregunta: "¿Cuánto cuestan las carillas dentales en Buenos Aires?",
-        respuesta: "El valor de las carillas depende del material (porcelana o resina), la cantidad de piezas y el estado inicial de tu dentición. En AM Estética Dental trabajamos con valores en USD y ofrecemos financiación propia con tasa fija del 12% anual — podés simular tu plan en nuestra calculadora antes de la consulta. La evaluacion inicial nos permite definir alcance, tiempos y presupuesto con precision.",
+        respuesta: "El valor de las carillas depende del material (porcelana o resina), la cantidad de piezas y el estado inicial de tu dentición. En AM Estética Dental trabajamos con valores en USD y ofrecemos financiación propia con tasa fija del 18% anual — podés simular tu plan en nuestra calculadora antes de la consulta. La evaluacion inicial nos permite definir alcance, tiempos y presupuesto con precision.",
     },
     {
         pregunta: "¿Cuánto dura el proceso de diseño de sonrisa?",
@@ -28,7 +28,7 @@ const faqs = [
     },
     {
         pregunta: "¿Cómo funciona la financiación?",
-        respuesta: "Financiamos el 50% del valor del tratamiento con un anticipo del 50% y una tasa fija anual del 12% (1% mensual). Las cuotas son en 3, 6 o 12 meses. Los valores en USD se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago. Podés simular tu plan exacto en nuestra calculadora de financiación.",
+        respuesta: "Financiamos el 50% del valor del tratamiento con un anticipo del 50% y una tasa fija anual del 18% (1,5% mensual). Las cuotas son en 3, 6 o 12 meses. Los valores en USD se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago. Podés simular tu plan exacto en nuestra calculadora de financiación.",
     },
     {
         pregunta: "¿Cuánto duran las carillas de porcelana?",

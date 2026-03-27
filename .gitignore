@@ -45,3 +45,8 @@ next-env.d.ts
 
 # local worktrees
 .worktrees/
+
+# local Claude / swarm runtime artifacts
+.claude/
+.claude-flow/
+.swarm/

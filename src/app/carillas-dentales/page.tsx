@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 const faqItems = [
     {
         pregunta: "¿Cuánto cuestan las carillas dentales en Buenos Aires?",
-        respuesta: "El valor depende del material elegido (porcelana o resina), la cantidad de piezas y el estado de base de tu dentición. En AM Estética Dental trabajamos con precios en USD y ofrecemos financiación propia al 12% anual. La evaluación inicial define el presupuesto exacto para tu caso.",
+        respuesta: "El valor depende del material elegido (porcelana o resina), la cantidad de piezas y el estado de base de tu dentición. En AM Estética Dental trabajamos con precios en USD y ofrecemos financiación propia al 18% anual. La evaluación inicial define el presupuesto exacto para tu caso.",
     },
     {
         pregunta: "¿Las carillas dañan o desgastan los dientes?",
@@ -112,12 +113,12 @@ export default function CarillasDentalesPage() {
                             >
                                 Consultar sobre carillas →
                             </a>
-                            <a
+                            <Link
                                 href="/"
                                 className="inline-flex items-center gap-2 text-crema/55 font-manrope text-sm hover:text-crema transition-colors pt-3 sm:pt-4"
                             >
                                 ← Volver al sitio
-                            </a>
+                            </Link>
                         </div>
                         {/* Trust badges */}
                         <div className="flex flex-wrap items-center gap-6 mt-14 pt-8 border-t border-oro/10">
@@ -285,6 +286,31 @@ export default function CarillasDentalesPage() {
                     </div>
                 </section>
 
+                <section className="py-16 px-6 md:px-12">
+                    <div className="max-w-4xl mx-auto">
+                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8 text-center">También puede interesarte</span>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            {[
+                                { nombre: "Lentes de Contacto Dental", desc: "La versión más conservadora para casos que permiten mínima o nula intervención.", href: "/lentes-de-contacto-dental" },
+                                { nombre: "Carillas sin Desgaste", desc: "Cuándo realmente se puede trabajar sin preparar el diente.", href: "/carillas-sin-desgaste" },
+                                { nombre: "Precio de Carillas", desc: "Qué cambia el valor según material, piezas y complejidad del caso.", href: "/precio-carillas-dentales-buenos-aires" },
+                                { nombre: "Porcelana vs Resina", desc: "Compará duración, naturalidad, costo y mantenimiento.", href: "/carillas-de-porcelana-vs-resina" },
+                                { nombre: "Carillas vs Alineadores", desc: "Descubrí cuándo conviene cambiar forma y cuándo conviene mover dientes.", href: "/carillas-vs-alineadores" },
+                            ].map((t) => (
+                                <Link
+                                    key={t.nombre}
+                                    href={t.href}
+                                    className="border border-oro/15 rounded-2xl p-6 bg-carbon-soft hover:border-oro/35 transition-colors group"
+                                >
+                                    <h3 className="text-crema font-manrope font-medium text-sm mb-2 group-hover:text-oro transition-colors">{t.nombre}</h3>
+                                    <p className="text-crema/55 font-manrope text-xs leading-relaxed">{t.desc}</p>
+                                    <span className="text-oro/40 group-hover:text-oro transition-colors text-sm mt-3 block">→</span>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
                 {/* ── CTA FINAL ── */}
                 <section className="py-28 px-6 md:px-12 text-center relative overflow-hidden">
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-oro/5 blur-[120px] pointer-events-none" />
@@ -306,7 +332,7 @@ export default function CarillasDentalesPage() {
                             Consultar por WhatsApp →
                         </a>
                         <p className="text-crema/30 font-manrope text-xs mt-6">
-                            Camila O'Gorman 412, Oficina 101, Puerto Madero · Lun–Vie 10:00–18:00
+                            Camila O&apos;Gorman 412, Oficina 101, Puerto Madero · Lun–Vie 10:00–18:00
                         </p>
                     </div>
                 </section>

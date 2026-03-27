@@ -184,15 +184,15 @@ export default function Hero() {
             ref={headlineRef}
             className="text-5xl md:text-6xl lg:text-[5.25rem] font-manrope font-light text-crema leading-[0.98] mb-7 will-change-transform"
           >
-            Estética Dental<br />
-            <span className="font-cormorant italic text-oro">Puerto Madero.</span>
+            Carillas Dentales<br />
+            <span className="font-cormorant italic text-oro">y Sonrisa Natural.</span>
           </h1>
 
           <p
             ref={subRef}
             className="text-crema/68 font-manrope text-lg md:text-[1.12rem] font-light leading-relaxed max-w-sm mb-9"
           >
-            Diseño de sonrisa digital, carillas de porcelana mínimamente invasivas, lentes de contacto dental, alineadores invisibles e implantes. El nivel más alto de Buenos Aires para quienes priorizan precisión, criterio estético y resultados de largo plazo.
+            Carillas de porcelana, lentes de contacto dental y diseño de sonrisa digital para lograr resultados naturales en Puerto Madero. Alineadores invisibles e Invisalign cuando el caso pide movimiento, no artificio.
           </p>
 
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
@@ -210,7 +210,7 @@ export default function Hero() {
               href="#tratamientos"
               className="inline-flex items-center justify-center gap-2 text-crema/60 font-manrope text-sm hover:text-crema transition-colors"
             >
-              Ver tratamientos
+              Ver tratamientos principales
             </a>
           </div>
 

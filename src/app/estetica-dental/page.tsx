@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 
@@ -55,11 +56,12 @@ const WA_LINK = "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Q
 
 const tratamientos = [
     { nombre: "Carillas Dentales", desc: "Porcelana y lentes de contacto dental. Cambiamos color, forma y simetría.", href: "/carillas-dentales" },
+    { nombre: "Lentes de Contacto Dental", desc: "La alternativa ultradelgada para cambios sutiles y máxima naturalidad.", href: "/lentes-de-contacto-dental" },
+    { nombre: "Carillas sin Desgaste", desc: "Cuando el caso permite una solución conservadora sin preparar el diente.", href: "/carillas-sin-desgaste" },
     { nombre: "Diseño de Sonrisa Digital", desc: "Ves el resultado antes de empezar. Planificación 3D completa.", href: "/diseno-de-sonrisa" },
     { nombre: "Alineadores Invisibles", desc: "Ortodoncia sin brackets. Planificación digital y seguimiento continuo.", href: "/alineadores-invisibles" },
+    { nombre: "Invisalign", desc: "La marca más reconocida de alineadores, integrada a criterio clínico y diseño de sonrisa.", href: "/invisalign" },
     { nombre: "Blanqueamiento Profesional", desc: "Protocolo clínico calibrado para tu tipo de esmalte.", href: "/#tratamientos" },
-    { nombre: "Implantes Dentales", desc: "Reemplazo definitivo indistinguible de un diente natural.", href: "/#tratamientos" },
-    { nombre: "Estética Gingival", desc: "Contorno gingival para equilibrar proporciones de la sonrisa.", href: "/#tratamientos" },
 ];
 
 export default function EsteticaDentalPage() {
@@ -94,12 +96,12 @@ export default function EsteticaDentalPage() {
                             >
                                 Solicitar evaluación inicial →
                             </a>
-                            <a
+                            <Link
                                 href="/"
                                 className="inline-flex items-center gap-2 text-crema/55 font-manrope text-sm hover:text-crema transition-colors pt-3 sm:pt-4"
                             >
                                 ← Ver el sitio completo
-                            </a>
+                            </Link>
                         </div>
                         <div className="flex flex-wrap items-center gap-6 mt-14 pt-8 border-t border-oro/10">
                             {[
@@ -162,7 +164,7 @@ export default function EsteticaDentalPage() {
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {tratamientos.map((t) => (
-                                <a
+                                <Link
                                     key={t.nombre}
                                     href={t.href}
                                     className="border border-oro/15 rounded-2xl p-6 bg-carbon-soft hover:border-oro/35 transition-colors group"
@@ -170,7 +172,7 @@ export default function EsteticaDentalPage() {
                                     <h3 className="text-crema font-manrope font-medium text-sm mb-2 group-hover:text-oro transition-colors">{t.nombre}</h3>
                                     <p className="text-crema/55 font-manrope text-xs leading-relaxed">{t.desc}</p>
                                     <span className="text-oro/40 group-hover:text-oro transition-colors text-sm mt-3 block">→</span>
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -219,6 +221,29 @@ export default function EsteticaDentalPage() {
                     </div>
                 </section>
 
+                <section className="py-16 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
+                    <div className="max-w-4xl mx-auto">
+                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8 text-center">Guías para decidir</span>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            {[
+                                { nombre: "Precio de Carillas", desc: "Qué influye realmente en el valor de un tratamiento estético bien planificado.", href: "/precio-carillas-dentales-buenos-aires" },
+                                { nombre: "Carillas vs Alineadores", desc: "Para saber si necesitás cambiar forma o mover dientes primero.", href: "/carillas-vs-alineadores" },
+                                { nombre: "Porcelana vs Resina", desc: "Compará duración, mantenimiento y resultado visual.", href: "/carillas-de-porcelana-vs-resina" },
+                            ].map((item) => (
+                                <Link
+                                    key={item.nombre}
+                                    href={item.href}
+                                    className="border border-oro/15 rounded-2xl p-6 bg-carbon hover:border-oro/35 transition-colors group"
+                                >
+                                    <h3 className="text-crema font-manrope font-medium text-sm mb-2 group-hover:text-oro transition-colors">{item.nombre}</h3>
+                                    <p className="text-crema/55 font-manrope text-xs leading-relaxed">{item.desc}</p>
+                                    <span className="text-oro/40 group-hover:text-oro transition-colors text-sm mt-3 block">→</span>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
                 {/* ── CTA FINAL ── */}
                 <section className="py-28 px-6 md:px-12 text-center relative overflow-hidden">
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-oro/5 blur-[120px] pointer-events-none" />
@@ -240,7 +265,7 @@ export default function EsteticaDentalPage() {
                             Consultar por WhatsApp →
                         </a>
                         <p className="text-crema/30 font-manrope text-xs mt-6">
-                            Camila O'Gorman 412, Oficina 101, Puerto Madero · Lun–Vie 10:00–18:00
+                            Camila O&apos;Gorman 412, Oficina 101, Puerto Madero · Lun–Vie 10:00–18:00
                         </p>
                     </div>
                 </section>
