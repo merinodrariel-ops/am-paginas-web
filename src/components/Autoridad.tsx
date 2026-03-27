@@ -3,18 +3,18 @@
 import { useEffect, useState } from "react";
 
 const REVIEWS = [
-    { name: "María L.", text: "El resultado superó todas mis expectativas. La sonrisa que siempre quise, después de años esperándola." },
-    { name: "Santiago R.", text: "Profesionalismo absoluto. El Dr. Merino explica cada paso con total claridad y confianza." },
-    { name: "Valentina C.", text: "Vine especialmente de Córdoba y valió cada kilómetro. Un antes y un después en mi vida." },
-    { name: "Juliana M.", text: "Las carillas quedaron perfectas. Natural, elegante, exactamente lo que pedí." },
-    { name: "Rodrigo P.", text: "La primera consulta fue sin presión ni compromiso. Me fui con el tratamiento ideal para mi caso." },
+    { name: "Maria L.", text: "El resultado supero todas mis expectativas y me devolvio seguridad al sonreir." },
+    { name: "Santiago R.", text: "Profesionalismo absoluto. Cada paso fue claro, cuidado y sin improvisaciones." },
+    { name: "Valentina C.", text: "Vine de Cordoba y valio cada kilometro. El cambio se noto desde el primer dia." },
+    { name: "Juliana M.", text: "Las carillas quedaron naturales, elegantes y exactamente como las imagine." },
+    { name: "Rodrigo P.", text: "La consulta fue honesta, sin presion, y sali con un plan hecho para mi caso." },
 ];
 
 function Stars() {
     return (
         <div className="flex gap-1.5">
             {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-5 h-5 text-oro" viewBox="0 0 24 24" fill="currentColor">
+                <svg key={i} className="h-4 w-4 text-oro" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
             ))}
@@ -30,25 +30,16 @@ function LaurelBranch({ flip = false }: { flip?: boolean }) {
             fill="none"
             style={{ transform: flip ? "scaleX(-1)" : undefined }}
         >
-            {/* Stem */}
             <path d="M55 65 Q38 42 24 20" stroke="#F2B90D" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
             <path d="M55 65 Q38 88 24 110" stroke="#F2B90D" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
-
-            {/* Upper leaves */}
             <ellipse cx="38" cy="40" rx="9" ry="4" transform="rotate(-42 38 40)" fill="#F2B90D" opacity="0.45" />
             <ellipse cx="27" cy="24" rx="8" ry="3.5" transform="rotate(-52 27 24)" fill="#F2B90D" opacity="0.38" />
             <ellipse cx="47" cy="52" rx="8" ry="3.5" transform="rotate(-28 47 52)" fill="#F2B90D" opacity="0.40" />
-
-            {/* Center jewel */}
             <circle cx="55" cy="65" r="3.5" fill="#F2B90D" opacity="0.6" />
             <circle cx="55" cy="65" r="1.5" fill="#F2B90D" opacity="0.9" />
-
-            {/* Lower leaves */}
             <ellipse cx="47" cy="78" rx="8" ry="3.5" transform="rotate(28 47 78)" fill="#F2B90D" opacity="0.40" />
             <ellipse cx="38" cy="90" rx="9" ry="4" transform="rotate(42 38 90)" fill="#F2B90D" opacity="0.45" />
             <ellipse cx="27" cy="106" rx="8" ry="3.5" transform="rotate(52 27 106)" fill="#F2B90D" opacity="0.38" />
-
-            {/* Leaf vein lines */}
             <line x1="34" y1="37" x2="42" y2="43" stroke="#F2B90D" strokeWidth="0.5" opacity="0.3" />
             <line x1="34" y1="93" x2="42" y2="87" stroke="#F2B90D" strokeWidth="0.5" opacity="0.3" />
         </svg>
@@ -63,124 +54,101 @@ export default function Autoridad() {
         const interval = setInterval(() => {
             setVisible(false);
             setTimeout(() => {
-                setReviewIdx(prev => (prev + 1) % REVIEWS.length);
+                setReviewIdx((prev) => (prev + 1) % REVIEWS.length);
                 setVisible(true);
-            }, 350);
-        }, 4500);
+            }, 280);
+        }, 4200);
+
         return () => clearInterval(interval);
     }, []);
 
     return (
-        <section className="py-24 px-4 bg-carbon border-y border-oro/10 relative overflow-hidden">
+        <section className="relative overflow-hidden border-y border-oro/10 bg-carbon px-4 py-24">
+            <div className="absolute top-0 left-1/2 h-16 w-px -translate-x-1/2 bg-gradient-to-b from-oro/0 to-oro/60" />
 
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-oro/0 to-oro/60" />
-
-            <div className="max-w-6xl mx-auto">
-
-                <div className="text-center mb-16">
-                    <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs">
+            <div className="mx-auto max-w-6xl">
+                <div className="mb-16 text-center">
+                    <span className="font-manrope text-xs uppercase tracking-[0.4em] text-oro">
                         Reconocimiento & Autoridad
                     </span>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-
-                    {/* ── GOOGLE 4.9 — comet border + rotating reviews ── */}
-                    <div className="relative rounded-2xl p-[1.5px] overflow-hidden">
-                        {/* Comet orbital */}
+                <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <div className="relative overflow-hidden rounded-2xl border border-oro/18 bg-[radial-gradient(circle_at_top,rgba(242,185,13,0.12),transparent_48%),linear-gradient(180deg,rgba(22,22,22,1),rgba(13,13,13,1))] p-8">
                         <div
                             className="absolute inset-0 rounded-2xl"
                             style={{
-                                background: "conic-gradient(from 0deg, transparent 0deg, transparent 305deg, rgba(242,185,13,0.08) 320deg, rgba(242,185,13,0.4) 338deg, rgba(242,185,13,0.9) 350deg, rgba(255,248,210,1) 355deg, rgba(242,185,13,0.6) 358deg, transparent 360deg)",
-                                animation: "comet-orbit 3.5s linear infinite",
+                                background:
+                                    "conic-gradient(from 0deg, transparent 0deg, transparent 304deg, rgba(242,185,13,0.08) 322deg, rgba(255,248,210,0.85) 352deg, transparent 360deg)",
+                                animation: "comet-orbit 4.2s linear infinite",
                             }}
                         />
-                        {/* Ambient glow */}
-                        <div
-                            className="absolute inset-0 rounded-2xl"
-                            style={{
-                                background: "radial-gradient(ellipse at 50% 50%, rgba(242,185,13,0.06) 0%, transparent 70%)",
-                                animation: "aura-pulse 4s ease-in-out infinite",
-                            }}
-                        />
-
-                        {/* Card */}
-                        <div className="relative bg-carbon-soft rounded-[calc(1rem-1.5px)] p-8 h-full flex flex-col items-center text-center">
-                            <Stars />
-
-                            <div className="mt-5 mb-1 leading-none">
-                                <span className="text-[5.5rem] md:text-[7rem] font-manrope font-light text-oro leading-none">
-                                    4.9
-                                </span>
+                        <div className="relative flex h-full flex-col justify-between gap-8 rounded-[calc(1rem-1px)] border border-white/4 bg-carbon/82 p-6 backdrop-blur-sm">
+                            <div className="flex items-center justify-between gap-4">
+                                <div>
+                                    <span className="mb-3 inline-flex rounded-full border border-oro/20 bg-oro/8 px-3 py-1 font-manrope text-[10px] uppercase tracking-[0.3em] text-oro-light">
+                                        Google Reviews
+                                    </span>
+                                    <div className="flex items-end gap-4">
+                                        <span className="font-manrope text-6xl font-light leading-none text-crema md:text-7xl">4.9</span>
+                                        <div className="space-y-2 pb-2">
+                                            <Stars />
+                                            <p className="font-manrope text-[11px] uppercase tracking-[0.28em] text-crema/45">
+                                                87 resenas verificadas
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="hidden h-14 w-14 items-center justify-center rounded-full border border-oro/18 bg-oro/8 md:flex">
+                                    <span className="font-cormorant text-3xl italic text-oro">G</span>
+                                </div>
                             </div>
 
-                            <div className="text-crema/40 font-manrope uppercase tracking-[0.35em] text-xs mb-8">
-                                Google Reviews · 87 reseñas verificadas
-                            </div>
-
-                            {/* Rotating review */}
                             <div
-                                className="border-t border-oro/10 pt-6 w-full flex flex-col items-center"
+                                className="rounded-[1.25rem] border border-oro/10 bg-carbon-soft/75 p-5"
                                 style={{
                                     opacity: visible ? 1 : 0,
-                                    transform: visible ? "translateY(0)" : "translateY(10px)",
-                                    transition: "opacity 0.35s ease, transform 0.35s ease",
+                                    transform: visible ? "translateY(0)" : "translateY(8px)",
+                                    transition: "opacity 0.28s ease, transform 0.28s ease",
                                 }}
                             >
-                                <p className="text-crema/80 font-manrope text-sm leading-relaxed mb-4 italic max-w-xs">
+                                <p className="mb-3 font-manrope text-sm leading-relaxed text-crema/82 md:text-[15px]">
                                     &ldquo;{REVIEWS[reviewIdx].text}&rdquo;
                                 </p>
-                                <span className="text-oro/50 font-manrope text-xs uppercase tracking-widest">
-                                    — {REVIEWS[reviewIdx].name}
-                                </span>
-                            </div>
-
-                            {/* Dot indicators */}
-                            <div className="flex gap-2 mt-6">
-                                {REVIEWS.map((_, i) => (
-                                    <button
-                                        key={i}
-                                        onClick={() => {
-                                            setVisible(false);
-                                            setTimeout(() => { setReviewIdx(i); setVisible(true); }, 350);
-                                        }}
-                                        className="h-1.5 rounded-full transition-all duration-300"
-                                        style={{
-                                            width: i === reviewIdx ? "1.5rem" : "0.375rem",
-                                            background: i === reviewIdx ? "#F2B90D" : "rgba(242,185,13,0.25)",
-                                        }}
-                                        aria-label={`Review ${i + 1}`}
-                                    />
-                                ))}
+                                <div className="flex items-center justify-between gap-3">
+                                    <span className="font-manrope text-[11px] uppercase tracking-[0.24em] text-oro/60">
+                                        {REVIEWS[reviewIdx].name}
+                                    </span>
+                                    <span className="font-manrope text-[10px] uppercase tracking-[0.24em] text-crema/35">
+                                        confianza inmediata
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* ── FORBES — laurel crown ── */}
-                    <div className="border border-oro/20 rounded-2xl p-8 bg-carbon-soft relative overflow-hidden group hover:border-oro/30 transition-colors flex flex-col">
+                    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-oro/20 bg-carbon-soft p-8 transition-colors hover:border-oro/30">
+                        <div
+                            className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+                            style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(242,185,13,0.07) 0%, transparent 65%)" }}
+                        />
 
-                        {/* Glow background */}
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                            style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(242,185,13,0.07) 0%, transparent 65%)" }} />
-
-                        {/* Laurel crown badge */}
-                        <div className="relative flex items-center justify-center gap-2 mb-8">
+                        <div className="relative mb-8 flex items-center justify-center gap-2">
                             <LaurelBranch />
 
-                            <div className="text-center px-3">
+                            <div className="px-3 text-center">
                                 <div
-                                    className="font-manrope font-black text-oro leading-none tracking-[0.18em]"
+                                    className="font-manrope text-oro leading-none tracking-[0.18em] font-black"
                                     style={{ fontSize: "clamp(2rem, 5vw, 2.8rem)" }}
                                 >
                                     FORBES
                                 </div>
-                                <div className="text-oro/45 font-manrope uppercase tracking-[0.5em] text-[9px] mt-1.5">
+                                <div className="mt-1.5 font-manrope text-[9px] uppercase tracking-[0.5em] text-oro/45">
                                     Argentina
                                 </div>
-                                {/* Thin divider lines */}
-                                <div className="flex items-center gap-2 mt-2 justify-center">
+                                <div className="mt-2 flex items-center justify-center gap-2">
                                     <div className="h-px w-8 bg-oro/30" />
-                                    <div className="w-1 h-1 rounded-full bg-oro/40" />
+                                    <div className="h-1 w-1 rounded-full bg-oro/40" />
                                     <div className="h-px w-8 bg-oro/30" />
                                 </div>
                             </div>
@@ -188,39 +156,36 @@ export default function Autoridad() {
                             <LaurelBranch flip />
                         </div>
 
-                        <div className="relative flex-1 flex flex-col justify-center">
-                            <h3 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-4 leading-snug">
-                                La única clínica odontológica de Argentina{" "}
+                        <div className="relative flex flex-1 flex-col justify-center">
+                            <h3 className="mb-4 font-manrope text-2xl leading-snug font-light text-crema md:text-3xl">
+                                La unica clinica odontologica de Argentina{" "}
                                 <span className="font-cormorant italic text-oro">reconocida por Forbes.</span>
                             </h3>
-                            <p className="text-crema-muted font-manrope text-sm leading-relaxed">
-                                No es un premio de industria. Es reconocimiento editorial en el medio de negocios más exigente del mundo — por el impacto real que generamos en la vida de nuestros pacientes.
+                            <p className="font-manrope text-sm leading-relaxed text-crema-muted">
+                                No es un premio de industria. Es reconocimiento editorial en el medio de negocios mas exigente del mundo por el impacto real que generamos en la vida de nuestros pacientes.
                             </p>
                         </div>
                     </div>
-
                 </div>
 
-                {/* Stats row */}
-                <div className="grid grid-cols-3 gap-px bg-oro/10 border border-oro/10 rounded-2xl overflow-hidden">
+                <div className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-oro/10 bg-oro/10">
                     {[
-                        { number: "10+", label: "Años de experiencia", sub: "Dr. Ariel Merino" },
-                        { number: "Miss Universo", label: "Sonrisa más estudiada", sub: "del mundo" },
+                        { number: "10+", label: "Anos de experiencia", sub: "Dr. Ariel Merino" },
+                        { number: "Miss Universo", label: "Sonrisa mas estudiada", sub: "del mundo" },
                         { number: "100%", label: "Casos reales", sub: "Sin stock, sin filtros" },
                     ].map((stat) => (
-                        <div key={stat.label} className="bg-carbon px-4 py-8 text-center hover:bg-carbon-soft transition-colors">
-                            <div className="text-2xl md:text-3xl font-manrope font-light text-oro mb-2 leading-tight">
+                        <div key={stat.label} className="bg-carbon px-4 py-8 text-center transition-colors hover:bg-carbon-soft">
+                            <div className="mb-2 font-manrope text-2xl leading-tight font-light text-oro md:text-3xl">
                                 {stat.number}
                             </div>
-                            <div className="text-crema font-manrope font-medium text-xs mb-1">{stat.label}</div>
-                            <div className="text-crema-muted font-manrope text-xs">{stat.sub}</div>
+                            <div className="mb-1 font-manrope text-xs font-medium text-crema">{stat.label}</div>
+                            <div className="font-manrope text-xs text-crema-muted">{stat.sub}</div>
                         </div>
                     ))}
                 </div>
-
             </div>
 
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-t from-oro/0 to-oro/60" />
+            <div className="absolute bottom-0 left-1/2 h-16 w-px -translate-x-1/2 bg-gradient-to-t from-oro/0 to-oro/60" />
         </section>
     );
 }

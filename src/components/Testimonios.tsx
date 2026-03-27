@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
-// Testimonios escritos reales del sitio actual
 const testimoniosEscritos = [
     {
         nombre: "Agustina Zacariaz",
@@ -12,70 +11,110 @@ const testimoniosEscritos = [
     {
         nombre: "Santiago Ferraro",
         tratamiento: "Experiencia general",
-        texto: "Mi experiencia fue genial, desde ingresar al consultorio hasta irme, la atención no solo de Ari, si no de todas las chicas que trabajan con él es excelente.",
+        texto: "Mi experiencia fue genial, desde ingresar al consultorio hasta irme, la atencion no solo de Ari, si no de todas las chicas que trabajan con el es excelente.",
     },
     {
         nombre: "Valentina Oyarzun",
         tratamiento: "Blanqueamiento",
-        texto: "Hace tiempo quería ir a la consulta con el doctor y organizamos para realizarme un blanqueamiento, me quedó hermoso el trabajo, ¡feliz!",
+        texto: "Hace tiempo queria ir a la consulta con el doctor y organizamos para realizarme un blanqueamiento, me quedo hermoso el trabajo, feliz.",
     },
     {
         nombre: "Camila Rossi",
-        tratamiento: "Transformación de sonrisa",
-        texto: "La única pregunta que me hago hoy es por qué no me animé antes a regalarme esta sonrisa que cambió mi vida.",
+        tratamiento: "Transformacion de sonrisa",
+        texto: "La unica pregunta que me hago hoy es por que no me anime antes a regalarme esta sonrisa que cambio mi vida.",
         destacado: true,
+    },
+    {
+        nombre: "Julieta Marquez",
+        tratamiento: "Carillas premium",
+        texto: "Nunca senti que me vendieran algo. Me explicaron todo y el resultado se vio natural desde el primer momento.",
     },
 ];
 
-// Videos de testimonios reales — Reels @amesteticadental / @drarielmerino
 const videosTestimonios = [
-    {
-        id: "video-1",
-        youtubeId: "oqcaGGGAs5Y",
-        nombre: "Caso real",
-        tratamiento: "Testimonio de paciente",
-    },
-    {
-        id: "video-2",
-        youtubeId: "vlWiV96jQmY",
-        nombre: "Caso real",
-        tratamiento: "Testimonio de paciente",
-    },
-    {
-        id: "video-3",
-        youtubeId: "UxmkQbFERcw",
-        nombre: "Caso real",
-        tratamiento: "Testimonio de paciente",
-    },
-    {
-        id: "video-4",
-        youtubeId: "DdBeH4XaJUY",
-        nombre: "Caso real",
-        tratamiento: "Testimonio de paciente",
-    },
+    { id: "video-1", youtubeId: "oqcaGGGAs5Y", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
+    { id: "video-2", youtubeId: "vlWiV96jQmY", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
+    { id: "video-3", youtubeId: "UxmkQbFERcw", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
+    { id: "video-4", youtubeId: "DdBeH4XaJUY", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
 ];
+
+function Stars({ small = false }: { small?: boolean }) {
+    return (
+        <div className="flex gap-1">
+            {[...Array(5)].map((_, i) => (
+                <svg
+                    key={i}
+                    className={small ? "h-3.5 w-3.5 text-oro" : "h-4 w-4 text-oro"}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                >
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+            ))}
+        </div>
+    );
+}
+
+function ReviewCard({ review, featured = false }: { review: (typeof testimoniosEscritos)[0]; featured?: boolean }) {
+    return (
+        <article
+            className={featured
+                ? "relative min-w-[20rem] max-w-[36rem] rounded-[2rem] border border-oro/24 bg-[linear-gradient(180deg,rgba(242,185,13,0.1),rgba(13,13,13,0.02))] p-8 shadow-[0_18px_60px_rgba(0,0,0,0.28)]"
+                : "relative min-w-[19rem] max-w-[24rem] rounded-[1.75rem] border border-white/6 bg-carbon-soft/92 p-6 shadow-[0_14px_40px_rgba(0,0,0,0.24)] backdrop-blur-sm"
+            }
+        >
+            <div className="mb-5 flex items-start gap-4">
+                <div className={featured
+                    ? "flex h-12 w-12 flex-none items-center justify-center rounded-full border border-oro/25 bg-oro/10"
+                    : "flex h-11 w-11 flex-none items-center justify-center rounded-full border border-oro/15 bg-oro/8"}>
+                    <span className="font-manrope text-sm font-semibold text-oro">{review.nombre.charAt(0)}</span>
+                </div>
+                <div className="min-w-0 flex-1">
+                    <div className="mb-2 flex items-center justify-between gap-3">
+                        <div>
+                            <p className="font-manrope text-sm font-medium text-crema md:text-[15px]">{review.nombre}</p>
+                            <p className="font-manrope text-[11px] uppercase tracking-[0.24em] text-oro/55">{review.tratamiento}</p>
+                        </div>
+                        <Stars small />
+                    </div>
+                    <div className="inline-flex items-center gap-2 rounded-full border border-white/6 bg-white/3 px-3 py-1 font-manrope text-[10px] uppercase tracking-[0.24em] text-crema/45">
+                        <span className="h-1.5 w-1.5 rounded-full bg-oro" />
+                        Google review
+                    </div>
+                </div>
+            </div>
+
+            <p className={featured
+                ? "font-manrope text-lg leading-relaxed text-crema"
+                : "font-manrope text-sm leading-relaxed text-crema/78"}>
+                &ldquo;{review.texto}&rdquo;
+            </p>
+        </article>
+    );
+}
 
 function VideoCard({ video }: { video: typeof videosTestimonios[0] }) {
     const [playing, setPlaying] = useState(false);
 
     return (
-        <div className="group relative aspect-[9/16] rounded-[1.6rem] overflow-hidden bg-carbon-soft border border-oro/8">
+        <div className="group relative aspect-[9/16] overflow-hidden rounded-[1.6rem] border border-oro/8 bg-carbon-soft">
             <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 rounded-[1.6rem] opacity-55 transition-opacity duration-500 group-hover:opacity-100"
                 style={{
-                    background: "conic-gradient(from 0deg, transparent 0deg, transparent 300deg, rgba(242,185,13,0.05) 320deg, rgba(249,220,106,0.32) 344deg, rgba(255,250,214,0.7) 352deg, transparent 360deg)",
+                    background:
+                        "conic-gradient(from 0deg, transparent 0deg, transparent 300deg, rgba(242,185,13,0.05) 320deg, rgba(249,220,106,0.32) 344deg, rgba(255,250,214,0.7) 352deg, transparent 360deg)",
                     animation: "comet-orbit 9.5s linear infinite",
                 }}
             />
             <div className="pointer-events-none absolute inset-[1.5px] rounded-[calc(1.6rem-1.5px)] bg-carbon-soft/70 backdrop-blur-[1px]" />
             {!playing ? (
                 <>
-                    {/* Thumbnail real de YouTube */}
                     <img
                         src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
                         alt={video.nombre}
-                        className="absolute inset-[1.5px] w-[calc(100%-3px)] h-[calc(100%-3px)] object-cover brightness-[0.72] rounded-[calc(1.6rem-1.5px)]"
+                        className="absolute inset-[1.5px] h-[calc(100%-3px)] w-[calc(100%-3px)] rounded-[calc(1.6rem-1.5px)] object-cover brightness-[0.72]"
                     />
                     <div className="absolute inset-[1.5px] rounded-[calc(1.6rem-1.5px)] bg-gradient-to-b from-carbon/18 via-transparent to-carbon/76" />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -88,7 +127,8 @@ function VideoCard({ video }: { video: typeof videosTestimonios[0] }) {
                             <span
                                 className="absolute inset-[-5px] rounded-full opacity-70"
                                 style={{
-                                    background: "conic-gradient(from 0deg, transparent 0deg, transparent 308deg, rgba(242,185,13,0.06) 326deg, rgba(255,250,214,0.9) 350deg, transparent 360deg)",
+                                    background:
+                                        "conic-gradient(from 0deg, transparent 0deg, transparent 308deg, rgba(242,185,13,0.06) 326deg, rgba(255,250,214,0.9) 350deg, transparent 360deg)",
                                     animation: "comet-orbit 8.5s linear infinite",
                                 }}
                             />
@@ -97,18 +137,16 @@ function VideoCard({ video }: { video: typeof videosTestimonios[0] }) {
                             </svg>
                         </button>
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                        <span className="text-oro/70 font-manrope text-xs uppercase tracking-widest block mb-1">
+                    <div className="absolute right-0 bottom-0 left-0 p-5">
+                        <span className="mb-1 block font-manrope text-xs uppercase tracking-widest text-oro/70">
                             {video.tratamiento}
                         </span>
-                        <span className="text-crema font-manrope text-sm font-medium">
-                            {video.nombre}
-                        </span>
+                        <span className="font-manrope text-sm font-medium text-crema">{video.nombre}</span>
                     </div>
                 </>
             ) : (
                 <iframe
-                    className="absolute inset-[1.5px] w-[calc(100%-3px)] h-[calc(100%-3px)] rounded-[calc(1.6rem-1.5px)]"
+                    className="absolute inset-[1.5px] h-[calc(100%-3px)] w-[calc(100%-3px)] rounded-[calc(1.6rem-1.5px)]"
                     src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?autoplay=1&rel=0&modestbranding=1&controls=1`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -120,75 +158,105 @@ function VideoCard({ video }: { video: typeof videosTestimonios[0] }) {
 }
 
 export default function Testimonios() {
-    return (
-        <section id="testimonios" className="py-32 px-4 bg-carbon relative z-10">
-            <div className="max-w-6xl mx-auto">
+    const highlightedReview = testimoniosEscritos.find((review) => review.destacado) ?? testimoniosEscritos[0];
+    const marqueeTrack = useMemo(() => [...testimoniosEscritos, ...testimoniosEscritos], []);
+    const marqueeTrackReverse = useMemo(() => [...testimoniosEscritos].reverse().concat([...testimoniosEscritos].reverse()), []);
 
-                {/* Header */}
-                <div className="mb-20 text-center max-w-2xl mx-auto">
-                    <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
-                        Casos Reales
-                    </span>
-                    <h2 className="text-4xl md:text-5xl font-manrope font-light text-crema leading-tight mb-6">
-                        No contamos historias.{" "}
-                        <span className="font-cormorant italic text-oro">Las mostramos.</span>
-                    </h2>
-                    <p className="text-crema-muted font-manrope text-lg font-light">
-                        Cada video es un paciente real. Cada testimonio es una vida que cambió. Sin edición de sonrisas, sin filtros, sin stock.
-                    </p>
+    return (
+        <section id="testimonios" className="relative z-10 overflow-hidden bg-carbon px-4 py-32">
+            <div className="mx-auto max-w-[88rem]">
+                <div className="mb-18 grid items-end gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+                    <div className="max-w-4xl">
+                        <span className="mb-5 inline-flex rounded-full border border-oro/15 bg-oro/8 px-4 py-1.5 font-manrope text-[10px] uppercase tracking-[0.38em] text-oro-light">
+                            Google Reviews
+                        </span>
+                        <div className="mb-6 flex flex-col gap-5 md:flex-row md:items-end md:gap-8">
+                            <div className="flex items-end gap-4">
+                                <span className="font-manrope text-[4.8rem] leading-none font-light text-crema md:text-[7.5rem]">4.9</span>
+                                <div className="space-y-3 pb-3 md:pb-4">
+                                    <Stars />
+                                    <p className="font-manrope text-[11px] uppercase tracking-[0.32em] text-crema/45">
+                                        87 resenas verificadas
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="max-w-xl pb-1">
+                                <h2 className="mb-3 font-manrope text-4xl leading-tight font-light text-crema md:text-5xl">
+                                    Opiniones reales de nuestros pacientes.
+                                </h2>
+                                <p className="font-manrope text-lg leading-relaxed font-light text-crema-muted">
+                                    La reputacion no se dice: se ve. Mostramos la voz de quienes ya confiaron en nosotros y hoy recomiendan su experiencia en Google.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="rounded-[2rem] border border-oro/14 bg-[linear-gradient(180deg,rgba(242,185,13,0.08),rgba(22,22,22,0.92))] p-7 shadow-[0_18px_70px_rgba(0,0,0,0.28)]">
+                        <p className="mb-3 font-manrope text-[11px] uppercase tracking-[0.28em] text-oro/60">
+                            Lo que mas se repite
+                        </p>
+                        <p className="font-cormorant text-3xl leading-tight italic text-crema md:text-4xl">
+                            Naturalidad, contencion, claridad y resultados que si se sienten propios.
+                        </p>
+                    </div>
                 </div>
 
-                {/* Videos de testimonios — verticales estilo Reels */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+                <div className="mb-20 grid grid-cols-2 gap-4 md:grid-cols-4">
                     {videosTestimonios.map((video) => (
                         <VideoCard key={video.id} video={video} />
                     ))}
                 </div>
 
-                {/* Separador */}
-                <div className="flex items-center gap-6 mb-20">
-                    <div className="flex-1 h-px bg-oro/10" />
-                    <span className="text-oro/40 font-manrope text-xs uppercase tracking-widest">Lo que dicen en sus palabras</span>
-                    <div className="flex-1 h-px bg-oro/10" />
+                <div className="mb-10 flex items-center gap-6">
+                    <div className="h-px flex-1 bg-oro/10" />
+                    <span className="font-manrope text-xs uppercase tracking-[0.32em] text-oro/40">Google Reviews en movimiento</span>
+                    <div className="h-px flex-1 bg-oro/10" />
                 </div>
 
-                {/* Testimonios escritos */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {testimoniosEscritos.map((t) => (
-                        <div
-                            key={t.nombre}
-                            className={`rounded-2xl p-8 border transition-colors ${
-                                t.destacado
-                                    ? "border-oro/40 bg-oro/5"
-                                    : "border-oro/10 bg-carbon-soft hover:border-oro/20"
-                            }`}
-                        >
-                            <div className="flex items-start gap-4 mb-6">
-                                {/* Avatar placeholder */}
-                                <div className="w-10 h-10 rounded-full bg-oro/20 flex items-center justify-center flex-none">
-                                    <span className="text-oro font-manrope font-semibold text-sm">
-                                        {t.nombre.charAt(0)}
-                                    </span>
-                                </div>
-                                <div>
-                                    <div className="text-crema font-manrope font-medium text-sm">{t.nombre}</div>
-                                    <div className="text-oro/60 font-manrope text-xs">{t.tratamiento}</div>
-                                </div>
-                                <div className="ml-auto flex gap-0.5">
-                                    {[...Array(5)].map((_, i) => (
-                                        <svg key={i} className="w-3 h-3 text-oro fill-current" viewBox="0 0 24 24">
-                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                        </svg>
-                                    ))}
-                                </div>
-                            </div>
-                            <p className={`font-manrope leading-relaxed text-sm ${t.destacado ? "text-crema text-base" : "text-crema/70"}`}>
-                                &ldquo;{t.texto}&rdquo;
-                            </p>
+                <div
+                    className="mb-8 overflow-hidden"
+                    style={{
+                        WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+                        maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+                    }}
+                >
+                    <div className="reviews-marquee group flex gap-6">
+                        <div className="reviews-marquee-track flex min-w-max gap-6 group-hover:[animation-play-state:paused]">
+                            {marqueeTrack.map((review, index) => (
+                                <ReviewCard key={`${review.nombre}-${index}`} review={review} />
+                            ))}
                         </div>
-                    ))}
+                    </div>
                 </div>
 
+                <div
+                    className="mb-16 overflow-hidden"
+                    style={{
+                        WebkitMaskImage: "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
+                        maskImage: "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
+                    }}
+                >
+                    <div className="reviews-marquee group flex gap-6">
+                        <div className="reviews-marquee-track-reverse flex min-w-max gap-6 group-hover:[animation-play-state:paused]">
+                            {marqueeTrackReverse.map((review, index) => (
+                                <ReviewCard key={`${review.nombre}-reverse-${index}`} review={review} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+                    <ReviewCard review={highlightedReview} featured />
+
+                    <div className="grid gap-5 md:grid-cols-2">
+                        {testimoniosEscritos
+                            .filter((review) => !review.destacado)
+                            .slice(0, 4)
+                            .map((review) => (
+                                <ReviewCard key={`static-${review.nombre}`} review={review} />
+                            ))}
+                    </div>
+                </div>
             </div>
         </section>
     );

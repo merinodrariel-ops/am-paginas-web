@@ -69,6 +69,16 @@ body {
   100% { background-position: -200% center; }
 }
 
+@keyframes reviews-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 0.75rem)); }
+}
+
+@keyframes reviews-marquee-reverse {
+  from { transform: translateX(calc(-50% - 0.75rem)); }
+  to { transform: translateX(0); }
+}
+
 /* Comet button host — glow externo al overflow:hidden */
 .comet-btn {
   transition: box-shadow 0.55s ease, transform 0.25s ease;
@@ -79,4 +89,12 @@ body {
 }
 .comet-btn:active {
   transform: translateY(0) scale(0.988);
+}
+
+.reviews-marquee-track {
+  animation: reviews-marquee 34s linear infinite;
+}
+
+.reviews-marquee-track-reverse {
+  animation: reviews-marquee-reverse 38s linear infinite;
 }
