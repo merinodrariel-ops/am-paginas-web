@@ -42,3 +42,6 @@ next-env.d.ts
 
 # MCP config (contains API keys)
 .mcp.json
+
+# local worktrees
+.worktrees/
