@@ -21,7 +21,7 @@ export default function DrMerino() {
                     <div className="relative order-2 lg:order-1">
                         <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-carbon-soft border border-oro/10">
                             <Image
-                                src="/images/dr-merino/dr-ariel-merino-perfil-1.webp"
+                                src="/images/dr-merino/dr-ariel-merino-ambo-principal.webp"
                                 alt="Dr. Ariel Merino — Odontólogo Estético AM Estética Dental Puerto Madero"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
