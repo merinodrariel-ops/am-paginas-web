@@ -133,13 +133,22 @@ export default function DrMerino() {
                                 { valor: "16+", texto: "Años de experiencia" },
                                 { valor: "4.9★", texto: "Google Rating" },
                                 { valor: "Forbes", texto: "Reconocimiento editorial" },
-                                { valor: "100%", texto: "Casos reales propios" },
+                                { valor: "AOA", texto: "Posgrado Rehab. Oral & Estética" },
                             ].map((item) => (
                                 <div key={item.texto} className="border border-oro/10 rounded-xl p-4 bg-carbon-soft">
                                     <div className="text-oro font-manrope font-semibold text-xl mb-1">{item.valor}</div>
                                     <div className="text-crema-muted font-manrope text-xs">{item.texto}</div>
                                 </div>
                             ))}
+                        </div>
+
+                        {/* Formación */}
+                        <div className="mb-10 space-y-2">
+                            <p className="font-manrope text-[10px] uppercase tracking-[0.3em] text-oro/60">Formación</p>
+                            <p className="font-manrope text-xs text-crema/55 leading-relaxed">
+                                Odontólogo · UCALP (2010) · M.N. 34.869<br />
+                                Posgrado en Rehabilitación Oral y Estética · AOA
+                            </p>
                         </div>
 
                         <a
