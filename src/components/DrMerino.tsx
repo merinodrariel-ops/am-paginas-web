@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 // Sección crítica: el Doctor es la marca.
 // La auditoría detectó que las páginas de Equipo y Nosotros retornan 404 —
 // un paciente que va a gastar USD 5.000 en un procedimiento estético
@@ -18,11 +20,13 @@ export default function DrMerino() {
                     {/* Foto — placeholder hasta tener foto oficial del Dr. Merino */}
                     <div className="relative order-2 lg:order-1">
                         <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-carbon-soft border border-oro/10">
-                            {/* TODO: Reemplazar con foto real del Dr. Ariel Merino */}
-                            <img
-                                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1364&auto=format&fit=crop"
-                                alt="Dr. Ariel Merino — AM Estética Dental"
-                                className="w-full h-full object-cover object-center brightness-90"
+                            <Image
+                                src="/images/dr-merino/dr-ariel-merino-perfil-1.webp"
+                                alt="Dr. Ariel Merino — Odontólogo Estético AM Estética Dental Puerto Madero"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className="object-cover object-top brightness-90"
+                                priority
                             />
                             {/* Overlay dorado sutil */}
                             <div className="absolute inset-0 bg-gradient-to-t from-carbon/80 via-carbon/10 to-transparent" />
