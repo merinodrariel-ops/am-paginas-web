@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const REVIEWS = [
     { name: "Maria L.", text: "El resultado supero todas mis expectativas y me devolvio seguridad al sonreir." },
@@ -49,6 +51,41 @@ function LaurelBranch({ flip = false }: { flip?: boolean }) {
 export default function Autoridad() {
     const [reviewIdx, setReviewIdx] = useState(0);
     const [visible, setVisible] = useState(true);
+    const statsRef = useRef<HTMLDivElement>(null);
+    const cardsRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        const ctx = gsap.context(() => {
+            // Two main cards fade up
+            const cards = cardsRef.current?.querySelectorAll(":scope > a, :scope > div");
+            if (cards) {
+                gsap.from(cards, {
+                    y: 45,
+                    opacity: 0,
+                    duration: 0.85,
+                    stagger: 0.15,
+                    ease: "power2.out",
+                    scrollTrigger: { trigger: cardsRef.current, start: "top 80%" },
+                });
+            }
+
+            // Stats grid fade up
+            const statCells = statsRef.current?.querySelectorAll(":scope > div");
+            if (statCells) {
+                gsap.from(statCells, {
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.6,
+                    stagger: 0.12,
+                    ease: "power2.out",
+                    scrollTrigger: { trigger: statsRef.current, start: "top 85%" },
+                });
+            }
+        });
+
+        return () => ctx.revert();
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -73,7 +110,7 @@ export default function Autoridad() {
                     </span>
                 </div>
 
-                <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div ref={cardsRef} className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                     <a
                         href="https://g.page/r/CQ3df5Xn-J6oEBM/review"
                         target="_blank"
@@ -81,11 +118,15 @@ export default function Autoridad() {
                         className="group/google relative overflow-hidden rounded-2xl border border-oro/18 bg-[radial-gradient(circle_at_top,rgba(242,185,13,0.12),transparent_48%),linear-gradient(180deg,rgba(22,22,22,1),rgba(13,13,13,1))] p-8 block transition-all hover:border-oro/35"
                     >
                         <div
-                            className="absolute inset-0 rounded-2xl"
+                            className="pointer-events-none absolute inset-0 rounded-2xl p-px"
                             style={{
                                 background:
-                                    "conic-gradient(from 0deg, transparent 0deg, transparent 304deg, rgba(242,185,13,0.08) 322deg, rgba(255,248,210,0.85) 352deg, transparent 360deg)",
-                                animation: "comet-orbit 4.2s linear infinite",
+                                    "conic-gradient(from 0deg, transparent 0deg, transparent 316deg, rgba(242,185,13,0.1) 332deg, rgba(255,244,189,0.92) 348deg, transparent 360deg)",
+                                animation: "comet-orbit 6.8s linear infinite",
+                                WebkitMask:
+                                    "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                                WebkitMaskComposite: "xor",
+                                maskComposite: "exclude",
                             }}
                         />
                         <div className="relative flex h-full flex-col justify-between gap-8 rounded-[calc(1rem-1px)] border border-white/4 bg-carbon/82 p-6 backdrop-blur-sm">
@@ -139,6 +180,18 @@ export default function Autoridad() {
                         className="group relative flex flex-col overflow-hidden rounded-2xl border border-oro/20 bg-carbon-soft p-8 transition-colors hover:border-oro/30"
                     >
                         <div
+                            className="pointer-events-none absolute inset-0 rounded-2xl p-px"
+                            style={{
+                                background:
+                                    "conic-gradient(from 0deg, transparent 0deg, transparent 320deg, rgba(242,185,13,0.08) 336deg, rgba(255,244,189,0.78) 350deg, transparent 360deg)",
+                                animation: "comet-orbit 8.2s linear infinite",
+                                WebkitMask:
+                                    "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                                WebkitMaskComposite: "xor",
+                                maskComposite: "exclude",
+                            }}
+                        />
+                        <div
                             className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
                             style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(242,185,13,0.07) 0%, transparent 65%)" }}
                         />
@@ -181,7 +234,7 @@ export default function Autoridad() {
                     </a>
                 </div>
 
-                <div className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-oro/10 bg-oro/10">
+                <div ref={statsRef} className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-oro/10 bg-oro/10">
                     {[
                         { number: "10+", label: "Anos de experiencia", sub: "Dr. Ariel Merino" },
                         { number: "Miss Universo", label: "Sonrisa mas estudiada", sub: "del mundo" },

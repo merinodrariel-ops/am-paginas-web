@@ -1,5 +1,9 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 // Sección de diferenciación explícita.
 // El análisis competitivo reveló que NINGÚN competidor en CABA tiene
 // una página de diferenciación. Esta sección captura a quien está comparando.
@@ -38,12 +42,51 @@ const diferenciadores = [
 ];
 
 export default function PorQueAM() {
+    const sectionRef = useRef<HTMLElement>(null);
+    const headingRef = useRef<HTMLDivElement>(null);
+    const gridRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        const ctx = gsap.context(() => {
+            // Heading fade-up
+            gsap.from(headingRef.current, {
+                y: 40,
+                opacity: 0,
+                duration: 0.9,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: headingRef.current,
+                    start: "top 82%",
+                },
+            });
+
+            // Cards stagger in
+            const cards = gridRef.current?.querySelectorAll(".diferenciador-card");
+            if (cards) {
+                gsap.from(cards, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.7,
+                    stagger: 0.1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: gridRef.current,
+                        start: "top 80%",
+                    },
+                });
+            }
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section className="py-32 px-4 bg-carbon-soft relative z-10">
+        <section ref={sectionRef} className="py-32 px-4 bg-carbon-soft relative z-10">
             <div className="max-w-6xl mx-auto">
 
                 {/* Header */}
-                <div className="mb-20">
+                <div ref={headingRef} className="mb-20">
                     <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
                         Por qué AM Estética Dental
                     </span>
@@ -59,11 +102,11 @@ export default function PorQueAM() {
                 </div>
 
                 {/* Grilla de diferenciadores */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-oro/10">
+                <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-oro/10">
                     {diferenciadores.map((d) => (
                         <div
                             key={d.titulo}
-                            className="bg-carbon p-8 hover:bg-carbon-soft transition-colors group"
+                            className="diferenciador-card bg-carbon p-8 hover:bg-carbon-soft transition-colors group"
                         >
                             <div className="text-oro text-xl mb-6 group-hover:scale-110 transition-transform inline-block">
                                 {d.icono}
