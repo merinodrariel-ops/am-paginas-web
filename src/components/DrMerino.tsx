@@ -1,6 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Sección crítica: el Doctor es la marca.
 // La auditoría detectó que las páginas de Equipo y Nosotros retornan 404 —
@@ -8,8 +11,60 @@ import Image from "next/image";
 // necesita conocer a la persona que lo va a tratar. Esta sección lo resuelve.
 
 export default function DrMerino() {
+    const sectionRef = useRef<HTMLElement>(null);
+    const photoRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            // Blanco y negro → color, scrubbeado al scroll
+            gsap.fromTo(
+                photoRef.current,
+                { filter: "grayscale(1) brightness(0.65) contrast(1.05)" },
+                {
+                    filter: "grayscale(0) brightness(0.9) contrast(1)",
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top 70%",
+                        end: "center 40%",
+                        scrub: 1.2,
+                    },
+                }
+            );
+
+            // Leve parallax vertical en la foto (sube más lento que el scroll)
+            gsap.to(photoRef.current, {
+                y: -40,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true,
+                },
+            });
+
+            // Contenido texto: fade + slide desde la derecha
+            gsap.from(contentRef.current, {
+                x: 40,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 75%",
+                },
+            });
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section id="clinica" className="py-32 px-4 bg-carbon relative overflow-hidden">
+        <section ref={sectionRef} id="clinica" className="py-32 px-4 bg-carbon relative overflow-hidden">
 
             {/* Línea dorada decorativa izquierda */}
             <div className="absolute left-0 top-1/4 bottom-1/4 w-px bg-gradient-to-b from-oro/0 via-oro/30 to-oro/0" />
@@ -17,15 +72,15 @@ export default function DrMerino() {
             <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                    {/* Foto — placeholder hasta tener foto oficial del Dr. Merino */}
+                    {/* Foto */}
                     <div className="relative order-2 lg:order-1">
-                        <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-carbon-soft border border-oro/10">
+                        <div ref={photoRef} className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-carbon-soft border border-oro/10" style={{ filter: "grayscale(1) brightness(0.65) contrast(1.05)" }}>
                             <Image
                                 src="/images/dr-merino/dr-ariel-merino-ambo-principal.webp"
                                 alt="Dr. Ariel Merino — Odontólogo Estético AM Estética Dental Puerto Madero"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
-                                className="object-cover object-top brightness-90"
+                                className="object-cover object-top"
                                 priority
                             />
                             {/* Overlay dorado sutil */}
@@ -48,7 +103,7 @@ export default function DrMerino() {
                     </div>
 
                     {/* Contenido */}
-                    <div className="order-1 lg:order-2">
+                    <div ref={contentRef} className="order-1 lg:order-2">
                         <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">
                             El especialista
                         </span>
