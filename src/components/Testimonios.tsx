@@ -129,11 +129,15 @@ function VideoCard({ video }: { video: typeof videosTestimonios[0] }) {
                         >
                             <span className="absolute inset-0 rounded-full bg-[linear-gradient(120deg,#8f5b11_0%,#c88412_18%,#f0b10d_36%,#fff0b1_52%,#f4c646_68%,#8f5b11_100%)] shadow-[0_0_22px_rgba(242,185,13,0.26)]" />
                             <span
-                                className="absolute inset-[-5px] rounded-full opacity-70"
+                                className="absolute inset-[-4px] rounded-full p-px opacity-90"
                                 style={{
                                     background:
-                                        "conic-gradient(from 0deg, transparent 0deg, transparent 308deg, rgba(242,185,13,0.06) 326deg, rgba(255,250,214,0.9) 350deg, transparent 360deg)",
-                                    animation: "comet-orbit 8.5s linear infinite",
+                                        "conic-gradient(from 0deg, transparent 0deg, transparent 318deg, rgba(242,185,13,0.12) 336deg, rgba(255,248,210,0.95) 350deg, transparent 360deg)",
+                                    animation: "comet-orbit 7.4s linear infinite",
+                                    WebkitMask:
+                                        "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                                    WebkitMaskComposite: "xor",
+                                    maskComposite: "exclude",
                                 }}
                             />
                             <svg className="relative z-10 ml-1 h-6 w-6 text-carbon" fill="currentColor" viewBox="0 0 24 24">

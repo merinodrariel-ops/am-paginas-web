@@ -117,7 +117,7 @@ export default function DrMerino() {
 
                         <div className="space-y-6 mb-12">
                             <p className="text-crema/80 font-manrope leading-relaxed">
-                                Más de <strong className="text-crema">10 años</strong> redefiniendo lo que significa una sonrisa de alto nivel en Argentina. No desde un consultorio genérico — desde Puerto Madero, donde el estándar internacional no es una aspiración sino una exigencia diaria.
+                                Más de <strong className="text-crema">15 años</strong> redefiniendo lo que significa una sonrisa de alto nivel en Argentina. No desde un consultorio genérico — desde Puerto Madero, donde el estándar internacional no es una aspiración sino una exigencia diaria.
                             </p>
                             <p className="text-crema/80 font-manrope leading-relaxed">
                                 Nuestros pacientes son <strong className="text-crema">profesionales, empresarios y figuras públicas</strong> que no aceptan resultados promedio porque sus sonrisas viven bajo escrutinio. Miss Universo confió en el equipo. Forbes reconoció a AM Estética Dental como la única clínica dental del país en sus páginas.
@@ -130,7 +130,7 @@ export default function DrMerino() {
                         {/* Credenciales */}
                         <div className="grid grid-cols-2 gap-4 mb-10">
                             {[
-                                { valor: "10+", texto: "Años de experiencia" },
+                                { valor: "15+", texto: "Años de experiencia" },
                                 { valor: "4.9★", texto: "Google Rating" },
                                 { valor: "Forbes", texto: "Reconocimiento editorial" },
                                 { valor: "100%", texto: "Casos reales propios" },

@@ -236,7 +236,7 @@ export default function Autoridad() {
 
                 <div ref={statsRef} className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-oro/10 bg-oro/10">
                     {[
-                        { number: "10+", label: "Anos de experiencia", sub: "Dr. Ariel Merino" },
+                        { number: "15+", label: "Anos de experiencia", sub: "Dr. Ariel Merino" },
                         { number: "Miss Universo", label: "Sonrisa mas estudiada", sub: "del mundo" },
                         { number: "100%", label: "Casos reales", sub: "Sin stock, sin filtros" },
                     ].map((stat) => (

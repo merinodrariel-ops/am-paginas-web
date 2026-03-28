@@ -226,7 +226,7 @@ export default function AlineadoresInvisiblesPage() {
                                 Cada caso de alineadores es planificado y seguido directamente por el Dr. Merino. No delegamos. No hay residentes. La planificación digital es revisada sesión a sesión para garantizar que el resultado coincide con lo que acordamos al inicio.
                             </p>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed">
-                                Reconocido por Forbes Argentina. Elegido para diseñar la sonrisa de Miss Universo. Más de 10 años dedicados exclusivamente a la estética dental en Puerto Madero.
+                                Reconocido por Forbes Argentina. Elegido para diseñar la sonrisa de Miss Universo. Más de 15 años dedicados exclusivamente a la estética dental en Puerto Madero.
                             </p>
                         </div>
                         <div className="grid grid-cols-2 gap-4">
@@ -234,7 +234,7 @@ export default function AlineadoresInvisiblesPage() {
                                 { v: "4.9★", l: "Google" },
                                 { v: "Forbes", l: "Argentina" },
                                 { v: "Miss Universo", l: "Paciente" },
-                                { v: "10+", l: "Años" },
+                                { v: "15+", l: "Años" },
                             ].map((s) => (
                                 <div key={s.l} className="border border-oro/15 rounded-xl px-4 py-5 text-center bg-carbon-soft">
                                     <div className="text-oro font-manrope font-semibold text-base">{s.v}</div>

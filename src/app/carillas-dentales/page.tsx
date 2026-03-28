@@ -125,7 +125,7 @@ export default function CarillasDentalesPage() {
                             {[
                                 { v: "4.9★", l: "Google Reviews" },
                                 { v: "Forbes", l: "Argentina" },
-                                { v: "10+", l: "Años" },
+                                { v: "15+", l: "Años" },
                             ].map((s) => (
                                 <div key={s.l}>
                                     <div className="text-oro font-manrope font-semibold text-lg">{s.v}</div>
@@ -252,7 +252,7 @@ export default function CarillasDentalesPage() {
                                 <span className="font-cormorant italic text-oro">Odontólogo Estético</span>
                             </h2>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
-                                Más de 10 años dedicados exclusivamente a la estética dental. La única clínica odontológica de Argentina reconocida por Forbes. El Dr. Merino fue elegido para diseñar la sonrisa de Miss Universo.
+                                Más de 15 años dedicados exclusivamente a la estética dental. La única clínica odontológica de Argentina reconocida por Forbes. El Dr. Merino fue elegido para diseñar la sonrisa de Miss Universo.
                             </p>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed">
                                 Cada caso de carillas es evaluado personalmente, con criterio clínico y estético, para lograr un resultado natural que dure décadas.
