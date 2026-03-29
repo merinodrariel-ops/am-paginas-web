@@ -66,7 +66,12 @@ export default function Autoridad() {
                     duration: 0.85,
                     stagger: 0.15,
                     ease: "power2.out",
-                    scrollTrigger: { trigger: cardsRef.current, start: "top 80%" },
+                    immediateRender: false,
+                    scrollTrigger: {
+                        trigger: cardsRef.current,
+                        start: "top 80%",
+                        once: true,
+                    },
                 });
             }
 
@@ -79,7 +84,12 @@ export default function Autoridad() {
                     duration: 0.6,
                     stagger: 0.12,
                     ease: "power2.out",
-                    scrollTrigger: { trigger: statsRef.current, start: "top 85%" },
+                    immediateRender: false,
+                    scrollTrigger: {
+                        trigger: statsRef.current,
+                        start: "top 85%",
+                        once: true,
+                    },
                 });
             }
         });

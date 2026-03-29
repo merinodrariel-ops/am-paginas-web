@@ -55,9 +55,11 @@ export default function PorQueAM() {
                 opacity: 0,
                 duration: 0.9,
                 ease: "power2.out",
+                immediateRender: false,
                 scrollTrigger: {
                     trigger: headingRef.current,
                     start: "top 82%",
+                    once: true,
                 },
             });
 
@@ -70,9 +72,11 @@ export default function PorQueAM() {
                     duration: 0.7,
                     stagger: 0.1,
                     ease: "power2.out",
+                    immediateRender: false,
                     scrollTrigger: {
                         trigger: gridRef.current,
                         start: "top 80%",
+                        once: true,
                     },
                 });
             }
