@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useCallback } from "react";
 
 const testimoniosEscritos = [
     {
@@ -157,6 +157,118 @@ function VideoCard({ video }: { video: typeof videosTestimonios[0] }) {
     );
 }
 
+// Visible slides: 3 on desktop, 1 on mobile
+const VISIBLE_DESKTOP = 3;
+const VISIBLE_MOBILE  = 1;
+
+function VideoCarousel() {
+    const [idx, setIdx] = useState(0);
+    const total = videosTestimonios.length;
+
+    const maxIdx = useCallback(
+        (visible: number) => Math.max(0, total - visible),
+        [total]
+    );
+
+    const prev = () => setIdx((i) => Math.max(0, i - 1));
+    const next = (visible: number) => setIdx((i) => Math.min(maxIdx(visible), i + 1));
+
+    // offset as % of track width
+    const offsetDesktop = `calc(${idx} * (100% / ${VISIBLE_DESKTOP}) * -1)`;
+    const offsetMobile  = `calc(${idx} * -100%)`;
+
+    const canPrev = idx > 0;
+
+    return (
+        <div className="relative">
+            {/* ── Carousel track ── */}
+            <div className="overflow-hidden">
+                {/* Mobile: 1 visible */}
+                <div
+                    className="flex md:hidden transition-transform duration-500 ease-out"
+                    style={{ transform: `translateX(${offsetMobile})` }}
+                >
+                    {videosTestimonios.map((video) => (
+                        <div key={video.id} className="flex-shrink-0 w-full px-4">
+                            <VideoCard video={video} />
+                        </div>
+                    ))}
+                </div>
+
+                {/* Desktop: 3 visible */}
+                <div
+                    className="hidden md:flex transition-transform duration-500 ease-out"
+                    style={{ transform: `translateX(${offsetDesktop})` }}
+                >
+                    {videosTestimonios.map((video) => (
+                        <div
+                            key={video.id}
+                            className="flex-shrink-0 px-3"
+                            style={{ width: `calc(100% / ${VISIBLE_DESKTOP})` }}
+                        >
+                            <VideoCard video={video} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* ── Navigation ── */}
+            <div className="mt-8 flex items-center justify-between px-4 md:px-2">
+                {/* Dots */}
+                <div className="flex gap-2">
+                    {/* Mobile dots: 4 */}
+                    {videosTestimonios.map((_, i) => (
+                        <button
+                            key={i}
+                            onClick={() => setIdx(i)}
+                            className={`md:hidden h-1.5 rounded-full transition-all duration-300 ${
+                                i === idx ? "w-6 bg-oro" : "w-1.5 bg-crema/20"
+                            }`}
+                            aria-label={`Ir al testimonio ${i + 1}`}
+                        />
+                    ))}
+                    {/* Desktop dots: 2 positions */}
+                    {Array.from({ length: maxIdx(VISIBLE_DESKTOP) + 1 }).map((_, i) => (
+                        <button
+                            key={i}
+                            onClick={() => setIdx(i)}
+                            className={`hidden md:block h-1.5 rounded-full transition-all duration-300 ${
+                                i === idx ? "w-6 bg-oro" : "w-1.5 bg-crema/20"
+                            }`}
+                            aria-label={`Ir a la posición ${i + 1}`}
+                        />
+                    ))}
+                </div>
+
+                {/* Arrows */}
+                <div className="flex gap-3">
+                    <button
+                        onClick={prev}
+                        disabled={!canPrev}
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-oro/20 text-crema/60 transition-all hover:border-oro/50 hover:text-oro disabled:opacity-20 disabled:cursor-not-allowed"
+                        aria-label="Anterior"
+                    >
+                        <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    {/* Mobile: max = total-1 | Desktop: max = total-3 */}
+                    <button
+                        onClick={() => next(VISIBLE_MOBILE)}
+                        disabled={idx >= maxIdx(VISIBLE_MOBILE)}
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-oro/20 text-crema/60 transition-all hover:border-oro/50 hover:text-oro disabled:opacity-20 disabled:cursor-not-allowed"
+                        aria-label="Siguiente"
+                    >
+                        <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
 export default function Testimonios() {
     const marqueeTrack = useMemo(() => [...testimoniosEscritos, ...testimoniosEscritos], []);
     const marqueeTrackReverse = useMemo(() => [...testimoniosEscritos].reverse().concat([...testimoniosEscritos].reverse()), []);
@@ -175,10 +287,8 @@ export default function Testimonios() {
                             <span className="font-cormorant italic text-oro">en sus propias palabras</span>
                         </h2>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 px-4 md:grid-cols-4 md:px-8">
-                        {videosTestimonios.map((video) => (
-                            <VideoCard key={video.id} video={video} />
-                        ))}
+                    <div className="px-1 md:px-5">
+                        <VideoCarousel />
                     </div>
                 </div>
             </section>
