@@ -1,12 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Casos from "@/components/Casos";
+import Testimonios from "@/components/Testimonios";
 import Autoridad from "@/components/Autoridad";
 import Tratamientos from "@/components/Tratamientos";
 import Features from "@/components/Features";
 import DrMerino from "@/components/DrMerino";
-import Casos from "@/components/Casos";
 import Clinica from "@/components/Clinica";
-import Testimonios from "@/components/Testimonios";
 import PorQueAM from "@/components/PorQueAM";
 import Prensa from "@/components/Prensa";
 import ClientesVIP from "@/components/ClientesVIP";
@@ -22,43 +22,43 @@ export default function Home() {
       {/* 1. HERO — impacto visual. El primer segundo decide todo. */}
       <Hero />
 
-      {/* 2. CONFIANZA — autoridad compacta antes de entrar al tratamiento. */}
-      <Autoridad />
-
-      {/* 3. TRATAMIENTOS — carillas y diseño de sonrisa primero. */}
-      <Tratamientos />
-
-      {/* 4. PROCESO — la tecnología que sostiene resultados naturales. */}
-      <Features />
-
-      {/* 5. DR. MERINO — criterio clínico y dirección del caso. */}
-      <DrMerino />
-
-      {/* 6. CLÍNICA — el espacio físico refuerza el estándar premium. */}
-      <Clinica />
-
-      {/* 7. CASOS — evidencia visual antes de la prueba social extendida. */}
+      {/* 2. CASOS — resultados reales inmediatos. La gente entra a ver esto. */}
       <Casos />
 
-      {/* 7. TESTIMONIOS — validación emocional y social. */}
+      {/* 3. TESTIMONIOS — validación social mientras los casos están frescos. */}
       <Testimonios />
 
-      {/* 8. POR QUÉ AM — diferenciación explícita frente a ofertas genéricas. */}
+      {/* 4. AUTORIDAD — Google 4.9 + Forbes refuerzan lo que ya vieron. */}
+      <Autoridad />
+
+      {/* 5. TRATAMIENTOS — ahora que vieron resultados, quieren saber cómo. */}
+      <Tratamientos />
+
+      {/* 6. PROCESO — la tecnología que sostiene resultados naturales. */}
+      <Features />
+
+      {/* 7. DR. MERINO — quién está detrás de los casos. */}
+      <DrMerino />
+
+      {/* 8. CLÍNICA — el espacio físico refuerza el estándar premium. */}
+      <Clinica />
+
+      {/* 9. POR QUÉ AM — diferenciación explícita frente a ofertas genéricas. */}
       <PorQueAM />
 
-      {/* 9. PRENSA — autoridad editorial como refuerzo, no como apertura. */}
+      {/* 10. PRENSA — autoridad editorial como refuerzo. */}
       <Prensa />
 
-      {/* 10. CLIENTES VIP — prueba aspiracional después de entender la propuesta. */}
+      {/* 11. CLIENTES VIP — prueba aspiracional. */}
       <ClientesVIP />
 
-      {/* 11. FINANCIACIÓN — cierre racional cuando el deseo ya está construido. */}
+      {/* 12. FINANCIACIÓN — cierre racional cuando el deseo ya está construido. */}
       <Financiacion />
 
-      {/* 12. FAQ — objeciones y búsquedas de alta intención. */}
+      {/* 13. FAQ — objeciones y búsquedas de alta intención. */}
       <FAQ />
 
-      {/* 13. CONTACTO — cierre limpio con CTA final. */}
+      {/* 14. CONTACTO — cierre limpio con CTA final. */}
       <Contacto />
     </main>
   );
