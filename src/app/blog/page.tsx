@@ -54,9 +54,16 @@ const ARTICULOS = [
         categoria: "Proceso",
         lectura: "4 min",
     },
+    {
+        slug: "preguntas-antes-de-hacerse-carillas",
+        titulo: "Preguntas que hacerle a tu odontólogo antes de hacerte carillas",
+        descripcion: "Hay cinco preguntas que todo especialista serio debe poder responderte. Si alguna respuesta es vaga, eso también es información valiosa.",
+        categoria: "Guía",
+        lectura: "6 min",
+    },
 ];
 
-const CATEGORIAS = ["Todos", "Carillas", "Diseño de Sonrisa", "Casos", "Proceso"];
+const CATEGORIAS = ["Todos", "Carillas", "Diseño de Sonrisa", "Casos", "Proceso", "Guía"];
 
 export default function BlogPage() {
     return (

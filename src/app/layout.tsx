@@ -86,6 +86,7 @@ const schemaOrg = {
     "jobTitle": "Odontólogo Estético",
     "sameAs": [
       "https://www.wikidata.org/wiki/Q138828257",
+      "https://es.wikipedia.org/wiki/Ariel_Merino_(odont%C3%B3logo)",
       "https://www.instagram.com/drarielmerino",
       "https://www.tiktok.com/@drarielmerino",
       "https://www.linkedin.com/in/arielmerinoodontologiaestetica",
