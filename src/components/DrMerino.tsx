@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -151,15 +152,24 @@ export default function DrMerino() {
                             </p>
                         </div>
 
-                        <a
-                            href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20gustar%C3%ADa%20agendar%20una%20consulta%20con%20el%20Dr.%20Merino."
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-3 bg-oro text-carbon px-7 py-3.5 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-all"
-                        >
-                            Consultar con el Dr. Merino
-                            <span>→</span>
-                        </a>
+                        <div className="flex flex-col sm:flex-row gap-4 items-start">
+                            <a
+                                href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20gustar%C3%ADa%20agendar%20una%20consulta%20con%20el%20Dr.%20Merino."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 bg-oro text-carbon px-7 py-3.5 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-all"
+                            >
+                                Consultar con el Dr. Merino
+                                <span>→</span>
+                            </a>
+                            <Link
+                                href="/dr-ariel-merino"
+                                className="inline-flex items-center gap-2 text-crema/60 font-manrope text-sm hover:text-crema transition-colors pt-1"
+                            >
+                                Ver perfil completo
+                                <span>→</span>
+                            </Link>
+                        </div>
                     </div>
 
                 </div>

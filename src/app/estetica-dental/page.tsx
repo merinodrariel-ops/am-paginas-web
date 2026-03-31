@@ -192,6 +192,12 @@ export default function EsteticaDentalPage() {
                             <p className="text-crema/70 font-manrope text-base leading-relaxed">
                                 Cada paciente es atendido personalmente por el Dr. Merino. No delegamos casos. No hay residentes. Cada evaluación, cada diseño y cada colocación pasa por su criterio directo.
                             </p>
+                            <Link
+                                href="/dr-ariel-merino"
+                                className="inline-flex items-center gap-2 text-oro font-manrope text-sm mt-6 hover:text-oro-light transition-colors"
+                            >
+                                Ver perfil completo del Dr. Ariel Merino →
+                            </Link>
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                             {[

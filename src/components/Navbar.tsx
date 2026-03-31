@@ -21,6 +21,7 @@ const FEATURED_LINKS = [
     { label: "Carillas", href: "/carillas-dentales" },
     { label: "Lentes", href: "/lentes-de-contacto-dental" },
     { label: "Invisalign", href: "/invisalign" },
+    { label: "Dr. Merino", href: "/dr-ariel-merino" },
     { label: "Precio", href: "/precio-carillas-dentales-buenos-aires" },
 ];
 

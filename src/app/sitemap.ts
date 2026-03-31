@@ -51,6 +51,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://amesteticadental.com/dr-ariel-merino",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://amesteticadental.com/precio-carillas-dentales-buenos-aires",
       lastModified: new Date(),
       changeFrequency: "monthly",
