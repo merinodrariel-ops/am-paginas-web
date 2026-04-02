@@ -153,7 +153,7 @@ const faqSchema = {
       "name": "¿Cómo funciona la financiación?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Financiamos el 50% del valor del tratamiento con un anticipo del 50% y una tasa fija anual del 18% (1,5% mensual). Las cuotas son en 3, 6 o 12 meses. Los valores en USD se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago."
+        "text": "Trabajamos con financiación propia y tasa fija anual del 18% sobre el saldo financiado. Podés simular tu plan con 30% o 50% de anticipo y ver cómo quedarían las cuotas a 3, 6 o 12 meses. Los valores en USD se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago."
       }
     },
     {

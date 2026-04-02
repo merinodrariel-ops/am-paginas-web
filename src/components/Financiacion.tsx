@@ -2,11 +2,20 @@
 
 import { useState } from "react";
 
-// Simulador de financiación — 50% anticipo + 50% financiado
-// TNA 18% fija. Mostramos anticipo + cuota, no el total final.
+// Simulador de financiación con monto libre.
+// La TNA es 18% fija sobre el saldo financiado.
 
 const TASA_ANUAL = 0.18;
 const TASA_MENSUAL = TASA_ANUAL / 12;
+
+function formatearMonto(valor: number): string {
+    return valor.toLocaleString("es-AR");
+}
+
+function parsearMontoInput(valor: string): number {
+    const soloDigitos = valor.replace(/\D/g, "");
+    return Number(soloDigitos || 0);
+}
 
 function calcularCuota(monto: number, cuotas: number): number {
     if (cuotas === 1) return monto;
@@ -15,12 +24,12 @@ function calcularCuota(monto: number, cuotas: number): number {
 }
 
 export default function Financiacion() {
-    const [monto, setMonto] = useState(2000);
-    const [cuotas, setCuotas] = useState(6);
+    const [montoInput, setMontoInput] = useState("20000");
+    const [anticipoPorcentaje, setAnticipoPorcentaje] = useState(0.5);
 
-    const anticipo = monto * 0.5;
-    const montoFinanciado = monto * 0.5;
-    const cuotaMensual = calcularCuota(montoFinanciado, cuotas);
+    const monto = Math.max(parsearMontoInput(montoInput), 0);
+    const anticipo = monto * anticipoPorcentaje;
+    const montoFinanciado = Math.max(monto - anticipo, 0);
     const opcionesCuotas = [3, 6, 12];
 
     return (
@@ -43,7 +52,7 @@ export default function Financiacion() {
                         <span className="font-cormorant italic text-oro">ahora mismo</span>
                     </h2>
                     <p className="text-crema-muted font-manrope text-lg font-light max-w-xl mx-auto">
-                        50% de anticipo. El resto en 3, 6 o 12 cuotas fijas. Pagás en USD o en pesos al tipo de cambio oficial del Banco Nación del día.
+                        Ingresá el monto de tu presupuesto, elegí si querés dar 30% o 50% de anticipo y mirá cómo quedarían las cuotas a 3, 6 o 12 meses. Pagás en USD o en pesos al tipo de cambio oficial del Banco Nación del día.
                     </p>
                 </div>
 
@@ -57,41 +66,38 @@ export default function Financiacion() {
                             <label className="text-crema font-manrope text-sm font-medium block mb-4">
                                 Valor total del tratamiento (USD)
                             </label>
-                            <div className="flex items-center gap-4">
-                                <span className="text-oro font-manrope text-2xl font-light">$ {monto.toLocaleString("en-US")}</span>
+                            <div className="flex items-center rounded-xl border border-oro/15 bg-carbon px-5 py-4">
+                                <span className="text-oro font-manrope text-lg mr-3">US$</span>
+                                <input
+                                    type="text"
+                                    inputMode="numeric"
+                                    value={monto === 0 && montoInput === "" ? "" : formatearMonto(monto)}
+                                    onChange={(e) => setMontoInput(e.target.value)}
+                                    className="w-full bg-transparent text-crema font-manrope text-2xl font-light outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                                />
                             </div>
-                            <input
-                                type="range"
-                                min={500}
-                                max={15000}
-                                step={500}
-                                value={monto}
-                                onChange={(e) => setMonto(Number(e.target.value))}
-                                className="w-full mt-4 accent-[#f2b90d]"
-                            />
-                            <div className="flex justify-between text-crema-muted font-manrope text-xs mt-1">
-                                <span>USD 500</span>
-                                <span>USD 15.000</span>
-                            </div>
+                            <p className="text-crema/40 font-manrope text-xs mt-3 leading-relaxed">
+                                Podés escribir cualquier monto. Por ejemplo: 15000, 24000, 26000 o 30000.
+                            </p>
                         </div>
 
-                        {/* Cuotas */}
+                        {/* Anticipo */}
                         <div>
                             <label className="text-crema font-manrope text-sm font-medium block mb-4">
-                                Cantidad de cuotas
+                                Anticipo inicial
                             </label>
-                            <div className="grid grid-cols-3 gap-3">
-                                {opcionesCuotas.map((n) => (
+                            <div className="grid grid-cols-2 gap-3">
+                                {[0.3, 0.5].map((porcentaje) => (
                                     <button
-                                        key={n}
-                                        onClick={() => setCuotas(n)}
+                                        key={porcentaje}
+                                        onClick={() => setAnticipoPorcentaje(porcentaje)}
                                         className={`py-3 rounded-xl font-manrope font-medium text-sm transition-all border ${
-                                            cuotas === n
+                                            anticipoPorcentaje === porcentaje
                                                 ? "bg-oro text-carbon border-oro"
                                                 : "bg-carbon border-oro/20 text-crema/70 hover:border-oro/40"
                                         }`}
                                     >
-                                        {n} cuotas
+                                        {Math.round(porcentaje * 100)}% de anticipo
                                     </button>
                                 ))}
                             </div>
@@ -106,35 +112,57 @@ export default function Financiacion() {
                             <div className="rounded-xl border border-oro/15 bg-carbon px-6 py-5 flex items-center justify-between">
                                 <div>
                                     <span className="text-crema/50 font-manrope uppercase tracking-[0.3em] text-[10px] block mb-1">Pagás hoy</span>
-                                    <span className="text-crema font-manrope font-light text-sm">Anticipo del 50%</span>
+                                    <span className="text-crema font-manrope font-light text-sm">Anticipo del {Math.round(anticipoPorcentaje * 100)}%</span>
                                 </div>
                                 <span className="text-crema font-manrope font-semibold text-xl">
-                                    USD {anticipo.toLocaleString("en-US", { minimumFractionDigits: 0 })}
+                                    US$ {formatearMonto(Math.round(anticipo))}
                                 </span>
                             </div>
 
-                            {/* Cuota — protagonista */}
-                            <div className="rounded-xl border border-oro/40 bg-oro/8 px-6 py-6 flex items-center justify-between">
+                            <div className="rounded-xl border border-oro/15 bg-carbon px-6 py-5 flex items-center justify-between">
                                 <div>
-                                    <span className="text-oro/70 font-manrope uppercase tracking-[0.3em] text-[10px] block mb-1">Tu cuota mensual</span>
-                                    <span className="text-crema font-manrope font-light text-sm">{cuotas} pagos iguales y fijos</span>
+                                    <span className="text-crema/50 font-manrope uppercase tracking-[0.3em] text-[10px] block mb-1">Saldo financiado</span>
+                                    <span className="text-crema/45 font-manrope font-light text-xs">Base sobre la que se calcula la financiación</span>
                                 </div>
-                                <div className="text-right">
-                                    <span className="text-oro font-manrope font-light text-3xl">
-                                        USD {cuotaMensual.toFixed(0)}
-                                    </span>
-                                    <span className="text-oro/50 font-manrope text-xs block">/mes</span>
-                                </div>
+                                <span className="text-crema font-manrope font-semibold text-xl">
+                                    US$ {formatearMonto(Math.round(montoFinanciado))}
+                                </span>
+                            </div>
+
+                            {/* Cuotas */}
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                {opcionesCuotas.map((n) => {
+                                    const cuotaMensual = calcularCuota(montoFinanciado, n);
+
+                                    return (
+                                        <div key={n} className="rounded-xl border border-oro/40 bg-oro/8 px-5 py-5">
+                                            <span className="text-oro/70 font-manrope uppercase tracking-[0.3em] text-[10px] block mb-2">
+                                                {n} cuotas
+                                            </span>
+                                            <span className="text-crema font-manrope font-light text-sm block mb-4">
+                                                Pagos iguales y fijos
+                                            </span>
+                                            <span className="text-oro font-manrope font-light text-3xl block">
+                                                US$ {formatearMonto(Math.round(cuotaMensual))}
+                                            </span>
+                                            <span className="text-oro/50 font-manrope text-xs block mt-1">/mes</span>
+                                        </div>
+                                    );
+                                })}
                             </div>
 
                         </div>
 
-                        <p className="text-crema/30 font-manrope text-xs mb-6 leading-relaxed">
-                            Valores en USD. Podés abonar en pesos al tipo de cambio oficial Banco Nación del día de pago.
+                        <p className="text-crema/30 font-manrope text-xs mb-2 leading-relaxed">
+                            Valores en USD. La TNA es 18% anual sobre el saldo financiado. Podés abonar en pesos al tipo de cambio oficial Banco Nación del día de pago.
+                        </p>
+
+                        <p className="text-crema/24 font-manrope text-[11px] mb-6 leading-relaxed">
+                            Financiación sujeta a evaluación y preaprobación de cada caso.
                         </p>
 
                         <a
-                            href={`https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Simul%C3%A9%20un%20tratamiento%20de%20USD%20${monto}%20en%20${cuotas}%20cuotas.%20Me%20gustar%C3%ADa%20agendar%20una%20consulta.`}
+                            href={`https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Simul%C3%A9%20un%20tratamiento%20de%20USD%20${monto}%20con%20${Math.round(anticipoPorcentaje * 100)}%20de%20anticipo.%20Me%20gustar%C3%ADa%20agendar%20una%20consulta.`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full flex items-center justify-center gap-3 bg-oro text-carbon px-6 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-all"

@@ -10,6 +10,7 @@ import CometButton from "./CometButton";
 
 const NAV_LINKS = [
     { label: "Tratamientos", href: "/#tratamientos" },
+    { label: "Financiación", href: "/#financiacion" },
     { label: "Clínica",      href: "/#clinica" },
     { label: "Tecnología",   href: "/#tecnologia" },
     { label: "Testimonios",  href: "/#testimonios" },
@@ -19,6 +20,7 @@ const NAV_LINKS = [
 
 const FEATURED_LINKS = [
     { label: "Carillas", href: "/carillas-dentales" },
+    { label: "Financiación", href: "/#financiacion" },
     { label: "Lentes", href: "/lentes-de-contacto-dental" },
     { label: "AM Aligners", href: "/alineadores-invisibles" },
     { label: "Dr. Merino", href: "/dr-ariel-merino" },

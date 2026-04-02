@@ -40,7 +40,7 @@ const faqItems = [
   {
     pregunta: "¿Ofrecen financiación?",
     respuesta:
-      "Sí. Trabajamos con financiación propia sobre el 50% del tratamiento, con anticipo del 50% y tasa fija anual del 18%. También podés simular el plan en la home antes de consultar.",
+      "Sí. Trabajamos con financiación propia y tasa fija anual del 18% sobre el saldo financiado. Podés simular tu plan con 30% o 50% de anticipo y ver cómo quedarían las cuotas a 3, 6 o 12 meses antes de consultar.",
   },
   {
     pregunta: "¿Cómo funciona la primera consulta?",
