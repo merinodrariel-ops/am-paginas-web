@@ -53,10 +53,10 @@ const personSchema = {
         name: "UCALP",
     },
     sameAs: [
-        "https://www.wikidata.org/wiki/Q138828257",
+        "https://www.wikidata.org/wiki/Q134287655",
         "https://www.instagram.com/drarielmerino",
         "https://www.tiktok.com/@drarielmerino",
-        "https://www.linkedin.com/in/arielmerinoodontologiaestetica",
+        "https://www.linkedin.com/in/drarielmerino/",
         "https://www.youtube.com/@ArielMerino",
         "https://www.odontoespacio.net/autores/ariel-merino/",
     ],

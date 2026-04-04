@@ -132,9 +132,7 @@ export default function Contacto() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-crema/40 font-manrope text-xs hover:text-crema/70 transition-colors"
                 >
-                    <svg className="w-3.5 h-3.5 text-oro/50" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-                    </svg>
+                    <Image src="/images/waze-mark.svg" alt="Waze" width={14} height={14} className="h-3.5 w-3.5" />
                     Abrir en Waze
                 </a>
                 <span className="text-oro/15">·</span>

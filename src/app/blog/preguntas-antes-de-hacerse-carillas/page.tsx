@@ -26,7 +26,7 @@ const articleSchema = {
     "author": {
         "@type": "Person",
         "name": "Dr. Ariel Merino",
-        "url": "https://www.wikidata.org/wiki/Q138828257",
+        "url": "https://www.wikidata.org/wiki/Q134287655",
         "jobTitle": "Odontólogo Estético",
     },
     "publisher": {

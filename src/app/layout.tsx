@@ -63,8 +63,8 @@ const schemaOrg = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": -34.6118,
-    "longitude": -58.3636
+    "latitude": -34.620858,
+    "longitude": -58.3609047
   },
   "openingHoursSpecification": [
     {
@@ -85,20 +85,21 @@ const schemaOrg = {
     "name": "Dr. Ariel Merino",
     "jobTitle": "Odontólogo Estético",
     "sameAs": [
-      "https://www.wikidata.org/wiki/Q138828257",
+      "https://www.wikidata.org/wiki/Q134287655",
       "https://es.wikipedia.org/wiki/Ariel_Merino_(odont%C3%B3logo)",
       "https://www.instagram.com/drarielmerino",
       "https://www.tiktok.com/@drarielmerino",
-      "https://www.linkedin.com/in/arielmerinoodontologiaestetica",
+      "https://www.linkedin.com/in/drarielmerino/",
       "https://www.odontoespacio.net/autores/ariel-merino/"
     ]
   },
   "sameAs": [
+    "https://www.wikidata.org/wiki/Q138862170",
     "https://www.instagram.com/amesteticadental",
     "https://www.tiktok.com/@drarielmerino",
     "https://www.youtube.com/@ArielMerino",
     "https://ar.linkedin.com/company/am-est%C3%A9tica-dental",
-    "https://www.linkedin.com/in/arielmerinoodontologiaestetica",
+    "https://www.linkedin.com/in/drarielmerino/",
     "https://maps.app.goo.gl/5kWar9VL6qjhdEGM7",
     "https://g.page/r/CQ3df5Xn-J6oEBM"
   ]
