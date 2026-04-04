@@ -50,3 +50,6 @@ next-env.d.ts
 .claude/
 .claude-flow/
 .swarm/
+
+# local test artifacts
+test-results/
