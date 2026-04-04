@@ -30,6 +30,13 @@
 - Use event sourcing for state changes
 - Ensure input validation at system boundaries
 
+## NotebookLM Protocol
+
+- Use the hybrid memory model: local config for fast lookup, NotebookLM for rich project memory.
+- Treat `config/notebooklm.json` as the local source of truth for NotebookLM notebook IDs in this repo.
+- Use the `project.id` notebook for project-specific sources and session summaries.
+- Use the `brain.id` notebook only for reusable cross-project learnings.
+
 ### Project Config
 
 - **Topology**: hierarchical-mesh
