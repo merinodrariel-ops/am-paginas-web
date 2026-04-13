@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Manrope, Cormorant_Garamond } from "next/font/google";
+import Script from "next/script";
 import { generateFaqSchema } from "@/data/faq";
 import "./globals.css";
+
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-P9KCL5W7";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -87,11 +90,12 @@ const schemaOrg = {
     "jobTitle": "Odontólogo Estético",
     "sameAs": [
       "https://www.wikidata.org/wiki/Q134287655",
-      "https://es.wikipedia.org/wiki/Ariel_Merino_(odont%C3%B3logo)",
       "https://www.instagram.com/drarielmerino",
       "https://www.tiktok.com/@drarielmerino",
       "https://www.linkedin.com/in/drarielmerino/",
-      "https://www.odontoespacio.net/autores/ariel-merino/"
+      "https://www.youtube.com/c/ArielMerino",
+      "https://www.odontoespacio.net/autores/ariel-merino/",
+      "https://www.doctoraliar.com/ariel-merino/odontologo/ciudad-autonoma-de-buenos-aires"
     ]
   },
   "sameAs": [
@@ -128,6 +132,19 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${manrope.variable} ${cormorant.variable} antialiased`}>
       <head>
+        {gtmId ? (
+          <Script
+            id="gtm-script"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${gtmId}');`,
+            }}
+          />
+        ) : null}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
@@ -142,6 +159,16 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-carbon text-crema font-manrope relative min-h-screen">
+        {gtmId ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        ) : null}
         {/* SVG Noise Filter — sutil textura premium */}
         <svg
           className="pointer-events-none fixed isolate z-50 opacity-[0.03] mix-blend-soft-light w-full h-full"
