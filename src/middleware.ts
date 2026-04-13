@@ -3,14 +3,10 @@ import type { NextRequest } from "next/server";
 
 // ─────────────────────────────────────────────────────────────
 //  Redirects: URLs viejas de WordPress → nuevo Next.js
-//  + www → non-www
 //  + trailing slash cleanup
 // ─────────────────────────────────────────────────────────────
 
 const REDIRECTS: Record<string, string> = {
-    // www → non-www
-    "/": "https://amesteticadental.com/",
-
     // Carillas vs Resina (slug largo → corto)
     "/diferencias-entre-carillas-ceramicas-y-de-resina-todo-lo-que-necesitas-saber":
         "/carillas-de-porcelana-vs-resina",
@@ -78,14 +74,6 @@ const REDIRECTS: Record<string, string> = {
 
 export function middleware(request: NextRequest) {
     const { pathname, searchParams } = request.nextUrl;
-    const host = request.headers.get("host") || "";
-
-    // ── www → non-www (301 permanente)
-    if (host.startsWith("www.")) {
-        const newUrl = new URL(request.url);
-        newUrl.host = "amesteticadental.com";
-        return NextResponse.redirect(newUrl, 301);
-    }
 
     // ── Trailing slash removal (excepto para paths que lo necesitan)
     if (pathname.endsWith("/") && pathname !== "/") {

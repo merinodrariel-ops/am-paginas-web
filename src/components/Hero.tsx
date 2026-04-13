@@ -268,7 +268,7 @@ export default function Hero() {
           {/* Video principal mobile */}
           <div
             ref={mediaWrapRef}
-            className="relative w-[112%] max-w-none sm:w-full sm:max-w-2xl will-change-transform lg:hidden"
+            className="relative w-full max-w-2xl will-change-transform lg:hidden"
           >
             <div className="relative aspect-[16/10] overflow-hidden bg-transparent">
               <div className="absolute inset-0 bg-gradient-to-l from-carbon/0 via-carbon/12 to-carbon z-10" />
