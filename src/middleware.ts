@@ -7,6 +7,10 @@ import type { NextRequest } from "next/server";
 // ─────────────────────────────────────────────────────────────
 
 const REDIRECTS: Record<string, string> = {
+    // URL vieja sin "precio" → página actual
+    "/carillas-dentales-buenos-aires":
+        "/precio-carillas-dentales-buenos-aires",
+
     // Carillas vs Resina (slug largo → corto)
     "/diferencias-entre-carillas-ceramicas-y-de-resina-todo-lo-que-necesitas-saber":
         "/carillas-de-porcelana-vs-resina",
