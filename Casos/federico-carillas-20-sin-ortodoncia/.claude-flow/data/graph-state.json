@@ -1,0 +1,981 @@
+{
+  "version": 1,
+  "updatedAt": 1776753303483,
+  "nodeCount": 74,
+  "nodes": {
+    "mem-MEMORY-memory-index---am-uy": {
+      "id": "mem-MEMORY-memory-index---am-uy",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303467
+    },
+    "mem-project_amuy_inversion_uy----": {
+      "id": "mem-project_amuy_inversion_uy----",
+      "category": "project_amuy_inversion_uy",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303467
+    },
+    "mem-project_amuy_socios----": {
+      "id": "mem-project_amuy_socios----",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-project_amuy_socios-empresa": {
+      "id": "mem-project_amuy_socios-empresa",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-project_amuy_socios-ariel-merino---rol-y-activos": {
+      "id": "mem-project_amuy_socios-ariel-merino---rol-y-activos",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-project_amuy_socios-socios-y-estado-de-aportes": {
+      "id": "mem-project_amuy_socios-socios-y-estado-de-aportes",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-project_amuy_socios-cronolog-a-de-documentos": {
+      "id": "mem-project_amuy_socios-cronolog-a-de-documentos",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-project_amuy_socios-decisiones-clave-adoptadas-en-": {
+      "id": "mem-project_amuy_socios-decisiones-clave-adoptadas-en-",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-project_amuy_socios-estructura-narrativa-del-borra": {
+      "id": "mem-project_amuy_socios-estructura-narrativa-del-borra",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-project_amuy_socios-archivos-en-el-proyecto": {
+      "id": "mem-project_amuy_socios-archivos-en-el-proyecto",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-project_amuy_socios-estado-del-borrador-3-2": {
+      "id": "mem-project_amuy_socios-estado-del-borrador-3-2",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-project_amuy_socios-aporte-de-capital-de-ariel---c": {
+      "id": "mem-project_amuy_socios-aporte-de-capital-de-ariel---c",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-project_amuy_socios-mora-de-socios---situaci-n-act": {
+      "id": "mem-project_amuy_socios-mora-de-socios---situaci-n-act",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-project_amuy_socios-estrategia-accionaria---dos-es": {
+      "id": "mem-project_amuy_socios-estrategia-accionaria---dos-es",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-project_amuy_socios-handoff-r-pido-para-pr-ximo-ag": {
+      "id": "mem-project_amuy_socios-handoff-r-pido-para-pr-ximo-ag",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-project_amuy_socios-why---how-to-apply": {
+      "id": "mem-project_amuy_socios-why---how-to-apply",
+      "category": "project_amuy_socios",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-MEMORY-am-cl-nica---project-memory": {
+      "id": "mem-MEMORY-am-cl-nica---project-memory",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-MEMORY----superpowers-workflow--oblig": {
+      "id": "mem-MEMORY----superpowers-workflow--oblig",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-MEMORY-stack": {
+      "id": "mem-MEMORY-stack",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-MEMORY-key-architecture": {
+      "id": "mem-MEMORY-key-architecture",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-MEMORY-fixes-aplicados--sesi-n-2026-0": {
+      "id": "mem-MEMORY-fixes-aplicados--sesi-n-2026-0",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-MEMORY-am-scheduler-module--added-202": {
+      "id": "mem-MEMORY-am-scheduler-module--added-202",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-MEMORY-common-pitfalls": {
+      "id": "mem-MEMORY-common-pitfalls",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-MEMORY-reglas-de-negocio---am-cl-nica": {
+      "id": "mem-MEMORY-reglas-de-negocio---am-cl-nica",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-MEMORY-migraci-n-hotfix--admin-alias-": {
+      "id": "mem-MEMORY-migraci-n-hotfix--admin-alias-",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-MEMORY-env-vars-added-for-am-schedule": {
+      "id": "mem-MEMORY-env-vars-added-for-am-schedule",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-MEMORY-session-notes--2026-03-06-": {
+      "id": "mem-MEMORY-session-notes--2026-03-06-",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-MEMORY-supabase-db-connection": {
+      "id": "mem-MEMORY-supabase-db-connection",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-MEMORY-ux-rules--universal---no-excep": {
+      "id": "mem-MEMORY-ux-rules--universal---no-excep",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303468
+    },
+    "mem-reference_supabase_db----": {
+      "id": "mem-reference_supabase_db----",
+      "category": "reference_supabase_db",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303469
+    },
+    "mem-timezone-bugs-the-core-problem": {
+      "id": "mem-timezone-bugs-the-core-problem",
+      "category": "timezone-bugs",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303469
+    },
+    "mem-timezone-bugs-how-this-manifests": {
+      "id": "mem-timezone-bugs-how-this-manifests",
+      "category": "timezone-bugs",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303469
+    },
+    "mem-timezone-bugs-real-example--caja-recepci-n--": {
+      "id": "mem-timezone-bugs-real-example--caja-recepci-n--",
+      "category": "timezone-bugs",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303469
+    },
+    "mem-timezone-bugs-safe-patterns": {
+      "id": "mem-timezone-bugs-safe-patterns",
+      "category": "timezone-bugs",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303469
+    },
+    "mem-timezone-bugs-where-to-check": {
+      "id": "mem-timezone-bugs-where-to-check",
+      "category": "timezone-bugs",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303469
+    },
+    "mem-MEMORY-memory---am-est-tica-dental--a": {
+      "id": "mem-MEMORY-memory---am-est-tica-dental--a",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303469
+    },
+    "mem-feedback_google_business_profile----": {
+      "id": "mem-feedback_google_business_profile----",
+      "category": "feedback_google_business_profile",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303469
+    },
+    "mem-feedback_no_consulta_gratuita----": {
+      "id": "mem-feedback_no_consulta_gratuita----",
+      "category": "feedback_no_consulta_gratuita",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-feedback_proactividad----": {
+      "id": "mem-feedback_proactividad----",
+      "category": "feedback_proactividad",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_landing_audit----": {
+      "id": "mem-project_landing_audit----",
+      "category": "project_landing_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_landing_audit-lo-que-est--bien--no-tocar-": {
+      "id": "mem-project_landing_audit-lo-que-est--bien--no-tocar-",
+      "category": "project_landing_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_landing_audit-issues-cr-ticos-pendientes": {
+      "id": "mem-project_landing_audit-issues-cr-ticos-pendientes",
+      "category": "project_landing_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_landing_audit-prioridad--1-recomendada": {
+      "id": "mem-project_landing_audit-prioridad--1-recomendada",
+      "category": "project_landing_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_monorepo_plan----": {
+      "id": "mem-project_monorepo_plan----",
+      "category": "project_monorepo_plan",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_monorepo_plan-decisi-n": {
+      "id": "mem-project_monorepo_plan-decisi-n",
+      "category": "project_monorepo_plan",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_monorepo_plan-sitios-del-ecosistema": {
+      "id": "mem-project_monorepo_plan-sitios-del-ecosistema",
+      "category": "project_monorepo_plan",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_monorepo_plan-estructura-objetivo": {
+      "id": "mem-project_monorepo_plan-estructura-objetivo",
+      "category": "project_monorepo_plan",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_monorepo_plan-vercel": {
+      "id": "mem-project_monorepo_plan-vercel",
+      "category": "project_monorepo_plan",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_monorepo_plan-pendientes-antes-de-migrar": {
+      "id": "mem-project_monorepo_plan-pendientes-antes-de-migrar",
+      "category": "project_monorepo_plan",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_seo_audit----": {
+      "id": "mem-project_seo_audit----",
+      "category": "project_seo_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_seo_audit-auditor-a-completa---am-est-ti": {
+      "id": "mem-project_seo_audit-auditor-a-completa---am-est-ti",
+      "category": "project_seo_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_seo_audit-stack-t-cnico": {
+      "id": "mem-project_seo_audit-stack-t-cnico",
+      "category": "project_seo_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_seo_audit-seo-health-score--58-100--poor": {
+      "id": "mem-project_seo_audit-seo-health-score--58-100--poor",
+      "category": "project_seo_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_seo_audit-issues-cr-ticos-confirmados--c": {
+      "id": "mem-project_seo_audit-issues-cr-ticos-confirmados--c",
+      "category": "project_seo_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_seo_audit-seguridad--ruflo-": {
+      "id": "mem-project_seo_audit-seguridad--ruflo-",
+      "category": "project_seo_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_seo_audit-fortalezas-actuales--no-tocar-": {
+      "id": "mem-project_seo_audit-fortalezas-actuales--no-tocar-",
+      "category": "project_seo_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_seo_audit-an-lisis-competitivo---princip": {
+      "id": "mem-project_seo_audit-an-lisis-competitivo---princip",
+      "category": "project_seo_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_seo_audit-keywords-de-oportunidad-m-xima": {
+      "id": "mem-project_seo_audit-keywords-de-oportunidad-m-xima",
+      "category": "project_seo_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_seo_audit-plan-de-implementaci-n": {
+      "id": "mem-project_seo_audit-plan-de-implementaci-n",
+      "category": "project_seo_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_seo_audit-assets-disponibles": {
+      "id": "mem-project_seo_audit-assets-disponibles",
+      "category": "project_seo_audit",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_social_profiles----": {
+      "id": "mem-project_social_profiles----",
+      "category": "project_social_profiles",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_social_profiles-contexto-clave": {
+      "id": "mem-project_social_profiles-contexto-clave",
+      "category": "project_social_profiles",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_social_profiles-perfiles-confirmados": {
+      "id": "mem-project_social_profiles-perfiles-confirmados",
+      "category": "project_social_profiles",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_social_profiles-pendientes-de-enviar-al-knowle": {
+      "id": "mem-project_social_profiles-pendientes-de-enviar-al-knowle",
+      "category": "project_social_profiles",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_social_profiles-orden-de-prioridad-sugerido": {
+      "id": "mem-project_social_profiles-orden-de-prioridad-sugerido",
+      "category": "project_social_profiles",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303470
+    },
+    "mem-project_wikidata_protocol----": {
+      "id": "mem-project_wikidata_protocol----",
+      "category": "project_wikidata_protocol",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303471
+    },
+    "mem-project_wikidata_protocol-protocolo-wikidata---abril-202": {
+      "id": "mem-project_wikidata_protocol-protocolo-wikidata---abril-202",
+      "category": "project_wikidata_protocol",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303471
+    },
+    "mem-project_wikidata_protocol-entidades-activas-confirmadas": {
+      "id": "mem-project_wikidata_protocol-entidades-activas-confirmadas",
+      "category": "project_wikidata_protocol",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303471
+    },
+    "mem-project_wikidata_protocol-reglas-de-modelado": {
+      "id": "mem-project_wikidata_protocol-reglas-de-modelado",
+      "category": "project_wikidata_protocol",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303471
+    },
+    "mem-project_wikidata_protocol-datos-validados-para-la-cl-nic": {
+      "id": "mem-project_wikidata_protocol-datos-validados-para-la-cl-nic",
+      "category": "project_wikidata_protocol",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303471
+    },
+    "mem-project_wikidata_protocol-estado-wikipedia": {
+      "id": "mem-project_wikidata_protocol-estado-wikipedia",
+      "category": "project_wikidata_protocol",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303471
+    },
+    "mem-project_wikidata_protocol-datos--tiles-para-ariel-merino": {
+      "id": "mem-project_wikidata_protocol-datos--tiles-para-ariel-merino",
+      "category": "project_wikidata_protocol",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303471
+    },
+    "mem-project_wikidata_protocol-cambios-de-c-digo-asociados": {
+      "id": "mem-project_wikidata_protocol-cambios-de-c-digo-asociados",
+      "category": "project_wikidata_protocol",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303471
+    },
+    "mem-project_wikidata_protocol-failure-modes-a-recordar": {
+      "id": "mem-project_wikidata_protocol-failure-modes-a-recordar",
+      "category": "project_wikidata_protocol",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1776753303471
+    }
+  },
+  "edges": [
+    {
+      "sourceId": "mem-project_amuy_socios----",
+      "targetId": "mem-project_amuy_socios-empresa",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_amuy_socios-empresa",
+      "targetId": "mem-project_amuy_socios-ariel-merino---rol-y-activos",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_amuy_socios-ariel-merino---rol-y-activos",
+      "targetId": "mem-project_amuy_socios-socios-y-estado-de-aportes",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_amuy_socios-socios-y-estado-de-aportes",
+      "targetId": "mem-project_amuy_socios-cronolog-a-de-documentos",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_amuy_socios-cronolog-a-de-documentos",
+      "targetId": "mem-project_amuy_socios-decisiones-clave-adoptadas-en-",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_amuy_socios-decisiones-clave-adoptadas-en-",
+      "targetId": "mem-project_amuy_socios-estructura-narrativa-del-borra",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_amuy_socios-estructura-narrativa-del-borra",
+      "targetId": "mem-project_amuy_socios-archivos-en-el-proyecto",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_amuy_socios-archivos-en-el-proyecto",
+      "targetId": "mem-project_amuy_socios-estado-del-borrador-3-2",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_amuy_socios-estado-del-borrador-3-2",
+      "targetId": "mem-project_amuy_socios-aporte-de-capital-de-ariel---c",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_amuy_socios-aporte-de-capital-de-ariel---c",
+      "targetId": "mem-project_amuy_socios-mora-de-socios---situaci-n-act",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_amuy_socios-mora-de-socios---situaci-n-act",
+      "targetId": "mem-project_amuy_socios-estrategia-accionaria---dos-es",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_amuy_socios-estrategia-accionaria---dos-es",
+      "targetId": "mem-project_amuy_socios-handoff-r-pido-para-pr-ximo-ag",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_amuy_socios-handoff-r-pido-para-pr-ximo-ag",
+      "targetId": "mem-project_amuy_socios-why---how-to-apply",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-MEMORY-am-cl-nica---project-memory",
+      "targetId": "mem-MEMORY----superpowers-workflow--oblig",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-MEMORY----superpowers-workflow--oblig",
+      "targetId": "mem-MEMORY-stack",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-MEMORY-stack",
+      "targetId": "mem-MEMORY-key-architecture",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-MEMORY-key-architecture",
+      "targetId": "mem-MEMORY-fixes-aplicados--sesi-n-2026-0",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-MEMORY-fixes-aplicados--sesi-n-2026-0",
+      "targetId": "mem-MEMORY-am-scheduler-module--added-202",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-MEMORY-am-scheduler-module--added-202",
+      "targetId": "mem-MEMORY-common-pitfalls",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-MEMORY-common-pitfalls",
+      "targetId": "mem-MEMORY-reglas-de-negocio---am-cl-nica",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-MEMORY-reglas-de-negocio---am-cl-nica",
+      "targetId": "mem-MEMORY-migraci-n-hotfix--admin-alias-",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-MEMORY-migraci-n-hotfix--admin-alias-",
+      "targetId": "mem-MEMORY-env-vars-added-for-am-schedule",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-MEMORY-env-vars-added-for-am-schedule",
+      "targetId": "mem-MEMORY-session-notes--2026-03-06-",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-MEMORY-session-notes--2026-03-06-",
+      "targetId": "mem-MEMORY-supabase-db-connection",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-MEMORY-supabase-db-connection",
+      "targetId": "mem-MEMORY-ux-rules--universal---no-excep",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-timezone-bugs-the-core-problem",
+      "targetId": "mem-timezone-bugs-how-this-manifests",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-timezone-bugs-how-this-manifests",
+      "targetId": "mem-timezone-bugs-real-example--caja-recepci-n--",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-timezone-bugs-real-example--caja-recepci-n--",
+      "targetId": "mem-timezone-bugs-safe-patterns",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-timezone-bugs-safe-patterns",
+      "targetId": "mem-timezone-bugs-where-to-check",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_landing_audit----",
+      "targetId": "mem-project_landing_audit-lo-que-est--bien--no-tocar-",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_landing_audit-lo-que-est--bien--no-tocar-",
+      "targetId": "mem-project_landing_audit-issues-cr-ticos-pendientes",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_landing_audit-issues-cr-ticos-pendientes",
+      "targetId": "mem-project_landing_audit-prioridad--1-recomendada",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_monorepo_plan----",
+      "targetId": "mem-project_monorepo_plan-decisi-n",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_monorepo_plan-decisi-n",
+      "targetId": "mem-project_monorepo_plan-sitios-del-ecosistema",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_monorepo_plan-sitios-del-ecosistema",
+      "targetId": "mem-project_monorepo_plan-estructura-objetivo",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_monorepo_plan-estructura-objetivo",
+      "targetId": "mem-project_monorepo_plan-vercel",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_monorepo_plan-vercel",
+      "targetId": "mem-project_monorepo_plan-pendientes-antes-de-migrar",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_seo_audit----",
+      "targetId": "mem-project_seo_audit-auditor-a-completa---am-est-ti",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_seo_audit-auditor-a-completa---am-est-ti",
+      "targetId": "mem-project_seo_audit-stack-t-cnico",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_seo_audit-stack-t-cnico",
+      "targetId": "mem-project_seo_audit-seo-health-score--58-100--poor",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_seo_audit-seo-health-score--58-100--poor",
+      "targetId": "mem-project_seo_audit-issues-cr-ticos-confirmados--c",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_seo_audit-issues-cr-ticos-confirmados--c",
+      "targetId": "mem-project_seo_audit-seguridad--ruflo-",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_seo_audit-seguridad--ruflo-",
+      "targetId": "mem-project_seo_audit-fortalezas-actuales--no-tocar-",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_seo_audit-fortalezas-actuales--no-tocar-",
+      "targetId": "mem-project_seo_audit-an-lisis-competitivo---princip",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_seo_audit-an-lisis-competitivo---princip",
+      "targetId": "mem-project_seo_audit-keywords-de-oportunidad-m-xima",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_seo_audit-keywords-de-oportunidad-m-xima",
+      "targetId": "mem-project_seo_audit-plan-de-implementaci-n",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_seo_audit-plan-de-implementaci-n",
+      "targetId": "mem-project_seo_audit-assets-disponibles",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_social_profiles----",
+      "targetId": "mem-project_social_profiles-contexto-clave",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_social_profiles-contexto-clave",
+      "targetId": "mem-project_social_profiles-perfiles-confirmados",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_social_profiles-perfiles-confirmados",
+      "targetId": "mem-project_social_profiles-pendientes-de-enviar-al-knowle",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_social_profiles-pendientes-de-enviar-al-knowle",
+      "targetId": "mem-project_social_profiles-orden-de-prioridad-sugerido",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_wikidata_protocol----",
+      "targetId": "mem-project_wikidata_protocol-protocolo-wikidata---abril-202",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_wikidata_protocol-protocolo-wikidata---abril-202",
+      "targetId": "mem-project_wikidata_protocol-entidades-activas-confirmadas",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_wikidata_protocol-entidades-activas-confirmadas",
+      "targetId": "mem-project_wikidata_protocol-reglas-de-modelado",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_wikidata_protocol-reglas-de-modelado",
+      "targetId": "mem-project_wikidata_protocol-datos-validados-para-la-cl-nic",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_wikidata_protocol-datos-validados-para-la-cl-nic",
+      "targetId": "mem-project_wikidata_protocol-estado-wikipedia",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_wikidata_protocol-estado-wikipedia",
+      "targetId": "mem-project_wikidata_protocol-datos--tiles-para-ariel-merino",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_wikidata_protocol-datos--tiles-para-ariel-merino",
+      "targetId": "mem-project_wikidata_protocol-cambios-de-c-digo-asociados",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_wikidata_protocol-cambios-de-c-digo-asociados",
+      "targetId": "mem-project_wikidata_protocol-failure-modes-a-recordar",
+      "type": "temporal",
+      "weight": 0.5
+    },
+    {
+      "sourceId": "mem-project_amuy_socios-cronolog-a-de-documentos",
+      "targetId": "mem-project_amuy_socios-archivos-en-el-proyecto",
+      "type": "similar",
+      "weight": 0.5786802030456852
+    },
+    {
+      "sourceId": "mem-timezone-bugs-real-example--caja-recepci-n--",
+      "targetId": "mem-timezone-bugs-safe-patterns",
+      "type": "similar",
+      "weight": 0.30612244897959184
+    },
+    {
+      "sourceId": "mem-project_monorepo_plan-estructura-objetivo",
+      "targetId": "mem-project_monorepo_plan-pendientes-antes-de-migrar",
+      "type": "similar",
+      "weight": 0.3475609756097561
+    },
+    {
+      "sourceId": "mem-project_social_profiles----",
+      "targetId": "mem-project_social_profiles-contexto-clave",
+      "type": "similar",
+      "weight": 0.3026315789473684
+    }
+  ],
+  "pageRanks": {
+    "mem-MEMORY-memory-index---am-uy": 0.004160197683292954,
+    "mem-project_amuy_inversion_uy----": 0.004160197683292954,
+    "mem-project_amuy_socios----": 0.004160197683292954,
+    "mem-project_amuy_socios-empresa": 0.007696359538509214,
+    "mem-project_amuy_socios-ariel-merino---rol-y-activos": 0.010702093147087198,
+    "mem-project_amuy_socios-socios-y-estado-de-aportes": 0.013256971867845921,
+    "mem-project_amuy_socios-cronolog-a-de-documentos": 0.015428631146813369,
+    "mem-project_amuy_socios-decisiones-clave-adoptadas-en-": 0.01071737769835136,
+    "mem-project_amuy_socios-estructura-narrativa-del-borra": 0.013269985090820766,
+    "mem-project_amuy_socios-archivos-en-el-proyecto": 0.021996886117973024,
+    "mem-project_amuy_socios-estado-del-borrador-3-2": 0.022857603186960385,
+    "mem-project_amuy_socios-aporte-de-capital-de-ariel---c": 0.023589212460311874,
+    "mem-project_amuy_socios-mora-de-socios---situaci-n-act": 0.0242110667998125,
+    "mem-project_amuy_socios-estrategia-accionaria---dos-es": 0.024739600616044615,
+    "mem-project_amuy_socios-handoff-r-pido-para-pr-ximo-ag": 0.025188812974873794,
+    "mem-project_amuy_socios-why---how-to-apply": 0.025570585719107388,
+    "mem-MEMORY-am-cl-nica---project-memory": 0.004160197683292954,
+    "mem-MEMORY----superpowers-workflow--oblig": 0.007696359538509214,
+    "mem-MEMORY-stack": 0.010702093147087198,
+    "mem-MEMORY-key-architecture": 0.013256971867845921,
+    "mem-MEMORY-fixes-aplicados--sesi-n-2026-0": 0.015428631146813369,
+    "mem-MEMORY-am-scheduler-module--added-202": 0.01727455771340976,
+    "mem-MEMORY-common-pitfalls": 0.018843610643132322,
+    "mem-MEMORY-reglas-de-negocio---am-cl-nica": 0.020177319058742038,
+    "mem-MEMORY-migraci-n-hotfix--admin-alias-": 0.021310983401451735,
+    "mem-MEMORY-env-vars-added-for-am-schedule": 0.02227456786215554,
+    "mem-MEMORY-session-notes--2026-03-06-": 0.023093564352609428,
+    "mem-MEMORY-supabase-db-connection": 0.023789653873614727,
+    "mem-MEMORY-ux-rules--universal---no-excep": 0.024381300251805887,
+    "mem-reference_supabase_db----": 0.004160197683292954,
+    "mem-timezone-bugs-the-core-problem": 0.004160197683292954,
+    "mem-timezone-bugs-how-this-manifests": 0.007696359538509214,
+    "mem-timezone-bugs-real-example--caja-recepci-n--": 0.010702093147087198,
+    "mem-timezone-bugs-safe-patterns": 0.013256971867845921,
+    "mem-timezone-bugs-where-to-check": 0.015428631146813369,
+    "mem-MEMORY-memory---am-est-tica-dental--a": 0.004160197683292954,
+    "mem-feedback_google_business_profile----": 0.004160197683292954,
+    "mem-feedback_no_consulta_gratuita----": 0.004160197683292954,
+    "mem-feedback_proactividad----": 0.004160197683292954,
+    "mem-project_landing_audit----": 0.004160197683292954,
+    "mem-project_landing_audit-lo-que-est--bien--no-tocar-": 0.007696359538509214,
+    "mem-project_landing_audit-issues-cr-ticos-pendientes": 0.010702093147087198,
+    "mem-project_landing_audit-prioridad--1-recomendada": 0.013256971867845921,
+    "mem-project_monorepo_plan----": 0.004160197683292954,
+    "mem-project_monorepo_plan-decisi-n": 0.007696359538509214,
+    "mem-project_monorepo_plan-sitios-del-ecosistema": 0.010702093147087198,
+    "mem-project_monorepo_plan-estructura-objetivo": 0.013256971867845921,
+    "mem-project_monorepo_plan-vercel": 0.009794414415053162,
+    "mem-project_monorepo_plan-pendientes-antes-de-migrar": 0.018119675357719696,
+    "mem-project_seo_audit----": 0.004160197683292954,
+    "mem-project_seo_audit-auditor-a-completa---am-est-ti": 0.007696359538509214,
+    "mem-project_seo_audit-stack-t-cnico": 0.010702093147087198,
+    "mem-project_seo_audit-seo-health-score--58-100--poor": 0.013256971867845921,
+    "mem-project_seo_audit-issues-cr-ticos-confirmados--c": 0.015428631146813369,
+    "mem-project_seo_audit-seguridad--ruflo-": 0.01727455771340976,
+    "mem-project_seo_audit-fortalezas-actuales--no-tocar-": 0.018843610643132322,
+    "mem-project_seo_audit-an-lisis-competitivo---princip": 0.020177319058742038,
+    "mem-project_seo_audit-keywords-de-oportunidad-m-xima": 0.021310983401451735,
+    "mem-project_seo_audit-plan-de-implementaci-n": 0.02227456786215554,
+    "mem-project_seo_audit-assets-disponibles": 0.023093564352609428,
+    "mem-project_social_profiles----": 0.004160197683292954,
+    "mem-project_social_profiles-contexto-clave": 0.007696359538509214,
+    "mem-project_social_profiles-perfiles-confirmados": 0.010702093147087198,
+    "mem-project_social_profiles-pendientes-de-enviar-al-knowle": 0.013256971867845921,
+    "mem-project_social_profiles-orden-de-prioridad-sugerido": 0.015428631146813369,
+    "mem-project_wikidata_protocol----": 0.004160197683292954,
+    "mem-project_wikidata_protocol-protocolo-wikidata---abril-202": 0.007696359538509214,
+    "mem-project_wikidata_protocol-entidades-activas-confirmadas": 0.010702093147087198,
+    "mem-project_wikidata_protocol-reglas-de-modelado": 0.013256971867845921,
+    "mem-project_wikidata_protocol-datos-validados-para-la-cl-nic": 0.015428631146813369,
+    "mem-project_wikidata_protocol-estado-wikipedia": 0.01727455771340976,
+    "mem-project_wikidata_protocol-datos--tiles-para-ariel-merino": 0.018843610643132322,
+    "mem-project_wikidata_protocol-cambios-de-c-digo-asociados": 0.020177319058742038,
+    "mem-project_wikidata_protocol-failure-modes-a-recordar": 0.021310983401451735
+  }
+}
