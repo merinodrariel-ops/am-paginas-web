@@ -29,6 +29,11 @@ export interface Caso {
     fotos: FotoCaso[];
     copy: string; // HTML o markdown — texto principal del caso
     copyRedes?: string;
+    precio?: {
+        total: string;         // "USD 20.000"
+        porPieza?: string;     // "USD 1.000 por pieza"
+        nota?: string;         // texto aclaratorio opcional
+    };
     publicado: boolean;
 }
 
@@ -90,6 +95,11 @@ Le hicimos 20 carillas de porcelana, ampliamos su sonrisa y mejoramos el color u
 10 días. Sin cirugía. Sin brackets. Sin que nadie note que se hizo algo.
 
 Eso es lo que más nos gusta lograr.`,
+        precio: {
+            total: "USD 20.000",
+            porPieza: "USD 1.000 por pieza",
+            nota: "20 lentes de contacto dental · porcelana feldespática · técnica mínimamente invasiva",
+        },
         publicado: true,
     },
 ];
