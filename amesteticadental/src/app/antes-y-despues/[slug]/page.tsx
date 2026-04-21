@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import CasoGaleria from "@/components/CasoGaleria";
 import { getCasoBySlug, getCasosPublicados } from "@/data/casos";
 
 interface Props {
@@ -40,8 +40,6 @@ export default async function CasoPage({ params }: Props) {
     const { slug } = await params;
     const caso = getCasoBySlug(slug);
     if (!caso) notFound();
-
-    const [fotoPortada, ...fotosResto] = caso.fotos;
 
     return (
         <>
@@ -100,50 +98,8 @@ export default async function CasoPage({ params }: Props) {
                         </div>
                     </div>
 
-                    {/* Foto principal */}
-                    {fotoPortada && (
-                        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-4">
-                            <Image
-                                src={fotoPortada.src}
-                                alt={fotoPortada.alt}
-                                fill
-                                sizes="(max-width: 1024px) 100vw, 900px"
-                                className="object-cover"
-                                priority
-                            />
-                            {fotoPortada.caption && (
-                                <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-carbon/80 to-transparent">
-                                    <p className="font-manrope text-xs text-crema/50 uppercase tracking-widest">
-                                        {fotoPortada.caption}
-                                    </p>
-                                </div>
-                            )}
-                        </div>
-                    )}
-
-                    {/* Grid fotos restantes */}
-                    {fotosResto.length > 0 && (
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
-                            {fotosResto.map((foto) => (
-                                <div key={foto.src} className="relative aspect-[4/3] rounded-xl overflow-hidden group">
-                                    <Image
-                                        src={foto.src}
-                                        alt={foto.alt}
-                                        fill
-                                        sizes="(max-width: 768px) 50vw, 33vw"
-                                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                                    />
-                                    {foto.caption && (
-                                        <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-carbon/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            <p className="font-manrope text-[9px] text-crema/50 uppercase tracking-widest">
-                                                {foto.caption}
-                                            </p>
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                    )}
+                    {/* Galería con lightbox y watermark */}
+                    <CasoGaleria fotos={caso.fotos} />
 
                     {/* Copy del caso */}
                     <div className="max-w-2xl mb-16">
