@@ -66,14 +66,15 @@ const REDIRECTS: Record<string, string> = {
     "/las-3-patologias-que-deterioran-la-estetica-de-tu-sonrisa/":
         "/blog",
 
-    // Páginas viejas de WordPress con videos embebidos → redirect a home
-    // Esto arregla el problema de GSC "El vídeo no está en una página de visualización"
-    "/opiniones-estetica-dental-buenos-aires": "/",
-    "/opiniones-estetica-dental-buenos-aires/": "/",
-    "/clinica-estetica-dental-buenos-aires": "/",
-    "/clinica-estetica-dental-buenos-aires/": "/",
-    "/tratamientos-estetica-dental-buenos-aires": "/",
-    "/tratamientos-estetica-dental-buenos-aires/": "/",
+    // Páginas viejas con tráfico real → páginas temáticamente relevantes
+    "/opiniones-estetica-dental-buenos-aires": "/#testimonios",
+    "/opiniones-estetica-dental-buenos-aires/": "/#testimonios",
+    "/clinica-estetica-dental-buenos-aires": "/estetica-dental",
+    "/clinica-estetica-dental-buenos-aires/": "/estetica-dental",
+    "/tratamientos-estetica-dental-buenos-aires": "/estetica-dental",
+    "/tratamientos-estetica-dental-buenos-aires/": "/estetica-dental",
+    "/financiacion-estetica-dental-buenos-aires": "/#financiacion",
+    "/financiacion-estetica-dental-buenos-aires/": "/#financiacion",
 };
 
 export function middleware(request: NextRequest) {
