@@ -1,8 +1,0 @@
-<svg width="1080" height="1920" viewBox="0 0 1080 1920" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1080" height="1920" fill="#0D0D0D"/>
-  <circle cx="270" cy="520" r="360" fill="#F2B90D" fill-opacity="0.1"/>
-  <circle cx="820" cy="1420" r="260" fill="#F2B90D" fill-opacity="0.06"/>
-  <text x="540" y="700" text-anchor="middle" fill="#F2B90D" font-size="140" font-family="Georgia, 'Times New Roman', serif" font-style="italic">Nueva web</text>
-  <text x="540" y="860" text-anchor="middle" fill="#F2F0E9" font-size="34" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" letter-spacing="8">MISMA OBSESION POR EL DETALLE</text>
-  <rect x="170" y="980" width="740" height="1.5" fill="#F2B90D" fill-opacity="0.65"/>
-</svg>
