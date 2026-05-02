@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
 
 const tratamientos = [
     {
@@ -78,121 +75,100 @@ const tratamientos = [
     },
 ];
 
+const quickLinks = [
+    { label: "Carillas: precio", tone: "Para quien busca: cuánto cuesta", href: "/precio-carillas-dentales-buenos-aires" },
+    { label: "Carillas vs Alineadores", tone: "Para quien compara: qué me conviene", href: "/carillas-vs-alineadores" },
+    { label: "Porcelana vs Resina", tone: "Para quien elige material", href: "/carillas-de-porcelana-vs-resina" },
+    { label: "Bruxismo + Desgaste", tone: "Para quien sufre daño dental", href: "/bruxismo-desgaste-dental-carillas-ceramicas" },
+    { label: "Implantes Buenos Aires", tone: "Para quien perdió dientes", href: "/implantes-dentales-buenos-aires" },
+    { label: "Diseño de Sonrisa", tone: "Para quien quiere transformarse", href: "/diseno-de-sonrisa-precio-buenos-aires" },
+];
+
 export default function Tratamientos() {
-    const [activo, setActivo] = useState(0);
-    const quickLinks = [
-        { label: "Precio de Carillas", href: "/precio-carillas-dentales-buenos-aires", tone: "Qué influye en el valor real del tratamiento" },
-        { label: "Lentes de Contacto Dental", href: "/lentes-de-contacto-dental", tone: "La opción más conservadora para máxima naturalidad" },
-        { label: "Carillas sin Desgaste", href: "/carillas-sin-desgaste", tone: "Cuándo realmente se puede evitar preparar el diente" },
-        { label: "Porcelana vs Resina", href: "/carillas-de-porcelana-vs-resina", tone: "Compará duración, refinamiento y mantenimiento" },
-        { label: "Carillas vs Alineadores", href: "/carillas-vs-alineadores", tone: "Definí si necesitás cambiar forma o mover dientes" },
-        { label: "AM Aligners", href: "/alineadores-invisibles", tone: "Nuestro sistema de alineadores invisibles con planificación digital" },
-    ];
-
     return (
-        <section id="tratamientos" className="py-32 px-4 bg-carbon-soft relative z-10">
-            <div className="max-w-6xl mx-auto">
-
-                {/* Header */}
-                <div className="mb-20 max-w-2xl">
-                    <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
-                        Tratamientos de Estética Dental
+        <section className="px-6 py-24 max-w-7xl mx-auto">
+            <div className="space-y-10">
+                {/* Encabezado */}
+                <div className="mb-12">
+                    <span className="text-oro/60 font-manrope uppercase tracking-[0.35em] text-xs block mb-4">
+                        Especialidades
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-manrope font-light text-crema leading-tight mb-6">
-                        Carillas, alineadores e implantes{" "}
-                        <span className="font-cormorant italic text-oro">en Puerto Madero</span>
+                    <h2 className="text-4xl md:text-5xl font-light text-crema leading-tight mb-6">
+                        Cada tratamiento <span className="font-cormorant italic text-oro">tiene su propio resultado</span>
                     </h2>
-                    <p className="text-crema-muted font-manrope text-lg font-light">
-                        No vendemos procedimientos. Diseñamos resultados que cambian la manera en que una persona se para frente al mundo.
+                    <p className="text-crema/60 font-manrope text-base leading-relaxed max-w-2xl">
+                        No hay dos sonrisas iguales. Por eso cada tratamiento está personalizado a tu caso, tu presupuesto y tus objetivos.
                     </p>
                 </div>
 
-                {/* Layout: lista izquierda + detalle derecha */}
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 border border-oro/10 rounded-2xl overflow-hidden">
-
-                    {/* Lista de tratamientos — todos visibles en HTML para indexación */}
-                    <div className="lg:col-span-2 border-r border-oro/10">
-                        {tratamientos.map((t, i) => (
-                            <button
-                                key={t.id}
-                                onClick={() => setActivo(i)}
-                                className={`
-                                    w-full text-left px-6 py-5 border-b border-oro/10 last:border-0
-                                    flex items-center justify-between group transition-all
-                                    ${activo === i ? "bg-oro/10" : "hover:bg-carbon-soft"}
-                                `}
-                            >
+                {/* Tratamientos - Acordeones expandibles (todo visible en HTML para Google) */}
+                <div className="space-y-2">
+                    {tratamientos.map((t, i) => (
+                        <details
+                            key={t.id}
+                            open={i === 0}
+                            className="group border border-oro/10 rounded-2xl overflow-hidden bg-carbon hover:border-oro/20 transition-colors"
+                        >
+                            <summary className="cursor-pointer px-6 py-5 flex items-center justify-between select-none hover:bg-carbon-soft transition-colors">
                                 <div>
-                                    <span className={`font-manrope text-xs font-medium uppercase tracking-widest block mb-1 ${activo === i ? "text-oro" : "text-crema-muted"}`}>
+                                    <span className="font-manrope text-xs font-medium uppercase tracking-widest block mb-1 text-oro group-open:text-oro text-crema-muted">
                                         {t.id}
                                     </span>
-                                    <span className={`font-manrope font-medium text-sm ${activo === i ? "text-crema" : "text-crema/70"}`}>
+                                    <span className="font-manrope font-medium text-sm text-crema">
                                         {t.nombre}
                                     </span>
                                 </div>
-                                <span className={`text-lg transition-transform ${activo === i ? "text-oro translate-x-1" : "text-crema/20 group-hover:text-crema/50"}`}>
+                                <span className="text-lg transition-transform text-oro group-open:translate-x-1">
                                     →
                                 </span>
-                            </button>
-                        ))}
-                    </div>
+                            </summary>
 
-                    {/* Detalle del tratamiento activo */}
-                    <div className="lg:col-span-3 p-10 bg-carbon flex flex-col justify-between min-h-[400px]">
-                        <div>
-                            <span className="text-oro/60 font-manrope uppercase tracking-[0.3em] text-xs block mb-4">
-                                {tratamientos[activo].id} — {tratamientos[activo].tagline}
-                            </span>
-                            <h3 className="text-3xl md:text-4xl font-manrope font-light text-crema mb-6 leading-tight">
-                                {tratamientos[activo].nombre}
-                            </h3>
-                            <p className="text-crema/70 font-manrope text-base leading-relaxed mb-8">
-                                {tratamientos[activo].descripcion}
-                            </p>
-
-                            {/* Impact line */}
-                            <div className="border-l-2 border-oro pl-4">
-                                <p className="text-crema font-manrope text-sm italic leading-relaxed">
-                                    {tratamientos[activo].impacto}
+                            {/* Contenido expandible - TODO visible en DOM para Google */}
+                            <div className="px-6 pb-6 border-t border-oro/10 pt-6 bg-carbon/40">
+                                <span className="text-oro/60 font-manrope uppercase tracking-[0.3em] text-xs block mb-4">
+                                    {t.tagline}
+                                </span>
+                                <h3 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-4 leading-tight">
+                                    {t.nombre}
+                                </h3>
+                                <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
+                                    {t.descripcion}
                                 </p>
-                            </div>
-                        </div>
 
-                        {/* Contenido completo de todos los tratamientos — visible para crawlers, oculto visualmente */}
-                        <div className="sr-only" aria-hidden="true">
-                            {tratamientos.map((t) => (
-                                <div key={t.id}>
-                                    <h3>{t.nombre}</h3>
-                                    <p>{t.descripcion}</p>
-                                    <p>{t.impacto}</p>
+                                {/* Impact line */}
+                                <div className="border-l-2 border-oro pl-4 mb-6">
+                                    <p className="text-crema font-manrope text-sm italic leading-relaxed">
+                                        {t.impacto}
+                                    </p>
                                 </div>
-                            ))}
-                        </div>
 
-                        <div className="mt-10 flex flex-wrap gap-3">
-                            <a
-                                href={`https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20${encodeURIComponent(tratamientos[activo].nombre)}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 bg-oro text-carbon px-6 py-3 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-colors"
-                            >
-                                Consultar este tratamiento
-                                <span>→</span>
-                            </a>
-                            {tratamientos[activo].href && (
-                                <Link
-                                    href={tratamientos[activo].href}
-                                    className="inline-flex items-center gap-2 border border-oro/25 text-crema/70 px-6 py-3 rounded-full font-manrope text-sm hover:border-oro/50 hover:text-crema transition-colors"
-                                >
-                                    Ver más →
-                                </Link>
-                            )}
-                        </div>
-                    </div>
-
+                                {/* CTA */}
+                                <div className="flex flex-wrap gap-3">
+                                    <a
+                                        href={`https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20${encodeURIComponent(t.nombre)}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-3 bg-oro text-carbon px-6 py-3 rounded-full font-manrope font-semibold text-sm hover:bg-oro/90 transition-colors"
+                                    >
+                                        Consultar
+                                        <span>→</span>
+                                    </a>
+                                    {t.href && (
+                                        <Link
+                                            href={t.href}
+                                            className="inline-flex items-center gap-2 border border-oro/25 text-crema/70 px-6 py-3 rounded-full font-manrope text-sm hover:border-oro/50 hover:text-crema transition-colors"
+                                        >
+                                            Ver más →
+                                        </Link>
+                                    )}
+                                </div>
+                            </div>
+                        </details>
+                    ))}
                 </div>
 
-                <div className="mt-10 rounded-[2rem] border border-oro/10 bg-carbon px-6 py-8 md:px-8">
+                {/* Quick Links */}
+                <div className="mt-12 rounded-[2rem] border border-oro/10 bg-carbon px-6 py-8 md:px-8">
                     <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
                         <div>
                             <span className="text-oro/65 font-manrope uppercase tracking-[0.32em] text-[10px] block mb-3">
