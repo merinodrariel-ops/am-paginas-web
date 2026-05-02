@@ -45,6 +45,30 @@ export default function LeadForm({ defaultTreatment, context }: Props) {
       setError(result.error ?? "Error desconocido");
       return;
     }
+
+    // Track conversion: GTM + Meta Pixel
+    if (typeof window !== "undefined") {
+      // GTM event
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({
+        event: "lead_form_submission",
+        event_category: "conversión",
+        event_label: context || "form_contacto",
+        user_name: fullName,
+        user_email: email || "no_email",
+        user_phone: whatsapp || "no_phone",
+        treatments: tags.join(",") || "sin_especificar",
+      });
+
+      // Meta Pixel event (if installed)
+      if ((window as any).fbq) {
+        (window as any).fbq("track", "Lead", {
+          content_name: tags[0] || "General Inquiry",
+          content_category: tags[0] || "general",
+        });
+      }
+    }
+
     setDone(true);
   }
 

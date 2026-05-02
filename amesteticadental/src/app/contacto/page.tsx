@@ -76,6 +76,30 @@ export default function ContactoPage() {
           </div>
         </div>
       </section>
+
+      {/* Google Maps Embed */}
+      <section className="px-6 pb-20 max-w-5xl mx-auto">
+        <div className="space-y-6">
+          <div>
+            <h2 className="text-2xl font-light text-crema mb-2">
+              Ubicación en <span className="font-cormorant italic text-oro">Puerto Madero</span>
+            </h2>
+            <p className="text-crema/60 text-sm">Camila O'Gorman 412, Oficina 101, C1107DED, Ciudad Autónoma de Buenos Aires</p>
+          </div>
+
+          <div className="w-full h-96 rounded-2xl overflow-hidden border border-oro/10">
+            <iframe
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              aria-label="Google Maps - AM Estética Dental"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.6519881892897!2d-58.36262362346066!3d-34.62085717200429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3354dc3d6b3f7%3A0xc0e0f8c8f8c8f8c8!2sCamila%20O'Gorman%20412%2C%20C1107%2C%20CABA!5e0!3m2!1ses!2sar!4v1234567890"
+            />
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
