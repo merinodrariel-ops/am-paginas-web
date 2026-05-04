@@ -231,12 +231,12 @@ export default function TurismoDentalPage() {
                                 {
                                     n: "01",
                                     t: "Mandás fotos por WhatsApp",
-                                    d: "Fotos de frente y de perfil de tu sonrisa. Hacemos una evaluación preliminar sin costo y sin compromiso. Te decimos si sos candidato y cuántas piezas requeriría tu caso.",
+                                    d: "Fotos de frente y de perfil de tu sonrisa. Hacemos una valoración preliminar del caso. Te decimos si sos candidato y cuántas piezas requeriría tu tratamiento.",
                                 },
                                 {
                                     n: "02",
                                     t: "Definimos fechas y alcance",
-                                    d: "Con la evaluación previa acordamos el plan de tratamiento, los tiempos y el presupuesto antes de que compres el pasaje. Sin sorpresas al llegar.",
+                                    d: "Con la evaluación previa acordamos el plan de tratamiento, los tiempos y la inversión antes de que compres el pasaje. Sin sorpresas al llegar.",
                                 },
                                 {
                                     n: "03",
@@ -361,7 +361,7 @@ export default function TurismoDentalPage() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             {[
                                 { nombre: "Carillas de Porcelana", desc: "El tratamiento más solicitado. Durabilidad, naturalidad y resultado definitivo.", href: "/carillas-dentales" },
-                                { nombre: "Precio de Carillas", desc: "Qué define el valor según material, piezas y complejidad.", href: "/precio-carillas-dentales-buenos-aires" },
+                            { nombre: "Inversión en Carillas", desc: "Qué define el valor según material, piezas y complejidad.", href: "/precio-carillas-dentales-buenos-aires" },
                                 { nombre: "Diseño de Sonrisa Digital", desc: "Cómo funciona el proceso de planificación antes de empezar.", href: "/diseno-de-sonrisa" },
                             ].map((t) => (
                                 <Link
@@ -388,7 +388,7 @@ export default function TurismoDentalPage() {
                             <span className="font-cormorant italic text-oro">y te decimos si sos candidato</span>
                         </h2>
                         <p className="text-crema/60 font-manrope text-base mb-10">
-                            Evaluación preliminar sin costo y sin compromiso. Si sos candidato, te mandamos el plan y el presupuesto antes de que compres el pasaje.
+                            Valoración preliminar del caso. Si sos candidato, te mandamos el plan y la inversión estimada antes de que compres el pasaje.
                         </p>
                         <a
                             href={WA_LINK}

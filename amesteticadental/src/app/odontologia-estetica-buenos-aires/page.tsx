@@ -81,8 +81,8 @@ export default function OdontologiaEsteticaPage() {
                 </section>
 
                 <section className="px-6 py-16 text-center border-t border-oro/10">
-                    <h2 className="font-light text-3xl text-crema mb-4">Primera consulta <span className="font-cormorant italic text-oro">sin costo.</span></h2>
-                    <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Evaluamos tu caso y te explicamos qué tratamiento aplica para vos y cuánto cuesta.</p>
+                    <h2 className="font-light text-3xl text-crema mb-4">Valoración clínica <span className="font-cormorant italic text-oro">personalizada.</span></h2>
+                    <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Evaluamos tu caso y te explicamos qué tratamiento aplica para vos y cuál sería la inversión.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">Agendá por WhatsApp →</a>
                     <p className="text-crema/25 text-xs mt-4">Camila O'Gorman 412, Puerto Madero · Buenos Aires</p>
                 </section>

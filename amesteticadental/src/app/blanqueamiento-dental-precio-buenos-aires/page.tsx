@@ -141,7 +141,7 @@ export default function BlanqueamientoPage() {
                             </div>
                         ))}
                     </div>
-                    <p className="text-crema/30 text-xs">Precio exacto según diagnóstico. Evaluación inicial sin cargo.</p>
+                    <p className="text-crema/30 text-xs">Inversión exacta según diagnóstico.</p>
                 </section>
 
                 {/* FAQ */}
@@ -156,7 +156,7 @@ export default function BlanqueamientoPage() {
                             { q: "¿Se puede hacer blanqueamiento con carillas o coronas?", a: "No. El blanqueamiento solo funciona sobre el esmalte natural. Las cerámicas, resinas y coronas no cambian de color. Si tenés restauraciones anteriores, lo evaluamos en la consulta inicial para coordinar el tratamiento." },
                             { q: "¿Cuántas sesiones de blanqueamiento se necesitan?", a: "En la mayoría de los casos, una sola sesión en clínica es suficiente para lograr un cambio notorio. Casos de manchas más profundas o amarillamiento severo pueden requerir 2 sesiones o el protocolo combinado con kit domiciliario." },
                             { q: "¿El blanqueamiento funciona en dientes con manchas de flúor o tetraciclina?", a: "Estas manchas son más resistentes al blanqueamiento convencional. En esos casos, las carillas cerámicas o lentes de contacto dental suelen ser una mejor opción para lograr el resultado deseado." },
-                            { q: "¿Cuánto cuesta el blanqueamiento dental en Buenos Aires?", a: "En AM Estética Dental, el blanqueamiento LED parte desde USD 150 y el láser desde USD 250, en una sola sesión. El protocolo combinado con kit domiciliario parte desde USD 350. La evaluación inicial es sin cargo." },
+                            { q: "¿Cuánto cuesta el blanqueamiento dental en Buenos Aires?", a: "En AM Estética Dental, el blanqueamiento LED parte desde USD 150 y el láser desde USD 250, en una sola sesión. El protocolo combinado con kit domiciliario parte desde USD 350. La indicación final depende del diagnóstico clínico." },
                         ].map(({ q, a }) => (
                             <details key={q} className="border border-oro/12 rounded-xl group">
                                 <summary className="px-6 py-4 cursor-pointer list-none flex items-center justify-between text-crema font-manrope text-sm font-medium select-none">

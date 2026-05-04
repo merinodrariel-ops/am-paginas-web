@@ -62,7 +62,7 @@ export default function BruxismoPage() {
                     <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">
-                        Consulta gratis →
+                        Consultar por WhatsApp →
                     </a>
                 </header>
 
@@ -132,7 +132,7 @@ export default function BruxismoPage() {
                             <p className="text-crema/50 text-sm mb-4">Si marcás 2 o más, el bruxismo probablemente ya está afectando tu sonrisa.</p>
                             <a href={WA} target="_blank" rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">
-                                Evaluar mi caso sin costo →
+                                Evaluar mi caso por WhatsApp →
                             </a>
                         </div>
                     </div>
@@ -224,7 +224,7 @@ export default function BruxismoPage() {
                             { q: "¿Las carillas sirven para tratar el bruxismo?", a: "Sí. Las carillas cerámicas restauran el volumen y la forma de los dientes desgastados por el bruxismo, recuperando tanto la estética como la función masticatoria. Es importante complementarlas con una férula de descarga para protegerlas durante la noche." },
                             { q: "¿Tengo que dejar de apretarme los dientes para ponerme carillas?", a: "No es un requisito previo, pero sí recomendamos el uso de una placa de relajación nocturna para proteger las carillas a largo plazo. Las carillas cerámicas AM son muy resistentes, pero ningún material aguinda indefinidamente el impacto del bruxismo sin protección." },
                             { q: "¿Cuánto duran las carillas cerámicas en pacientes con bruxismo?", a: "Con control regular y uso de placa nocturna, las carillas cerámicas duran entre 15 y 20 años. Sin protección, el desgaste puede reducir esa vida útil significativamente. La cerámica duplica la resistencia del esmalte natural." },
-                            { q: "¿Cuánto cuesta tratar el bruxismo con carillas en Buenos Aires?", a: "Depende de la cantidad de piezas afectadas y el nivel de desgaste. Como referencia, una rehabilitación cerámica completa por bruxismo ronda los USD 15.000 a 30.000 según el caso. La evaluación inicial para determinar el plan y el costo no tiene cargo." },
+                            { q: "¿Cuánto cuesta tratar el bruxismo con carillas en Buenos Aires?", a: "Depende de la cantidad de piezas afectadas y el nivel de desgaste. Como referencia, una rehabilitación cerámica completa por bruxismo ronda los USD 15.000 a 30.000 según el caso. El plan y la inversión se definen luego de evaluar clínicamente la mordida." },
                             { q: "¿Es doloroso el tratamiento?", a: "No. Se trabaja con anestesia local cuando es necesario. Las carillas AM lentes de contacto requieren mínimo o ningún desgaste del diente original, lo que reduce notablemente la sensibilidad post-tratamiento." },
                             { q: "¿Cuánto tiempo lleva el tratamiento completo?", a: "Entre 10 y 15 días desde la evaluación hasta el resultado final. En algunos casos complejos con muchas piezas afectadas, el proceso puede extenderse a 3-4 semanas." },
                         ].map(({ q, a }) => (

@@ -287,8 +287,8 @@ export default function AlineadoresInvisiblesPage() {
                     <div className="relative max-w-2xl mx-auto">
                         <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Empezar</span>
                         <h2 className="text-4xl md:text-5xl font-manrope font-light text-crema leading-tight mb-6">
-                            La evaluación inicial{" "}
-                            <span className="font-cormorant italic text-oro">no tiene costo</span>
+                            Valoración inicial{" "}
+                            <span className="font-cormorant italic text-oro">personalizada</span>
                         </h2>
                         <p className="text-crema/60 font-manrope text-base mb-10">
                             Analizamos tu caso, evaluamos si los alineadores son la mejor opción y te mostramos el resultado digital. Sin compromiso.

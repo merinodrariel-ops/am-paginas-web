@@ -10,7 +10,7 @@ const CDN2 = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/ca
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Lentes de Contacto Dental Precio Buenos Aires 2026 | AM Estética Dental",
-    description: "Precio de lentes de contacto dental en Buenos Aires 2026. Carillas AM ultra delgadas de 0.2mm sin desgaste. Dr. Ariel Merino, AM Estética Dental, Puerto Madero. Consultá sin costo.",
+    description: "Precio e inversión en lentes de contacto dental en Buenos Aires 2026. Carillas AM ultra delgadas de 0.2mm sin desgaste. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.",
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Lentes de Contacto Dental Precio Buenos Aires | AM Estética Dental",
@@ -145,7 +145,7 @@ export default function LentesContactoDentalLanding() {
                             </div>
                         ))}
                     </div>
-                    <p className="text-crema/30 text-xs">El precio exacto se define en la evaluación inicial, que no tiene costo.</p>
+                    <p className="text-crema/30 text-xs">La inversión exacta se define luego de una valoración clínica inicial.</p>
                 </section>
 
                 {/* Galería casos */}
@@ -176,7 +176,7 @@ export default function LentesContactoDentalLanding() {
                             { q: "¿Los lentes de contacto dental duran lo mismo que una carilla tradicional?", a: "Sí — entre 15 y 20 años con cuidados normales. La diferencia no es en durabilidad sino en invasividad: los lentes de contacto preservan mucho más el esmalte original." },
                             { q: "¿Se notan? ¿Se ven artificiales?", a: "No. La cerámica que usamos tiene el mismo índice de refracción que el esmalte natural. A la luz, se comportan igual que un diente real. El resultado es indistinguible de dientes naturales bien formados." },
                             { q: "¿Duelen? ¿Requieren anestesia?", a: "En la mayoría de los casos no se requiere anestesia porque el desgaste es mínimo o inexistente. Puede haber sensibilidad leve los primeros días, que desaparece sola." },
-                            { q: "¿Cuánto cuestan los lentes de contacto dental en Buenos Aires?", a: "Entre USD 800 y 1.200 por pieza según el caso. Un diseño de sonrisa completo de 10 piezas ronda los USD 8.000 a 12.000. La evaluación inicial no tiene costo." },
+                            { q: "¿Cuánto cuestan los lentes de contacto dental en Buenos Aires?", a: "Entre USD 800 y 1.200 por pieza según el caso. Un diseño de sonrisa completo de 10 piezas ronda los USD 8.000 a 12.000. La inversión exacta se define luego de valorar clínicamente el caso." },
                             { q: "¿Qué diferencia hay entre lente de contacto dental y carilla tradicional?", a: "El espesor y la invasividad. Los lentes de contacto AM tienen 0.2-0.3mm — como una lente de contacto ocular. Las carillas tradicionales tienen 0.5-0.7mm y requieren desgaste previo del diente. El resultado estético es el mismo; la diferencia está en cuánto diente original se conserva." },
                         ].map(({ q, a }) => (
                             <details key={q} className="border border-oro/12 rounded-xl group">

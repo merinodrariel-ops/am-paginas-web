@@ -56,7 +56,7 @@ export default function ImplantesPage() {
                             </div>
                         ))}
                     </div>
-                    <p className="text-crema/30 text-xs">Precio según diagnóstico con CBCT (tomografía). Evaluación inicial sin cargo.</p>
+                    <p className="text-crema/30 text-xs">Inversión según diagnóstico con CBCT (tomografía).</p>
                 </section>
 
                 <section className="px-6 py-16 border-t border-oro/8 max-w-6xl mx-auto">
@@ -67,7 +67,7 @@ export default function ImplantesPage() {
                             { q: "¿El implante duele?", a: "La cirugía se realiza con anestesia local, por lo que no se siente dolor durante el procedimiento. Los primeros 2-3 días pueden haber molestias leves controladas con analgésicos. La mayoría de los pacientes vuelve a sus actividades al día siguiente." },
                             { q: "¿Cuánto dura un implante dental?", a: "Con cuidados normales (higiene, controles anuales, no fumar), los implantes dentales duran toda la vida. La corona sobre el implante puede necesitar reemplazo cada 15-20 años." },
                             { q: "¿Cualquiera puede ponerse implantes?", a: "Se necesita cantidad suficiente de hueso maxilar para colocar el implante. En casos de pérdida ósea, se puede hacer un injerto previo. La condición general de salud también influye. Lo evaluamos con una tomografía (CBCT) en la primera consulta." },
-                            { q: "¿Cuánto cuesta un implante dental en Buenos Aires?", a: "En AM Estética Dental, un implante unitario parte desde USD 800 incluyendo la corona. El precio varía según el material de la corona (cerámica o zirconio) y la complejidad del caso. La evaluación inicial no tiene costo." },
+                            { q: "¿Cuánto cuesta un implante dental en Buenos Aires?", a: "En AM Estética Dental, un implante unitario parte desde USD 800 incluyendo la corona. La inversión varía según el material de la corona (cerámica o zirconio) y la complejidad del caso." },
                         ].map(({ q, a }) => (
                             <details key={q} className="border border-oro/12 rounded-xl group">
                                 <summary className="px-6 py-4 cursor-pointer list-none flex items-center justify-between text-crema font-manrope text-sm font-medium select-none">
@@ -81,7 +81,7 @@ export default function ImplantesPage() {
 
                 <section className="px-6 py-16 text-center border-t border-oro/10">
                     <h2 className="font-light text-3xl text-crema mb-4">Recuperá tu sonrisa <span className="font-cormorant italic text-oro">de forma permanente.</span></h2>
-                    <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Primera evaluación sin costo. Con tomografía incluida.</p>
+                    <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Valoración clínica inicial con tomografía incluida.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">Consultar por WhatsApp →</a>
                     <p className="text-crema/25 text-xs mt-4">Camila O'Gorman 412, Puerto Madero · Buenos Aires</p>
                 </section>

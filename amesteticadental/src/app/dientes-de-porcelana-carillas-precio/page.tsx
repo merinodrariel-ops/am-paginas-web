@@ -131,7 +131,7 @@ export default function DientesPorcelanaPage() {
                     <h2 className="text-2xl font-light text-crema mb-10">Preguntas <span className="font-cormorant italic text-oro">frecuentes</span></h2>
                     <div className="space-y-4 max-w-3xl">
                         {[
-                            { q: "¿Cuánto cuestan los dientes de porcelana en Buenos Aires?", a: "Las carillas de porcelana en AM Estética Dental van de USD 800 a 1.200 por pieza. Un diseño de sonrisa de 10 piezas ronda los USD 8.000 a 12.000. La evaluación inicial no tiene costo." },
+                            { q: "¿Cuánto cuestan los dientes de porcelana en Buenos Aires?", a: "Las carillas de porcelana en AM Estética Dental van de USD 800 a 1.200 por pieza. Un diseño de sonrisa de 10 piezas ronda los USD 8.000 a 12.000. La inversión exacta se define luego de una valoración clínica inicial." },
                             { q: "¿Los dientes de porcelana son permanentes?", a: "Duran entre 15 y 20 años con cuidados normales. No son permanentes en el sentido de que eventualmente pueden necesitar reemplazo, pero no son reversibles: una vez colocados, el diente queda preparado para esa restauración." },
                             { q: "¿Se pueden hacer dientes de porcelana sin desgastar los dientes?", a: "Sí. Con las carillas AM lentes de contacto de 0.2mm, en la mayoría de los casos no se requiere ningún desgaste del diente natural. Es la opción más conservadora disponible actualmente." },
                             { q: "¿Se notan los dientes de porcelana?", a: "No, si están bien diseñados. La cerámica que usamos imita el índice de refracción del esmalte natural. A la luz, se comportan igual que dientes sanos. El objetivo siempre es que parezcan tus propios dientes." },
@@ -152,7 +152,7 @@ export default function DientesPorcelanaPage() {
                 {/* CTA */}
                 <section className="px-6 py-16 text-center border-t border-oro/10">
                     <h2 className="font-light text-3xl text-crema mb-4">La sonrisa que querés, <span className="font-cormorant italic text-oro">en 10 días.</span></h2>
-                    <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Evaluación inicial sin costo. Te decimos qué necesitás y cuánto cuesta antes de decidir.</p>
+                    <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Valoración clínica inicial. Te decimos qué necesitás y cuál sería la inversión antes de decidir.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">
                         Consultar por WhatsApp →

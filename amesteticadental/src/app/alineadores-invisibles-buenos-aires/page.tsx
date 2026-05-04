@@ -59,7 +59,7 @@ export default function AlineadoresBAPage() {
                             </div>
                         ))}
                     </div>
-                    <p className="text-crema/30 text-xs">Precio incluye todos los alineadores del tratamiento + controles. Evaluación inicial sin cargo.</p>
+                    <p className="text-crema/30 text-xs">La inversión incluye todos los alineadores del tratamiento + controles.</p>
                 </section>
 
                 <section className="px-6 py-16 border-t border-oro/8 max-w-6xl mx-auto">
@@ -70,7 +70,7 @@ export default function AlineadoresBAPage() {
                             { q: "¿Los alineadores invisibles duelen?", a: "Puede haber presión leve los primeros 2-3 días de cada nueva serie de alineadores. No es dolor sino sensación de ajuste. Desaparece rápido y no interfiere con la vida diaria." },
                             { q: "¿Se pueden comer con los alineadores puestos?", a: "No. Los alineadores se retiran para comer y beber (excepto agua). Se usan 20-22 horas por día. Eso es la principal diferencia con los brackets fijos." },
                             { q: "¿Los alineadores reemplazan completamente a la ortodoncia tradicional?", a: "Para la mayoría de los casos, sí. Casos muy complejos con discrepancias esqueléticas severas pueden requerir ortodoncia fija. Lo evaluamos en la primera consulta." },
-                            { q: "¿Cuánto cuestan los alineadores invisibles en Buenos Aires?", a: "En AM Estética Dental, los tratamientos con alineadores arrancan desde USD 1.500 para casos leves. Casos complejos pueden llegar a USD 6.000. El precio incluye todos los alineadores necesarios y los controles durante el tratamiento." },
+                            { q: "¿Cuánto cuestan los alineadores invisibles en Buenos Aires?", a: "En AM Estética Dental, los tratamientos con alineadores arrancan desde USD 1.500 para casos leves. Casos complejos pueden llegar a USD 6.000. La inversión incluye todos los alineadores necesarios y los controles durante el tratamiento." },
                             { q: "¿Qué diferencia hay entre Invisalign y los alineadores AM?", a: "Invisalign es la marca más conocida a nivel mundial. Los alineadores AM son fabricados con tecnología equivalente, con seguimiento directo del Dr. Merino, sin intermediarios de marca. El resultado clínico es comparable con mayor personalización del tratamiento." },
                         ].map(({ q, a }) => (
                             <details key={q} className="border border-oro/12 rounded-xl group">
@@ -85,7 +85,7 @@ export default function AlineadoresBAPage() {
 
                 <section className="px-6 py-16 text-center border-t border-oro/10">
                     <h2 className="font-light text-3xl text-crema mb-4">Tu sonrisa alineada, <span className="font-cormorant italic text-oro">sin que nadie lo note.</span></h2>
-                    <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Primera evaluación sin cargo. Te decimos si sos candidato y cuánto dura tu caso.</p>
+                    <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Valoración clínica inicial. Te decimos si sos candidato y cuánto dura tu caso.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">Consultar por WhatsApp →</a>
                     <p className="text-crema/25 text-xs mt-4">Camila O'Gorman 412, Puerto Madero · Buenos Aires</p>
                 </section>
