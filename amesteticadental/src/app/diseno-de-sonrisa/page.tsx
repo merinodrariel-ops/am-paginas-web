@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
+
+const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/portafolio/diseno-de-sonrisa";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -92,44 +95,59 @@ export default function DisenoSonrisaPage() {
                 {/* ── HERO ── */}
                 <section className="relative min-h-[90dvh] flex items-center px-6 md:px-12 pt-32 pb-24">
                     <div className="absolute right-[-5%] top-[20%] w-[500px] h-[500px] rounded-full bg-oro/6 blur-[130px] pointer-events-none" />
-                    <div className="max-w-4xl mx-auto w-full">
-                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">
-                            AM Estética Dental · Puerto Madero
-                        </span>
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-manrope font-light text-crema leading-[1.0] mb-7">
-                            Diseño de Sonrisa<br />
-                            <span className="font-cormorant italic text-oro">Digital en Buenos Aires</span>
-                        </h1>
-                        <p className="text-crema/68 font-manrope text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
-                            Antes de tocar un solo diente, diseñamos tu sonrisa en 3D y te la mostramos en pantalla. Ajustás lo que quieras, aprobás el resultado, y recién entonces empezamos. Sin sorpresas.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 items-start">
-                            <a
-                                href={WA_LINK}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 bg-oro text-carbon px-7 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-colors"
-                            >
-                                Consultar sobre diseño de sonrisa →
-                            </a>
-                            <a
-                                href="/"
-                                className="inline-flex items-center gap-2 text-crema/55 font-manrope text-sm hover:text-crema transition-colors pt-3 sm:pt-4"
-                            >
-                                ← Volver al sitio
-                            </a>
+                    <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">
+                                AM Estética Dental · Puerto Madero
+                            </span>
+                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-manrope font-light text-crema leading-[1.0] mb-7">
+                                Diseño de Sonrisa<br />
+                                <span className="font-cormorant italic text-oro">Digital en Buenos Aires</span>
+                            </h1>
+                            <p className="text-crema/68 font-manrope text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
+                                Antes de tocar un solo diente, diseñamos tu sonrisa en 3D y te la mostramos en pantalla. Ajustás lo que quieras, aprobás el resultado, y recién entonces empezamos. Sin sorpresas.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 items-start">
+                                <a
+                                    href={WA_LINK}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-7 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-colors"
+                                >
+                                    Consultar sobre diseño de sonrisa →
+                                </a>
+                                <a
+                                    href="/"
+                                    className="inline-flex items-center gap-2 text-crema/55 font-manrope text-sm hover:text-crema transition-colors pt-3 sm:pt-4"
+                                >
+                                    ← Volver al sitio
+                                </a>
+                            </div>
+                            <div className="flex flex-wrap items-center gap-6 mt-14 pt-8 border-t border-oro/10">
+                                {[
+                                    { v: "4.9★", l: "Google Reviews" },
+                                    { v: "Forbes", l: "Argentina" },
+                                    { v: "3D Digital", l: "Antes de empezar" },
+                                ].map((s) => (
+                                    <div key={s.l}>
+                                        <div className="text-oro font-manrope font-semibold text-lg">{s.v}</div>
+                                        <div className="text-crema-muted font-manrope text-xs">{s.l}</div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                        <div className="flex flex-wrap items-center gap-6 mt-14 pt-8 border-t border-oro/10">
-                            {[
-                                { v: "4.9★", l: "Google Reviews" },
-                                { v: "Forbes", l: "Argentina" },
-                                { v: "3D Digital", l: "Antes de empezar" },
-                            ].map((s) => (
-                                <div key={s.l}>
-                                    <div className="text-oro font-manrope font-semibold text-lg">{s.v}</div>
-                                    <div className="text-crema-muted font-manrope text-xs">{s.l}</div>
-                                </div>
-                            ))}
+                        <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-oro/15">
+                            <Image
+                                src={`${CDN}/diseno-de-sonrisa-analisis-facial-estetica-dental-am`}
+                                alt="Análisis facial diseño de sonrisa digital — AM Estética Dental Puerto Madero Buenos Aires"
+                                fill priority sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-cover"
+                            />
+                            <div className="absolute bottom-4 left-4">
+                                <span className="inline-flex items-center gap-1.5 border border-oro/30 bg-carbon/80 backdrop-blur-sm rounded-full px-3 py-1.5 text-[9px] uppercase tracking-[0.3em] text-oro">
+                                    Análisis facial · Diseño digital
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -184,6 +202,40 @@ export default function DisenoSonrisaPage() {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                </section>
+
+                {/* ── GALERÍA ANÁLISIS CLÍNICO ── */}
+                <section className="py-24 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
+                    <div className="max-w-4xl mx-auto">
+                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Análisis clínico</span>
+                        <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-14">
+                            Así se ve el proceso{" "}
+                            <span className="font-cormorant italic text-oro">desde adentro</span>
+                        </h2>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            {[
+                                { src: "diseno-de-sonrisa-proporcion-aurea-dientes-frontales-am", alt: "Proporción áurea aplicada a dientes frontales — diseño de sonrisa AM Estética Dental" },
+                                { src: "diseno-de-sonrisa-sonrisa-natural-analisis-dental-am", alt: "Análisis de sonrisa natural con grilla dental — AM Estética Dental Buenos Aires" },
+                                { src: "diseno-de-sonrisa-fibonacci-close-up-incisivos-am-estetica", alt: "Espiral de Fibonacci en análisis de incisivos — diseño de sonrisa digital" },
+                                { src: "diseno-de-sonrisa-vista-frontal-incisivos-estetica-dental-am", alt: "Vista frontal de incisivos con análisis digital — AM Estética Dental Puerto Madero" },
+                                { src: "diseno-de-sonrisa-curva-incisal-analisis-dental-am", alt: "Curva incisal y análisis de proporción dental — AM Estética Dental" },
+                                { src: "diseno-de-sonrisa-carillas-ceramica-render-3d-am-estetica", alt: "Render 3D carillas de cerámica con análisis gingival — AM Estética Dental" },
+                            ].map((img, i) => (
+                                <div key={i} className="relative aspect-square rounded-xl overflow-hidden border border-oro/10 group">
+                                    <Image
+                                        src={`${CDN}/${img.src}`}
+                                        alt={img.alt}
+                                        fill
+                                        sizes="(max-width: 640px) 50vw, 33vw"
+                                        className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                        <p className="text-crema/25 font-manrope text-xs text-center mt-4">
+                            Análisis digital de proporción dental · AM Estética Dental · Puerto Madero, Buenos Aires
+                        </p>
                     </div>
                 </section>
 

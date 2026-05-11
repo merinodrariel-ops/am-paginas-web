@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+
+const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/portafolio/diseno-de-sonrisa";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -146,6 +149,45 @@ export default function ArticuloDisenoSonrisaDigital() {
                                 ))}
                             </div>
                         </section>
+
+                        {/* Galería proceso */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-oro/10">
+                                <Image
+                                    src={`${CDN}/diseno-de-sonrisa-analisis-facial-estetica-dental-am`}
+                                    alt="Análisis facial con líneas de diseño de sonrisa digital — Dr. Ariel Merino AM Estética Dental"
+                                    fill sizes="(max-width: 768px) 100vw, 50vw"
+                                    className="object-cover"
+                                />
+                            </div>
+                            <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-oro/10">
+                                <Image
+                                    src={`${CDN}/diseno-de-sonrisa-proporcion-aurea-dientes-frontales-am`}
+                                    alt="Proporción áurea en planificación de dientes frontales — diseño de sonrisa digital AM Estética Dental"
+                                    fill sizes="(max-width: 768px) 100vw, 50vw"
+                                    className="object-cover"
+                                />
+                            </div>
+                            <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-oro/10">
+                                <Image
+                                    src={`${CDN}/diseno-de-sonrisa-fibonacci-close-up-incisivos-am-estetica`}
+                                    alt="Espiral de Fibonacci aplicada a incisivos — análisis dental digital AM Estética Dental Buenos Aires"
+                                    fill sizes="(max-width: 768px) 100vw, 50vw"
+                                    className="object-cover"
+                                />
+                            </div>
+                            <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-oro/10">
+                                <Image
+                                    src={`${CDN}/diseno-de-sonrisa-carillas-ceramica-render-3d-am-estetica`}
+                                    alt="Render 3D de carillas de cerámica con análisis gingival — AM Estética Dental Puerto Madero"
+                                    fill sizes="(max-width: 768px) 100vw, 50vw"
+                                    className="object-cover"
+                                />
+                            </div>
+                        </div>
+                        <p className="text-crema/25 font-manrope text-xs text-center -mt-2">
+                            Análisis digital de proporción · AM Estética Dental · Puerto Madero, Buenos Aires
+                        </p>
 
                         {/* Qué puede y no puede hacer */}
                         <section>
