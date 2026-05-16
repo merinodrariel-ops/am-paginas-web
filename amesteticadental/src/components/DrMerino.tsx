@@ -65,7 +65,7 @@ export default function DrMerino() {
     }, []);
 
     return (
-        <section ref={sectionRef} id="clinica" className="py-32 px-4 bg-carbon relative overflow-hidden">
+        <section ref={sectionRef} id="dr-ariel-merino" className="py-32 px-4 bg-carbon relative overflow-hidden">
 
             {/* Línea dorada decorativa izquierda */}
             <div className="absolute left-0 top-1/4 bottom-1/4 w-px bg-gradient-to-b from-oro/0 via-oro/30 to-oro/0" />

@@ -1,5 +1,6 @@
 export type Categoria =
     | "Carillas de porcelana"
+    | "Carilla unitaria"
     | "Alineadores"
     | "Diseño de sonrisa"
     | "Blanqueamiento"
@@ -45,6 +46,140 @@ export interface Caso {
 
 export const CASOS: Caso[] = [
     {
+        slug: "diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan",
+        titulo: "Vino de Milán con la sonrisa quebrada. La resolvimos en una semana.",
+        subtitulo: "Plano de sonrisa quebrado + bordes incisales fracturados — diseño de sonrisa completo con carillas cerámicas AM",
+        descripcion: "Caso extremo de diseño de sonrisa con plano quebrado y bordes incisales fracturados. Paciente de Italia, residente en Milan, tratado en una semana con carillas ceramicas AM por Dr. Ariel Merino en AM Estetica Dental, Puerto Madero, Buenos Aires.",
+        categorias: ["Diseño de sonrisa", "Carillas de porcelana", "Rehabilitación oral"],
+        duracion: "1 semana",
+        piezas: "Diseño de sonrisa completo",
+        tecnica: "Carillas cerámicas AM, planificación facial y corrección del plano incisal",
+        fotoPortada: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan/diseno-sonrisa-plano-quebrado-carillas-ceramicas-antes-despues-portada-paciente-italia-milan-dr-ariel-merino-am-estetica-dental",
+            alt: "Antes y después diseño de sonrisa por plano quebrado con carillas cerámicas — paciente de Milán — Dr. Ariel Merino AM Estética Dental Puerto Madero",
+        },
+        fotos: [
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan/diseno-sonrisa-plano-quebrado-carillas-ceramicas-antes-despues-portada-paciente-italia-milan-dr-ariel-merino-am-estetica-dental",
+                alt: "Antes y después diseño de sonrisa por plano quebrado con carillas cerámicas — paciente de Milán — Dr. Ariel Merino AM Estética Dental Puerto Madero",
+                caption: "Antes y después — diseño de sonrisa completo",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan/diseno-sonrisa-plano-quebrado-foto-inicial-incisivos-bordes-quebrados-paciente-italia-am-estetica-dental",
+                alt: "Foto inicial de plano quebrado con incisivos y bordes incisales fracturados — paciente de Italia — AM Estética Dental Buenos Aires",
+                caption: "Estado inicial — plano quebrado y bordes incisales",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan/diseno-sonrisa-carillas-ceramicas-resultado-final-paciente-italia-milan-dr-ariel-merino",
+                alt: "Resultado final diseño de sonrisa con carillas cerámicas en una semana — paciente de Milán — Dr. Ariel Merino",
+                caption: "Resultado final — carillas cerámicas AM",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan/labios-antes-despues-diseno-sonrisa-plano-quebrado-carillas-ceramicas-am-estetica-dental-puerto-madero",
+                alt: "Labios antes y después diseño de sonrisa con carillas cerámicas por plano quebrado — AM Estética Dental Puerto Madero",
+                caption: "Labios — antes y después",
+            },
+        ],
+        copy: `Llegó desde Italia con una sonrisa completamente desordenada. Vive en Milán y tenía una ventana muy corta para resolverlo: una semana.
+
+El diagnóstico estético era claro: el plano de la sonrisa estaba quebrado. Los bordes incisales no acompañaban la línea bipupilar ni la arquitectura del rostro. Los dientes anteriores se veían fracturados, irregulares y sin una lectura armónica.
+
+Este tipo de caso no se resuelve solo aclarando el color. Había que reconstruir la forma, el largo, la proporción y la dirección visual de la sonrisa completa.
+
+El plan fue un diseño de sonrisa con carillas cerámicas AM, guiado por el análisis facial. Corregimos el plano incisal, nivelamos bordes, devolvimos volumen y ordenamos la sonrisa para que el resultado se integrara con la cara.
+
+En una semana pasó de una sonrisa quebrada a una sonrisa limpia, armónica y natural. Un antes y después extremo, pero con una premisa muy AM: que el resultado se vea potente sin verse artificial.`,
+        copyRedes: `Vino desde Milán con una sonrisa quebrada.
+
+Los bordes de los incisivos no acompañaban la línea de la cara. El plano de la sonrisa estaba roto.
+
+En una semana hicimos diseño de sonrisa con carillas cerámicas AM: forma, proporción, color y plano incisal.
+
+No era solo hacer dientes más blancos. Era reconstruir la arquitectura de la sonrisa.`,
+        precio: {
+            total: "USD a definir según diagnóstico",
+            nota: "Diseño de sonrisa completo con carillas cerámicas AM. El valor final depende de cantidad de piezas, planificación y complejidad clínica.",
+        },
+        publicado: true,
+    },
+    {
+        slug: "carilla-unitaria-incisivo-central-oscurecido",
+        titulo: "Un solo diente puede cambiar toda una sonrisa.",
+        subtitulo: "Incisivo central oscurecido por traumatismo infantil — resuelto con blanqueamiento, resinas de contexto y una cerámica unitaria estratificada",
+        descripcion: "Caso clinico de carilla unitaria en incisivo central oscurecido por traumatismo y tratamiento de conducto. Seleccion de color, maquillaje ceramico artistico, cementado adhesivo y resultado natural en AM Estetica Dental, Puerto Madero, Buenos Aires.",
+        categorias: ["Carilla unitaria", "Carillas de porcelana", "Diseño de sonrisa", "Blanqueamiento"],
+        duracion: "Tratamiento personalizado",
+        piezas: "1 incisivo central + resinas de contexto en dientes vecinos",
+        tecnica: "Cerámica unitaria estratificada, prueba de color, maquillaje cerámico y cementado adhesivo",
+        fotoPortada: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/carilla-unitaria-incisivo-central-oscurecido-antes-despues-portada-dr-ariel-merino-am-estetica-dental-puerto-madero",
+            alt: "Antes y después de carilla unitaria en incisivo central oscurecido por traumatismo infantil — Dr. Ariel Merino AM Estética Dental Puerto Madero",
+        },
+        fotos: [
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/carilla-unitaria-incisivo-central-oscurecido-antes-despues-portada-dr-ariel-merino-am-estetica-dental-puerto-madero",
+                alt: "Antes y después de carilla unitaria en incisivo central oscurecido por traumatismo infantil — Dr. Ariel Merino AM Estética Dental Puerto Madero",
+                caption: "Antes y después — carilla unitaria en incisivo central",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/carilla-unitaria-incisivo-central-oscurecido-foto-inicial-traumatismo-conducto-am-estetica-dental-buenos-aires",
+                alt: "Foto inicial de incisivo central oscurecido antes de carilla unitaria cerámica — AM Estética Dental Puerto Madero",
+                caption: "Estado inicial del incisivo central oscurecido",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/carilla-unitaria-incisivo-central-ceramica-resultado-natural-dr-ariel-merino-am-estetica-dental",
+                alt: "Resultado natural de carilla cerámica unitaria en incisivo central — Dr. Ariel Merino AM Estética Dental Buenos Aires",
+                caption: "Resultado final con cerámica unitaria",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/cementado-adhesivo-carilla-unitaria-incisivo-central-ceramica-am-estetica-dental-puerto-madero",
+                alt: "Proceso de cementado adhesivo de carilla unitaria en incisivo central — AM Estética Dental Puerto Madero",
+                caption: "Cementado adhesivo de la cerámica",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/carilla-unitaria-incisivo-central-antes-despues-perfil-derecho-am-estetica-dental-buenos-aires",
+                alt: "Antes y después de carilla unitaria en incisivo central vista de perfil derecho — AM Estética Dental Buenos Aires",
+                caption: "Antes y después — perfil derecho",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/carilla-unitaria-incisivo-central-comparativa-labios-sonrisa-resinas-blanqueamiento-am-estetica-dental",
+                alt: "Comparativa con labios de carilla unitaria en incisivo central y armonización con resinas y blanqueamiento — AM Estética Dental",
+                caption: "Comparativa con labios y sonrisa",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/modelo-render-3d-planificacion-carilla-unitaria-incisivo-central-dr-ariel-merino",
+                alt: "Comparación de modelo y render 3D para planificación de carilla unitaria en incisivo central — Dr. Ariel Merino",
+                caption: "Planificación digital y modelo 3D",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/prueba-tres-colores-maquillaje-ceramico-carilla-unitaria-incisivo-central-am-estetica-dental",
+                alt: "Prueba de tres colores y maquillaje cerámico artístico para carilla unitaria en incisivo central — AM Estética Dental",
+                caption: "Prueba de color y maquillaje cerámico",
+            },
+        ],
+        copy: `Una carilla unitaria en un incisivo central es uno de los desafíos más artísticos de la odontología estética. No alcanza con hacer un diente blanco. Tiene que integrarse con el diente vecino, copiar su luz, su textura, sus pequeñas transparencias y hasta sus imperfecciones.
+
+En este caso, la paciente llegó con una de sus paletas centrales oscurecida. Es algo frecuente después de un golpe en la infancia: el diente puede necesitar tratamiento de conducto y, con los años, empezar a verse más oscuro.
+
+El plan fue mejorar primero el contexto: blanqueamiento dentario para ordenar el color general y resinas en dientes vecinos para armonizar proporciones. Después se trabajó la cerámica como una pieza individual, probando tres alternativas de color antes de elegir la que mejor se integraba.
+
+La cerámica se terminó de manera artesanal, como si fuera un pequeño lienzo blanco: se maquilló capa por capa para reproducir el diente vecino. Una vez logrado el color y la textura, se hizo el cementado adhesivo, es decir, el pegado definitivo de la pieza.
+
+El resultado buscó algo muy preciso: que el diente restaurado no se note. En una carilla unitaria, el éxito no es que la cerámica llame la atención. El éxito es que desaparezca dentro de la sonrisa.`,
+        copyRedes: `Un solo central oscuro puede romper toda la armonía de una sonrisa.
+
+Este tipo de caso suele venir de un golpe de chico, tratamiento de conducto y años de oscurecimiento progresivo.
+
+Blanqueamiento, resinas de contexto, prueba de tres colores y una cerámica maquillada de forma artesanal para copiar el diente vecino.
+
+Cuando una carilla unitaria está bien hecha, no se ve la carilla. Se ve una sonrisa.`,
+        precio: {
+            total: "USD a definir según diagnóstico",
+            nota: "Carilla cerámica unitaria en incisivo central + planificación de color + cementado adhesivo. El valor final depende del contexto clínico, blanqueamiento y restauraciones complementarias.",
+        },
+        publicado: true,
+    },
+    {
         slug: "20-carillas-porcelana-apinamiento-sin-ortodoncia",
         titulo: "20 carillas en 10 días. Sin ortodoncia. Sin blanqueamiento. Sin que nadie lo note.",
         subtitulo: "Apiñamiento residual + desgaste + color — resuelto solo con la forma de las carillas",
@@ -54,37 +189,37 @@ export const CASOS: Caso[] = [
         piezas: "20 piezas (10 superiores + 10 inferiores)",
         tecnica: "Mínimamente invasiva, desgaste controlado",
         fotoPortada: {
-            src: "/images/casos/federico/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental.png",
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-sin-ortodoncia/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental",
             alt: "Antes y después diseño de sonrisa con 20 carillas de porcelana sin ortodoncia — AM Estética Dental",
         },
         fotos: [
             {
-                src: "/images/casos/federico/carillas-porcelana-20-piezas-mordida-antes-despues-am-estetica-dental.png",
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-sin-ortodoncia/carillas-porcelana-20-piezas-mordida-antes-despues-am-estetica-dental",
                 alt: "Antes y después — vista intraoral de mordida con 20 carillas de porcelana — AM Estética Dental",
                 caption: "Vista intraoral — mordida antes y después",
             },
             {
-                src: "/images/casos/federico/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental.png",
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-sin-ortodoncia/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental",
                 alt: "Antes y después sonrisa con labios — 20 carillas de porcelana sin ortodoncia — AM Estética Dental",
                 caption: "Sonrisa frontal antes y después",
             },
             {
-                src: "/images/casos/federico/carillas-porcelana-arcada-superior-antes-despues-am-estetica-dental.png",
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-sin-ortodoncia/carillas-porcelana-arcada-superior-antes-despues-am-estetica-dental",
                 alt: "Arcada superior antes y después — carillas de porcelana mínimamente invasivas — AM Estética Dental",
                 caption: "Arcada superior",
             },
             {
-                src: "/images/casos/federico/carillas-porcelana-arcada-inferior-antes-despues-am-estetica-dental.png",
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-sin-ortodoncia/carillas-porcelana-arcada-inferior-antes-despues-am-estetica-dental",
                 alt: "Arcada inferior antes y después — carillas de porcelana mínimamente invasivas — AM Estética Dental",
                 caption: "Arcada inferior",
             },
             {
-                src: "/images/casos/federico/diseno-sonrisa-carillas-sin-ortodoncia-antes-am-estetica-dental.png",
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-sin-ortodoncia/diseno-sonrisa-carillas-sin-ortodoncia-antes-am-estetica-dental",
                 alt: "Estado inicial — apiñamiento y desgaste dental antes de carillas — AM Estética Dental",
                 caption: "Estado inicial",
             },
             {
-                src: "/images/casos/federico/carillas-lentes-contacto-dental-sonrisa-natural-resultado-am-estetica-dental.png",
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-sin-ortodoncia/carillas-lentes-contacto-dental-sonrisa-natural-resultado-am-estetica-dental",
                 alt: "Resultado final — sonrisa natural con lentes de contacto dental — AM Estética Dental",
                 caption: "Resultado final",
             },

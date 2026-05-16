@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import CasoGaleria from "@/components/CasoGaleria";
@@ -19,20 +18,52 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const caso = getCasoBySlug(slug);
     if (!caso) return {};
 
+    const canonical = `https://www.amesteticadental.com/casos/${caso.slug}`;
+    const keywords = [
+        ...caso.categorias,
+        "casos clinicos odontologia estetica",
+        "antes y despues odontologia estetica",
+        "Dr. Ariel Merino",
+        "AM Estetica Dental",
+        "Puerto Madero",
+        "Buenos Aires",
+    ];
+
     return {
         metadataBase: new URL("https://www.amesteticadental.com"),
         title: `${caso.titulo} | AM Estética Dental`,
         description: caso.descripcion,
+        keywords,
         alternates: {
-            canonical: `https://www.amesteticadental.com/casos/${caso.slug}`,
+            canonical,
         },
         openGraph: {
             title: caso.titulo,
             description: caso.descripcion,
-            url: `https://www.amesteticadental.com/casos/${caso.slug}`,
+            url: canonical,
             images: [{ url: caso.fotoPortada.src }],
             locale: "es_AR",
             type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: caso.titulo,
+            description: caso.descripcion,
+            images: [caso.fotoPortada.src],
+        },
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                "max-image-preview": "large",
+            },
+        },
+        other: {
+            "geo.region": "AR-C",
+            "geo.placename": "Puerto Madero, Buenos Aires",
+            "ICBM": "-34.6107,-58.3621",
         },
     };
 }
@@ -42,9 +73,42 @@ export default async function CasoPage({ params }: Props) {
     const caso = getCasoBySlug(slug);
     if (!caso) notFound();
 
+    const canonical = `https://www.amesteticadental.com/casos/${caso.slug}`;
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "MedicalWebPage",
+        name: caso.titulo,
+        headline: caso.titulo,
+        description: caso.descripcion,
+        url: canonical,
+        image: caso.fotos.map((foto) => foto.src),
+        about: caso.categorias,
+        medicalSpecialty: "Dentistry",
+        publisher: {
+            "@type": "MedicalBusiness",
+            name: "AM Estética Dental",
+            url: "https://www.amesteticadental.com",
+            telephone: "+541170219298",
+            address: {
+                "@type": "PostalAddress",
+                addressLocality: "Puerto Madero",
+                addressRegion: "Buenos Aires",
+                addressCountry: "AR",
+            },
+            founder: {
+                "@type": "Person",
+                name: "Dr. Ariel Merino",
+            },
+        },
+    };
+
     return (
         <>
             <Navbar />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <main className="bg-carbon min-h-screen pt-32 pb-32 px-4">
                 <div className="max-w-5xl mx-auto">
 

@@ -13,10 +13,12 @@ import ClientesVIP from "@/components/ClientesVIP";
 import Financiacion from "@/components/Financiacion";
 import FAQ from "@/components/FAQ";
 import Contacto from "@/components/Contacto";
+import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
+      <BreadcrumbsSchema items={[{ name: "Inicio", item: "/" }]} />
       <Navbar />
 
       {/* 1. HERO — impacto visual. El primer segundo decide todo. */}
@@ -25,20 +27,20 @@ export default function Home() {
       {/* 2. CASOS — resultados reales inmediatos. La gente entra a ver esto. */}
       <Casos />
 
-      {/* 3. TESTIMONIOS — validación social mientras los casos están frescos. */}
+      {/* 3. DR. MERINO — quién está detrás de los casos. */}
+      <DrMerino />
+
+      {/* 4. TESTIMONIOS — validación social mientras los casos están frescos. */}
       <Testimonios />
 
-      {/* 4. AUTORIDAD — Google 4.9 + Forbes refuerzan lo que ya vieron. */}
+      {/* 5. AUTORIDAD — Google 4.9 + Forbes refuerzan lo que ya vieron. */}
       <Autoridad />
 
-      {/* 5. TRATAMIENTOS — ahora que vieron resultados, quieren saber cómo. */}
+      {/* 6. TRATAMIENTOS — ahora que vieron resultados, quieren saber cómo. */}
       <Tratamientos />
 
-      {/* 6. PROCESO — la tecnología que sostiene resultados naturales. */}
+      {/* 7. PROCESO — la tecnología que sostiene resultados naturales. */}
       <Features />
-
-      {/* 7. DR. MERINO — quién está detrás de los casos. */}
-      <DrMerino />
 
       {/* 8. CLÍNICA — el espacio físico refuerza el estándar premium. */}
       <Clinica />

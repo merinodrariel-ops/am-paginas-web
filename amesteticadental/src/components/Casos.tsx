@@ -1,156 +1,22 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { getCasosPublicados } from "@/data/casos";
 
-const CASO_FEATURED = {
-    src: "/images/casos/caso-extremo-carillas-veneers-03-dr-ariel-merino-am-estetica-dental.webp",
-    alt: "Transformación extrema con carillas de porcelana — Dr. Ariel Merino — AM Estética Dental Puerto Madero",
-    tratamiento: "Carillas de Porcelana",
-    descripcion: "Transformación extrema",
-    detalle: "Rehabilitación completa del sector anterior con veneers de porcelana de alta translucidez",
-};
-
-// Aspect ratios reales de cada imagen para layout sin distorsión
-const CASOS = [
-    {
-        src: "/images/casos/caso-carillas-ceramicas-antes-despues-02-am-estetica-dental.webp",
-        alt: "Antes de carillas cerámicas — AM Estética Dental",
-        tratamiento: "Carillas Cerámicas",
-        descripcion: "Antes",
-        aspect: "aspect-square",
-    },
-    {
-        src: "/images/casos/caso-carillas-ceramicas-antes-despues-01-am-estetica-dental.webp",
-        alt: "Después de carillas cerámicas — AM Estética Dental",
-        tratamiento: "Carillas Cerámicas",
-        descripcion: "Después",
-        aspect: "aspect-square",
-    },
-    {
-        src: "/images/casos/caso-diseno-sonrisa-carillas-ceramicas-antes-despues-am-estetica-dental.webp",
-        alt: "Diseño de sonrisa con carillas cerámicas antes y después — AM Estética Dental",
-        tratamiento: "Diseño de Sonrisa",
-        descripcion: "Antes / Después",
-        aspect: "aspect-[4/5]",
-    },
-    {
-        src: "/images/casos/caso-eli-carillas-ceramicas-01-am-estetica-dental.webp",
-        alt: "Caso Eli — Transformación con carillas cerámicas antes y después — AM Estética Dental",
-        tratamiento: "Carillas Cerámicas",
-        descripcion: "Caso Eli — Antes / Después",
-        aspect: "aspect-square",
-    },
-    {
-        src: "/images/casos/caso-bruxismo-carillas-mordida-cruzada-am-estetica-dental.webp",
-        alt: "Tratamiento de bruxismo con carillas y corrección de mordida cruzada — AM Estética Dental",
-        tratamiento: "Bruxismo",
-        descripcion: "Mordida cruzada",
-        aspect: "aspect-[4/5]",
-    },
-    {
-        src: "/images/casos/caso-erosion-dentaria-carillas-ceramicas-am-estetica-dental.webp",
-        alt: "Tratamiento de erosión dentaria con carillas cerámicas — AM Estética Dental",
-        tratamiento: "Erosión Dentaria",
-        descripcion: "Rehabilitación completa",
-        aspect: "aspect-[4/5]",
-    },
-    {
-        src: "/images/casos/caso-caries-carillas-diseno-sonrisa-ceramica-am-estetica-dental.webp",
-        alt: "Diseño de sonrisa cerámica en caso de caries — AM Estética Dental",
-        tratamiento: "Diseño de Sonrisa",
-        descripcion: "Rehabilitación cerámica",
-        aspect: "aspect-[4/5]",
-    },
-    {
-        src: "/images/casos/caso-carillas-ceramicas-antes-despues-03-am-estetica-dental.webp",
-        alt: "Carillas cerámicas caso avanzado antes y después — AM Estética Dental",
-        tratamiento: "Carillas Cerámicas",
-        descripcion: "Caso avanzado",
-        aspect: "aspect-[4/5]",
-    },
-    {
-        src: "/images/casos/caso-carilla-diente-oscurecido-tratamiento-conducto-am-estetica-dental.webp",
-        alt: "Carilla sobre diente oscurecido post tratamiento de conducto — AM Estética Dental",
-        tratamiento: "Carilla Unitaria",
-        descripcion: "Post endodoncia",
-        aspect: "aspect-[4/5]",
-    },
-    {
-        src: "/images/casos/caso-extremo-diseno-sonrisa-carillas-ceramicas-dr-ariel-merino.webp",
-        alt: "Caso extremo de diseño de sonrisa con carillas cerámicas — Dr. Ariel Merino",
-        tratamiento: "Carillas Cerámicas",
-        descripcion: "Caso extremo",
-        aspect: "aspect-[16/9]",
-    },
-    {
-        src: "/images/casos/caso-italiano-carillas-ceramicas-01-am-estetica-dental.webp",
-        alt: "Caso Italiano — Carillas cerámicas AM Estética Dental",
-        tratamiento: "Carillas Cerámicas",
-        descripcion: "Caso internacional",
-        aspect: "aspect-square",
-    },
-    {
-        src: "/images/casos/caso-italiano-carillas-ceramicas-02-am-estetica-dental.webp",
-        alt: "Resultado carillas cerámicas caso internacional — AM Estética Dental",
-        tratamiento: "Carillas Cerámicas",
-        descripcion: "Resultado final",
-        aspect: "aspect-square",
-    },
-    {
-        src: "/images/casos/caso-patricia-carillas-diseno-sonrisa-ceramicas-dr-ariel-merino.webp",
-        alt: "Caso Patricia — diseño de sonrisa con carillas cerámicas — Dr. Ariel Merino",
-        tratamiento: "Diseño de Sonrisa",
-        descripcion: "Transformación natural",
-        aspect: "aspect-[16/9]",
-    },
-    {
-        src: "/images/casos/caso-extremo-carillas-veneers-04-dr-ariel-merino-am-estetica-dental.webp",
-        alt: "Transformación extrema con carillas — antes y después — Dr. Ariel Merino AM Estética Dental",
-        tratamiento: "Carillas de Porcelana",
-        descripcion: "Caso extremo — Antes / Después",
-        aspect: "aspect-[16/9]",
-    },
-    {
-        src: "/images/casos/caso-eli-carillas-ceramicas-03-am-estetica-dental.webp",
-        alt: "Caso Eli — antes del tratamiento con carillas cerámicas — AM Estética Dental",
-        tratamiento: "Carillas Cerámicas",
-        descripcion: "Caso Eli — Antes",
-        aspect: "aspect-[4/5]",
-    },
-    {
-        src: "/images/casos/caso-eli-carillas-ceramicas-04-am-estetica-dental.webp",
-        alt: "Caso Eli — después del tratamiento con carillas cerámicas — AM Estética Dental",
-        tratamiento: "Carillas Cerámicas",
-        descripcion: "Caso Eli — Después",
-        aspect: "aspect-[4/5]",
-    },
-];
+const CASOS_DESTACADOS = getCasosPublicados().slice(0, 6);
 
 export default function Casos() {
     const sectionRef = useRef<HTMLElement>(null);
-    const featuredRef = useRef<HTMLDivElement>(null);
     const gridRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
         const ctx = gsap.context(() => {
-            // Featured case: fade + scale up
-            gsap.from(featuredRef.current, {
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: featuredRef.current,
-                    start: "top 85%",
-                },
-            });
-
-            // Grid: stagger reveal
             const cards = gridRef.current?.querySelectorAll(".caso-card");
             if (cards) {
                 gsap.from(cards, {
@@ -185,92 +51,79 @@ export default function Casos() {
                     </span>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
                         <h2 className="text-4xl md:text-5xl font-manrope font-light text-crema leading-tight">
-                            Resultados que hablan{" "}
-                            <span className="font-cormorant italic text-oro">por sí solos.</span>
+                            Antes y después, ordenados{" "}
+                            <span className="font-cormorant italic text-oro">por caso clínico.</span>
                         </h2>
                         <p className="text-crema-muted font-manrope text-lg font-light leading-relaxed">
-                            Cada caso lleva el watermark @drarielmerino. No son imágenes de stock — son pacientes reales de AM Estética Dental, con nombre y responsable clínico visible.
+                            Cada portada abre la historia completa del paciente: diagnóstico, tratamiento, duración, técnica y más fotos del resultado.
                         </p>
-                    </div>
-                </div>
-
-                {/* Featured case */}
-                <div ref={featuredRef} className="relative mb-4 overflow-hidden rounded-2xl group">
-                    <div className="relative aspect-[16/9] md:aspect-[21/9]">
-                        <Image
-                            src={CASO_FEATURED.src}
-                            alt={CASO_FEATURED.alt}
-                            fill
-                            sizes="100vw"
-                            className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
-                            priority
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-carbon/90 via-carbon/20 to-transparent" />
-
-                        {/* Info overlay */}
-                        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-                                <div>
-                                    <span className="inline-flex items-center gap-2 border border-oro/30 bg-carbon/70 backdrop-blur-sm rounded-full px-4 py-1.5 font-manrope text-[10px] uppercase tracking-[0.3em] text-oro mb-4">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-oro" />
-                                        {CASO_FEATURED.tratamiento}
-                                    </span>
-                                    <h3 className="text-crema font-manrope font-light text-2xl md:text-3xl">
-                                        {CASO_FEATURED.descripcion}
-                                    </h3>
-                                    <p className="text-crema/60 font-manrope text-sm mt-2 max-w-md">
-                                        {CASO_FEATURED.detalle}
-                                    </p>
-                                </div>
-                                <div className="flex items-center gap-2 text-oro/50 font-manrope text-xs uppercase tracking-widest">
-                                    @drarielmerino
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
                 {/* Grid de casos */}
                 <div
                     ref={gridRef}
-                    className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                 >
-                    {CASOS.map((caso) => (
-                        <div
-                            key={caso.src}
-                            className="caso-card break-inside-avoid group relative overflow-hidden rounded-xl mb-4"
+                    {CASOS_DESTACADOS.map((caso) => (
+                        <Link
+                            key={caso.slug}
+                            href={`/casos/${caso.slug}`}
+                            className="caso-card group block"
                         >
-                            <div className={`relative ${caso.aspect} w-full`}>
-                                <Image
-                                    src={caso.src}
-                                    alt={caso.alt}
-                                    fill
-                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                    className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                                />
-
-                                {/* Overlay on hover */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-carbon/85 via-carbon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-
-                                {/* Treatment badge — always visible */}
-                                <div className="absolute top-3 left-3">
-                                    <span className="inline-flex items-center gap-1.5 border border-oro/20 bg-carbon/75 backdrop-blur-sm rounded-full px-3 py-1 font-manrope text-[9px] uppercase tracking-[0.28em] text-oro">
-                                        {caso.tratamiento}
-                                    </span>
+                            <article className="h-full overflow-hidden rounded-2xl border border-crema/5 bg-carbon-soft transition-colors duration-300 hover:border-oro/25">
+                                <div className="relative aspect-[4/5] overflow-hidden">
+                                    <Image
+                                        src={caso.fotoPortada.src}
+                                        alt={caso.fotoPortada.alt}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                        className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-carbon/90 via-carbon/10 to-transparent" />
+                                    <div className="absolute top-4 left-4 right-4 flex items-start justify-between gap-3">
+                                        <span className="inline-flex border border-oro/25 bg-carbon/75 px-3 py-1 font-manrope text-[9px] uppercase tracking-[0.24em] text-oro backdrop-blur-sm">
+                                            {caso.categorias[0]}
+                                        </span>
+                                        <span className="inline-flex border border-crema/10 bg-carbon/70 px-3 py-1 font-manrope text-[9px] uppercase tracking-[0.24em] text-crema/70 backdrop-blur-sm">
+                                            {caso.duracion}
+                                        </span>
+                                    </div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                                        <p className="mb-2 font-manrope text-[10px] uppercase tracking-[0.28em] text-oro/70">
+                                            Caso completo
+                                        </p>
+                                        <h3 className="line-clamp-2 font-manrope text-xl font-light leading-snug text-crema">
+                                            {caso.titulo}
+                                        </h3>
+                                    </div>
                                 </div>
-
-                                {/* Description — appears on hover */}
-                                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
-                                    <p className="font-manrope text-xs text-crema/70 uppercase tracking-widest">
-                                        {caso.descripcion}
+                                <div className="p-5">
+                                    <p className="line-clamp-2 min-h-[2.75rem] font-manrope text-sm leading-relaxed text-crema/50">
+                                        {caso.subtitulo}
                                     </p>
-                                    <p className="font-manrope text-[10px] text-oro/40 mt-1">
-                                        @drarielmerino · AM Estética Dental
-                                    </p>
+                                    <div className="mt-5 flex items-center justify-between gap-4 border-t border-crema/5 pt-4">
+                                        <span className="font-manrope text-[10px] uppercase tracking-[0.24em] text-crema/35">
+                                            @drarielmerino
+                                        </span>
+                                        <span className="font-manrope text-xs uppercase tracking-widest text-oro transition-transform duration-200 group-hover:translate-x-1">
+                                            Ver caso →
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            </article>
+                        </Link>
                     ))}
+                </div>
+
+                <div className="mt-10 text-center">
+                    <Link
+                        href="/casos"
+                        className="inline-flex items-center gap-3 border border-oro/25 px-7 py-3.5 font-manrope text-xs font-semibold uppercase tracking-[0.25em] text-oro transition-colors hover:border-oro hover:bg-oro hover:text-carbon"
+                    >
+                        Ver todos los casos
+                        <span>→</span>
+                    </Link>
                 </div>
 
                 {/* CTA */}
