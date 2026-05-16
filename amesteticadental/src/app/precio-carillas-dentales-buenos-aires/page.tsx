@@ -5,20 +5,21 @@ import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import CalculadoraFinanciacion from "@/components/CalculadoraFinanciacion";
 import { getCasosPublicados } from "@/data/casos";
+import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Precio Carillas Dentales Buenos Aires 2026 · Desde USD 800 · AM Estética Dental",
+  title: "¿Qué son y cuánto cuestan las Carillas Dentales? Precios 2026",
   description:
-    "Precio real de carillas dentales en Buenos Aires 2026. Tabla por material, financiación propia y calculadora de cuotas. Dr. Ariel Merino, Puerto Madero. Casos reales con antes y después.",
+    "Guía completa sobre el precio de carillas dentales en Buenos Aires. Tabla de costos por material (Porcelana vs Resina) y simulador de financiación en cuotas.",
   keywords: "precio carillas dentales Buenos Aires, costo carillas porcelana Argentina, carillas dentales precio 2026, financiación carillas Puerto Madero, cuánto cuestan las carillas dentales",
   alternates: {
     canonical: "https://www.amesteticadental.com/precio-carillas-dentales-buenos-aires",
   },
   openGraph: {
-    title: "Precio de Carillas Dentales en Buenos Aires 2026 | AM Estética Dental",
+    title: "¿Qué son y cuánto cuestan las Carillas Dentales? Precios 2026",
     description:
-      "Tabla de precios actualizada en USD. Porcelana desde $450, resina desde $200. Financiación propia con tasa fija del 18% anual. Evaluación inicial en Puerto Madero.",
+      "Tabla de precios actualizada 2026. Porcelana vs Resina, financiación propia y casos reales con presupuestos. Evaluación en Puerto Madero.",
     url: "https://www.amesteticadental.com/precio-carillas-dentales-buenos-aires",
     locale: "es_AR",
     type: "website",
@@ -103,6 +104,12 @@ export default function PrecioCarillasPage() {
   const casosConPrecio = getCasosPublicados().filter((c) => c.precio);
   return (
     <>
+      <BreadcrumbsSchema 
+        items={[
+          { name: "Inicio", item: "/" },
+          { name: "Precios", item: "/precio-carillas-dentales-buenos-aires" }
+        ]} 
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(priceSchema) }} />
       <Navbar />

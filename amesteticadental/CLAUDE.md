@@ -37,6 +37,13 @@
 - Use the `project.id` notebook for project-specific sources and session summaries.
 - Use the `brain.id` notebook only for reusable cross-project learnings.
 
+## AM Estética Dental Business Rules
+
+- Clinical case photos must be uploaded to and served from Cloudinary (`drctvgyqd`), not from `public/images/casos` or other local app paths.
+- Use Cloudinary delivery URLs with `q_auto,f_auto` and descriptive `casos/...` paths.
+- Local copies of clinical photos are backup/source material only; do not reference them in app UI, metadata, galleries, or case data unless there is an explicit documented fallback.
+- Before replacing or adding a clinical case image reference, verify the Cloudinary URL returns HTTP 200.
+
 ### Project Config
 
 - **Topology**: hierarchical-mesh

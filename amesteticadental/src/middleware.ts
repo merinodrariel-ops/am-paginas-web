@@ -42,6 +42,10 @@ const REDIRECTS: Record<string, string> = {
         "/",
     "/transforma-tu-sonrisa-con-nuestros-tratamientos-de-odontologa-estetica/feed/":
         "/",
+    "/alineadores-invisibles-la-ortodoncia-estetica-que-transforma-sonrisas-am-estetica-dental-copy":
+        "/alineadores-invisibles",
+    "/alineadores-invisibles-la-ortodoncia-estetica-que-transforma-sonrisas-am-estetica-dental-copy/":
+        "/alineadores-invisibles",
 
     // Trabaja con nosotros → home (no existe equivalente)
     "/trabaja-en-am": "/",
@@ -80,16 +84,6 @@ const REDIRECTS: Record<string, string> = {
 export function middleware(request: NextRequest) {
     const { pathname, searchParams } = request.nextUrl;
 
-    // ── Trailing slash removal (excepto para paths que lo necesitan)
-    if (pathname.endsWith("/") && pathname !== "/") {
-        const cleanPath = pathname.replace(/\/+$/, "");
-        const newUrl = new URL(cleanPath, request.url);
-        if (searchParams.toString()) {
-            newUrl.search = searchParams.toString();
-        }
-        return NextResponse.redirect(newUrl, 301);
-    }
-
     // ── Redirects de URLs viejas
     const redirectPath = REDIRECTS[pathname];
     if (redirectPath) {
@@ -104,6 +98,16 @@ export function middleware(request: NextRequest) {
         }
         // Redirect interno normal
         const newUrl = new URL(redirectPath, request.url);
+        if (searchParams.toString()) {
+            newUrl.search = searchParams.toString();
+        }
+        return NextResponse.redirect(newUrl, 301);
+    }
+
+    // ── Trailing slash removal (excepto para paths que lo necesitan)
+    if (pathname.endsWith("/") && pathname !== "/") {
+        const cleanPath = pathname.replace(/\/+$/, "");
+        const newUrl = new URL(cleanPath, request.url);
         if (searchParams.toString()) {
             newUrl.search = searchParams.toString();
         }

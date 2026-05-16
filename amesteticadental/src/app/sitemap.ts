@@ -162,6 +162,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://www.amesteticadental.com/opiniones",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: "https://www.amesteticadental.com/antes-y-despues",
       lastModified: new Date(),
       changeFrequency: "weekly",

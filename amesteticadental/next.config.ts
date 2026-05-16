@@ -8,17 +8,23 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: configDir,
   },
+  skipTrailingSlashRedirect: true,
   allowedDevOrigins: ["192.168.1.122", "localhost"],
   async redirects() {
     return [
       {
         source: "/carillas-dentales-buenos-aires",
-        destination: "/carillas-dentales",
+        destination: "/precio-carillas-dentales-buenos-aires",
         permanent: true,
       },
       {
         source: "/opiniones-estetica-dental-buenos-aires",
-        destination: "/#testimonios",
+        destination: "/opiniones",
+        permanent: true,
+      },
+      {
+        source: "/opiniones-estetica-dental-buenos-aires/",
+        destination: "/opiniones",
         permanent: true,
       },
       {
@@ -38,6 +44,16 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/alineadores-invisibles-la-ortodoncia-estetica-que-transforma-sonrisas-am-estetica-dental",
+        destination: "/alineadores-invisibles",
+        permanent: true,
+      },
+      {
+        source: "/alineadores-invisibles-la-ortodoncia-estetica-que-transforma-sonrisas-am-estetica-dental-copy",
+        destination: "/alineadores-invisibles",
+        permanent: true,
+      },
+      {
+        source: "/alineadores-invisibles-la-ortodoncia-estetica-que-transforma-sonrisas-am-estetica-dental-copy/",
         destination: "/alineadores-invisibles",
         permanent: true,
       },

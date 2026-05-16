@@ -16,3 +16,9 @@ fix-implantes.mjs
 /TEAM AM/
 /ADS KEYWORDS/
 /scripts/data/
+.vercel
+
+# Carpetas de assets pesados — no van a git
+/videos/
+/portafolio-diseno-de-sonrisa-am-estetica-dental/
+/scratch/

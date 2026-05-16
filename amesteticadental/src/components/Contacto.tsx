@@ -161,8 +161,8 @@ export default function Contacto() {
                 </a>
             </div>
 
-            {/* Footer con logo */}
-            <div className="mt-12 pt-8 border-t border-oro/10 flex justify-center">
+            {/* Footer con logo y legal */}
+            <div className="mt-12 pt-8 border-t border-oro/10 flex flex-col items-center gap-6 text-center">
                 <Image
                     src="/logo.png"
                     alt="AM Estética Dental"
@@ -170,6 +170,15 @@ export default function Contacto() {
                     height={48}
                     className="h-10 w-auto object-contain opacity-60"
                 />
+                <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[10px] font-manrope uppercase tracking-widest text-crema/30">
+                    <span>© 2026 AM Estética Dental</span>
+                    <span className="text-oro/20 hidden sm:inline">|</span>
+                    <a href="/turismo-dental" className="hover:text-oro transition-colors">Turismo Dental</a>
+                    <span className="text-oro/20 hidden sm:inline">|</span>
+                    <a href="/precio-carillas-dentales-buenos-aires" className="hover:text-oro transition-colors">Precios</a>
+                    <span className="text-oro/20 hidden sm:inline">|</span>
+                    <a href="/dr-ariel-merino" className="hover:text-oro transition-colors">Dr. Ariel Merino</a>
+                </div>
             </div>
 
         </section>

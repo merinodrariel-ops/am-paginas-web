@@ -22,17 +22,25 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "AM Estética Dental – Diseño de Sonrisas en Puerto Madero",
-  description: "Clínica de estética dental premium en Puerto Madero, Buenos Aires. Diseño de sonrisa digital, carillas, blanqueamiento e implantes. Dr. Ariel Merino. Camila O'Gorman 412, Oficina 101.",
-  keywords: "estética dental Buenos Aires, carillas dentales Puerto Madero, diseño de sonrisa, blanqueamiento dental CABA, Dr. Ariel Merino",
+  title: "Carillas Dentales en Buenos Aires: Diseño de Sonrisa Natural | AM",
+  description: "La clínica de carillas dentales en Puerto Madero reconocida por Forbes. Especialistas en diseño de sonrisa natural con tecnología digital. ¡Resultados que transforman!",
+  keywords: "carillas dentales buenos aires, carillas de porcelana puerto madero, diseño de sonrisa, estética dental CABA, Dr. Ariel Merino",
   alternates: {
     canonical: "https://www.amesteticadental.com",
   },
   openGraph: {
-    title: "AM Estética Dental – Diseño de Sonrisas en Puerto Madero",
-    description: "La única clínica dental de Argentina reconocida por Forbes. Diseño de sonrisa digital, carillas, blanqueamiento e implantes en Puerto Madero.",
+    title: "Carillas Dentales en Buenos Aires: Diseño de Sonrisa Natural | AM",
+    description: "La clínica de carillas dentales en Puerto Madero reconocida por Forbes. Especialistas en diseño de sonrisa natural con tecnología digital.",
     url: "https://www.amesteticadental.com",
-    siteName: "AM Estética Dental – Diseño de Sonrisas en Puerto Madero",
+    siteName: "AM Estética Dental",
+    images: [
+      {
+        url: "https://www.amesteticadental.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "AM Estética Dental en Puerto Madero, Buenos Aires",
+      },
+    ],
     locale: "es_AR",
     type: "website",
   },
@@ -40,8 +48,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@amesteticadental",
     creator: "@drarielmerino",
-    title: "AM Estética Dental – Diseño de Sonrisas en Puerto Madero",
-    description: "La única clínica dental de Argentina reconocida por Forbes. Puerto Madero, Buenos Aires.",
+    title: "Carillas Dentales en Buenos Aires: Diseño de Sonrisa Natural | AM",
+    description: "Especialistas en estética dental y carillas de porcelana en Puerto Madero. Resultados reconocidos por Forbes.",
+    images: ["https://www.amesteticadental.com/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -52,8 +61,8 @@ export const metadata: Metadata = {
 const schemaOrg = {
   "@context": "https://schema.org",
   "@type": ["Dentist", "LocalBusiness"],
-  "name": "AM Estética Dental – Diseño de Sonrisas en Puerto Madero",
-  "description": "Clínica de estética dental premium en Puerto Madero. Diseño de sonrisa digital, carillas, blanqueamiento, implantes y alineadores invisibles.",
+  "name": "Carillas Dentales y Diseño de Sonrisa | AM Estética Dental",
+  "description": "Clínica de estética dental premium en Puerto Madero reconocida por Forbes. Especialistas en Carillas de Porcelana y diseño de sonrisa digital.",
   "url": "https://www.amesteticadental.com",
   "telephone": "+5491170219298",
   "priceRange": "$$$$",
@@ -114,23 +123,6 @@ const schemaOrg = {
 
 const faqSchema = generateFaqSchema();
 
-const videoSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "@id": "https://www.amesteticadental.com/#video-carillas-3d",
-  "name": "Diseño de Sonrisa Digital con Carillas de Porcelana — AM Estética Dental",
-  "description": "Visualización 3D del proceso de diseño de carillas de porcelana en AM Estética Dental, Puerto Madero, Buenos Aires. Dr. Ariel Merino, odontólogo estético.",
-  "thumbnailUrl": "https://www.amesteticadental.com/videos/generate-3d-veneer-poster.jpg",
-  "contentUrl": "https://www.amesteticadental.com/videos/generate-3d-veneer.webm",
-  "uploadDate": "2025-09-01",
-  "duration": "PT30S",
-  "publisher": {
-    "@type": "Organization",
-    "name": "AM Estética Dental",
-    "url": "https://www.amesteticadental.com"
-  }
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -178,10 +170,6 @@ fbq('track', 'PageView');`,
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
-        />
       </head>
       <body className="bg-carbon text-crema font-manrope relative min-h-screen">
         {gtmId ? (
@@ -196,9 +184,11 @@ fbq('track', 'PageView');`,
         ) : null}
         {metaPixelId ? (
           <noscript>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               height="1"
               width="1"
+              alt=""
               style={{ display: "none" }}
               src={`https://www.facebook.com/tr?id=${metaPixelId}&ev=PageView&noscript=1`}
             />
