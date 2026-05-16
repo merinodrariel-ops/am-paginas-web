@@ -22,3 +22,7 @@ fix-implantes.mjs
 /videos/
 /portafolio-diseno-de-sonrisa-am-estetica-dental/
 /scratch/
+
+# Claude Code y auditorías locales
+.claude/
+amesteticadental/AM_Estetica_Dental_Auditoria_Completa.pdf
