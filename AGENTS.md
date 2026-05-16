@@ -60,6 +60,10 @@ node gsc.mjs estado     # muestra estado de indexación
 ## Cloudinary
 - Cloud: `drctvgyqd`
 - Imágenes de casos clínicos y landing pages
+- **Regla obligatoria para casos clínicos**: todas las fotos de casos clínicos deben subirse y servirse desde Cloudinary, no desde `public/images/casos` ni rutas locales del repo.
+- Usar URLs Cloudinary con transformaciones `q_auto,f_auto` y rutas descriptivas, por ejemplo `https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/...`.
+- Las copias locales de fotos clínicas pueden quedar solo como backup/fuente, pero la app no debe referenciarlas salvo fallback explícito y justificado.
+- Antes de cambiar una referencia de imagen clínica, verificar que la URL de Cloudinary responde `200`.
 
 ## Stack amesteticadental.com
 - Next.js (Turbopack), Tailwind v4, TypeScript
