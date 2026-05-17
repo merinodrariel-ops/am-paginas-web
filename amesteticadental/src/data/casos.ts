@@ -112,8 +112,8 @@ No era solo hacer dientes más blancos. Era reconstruir la arquitectura de la so
         piezas: "1 incisivo central + resinas de contexto en dientes vecinos",
         tecnica: "Cerámica unitaria estratificada, prueba de color, maquillaje cerámico y cementado adhesivo",
         fotoPortada: {
-            src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/carilla-unitaria-incisivo-central-oscurecido-antes-despues-portada-dr-ariel-merino-am-estetica-dental-puerto-madero",
-            alt: "Antes y después de carilla unitaria en incisivo central oscurecido por traumatismo infantil — Dr. Ariel Merino AM Estética Dental Puerto Madero",
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/carilla-unitaria-incisivo-central-ceramica-resultado-natural-dr-ariel-merino-am-estetica-dental",
+            alt: "Resultado natural de carilla cerámica unitaria en incisivo central oscurecido — Dr. Ariel Merino AM Estética Dental Puerto Madero",
         },
         fotos: [
             {
