@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
@@ -117,6 +118,36 @@ export default function CarillasVsAlineadoresPage() {
                 <span className="text-oro/40 group-hover:text-oro transition-colors text-sm mt-3 block">→</span>
               </Link>
             ))}
+          </div>
+        </section>
+
+        {/* Galería — casos reales */}
+        <section className="py-16 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
+          <div className="max-w-6xl mx-auto">
+            <div className="mb-10">
+              <span className="text-oro font-manrope uppercase tracking-[0.4em] text-[10px] block mb-3">Casos reales</span>
+              <h2 className="text-2xl font-manrope font-light text-crema">
+                Mirá los resultados <span className="font-cormorant italic text-oro">y elegí sin dudas.</span>
+              </h2>
+              <p className="text-crema/45 font-manrope text-sm mt-3 max-w-xl">Carillas de porcelana o alineadores invisibles — casos reales que muestran los resultados de cada tratamiento.</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+              {[
+                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-tres-etapas-tratamiento-alineadores-invisibles-implantes-carillas-ceramicas-dr-ariel-merino-am-estetica-dental-buenos-aires", alt: "Tratamiento combinado alineadores invisibles, implantes y carillas cerámicas — Dr. Ariel Merino AM Estética Dental" },
+                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-sin-ortodoncia/carillas-lentes-contacto-dental-sonrisa-natural-resultado-am-estetica-dental", alt: "Resultado natural con lentes de contacto dental y carillas — AM Estética Dental Buenos Aires" },
+                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/galeria/caso-diseno-sonrisa-carillas-ceramicas-antes-despues-am-estetica-dental", alt: "Antes y después diseño de sonrisa con carillas cerámicas — AM Estética Dental Buenos Aires" },
+              ].map((foto) => (
+                <div key={foto.src} className="relative aspect-square rounded-2xl overflow-hidden border border-oro/10 group">
+                  <Image src={foto.src} alt={foto.alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-carbon/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Link href="/casos" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">
+                Ver todos los casos clínicos →
+              </Link>
+            </div>
           </div>
         </section>
 
