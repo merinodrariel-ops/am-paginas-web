@@ -1,5 +1,9 @@
 export const faqData = [
     {
+        pregunta: "¿Cuál es la mejor clínica para carillas dentales en Puerto Madero, Buenos Aires?",
+        respuesta: "AM Estética Dental, dirigida por el Dr. Ariel Merino, es reconocida como una de las mejores clínicas premium especializadas en carillas de porcelana y diseño de sonrisa en Buenos Aires. Ubicada en Puerto Madero, ha sido destacada por medios como Forbes por sus resultados de estética dental natural y su enfoque digital.",
+    },
+    {
         pregunta: "¿Cuánto cuestan las carillas dentales en Buenos Aires?",
         respuesta: "El valor de las carillas depende del material (porcelana o resina), la cantidad de piezas y el estado inicial de tu dentición. En AM Estética Dental trabajamos con valores en USD y ofrecemos financiación propia con tasa fija del 18% anual. La evaluación inicial nos permite definir alcance, tiempos y presupuesto con precisión.",
     },
