@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 const CANONICAL = "https://www.amesteticadental.com/implantes-dentales-buenos-aires";
@@ -76,6 +77,36 @@ export default function ImplantesPage() {
                                 <p className="px-6 pb-5 text-crema/60 text-sm leading-relaxed">{a}</p>
                             </details>
                         ))}
+                    </div>
+                </section>
+
+                {/* Galería — casos reales */}
+                <section className="px-6 py-16 border-t border-oro/8">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="mb-10">
+                            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-[10px] block mb-3">Casos reales</span>
+                            <h2 className="text-2xl font-light text-crema">
+                                Rehabilitaciones reales <span className="font-cormorant italic text-oro">en AM Estética Dental.</span>
+                            </h2>
+                            <p className="text-crema/45 text-sm mt-3 max-w-xl">Agenesia dental: implantes + 24 cerámicas. Una de las rehabilitaciones más complejas resueltas por el Dr. Ariel Merino.</p>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                            {[
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-rostro-portada-mega-transformacion-rehabilitacion-oral-dr-ariel-merino-am-estetica-dental", alt: "Agenesia dental antes y después — rehabilitación completa con implantes y cerámicas — Dr. Ariel Merino AM Estética Dental" },
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires", alt: "Intraoral antes y después — implantes dentales y 24 cerámicas — rehabilitación completa — AM Estética Dental Buenos Aires" },
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-labios-sonrisa-portada-carillas-ceramicas-alineadores-invisibles-dr-ariel-merino-am-estetica-dental", alt: "Antes y después labios y sonrisa — agenesia dental con implantes y carillas cerámicas — Dr. Ariel Merino AM Estética Dental" },
+                            ].map((foto) => (
+                                <div key={foto.src} className="relative aspect-square rounded-2xl overflow-hidden border border-oro/10 group">
+                                    <Image src={foto.src} alt={foto.alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-carbon/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                </div>
+                            ))}
+                        </div>
+                        <div className="mt-8 text-center">
+                            <Link href="/casos/agenesia-dental-rehabilitacion-completa-implantes-24-ceramicas" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">
+                                Ver el caso completo →
+                            </Link>
+                        </div>
                     </div>
                 </section>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 const CANONICAL = "https://www.amesteticadental.com/puentes-dentales";
@@ -238,6 +239,36 @@ export default function PuentesDentalesPage() {
                                 {label}
                             </Link>
                         ))}
+                    </div>
+                </section>
+
+                {/* Galería — casos reales */}
+                <section className="px-6 py-16 border-t border-oro/8">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="mb-10">
+                            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-[10px] block mb-3">Casos reales</span>
+                            <h2 className="text-2xl font-light text-crema">
+                                Transformaciones que <span className="font-cormorant italic text-oro">cambian vidas.</span>
+                            </h2>
+                            <p className="text-crema/45 text-sm mt-3 max-w-xl">Rehabilitación oral completa: alineadores, implantes y 24 cerámicas. El caso de rehabilitación más extremo del Dr. Ariel Merino.</p>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                            {[
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-rostro-portada-mega-transformacion-rehabilitacion-oral-dr-ariel-merino-am-estetica-dental", alt: "Mega transformación rehabilitación oral completa — antes y después rostro — Dr. Ariel Merino AM Estética Dental" },
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-perfil-facial-resultado-final-24-ceramicas-implantes-dentales-dr-ariel-merino-am-estetica-dental-puerto-madero", alt: "Resultado final perfil facial — 24 cerámicas e implantes dentales — Dr. Ariel Merino AM Estética Dental Puerto Madero" },
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/galeria/caso-extremo-carillas-veneers-03-dr-ariel-merino-am-estetica-dental", alt: "Caso extremo de rehabilitación con carillas veneers — Dr. Ariel Merino AM Estética Dental" },
+                            ].map((foto) => (
+                                <div key={foto.src} className="relative aspect-square rounded-2xl overflow-hidden border border-oro/10 group">
+                                    <Image src={foto.src} alt={foto.alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-carbon/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                </div>
+                            ))}
+                        </div>
+                        <div className="mt-8 text-center">
+                            <Link href="/casos/agenesia-dental-rehabilitacion-completa-implantes-24-ceramicas" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">
+                                Ver el caso completo →
+                            </Link>
+                        </div>
                     </div>
                 </section>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 const CANONICAL = "https://www.amesteticadental.com/coronas-y-fundas-dentales";
@@ -191,6 +192,36 @@ export default function CoronasPage() {
                                 </div>
                             </details>
                         ))}
+                    </div>
+                </section>
+
+                {/* Galería — casos reales */}
+                <section className="px-6 py-16 border-t border-oro/8">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="mb-10">
+                            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-[10px] block mb-3">Casos reales</span>
+                            <h2 className="text-2xl font-light text-crema">
+                                Rehabilitaciones cerámicas <span className="font-cormorant italic text-oro">reales.</span>
+                            </h2>
+                            <p className="text-crema/45 text-sm mt-3 max-w-xl">Rehabilitación completa por desgaste severo con cerámicas AM. Función y estética restauradas en 15 días.</p>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                            {[
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/bruxismo-carillas-ceramicas/bruxismo-desgaste-dental-antes-despues-carillas-ceramicas-labios-portada-dr-ariel-merino-am-estetica-dental-buenos-aires", alt: "Rehabilitación cerámica completa por desgaste dental — antes y después — Dr. Ariel Merino AM Estética Dental Buenos Aires" },
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/bruxismo-carillas-ceramicas/bruxismo-desgaste-intraoral-antes-despues-carillas-ceramicas-rehabilitacion-dr-ariel-merino-am-estetica-dental", alt: "Antes y después intraoral — rehabilitación cerámica por desgaste — Dr. Ariel Merino AM Estética Dental" },
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/bruxismo-carillas-ceramicas/bruxismo-rehabilitacion-ceramica-carillas-despues-rostro-frontal-dr-ariel-merino-am-estetica-dental-buenos-aires", alt: "Resultado final rehabilitación cerámica — rostro frontal — Dr. Ariel Merino AM Estética Dental Buenos Aires" },
+                            ].map((foto) => (
+                                <div key={foto.src} className="relative aspect-square rounded-2xl overflow-hidden border border-oro/10 group">
+                                    <Image src={foto.src} alt={foto.alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-carbon/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                </div>
+                            ))}
+                        </div>
+                        <div className="mt-8 text-center">
+                            <Link href="/casos/bruxismo-desgaste-dental-rehabilitacion-carillas-ceramicas" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">
+                                Ver el caso completo →
+                            </Link>
+                        </div>
                     </div>
                 </section>
 

@@ -169,6 +169,36 @@ export default function BlanqueamientoPage() {
                     </div>
                 </section>
 
+                {/* Galería — casos reales */}
+                <section className="px-6 py-16 border-t border-oro/8">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="mb-10">
+                            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-[10px] block mb-3">Casos reales</span>
+                            <h2 className="text-2xl font-light text-crema">
+                                Transformaciones reales <span className="font-cormorant italic text-oro">en AM Estética Dental.</span>
+                            </h2>
+                            <p className="text-crema/45 text-sm mt-3 max-w-xl">Blanqueamiento dental combinado con tratamientos de armonización estética. Resultados sin filtros.</p>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                            {[
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/carilla-unitaria-incisivo-central-comparativa-labios-sonrisa-resinas-blanqueamiento-am-estetica-dental", alt: "Comparativa labios y sonrisa después de blanqueamiento y resinas — AM Estética Dental Buenos Aires" },
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/carilla-unitaria-incisivo-central-ceramica-resultado-natural-dr-ariel-merino-am-estetica-dental", alt: "Resultado natural después de blanqueamiento y carilla cerámica unitaria — Dr. Ariel Merino AM Estética Dental" },
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/galeria/caso-carillas-ceramicas-antes-despues-01-am-estetica-dental", alt: "Antes y después — carillas cerámicas y blanqueamiento — AM Estética Dental Buenos Aires" },
+                            ].map((foto) => (
+                                <div key={foto.src} className="relative aspect-square rounded-2xl overflow-hidden border border-oro/10 group">
+                                    <Image src={foto.src} alt={foto.alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-carbon/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                </div>
+                            ))}
+                        </div>
+                        <div className="mt-8 text-center">
+                            <Link href="/casos" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">
+                                Ver todos los casos clínicos →
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+
                 {/* CTA */}
                 <section className="px-6 py-16 text-center border-t border-oro/10">
                     <h2 className="font-light text-3xl text-crema mb-4">Una sesión. Resultado inmediato.</h2>
