@@ -1,15 +1,18 @@
 "use client";
 
-import { ChangeEvent, DragEvent, useMemo, useRef, useState } from "react";
+import { ChangeEvent, DragEvent, PointerEvent, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {
   AlertCircle,
   ArrowRight,
   BookOpen,
   CheckCircle2,
+  Download,
   ImagePlus,
   Loader2,
+  Mail,
   MessageCircle,
+  MoveHorizontal,
   Sparkles,
   UploadCloud,
 } from "lucide-react";
@@ -36,6 +39,25 @@ function buildWhatsappUrl(name: string, email: string, whatsapp: string) {
     .join("\n");
 
   return `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+}
+
+function buildEmailUrl(name: string, email: string, whatsapp: string) {
+  const subject = "Consulta por simulador de diseño de sonrisa";
+  const body = [
+    "Hola AM Estética Dental, probé el simulador de diseño de sonrisa con IA.",
+    "",
+    name ? `Nombre: ${name}` : null,
+    email ? `Email: ${email}` : null,
+    whatsapp ? `WhatsApp: ${whatsapp}` : null,
+    "",
+    "Quiero una evaluación real para mi caso.",
+    "",
+    "Nota: puedo adjuntar la imagen descargada del simulador a este email.",
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  return `mailto:info@amesteticadental.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 async function compressFile(file: File): Promise<{ base64: string; dataUrl: string; mimeType: string }> {
@@ -89,6 +111,132 @@ async function compressFile(file: File): Promise<{ base64: string; dataUrl: stri
   });
 }
 
+function loadImage(src: string): Promise<HTMLImageElement> {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve(image);
+    image.onerror = () => reject(new Error("No pudimos preparar la descarga."));
+    image.src = src;
+  });
+}
+
+async function downloadComparison(result: SmileResult) {
+  const [before, after] = await Promise.all([
+    loadImage(result.beforeDataUrl),
+    loadImage(result.afterDataUrl),
+  ]);
+  const imageWidth = 900;
+  const imageHeight = Math.round(imageWidth * 1.18);
+  const labelHeight = 76;
+  const canvas = document.createElement("canvas");
+  canvas.width = imageWidth * 2;
+  canvas.height = imageHeight + labelHeight;
+  const context = canvas.getContext("2d");
+  if (!context) throw new Error("No pudimos crear la imagen para descargar.");
+  const ctx = context;
+
+  ctx.fillStyle = "#0D0D0D";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  function drawCover(image: HTMLImageElement, x: number) {
+    const scale = Math.max(imageWidth / image.naturalWidth, imageHeight / image.naturalHeight);
+    const width = image.naturalWidth * scale;
+    const height = image.naturalHeight * scale;
+    const dx = x + (imageWidth - width) / 2;
+    const dy = (imageHeight - height) / 2;
+    ctx.drawImage(image, dx, dy, width, height);
+  }
+
+  drawCover(before, 0);
+  drawCover(after, imageWidth);
+
+  ctx.fillStyle = "rgba(13,13,13,0.72)";
+  ctx.fillRect(0, imageHeight, canvas.width, labelHeight);
+  ctx.fillStyle = "#f2b90d";
+  ctx.font = "700 28px Arial";
+  ctx.fillText("Antes", 42, imageHeight + 48);
+  ctx.fillText("Después IA", imageWidth + 42, imageHeight + 48);
+  ctx.fillStyle = "#F2F0E9";
+  ctx.font = "400 20px Arial";
+  ctx.fillText("AM Estética Dental · Simulación orientativa", imageWidth - 260, imageHeight + 48);
+
+  const anchor = document.createElement("a");
+  anchor.href = canvas.toDataURL("image/jpeg", 0.92);
+  anchor.download = "am-estetica-dental-simulacion-sonrisa.jpg";
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+}
+
+function BeforeAfterSlider({ result }: { result: SmileResult }) {
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+  const [position, setPosition] = useState(50);
+
+  function updatePosition(event: PointerEvent<HTMLDivElement>) {
+    const rect = sliderRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const next = ((event.clientX - rect.left) / rect.width) * 100;
+    setPosition(Math.min(96, Math.max(4, next)));
+  }
+
+  function handlePointerDown(event: PointerEvent<HTMLDivElement>) {
+    event.currentTarget.setPointerCapture(event.pointerId);
+    updatePosition(event);
+  }
+
+  return (
+    <div
+      ref={sliderRef}
+      className="relative min-h-[420px] touch-none select-none overflow-hidden rounded-2xl border border-oro/12 bg-black md:min-h-[560px]"
+      onPointerDown={handlePointerDown}
+      onPointerMove={(event) => {
+        if (event.buttons !== 1) return;
+        updatePosition(event);
+      }}
+      role="slider"
+      aria-label="Comparador antes y después"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(position)}
+      tabIndex={0}
+      onKeyDown={(event) => {
+        if (event.key === "ArrowLeft") setPosition((current) => Math.max(4, current - 4));
+        if (event.key === "ArrowRight") setPosition((current) => Math.min(96, current + 4));
+      }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={result.beforeDataUrl}
+        alt="Foto original antes del diseño de sonrisa"
+        className="absolute inset-0 h-full w-full object-cover"
+        draggable={false}
+      />
+      <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={result.afterDataUrl}
+          alt="Simulación después del diseño de sonrisa"
+          className="h-full w-full object-cover"
+          draggable={false}
+        />
+      </div>
+
+      <div className="absolute left-3 top-3 rounded-full bg-black/65 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-crema">
+        Después IA
+      </div>
+      <div className="absolute right-3 top-3 rounded-full bg-black/65 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-crema">
+        Antes
+      </div>
+
+      <div className="absolute inset-y-0 z-10 w-px bg-oro shadow-[0_0_28px_rgba(242,185,13,0.7)]" style={{ left: `${position}%` }}>
+        <div className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-oro bg-carbon text-oro shadow-2xl">
+          <MoveHorizontal className="h-6 w-6" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function SmileEntryClient() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [file, setFile] = useState<File | null>(null);
@@ -103,6 +251,10 @@ export default function SmileEntryClient() {
 
   const whatsappUrl = useMemo(
     () => buildWhatsappUrl(fullName.trim(), email.trim(), whatsapp.trim()),
+    [fullName, email, whatsapp],
+  );
+  const emailUrl = useMemo(
+    () => buildEmailUrl(fullName.trim(), email.trim(), whatsapp.trim()),
     [fullName, email, whatsapp],
   );
 
@@ -403,23 +555,8 @@ export default function SmileEntryClient() {
                   </div>
                 </div>
               ) : (
-                <div className="grid gap-4">
-                  <div className="grid overflow-hidden rounded-2xl border border-oro/12 bg-black md:grid-cols-2">
-                    <figure className="relative">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={result.beforeDataUrl} alt="Foto original antes del diseño de sonrisa" className="h-full min-h-[360px] w-full object-cover" />
-                      <figcaption className="absolute left-3 top-3 rounded-full bg-black/65 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-crema">
-                        Antes
-                      </figcaption>
-                    </figure>
-                    <figure className="relative">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={result.afterDataUrl} alt="Simulación después del diseño de sonrisa" className="h-full min-h-[360px] w-full object-cover" />
-                      <figcaption className="absolute left-3 top-3 rounded-full bg-oro px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-carbon">
-                        Después IA
-                      </figcaption>
-                    </figure>
-                  </div>
+                  <div className="grid gap-4">
+                  <BeforeAfterSlider result={result} />
 
                   {error ? (
                     <div className="flex items-start gap-2 rounded-xl border border-red-400/30 bg-red-500/10 px-3 py-2 text-sm text-red-200">
@@ -433,7 +570,7 @@ export default function SmileEntryClient() {
                       <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-oro" />
                       <p>Simulación lista. Para saber qué se puede lograr clínicamente, pedí una evaluación real.</p>
                     </div>
-                    <div className="flex flex-col gap-2 sm:flex-row">
+                    <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
                       <a
                         href={whatsappUrl}
                         target="_blank"
@@ -441,8 +578,37 @@ export default function SmileEntryClient() {
                         className="inline-flex items-center justify-center gap-2 rounded-full bg-oro px-5 py-3 text-sm font-semibold text-carbon transition-colors hover:bg-oro-light"
                       >
                         <MessageCircle className="h-4 w-4" />
-                        Enviar por WhatsApp
+                        WhatsApp
                       </a>
+                      <a
+                        href={emailUrl}
+                        className="inline-flex items-center justify-center gap-2 rounded-full border border-oro/24 px-5 py-3 text-sm font-semibold text-crema transition-colors hover:border-oro/50"
+                      >
+                        <Mail className="h-4 w-4" />
+                        Email
+                      </a>
+                      <button
+                        type="button"
+                        onClick={async () => {
+                          try {
+                            await downloadComparison(result);
+                            if (typeof window !== "undefined") {
+                              window.dataLayer = window.dataLayer || [];
+                              window.dataLayer.push({
+                                event: "smile_simulator_download",
+                                event_category: "engagement",
+                                event_label: "comparacion_antes_despues",
+                              });
+                            }
+                          } catch (downloadError) {
+                            setError(downloadError instanceof Error ? downloadError.message : "No pudimos descargar la imagen.");
+                          }
+                        }}
+                        className="inline-flex items-center justify-center gap-2 rounded-full border border-oro/24 px-5 py-3 text-sm font-semibold text-crema transition-colors hover:border-oro/50"
+                      >
+                        <Download className="h-4 w-4" />
+                        Descargar
+                      </button>
                       <button
                         type="button"
                         onClick={() => {
