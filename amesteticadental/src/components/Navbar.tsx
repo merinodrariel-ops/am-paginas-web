@@ -9,6 +9,7 @@ import { Menu, X } from "lucide-react";
 import CometButton from "./CometButton";
 
 const NAV_LINKS = [
+    { label: "Simulador IA", href: "/sonrisa" },
     { label: "Tratamientos",  href: "/#tratamientos" },
     { label: "Financiación",  href: "/#financiacion" },
     { label: "Clínica",       href: "/#clinica" },
@@ -20,6 +21,7 @@ const NAV_LINKS = [
 ];
 
 const FEATURED_LINKS = [
+    { label: "Simulador IA", href: "/sonrisa" },
     { label: "Carillas",      href: "/carillas-dentales" },
     { label: "Financiación",  href: "/#financiacion" },
     { label: "Lentes",        href: "/lentes-de-contacto-dental" },

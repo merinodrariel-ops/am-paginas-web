@@ -12,6 +12,7 @@
     "video:render:reel": "remotion render src/remotion/index.ts AMInstitucionalReel examples/am-estetica-reel.mp4 --config config/remotion.config.ts"
   },
   "dependencies": {
+    "@google/genai": "^1.52.0",
     "@gsap/react": "^2.1.2",
     "@supabase/supabase-js": "^2.105.1",
     "clsx": "^2.1.1",

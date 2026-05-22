@@ -30,6 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://www.amesteticadental.com/sonrisa",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: "https://www.amesteticadental.com/alineadores-invisibles",
       lastModified: new Date(),
       changeFrequency: "monthly",
