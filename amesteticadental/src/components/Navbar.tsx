@@ -16,6 +16,7 @@ const NAV_LINKS = [
     { label: "Tecnología",    href: "/#tecnologia" },
     { label: "Testimonios",   href: "/#testimonios" },
     { label: "Casos",         href: "/casos" },
+    { label: "Equipo",        href: "/equipo-am" },
     { label: "Antes y después", href: "/antes-y-despues" },
     { label: "FAQ",           href: "/#faq" },
 ];
@@ -27,6 +28,7 @@ const FEATURED_LINKS = [
     { label: "Lentes",        href: "/lentes-de-contacto-dental" },
     { label: "AM Aligners",   href: "/alineadores-invisibles" },
     { label: "Dr. Merino",    href: "/dr-ariel-merino" },
+    { label: "Equipo",        href: "/equipo-am" },
     { label: "Casos",         href: "/casos" },
     { label: "Antes y después", href: "/antes-y-despues" },
     { label: "Precio",        href: "/precio-carillas-dentales-buenos-aires" },
@@ -93,7 +95,7 @@ export default function Navbar() {
                 className="
                     flex items-center justify-between
                     px-6 py-3
-                    w-full max-w-5xl
+                    w-full max-w-6xl
                     rounded-full
                     bg-white/5 backdrop-blur-md border border-white/10
                     text-crema
@@ -116,12 +118,12 @@ export default function Navbar() {
                 </div>
 
                 {/* Links — hidden on mobile */}
-                <div className="hidden lg:flex flex-1 justify-center gap-7 items-center text-[13px] font-medium tracking-wide font-manrope">
+                <div className="hidden lg:flex flex-1 justify-center gap-5 items-center text-[12px] font-medium tracking-wide font-manrope">
                     {NAV_LINKS.map((l) => (
                         <Link
                             key={l.label}
                             href={l.href}
-                            className="text-crema/65 hover:text-crema transition-colors"
+                            className="whitespace-nowrap text-crema/65 hover:text-crema transition-colors"
                         >
                             {l.label}
                         </Link>

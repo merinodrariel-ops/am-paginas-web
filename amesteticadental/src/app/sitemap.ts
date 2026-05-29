@@ -66,6 +66,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.amesteticadental.com/equipo-am",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.amesteticadental.com/precio-carillas-dentales-buenos-aires",
       lastModified: new Date(),
       changeFrequency: "monthly",
