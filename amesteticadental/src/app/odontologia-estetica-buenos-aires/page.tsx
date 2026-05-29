@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 };
 
 const SERVICIOS = [
-    { titulo: "Carillas Dentales", desc: "Porcelana y resina. Lentes de contacto dental AM de 0.2mm.", href: "/carillas-dentales", desde: "USD 500/pieza" },
+    { titulo: "Carillas Dentales", desc: "Porcelana y resina. Lentes de contacto dental AM de 0.2mm.", href: "/carillas-dentales", desde: "USD 500 resina · USD 900 cerámica" },
     { titulo: "Diseño de Sonrisa", desc: "Planificación digital antes de tocar ningún diente.", href: "/diseno-de-sonrisa", desde: "USD 4.000" },
     { titulo: "Blanqueamiento Dental", desc: "LED y láser en una sola sesión. Resultado inmediato.", href: "/blanqueamiento-dental-precio-buenos-aires", desde: "USD 150" },
     { titulo: "Alineadores Invisibles", desc: "Ortodoncia invisible AM. Sin brackets, sin alambre.", href: "/alineadores-invisibles", desde: "Consultar" },
     { titulo: "Implantes Dentales", desc: "Titanio y zirconio. Planificación guiada por computadora.", href: "/implantes-dentales-buenos-aires", desde: "Consultar" },
-    { titulo: "Lentes de Contacto Dental", desc: "0.2mm de espesor. Sin desgaste del diente natural.", href: "/lentes-de-contacto-dental-precio-buenos-aires", desde: "USD 800/pieza" },
+    { titulo: "Lentes de Contacto Dental", desc: "0.2mm de espesor. Sin desgaste del diente natural.", href: "/lentes-de-contacto-dental-precio-buenos-aires", desde: "USD 900/pieza" },
 ];
 
 const schema = {

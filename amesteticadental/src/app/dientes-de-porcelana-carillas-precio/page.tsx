@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 };
 
 const DIFERENCIAS = [
-    { nombre: "Carilla de porcelana tradicional", espesor: "0.5–0.7mm", desgaste: "Requiere leve desgaste", duracion: "15–20 años", precio: "USD 800–1.200/pieza" },
-    { nombre: "Lente de contacto dental AM", espesor: "0.2–0.3mm", desgaste: "Sin desgaste", duracion: "15–20 años", precio: "USD 800–1.200/pieza", destacado: true },
+    { nombre: "Carilla de porcelana tradicional", espesor: "0.5–0.7mm", desgaste: "Requiere leve desgaste", duracion: "15–20 años", precio: "USD 900–1.200/pieza" },
+    { nombre: "Lente de contacto dental AM", espesor: "0.2–0.3mm", desgaste: "Sin desgaste", duracion: "15–20 años", precio: "USD 900–1.200/pieza", destacado: true },
     { nombre: "Corona de porcelana", espesor: "Cubre el diente completo", desgaste: "Desgaste significativo", duracion: "15–25 años", precio: "USD 600–1.000/pieza" },
 ];
 
@@ -131,7 +131,7 @@ export default function DientesPorcelanaPage() {
                     <h2 className="text-2xl font-light text-crema mb-10">Preguntas <span className="font-cormorant italic text-oro">frecuentes</span></h2>
                     <div className="space-y-4 max-w-3xl">
                         {[
-                            { q: "¿Cuánto cuestan los dientes de porcelana en Buenos Aires?", a: "Las carillas de porcelana en AM Estética Dental van de USD 800 a 1.200 por pieza. Un diseño de sonrisa de 10 piezas ronda los USD 8.000 a 12.000. La inversión exacta se define luego de una valoración clínica inicial." },
+                            { q: "¿Cuánto cuestan los dientes de porcelana en Buenos Aires?", a: "Las carillas de porcelana en AM Estética Dental van de USD 900 a 1.200 por pieza. Un diseño de sonrisa de 10 piezas ronda los USD 9.000 a 12.000. La inversión exacta se define luego de una valoración clínica inicial." },
                             { q: "¿Los dientes de porcelana son permanentes?", a: "Duran entre 15 y 20 años con cuidados normales. No son permanentes en el sentido de que eventualmente pueden necesitar reemplazo, pero no son reversibles: una vez colocados, el diente queda preparado para esa restauración." },
                             { q: "¿Se pueden hacer dientes de porcelana sin desgastar los dientes?", a: "Sí. Con las carillas AM lentes de contacto de 0.2mm, en la mayoría de los casos no se requiere ningún desgaste del diente natural. Es la opción más conservadora disponible actualmente." },
                             { q: "¿Se notan los dientes de porcelana?", a: "No, si están bien diseñados. La cerámica que usamos imita el índice de refracción del esmalte natural. A la luz, se comportan igual que dientes sanos. El objetivo siempre es que parezcan tus propios dientes." },

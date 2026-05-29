@@ -6,14 +6,14 @@ import SeoFaq from "@/components/seo/SeoFaq";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Carillas Dentales en Buenos Aires · Dr. Ariel Merino · AM Estética Dental",
-    description: "Cambiá tu sonrisa con carillas de porcelana premium en Puerto Madero. Resultados naturales y definitivos con el Dr. Ariel Merino (Forbes Argentina). Ver casos reales y precios.",
+    title: "Carillas Dentales Buenos Aires 2026 (Precios USD) | AM Estética",
+    description: "Cambiá tu sonrisa en Puerto Madero. Carillas de porcelana premium. Valores en USD y financiación. Resultados naturales con el Dr. Ariel Merino (Forbes Argentina).",
     alternates: {
         canonical: "https://www.amesteticadental.com/carillas-dentales",
     },
     openGraph: {
-        title: "Carillas Dentales en Puerto Madero | AM Estética Dental",
-        description: "Carillas de porcelana mínimamente invasivas en Puerto Madero. Resultados definitivos en 2 a 3 sesiones con el Dr. Ariel Merino.",
+        title: "Carillas Dentales en Puerto Madero | Precios 2026",
+        description: "Carillas de porcelana mínimamente invasivas en Puerto Madero. Resultados definitivos en 2 a 3 sesiones. Valores transparentes.",
         url: "https://www.amesteticadental.com/carillas-dentales",
         locale: "es_AR",
         type: "website",

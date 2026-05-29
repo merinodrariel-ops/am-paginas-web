@@ -23,6 +23,11 @@ function calcularCuota(monto: number, cuotas: number): number {
     return cuota;
 }
 
+function calcularDeudaBaseMensual(monto: number, cuotas: number): number {
+    if (cuotas <= 0) return 0;
+    return monto / cuotas;
+}
+
 export default function Financiacion() {
     const [montoInput, setMontoInput] = useState("20000");
     const [anticipoPorcentaje, setAnticipoPorcentaje] = useState(0.5);
@@ -133,6 +138,7 @@ export default function Financiacion() {
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 {opcionesCuotas.map((n) => {
                                     const cuotaMensual = calcularCuota(montoFinanciado, n);
+                                    const deudaBaseMensual = calcularDeudaBaseMensual(montoFinanciado, n);
 
                                     return (
                                         <div key={n} className="rounded-xl border border-oro/40 bg-oro/8 px-5 py-5">
@@ -146,6 +152,14 @@ export default function Financiacion() {
                                                 US$ {formatearMonto(Math.round(cuotaMensual))}
                                             </span>
                                             <span className="text-oro/50 font-manrope text-xs block mt-1">/mes</span>
+                                            <div className="mt-4 rounded-lg border border-oro/15 bg-carbon/45 px-3 py-3">
+                                                <span className="text-crema/45 font-manrope uppercase tracking-[0.24em] text-[9px] block mb-1">
+                                                    Deuda mensual base
+                                                </span>
+                                                <span className="text-crema font-manrope text-sm">
+                                                    US$ {formatearMonto(Math.round(deudaBaseMensual))}
+                                                </span>
+                                            </div>
                                         </div>
                                     );
                                 })}

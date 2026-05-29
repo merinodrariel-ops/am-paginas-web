@@ -4,8 +4,12 @@ import { useState, useMemo } from "react";
 
 const TASA_ANUAL = 0.18;
 
-export default function CalculadoraFinanciacion() {
-    const [precio, setPrecio] = useState(3600);
+interface CalculadoraFinanciacionProps {
+    defaultMonto?: number;
+}
+
+export default function CalculadoraFinanciacion({ defaultMonto = 3600 }: CalculadoraFinanciacionProps) {
+    const [precio, setPrecio] = useState(defaultMonto);
     const [anticipoPct, setAnticipoPct] = useState(50);
     const [cuotas, setCuotas] = useState(6);
 
@@ -14,10 +18,12 @@ export default function CalculadoraFinanciacion() {
         const saldo = precio - anticipo;
         const interesMensual = TASA_ANUAL / 12;
         const cuota = saldo > 0 ? (saldo * interesMensual) / (1 - Math.pow(1 + interesMensual, -cuotas)) : 0;
+        const deudaBaseMensual = cuotas > 0 ? saldo / cuotas : 0;
         const totalFinanciado = anticipo + cuota * cuotas;
         return {
             anticipo: Math.round(anticipo),
             saldo: Math.round(saldo),
+            deudaBaseMensual: Math.round(deudaBaseMensual),
             cuota: Math.round(cuota),
             total: Math.round(totalFinanciado),
             interes: Math.round(totalFinanciado - precio),
@@ -81,6 +87,13 @@ export default function CalculadoraFinanciacion() {
                     <div className="border border-oro/10 rounded-xl p-5 bg-carbon">
                         <p className="text-crema/50 font-manrope text-xs uppercase tracking-widest mb-1">Cuota mensual ({cuotas}x)</p>
                         <p className="text-oro font-manrope font-semibold text-2xl">${calculo.cuota.toLocaleString("es-AR")} USD</p>
+                    </div>
+                    <div className="border border-oro/30 rounded-xl p-5 bg-oro/5">
+                        <p className="text-oro/70 font-manrope text-xs uppercase tracking-widest mb-1">Cobro mensual estimado</p>
+                        <p className="text-oro font-manrope font-semibold text-2xl">${calculo.cuota.toLocaleString("es-AR")} USD</p>
+                        <p className="text-crema/40 font-manrope text-xs mt-2">
+                            Deuda base mensual: ${calculo.deudaBaseMensual.toLocaleString("es-AR")} USD + financiación.
+                        </p>
                     </div>
                     <div className="border border-oro/10 rounded-xl p-5 bg-carbon">
                         <p className="text-crema/50 font-manrope text-xs uppercase tracking-widest mb-1">Total financiado</p>

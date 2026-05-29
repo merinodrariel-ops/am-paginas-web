@@ -132,6 +132,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: "https://www.amesteticadental.com/bruxismo-desgaste-dental-carillas-ceramicas",
       lastModified: new Date(),
       changeFrequency: "monthly",
