@@ -80,7 +80,7 @@ const serviceSchema = {
     "priceRange": "$$$$",
 };
 
-const WA_LINK = "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20interesa%20el%20dise%C3%B1o%20de%20sonrisa%20digital.";
+const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20interesa%20el%20dise%C3%B1o%20de%20sonrisa%20digital.";
 
 export default function DisenoSonrisaPage() {
     return (

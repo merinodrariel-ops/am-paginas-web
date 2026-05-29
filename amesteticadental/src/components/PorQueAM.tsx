@@ -128,7 +128,7 @@ export default function PorQueAM() {
                 {/* CTA base */}
                 <div className="mt-16 text-center">
                     <a
-                        href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Quiero%20conocer%20m%C3%A1s%20sobre%20AM%20Est%C3%A9tica%20Dental."
+                        href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20conocer%20m%C3%A1s%20sobre%20AM%20Est%C3%A9tica%20Dental."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro-light transition-all"

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CANONICAL = "https://www.amesteticadental.com/bruxismo-desgaste-dental-carillas-ceramicas";
-const WA = "https://api.whatsapp.com/send?phone=541170219298&text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20bruxismo%20y%20quisiera%20una%20evaluaci%C3%B3n.";
+const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20bruxismo%20y%20quisiera%20una%20evaluaci%C3%B3n.";
 const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/bruxismo-carillas-ceramicas";
 
 export const metadata: Metadata = {

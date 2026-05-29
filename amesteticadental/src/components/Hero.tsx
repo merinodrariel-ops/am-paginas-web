@@ -197,7 +197,7 @@ export default function Hero() {
 
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <CometButton
-              href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Quiero%20solicitar%20una%20evaluacion%20inicial."
+              href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20solicitar%20una%20evaluacion%20inicial."
               target="_blank"
               rel="noopener noreferrer"
               size="lg"

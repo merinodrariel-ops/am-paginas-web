@@ -98,7 +98,7 @@ const priceSchema = {
 };
 
 const WA_LINK =
-  "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Quiero%20saber%20el%20precio%20de%20carillas%20dentales%20en%20mi%20caso.";
+  "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20saber%20el%20precio%20de%20carillas%20dentales%20en%20mi%20caso.";
 
 export default function PrecioCarillasPage() {
   const casosConPrecio = getCasosPublicados().filter((c) => c.precio);

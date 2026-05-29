@@ -39,7 +39,7 @@ const articleSchema = {
     "mainEntityOfPage": "https://www.amesteticadental.com/blog/cuantas-sesiones-se-necesitan-para-las-carillas",
 };
 
-const WA_LINK = "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Quiero%20saber%20m%C3%A1s%20sobre%20el%20proceso%20de%20carillas%20y%20cuántas%20sesiones%20necesito.";
+const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20saber%20m%C3%A1s%20sobre%20el%20proceso%20de%20carillas%20y%20cuántas%20sesiones%20necesito.";
 
 export default function ArticuloSesionesCarillas() {
     return (

@@ -88,7 +88,7 @@ export default async function CasoPage({ params }: Props) {
             "@type": "MedicalBusiness",
             name: "AM Estética Dental",
             url: "https://www.amesteticadental.com",
-            telephone: "+541170219298",
+            telephone: "+5491170219298",
             address: {
                 "@type": "PostalAddress",
                 addressLocality: "Puerto Madero",
@@ -193,7 +193,7 @@ export default async function CasoPage({ params }: Props) {
                             </p>
                         </div>
                         <a
-                            href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Vi%20el%20caso%20de%20antes%20y%20despu%C3%A9s%20y%20me%20gustar%C3%ADa%20una%20consulta."
+                            href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Vi%20el%20caso%20de%20antes%20y%20despu%C3%A9s%20y%20me%20gustar%C3%ADa%20una%20consulta."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro/90 transition-all whitespace-nowrap"

@@ -79,7 +79,7 @@ const serviceSchema = {
     "priceRange": "$$$$",
 };
 
-const WA_LINK = "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20las%20carillas%20dentales.";
+const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20las%20carillas%20dentales.";
 
 export default function CarillasDentalesPage() {
     return (

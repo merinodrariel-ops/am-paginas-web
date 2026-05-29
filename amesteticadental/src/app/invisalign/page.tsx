@@ -89,7 +89,7 @@ const serviceSchema = {
 };
 
 const WA_LINK =
-  "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20interesan%20los%20AM%20Aligners%20en%20Buenos%20Aires.";
+  "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20interesan%20los%20AM%20Aligners%20en%20Buenos%20Aires.";
 
 export default function InvisalignPage() {
   return (

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const WA_LINK =
-    "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Quiero%20agendar%20una%20consulta%20con%20el%20Dr.%20Ariel%20Merino.";
+    "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20agendar%20una%20consulta%20con%20el%20Dr.%20Ariel%20Merino.";
 
 const personSchema = {
     "@context": "https://schema.org",

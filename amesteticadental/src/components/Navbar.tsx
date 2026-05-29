@@ -134,7 +134,7 @@ export default function Navbar() {
                 <div className="flex-none flex items-center gap-3">
                     <div className="hidden lg:block">
                         <CometButton
-                            href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20gustaria%20solicitar%20una%20evaluacion%20inicial."
+                            href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20gustaria%20solicitar%20una%20evaluacion%20inicial."
                             target="_blank"
                             rel="noopener noreferrer"
                             size="sm"
@@ -197,7 +197,7 @@ export default function Navbar() {
                         </div>
                         <div className="px-6 pt-3 pb-2 border-t border-oro/10 mt-2">
                             <a
-                                href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20gustaria%20solicitar%20una%20evaluacion%20inicial."
+                                href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20gustaria%20solicitar%20una%20evaluacion%20inicial."
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="block w-full text-center bg-oro text-carbon font-manrope font-semibold text-sm py-3 rounded-full hover:bg-oro-light transition-colors"

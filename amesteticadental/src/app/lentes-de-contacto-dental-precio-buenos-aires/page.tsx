@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CANONICAL = "https://www.amesteticadental.com/lentes-de-contacto-dental-precio-buenos-aires";
-const WA = "https://api.whatsapp.com/send?phone=541170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20lentes%20de%20contacto%20dental.";
+const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20lentes%20de%20contacto%20dental.";
 const CDN1 = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-diastemas";
 const CDN2 = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-sin-ortodoncia";
 

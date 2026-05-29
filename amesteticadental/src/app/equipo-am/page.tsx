@@ -149,7 +149,7 @@ export default function EquipoAMPage() {
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20gustaria%20solicitar%20una%20evaluacion%20inicial."
+                  href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20gustaria%20solicitar%20una%20evaluacion%20inicial."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full bg-oro px-7 py-4 text-sm font-semibold text-carbon transition-colors hover:bg-oro-light"

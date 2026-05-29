@@ -20,7 +20,7 @@ import { getUTMs, submitLead } from "@/lib/leads";
 
 const ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 const MAX_FILE_MB = 10;
-const WHATSAPP_NUMBER = "541170219298";
+const WHATSAPP_NUMBER = "5491170219298";
 
 type SmileResult = {
   beforeDataUrl: string;

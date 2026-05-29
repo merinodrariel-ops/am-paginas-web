@@ -39,7 +39,7 @@ const articleSchema = {
     "mainEntityOfPage": "https://www.amesteticadental.com/blog/carillas-porcelana-antes-despues",
 };
 
-const WA_LINK = "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Vi%20los%20casos%20y%20me%20gustar%C3%ADa%20saber%20si%20soy%20candidato%20para%20carillas.";
+const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Vi%20los%20casos%20y%20me%20gustar%C3%ADa%20saber%20si%20soy%20candidato%20para%20carillas.";
 
 const CASOS_IDEALES = [
     {

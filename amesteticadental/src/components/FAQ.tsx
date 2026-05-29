@@ -63,7 +63,7 @@ export default function FAQ() {
                         ¿Tenés una pregunta que no está acá?
                     </p>
                     <a
-                        href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Tengo%20una%20consulta%20sobre..."
+                        href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Tengo%20una%20consulta%20sobre..."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-oro font-manrope text-sm font-medium hover:text-oro-light transition-colors"

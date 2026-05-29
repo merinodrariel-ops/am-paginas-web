@@ -85,7 +85,7 @@ const serviceSchema = {
     "priceRange": "$$$$",
 };
 
-const WA_LINK = "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Estoy%20interesado%20en%20viajar%20a%20Buenos%20Aires%20para%20hacerme%20las%20carillas.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F";
+const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Estoy%20interesado%20en%20viajar%20a%20Buenos%20Aires%20para%20hacerme%20las%20carillas.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F";
 
 const PAISES = [
     { pais: "México", ahorro: "hasta 65%", keyword: "carillas porcelana México" },

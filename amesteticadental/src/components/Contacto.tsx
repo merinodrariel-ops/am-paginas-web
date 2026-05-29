@@ -36,7 +36,7 @@ export default function Contacto() {
                 {/* CTA principal — WhatsApp */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
                     <a
-                        href="https://api.whatsapp.com/send?phone=541170219298&text=Hola%20buenas!%20%F0%9F%91%8B%20Me%20gustaria%20solicitar%20una%20evaluacion%20inicial."
+                        href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola%20buenas!%20%F0%9F%91%8B%20Me%20gustaria%20solicitar%20una%20evaluacion%20inicial."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro-light transition-all hover:scale-[1.02] active:scale-100"

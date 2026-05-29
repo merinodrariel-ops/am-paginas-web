@@ -39,7 +39,7 @@ const articleSchema = {
     "mainEntityOfPage": "https://www.amesteticadental.com/blog/las-carillas-danan-los-dientes",
 };
 
-const WA_LINK = "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Le%C3%AD%20el%20art%C3%ADculo%20sobre%20si%20las%20carillas%20da%C3%B1an%20los%20dientes%20y%20quiero%20consultar%20mi%20caso.";
+const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Le%C3%AD%20el%20art%C3%ADculo%20sobre%20si%20las%20carillas%20da%C3%B1an%20los%20dientes%20y%20quiero%20consultar%20mi%20caso.";
 
 const MITOS = [
     {

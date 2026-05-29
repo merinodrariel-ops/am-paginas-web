@@ -86,7 +86,7 @@ const faqSchema = {
     ],
 };
 
-const WA_LINK = "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Le%C3%AD%20el%20art%C3%ADculo%20sobre%20preguntas%20antes%20de%20hacerse%20carillas%20y%20quer%C3%ADa%20consultar%20mi%20caso.";
+const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Le%C3%AD%20el%20art%C3%ADculo%20sobre%20preguntas%20antes%20de%20hacerse%20carillas%20y%20quer%C3%ADa%20consultar%20mi%20caso.";
 
 const PREGUNTAS = [
     {

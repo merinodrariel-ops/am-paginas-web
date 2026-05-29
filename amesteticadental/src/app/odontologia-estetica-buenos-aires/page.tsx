@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CANONICAL = "https://www.amesteticadental.com/odontologia-estetica-buenos-aires";
-const WA = "https://api.whatsapp.com/send?phone=541170219298&text=Hola%2C%20quiero%20una%20consulta%20sobre%20odontolog%C3%ADa%20est%C3%A9tica.";
+const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20una%20consulta%20sobre%20odontolog%C3%ADa%20est%C3%A9tica.";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),

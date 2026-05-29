@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CANONICAL = "https://www.amesteticadental.com/dientes-de-porcelana-carillas-precio";
-const WA = "https://api.whatsapp.com/send?phone=541170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20dientes%20de%20porcelana.";
+const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20dientes%20de%20porcelana.";
 const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos";
 
 export const metadata: Metadata = {

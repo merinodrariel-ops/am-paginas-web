@@ -88,7 +88,7 @@ const serviceSchema = {
 };
 
 const WA_LINK =
-  "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20interesan%20los%20lentes%20de%20contacto%20dental.";
+  "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20interesan%20los%20lentes%20de%20contacto%20dental.";
 
 export default function LentesContactoDentalPage() {
   return (

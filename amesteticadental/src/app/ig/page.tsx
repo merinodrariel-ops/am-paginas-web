@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 const WHATSAPP_URL =
-  "https://wa.me/541170219298?text=Hola%2C%20vengo%20desde%20el%20Instagram%20del%20Dr.%20Ariel%20Merino%20y%20quiero%20consultar%20por%20una%20evaluaci%C3%B3n%20inicial%20en%20AM%20Est%C3%A9tica%20Dental.";
+  "https://wa.me/5491170219298?text=Hola%2C%20vengo%20desde%20el%20Instagram%20del%20Dr.%20Ariel%20Merino%20y%20quiero%20consultar%20por%20una%20evaluaci%C3%B3n%20inicial%20en%20AM%20Est%C3%A9tica%20Dental.";
 
 export const metadata: Metadata = {
   title: "Instagram · AM Estética Dental",

@@ -88,7 +88,7 @@ const serviceSchema = {
 };
 
 const WA_LINK =
-  "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Quiero%20saber%20si%20mi%20caso%20permite%20carillas%20sin%20desgaste.";
+  "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20saber%20si%20mi%20caso%20permite%20carillas%20sin%20desgaste.";
 
 export default function CarillasSinDesgastePage() {
   return (

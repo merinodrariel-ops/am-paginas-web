@@ -145,7 +145,7 @@ export default function Tratamientos() {
                                 {/* CTA */}
                                 <div className="flex flex-wrap gap-3">
                                     <a
-                                        href={`https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20${encodeURIComponent(t.nombre)}`}
+                                        href={`https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20${encodeURIComponent(t.nombre)}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-3 bg-oro text-carbon px-6 py-3 rounded-full font-manrope font-semibold text-sm hover:bg-oro/90 transition-colors"

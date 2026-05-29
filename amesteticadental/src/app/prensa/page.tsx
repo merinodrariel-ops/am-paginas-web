@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
 };
 
-const WA_PRENSA = "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Me%20comunico%20desde%20un%20medio%20de%20prensa%20para%20una%20nota.";
+const WA_PRENSA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20comunico%20desde%20un%20medio%20de%20prensa%20para%20una%20nota.";
 
 export default function PrensaPage() {
   return (

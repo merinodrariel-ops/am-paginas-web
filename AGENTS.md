@@ -18,7 +18,7 @@ Es odontólogo, no programador. Explicar sin jerga técnica cuando se comunica c
 - **NUNCA** mencionar "consulta sin costo", "evaluación gratuita" ni similar — destruye el posicionamiento premium
 - Precios siempre en **USD**
 - Tono: premium, clínico, sin exageraciones ni promesas absolutas
-- CTA principal: WhatsApp `https://api.whatsapp.com/send?phone=541170219298`
+- CTA principal: WhatsApp `https://api.whatsapp.com/send?phone=5491170219298`
 - Marca: AM Estética Dental · Dr. Ariel Merino · Puerto Madero · Forbes Argentina
 
 ## Google Ads CLI

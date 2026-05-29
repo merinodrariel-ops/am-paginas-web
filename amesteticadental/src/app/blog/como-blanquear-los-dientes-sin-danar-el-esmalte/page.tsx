@@ -3,7 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 
 const CANONICAL = "https://www.amesteticadental.com/blog/como-blanquear-los-dientes-sin-danar-el-esmalte";
-const WA_LINK = "https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Le%C3%AD%20el%20art%C3%ADculo%20sobre%20c%C3%B3mo%20blanquear%20los%20dientes%20sin%20da%C3%B1ar%20el%20esmalte%20y%20quiero%20consultar%20mi%20caso.";
+const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Le%C3%AD%20el%20art%C3%ADculo%20sobre%20c%C3%B3mo%20blanquear%20los%20dientes%20sin%20da%C3%B1ar%20el%20esmalte%20y%20quiero%20consultar%20mi%20caso.";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),

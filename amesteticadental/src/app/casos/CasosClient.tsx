@@ -122,7 +122,7 @@ export default function CasosClient() {
                 <div className="mt-24 text-center">
                     <p className="text-crema/40 font-manrope text-sm mb-6">¿Querés saber si tu caso tiene solución?</p>
                     <a
-                        href="https://api.whatsapp.com/send?phone=541170219298&text=Hola!%20Vi%20los%20casos%20cl%C3%ADnicos%20y%20me%20gustar%C3%ADa%20una%20consulta."
+                        href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Vi%20los%20casos%20cl%C3%ADnicos%20y%20me%20gustar%C3%ADa%20una%20consulta."
                         target="_blank" rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro/90 transition-all"
                     >
