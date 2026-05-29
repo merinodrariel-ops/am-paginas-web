@@ -12,7 +12,7 @@ const NAV_LINKS = [
     { label: "Simulador IA", href: "/sonrisa" },
     { label: "Tratamientos",  href: "/#tratamientos" },
     { label: "Financiación",  href: "/#financiacion" },
-    { label: "Clínica",       href: "/#clinica" },
+    { label: "Clínica",       href: "/clinica" },
     { label: "Tecnología",    href: "/#tecnologia" },
     { label: "Testimonios",   href: "/#testimonios" },
     { label: "Casos",         href: "/casos" },
