@@ -121,7 +121,7 @@ export const equipoAM: EquipoMiembro[] = [
     rol: "Odontologa y Coordinacion",
     area: "Odontologia y Gestion",
     descripcion:
-      "Odontologa encargada de la coordinacion clinica y operativa de AM Estetica Dental, logrando la integracion perfecta entre la atencion profesional y la gestion de procesos internos.",
+      "Odontologa encargada de la direccion del consultorio, administracion y logistica de AM Estetica Dental.",
     imagen:
       "/images/equipo-am/claudia-hernandez-administracion-am-estetica-dental-puerto-madero.jpeg",
     alt: "Dra. Claudia Hernandez, odontologa y coordinacion de AM Estetica Dental en Puerto Madero",
