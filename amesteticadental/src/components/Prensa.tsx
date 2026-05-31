@@ -1,16 +1,21 @@
 // Sección de presencia en medios — E-E-A-T signal alto para SEO
 // Fuentes verificadas de apariciones reales del Dr. Ariel Merino
 
+import Image from "next/image";
+
 // Logos estilizados que capturan la identidad tipográfica de cada medio
 const LOGOS_MEDIOS = [
     {
         id: "forbes",
         node: (
-            <div className="flex items-center gap-1.5">
-                <div className="flex h-6 w-6 items-center justify-center rounded bg-crema/15">
-                    <span className="font-manrope text-[10px] font-black text-crema/60 leading-none">F</span>
-                </div>
-                <span className="font-manrope text-sm font-black uppercase tracking-[0.12em] text-crema/45">Forbes</span>
+            <div className="relative h-6 w-20">
+                <Image
+                    src="/images/forbes-logo.png"
+                    alt="Forbes Logo"
+                    fill
+                    sizes="80px"
+                    className="object-contain filter brightness-0 invert opacity-45 hover:opacity-75 transition-opacity"
+                />
             </div>
         ),
     },

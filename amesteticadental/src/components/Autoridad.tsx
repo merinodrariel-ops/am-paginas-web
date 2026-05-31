@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -209,17 +210,20 @@ export default function Autoridad() {
                         <div className="relative mb-8 flex items-center justify-center gap-2">
                             <LaurelBranch />
 
-                            <div className="px-3 text-center">
-                                <div
-                                    className="font-manrope text-oro leading-none tracking-[0.18em] font-black"
-                                    style={{ fontSize: "clamp(2rem, 5vw, 2.8rem)" }}
-                                >
-                                    FORBES
+                            <div className="px-3 text-center flex flex-col items-center justify-center">
+                                <div className="relative h-10 w-32 md:h-12 md:w-36">
+                                    <Image
+                                        src="/images/forbes-logo.png"
+                                        alt="Forbes Logo"
+                                        fill
+                                        sizes="(max-width: 768px) 128px, 144px"
+                                        className="object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity"
+                                    />
                                 </div>
-                                <div className="mt-1.5 font-manrope text-[9px] uppercase tracking-[0.5em] text-oro/45">
+                                <div className="mt-2 font-manrope text-[9px] uppercase tracking-[0.5em] text-oro/45">
                                     Argentina
                                 </div>
-                                <div className="mt-2 flex items-center justify-center gap-2">
+                                <div className="mt-2 flex items-center justify-center gap-2 w-full">
                                     <div className="h-px w-8 bg-oro/30" />
                                     <div className="h-1 w-1 rounded-full bg-oro/40" />
                                     <div className="h-px w-8 bg-oro/30" />
