@@ -51,6 +51,19 @@ export const equipoAM: EquipoMiembro[] = [
     keywords: ["ortodoncia", "alineadores invisibles", "odontologa", "AM Aligners"],
   },
   {
+    slug: "dra-emilia",
+    nombre: "Dra. Emilia",
+    rol: "Odontologa estetica",
+    area: "Estetica dental",
+    descripcion:
+      "Odontologa especialista en estetica dental. Se enfoca en carillas de porcelana, lentes de contacto dental y restauraciones de alta gama con un criterio natural.",
+    imagen:
+      "/images/equipo-am/dra-emilia-estetica-dental-am-estetica-dental-puerto-madero.jpeg",
+    alt: "Dra. Emilia, odontologa de estetica dental de AM Estetica Dental en Puerto Madero",
+    schemaType: "Dentist",
+    keywords: ["odontologa", "estetica dental", "carillas dentales", "lentes de contacto dental"],
+  },
+  {
     slug: "julian-batista",
     nombre: "Julian Batista",
     rol: "Laboratorio dental digital",
