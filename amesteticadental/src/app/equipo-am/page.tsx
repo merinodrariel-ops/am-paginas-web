@@ -209,14 +209,14 @@ export default function EquipoAMPage() {
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {equipoClinico.map((miembro) => (
-                <article key={miembro.slug} className="group">
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-oro/12 bg-carbon-soft">
+                <article key={miembro.slug} className="group transition-all duration-300">
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-oro/12 bg-carbon-soft/60 backdrop-blur-sm transition-all duration-300 group-hover:border-oro/30 group-hover:-translate-y-1 shadow-md group-hover:shadow-oro/5">
                     <Image
                       src={miembro.imagen}
                       alt={miembro.alt}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.05]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-carbon/78 via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-5">
@@ -226,6 +226,17 @@ export default function EquipoAMPage() {
                     </div>
                   </div>
                   <p className="mt-4 text-sm leading-relaxed text-crema/62">{miembro.descripcion}</p>
+                  <div className="mt-3.5">
+                    <a
+                      href={`https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20gustar%C3%ADa%20coordinar%20una%20consulta%20inicial%20con%20el%20equipo%20de%20AM%20Est%C3%A9tica%20Dental%20para%20atenderme%20con%20${encodeURIComponent(miembro.nombre)}.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-oro hover:text-oro-light transition-colors group/btn"
+                    >
+                      Consultar caso con {miembro.nombre.split(' ').slice(1).join(' ') || miembro.nombre}
+                      <span className="transform group-hover/btn:translate-x-0.5 transition-transform">→</span>
+                    </a>
+                  </div>
                 </article>
               ))}
             </div>
@@ -249,15 +260,15 @@ export default function EquipoAMPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
               {supportTeam.map((miembro) => (
-                <article key={miembro.slug} className="group">
-                  <div className="relative aspect-square overflow-hidden rounded-2xl border border-oro/12 bg-carbon">
+                <article key={miembro.slug} className="group transition-all duration-300">
+                  <div className="relative aspect-square overflow-hidden rounded-2xl border border-oro/12 bg-carbon/60 backdrop-blur-sm transition-all duration-300 group-hover:border-oro/30 group-hover:-translate-y-1 shadow-md group-hover:shadow-oro/5">
                     <Image
                       src={miembro.imagen}
                       alt={miembro.alt}
                       fill
-                      sizes="(max-width: 768px) 50vw, 16vw"
+                      sizes="(max-width: 768px) 50vw, 25vw"
                       className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.05]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-carbon/75 via-transparent to-transparent" />
