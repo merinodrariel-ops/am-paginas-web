@@ -8,6 +8,8 @@ export type EquipoMiembro = {
   alt: string;
   schemaType: "Person" | "Dentist";
   keywords: string[];
+  instagram?: string;
+  whatsapp?: string;
 };
 
 export const equipoAM: EquipoMiembro[] = [
@@ -23,6 +25,8 @@ export const equipoAM: EquipoMiembro[] = [
     alt: "Dr. Ariel Merino, director clinico y odontologo estetico de AM Estetica Dental en Puerto Madero",
     schemaType: "Dentist",
     keywords: ["odontologo estetico", "director clinico", "carillas dentales", "diseno de sonrisa"],
+    instagram: "https://www.instagram.com/drarielmerino",
+    whatsapp: "https://api.whatsapp.com/send?phone=5491170219298"
   },
   {
     slug: "dra-candela-cruz",
@@ -62,6 +66,7 @@ export const equipoAM: EquipoMiembro[] = [
     alt: "Dra. Emily Lugo, odontologa de estetica dental de AM Estetica Dental en Puerto Madero",
     schemaType: "Dentist",
     keywords: ["odontologa", "estetica dental", "carillas dentales", "lentes de contacto dental"],
+    whatsapp: "https://api.whatsapp.com/send?phone=5491127258105"
   },
   {
     slug: "julian-batista",
@@ -108,12 +113,14 @@ export const equipoAM: EquipoMiembro[] = [
     rol: "Asistente dental",
     area: "Asistencia clinica",
     descripcion:
-      "Asistente dental del equipo AM. Su perfil publico se mantiene simple hasta completar la carga interna de datos.",
+      "Asistente dental del equipo AM. Brinda soporte clinico de alta gama, asistiendo en los procedimientos esteticos y asegurando el maximo confort del paciente.",
     imagen:
       "/images/equipo-am/caterina-asistente-dental-am-estetica-dental-puerto-madero.jpeg",
     alt: "Caterina, asistente dental de AM Estetica Dental en Puerto Madero",
     schemaType: "Person",
     keywords: ["asistente dental", "equipo AM", "AM Estetica Dental"],
+    instagram: "https://www.instagram.com/amesteticadental",
+    whatsapp: "https://api.whatsapp.com/send?phone=5491170219298"
   },
   {
     slug: "claudia-hernandez",
