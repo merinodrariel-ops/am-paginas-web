@@ -117,16 +117,16 @@ export const equipoAM: EquipoMiembro[] = [
   },
   {
     slug: "claudia-hernandez",
-    nombre: "Claudia Hernandez",
-    rol: "Administracion",
-    area: "Coordinacion operativa",
+    nombre: "Dra. Claudia Hernandez",
+    rol: "Odontologa y Coordinacion",
+    area: "Odontologia y Gestion",
     descripcion:
-      "Administracion y coordinacion operativa de AM Estetica Dental. Ordena procesos internos que impactan en la experiencia del paciente.",
+      "Odontologa encargada de la coordinacion clinica y operativa de AM Estetica Dental, logrando la integracion perfecta entre la atencion profesional y la gestion de procesos internos.",
     imagen:
       "/images/equipo-am/claudia-hernandez-administracion-am-estetica-dental-puerto-madero.jpeg",
-    alt: "Claudia Hernandez, administracion de AM Estetica Dental en Puerto Madero",
-    schemaType: "Person",
-    keywords: ["administracion", "coordinacion operativa", "atencion odontologica"],
+    alt: "Dra. Claudia Hernandez, odontologa y coordinacion de AM Estetica Dental en Puerto Madero",
+    schemaType: "Dentist",
+    keywords: ["odontologa", "coordinacion clinica", "gestion operativa", "AM Estetica Dental"],
   },
   {
     slug: "romina-lima",
