@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram, MessageSquare } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Contacto from "@/components/Contacto";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
@@ -227,32 +226,6 @@ export default function EquipoAMPage() {
                     </div>
                   </div>
                   <p className="mt-4 text-sm leading-relaxed text-crema/62">{miembro.descripcion}</p>
-                  {(miembro.instagram || miembro.whatsapp) && (
-                    <div className="mt-4 flex items-center gap-3">
-                      {miembro.instagram && (
-                        <a
-                          href={miembro.instagram}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-crema/40 hover:text-oro transition-colors animate-pulse-subtle"
-                          aria-label={`Instagram de ${miembro.nombre}`}
-                        >
-                          <Instagram className="h-4 w-4" />
-                        </a>
-                      )}
-                      {miembro.whatsapp && (
-                        <a
-                          href={miembro.whatsapp}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-crema/40 hover:text-oro transition-colors"
-                          aria-label={`WhatsApp de ${miembro.nombre}`}
-                        >
-                          <MessageSquare className="h-4 w-4" />
-                        </a>
-                      )}
-                    </div>
-                  )}
                 </article>
               ))}
             </div>
@@ -292,32 +265,6 @@ export default function EquipoAMPage() {
                   <h3 className="mt-4 text-base font-light leading-snug text-crema">{miembro.nombre}</h3>
                   <p className="mt-1 text-[10px] uppercase tracking-[0.22em] text-oro/70">{miembro.rol}</p>
                   <p className="mt-3 text-xs leading-relaxed text-crema/55">{miembro.descripcion}</p>
-                  {(miembro.instagram || miembro.whatsapp) && (
-                    <div className="mt-3.5 flex items-center gap-3">
-                      {miembro.instagram && (
-                        <a
-                          href={miembro.instagram}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-crema/40 hover:text-oro transition-colors"
-                          aria-label={`Instagram de ${miembro.nombre}`}
-                        >
-                          <Instagram className="h-3.5 w-3.5" />
-                        </a>
-                      )}
-                      {miembro.whatsapp && (
-                        <a
-                          href={miembro.whatsapp}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-crema/40 hover:text-oro transition-colors"
-                          aria-label={`WhatsApp de ${miembro.nombre}`}
-                        >
-                          <MessageSquare className="h-3.5 w-3.5" />
-                        </a>
-                      )}
-                    </div>
-                  )}
                 </article>
               ))}
             </div>
