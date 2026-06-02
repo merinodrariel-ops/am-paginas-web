@@ -47,10 +47,11 @@ const REDIRECTS: Record<string, string> = {
     "/alineadores-invisibles-la-ortodoncia-estetica-que-transforma-sonrisas-am-estetica-dental-copy/":
         "/alineadores-invisibles",
 
-    // Trabaja con nosotros → home (no existe equivalente)
-    "/trabaja-en-am": "/",
-    "/unete-al-team-am": "/",
-    "/unete-al-team-am/": "/",
+    // Trabaja con nosotros → formulario laboral en app interna
+    "/trabaja-en-am": "https://am-clinica-main.vercel.app/trabaja-en-am",
+    "/trabaja-en-am/": "https://am-clinica-main.vercel.app/trabaja-en-am",
+    "/unete-al-team-am": "https://am-clinica-main.vercel.app/trabaja-en-am",
+    "/unete-al-team-am/": "https://am-clinica-main.vercel.app/trabaja-en-am",
 
     // Formularios WordPress → home
     "/califica-nuestro-servicio-atencion": "/",

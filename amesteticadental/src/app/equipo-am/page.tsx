@@ -6,6 +6,8 @@ import Contacto from "@/components/Contacto";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import { equipoAM, equipoClinico } from "@/data/equipo";
 
+const TRABAJA_EN_AM_URL = "https://am-clinica-main.vercel.app/trabaja-en-am";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Equipo AM | AM Estética Dental Puerto Madero",
@@ -162,6 +164,12 @@ export default function EquipoAMPage() {
                 >
                   Ver perfil del Dr. Merino
                 </Link>
+                <a
+                  href={TRABAJA_EN_AM_URL}
+                  className="inline-flex items-center justify-center rounded-full border border-crema/15 px-7 py-4 text-sm font-medium text-crema/75 transition-colors hover:border-crema/35 hover:bg-crema/10 hover:text-crema"
+                >
+                  Trabajá con nosotros
+                </a>
               </div>
             </div>
 
@@ -298,9 +306,30 @@ export default function EquipoAMPage() {
           </div>
         </section>
 
+        <section className="border-y border-oro/10 bg-carbon-soft px-6 py-20 md:px-12">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <span className="mb-4 block text-xs uppercase tracking-[0.34em] text-oro">
+                Sumate a Team AM
+              </span>
+              <h2 className="max-w-3xl text-3xl font-light leading-tight text-crema md:text-5xl">
+                ¿Querés trabajar con nosotros?
+              </h2>
+              <p className="mt-5 max-w-2xl text-base font-light leading-relaxed text-crema/62">
+                Si querés sumarte a AM Estética Dental, dejanos tus datos, contanos tu experiencia y adjuntá tu CV.
+              </p>
+            </div>
+            <a
+              href={TRABAJA_EN_AM_URL}
+              className="inline-flex items-center justify-center rounded-full bg-oro px-7 py-4 text-sm font-semibold text-carbon transition-colors hover:bg-oro-light"
+            >
+              Trabajá con nosotros
+            </a>
+          </div>
+        </section>
+
         <Contacto />
       </main>
     </>
   );
 }
-
