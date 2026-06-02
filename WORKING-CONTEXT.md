@@ -54,8 +54,9 @@ Las siguientes páginas han sido creadas o modificadas sustancialmente y requier
 
 ### Tareas en Progreso:
 - [x] Instalar el arnés de autogobierno inspirado en ECC (Creación de `SOUL.md` y `WORKING-CONTEXT.md` para guiar futuros agentes).
-- [ ] Realizar commit y push global de los archivos del arnés para desplegar el monorepo y asegurar consistencia en Vercel.
-- [ ] Ejecutar el indexador de GSC (`node gsc.mjs indexar`) para actualizar el mapa del sitio de equipo modificado.
+- [x] Desplegar a Vercel producción (Completado con éxito mediante Vercel CLI y optimización de `.vercelignore`).
+- [ ] Ejecutar el indexador de GSC (`node gsc.mjs indexar`) -> Pendiente de que el usuario ejecute `node get-token-gsc.mjs` para renovar el token de acceso vencido.
+
 
 ---
 

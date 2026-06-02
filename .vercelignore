@@ -1,0 +1,33 @@
+# Ignorar carpetas extremadamente pesadas para evitar el límite de subida de Vercel (10MB)
+videos/
+TEAM AM/
+Carillas dentales/
+portafolio-diseno-de-sonrisa-am-estetica-dental/
+
+# Ignorar otros proyectos en desarrollo para no sobrecargar el despliegue
+amesteticadental-uy/
+arielmerino/
+thedentalreview/
+
+# Ignorar dependencias y compilados locales (se compilan en los servidores de Vercel)
+node_modules/
+.next/
+amesteticadental/node_modules/
+amesteticadental/.next/
+amesteticadental-uy/node_modules/
+amesteticadental-uy/.next/
+arielmerino/node_modules/
+arielmerino/.next/
+thedentalreview/node_modules/
+thedentalreview/.next/
+
+# Ignorar archivos locales temporales y de configuración del agente
+.claude/
+.claude-flow/
+.git/
+scratch/
+*.pdf
+ADS KEYWORDS/
+GBP/
+Logos/
+.DS_Store
