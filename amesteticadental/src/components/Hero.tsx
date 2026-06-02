@@ -159,6 +159,7 @@ export default function Hero() {
           <div className="absolute inset-y-0 left-0 w-[22%] bg-gradient-to-r from-carbon via-carbon/72 to-transparent z-10" />
           <video
             className="h-full w-full object-cover object-center"
+            aria-hidden="true"
             autoPlay
             muted
             loop
@@ -276,6 +277,7 @@ export default function Hero() {
 
               <video
                 className="h-full w-full object-cover object-center"
+                aria-hidden="true"
                 autoPlay
                 muted
                 loop

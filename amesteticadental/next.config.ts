@@ -10,6 +10,37 @@ const nextConfig: NextConfig = {
   },
   skipTrailingSlashRedirect: true,
   allowedDevOrigins: ["192.168.1.122", "localhost"],
+  async headers() {
+    return [
+      {
+        source: "/videos/generate-3d-veneer.webm",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex",
+          },
+        ],
+      },
+      {
+        source: "/videos/generate-3d-veneer.mp4",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex",
+          },
+        ],
+      },
+      {
+        source: "/videos/generate-3d-veneer-poster.jpg",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex",
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       {
