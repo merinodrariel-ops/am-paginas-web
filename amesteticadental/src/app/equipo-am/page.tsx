@@ -6,7 +6,7 @@ import Contacto from "@/components/Contacto";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import { equipoAM, equipoClinico } from "@/data/equipo";
 
-const TRABAJA_EN_AM_URL = "https://am-clinica-main.vercel.app/trabaja-en-am";
+const TRABAJA_EN_AM_URL = "/trabaja-en-am";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
