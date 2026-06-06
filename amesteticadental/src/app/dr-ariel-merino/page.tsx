@@ -7,9 +7,9 @@ import EquipoAM from "@/components/EquipoAM";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Dr. Ariel Merino | Odontólogo Estético en Puerto Madero | AM Estética Dental",
+    title: "Dr. Ariel Merino | Odontólogo Estético en Puerto Madero",
     description:
-        "Conocé al Dr. Ariel Merino, odontólogo estético en Puerto Madero y fundador de AM Estética Dental. Carillas, diseño de sonrisa digital y estética dental premium en Buenos Aires.",
+        "Conocé al Dr. Ariel Merino, odontólogo estético en Puerto Madero y fundador de AM Estética Dental. Especialista en carillas y diseño de sonrisa.",
     alternates: {
         canonical: "https://www.amesteticadental.com/dr-ariel-merino",
     },

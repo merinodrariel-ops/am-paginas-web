@@ -6,8 +6,8 @@ import SeoFaq from "@/components/seo/SeoFaq";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Turismo Dental en Buenos Aires | Carillas y Diseño de Sonrisa | AM Estética Dental",
-    description: "Carillas de porcelana y diseño de sonrisa en Buenos Aires para pacientes del exterior. Precios hasta 70% menores que en USA, Canadá o Europa. Dr. Ariel Merino, Puerto Madero.",
+    title: "Turismo Dental en Buenos Aires | Carillas y Diseño de Sonrisa",
+    description: "Carillas de porcelana y diseño de sonrisa en Buenos Aires para pacientes del exterior. Precios hasta 70% menores. Dr. Ariel Merino, Puerto Madero.",
     alternates: {
         canonical: "https://www.amesteticadental.com/turismo-dental",
     },

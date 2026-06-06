@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Conocé la Clínica en Puerto Madero · AM Estética Dental",
   description:
-    "Descubrí el espacio clínico y boutique de AM Estética Dental en Puerto Madero, Buenos Aires. Un oasis de confort y tecnología de vanguardia liderado por el Dr. Ariel Merino.",
+    "Descubrí la clínica boutique de AM Estética Dental en Puerto Madero. Un oasis de confort y tecnología liderado por el Dr. Ariel Merino.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "Conocé la Clínica en Puerto Madero · AM Estética Dental",

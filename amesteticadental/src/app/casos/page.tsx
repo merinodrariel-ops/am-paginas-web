@@ -6,7 +6,7 @@ const CANONICAL = "https://www.amesteticadental.com/casos";
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Casos Clínicos Reales — Antes y Después | AM Estética Dental",
-    description: "Casos clínicos reales documentados por AM Estética Dental: diseño de sonrisa, carillas, lentes de contacto dental, bruxismo, alineadores e implantes. Puerto Madero, Buenos Aires.",
+    description: "Casos reales de diseño de sonrisa, carillas de porcelana, lentes de contacto, implantes y alineadores invisibles en Puerto Madero, Buenos Aires.",
     alternates: {
         canonical: CANONICAL,
     },

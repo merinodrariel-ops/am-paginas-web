@@ -208,7 +208,7 @@ export default function PrecioCarillasPage() {
                 {casosConPrecio.map((caso) => (
                   <Link
                     key={caso.slug}
-                    href={`/antes-y-despues/${caso.slug}`}
+                    href={`/casos/${caso.slug}`}
                     className="group block border border-crema/5 rounded-2xl overflow-hidden hover:border-oro/20 transition-colors duration-300"
                   >
                     <div className="relative aspect-[4/3] overflow-hidden">

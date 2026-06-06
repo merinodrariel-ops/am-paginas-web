@@ -6,7 +6,7 @@ import SeoFaq from "@/components/seo/SeoFaq";
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Alineadores Invisibles en Buenos Aires | AM Estética Dental",
-    description: "Ortodoncia sin brackets en Puerto Madero, CABA. Alineadores invisibles e Invisalign con planificación digital. Dr. Ariel Merino — reconocido por Forbes Argentina.",
+    description: "Ortodoncia sin brackets en Puerto Madero, CABA. Alineadores invisibles e Invisalign con planificación digital por el Dr. Ariel Merino.",
     alternates: {
         canonical: "https://www.amesteticadental.com/alineadores-invisibles",
     },

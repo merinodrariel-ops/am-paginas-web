@@ -8,8 +8,8 @@ const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/cas
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Diseño de Sonrisa Precio Buenos Aires 2026 | AM Estética Dental Puerto Madero",
-    description: "Precio e inversión del diseño de sonrisa en Buenos Aires 2026. Dr. Ariel Merino, AM Estética Dental, Puerto Madero. Carillas de porcelana, lentes de contacto dental y diseño digital.",
+    title: "Precio de Diseño de Sonrisa en Buenos Aires 2026 | AM",
+    description: "Inversión y precio del diseño de sonrisa en Buenos Aires 2026. Planificación digital, carillas y lentes de contacto con el Dr. Ariel Merino.",
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Diseño de Sonrisa Precio Buenos Aires | AM Estética Dental",

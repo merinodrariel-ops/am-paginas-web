@@ -7,8 +7,8 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20qui
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Odontología Estética Buenos Aires — AM Estética Dental Puerto Madero",
-    description: "Especialistas en odontología estética en Buenos Aires. Carillas, diseño de sonrisa, blanqueamiento, alineadores e implantes. Dr. Ariel Merino, Puerto Madero. Reconocido por Forbes Argentina.",
+    title: "Odontología Estética en Buenos Aires | AM Estética Dental",
+    description: "Especialistas en odontología estética en Buenos Aires: carillas, diseño de sonrisa, alineadores e implantes con el Dr. Ariel Merino en Puerto Madero.",
     alternates: { canonical: CANONICAL },
     keywords: "odontología estética Buenos Aires, dentista estético Buenos Aires, estética dental Buenos Aires, odontólogo estético Puerto Madero",
 };

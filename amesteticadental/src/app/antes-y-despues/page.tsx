@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Antes y Después — Galería de Transformaciones | AM Estética Dental",
-    description: "Galería de fotos antes y después de tratamientos de estética dental reales. Carillas de porcelana, diseño de sonrisa, implantes y más. Dr. Ariel Merino, Puerto Madero, Buenos Aires.",
+    description: "Galería de antes y después de casos reales en AM Estética Dental: carillas de porcelana, diseño de sonrisa, implantes y alineadores en Puerto Madero.",
     alternates: {
         canonical: "https://www.amesteticadental.com/antes-y-despues",
     },

@@ -7,8 +7,8 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20qui
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Implantes Dentales Buenos Aires — Precio y Turno | AM Estética Dental",
-    description: "Implantes dentales en Buenos Aires: precio, tipos y proceso. Titanio y zirconio. Planificación guiada por computadora. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.",
+    title: "Implantes Dentales en Buenos Aires | Precio y Turno",
+    description: "Implantes dentales en Buenos Aires: precio y proceso. Titanio, zirconio y planificación digital por el Dr. Ariel Merino, Puerto Madero.",
     alternates: { canonical: CANONICAL },
     keywords: "implantes dentales Buenos Aires, implante dental precio Buenos Aires, implantes dentales precio Argentina, implante dental Puerto Madero",
 };

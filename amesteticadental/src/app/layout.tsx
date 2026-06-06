@@ -23,7 +23,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Carillas Dentales en Buenos Aires: Diseño de Sonrisa Natural | AM",
-  description: "La clínica de carillas dentales en Puerto Madero reconocida por Forbes. Especialistas en diseño de sonrisa natural con tecnología digital. ¡Resultados que transforman!",
+  description: "Clínica de carillas dentales en Puerto Madero. Especialistas en diseño de sonrisa natural con tecnología digital. Resultados reconocidos por Forbes.",
   keywords: "carillas dentales buenos aires, carillas de porcelana puerto madero, diseño de sonrisa, estética dental CABA, Dr. Ariel Merino",
   alternates: {
     canonical: "https://www.amesteticadental.com",

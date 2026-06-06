@@ -29,17 +29,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "Buenos Aires",
     ];
 
+    const seoTitle = caso.seoTitle ? `${caso.seoTitle} | AM Estética Dental` : `${caso.titulo} | AM Estética Dental`;
+    const seoDescription = caso.seoDescription || caso.descripcion;
+
     return {
         metadataBase: new URL("https://www.amesteticadental.com"),
-        title: `${caso.titulo} | AM Estética Dental`,
-        description: caso.descripcion,
+        title: seoTitle,
+        description: seoDescription,
         keywords,
         alternates: {
             canonical,
         },
         openGraph: {
-            title: caso.titulo,
-            description: caso.descripcion,
+            title: caso.seoTitle || caso.titulo,
+            description: seoDescription,
             url: canonical,
             images: [{ url: caso.fotoPortada.src }],
             locale: "es_AR",
@@ -47,8 +50,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
         twitter: {
             card: "summary_large_image",
-            title: caso.titulo,
-            description: caso.descripcion,
+            title: caso.seoTitle || caso.titulo,
+            description: seoDescription,
             images: [caso.fotoPortada.src],
         },
         robots: {
@@ -79,7 +82,7 @@ export default async function CasoPage({ params }: Props) {
         "@type": "MedicalWebPage",
         name: caso.titulo,
         headline: caso.titulo,
-        description: caso.descripcion,
+        description: caso.seoDescription || caso.descripcion,
         url: canonical,
         image: caso.fotos.map((foto) => foto.src),
         about: caso.categorias,

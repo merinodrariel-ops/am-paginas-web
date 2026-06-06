@@ -8,8 +8,8 @@ const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/cas
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Blanqueamiento Dental Precio Buenos Aires 2026 | AM Estética Dental Puerto Madero",
-    description: "Precio del blanqueamiento dental profesional en Buenos Aires 2026. Blanqueamiento láser y LED en una sesión. Dr. Ariel Merino, AM Estética Dental, Puerto Madero. Resultados inmediatos.",
+    title: "Precio de Blanqueamiento Dental en Buenos Aires 2026",
+    description: "Precio del blanqueamiento dental profesional en Buenos Aires 2026. Blanqueamiento láser y LED en una sesión en Puerto Madero. Dr. Ariel Merino.",
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Blanqueamiento Dental Precio Buenos Aires | AM Estética Dental",
