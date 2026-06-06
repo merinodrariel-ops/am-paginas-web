@@ -30,12 +30,14 @@ Este archivo sirve como la **Memoria de Sesión Operativa** de los agentes en el
 
 ## Cola de Indexación (Google Search Console)
 
-Las siguientes páginas han sido creadas o modificadas sustancialmente y requieren solicitar indexación manual en Google Search Console una vez realizado el deploy a producción:
+Las siguientes páginas han sido creadas o modificadas sustancialmente y requieren solicitar indexación manual en Google Search Console una vez realizado el deploy a producción y renovado el token:
 
 - [ ] `/equipo-am` (Modificada: incorporación de Dra. Emily Lugo, promoción de Dra. Claudia Hernández y rediseño de tarjetas visuales).
+- [ ] Todas las landings optimizadas por SEO (Ajuste de títulos y meta descripciones en `/`, `/casos`, `/dr-ariel-merino`, `/clinica`, `/carillas-dentales`, `/alineadores-invisibles`, `/diseno-de-sonrisa`, `/antes-y-despues`, `/turismo-dental`, `/implantes-dentales-buenos-aires`, `/diseno-de-sonrisa-precio-buenos-aires`, `/blanqueamiento-dental-precio-buenos-aires`, `/odontologia-estetica-buenos-aires`).
+- [ ] Todos los casos clínicos optimizados en `/casos/[slug]`.
 - [x] `/precio-carillas-dentales-buenos-aires` (Indexación solicitada en la tanda anterior).
 
-*Para procesar esta cola:* Ejecutar `node gsc.mjs indexar` tras el deploy exitoso a Vercel.
+*Para procesar esta cola:* Ejecutar `node gsc.mjs indexar` tras el deploy exitoso a Vercel y la renovación del token de GSC.
 
 ---
 
@@ -51,10 +53,14 @@ Las siguientes páginas han sido creadas o modificadas sustancialmente y requier
 2. **Refinamiento del Logotipo de Forbes:**
    * Se resolvió el error de visualización del recuadro blanco del logo de Forbes.
    * Se inyectó un canal alfa de transparencia `tRNS` mediante un script Node personalizado para asegurar que el logotipo sea 100% transparente y se integre perfectamente con la tipografía y fondo en modo oscuro.
+3. **Optimización SEO y Enlaces Internos (Ahrefs Site Audit):**
+   * Se redujo la longitud de todos los metatítulos y meta descripciones de las 13 páginas de destino principales y los 8 casos clínicos publicados para alinearse a las recomendaciones óptimas (Titles < 60-65 chars, Descriptions < 150-160 chars).
+   * Se implementaron los campos `seoTitle` y `seoDescription` en la base de datos de casos para mantener el H1 narrativo en la web y servir metadatos limpios y breves a Google.
+   * Se corrigió la redirección interna (HTTP 308) en la cuadrícula de la página `/precio-carillas-dentales-buenos-aires` cambiando el enlace a `/casos/[slug]` en lugar de `/antes-y-despues/[slug]`.
 
 ### Tareas en Progreso:
 - [x] Instalar el arnés de autogobierno inspirado en ECC (Creación de `SOUL.md` y `WORKING-CONTEXT.md` para guiar futuros agentes).
-- [x] Desplegar a Vercel producción (Completado con éxito mediante Vercel CLI y optimización de `.vercelignore`).
+- [x] Desplegar a Vercel producción (Completado con éxito y subido a Git).
 - [ ] Ejecutar el indexador de GSC (`node gsc.mjs indexar`) -> Pendiente de que el usuario ejecute `node get-token-gsc.mjs` para renovar el token de acceso vencido.
 
 
