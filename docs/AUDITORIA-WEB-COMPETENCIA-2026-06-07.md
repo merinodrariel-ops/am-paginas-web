@@ -63,15 +63,9 @@ Los problemas principales no están en la falta de páginas. Están en:
 
 La validación de tamaño reduce ataques básicos, pero todavía falta un rate limit distribuido por IP o sesión. Un límite en memoria no es confiable en Vercel. La solución correcta es una regla de Vercel Firewall o un contador externo durable.
 
-#### P1 — Privacidad del simulador
+#### Privacidad del simulador — corregido
 
-Se procesan fotografías faciales. La página debe explicar claramente:
-
-- qué proveedor procesa la imagen;
-- si se conserva o no;
-- durante cuánto tiempo;
-- para qué se usa;
-- que la simulación no es diagnóstico ni promesa de resultado.
+El consentimiento ahora informa que la fotografía se procesa temporalmente mediante Google Gemini, que AM no la guarda en su base de datos y que la simulación no constituye diagnóstico ni promesa de resultado.
 
 #### P2 — Middleware duplicado
 
@@ -306,8 +300,7 @@ Para que gane valor real necesita:
 1. Publicar las correcciones de seguridad.
 2. Activar DNS y deploy de The Dental Review.
 3. Publicar el artículo de IA.
-4. Añadir aviso de privacidad específico al simulador.
-5. Configurar rate limit durable para `/api/smile-design/enhance`.
+4. Configurar rate limit durable para `/api/smile-design/enhance`.
 
 ### Próximos 30 días
 

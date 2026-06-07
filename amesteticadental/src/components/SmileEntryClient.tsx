@@ -512,7 +512,8 @@ export default function SmileEntryClient() {
                     {file ? file.name : "Arrastrá una foto de rostro"}
                   </h2>
                   <p className="mt-2 max-w-md text-sm leading-6 text-crema/48">
-                    Mejor si es frontal, nítida, con buena luz y sonrisa visible. La foto se usa solo para generar esta simulación.
+                    Mejor si es frontal, nítida, con buena luz y sonrisa visible. La foto se envía a Google Gemini
+                    para generar la simulación y AM no la guarda en su base de datos.
                   </p>
 
                   <label className="mt-5 flex max-w-md items-start gap-3 text-left text-xs leading-5 text-crema/48">
@@ -523,7 +524,8 @@ export default function SmileEntryClient() {
                       className="mt-1 h-4 w-4 accent-oro"
                     />
                     <span>
-                      Acepto que esta imagen es una simulación estética generada por IA y que los resultados reales pueden variar.
+                      Acepto el procesamiento temporal de la foto y entiendo que esta imagen es orientativa:
+                      no constituye un diagnóstico ni una promesa de resultado. Los resultados reales pueden variar.
                     </span>
                   </label>
 
