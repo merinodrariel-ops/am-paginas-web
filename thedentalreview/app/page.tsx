@@ -9,6 +9,16 @@ export const metadata: Metadata = {
 
 const ARTICULOS = [
   {
+    slug: "inteligencia-artificial-diseno-sonrisa-limites-clinicos",
+    categoria: "Tecnología Clínica",
+    titulo: "IA y diseño de sonrisa: qué cambió y qué sigue dependiendo del odontólogo",
+    subtitulo: "Dos años después de la nota de Forbes sobre IA aplicada a carillas, revisamos qué aporta la tecnología, dónde falla y por qué el diagnóstico clínico no se automatiza.",
+    autor: "Redacción TDR",
+    fecha: "Junio 2026",
+    portada: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,g_face,q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires",
+    portadaAlt: "Caso documentado de diseño de sonrisa analizado con planificación digital",
+  },
+  {
     slug: "diseno-sonrisa-cierre-diastemas-viral-facebook-dr-ariel-merino",
     categoria: "Caso Clínico",
     titulo: "El caso que se viralizó antes de que existiera Instagram",
@@ -17,16 +27,6 @@ const ARTICULOS = [
     fecha: "Abril 2026",
     portada: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,g_face,q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires",
     portadaAlt: "Diseño de sonrisa con cierre de diastemas antes y después — Dr. Ariel Merino AM Estética Dental",
-  },
-  {
-    slug: "agenesia-dental-rehabilitacion-oral-completa-implantes-ceramicas-dr-ariel-merino",
-    categoria: "Rehabilitación Oral",
-    titulo: "Agenesia dental: cuando el tratamiento transforma una vida",
-    subtitulo: "Dos años de alineadores invisibles, implantes y 24 cerámicas. El caso maestro 2025 del Dr. Ariel Merino en Puerto Madero, Buenos Aires.",
-    autor: "Redacción TDR",
-    fecha: "Abril 2026",
-    portada: "https://res.cloudinary.com/drctvgyqd/image/upload/w_800,h_530,c_fill,g_face,q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-rostro-portada-mega-transformacion-rehabilitacion-oral-dr-ariel-merino-am-estetica-dental",
-    portadaAlt: "Caso agenesia dental antes y después — Dr. Ariel Merino AM Estética Dental Puerto Madero",
   },
 ];
 

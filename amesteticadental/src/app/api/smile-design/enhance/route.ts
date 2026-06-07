@@ -1,6 +1,10 @@
 import { GoogleGenAI } from "@google/genai";
 import { NextRequest, NextResponse } from "next/server";
 
+const MAX_REQUEST_BYTES = 7 * 1024 * 1024;
+const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
+const ALLOWED_IMAGE_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
+
 function getAI() {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new Error("GEMINI_API_KEY not configured");
@@ -9,10 +13,30 @@ function getAI() {
 
 export async function POST(req: NextRequest) {
   try {
+    const contentLength = Number(req.headers.get("content-length") || 0);
+    if (contentLength > MAX_REQUEST_BYTES) {
+      return NextResponse.json({ error: "La imagen supera el tamaño permitido." }, { status: 413 });
+    }
+
     const { imageBase64, mimeType } = await req.json();
 
-    if (!imageBase64 || !mimeType) {
+    if (typeof imageBase64 !== "string" || typeof mimeType !== "string") {
       return NextResponse.json({ error: "imageBase64 and mimeType required" }, { status: 400 });
+    }
+
+    if (!ALLOWED_IMAGE_TYPES.has(mimeType)) {
+      return NextResponse.json({ error: "Formato de imagen no permitido." }, { status: 415 });
+    }
+
+    const normalizedBase64 = imageBase64.replace(/\s/g, "");
+    if (!/^[A-Za-z0-9+/]+={0,2}$/.test(normalizedBase64)) {
+      return NextResponse.json({ error: "La imagen no tiene un formato válido." }, { status: 400 });
+    }
+
+    const padding = normalizedBase64.endsWith("==") ? 2 : normalizedBase64.endsWith("=") ? 1 : 0;
+    const imageBytes = Math.floor((normalizedBase64.length * 3) / 4) - padding;
+    if (imageBytes <= 0 || imageBytes > MAX_IMAGE_BYTES) {
+      return NextResponse.json({ error: "La imagen supera el tamaño permitido." }, { status: 413 });
     }
 
     const prompt = `Efectúa un rediseño digital completo de la sonrisa de la persona en esta foto.
@@ -40,7 +64,7 @@ Devuelve solo la imagen final editada.`;
           role: "user",
           parts: [
             { text: prompt },
-            { inlineData: { mimeType, data: imageBase64 } },
+            { inlineData: { mimeType, data: normalizedBase64 } },
           ],
         },
       ],

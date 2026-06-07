@@ -4,6 +4,29 @@ import type { NextConfig } from "next";
 
 const configDir = path.dirname(fileURLToPath(import.meta.url));
 
+const securityHeaders = [
+  {
+    key: "Content-Security-Policy",
+    value: "base-uri 'self'; frame-ancestors 'none'; object-src 'none'; form-action 'self'",
+  },
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+  },
+  {
+    key: "Referrer-Policy",
+    value: "strict-origin-when-cross-origin",
+  },
+  {
+    key: "X-Content-Type-Options",
+    value: "nosniff",
+  },
+  {
+    key: "X-Frame-Options",
+    value: "DENY",
+  },
+];
+
 const nextConfig: NextConfig = {
   turbopack: {
     root: configDir,
@@ -12,6 +35,10 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ["192.168.1.122", "localhost"],
   async headers() {
     return [
+      {
+        source: "/:path*",
+        headers: securityHeaders,
+      },
       {
         source: "/videos/generate-3d-veneer.webm",
         headers: [
