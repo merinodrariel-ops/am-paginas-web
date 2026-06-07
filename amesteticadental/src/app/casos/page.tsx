@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
 import CasosClient from "./CasosClient";
 
 const CANONICAL = "https://www.amesteticadental.com/casos";
@@ -20,5 +21,10 @@ export const metadata: Metadata = {
 };
 
 export default function CasosPage() {
-    return <CasosClient />;
+    return (
+        <>
+            <Navbar />
+            <CasosClient />
+        </>
+    );
 }

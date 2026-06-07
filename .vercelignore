@@ -1,5 +1,5 @@
 # Ignorar carpetas extremadamente pesadas para evitar el límite de subida de Vercel (10MB)
-videos/
+/videos/
 TEAM AM/
 Carillas dentales/
 portafolio-diseno-de-sonrisa-am-estetica-dental/
