@@ -296,7 +296,7 @@ export default function OdontologoArgentinoIaSimularSonrisaPage() {
 
         <Heading>Una tecnología que obliga a explicar mejor</Heading>
         <p style={paragraphStyle}>
-          El riesgo de la IA aplicada a la estética dental no es solo técnico. También es narrativo. Si se presenta como una forma de conseguir una sonrisa perfecta, empuja a decisiones simplificadas. Si se presenta como una herramienta de visualización, puede mejorar la calidad de la consulta.
+          El riesgo de la IA aplicada a la estética dental no es solo técnico. También es narrativo. Si se presenta como una forma de alcanzar un ideal estético único, empuja a decisiones simplificadas. Si se presenta como una herramienta de visualización, puede mejorar la calidad de la consulta.
         </p>
         <p style={paragraphStyle}>
           El mérito de una simulación no debería medirse por lo espectacular de la imagen, sino por su capacidad para ordenar expectativas antes de cualquier intervención irreversible.
