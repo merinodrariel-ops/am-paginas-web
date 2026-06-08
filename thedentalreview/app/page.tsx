@@ -9,14 +9,24 @@ export const metadata: Metadata = {
 
 const ARTICULOS = [
   {
+    slug: "odontologo-argentino-inteligencia-artificial-simular-sonrisa",
+    categoria: "Tecnología Clínica",
+    titulo: "Odontólogo argentino usa inteligencia artificial para simular una sonrisa antes del tratamiento",
+    subtitulo: "La herramienta permite generar una referencia visual inicial. Su utilidad no está en prometer un resultado, sino en abrir una conversación más concreta antes de la evaluación clínica.",
+    autor: "Redacción TDR",
+    fecha: "Junio 2026",
+    portada: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,g_face,q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires",
+    portadaAlt: "Antes y después de un caso de diseño de sonrisa documentado",
+  },
+  {
     slug: "inteligencia-artificial-diseno-sonrisa-limites-clinicos",
     categoria: "Tecnología Clínica",
     titulo: "IA y diseño de sonrisa: qué cambió y qué sigue dependiendo del odontólogo",
     subtitulo: "Dos años después de la nota de Forbes sobre IA aplicada a carillas, revisamos qué aporta la tecnología, dónde falla y por qué el diagnóstico clínico no se automatiza.",
     autor: "Redacción TDR",
     fecha: "Junio 2026",
-    portada: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,g_face,q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires",
-    portadaAlt: "Caso documentado de diseño de sonrisa analizado con planificación digital",
+    portada: "/images/diseno-digital-sonrisa/analisis-facial-diseno-sonrisa-digital-am.jpeg",
+    portadaAlt: "Análisis facial digital para diseño de sonrisa con líneas guía",
   },
   {
     slug: "diseno-sonrisa-cierre-diastemas-viral-facebook-dr-ariel-merino",
