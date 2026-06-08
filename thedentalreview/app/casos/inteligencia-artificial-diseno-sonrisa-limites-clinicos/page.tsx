@@ -5,7 +5,26 @@ import Link from "next/link";
 const CANONICAL = "https://www.thedentalreview.com/casos/inteligencia-artificial-diseno-sonrisa-limites-clinicos";
 const AM_URL = "https://www.amesteticadental.com/diseno-de-sonrisa";
 const FORBES_URL = "https://www.forbesargentina.com/innovacion/del-1-10-que-tan-linda-tu-sonrisa-ia-te-lo-dira-segundos-n51306";
-const HERO = "https://res.cloudinary.com/drctvgyqd/image/upload/w_1400,h_900,c_fill,g_face,q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires";
+const HERO = "/images/diseno-digital-sonrisa/analisis-facial-diseno-sonrisa-digital-am.jpeg";
+const HERO_ABSOLUTE = `https://www.thedentalreview.com${HERO}`;
+
+const DESIGN_IMAGES = [
+  {
+    src: HERO,
+    alt: "Análisis facial digital para diseño de sonrisa con líneas guía",
+    caption: "Análisis facial: la sonrisa se evalúa dentro del rostro, no como una pieza aislada.",
+  },
+  {
+    src: "/images/diseno-digital-sonrisa/proporcion-aurea-dientes-frontales-diseno-sonrisa-am.jpeg",
+    alt: "Planificación de proporciones dentales con guías digitales sobre incisivos",
+    caption: "Proporciones: las guías ayudan a visualizar forma, simetría y relación entre incisivos.",
+  },
+  {
+    src: "/images/diseno-digital-sonrisa/render-3d-carillas-ceramicas-diseno-sonrisa-am.jpeg",
+    alt: "Render 3D de carillas cerámicas dentro de una planificación digital",
+    caption: "Modelo 3D: la simulación debe transformarse en un diseño clínicamente ejecutable.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "IA y diseño de sonrisa: usos reales y límites clínicos",
@@ -18,7 +37,7 @@ export const metadata: Metadata = {
       "Una revisión clínica de la planificación digital, la simulación visual y los límites de la inteligencia artificial en odontología estética.",
     type: "article",
     url: CANONICAL,
-    images: [{ url: HERO, width: 1400, height: 900 }],
+    images: [{ url: HERO_ABSOLUTE, width: 1800, height: 1005 }],
   },
 };
 
@@ -41,7 +60,7 @@ const articleSchema = {
     name: "The Dental Review",
     url: "https://www.thedentalreview.com",
   },
-  image: HERO,
+  image: HERO_ABSOLUTE,
   mainEntityOfPage: CANONICAL,
   inLanguage: "es-AR",
 };
@@ -52,6 +71,36 @@ const paragraphStyle = {
   color: "var(--ink, #0e0e0e)",
   marginBottom: 24,
 };
+
+function Figure({
+  src,
+  alt,
+  caption,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  caption: string;
+  priority?: boolean;
+}) {
+  return (
+    <figure style={{ margin: 0 }}>
+      <div style={{ aspectRatio: "16/9", background: "var(--paper-dim, #e8e4da)", overflow: "hidden", position: "relative" }}>
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          priority={priority}
+          sizes="(max-width: 768px) 100vw, 760px"
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+      <figcaption style={{ color: "var(--muted, #6b6560)", fontSize: 10, letterSpacing: "0.12em", lineHeight: 1.6, marginTop: 10, textAlign: "center", textTransform: "uppercase" }}>
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
 
 export default function InteligenciaArtificialDisenoSonrisaPage() {
   return (
@@ -101,19 +150,14 @@ export default function InteligenciaArtificialDisenoSonrisaPage() {
           </Link>
         </div>
 
-        <div style={{ aspectRatio: "14/9", marginBottom: 12, overflow: "hidden", position: "relative" }}>
-          <Image
-            src={HERO}
-            alt="Caso clínico documentado de diseño de sonrisa con planificación digital"
-            fill
+        <div style={{ marginBottom: 48 }}>
+          <Figure
+            src={DESIGN_IMAGES[0].src}
+            alt={DESIGN_IMAGES[0].alt}
+            caption="Diseño digital de sonrisa: análisis facial, línea media, curva de sonrisa y proporciones antes de cualquier decisión clínica."
             priority
-            sizes="(max-width: 768px) 100vw, 760px"
-            style={{ objectFit: "cover" }}
           />
         </div>
-        <p style={{ color: "var(--muted, #6b6560)", fontSize: 10, letterSpacing: "0.12em", marginBottom: 48, textAlign: "center", textTransform: "uppercase" }}>
-          La tecnología ayuda a planificar; el resultado depende de decisiones clínicas y ejecución técnica.
-        </p>
 
         <h2 style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: 28, fontWeight: 400, margin: "44px 0 18px" }}>
           El punto de partida: una experiencia publicada en 2024
@@ -134,6 +178,12 @@ export default function InteligenciaArtificialDisenoSonrisaPage() {
         <p style={paragraphStyle}>
           Una simulación visual bien presentada permite discutir preferencias antes de intervenir: cuánto mostrar los incisivos, qué nivel de blancura resulta natural o si conviene corregir posición antes de modificar forma. Esa conversación reduce malentendidos, pero la simulación sigue siendo una hipótesis visual, no una promesa.
         </p>
+
+        <div style={{ display: "grid", gap: 18, margin: "36px 0 48px" }}>
+          {DESIGN_IMAGES.slice(1).map((image) => (
+            <Figure key={image.src} {...image} />
+          ))}
+        </div>
 
         <h2 style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: 28, fontWeight: 400, margin: "44px 0 18px" }}>
           Lo que una imagen no puede diagnosticar
