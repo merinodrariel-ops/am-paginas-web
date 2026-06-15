@@ -48,6 +48,77 @@ export interface Caso {
 
 export const CASOS: Caso[] = [
     {
+        slug: "rehabilitacion-ceramica-ambos-maxilares-sin-cirugia-ortodoncia",
+        titulo: "Una transformación que lleva más de 13 años en boca.",
+        subtitulo: "Apiñamiento dentario resuelto con diseño de sonrisa y rehabilitación cerámica en ambos maxilares, sin cirugía y sin ortodoncia",
+        descripcion: "Caso clínico de apiñamiento dentario tratado sin cirugía y sin ortodoncia mediante diseño de sonrisa y rehabilitación con cerámicas en ambos maxilares. Resultado con más de 13 años de seguimiento por el Dr. Ariel Merino en AM Estética Dental, Puerto Madero.",
+        seoTitle: "Rehabilitación Cerámica sin Cirugía ni Ortodoncia",
+        seoDescription: "Antes y después de una rehabilitación cerámica en ambos maxilares, sin cirugía ni ortodoncia, con más de 13 años de seguimiento en boca.",
+        categorias: ["Rehabilitación oral", "Diseño de sonrisa", "Carillas de porcelana", "Apiñamiento"],
+        duracion: "13+ años en boca",
+        piezas: "Rehabilitación de ambos maxilares",
+        tecnica: "Diseño de sonrisa y restauraciones cerámicas, sin cirugía ni ortodoncia",
+        fotoPortada: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-dentales-rehabilitacion-estetica-sonrisa/01-carillas-dentales-antes-despues-retrato-am-estetica-dental-puerto-madero.png",
+            alt: "Antes y después facial de rehabilitación cerámica en ambos maxilares sin cirugía ni ortodoncia, con más de 13 años de seguimiento — Dr. Ariel Merino, AM Estética Dental",
+        },
+        fotos: [
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-dentales-rehabilitacion-estetica-sonrisa/01-carillas-dentales-antes-despues-retrato-am-estetica-dental-puerto-madero.png",
+                alt: "Antes y después facial de rehabilitación cerámica en ambos maxilares sin cirugía ni ortodoncia, con más de 13 años de seguimiento — Dr. Ariel Merino, AM Estética Dental",
+                caption: "Antes y después facial — más de 13 años de seguimiento",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-dentales-rehabilitacion-estetica-sonrisa/02-carillas-dentales-estado-inicial-retrato-am-estetica-dental-puerto-madero.png",
+                alt: "Estado inicial de paciente con apiñamiento dentario antes de una rehabilitación cerámica sin cirugía ni ortodoncia",
+                caption: "Estado inicial — apiñamiento dentario",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-dentales-rehabilitacion-estetica-sonrisa/03-carillas-dentales-resultado-final-retrato-am-estetica-dental-puerto-madero.png",
+                alt: "Resultado facial de diseño de sonrisa y rehabilitación cerámica después de más de 13 años en boca",
+                caption: "Resultado facial de largo plazo",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-dentales-rehabilitacion-estetica-sonrisa/04-carillas-dentales-antes-despues-sonrisa-am-estetica-dental-puerto-madero.png",
+                alt: "Comparación de sonrisa antes y después de rehabilitación cerámica en ambos maxilares sin ortodoncia",
+                caption: "Sonrisa antes y después",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-dentales-rehabilitacion-estetica-sonrisa/05-carillas-ceramicas-secuencia-clinica-modelo-prueba-resultado-am-estetica-dental.png",
+                alt: "Secuencia clínica de diseño de sonrisa y rehabilitación oral con cerámicas en ambos maxilares",
+                caption: "Modelo, estado inicial y resultado clínico",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-dentales-rehabilitacion-estetica-sonrisa/06-carillas-ceramicas-modelo-y-laminados-dentales-am-estetica-dental.png",
+                alt: "Modelo dental y restauraciones cerámicas utilizadas en la rehabilitación estética de ambos maxilares",
+                caption: "Modelo dental y restauraciones cerámicas",
+            },
+        ],
+        copy: `Fue una de nuestras primeras pacientes. Llegó a AM Estética Dental con sus dientes apiñados y el deseo de transformar su sonrisa, pero con dos decisiones muy claras: no quería atravesar una cirugía ni realizar un tratamiento de ortodoncia.
+
+A partir de un diagnóstico integral, diseñamos una rehabilitación oral para ambos maxilares. El tratamiento se realizó con restauraciones cerámicas, buscando reorganizar visualmente la sonrisa, mejorar sus proporciones y construir un resultado armónico con sus rasgos faciales.
+
+El antes y después muestra una transformación profunda. Sin embargo, el valor más importante de este caso aparece con el paso del tiempo: la rehabilitación lleva más de 13 años en boca.
+
+Para nosotros es un caso especialmente significativo. No solo fue parte de los primeros años de AM Estética Dental, sino que también permite mostrar la importancia del diagnóstico, la planificación y el seguimiento en una rehabilitación cerámica de alta complejidad.
+
+La paciente continúa agradecida por el cambio logrado y su sonrisa sigue siendo una de las transformaciones más representativas de nuestra trayectoria.
+
+Los resultados corresponden a este caso clínico particular. Cada tratamiento requiere diagnóstico y planificación individual.`,
+        copyRedes: `Dientes apiñados. Sin cirugía. Sin ortodoncia.
+
+Realizamos un diseño de sonrisa y una rehabilitación cerámica en ambos maxilares.
+
+Hoy, más de 13 años después, el resultado sigue en boca.
+
+Una de nuestras primeras pacientes y una de las transformaciones más representativas de nuestra trayectoria.`,
+        precio: {
+            total: "USD 20.000–26.000",
+            nota: "Estimación orientativa al 15 de junio de 2026 para una rehabilitación comparable. El valor definitivo depende del diagnóstico, la cantidad de piezas, los materiales y la complejidad clínica.",
+        },
+        publicado: true,
+    },
+    {
         slug: "diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan",
         titulo: "Vino de Milán con la sonrisa quebrada. La resolvimos en una semana.",
         subtitulo: "Plano de sonrisa quebrado + bordes incisales fracturados — diseño de sonrisa completo con carillas cerámicas AM",
