@@ -47,15 +47,15 @@ export default function Casos() {
                 {/* Header */}
                 <div className="mb-20">
                     <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
-                        Casos Reales
+                        Antes y después reales
                     </span>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
                         <h2 className="text-4xl md:text-5xl font-manrope font-light text-crema leading-tight">
-                            Antes y después, ordenados{" "}
+                            Fotos reales, ordenadas{" "}
                             <span className="font-cormorant italic text-oro">por caso clínico.</span>
                         </h2>
                         <p className="text-crema-muted font-manrope text-lg font-light leading-relaxed">
-                            Cada portada abre la historia completa del paciente: diagnóstico, tratamiento, duración, técnica y más fotos del resultado.
+                            Cada portada abre la historia completa del paciente: diagnóstico, tratamiento, duración, técnica, seguimiento y más fotos del resultado.
                         </p>
                     </div>
                 </div>

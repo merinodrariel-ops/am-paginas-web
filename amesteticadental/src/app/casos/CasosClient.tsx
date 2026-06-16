@@ -32,14 +32,14 @@ export default function CasosClient() {
 
                 {/* Header */}
                 <div className="mb-16">
-                    <span className="text-oro uppercase tracking-[0.4em] text-xs block mb-6">Casos Clínicos</span>
+                    <span className="text-oro uppercase tracking-[0.4em] text-xs block mb-6">Antes y después reales</span>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
                         <h1 className="text-4xl md:text-5xl font-light text-crema leading-tight">
-                            Cada caso,{" "}
-                            <span className="font-cormorant italic text-oro">una historia.</span>
+                            Casos clínicos{" "}
+                            <span className="font-cormorant italic text-oro">documentados.</span>
                         </h1>
                         <p className="text-crema/60 text-lg font-light leading-relaxed">
-                            Documentamos el diagnóstico, el plan de tratamiento y el resultado. Sin filtros, sin stock.
+                            La galería de antes y después está organizada por caso real: diagnóstico, técnica, duración, fotos y seguimiento. Sin stock, sin filtros.
                         </p>
                     </div>
                 </div>
@@ -120,7 +120,7 @@ export default function CasosClient() {
                 )}
 
                 <div className="mt-24 text-center">
-                    <p className="text-crema/40 font-manrope text-sm mb-6">¿Querés saber si tu caso tiene solución?</p>
+                    <p className="text-crema/40 font-manrope text-sm mb-6">¿Querés saber qué tratamiento se adapta a tu caso?</p>
                     <a
                         href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Vi%20los%20casos%20cl%C3%ADnicos%20y%20me%20gustar%C3%ADa%20una%20consulta."
                         target="_blank" rel="noopener noreferrer"

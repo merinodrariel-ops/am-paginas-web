@@ -198,16 +198,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: "https://www.amesteticadental.com/antes-y-despues",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
       url: "https://www.amesteticadental.com/casos",
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.95,
     },
     ...casos.map((caso) => ({
       url: `https://www.amesteticadental.com/casos/${caso.slug}`,

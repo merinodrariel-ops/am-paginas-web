@@ -125,6 +125,16 @@ const nextConfig: NextConfig = {
         destination: "/estetica-dental",
         permanent: true,
       },
+      {
+        source: "/antes-y-despues",
+        destination: "/casos",
+        permanent: true,
+      },
+      {
+        source: "/antes-y-despues/",
+        destination: "/casos",
+        permanent: true,
+      },
       // Casos clínicos: /antes-y-despues/[slug] → /casos/[slug]
       {
         source: "/antes-y-despues/:slug",
@@ -134,8 +144,8 @@ const nextConfig: NextConfig = {
       // URLs del sitio WordPress anterior
       { source: "/testimonios", destination: "/casos", permanent: true },
       { source: "/testimonios/", destination: "/casos", permanent: true },
-      { source: "/galeria-sonrisas-am", destination: "/antes-y-despues", permanent: true },
-      { source: "/galeria-sonrisas-am/", destination: "/antes-y-despues", permanent: true },
+      { source: "/galeria-sonrisas-am", destination: "/casos", permanent: true },
+      { source: "/galeria-sonrisas-am/", destination: "/casos", permanent: true },
       { source: "/ubicacion", destination: "/", permanent: true },
       { source: "/ubicacion/", destination: "/", permanent: true },
       { source: "/unete-al-team-am", destination: "/trabaja-en-am", permanent: true },
