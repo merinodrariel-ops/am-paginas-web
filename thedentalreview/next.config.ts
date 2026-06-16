@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/casos/expodent-2026-dr-ariel-merino-inteligencia-artificial-diseno-sonrisa",
+        destination:
+          "/conferencias/expodent-2026-dr-ariel-merino-inteligencia-artificial-diseno-sonrisa",
+        permanent: true,
+      },
+      {
         source: "/:path*",
         has: [{ type: "host", value: "thedentalreview.com" }],
         destination: "https://www.thedentalreview.com/:path*",

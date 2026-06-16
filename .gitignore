@@ -7,6 +7,7 @@ node_modules/
 .env*.local
 /Casos/
 .env.ads
+.env.gsc
 get-token.mjs
 get-token-gsc.mjs
 ads.mjs
@@ -26,3 +27,7 @@ fix-implantes.mjs
 # Claude Code y auditorías locales
 .claude/
 amesteticadental/AM_Estetica_Dental_Auditoria_Completa.pdf
+
+# macOS resource fork files (SSD montado)
+._*
+**/._.DS_Store

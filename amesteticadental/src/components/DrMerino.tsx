@@ -118,7 +118,7 @@ export default function DrMerino() {
 
                         <div className="space-y-6 mb-12">
                             <p className="text-crema/80 font-manrope leading-relaxed">
-                                Más de <strong className="text-crema">16 años</strong> redefiniendo lo que significa una sonrisa de alto nivel en Argentina. No desde un consultorio genérico — desde Puerto Madero, donde el estándar internacional no es una aspiración sino una exigencia diaria.
+                                Más de <strong className="text-crema">20 años en odontología</strong> — y más de <strong className="text-crema">15 dedicados exclusivamente a la estética dental</strong> de alta complejidad. No desde un consultorio genérico — desde Puerto Madero, donde el estándar internacional no es una aspiración sino una exigencia diaria.
                             </p>
                             <p className="text-crema/80 font-manrope leading-relaxed">
                                 Nuestros pacientes son <strong className="text-crema">profesionales, empresarios y figuras públicas</strong> que no aceptan resultados promedio porque sus sonrisas viven bajo escrutinio. Miss Universo confió en el equipo. Forbes reconoció a AM Estética Dental como la única clínica dental del país en sus páginas.
@@ -131,10 +131,10 @@ export default function DrMerino() {
                         {/* Credenciales */}
                         <div className="grid grid-cols-2 gap-4 mb-10">
                             {[
-                                { valor: "15+", texto: "en estética dental" },
-                                { valor: "4.9★", texto: "Google Rating" },
+                                { valor: "20+", texto: "años en odontología" },
+                                { valor: "15+", texto: "años en estética dental" },
                                 { valor: "Forbes", texto: "Reconocimiento editorial" },
-                                { valor: "AOA", texto: "Posgrado Rehab. Oral & Estética" },
+                                { valor: "4.9★", texto: "Google Rating" },
                             ].map((item) => (
                                 <div key={item.texto} className="border border-oro/10 rounded-xl p-4 bg-carbon-soft">
                                     <div className="text-oro font-manrope font-semibold text-xl mb-1">{item.valor}</div>

@@ -7,7 +7,32 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.thedentalreview.com" },
 };
 
-const ARTICULOS = [
+type Articulo = {
+  slug: string;
+  href?: string;
+  categoria: string;
+  titulo: string;
+  subtitulo: string;
+  autor: string;
+  fecha: string;
+  portada: string;
+  portadaAlt: string;
+};
+
+const ARTICULOS: Articulo[] = [
+  {
+    slug: "expodent-2026-dr-ariel-merino-inteligencia-artificial-diseno-sonrisa",
+    href: "/conferencias/expodent-2026-dr-ariel-merino-inteligencia-artificial-diseno-sonrisa",
+    categoria: "Conferencia",
+    titulo: "Expodent 2026 en La Rural: el Dr. Ariel Merino y la inteligencia artificial aplicada al diseño de sonrisa",
+    subtitulo:
+      "La presentación del Dr. Ariel Merino combinó planificación digital, experiencia clínica y una lectura concreta del rol de la IA en odontología estética.",
+    autor: "Redacción TDR",
+    fecha: "Junio 2026",
+    portada:
+      "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/expodent-2026/expodent-2026-dr-ariel-merino-charla-ia-odontologia-portada.jpg",
+    portadaAlt: "Dr. Ariel Merino dando una charla de inteligencia artificial en Expodent 2026",
+  },
   {
     slug: "odontologo-argentino-inteligencia-artificial-simular-sonrisa",
     categoria: "Tecnología Clínica",
@@ -65,7 +90,7 @@ export default function HomePage() {
       <main style={{ maxWidth: 1100, margin: "0 auto", padding: "60px 24px" }}>
 
         {/* Artículo destacado */}
-        <Link href={`/casos/${ARTICULOS[0].slug}`} style={{ textDecoration: "none", color: "inherit", display: "block", marginBottom: 64 }}>
+        <Link href={ARTICULOS[0].href ?? `/casos/${ARTICULOS[0].slug}`} style={{ textDecoration: "none", color: "inherit", display: "block", marginBottom: 64 }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 48, alignItems: "center" }}>
             <div style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden", borderRadius: 2 }}>
               <Image src={ARTICULOS[0].portada} alt={ARTICULOS[0].portadaAlt} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} priority />
@@ -94,7 +119,7 @@ export default function HomePage() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 40 }}>
           {ARTICULOS.slice(1).map((art) => (
             <article key={art.slug}>
-              <Link href={`/casos/${art.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
+              <Link href={art.href ?? `/casos/${art.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
                 <div style={{ position: "relative", aspectRatio: "16/9", overflow: "hidden", borderRadius: 2, marginBottom: 20 }}>
                   <Image src={art.portada} alt={art.portadaAlt} fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
                 </div>

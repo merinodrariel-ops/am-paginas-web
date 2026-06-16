@@ -7,9 +7,9 @@ import EquipoAM from "@/components/EquipoAM";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Dr. Ariel Merino | Odontólogo Estético en Puerto Madero",
+    title: "Dr. Ariel Merino | Odontólogo Estético · +20 Años en Odontología",
     description:
-        "Conocé al Dr. Ariel Merino, odontólogo estético en Puerto Madero y fundador de AM Estética Dental. Especialista en carillas y diseño de sonrisa.",
+        "Dr. Ariel Merino: más de 20 años en odontología y 15 años de especialización en estética dental. Fundador de AM Estética Dental, Puerto Madero. Carillas y diseño de sonrisa.",
     alternates: {
         canonical: "https://www.amesteticadental.com/dr-ariel-merino",
     },
@@ -25,6 +25,8 @@ export const metadata: Metadata = {
 
 const WA_LINK =
     "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20agendar%20una%20consulta%20con%20el%20Dr.%20Ariel%20Merino.";
+const EXPODENT_VIDEO_URL = "https://youtu.be/4tH0A3Qoj4A";
+const EXPODENT_VIDEO_EMBED_URL = "https://www.youtube-nocookie.com/embed/4tH0A3Qoj4A";
 
 const personSchema = {
     "@context": "https://schema.org",
@@ -62,12 +64,14 @@ const personSchema = {
         "https://www.odontoespacio.net/autores/ariel-merino/",
         "https://cde.dental.upenn.edu/Course/38-Full-Veneers",
     ],
+    description: "Odontólogo con más de 20 años de trayectoria en odontología y más de 15 años de especialización exclusiva en estética dental. Fundador de AM Estética Dental, reconocida por Forbes Argentina como la única clínica dental del país en sus páginas.",
     knowsAbout: [
         "Carillas de porcelana",
         "Diseño de sonrisa digital",
         "Lentes de contacto dental",
         "Odontología estética",
         "Alineadores invisibles",
+        "Rehabilitación oral estética",
     ],
 };
 
@@ -113,8 +117,8 @@ export default function DrArielMerinoPage() {
                                 Odontólogo Estético · Fundador de AM Estética Dental
                             </p>
                             <p className="text-crema/70 font-manrope text-lg font-light leading-relaxed max-w-2xl mb-10">
-                                Especialista en carillas de porcelana, diseño de sonrisa digital y odontología estética mínimamente invasiva.
-                                Atiende personalmente cada caso desde Puerto Madero con un enfoque de alta precisión clínica y resultado natural.
+                                Más de 20 años en odontología — 15 de ellos dedicados exclusivamente a la estética dental de alta complejidad.
+                                Especialista en carillas de porcelana, diseño de sonrisa digital y rehabilitaciones estéticas. Atiende personalmente cada caso desde Puerto Madero con un enfoque de alta precisión clínica y resultado natural.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 items-start mb-12">
@@ -136,10 +140,10 @@ export default function DrArielMerinoPage() {
 
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-oro/10">
                                 {[
-                                    { valor: "15+", etiqueta: "años en estética dental" },
+                                    { valor: "+20 años", etiqueta: "en odontología" },
+                                    { valor: "+15 años", etiqueta: "en estética dental" },
                                     { valor: "Forbes", etiqueta: "reconocimiento editorial" },
-                                    { valor: "AOA", etiqueta: "posgrado en rehabilitación oral y estética" },
-                                    { valor: "Puerto Madero", etiqueta: "práctica privada" },
+                                    { valor: "AOA", etiqueta: "posgrado rehabilitación oral y estética" },
                                 ].map((item) => (
                                     <div key={item.etiqueta}>
                                         <div className="text-oro font-manrope font-semibold text-lg">{item.valor}</div>
@@ -201,6 +205,57 @@ export default function DrArielMerinoPage() {
                                 </p>
                                 <p>
                                     Su nombre aparece citado en medios, perfiles públicos y piezas editoriales como parte de una construcción de autoridad real: práctica clínica, casos visibles, presencia de marca y consistencia en la información pública.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="py-24 px-6 md:px-12 bg-carbon border-b border-oro/10">
+                    <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
+                        <div>
+                            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
+                                Conferencias · Expodent 2026
+                            </span>
+                            <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-6">
+                                Inteligencia artificial aplicada al <span className="font-cormorant italic text-oro">diseño de sonrisa</span>
+                            </h2>
+                            <div className="space-y-5 text-crema/72 font-manrope leading-relaxed">
+                                <p>
+                                    En Expodent 2026, realizado en La Rural de Buenos Aires, el Dr. Ariel Merino presentó una conferencia sobre inteligencia artificial, planificación digital y tecnología 3D aplicada a la odontología estética.
+                                </p>
+                                <p>
+                                    La presentación abordó cómo las herramientas digitales pueden ayudar a ordenar la comunicación con el paciente, visualizar alternativas y acompañar la toma de decisiones clínicas sin reemplazar el diagnóstico odontológico.
+                                </p>
+                            </div>
+                            <a
+                                href={EXPODENT_VIDEO_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 mt-8 border border-oro/30 text-oro px-6 py-3 rounded-full font-manrope font-semibold text-sm hover:bg-oro/10 transition-colors"
+                            >
+                                Ver conferencia en YouTube →
+                            </a>
+                        </div>
+
+                        <div className="border border-oro/15 rounded-[28px] overflow-hidden bg-carbon-soft">
+                            <div className="relative aspect-video bg-carbon">
+                                <iframe
+                                    title="Diseño de Sonrisa con IA: La Revolución Digital en la Odontología Moderna (Expodent 2026)"
+                                    src={EXPODENT_VIDEO_EMBED_URL}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    className="absolute inset-0 h-full w-full border-0"
+                                />
+                            </div>
+                            <div className="px-6 py-5 border-t border-oro/10">
+                                <p className="text-oro/70 font-manrope text-[10px] uppercase tracking-[0.3em] mb-2">
+                                    Video completo
+                                </p>
+                                <p className="text-crema/60 font-manrope text-sm leading-relaxed">
+                                    Diseño de Sonrisa con IA: La Revolución Digital en la Odontología Moderna.
                                 </p>
                             </div>
                         </div>

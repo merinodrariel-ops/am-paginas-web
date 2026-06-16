@@ -23,6 +23,17 @@ export const metadata: Metadata = {
   },
   description:
     "Publicación especializada en odontología estética: casos clínicos documentados, técnicas de vanguardia y referentes de la profesión en Argentina y el mundo.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     siteName: "The Dental Review",
     locale: "es_AR",
