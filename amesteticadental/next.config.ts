@@ -185,6 +185,8 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
+    loader: "custom",
+    loaderFile: "./src/lib/cloudinary-image-loader.ts",
     remotePatterns: [
       {
         protocol: "https",
