@@ -1,6 +1,6 @@
 # Working Context — AM Estética Dental
 
-Última actualización: 2026-06-02
+Última actualización: 2026-06-25
 
 ## Propósito
 
@@ -33,6 +33,7 @@ Este archivo sirve como la **Memoria de Sesión Operativa** de los agentes en el
 Las siguientes páginas han sido creadas o modificadas sustancialmente y requieren solicitar indexación manual en Google Search Console una vez realizado el deploy a producción y renovado el token:
 
 - [ ] `/equipo-am` (Modificada: incorporación de Dra. Emily Lugo, promoción de Dra. Claudia Hernández y rediseño de tarjetas visuales).
+- [ ] `/clinica` (Modificada: agregada a sitemap, galería interactiva con lightbox y almacenamiento optimizado en Cloudinary).
 - [ ] Todas las landings optimizadas por SEO (Ajuste de títulos y meta descripciones en `/`, `/casos`, `/dr-ariel-merino`, `/clinica`, `/carillas-dentales`, `/alineadores-invisibles`, `/diseno-de-sonrisa`, `/antes-y-despues`, `/turismo-dental`, `/implantes-dentales-buenos-aires`, `/diseno-de-sonrisa-precio-buenos-aires`, `/blanqueamiento-dental-precio-buenos-aires`, `/odontologia-estetica-buenos-aires`).
 - [ ] Todos los casos clínicos optimizados en `/casos/[slug]`.
 - [x] `/precio-carillas-dentales-buenos-aires` (Indexación solicitada en la tanda anterior).
@@ -44,16 +45,22 @@ Las siguientes páginas han sido creadas o modificadas sustancialmente y requier
 ## Sprint Actual e Historial Reciente de Modificaciones
 
 ### Completado con éxito en esta sesión:
-1. **Rediseño e Integración Visual en `/equipo-am`:**
+1. **Puesta en valor de la Clínica y Tecnología de Puerto Madero (Oficina 101)**:
+   * **Curaduría y Optimización de Fotos**: Filtramos las 13 fotos del consultorio localizadas en `D:\FOTOS\` para seleccionar las 8 mejores y más distintivas (3 exteriores, 5 interiores) eliminando tomas muy parecidas.
+   * **Integración con Cloudinary**: Escribimos y ejecutamos el script `upload-clinica-cloudinary.mjs` para subir de forma optimizada las fotos al bucket oficial (`drctvgyqd`) en el folder `clinica/`.
+   * **Galería Interactiva con Lightbox**: Diseñamos el componente de cliente `ClinicaGallery.tsx` con un visor lightbox a pantalla completa y soporte de navegación por teclado y mouse para las instalaciones.
+   * **CTAs Protagónicos**: Agregamos botones llamativos en la homepage (`Clinica.tsx`, `Features.tsx`) y una píldora directa en `FEATURED_LINKS` de `Navbar.tsx` para guiar a los visitantes de forma preferente hacia `/clinica`.
+   * **SEO y Sitemap**: Agregamos la ruta `/clinica` al archivo `sitemap.ts` con prioridad de `0.9`.
+2. **Rediseño e Integración Visual en `/equipo-am`:**
    * Se promovió jerárquicamente a **Dra. Claudia Hernández** al sector clínico (odontóloga), agregando su rol oficial a cargo de la dirección del consultorio, administración y logística.
    * Se integró a **Dra. Emily Lugo** como odontóloga estética, geolocalizada en el consultorio de Puerto Madero, con su información verificada al 100% desde la base de datos de administración clínica de Supabase en `am-clinica-main`.
    * Se eliminaron los datos de contacto personal de los integrantes para proteger la privacidad comercial.
    * Se reestructuró la página en una cuadrícula premium de 4 columnas para el staff de asistencia y soporte administrativo.
    * Se refinó la estética con efectos de hover premium, tarjetas de vidrio (glassmorphic layouts) y CTAs inteligentes vinculados a WhatsApp con textos pre-rellenados y contextuales para cada tratamiento.
-2. **Refinamiento del Logotipo de Forbes:**
+3. **Refinamiento del Logotipo de Forbes:**
    * Se resolvió el error de visualización del recuadro blanco del logo de Forbes.
    * Se inyectó un canal alfa de transparencia `tRNS` mediante un script Node personalizado para asegurar que el logotipo sea 100% transparente y se integre perfectamente con la tipografía y fondo en modo oscuro.
-3. **Optimización SEO y Enlaces Internos (Ahrefs Site Audit):**
+4. **Optimización SEO y Enlaces Internos (Ahrefs Site Audit):**
    * Se redujo la longitud de todos los metatítulos y meta descripciones de las 13 páginas de destino principales y los 8 casos clínicos publicados para alinearse a las recomendaciones óptimas (Titles < 60-65 chars, Descriptions < 150-160 chars).
    * Se implementaron los campos `seoTitle` y `seoDescription` en la base de datos de casos para mantener el H1 narrativo en la web y servir metadatos limpios y breves a Google.
    * Se corrigió la redirección interna (HTTP 308) en la cuadrícula de la página `/precio-carillas-dentales-buenos-aires` cambiando el enlace a `/casos/[slug]` en lugar de `/antes-y-despues/[slug]`.
