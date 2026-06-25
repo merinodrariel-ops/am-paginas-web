@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 // Sección de tecnología — reemplaza los widgets del template base
 // Diseño editorial limpio con la estética del proyecto Stitch
 
@@ -85,16 +87,22 @@ export default function Features() {
                 </div>
 
                 {/* CTA */}
-                <div className="mt-16 text-center">
+                <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a
                         href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20conocer%20m%C3%A1s%20sobre%20la%20tecnolog%C3%ADa%20de%20AM%20Est%C3%A9tica%20Dental."
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 border border-oro/30 text-crema px-8 py-4 rounded-full font-manrope text-sm hover:border-oro/60 hover:text-crema transition-colors"
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro/90 transition-colors shadow-lg hover:shadow-oro/10"
                     >
-                        Consultar sobre el proceso
-                        <span className="text-oro">→</span>
+                        Consultar por WhatsApp
+                        <span>→</span>
                     </a>
+                    <Link
+                        href="/clinica"
+                        className="inline-flex items-center justify-center gap-2 border border-crema/25 text-crema px-8 py-4 rounded-full font-manrope font-medium text-sm hover:bg-crema/5 transition-all"
+                    >
+                        Ver Clínica y Tecnología
+                    </Link>
                 </div>
 
             </div>

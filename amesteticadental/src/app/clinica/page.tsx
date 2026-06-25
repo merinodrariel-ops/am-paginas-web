@@ -4,6 +4,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Contacto from "@/components/Contacto";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
+import ClinicaGallery from "@/components/ClinicaGallery";
 
 const CANONICAL = "https://www.amesteticadental.com/clinica";
 
@@ -19,103 +20,6 @@ export const metadata: Metadata = {
       "Un entorno clínico exclusivo en Puerto Madero diseñado para brindar una experiencia de confort absoluto y la odontología digital más avanzada.",
     url: CANONICAL,
   },
-};
-
-// Configuración para el Streaming de Fotos desde Cloudinary con Fallback Local
-// Si USE_CLOUDINARY es true, las fotos se cargan desde el CDN de Cloudinary.
-// Si es false, se sirven desde la carpeta public/images/clinica del proyecto.
-const USE_CLOUDINARY = false;
-const CLOUDINARY_BASE_URL = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/v1/clinica";
-const LOCAL_BASE_URL = "/images/clinica";
-
-const getImgSrc = (filename: string) => {
-  return USE_CLOUDINARY ? `${CLOUDINARY_BASE_URL}/${filename}` : `${LOCAL_BASE_URL}/${filename}`;
-};
-
-// 13 Fotos del Consultorio (Exteriores e Interiores)
-const FOTOS_CLINICA = {
-  exteriores: [
-    {
-      src: getImgSrc("entrada-clinica-cartel-iluminado-am-estetica-dental-puerto-madero.jpg"),
-      alt: "Entrada principal de AM Estética Dental con el logotipo iluminado en Puerto Madero",
-      title: "Logotipo Exterior Iluminado",
-      sizeClass: "col-span-2 row-span-1"
-    },
-    {
-      src: getImgSrc("ingreso-clinica-cartel-luminoso-am-estetica-dental-puerto-madero.jpg"),
-      alt: "Ingreso premium a AM Estética Dental, cartel iluminado en Camila O'Gorman 412",
-      title: "Cartel Luminoso de Bienvenida",
-      sizeClass: "col-span-1 row-span-1"
-    },
-    {
-      src: getImgSrc("entrada-consultorio-cartel-am-estetica-dental-puerto-madero.jpg"),
-      alt: "Letrero comercial de AM Estética Dental en la entrada exterior en Puerto Madero",
-      title: "Letrero Comercial del Acceso",
-      sizeClass: "col-span-1 row-span-1"
-    },
-    {
-      src: getImgSrc("letrero-entrada-am-estetica-dental-dr-ariel-merino-puerto-madero.jpg"),
-      alt: "Cartel exterior identificatorio del Dr. Ariel Merino en Puerto Madero, Buenos Aires",
-      title: "Letrero Identificatorio del Doctor",
-      sizeClass: "col-span-1 row-span-1"
-    },
-    {
-      src: getImgSrc("ingreso-consultorio-cartel-am-estetica-dental-puerto-madero.jpg"),
-      alt: "Detalle de la entrada de la clínica odontológica premium de la oficina 101 en Puerto Madero",
-      title: "Detalle del Acceso de la Oficina 101",
-      sizeClass: "col-span-1 row-span-1"
-    }
-  ],
-  interiores: [
-    {
-      src: getImgSrc("recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg"),
-      alt: "Recepción de AM Estética Dental con iluminación cálida en Puerto Madero, Buenos Aires",
-      title: "Recepción Boutique de la Clínica",
-      sizeClass: "col-span-2 row-span-2"
-    },
-    {
-      src: getImgSrc("recepcion-boutique-am-estetica-dental-puerto-madero.jpg"),
-      alt: "Área de recepción elegante de la clínica de estética dental oficina 101 en Puerto Madero",
-      title: "Entorno de Recepción Elegante",
-      sizeClass: "col-span-1 row-span-1"
-    },
-    {
-      src: getImgSrc("recepcion-am-estetica-dental-oficina-101-puerto-madero.jpg"),
-      alt: "Mobiliario premium y detalles de diseño en la recepción de la clínica en Puerto Madero",
-      title: "Detalles del Mobiliario Premium",
-      sizeClass: "col-span-1 row-span-1"
-    },
-    {
-      src: getImgSrc("decoracion-recepcion-boutique-crema-oro-am-estetica-dental.jpg"),
-      alt: "Detalles decorativos en tonos crema y oro de la recepción de AM Estética Dental",
-      title: "Diseño Interior Crema y Oro",
-      sizeClass: "col-span-1 row-span-1"
-    },
-    {
-      src: getImgSrc("sala-espera-recepcion-confort-am-estetica-dental.jpg"),
-      alt: "Cómodo sillón relax de diseño ergonómico en la sala de espera boutique de Puerto Madero",
-      title: "Sillón Confort de la Sala de Espera",
-      sizeClass: "col-span-1 row-span-1"
-    },
-    {
-      src: getImgSrc("sillon-relax-confort-sala-espera-clinica-dental.jpg"),
-      alt: "Sillón relax de gran confort y diseño moderno en el área de espera boutique de la clínica",
-      title: "Sillón de Relajación y Descanso",
-      sizeClass: "col-span-1 row-span-1"
-    },
-    {
-      src: getImgSrc("sala-de-espera-exclusiva-boutique-puerto-madero.jpg"),
-      alt: "Vista general de la sala de espera boutique y recepción premium de AM Estética Dental",
-      title: "Sala de Espera Exclusiva Boutique",
-      sizeClass: "col-span-1 row-span-1"
-    },
-    {
-      src: getImgSrc("recepcion-experiencia-digital-pacientes-am-estetica-dental.jpg"),
-      alt: "Espacio tecnológico y recepción interactiva de AM Estética Dental en Puerto Madero",
-      title: "Entorno Digital y Hospitalidad",
-      sizeClass: "col-span-1 row-span-1"
-    }
-  ]
 };
 
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20conocer%20la%20cl%C3%ADnica%20y%20agendar%20un%20turno.";
@@ -208,8 +112,8 @@ export default function ClinicaPage() {
         <div className="grid grid-cols-2 gap-4 h-[450px] md:h-[600px] relative">
           <div className="relative rounded-2xl overflow-hidden border border-oro/10">
             <Image
-              src={FOTOS_CLINICA.interiores[0].src}
-              alt={FOTOS_CLINICA.interiores[0].alt}
+              src="/images/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg"
+              alt="Recepción de AM Estética Dental con iluminación cálida en Puerto Madero, Buenos Aires"
               fill
               sizes="(max-width: 768px) 50vw, 25vw"
               className="object-cover hover:scale-[1.02] transition-transform duration-700"
@@ -217,8 +121,8 @@ export default function ClinicaPage() {
           </div>
           <div className="relative rounded-2xl overflow-hidden border border-oro/10 mt-8">
             <Image
-              src={FOTOS_CLINICA.interiores[6].src}
-              alt={FOTOS_CLINICA.interiores[6].alt}
+              src="/images/clinica/sala-de-espera-exclusiva-boutique-puerto-madero.jpg"
+              alt="Vista general de la sala de espera boutique y recepción premium de AM Estética Dental"
               fill
               sizes="(max-width: 768px) 50vw, 25vw"
               className="object-cover hover:scale-[1.02] transition-transform duration-700"
@@ -238,71 +142,11 @@ export default function ClinicaPage() {
               Explorá la <span className="font-cormorant italic text-oro">Oficina 101</span> en detalle
             </h2>
             <p className="text-crema/60 max-w-2xl mx-auto mt-4 text-sm md:text-base">
-              Fotografías reales del interior y los accesos de nuestra clínica de alta gama en Puerto Madero. Espacios diseñados con el estándar premium de Forbes Argentina.
+              Fotografías reales del interior y los accesos de nuestra clínica de alta gama en Puerto Madero. Espacios diseñados con el estándar premium de Forbes Argentina. Hacé clic en cualquier foto para abrir el visor interactivo.
             </p>
           </div>
 
-          {/* Subtítulo: RECEPCIÓN Y SALA DE ESPERA */}
-          <div className="mb-8 border-b border-oro/10 pb-4">
-            <h3 className="text-2xl font-light text-crema">
-              La Recepción y <span className="font-cormorant italic text-oro">Sala de Espera Boutique</span>
-            </h3>
-            <p className="text-crema/40 text-xs mt-1 uppercase tracking-widest">Atmósfera de confort crema & oro · 8 tomas de interior</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-            {FOTOS_CLINICA.interiores.map((foto, index) => (
-              <div 
-                key={foto.src}
-                className="relative h-80 rounded-2xl overflow-hidden border border-oro/10 group bg-carbon"
-              >
-                <Image
-                  src={foto.src}
-                  alt={foto.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-carbon/70 via-carbon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <div>
-                    <span className="text-oro font-cormorant italic text-sm block mb-1">AM Estética Dental</span>
-                    <h4 className="text-crema font-medium text-base leading-tight">{foto.title}</h4>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Subtítulo: EL ACCESO EXTERIOR Y CARTELERÍA */}
-          <div className="mb-8 border-b border-oro/10 pb-4">
-            <h3 className="text-2xl font-light text-crema">
-              El Acceso Exterior y <span className="font-cormorant italic text-oro">Cartel Oficial de AM</span>
-            </h3>
-            <p className="text-crema/40 text-xs mt-1 uppercase tracking-widest">Lo que encontrás al llegar · 5 tomas de exterior</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {FOTOS_CLINICA.exteriores.map((foto, index) => (
-              <div 
-                key={foto.src}
-                className="relative h-80 rounded-2xl overflow-hidden border border-oro/10 group bg-carbon"
-              >
-                <Image
-                  src={foto.src}
-                  alt={foto.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-carbon/70 via-carbon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <div>
-                    <span className="text-oro font-cormorant italic text-sm block mb-1">AM Estética Dental</span>
-                    <h4 className="text-crema font-medium text-base leading-tight">{foto.title}</h4>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ClinicaGallery />
         </div>
       </section>
 
@@ -311,7 +155,7 @@ export default function ClinicaPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1 relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden border border-oro/10">
             <Image
-              src={FOTOS_CLINICA.interiores[7].src}
+              src="/images/clinica/recepcion-experiencia-digital-pacientes-am-estetica-dental.jpg"
               alt="Tecnología digital de diagnóstico 3D y scanner intraoral en AM Estética Dental"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

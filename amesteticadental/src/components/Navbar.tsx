@@ -27,7 +27,7 @@ const FEATURED_LINKS = [
     { label: "Lentes",        href: "/lentes-de-contacto-dental" },
     { label: "AM Aligners",   href: "/alineadores-invisibles" },
     { label: "Dr. Merino",    href: "/dr-ariel-merino" },
-    { label: "Equipo",        href: "/equipo-am" },
+    { label: "Clínica",       href: "/clinica" },
     { label: "Antes y después", href: "/casos" },
     { label: "Precio",        href: "/precio-carillas-dentales-buenos-aires" },
 ];

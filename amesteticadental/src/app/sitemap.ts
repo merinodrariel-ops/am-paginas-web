@@ -203,6 +203,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.95,
     },
+    {
+      url: "https://www.amesteticadental.com/clinica",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     ...casos.map((caso) => ({
       url: `https://www.amesteticadental.com/casos/${caso.slug}`,
       lastModified: new Date(),

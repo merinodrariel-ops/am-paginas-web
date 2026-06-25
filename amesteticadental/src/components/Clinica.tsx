@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -92,6 +93,16 @@ export default function Clinica() {
                                     Puerto Madero · Buenos Aires · Argentina
                                 </p>
                             </div>
+                        </div>
+
+                        {/* Botón Protagónico */}
+                        <div className="pt-2">
+                            <Link
+                                href="/clinica"
+                                className="inline-flex items-center gap-2 bg-oro text-carbon px-6 py-3.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-lg hover:shadow-oro/10"
+                            >
+                                Conocer la Clínica y Tecnología →
+                            </Link>
                         </div>
                     </div>
                 </div>
