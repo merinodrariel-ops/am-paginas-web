@@ -178,6 +178,8 @@ export default function Contacto() {
                     <a href="/precio-carillas-dentales-buenos-aires" className="hover:text-oro transition-colors">Precios</a>
                     <span className="text-oro/20 hidden sm:inline">|</span>
                     <a href="/dr-ariel-merino" className="hover:text-oro transition-colors">Dr. Ariel Merino</a>
+                    <span className="text-oro/20 hidden sm:inline">|</span>
+                    <a href="/dentista-puerto-madero" className="hover:text-oro transition-colors">Dentista en Puerto Madero</a>
                 </div>
             </div>
 

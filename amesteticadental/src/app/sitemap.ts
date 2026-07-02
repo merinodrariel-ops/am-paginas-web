@@ -102,6 +102,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://www.amesteticadental.com/dentista-puerto-madero",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: "https://www.amesteticadental.com/implantes-dentales-buenos-aires",
       lastModified: new Date(),
       changeFrequency: "monthly",
