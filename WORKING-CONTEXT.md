@@ -1,6 +1,6 @@
 # Working Context — AM Estética Dental
 
-Última actualización: 2026-06-25
+Última actualización: 2026-07-08
 
 ## Propósito
 
@@ -37,6 +37,10 @@ Las siguientes páginas han sido creadas o modificadas sustancialmente y requier
 - [ ] Todas las landings optimizadas por SEO (Ajuste de títulos y meta descripciones en `/`, `/casos`, `/dr-ariel-merino`, `/clinica`, `/carillas-dentales`, `/alineadores-invisibles`, `/diseno-de-sonrisa`, `/antes-y-despues`, `/turismo-dental`, `/implantes-dentales-buenos-aires`, `/diseno-de-sonrisa-precio-buenos-aires`, `/blanqueamiento-dental-precio-buenos-aires`, `/odontologia-estetica-buenos-aires`).
 - [ ] Todos los casos clínicos optimizados en `/casos/[slug]`.
 - [x] `/precio-carillas-dentales-buenos-aires` (Indexación solicitada en la tanda anterior).
+- [ ] `/dentista-puerto-madero` (NUEVA landing local SEO — sesión 08-07-2026).
+- [ ] `/blog/cuanto-cuestan-las-carillas-dentales-en-argentina` (NUEVO artículo de precios — sesión 08-07-2026).
+- [ ] `/blog/cuanto-cuesta-un-implante-dental-en-argentina` (NUEVO artículo de precios — sesión 08-07-2026).
+- [ ] Re-solicitar indexación de páginas con precios actualizados (`/precio-carillas-*`, `/precio-implantes-*`, `/diseno-de-sonrisa-precio-*`, `/lentes-de-contacto-dental-precio-*`, `/dientes-de-porcelana-carillas-precio`, `/coronas-y-fundas-dentales`, `/implantes-dentales-buenos-aires`).
 
 *Para procesar esta cola:* Ejecutar `node gsc.mjs indexar` tras el deploy exitoso a Vercel y la renovación del token de GSC.
 
@@ -76,3 +80,34 @@ Las siguientes páginas han sido creadas o modificadas sustancialmente y requier
 ## Notas de Ejecución (Sesión del 02-06-2026)
 *   Se detectó que el repo `affaan-m/ECC` basa su éxito en la inmutabilidad y la persistencia de la memoria. La adición de `SOUL.md` y `WORKING-CONTEXT.md` reduce a cero el tiempo de inducción del agente en turnos futuros.
 *   Se mantendrán ambos archivos actualizados al final de cada turno de desarrollo para que el siguiente agente tome el relevo de forma inmediata y sin pérdida de contexto.
+
+---
+
+## Sesión del 08-07-2026 (precios 2026 + SEO local + flujo Vercel)
+
+### REGLA OPERATIVA CRÍTICA (reforzada por el Dr. Merino)
+- **NADA queda en local. Todo cambio se `commit` + `push origin main` en el momento.** El Dr. trabaja en varias computadoras con varios agentes; dejar cambios locales sin pushear hace que él crea que ya están aplicados y se acumulen errores/sobrescrituras entre máquinas.
+- Antes de cerrar turno: `git status` limpio y `main` sincronizado con `origin/main`. Si el push es rechazado → `git fetch` + `git rebase origin/main` + `npm run build` + push. **Nunca terminar con commits sin pushear.**
+
+### Cambios de precios aplicados (todos en producción, commit `c562010`)
+- **Carillas cerámicas / lentes de contacto / carillas sin desgaste:** USD 900–1.200 → **USD 1.000–1.500 por pieza**.
+- **Diseño de sonrisa en resina:** **desde USD 5.000**.
+- **Diseño de sonrisa en cerámica (10 piezas):** **desde USD 10.000**.
+- **Rehabilitación full cerámica** (toda la boca; casos complejos: bruxismo avanzado, maloclusión, malas posiciones, mucho desgaste, múltiples coronas/implantes; corrige y mejora la mordida): **desde USD 26.000** (algunos hasta 30k). Se agregó explicación + FAQ con schema en `/diseno-de-sonrisa-precio-buenos-aires`.
+- **Implantes:** floor subido de USD 800 → **desde USD 1.200** (unitario con corona). PENDIENTE: definir precio premium distinto para corona de zirconio (hoy quedó también en "desde USD 1.200").
+- **Coronas y fundas:** eran "Consultar precio" → ahora **desde USD 1.000/pieza** (son piezas cerámicas de laboratorio). Precio agregado en hero + FAQ + schema.
+- Totales de paquetes recalculados en consecuencia (8-12 piezas, makeover, etc.).
+- Casos clínicos históricos en `casos.ts` (totales de pacientes puntuales) se dejaron SIN cambiar a propósito (son registros reales, no lista de precios vigente).
+
+### Páginas nuevas creadas (SEO local + AEO)
+- `/dentista-puerto-madero` — landing local: hero con foto de clínica, diferenciales vs. competencia, precios visibles, Dr. Merino, galería, opiniones 4.9★, cómo llegar, FAQ + schema `Dentist` con geo.
+- `/blog/cuanto-cuestan-las-carillas-dentales-en-argentina` y `/blog/cuanto-cuesta-un-implante-dental-en-argentina` — guías de precios apuntando a búsquedas "en Argentina" (dato de GSC: 84% de clics vienen de páginas de precios; "cuanto cuesta un implante dental en argentina 2026" en alza). Article + FAQPage schema, enlazado cruzado.
+- Fix sitemap: agregadas `/antes-y-despues`, `/clinica` y blog de blanqueamiento (estaban huérfanas).
+
+### Analítica / Tracking (estado real verificado)
+- **Instalado en `main`:** Google Tag Manager (`gtmId`) + Meta Pixel (`metaPixelId`) en `layout.tsx`, más tracking de clicks de WhatsApp → dataLayer → GTM → conversión Google Ads. Se leen de variables de entorno.
+- **PLAUSIBLE: NO está presente en el código de `main`.** El Dr. mencionó una "instalación de Plausible" pero no se encontró ninguna referencia (`grep -i plausible` vacío). VERIFICAR antes de asumir que está activa: puede estar (a) hecha en otra compu sin pushear, (b) vía integración de Vercel fuera del repo, o (c) pendiente de hacer. NO documentar como completada hasta confirmar.
+
+### Competencia SEO local (recordatorio)
+- Competidores directos "dentista Puerto Madero": esteticadentalmadero.com (sin precios/testimonios/FAQ) y dentaldique.com (solo español, sin blog). Estrategia AM: transparencia de precios + testimonios + diseño 3D + turismo dental bilingüe.
+- PENDIENTE: sacar CPC exactos de Argentina y keyword-gap desde Ahrefs (la sesión de Ahrefs está en el perfil de Chrome del consultorio, no en el personal).
