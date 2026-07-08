@@ -51,7 +51,7 @@ const faqSchema = {
             "name": "¿Cuánto cuesta un implante dental en Argentina en 2026?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "El precio de un implante unitario varía según la clínica y lo que incluya el presupuesto. En AM Estética Dental un implante unitario con corona parte de USD 800, y con corona de zirconio de alta estética desde USD 1.200. Es clave confirmar siempre si el precio incluye la corona o solo el tornillo, porque muchos presupuestos separan ambas cosas.",
+                "text": "El precio de un implante unitario varía según la clínica y lo que incluya el presupuesto. En AM Estética Dental un implante unitario con corona parte desde USD 1.200, e incluye tornillo de titanio, pilar y corona. Es clave confirmar siempre si el precio incluye la corona o solo el tornillo, porque muchos presupuestos separan ambas cosas.",
             },
         },
         {
@@ -59,7 +59,7 @@ const faqSchema = {
             "name": "¿El precio del implante incluye la corona?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "No siempre, y es la principal causa de confusión al comparar presupuestos. Un implante completo tiene tres partes: el tornillo de titanio, el pilar y la corona visible. Algunas clínicas publican solo el precio del tornillo. En AM Estética Dental el valor desde USD 800 ya incluye la corona.",
+                "text": "No siempre, y es la principal causa de confusión al comparar presupuestos. Un implante completo tiene tres partes: el tornillo de titanio, el pilar y la corona visible. Algunas clínicas publican solo el precio del tornillo. En AM Estética Dental el valor desde USD 1.200 ya incluye la corona.",
             },
         },
         {
@@ -102,7 +102,7 @@ const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20
 const RANGOS = [
     {
         tipo: "Implante unitario (incluye corona)",
-        rango: "Desde USD 800",
+        rango: "Desde USD 1.200",
         duracion: "Tornillo: permanente · Corona: 15–20 años",
         nota: "Reemplazo de una pieza. El precio ya contempla tornillo de titanio, pilar y corona.",
     },
@@ -124,7 +124,7 @@ const FACTORES = [
     {
         n: "01",
         titulo: "Qué incluye el presupuesto (tornillo vs. corona)",
-        texto: "Es el punto donde más se confunden los precios. Un implante completo tiene tres partes: el tornillo de titanio que se integra al hueso, el pilar que lo conecta y la corona visible. Hay clínicas que publican solo el precio del tornillo — y la corona se suma aparte. Antes de comparar dos presupuestos, confirmá que ambos incluyan lo mismo. En AM el valor desde USD 800 ya incluye la corona.",
+        texto: "Es el punto donde más se confunden los precios. Un implante completo tiene tres partes: el tornillo de titanio que se integra al hueso, el pilar que lo conecta y la corona visible. Hay clínicas que publican solo el precio del tornillo — y la corona se suma aparte. Antes de comparar dos presupuestos, confirmá que ambos incluyan lo mismo. En AM el valor desde USD 1.200 ya incluye la corona.",
     },
     {
         n: "02",

@@ -189,7 +189,7 @@ export default function CarillasResinaPage() {
                 {/* CTA medio */}
                 <section className="px-6 py-16 max-w-4xl mx-auto text-center border-y border-oro/10">
                     <h2 className="text-3xl font-light text-crema mb-4">
-                        Te asesoramos <span className="font-cormorant italic text-oro">sin compromiso.</span>
+                        Te orientamos con <span className="font-cormorant italic text-oro">criterio clínico.</span>
                     </h2>
                     <p className="text-crema/55 mb-8 max-w-xl mx-auto">Te explicamos qué opción es la más adecuada para tu caso, tu presupuesto y tu objetivo estético.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"

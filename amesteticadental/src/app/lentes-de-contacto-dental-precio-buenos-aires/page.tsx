@@ -135,7 +135,7 @@ export default function LentesContactoDentalLanding() {
                         {[
                             { piezas: "6 piezas", precio: "Desde USD 5.400", desc: "Sector anterior — transformación básica" },
                             { piezas: "10 piezas", precio: "USD 10.000 – 15.000", desc: "Diseño de sonrisa completo — la opción más elegida" },
-                            { piezas: "20 piezas", precio: "USD 20.000 – 30.000", desc: "Rehabilitación completa superior e inferior" },
+                            { piezas: "20 piezas", precio: "Desde USD 26.000", desc: "Rehabilitación full cerámica superior e inferior" },
                         ].map((o) => (
                             <div key={o.piezas} className="border border-oro/15 rounded-2xl p-6">
                                 <p className="text-oro text-[9px] uppercase tracking-widest mb-2">{o.piezas}</p>

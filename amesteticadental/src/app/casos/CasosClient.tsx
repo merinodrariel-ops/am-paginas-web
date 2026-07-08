@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { getCasosPublicados, type Categoria } from "@/data/casos";
+import type { Caso, Categoria } from "@/data/casos";
 
 const FILTROS: { label: string; value: Categoria | "Todos" }[] = [
     { label: "Todos", value: "Todos" },
@@ -18,8 +18,7 @@ const FILTROS: { label: string; value: Categoria | "Todos" }[] = [
     { label: "Rehabilitación", value: "Rehabilitación oral" },
 ];
 
-export default function CasosClient() {
-    const todos = getCasosPublicados();
+export default function CasosClient({ todos }: { todos: Caso[] }) {
     const [filtro, setFiltro] = useState<Categoria | "Todos">("Todos");
 
     const casos = filtro === "Todos"

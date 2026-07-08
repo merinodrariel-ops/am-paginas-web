@@ -46,7 +46,7 @@ export default function ImplantesPage() {
                     <h2 className="text-2xl font-light text-crema mb-10">¿Cuánto cuesta un implante dental <span className="font-cormorant italic text-oro">en Buenos Aires?</span></h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                         {[
-                            { tipo: "Implante unitario", precio: "Desde USD 800", nota: "Precio por pieza · incluye corona" },
+                            { tipo: "Implante unitario", precio: "Desde USD 1.200", nota: "Precio por pieza · incluye corona" },
                             { tipo: "Implante + corona de zirconio", precio: "Desde USD 1.200", nota: "Mayor estética y biocompatibilidad" },
                             { tipo: "Rehabilitación sobre implantes", precio: "Consultar", nota: "Caso completo · depende de cantidad de piezas" },
                         ].map((o) => (
@@ -68,7 +68,7 @@ export default function ImplantesPage() {
                             { q: "¿El implante duele?", a: "La cirugía se realiza con anestesia local, por lo que no se siente dolor durante el procedimiento. Los primeros 2-3 días pueden haber molestias leves controladas con analgésicos. La mayoría de los pacientes vuelve a sus actividades al día siguiente." },
                             { q: "¿Cuánto dura un implante dental?", a: "Con cuidados normales (higiene, controles anuales, no fumar), los implantes dentales duran toda la vida. La corona sobre el implante puede necesitar reemplazo cada 15-20 años." },
                             { q: "¿Cualquiera puede ponerse implantes?", a: "Se necesita cantidad suficiente de hueso maxilar para colocar el implante. En casos de pérdida ósea, se puede hacer un injerto previo. La condición general de salud también influye. Lo evaluamos con una tomografía (CBCT) en la primera consulta." },
-                            { q: "¿Cuánto cuesta un implante dental en Buenos Aires?", a: "En AM Estética Dental, un implante unitario parte desde USD 800 incluyendo la corona. La inversión varía según el material de la corona (cerámica o zirconio) y la complejidad del caso." },
+                            { q: "¿Cuánto cuesta un implante dental en Buenos Aires?", a: "En AM Estética Dental, un implante unitario parte desde USD 1.200 incluyendo la corona. La inversión varía según el material de la corona (cerámica o zirconio) y la complejidad del caso." },
                         ].map(({ q, a }) => (
                             <details key={q} className="border border-oro/12 rounded-xl group">
                                 <summary className="px-6 py-4 cursor-pointer list-none flex items-center justify-between text-crema font-manrope text-sm font-medium select-none">

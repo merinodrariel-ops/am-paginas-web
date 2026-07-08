@@ -3,19 +3,17 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import CasoGaleria from "@/components/CasoGaleria";
-import { getCasoBySlug, getCasosPublicados } from "@/data/casos";
+import { getCasoBySlugMerged } from "@/lib/public-cases";
+
+export const revalidate = 300;
 
 interface Props {
     params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
-    return getCasosPublicados().map((caso) => ({ slug: caso.slug }));
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
-    const caso = getCasoBySlug(slug);
+    const caso = await getCasoBySlugMerged(slug);
     if (!caso) return {};
 
     const canonical = `https://www.amesteticadental.com/casos/${caso.slug}`;
@@ -73,7 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CasoPage({ params }: Props) {
     const { slug } = await params;
-    const caso = getCasoBySlug(slug);
+    const caso = await getCasoBySlugMerged(slug);
     if (!caso) notFound();
 
     const canonical = `https://www.amesteticadental.com/casos/${caso.slug}`;

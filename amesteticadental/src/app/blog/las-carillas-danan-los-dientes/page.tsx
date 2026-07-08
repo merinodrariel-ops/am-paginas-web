@@ -215,7 +215,7 @@ export default function ArticuloCarillasDananDientes() {
                         <section className="border border-oro/20 rounded-2xl p-8 bg-carbon-soft text-center">
                             <span className="text-oro font-manrope uppercase tracking-[0.3em] text-xs block mb-4">¿Querés saber si sos candidato?</span>
                             <h3 className="text-crema font-manrope font-light text-xl mb-4">
-                                Te evaluamos sin compromiso
+                                Evaluamos tu caso con criterio clínico
                             </h3>
                             <p className="text-crema/55 font-manrope text-sm mb-6 max-w-md mx-auto">
                                 Mandanos fotos de tu sonrisa por WhatsApp. Te decimos si sos candidato, qué tipo de carilla aplica para tu caso y qué resultado podés esperar.

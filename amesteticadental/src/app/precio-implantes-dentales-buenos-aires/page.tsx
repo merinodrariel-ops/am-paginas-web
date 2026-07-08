@@ -29,7 +29,7 @@ const faqItems = [
   {
     pregunta: "¿Cuánto cuesta un implante dental en Buenos Aires?",
     respuesta:
-      "En AM Estética Dental, un implante unitario tiene un valor desde USD 800 (incluyendo la corona). Si se opta por una corona de zirconio de alta estética, el valor asciende a USD 1.200. Trabajamos con valores en USD y ofrecemos financiación propia con tasa fija del 18% anual. El precio final depende de la complejidad clínica del caso.",
+      "En AM Estética Dental, un implante unitario con corona tiene un valor desde USD 1.200. La corona de zirconio de alta estética, con mejor biocompatibilidad gingival, se cotiza según la complejidad del caso. Trabajamos con valores en USD y ofrecemos financiación propia con tasa fija del 18% anual.",
   },
   {
     pregunta: "¿Qué cambia más el precio: titanio o zirconio?",
@@ -73,21 +73,22 @@ const faqSchema = {
   })),
 };
 
-const priceSchema = {
+const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
   name: "Implantes Dentales",
   description: "Implantes dentales de titanio y coronas de zirconio en Puerto Madero, Buenos Aires. Planificación 3D, materiales premium y financiación propia.",
-  brand: { "@type": "Brand", name: "AM Estética Dental" },
-  offers: {
-    "@type": "AggregateOffer",
-    priceCurrency: "USD",
-    lowPrice: "800",
-    highPrice: "1200",
-    offerCount: "2",
-    availability: "https://schema.org/InStock",
-    url: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",
+  serviceType: "Implantes dentales y rehabilitación oral",
+  provider: {
+    "@type": "Dentist",
+    name: "AM Estética Dental",
+    url: "https://www.amesteticadental.com",
   },
+  areaServed: {
+    "@type": "Place",
+    name: "Buenos Aires, Argentina",
+  },
+  url: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",
 };
 
 const WA_LINK =
@@ -104,7 +105,7 @@ export default function InversionImplantesPage() {
         ]} 
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(priceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <Navbar />
 
       <main className="bg-carbon text-crema font-manrope">
@@ -160,7 +161,7 @@ export default function InversionImplantesPage() {
                 </thead>
                 <tbody>
                   {[
-                    { tratamiento: "Implante unitario (inc. corona)", precio: "Desde USD 800", duracion: "Permanente", sesiones: "45 min" },
+                    { tratamiento: "Implante unitario (inc. corona)", precio: "Desde USD 1.200", duracion: "Permanente", sesiones: "45 min" },
                     { tratamiento: "Implante + corona de zirconio", precio: "Desde USD 1.200", duracion: "Permanente", sesiones: "45 min" },
                     { tratamiento: "Rehabilitación sobre implantes", precio: "Consultar caso", duracion: "Permanente", sesiones: "A evaluar" },
                   ].map((row, i) => (

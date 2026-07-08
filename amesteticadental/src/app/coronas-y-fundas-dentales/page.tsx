@@ -47,6 +47,11 @@ const schema = {
                 "@type": "Question",
                 name: "¿Cuál es la diferencia entre corona y carilla?",
                 acceptedAnswer: { "@type": "Answer", text: "La carilla cubre solo la cara frontal del diente. La corona recubre el diente completo (360°) y se usa cuando hay mayor daño estructural o el diente está muy debilitado." }
+            },
+            {
+                "@type": "Question",
+                name: "¿Cuánto cuesta una corona dental en Buenos Aires?",
+                acceptedAnswer: { "@type": "Answer", text: "Las coronas y fundas de cerámica en AM Estética Dental parten desde USD 1.000 por pieza. Son piezas cerámicas de laboratorio: el valor final depende del material (cerámica o zirconio) y de la complejidad del caso. La inversión exacta se define en la valoración inicial." }
             }
         ]
     }
@@ -88,6 +93,10 @@ const FAQS = [
         a: "La carilla cubre solo la cara frontal del diente (como una lente de contacto). La corona recubre el diente completo (360°) y se usa cuando hay mayor daño estructural o el diente está muy debilitado."
     },
     {
+        q: "¿Cuánto cuesta una corona dental en Buenos Aires?",
+        a: "Las coronas y fundas de cerámica parten desde USD 1.000 por pieza. Son piezas cerámicas de laboratorio, igual que las carillas: el valor final depende del material (cerámica o zirconio) y de la complejidad del caso. La inversión exacta se define en la valoración inicial."
+    },
+    {
         q: "¿Puedo comer normal con una corona dental?",
         a: "Sí. Las coronas de zirconio y cerámica soportan la masticación normal. Solo recomendamos evitar morder objetos duros (hielo, maíz de la mazorca) para prolongar su vida útil."
     },
@@ -117,6 +126,7 @@ export default function CoronasPage() {
                     <p className="text-crema/65 text-lg font-light leading-relaxed max-w-2xl mx-auto mb-10">
                         Restauramos dientes dañados, fracturados o tratados con endodoncia con coronas de cerámica de alta resistencia. Resultado natural. Sin líneas oscuras en la encía.
                     </p>
+                    <p className="text-oro font-manrope text-sm mb-10">Piezas cerámicas de laboratorio · desde USD 1.000 por pieza</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-all">
                         Consultar precio →

@@ -1,8 +1,8 @@
 import { MetadataRoute } from "next";
-import { getCasosPublicados } from "@/data/casos";
+import { getCasosPublicadosMerged } from "@/lib/public-cases";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const casos = getCasosPublicados();
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const casos = await getCasosPublicadosMerged();
 
   return [
     {

@@ -304,7 +304,7 @@ export default function DisenoSonrisaPage() {
                             <span className="font-cormorant italic text-oro">tu nueva sonrisa</span>
                         </h2>
                         <p className="text-crema/60 font-manrope text-base mb-10">
-                            En la primera consulta diseñamos el resultado digital. Te lo mostramos, lo ajustamos y decidís si querés avanzar. Sin presión, sin compromiso.
+                            En la primera consulta diseñamos el resultado digital. Te lo mostramos, lo ajustamos y definimos con claridad si el tratamiento es indicado para tu caso.
                         </p>
                         <a
                             href={WA_LINK}

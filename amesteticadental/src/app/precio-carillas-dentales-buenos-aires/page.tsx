@@ -30,7 +30,7 @@ const faqItems = [
   {
     pregunta: "¿Cuánto cuestan las carillas dentales en Buenos Aires?",
     respuesta:
-      "En AM Estética Dental, las carillas cerámicas tienen un valor de USD 900 a 1.200 por pieza y las carillas de resina compuesta cuestan USD 500 por diente. Trabajamos con valores en USD y ofrecemos financiación propia con tasa fija del 18% anual. El precio final depende de la cantidad de piezas y la complejidad clínica del caso.",
+      "En AM Estética Dental, las carillas cerámicas tienen un valor de USD 1.000 a 1.500 por pieza y las carillas de resina compuesta cuestan USD 500 por diente. Trabajamos con valores en USD y ofrecemos financiación propia con tasa fija del 18% anual. El precio final depende de la cantidad de piezas y la complejidad clínica del caso.",
   },
   {
     pregunta: "¿Qué cambia más el precio: porcelana o resina?",
@@ -74,27 +74,22 @@ const faqSchema = {
   })),
 };
 
-const priceSchema = {
+const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
   name: "Carillas Dentales de Porcelana",
   description: "Carillas dentales de porcelana de alta estética en Puerto Madero, Buenos Aires. Diseño de sonrisa digital, materiales premium y financiación propia.",
-  brand: { "@type": "Brand", name: "AM Estética Dental" },
-  offers: {
-    "@type": "AggregateOffer",
-    priceCurrency: "USD",
-    lowPrice: "900",
-    highPrice: "1200",
-    offerCount: "2",
-    availability: "https://schema.org/InStock",
-    url: "https://www.amesteticadental.com/precio-carillas-dentales-buenos-aires",
+  serviceType: "Carillas dentales y diseño de sonrisa",
+  provider: {
+    "@type": "Dentist",
+    name: "AM Estética Dental",
+    url: "https://www.amesteticadental.com",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "120",
-    bestRating: "5",
+  areaServed: {
+    "@type": "Place",
+    name: "Buenos Aires, Argentina",
   },
+  url: "https://www.amesteticadental.com/precio-carillas-dentales-buenos-aires",
 };
 
 const WA_LINK =
@@ -111,7 +106,7 @@ export default function PrecioCarillasPage() {
         ]} 
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(priceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <Navbar />
 
       <main className="bg-carbon text-crema font-manrope">
@@ -167,10 +162,10 @@ export default function PrecioCarillasPage() {
                 </thead>
                 <tbody>
                   {[
-                    { tratamiento: "Carillas cerámicas", precio: "USD 900 – 1.200", duracion: "10 – 20 años", sesiones: "2 – 3" },
+                    { tratamiento: "Carillas cerámicas", precio: "USD 1.000 – 1.500", duracion: "10 – 20 años", sesiones: "2 – 3" },
                     { tratamiento: "Carillas de resina compuesta", precio: "USD 500", duracion: "5 – 7 años", sesiones: "1 – 2" },
-                    { tratamiento: "Lentes de contacto dental", precio: "USD 900 – 1.200", duracion: "10 – 15 años", sesiones: "2 – 3" },
-                    { tratamiento: "Carillas sin desgaste", precio: "USD 900 – 1.200", duracion: "10 – 20 años", sesiones: "2 – 3" },
+                    { tratamiento: "Lentes de contacto dental", precio: "USD 1.000 – 1.500", duracion: "10 – 15 años", sesiones: "2 – 3" },
+                    { tratamiento: "Carillas sin desgaste", precio: "USD 1.000 – 1.500", duracion: "10 – 20 años", sesiones: "2 – 3" },
                     { tratamiento: "Diseño de sonrisa digital (completo)", precio: "A evaluar", duracion: "Permanente", sesiones: "3 – 4" },
                   ].map((row, i) => (
                     <tr key={row.tratamiento} className={`border-b border-oro/10 ${i % 2 === 0 ? "bg-carbon" : "bg-carbon-soft"}`}>
@@ -288,7 +283,7 @@ export default function PrecioCarillasPage() {
               <div className="border border-oro/15 rounded-2xl p-7 bg-carbon">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-crema font-manrope font-medium text-lg">Porcelana</h3>
-                  <span className="text-oro font-manrope font-semibold text-sm">USD 900 – 1.200</span>
+                  <span className="text-oro font-manrope font-semibold text-sm">USD 1.000 – 1.500</span>
                 </div>
                 <ul className="space-y-2 mb-6">
                   {[
@@ -392,12 +387,12 @@ export default function PrecioCarillasPage() {
 
             <div className="prose prose-invert max-w-none space-y-8 text-crema/65 font-manrope text-sm leading-relaxed">
               <p>
-                Si estás buscando el <strong className="text-crema">precio de carillas dentales en Buenos Aires</strong>, probablemente ya hayas notado que los valores varían enormemente entre clínicas. En AM Estética Dental trabajamos con una referencia clara: resinas a USD 500 por diente y cerámicas entre USD 900 y 1.200 por pieza. ¿Qué explica esta diferencia? Y más importante: ¿vale la pena pagar más?
+                Si estás buscando el <strong className="text-crema">precio de carillas dentales en Buenos Aires</strong>, probablemente ya hayas notado que los valores varían enormemente entre clínicas. En AM Estética Dental trabajamos con una referencia clara: resinas a USD 500 por diente y cerámicas entre USD 1.000 y 1.500 por pieza. ¿Qué explica esta diferencia? Y más importante: ¿vale la pena pagar más?
               </p>
 
               <h3 className="text-crema font-manrope font-medium text-xl mt-10 mb-4">¿Cuánto cuestan las carillas de porcelana en Buenos Aires en 2026?</h3>
               <p>
-                En AM Estética Dental, las carillas cerámicas tienen un valor de <strong className="text-crema">USD 900 a 1.200 por pieza</strong>. Ese rango refleja el material indicado, el laboratorio, la tecnología de diseño digital, la planificación clínica y la experiencia del especialista.
+                En AM Estética Dental, las carillas cerámicas tienen un valor de <strong className="text-crema">USD 1.000 a 1.500 por pieza</strong>. Ese rango refleja el material indicado, el laboratorio, la tecnología de diseño digital, la planificación clínica y la experiencia del especialista.
               </p>
               <p>
                 Las <strong className="text-crema">carillas de resina compuesta</strong>, por su parte, cuestan <strong className="text-crema">USD 500 por diente</strong>. Son más accesibles que las cerámicas, pero también tienen una vida útil más corta (5 a 7 años vs 10 a 20 años de la porcelana).
@@ -405,7 +400,7 @@ export default function PrecioCarillasPage() {
 
               <h3 className="text-crema font-manrope font-medium text-xl mt-10 mb-4">¿Cuánto sale un diseño de sonrisa completo?</h3>
               <p>
-                Un diseño de sonrisa completo con carillas cerámicas generalmente involucra entre 8 y 12 piezas del sector anterior. Esto significa una inversión estimada de <strong className="text-crema">USD 7.200 a 14.400</strong> según la cantidad de piezas, la complejidad del caso y el laboratorio utilizado.
+                Un diseño de sonrisa completo con carillas cerámicas generalmente involucra entre 8 y 12 piezas del sector anterior. Esto significa una inversión estimada de <strong className="text-crema">USD 8.000 a 18.000</strong> según la cantidad de piezas, la complejidad del caso y el laboratorio utilizado.
               </p>
               <p>
                 En AM Estética Dental, cada caso es evaluado individualmente. No todos los pacientes necesitan la misma cantidad de piezas ni el mismo tipo de carilla. La evaluación inicial nos permite definir el alcance exacto y entregar un presupuesto preciso.
@@ -413,7 +408,7 @@ export default function PrecioCarillasPage() {
 
               <h3 className="text-crema font-manrope font-medium text-xl mt-10 mb-4">¿Por qué hay tanta diferencia de precio entre clínicas?</h3>
               <p>
-                La diferencia de precio entre una resina de USD 500 y una cerámica de USD 900 a 1.200 no es arbitraria. Está determinada por factores concretos: la calidad del material, el laboratorio que fabrica las carillas, la experiencia del profesional, la tecnología utilizada y el nivel de personalización del resultado.
+                La diferencia de precio entre una resina de USD 500 y una cerámica de USD 1.000 a 1.500 no es arbitraria. Está determinada por factores concretos: la calidad del material, el laboratorio que fabrica las carillas, la experiencia del profesional, la tecnología utilizada y el nivel de personalización del resultado.
               </p>
               <p>
                 Una carilla barata puede parecer una buena idea al principio, pero si no se adapta bien, si cambia de color en dos años o si se fractura, el costo real termina siendo mayor que una carilla premium bien hecha desde el inicio.
@@ -426,7 +421,7 @@ export default function PrecioCarillasPage() {
 
               <h3 className="text-crema font-manrope font-medium text-xl mt-10 mb-4">¿Vale la pena viajar a Buenos Aires para hacerse carillas?</h3>
               <p>
-                El <strong className="text-crema">turismo dental en Buenos Aires</strong> es una realidad cada vez más común. Pacientes de Estados Unidos, Europa y otros países de Latinoamérica viajan a Buenos Aires para realizarse tratamientos de estética dental con una diferencia de inversión importante frente a sus países de origen. Mientras que en Estados Unidos una carilla de porcelana puede costar entre USD 1.000 y 2.500, en AM Estética Dental las cerámicas tienen un valor de USD 900 a 1.200 por pieza.
+                El <strong className="text-crema">turismo dental en Buenos Aires</strong> es una realidad cada vez más común. Pacientes de Estados Unidos, Europa y otros países de Latinoamérica viajan a Buenos Aires para realizarse tratamientos de estética dental con una diferencia de inversión importante frente a sus países de origen. Mientras que en Estados Unidos una carilla de porcelana puede costar entre USD 1.000 y 2.500, en AM Estética Dental las cerámicas tienen un valor de USD 1.000 a 1.500 por pieza.
               </p>
             </div>
           </div>

@@ -1,19 +1,4 @@
-export type Categoria =
-    | "Carillas de porcelana"
-    | "Carilla unitaria"
-    | "Alineadores"
-    | "Diseño de sonrisa"
-    | "Blanqueamiento"
-    | "Implantes"
-    | "Apiñamiento"
-    | "Agenesia"
-    | "Fluorosis"
-    | "Bruxismo"
-    | "Erosión dentaria"
-    | "Lentes de contacto dental"
-    | "Rehabilitación oral"
-    | "Diastemas"
-    | "Dientes conoidos";
+export type Categoria = string;
 
 export interface FotoCaso {
     src: string;
@@ -612,7 +597,7 @@ Un control anual es indispensable. Se evalúa el desgaste, se hace un pulido y s
 
 ¿Cuánto cuestan las carillas de resina vs cerámica?
 
-Las de resina cuestan USD 500 por diente. Las cerámicas van de USD 900 a 1.200 por pieza. La diferencia de inversión es real, pero también lo es la diferencia en durabilidad.`,
+Las de resina cuestan USD 500 por diente. Las cerámicas van de USD 1.000 a 1.500 por pieza. La diferencia de inversión es real, pero también lo es la diferencia en durabilidad.`,
         copyRedes: `Dientes sanos, paciente joven. La primera opción fue resina.
 
 10 carillas directas de resina + gingivectomía láser para nivelar la encía.

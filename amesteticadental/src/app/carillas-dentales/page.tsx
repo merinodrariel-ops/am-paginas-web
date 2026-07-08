@@ -349,10 +349,10 @@ export default function CarillasDentalesPage() {
                         <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Empezar</span>
                         <h2 className="text-4xl md:text-5xl font-manrope font-light text-crema leading-tight mb-6">
                             La evaluación inicial{" "}
-                            <span className="font-cormorant italic text-oro">es sin compromiso</span>
+                            <span className="font-cormorant italic text-oro">define el plan correcto</span>
                         </h2>
                         <p className="text-crema/60 font-manrope text-base mb-10">
-                            En la primera consulta evaluamos tu caso, te mostramos las opciones y te explicamos el proceso completo. Sin presión. 
+                            En la primera consulta evaluamos tu caso, te mostramos las opciones y te explicamos el proceso completo para que tomes una decisión informada.
                         </p>
                         <a
                             href={WA_LINK}
