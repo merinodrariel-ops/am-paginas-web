@@ -6,6 +6,7 @@ import "./globals.css";
 
 const gtmId = (process.env.NEXT_PUBLIC_GTM_ID || "GTM-P9KCL5W7").trim();
 const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID || "";
+const plausibleScriptId = process.env.NEXT_PUBLIC_PLAUSIBLE_SCRIPT_ID || "pa-IVsi12we0zqH_TNpn9oAv";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -160,6 +161,14 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '${metaPixelId}');
 fbq('track', 'PageView');`,
             }}
+          />
+        ) : null}
+        {plausibleScriptId ? (
+          <Script
+            id="plausible-script"
+            strategy="afterInteractive"
+            src="https://plausible.io/js/script.js"
+            data-domain="amesteticadental.com"
           />
         ) : null}
         <script
