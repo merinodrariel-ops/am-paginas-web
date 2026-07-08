@@ -51,7 +51,7 @@ const faqSchema = {
             "name": "¿Cuánto cuesta una carilla dental en Argentina en 2026?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Depende del material y del nivel de la clínica. Las carillas de resina compuesta van desde valores accesibles en consultorios generales hasta USD 500 por diente en clínicas especializadas en estética. Las carillas cerámicas de laboratorio (disilicato de litio o porcelana feldespática) se mueven en un rango amplio del mercado, y en clínicas premium de alta especialización cuestan entre USD 900 y 1.200 por pieza.",
+                "text": "Depende del material y del nivel de la clínica. Las carillas de resina compuesta van desde valores accesibles en consultorios generales hasta USD 500 por diente en clínicas especializadas en estética. Las carillas cerámicas de laboratorio (disilicato de litio o porcelana feldespática) se mueven en un rango amplio del mercado, y en clínicas premium de alta especialización cuestan entre USD 1.000 y 1.500 por pieza.",
             },
         },
         {
@@ -100,13 +100,13 @@ const RANGOS = [
     },
     {
         material: "Carillas cerámicas (disilicato / feldespática)",
-        rango: "Rango amplio de mercado · USD 900 – 1.200 en clínicas premium",
+        rango: "Rango amplio de mercado · USD 1.000 – 1.500 en clínicas premium",
         duracion: "10 – 20 años",
         nota: "Fabricadas por un ceramista en laboratorio dental. Acá el laboratorio explica gran parte de la diferencia de precio.",
     },
     {
         material: "Lentes de contacto dental (0,2–0,3 mm)",
-        rango: "USD 900 – 1.200/pieza",
+        rango: "USD 1.000 – 1.500/pieza",
         duracion: "10 – 15 años",
         nota: "La versión más conservadora: en muchos casos sin ningún desgaste del diente natural.",
     },

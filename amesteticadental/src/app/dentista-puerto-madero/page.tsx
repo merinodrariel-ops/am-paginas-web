@@ -21,12 +21,12 @@ export const metadata: Metadata = {
 };
 
 const SERVICIOS = [
-    { titulo: "Carillas Dentales", desc: "Porcelana y resina. Lentes de contacto dental AM de 0.2mm, sin desgaste del diente natural.", href: "/carillas-dentales", desde: "USD 500 resina · USD 900 cerámica" },
+    { titulo: "Carillas Dentales", desc: "Porcelana y resina. Lentes de contacto dental AM de 0.2mm, sin desgaste del diente natural.", href: "/carillas-dentales", desde: "USD 500 resina · USD 1.000 cerámica" },
     { titulo: "Diseño de Sonrisa", desc: "Ves tu sonrisa terminada en 3D antes de que toquemos un solo diente.", href: "/diseno-de-sonrisa", desde: "Desde USD 4.000" },
     { titulo: "Implantes Dentales", desc: "Titanio y zirconio con planificación guiada por computadora.", href: "/implantes-dentales-buenos-aires", desde: "Consultar" },
     { titulo: "Blanqueamiento Dental", desc: "LED y láser en una sola sesión. Resultado inmediato.", href: "/blanqueamiento-dental-precio-buenos-aires", desde: "USD 150" },
     { titulo: "Alineadores Invisibles", desc: "Ortodoncia invisible AM. Sin brackets, sin alambre.", href: "/alineadores-invisibles", desde: "Consultar" },
-    { titulo: "Lentes de Contacto Dental", desc: "La carilla más fina del mercado: 0.2mm de espesor.", href: "/lentes-de-contacto-dental-precio-buenos-aires", desde: "USD 900/pieza" },
+    { titulo: "Lentes de Contacto Dental", desc: "La carilla más fina del mercado: 0.2mm de espesor.", href: "/lentes-de-contacto-dental-precio-buenos-aires", desde: "USD 1.000/pieza" },
 ];
 
 const DIFERENCIALES = [
@@ -82,7 +82,7 @@ const schema = {
             url: CANONICAL,
             image: "https://www.amesteticadental.com/images/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg",
             telephone: "+54 9 11 7021-9298",
-            priceRange: "USD 150 - USD 24000",
+            priceRange: "USD 150 - USD 30000",
             address: {
                 "@type": "PostalAddress",
                 streetAddress: "Camila O'Gorman 412, Oficina 101",

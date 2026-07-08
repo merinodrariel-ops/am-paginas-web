@@ -30,8 +30,8 @@ const schema = {
 
 const OPCIONES = [
     { titulo: "Diseño de sonrisa express", desc: "4 a 6 carillas sector anterior. La transformación más frecuente.", precio: "Desde USD 4.000", tiempo: "7 días" },
-    { titulo: "Diseño de sonrisa completo", desc: "10 a 12 carillas. Ampliación de arco + corrección de color y forma.", precio: "USD 9.000 – 14.400", tiempo: "10 días" },
-    { titulo: "Smile makeover integral", desc: "Diseño completo con corrección de mordida y dimensión vertical.", precio: "USD 18.000 – 24.000", tiempo: "15 días" },
+    { titulo: "Diseño de sonrisa completo", desc: "10 a 12 carillas. Ampliación de arco + corrección de color y forma.", precio: "USD 10.000 – 18.000", tiempo: "10 días" },
+    { titulo: "Smile makeover integral", desc: "Diseño completo con corrección de mordida y dimensión vertical.", precio: "USD 20.000 – 30.000", tiempo: "15 días" },
 ];
 
 export default function DisenoDeSonrisaLanding() {
@@ -153,7 +153,7 @@ export default function DisenoDeSonrisaLanding() {
                             { q: "¿Cuántas piezas se trabajan en un diseño de sonrisa?", a: "El más frecuente es de 8 a 10 piezas en el sector anterior superior. En casos completos se trabajan hasta 20 piezas. Lo definimos en la evaluación inicial." },
                             { q: "¿El resultado se ve natural?", a: "Es el objetivo principal. Usamos cerámicas de alta translucidez que imitan el esmalte natural. El resultado no se ve puesto — queda integrado con cada rostro." },
                             { q: "¿Cuánto tiempo duran las carillas del diseño de sonrisa?", a: "Las carillas cerámicas duran entre 15 y 20 años con cuidados básicos y control anual." },
-                            { q: "¿Cuánto cuesta un diseño de sonrisa en Buenos Aires?", a: "Como referencia, 4-6 piezas pueden partir desde USD 4.000, 10-12 carillas cerámicas van de USD 9.000 a 14.400 y una rehabilitación integral de 20 piezas ronda USD 18.000 a 24.000. La inversión exacta se define luego de evaluar el caso." },
+                            { q: "¿Cuánto cuesta un diseño de sonrisa en Buenos Aires?", a: "Como referencia, 4-6 piezas pueden partir desde USD 4.000, 10-12 carillas cerámicas van de USD 10.000 a 18.000 y una rehabilitación integral de 20 piezas ronda USD 20.000 a 30.000. La inversión exacta se define luego de evaluar el caso." },
                         ].map(({ q, a }) => (
                             <details key={q} className="border border-oro/12 rounded-xl group">
                                 <summary className="px-6 py-4 cursor-pointer list-none flex items-center justify-between text-crema font-manrope text-sm font-medium select-none">
