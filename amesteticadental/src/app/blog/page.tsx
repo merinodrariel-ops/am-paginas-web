@@ -20,6 +20,20 @@ export const metadata: Metadata = {
 
 const ARTICULOS = [
     {
+        slug: "cuanto-cuestan-las-carillas-dentales-en-argentina",
+        titulo: "¿Cuánto cuestan las carillas dentales en Argentina? Guía 2026",
+        descripcion: "Rangos reales del mercado por material, por qué una carilla puede costar el triple que otra, y cómo leer un presupuesto para saber qué estás comprando.",
+        categoria: "Precios",
+        lectura: "7 min",
+    },
+    {
+        slug: "como-blanquear-los-dientes-sin-danar-el-esmalte",
+        titulo: "Cómo blanquear los dientes sin dañar el esmalte",
+        descripcion: "Cómo funciona el blanqueamiento profesional, cuándo da sensibilidad, qué no blanquea y qué cuidados seguir para proteger el esmalte.",
+        categoria: "Blanqueamiento",
+        lectura: "5 min",
+    },
+    {
         slug: "cuanto-duran-las-carillas-de-porcelana",
         titulo: "¿Cuánto duran las carillas de porcelana?",
         descripcion: "Todo lo que necesitás saber sobre la vida útil de las carillas, qué las desgasta y cómo extender su duración al máximo.",

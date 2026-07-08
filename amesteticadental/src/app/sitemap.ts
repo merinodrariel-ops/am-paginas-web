@@ -210,6 +210,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: "https://www.amesteticadental.com/antes-y-despues",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: "https://www.amesteticadental.com/clinica",
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -268,6 +274,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: "https://www.amesteticadental.com/blog/cuanto-cuestan-las-carillas-dentales-en-argentina",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://www.amesteticadental.com/blog/como-blanquear-los-dientes-sin-danar-el-esmalte",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: "https://www.amesteticadental.com/blog/sonrisa-natural-vs-hollywood",
