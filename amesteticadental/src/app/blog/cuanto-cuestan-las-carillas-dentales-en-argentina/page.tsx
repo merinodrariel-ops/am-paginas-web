@@ -268,7 +268,7 @@ export default function ArticuloPreciosCarillasArgentina() {
                                     { titulo: "Precio de carillas dentales en Buenos Aires", href: "/precio-carillas-dentales-buenos-aires", desc: "Tabla de precios AM 2026 con simulador de financiación." },
                                     { titulo: "Carillas de porcelana vs resina", href: "/carillas-de-porcelana-vs-resina", desc: "Diferencias reales de material, estética y duración." },
                                     { titulo: "¿Cuánto duran las carillas de porcelana?", href: "/blog/cuanto-duran-las-carillas-de-porcelana", desc: "10 a 20 años con el cuidado correcto." },
-                                    { titulo: "Preguntas antes de hacerte carillas", href: "/blog/preguntas-antes-de-hacerse-carillas", desc: "Las 5 preguntas que revelan el nivel del especialista." },
+                                    { titulo: "¿Cuánto cuesta un implante dental en Argentina?", href: "/blog/cuanto-cuesta-un-implante-dental-en-argentina", desc: "La guía de precios de implantes, con la misma lógica." },
                                 ].map((l) => (
                                     <Link key={l.href} href={l.href} className="border border-oro/12 rounded-xl p-5 bg-carbon-soft hover:border-oro/30 transition-colors group">
                                         <h4 className="text-crema font-manrope font-medium text-sm mb-1 group-hover:text-oro transition-colors">{l.titulo}</h4>

@@ -276,6 +276,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.amesteticadental.com/blog/cuanto-cuesta-un-implante-dental-en-argentina",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.amesteticadental.com/blog/cuanto-cuestan-las-carillas-dentales-en-argentina",
       lastModified: new Date(),
       changeFrequency: "monthly",

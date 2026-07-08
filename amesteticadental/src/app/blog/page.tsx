@@ -20,6 +20,13 @@ export const metadata: Metadata = {
 
 const ARTICULOS = [
     {
+        slug: "cuanto-cuesta-un-implante-dental-en-argentina",
+        titulo: "¿Cuánto cuesta un implante dental en Argentina? Guía 2026",
+        descripcion: "Qué incluye realmente el precio de un implante, por qué dos presupuestos pueden diferir tanto, la diferencia entre tornillo y corona, y cuándo hace falta injerto óseo.",
+        categoria: "Precios",
+        lectura: "7 min",
+    },
+    {
         slug: "cuanto-cuestan-las-carillas-dentales-en-argentina",
         titulo: "¿Cuánto cuestan las carillas dentales en Argentina? Guía 2026",
         descripcion: "Rangos reales del mercado por material, por qué una carilla puede costar el triple que otra, y cómo leer un presupuesto para saber qué estás comprando.",
