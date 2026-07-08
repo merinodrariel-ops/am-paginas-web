@@ -105,8 +105,8 @@ Las siguientes páginas han sido creadas o modificadas sustancialmente y requier
 - Fix sitemap: agregadas `/antes-y-despues`, `/clinica` y blog de blanqueamiento (estaban huérfanas).
 
 ### Analítica / Tracking (estado real verificado)
-- **Instalado en `main`:** Google Tag Manager (`gtmId`) + Meta Pixel (`metaPixelId`) en `layout.tsx`, más tracking de clicks de WhatsApp → dataLayer → GTM → conversión Google Ads. Se leen de variables de entorno.
-- **PLAUSIBLE: NO está presente en el código de `main`.** El Dr. mencionó una "instalación de Plausible" pero no se encontró ninguna referencia (`grep -i plausible` vacío). VERIFICAR antes de asumir que está activa: puede estar (a) hecha en otra compu sin pushear, (b) vía integración de Vercel fuera del repo, o (c) pendiente de hacer. NO documentar como completada hasta confirmar.
+- **Instalado en `main` (layout.tsx):** Google Tag Manager (`gtmId`) + Meta Pixel (`metaPixelId`) + **Plausible** (Script ID `pa-IVsi12we0zqH_TNpn9oAv`, commit `cdc0381`) + tracking de clicks de WhatsApp → dataLayer → GTM → conversión Google Ads.
+- **Plausible:** instalado 2026-07-08, strategy `afterInteractive`, data-domain `amesteticadental.com`. Lee Script ID desde env var `NEXT_PUBLIC_PLAUSIBLE_SCRIPT_ID`. Datos en tiempo real en https://plausible.io/sites/amesteticadental.com/dashboard. Verificar instalación en Settings → Verify installation.
 
 ### Competencia SEO local (recordatorio)
 - Competidores directos "dentista Puerto Madero": esteticadentalmadero.com (sin precios/testimonios/FAQ) y dentaldique.com (solo español, sin blog). Estrategia AM: transparencia de precios + testimonios + diseño 3D + turismo dental bilingüe.
