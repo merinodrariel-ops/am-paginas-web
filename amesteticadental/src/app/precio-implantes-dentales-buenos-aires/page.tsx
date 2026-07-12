@@ -161,7 +161,7 @@ export default function InversionImplantesPage() {
                 </thead>
                 <tbody>
                   {[
-                    { tratamiento: "Implante Neodent® (Brasil) + corona", precio: "Desde USD 1.200", duracion: "Permanente", sesiones: "45 min" },
+                    { tratamiento: "Implante Neodent® (Grupo Straumann) + corona", precio: "Desde USD 1.200", duracion: "Permanente", sesiones: "45 min" },
                     { tratamiento: "Implante Straumann® (Suiza) + corona", precio: "Desde USD 1.600", duracion: "Permanente", sesiones: "45 min" },
                     { tratamiento: "Rehabilitación completa sobre implantes", precio: "Consultar caso", duracion: "Permanente", sesiones: "A evaluar" },
                   ].map((row, i) => (
@@ -205,14 +205,14 @@ export default function InversionImplantesPage() {
               <div className="border border-oro/15 rounded-2xl p-8 bg-carbon flex flex-col">
                 <div className="flex items-baseline justify-between mb-2">
                   <h3 className="text-crema font-cormorant italic text-2xl">Neodent®</h3>
-                  <span className="text-crema/40 font-manrope text-[10px] uppercase tracking-[0.2em]">Brasil · Grupo Straumann</span>
+                  <span className="text-oro/60 font-manrope text-[10px] uppercase tracking-[0.2em]">Grupo Straumann®</span>
                 </div>
                 <p className="text-oro font-manrope font-semibold text-xl mb-6">Desde USD 1.200</p>
                 <div className="space-y-3 flex-1">
                   {[
-                    "Sistema de implantes líder en Latinoamérica",
-                    "Excelente relación calidad–precio dentro de la gama premium",
-                    "Titanio de grado médico, respaldo del Grupo Straumann",
+                    "Parte del Grupo Straumann® (Suiza) — el mismo grupo detrás de la marca de implantes #1 del mundo",
+                    "La puerta de entrada premium al universo Straumann, con la mejor relación calidad–precio",
+                    "Titanio de grado médico con el respaldo del grupo líder mundial en implantología",
                     "Incluye corona, regeneración ósea y tejidos blandos",
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-3">
