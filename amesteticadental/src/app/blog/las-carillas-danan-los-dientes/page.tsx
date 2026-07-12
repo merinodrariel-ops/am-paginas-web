@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 
@@ -114,8 +115,28 @@ export default function ArticuloCarillasDananDientes() {
                             </p>
                         </div>
 
+                        {/* Índice de navegación */}
+                        <nav className="border border-oro/15 rounded-2xl p-6 bg-carbon-soft">
+                            <span className="text-oro/60 font-manrope uppercase tracking-[0.3em] text-[10px] block mb-4">En esta nota</span>
+                            <ol className="space-y-2.5">
+                                {[
+                                    { n: "01", t: "Lo que sí ocurre al colocar carillas", href: "#que-ocurre" },
+                                    { n: "02", t: "Los mitos más frecuentes — y la realidad", href: "#mitos" },
+                                    { n: "03", t: "Cuándo las carillas no son la mejor opción", href: "#cuando-no" },
+                                    { n: "04", t: "La conclusión", href: "#conclusion" },
+                                ].map((item) => (
+                                    <li key={item.href}>
+                                        <a href={item.href} className="flex items-baseline gap-3 group">
+                                            <span className="text-oro/40 font-manrope text-[11px] flex-none">{item.n}</span>
+                                            <span className="text-crema/70 font-manrope text-sm group-hover:text-oro transition-colors">{item.t}</span>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ol>
+                        </nav>
+
                         {/* Lo que sí pasa */}
-                        <section>
+                        <section id="que-ocurre" className="scroll-mt-28">
                             <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-5">
                                 Lo que sí ocurre al colocar carillas
                             </h2>
@@ -143,8 +164,22 @@ export default function ArticuloCarillasDananDientes() {
                             </p>
                         </section>
 
+                        {/* Imagen caso real 1 */}
+                        <figure className="rounded-2xl overflow-hidden border border-oro/15">
+                            <div className="relative aspect-[16/10]">
+                                <Image
+                                    src="https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/bruxismo-carillas-ceramicas/bruxismo-desgaste-dental-antes-despues-carillas-ceramicas-labios-portada-dr-ariel-merino-am-estetica-dental-buenos-aires"
+                                    alt="Antes y después de rehabilitación con carillas cerámicas en un caso de bruxismo y desgaste — Dr. Ariel Merino, AM Estética Dental"
+                                    fill sizes="(max-width: 768px) 100vw, 768px" className="object-cover"
+                                />
+                            </div>
+                            <figcaption className="px-5 py-3 bg-carbon-soft text-crema/45 font-manrope text-xs">
+                                Caso real AM · Rehabilitación con carillas cerámicas sobre dientes con desgaste severo. El esmalte se conserva; el resultado se ve natural.
+                            </figcaption>
+                        </figure>
+
                         {/* Mitos */}
-                        <section>
+                        <section id="mitos" className="scroll-mt-28">
                             <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-8">
                                 Los mitos más frecuentes — y la realidad
                             </h2>
@@ -172,7 +207,7 @@ export default function ArticuloCarillasDananDientes() {
                         </section>
 
                         {/* Cuándo NO hacer carillas */}
-                        <section>
+                        <section id="cuando-no" className="scroll-mt-28">
                             <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-5">
                                 Cuándo las carillas no son la mejor opción
                             </h2>
@@ -201,7 +236,7 @@ export default function ArticuloCarillasDananDientes() {
                         </section>
 
                         {/* Conclusión */}
-                        <section className="border-t border-oro/15 pt-10">
+                        <section id="conclusion" className="border-t border-oro/15 pt-10 scroll-mt-28">
                             <h2 className="text-2xl font-manrope font-light text-crema mb-4">La conclusión</h2>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mb-4">
                                 Las carillas modernas, bien indicadas y bien colocadas, no dañan los dientes. El desgaste de esmalte en las técnicas actuales es mínimo y controlado. Los lentes de contacto dental directamente no requieren ningún desgaste.
@@ -209,6 +244,33 @@ export default function ArticuloCarillasDananDientes() {
                             <p className="text-crema/70 font-manrope text-base leading-relaxed">
                                 Lo que sí puede dañar un diente es una carilla mal colocada, con adhesivo deficiente, en un paciente que no fue correctamente evaluado. Por eso el operador y el protocolo importan tanto como el material.
                             </p>
+                        </section>
+
+                        {/* CTA Simulador IA */}
+                        <section className="relative rounded-2xl overflow-hidden border border-oro/25">
+                            <div className="absolute inset-0">
+                                <Image
+                                    src="https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires"
+                                    alt="Diseño de sonrisa con carillas — antes y después — AM Estética Dental Puerto Madero"
+                                    fill sizes="(max-width: 768px) 100vw, 768px" className="object-cover"
+                                />
+                                <div className="absolute inset-0 bg-carbon/80 backdrop-blur-[2px]" />
+                            </div>
+                            <div className="relative p-8 text-center">
+                                <span className="text-oro font-manrope uppercase tracking-[0.3em] text-xs block mb-4">Antes de decidir, vení con una idea</span>
+                                <h3 className="text-crema font-manrope font-light text-xl mb-4">
+                                    Probá cómo quedaría tu sonrisa <span className="font-cormorant italic text-oro">en segundos</span>
+                                </h3>
+                                <p className="text-crema/65 font-manrope text-sm mb-6 max-w-md mx-auto">
+                                    Subí una foto y nuestro simulador con IA te muestra una vista previa de tu sonrisa con carillas. Sin compromiso, gratis y online.
+                                </p>
+                                <Link
+                                    href="/sonrisa"
+                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-7 py-3.5 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-colors"
+                                >
+                                    Simular mi sonrisa →
+                                </Link>
+                            </div>
                         </section>
 
                         {/* CTA */}

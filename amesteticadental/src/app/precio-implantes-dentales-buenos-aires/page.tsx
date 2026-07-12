@@ -29,12 +29,12 @@ const faqItems = [
   {
     pregunta: "¿Cuánto cuesta un implante dental en Buenos Aires?",
     respuesta:
-      "En AM Estética Dental, un implante unitario con corona tiene un valor desde USD 1.200. La corona de zirconio de alta estética, con mejor biocompatibilidad gingival, se cotiza según la complejidad del caso. Trabajamos con valores en USD y ofrecemos financiación propia con tasa fija del 18% anual.",
+      "En AM Estética Dental trabajamos con dos sistemas de primer nivel: el implante Neodent® (Brasil, Grupo Straumann) desde USD 1.200 y el implante Straumann® (Suiza) desde USD 1.600. En ambos casos el valor incluye la corona, la regeneración ósea y el manejo de tejidos blandos que el caso requiera. Ofrecemos financiación propia con tasa fija del 18% anual.",
   },
   {
-    pregunta: "¿Qué cambia más el precio: titanio o zirconio?",
+    pregunta: "¿Qué diferencia hay entre el implante Neodent y el Straumann?",
     respuesta:
-      "El tornillo del implante siempre es de titanio biocompatible de máxima calidad. La diferencia de precio radica en el material de la corona definitiva. La corona sobre implante estándar cumple una excelente función, mientras que la corona de zirconio ofrece mayor estética y una biocompatibilidad gingival superior.",
+      "Los dos son sistemas tope de gama y pertenecen al mismo grupo suizo: Neodent forma parte del Grupo Straumann. Straumann es la marca de implantes más reconocida del mundo, con la mayor trayectoria y respaldo científico, y es nuestra opción de referencia para las zonas estéticas más exigentes. Neodent ofrece una relación calidad–precio excelente dentro de la gama premium. En la evaluación inicial te asesoramos sobre cuál conviene para tu caso.",
   },
   {
     pregunta: "¿Se cobra por implante o por tratamiento completo?",
@@ -161,9 +161,9 @@ export default function InversionImplantesPage() {
                 </thead>
                 <tbody>
                   {[
-                    { tratamiento: "Implante unitario (inc. corona)", precio: "Desde USD 1.200", duracion: "Permanente", sesiones: "45 min" },
-                    { tratamiento: "Implante + corona de zirconio", precio: "Desde USD 1.200", duracion: "Permanente", sesiones: "45 min" },
-                    { tratamiento: "Rehabilitación sobre implantes", precio: "Consultar caso", duracion: "Permanente", sesiones: "A evaluar" },
+                    { tratamiento: "Implante Neodent® (Brasil) + corona", precio: "Desde USD 1.200", duracion: "Permanente", sesiones: "45 min" },
+                    { tratamiento: "Implante Straumann® (Suiza) + corona", precio: "Desde USD 1.600", duracion: "Permanente", sesiones: "45 min" },
+                    { tratamiento: "Rehabilitación completa sobre implantes", precio: "Consultar caso", duracion: "Permanente", sesiones: "A evaluar" },
                   ].map((row, i) => (
                     <tr key={row.tratamiento} className={`border-b border-oro/10 ${i % 2 === 0 ? "bg-carbon" : "bg-carbon-soft"}`}>
                       <td className="py-4 px-6 text-crema font-manrope text-sm font-medium">{row.tratamiento}</td>
@@ -177,7 +177,84 @@ export default function InversionImplantesPage() {
             </div>
 
             <p className="text-crema/40 font-manrope text-xs mt-6 text-center">
-              * Valores en USD. Se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago.
+              * Valores en USD, incluyen la corona, la regeneración ósea y el manejo de tejidos blandos que el caso requiera. Se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago.
+            </p>
+          </div>
+        </section>
+
+        {/* ── COMPARATIVA DE MARCAS: STRAUMANN vs NEODENT ── */}
+        <section className="py-24 px-6 md:px-12 border-t border-oro/10 bg-carbon-soft">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-4">
+              <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
+                Qué implante te colocamos
+              </span>
+              <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-6">
+                Dos marcas <span className="font-cormorant italic text-oro">tope de gama.</span> Vos elegís.
+              </h2>
+              <p className="text-crema/60 font-manrope text-base leading-relaxed max-w-2xl mx-auto mb-4">
+                No trabajamos con implantes genéricos. Colocamos únicamente dos sistemas de primer nivel mundial — y los dos pertenecen al mismo grupo suizo. La diferencia de precio es de origen y trayectoria, no de calidad de atención: en ambos casos la planificación es digital y el protocolo es el mismo.
+              </p>
+              <p className="text-oro/70 font-manrope text-xs uppercase tracking-[0.2em] mb-14">
+                Neodent® es parte del Grupo Straumann® (Suiza)
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Neodent */}
+              <div className="border border-oro/15 rounded-2xl p-8 bg-carbon flex flex-col">
+                <div className="flex items-baseline justify-between mb-2">
+                  <h3 className="text-crema font-cormorant italic text-2xl">Neodent®</h3>
+                  <span className="text-crema/40 font-manrope text-[10px] uppercase tracking-[0.2em]">Brasil · Grupo Straumann</span>
+                </div>
+                <p className="text-oro font-manrope font-semibold text-xl mb-6">Desde USD 1.200</p>
+                <div className="space-y-3 flex-1">
+                  {[
+                    "Sistema de implantes líder en Latinoamérica",
+                    "Excelente relación calidad–precio dentro de la gama premium",
+                    "Titanio de grado médico, respaldo del Grupo Straumann",
+                    "Incluye corona, regeneración ósea y tejidos blandos",
+                  ].map((t) => (
+                    <div key={t} className="flex items-start gap-3">
+                      <span className="text-oro/50 flex-none mt-1 text-xs">◆</span>
+                      <p className="text-crema/65 font-manrope text-sm leading-relaxed">{t}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-crema/45 font-manrope text-xs mt-6 pt-6 border-t border-oro/10">
+                  Ideal para quien quiere un implante de marca premium con la mejor inversión.
+                </p>
+              </div>
+
+              {/* Straumann */}
+              <div className="border border-oro/40 rounded-2xl p-8 bg-carbon flex flex-col relative overflow-hidden">
+                <span className="absolute top-5 right-[-38px] rotate-45 bg-oro text-carbon font-manrope text-[9px] font-bold uppercase tracking-widest px-12 py-1">Premium</span>
+                <div className="flex items-baseline justify-between mb-2">
+                  <h3 className="text-crema font-cormorant italic text-2xl">Straumann®</h3>
+                  <span className="text-crema/40 font-manrope text-[10px] uppercase tracking-[0.2em]">Suiza</span>
+                </div>
+                <p className="text-oro font-manrope font-semibold text-xl mb-6">Desde USD 1.600</p>
+                <div className="space-y-3 flex-1">
+                  {[
+                    "La marca de implantes más reconocida del mundo",
+                    "Ingeniería suiza y el mayor respaldo científico del sector",
+                    "La opción de referencia para las zonas estéticas más exigentes",
+                    "Incluye corona, regeneración ósea y tejidos blandos",
+                  ].map((t) => (
+                    <div key={t} className="flex items-start gap-3">
+                      <span className="text-oro flex-none mt-1 text-xs">◆</span>
+                      <p className="text-crema/75 font-manrope text-sm leading-relaxed">{t}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-crema/45 font-manrope text-xs mt-6 pt-6 border-t border-oro/10">
+                  Ideal para quien quiere lo máximo en trayectoria, respaldo y previsibilidad.
+                </p>
+              </div>
+            </div>
+
+            <p className="text-crema/40 font-manrope text-xs mt-8 text-center max-w-2xl mx-auto">
+              En la evaluación inicial te asesoramos sobre cuál conviene para tu caso según la zona a tratar, tu hueso disponible y tu objetivo estético.
             </p>
           </div>
         </section>
