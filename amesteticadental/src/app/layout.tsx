@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   title: "Carillas Dentales en Buenos Aires: Diseño de Sonrisa Natural | AM",
   description: "Clínica de carillas dentales en Puerto Madero. Especialistas en diseño de sonrisa natural con tecnología digital. Resultados reconocidos por Forbes.",
   keywords: "carillas dentales buenos aires, carillas de porcelana puerto madero, diseño de sonrisa, estética dental CABA, Dr. Ariel Merino",
+  verification: {
+    google: "MDJ7t0DmJ894EW7LQn-6VjBpWC7DC8kjjELKQHw3ScY",
+  },
   alternates: {
     canonical: "https://www.amesteticadental.com",
   },
