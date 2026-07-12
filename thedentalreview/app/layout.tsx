@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   },
   description:
     "Publicación especializada en odontología estética: casos clínicos documentados, técnicas de vanguardia y referentes de la profesión en Argentina y el mundo.",
+  verification: {
+    google: "MDJ7t0DmJ894EW7LQn-6VjBpWC7DC8kjjELKQHw3ScY",
+  },
   robots: {
     index: true,
     follow: true,
