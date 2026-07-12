@@ -113,25 +113,39 @@ export default function PrecioCarillasPage() {
         {/* ── HERO ── */}
         <section className="relative min-h-[90dvh] flex items-center px-6 md:px-12 pt-32 pb-24">
           <div className="absolute right-[-5%] top-[20%] w-[500px] h-[500px] rounded-full bg-oro/6 blur-[130px] pointer-events-none" />
-          <div className="max-w-4xl mx-auto w-full">
-            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">
-              AM Estética Dental · Puerto Madero · Buenos Aires · Guía 2026
-            </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-manrope font-light text-crema leading-[1.0] mb-7">
-              Precio de Carillas Dentales
-              <br />
-              <span className="font-cormorant italic text-oro">en Buenos Aires</span>
-            </h1>
-            <p className="text-crema/68 font-manrope text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
-              Si estás buscando precio, lo más importante no es una cifra vacía: es entender qué material conviene, cuántas piezas necesitás y qué tipo de resultado estás buscando.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 items-start">
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-7 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-colors">
-                Pedir presupuesto orientativo →
-              </a>
-              <Link href="/carillas-dentales" className="inline-flex items-center gap-2 text-crema/55 font-manrope text-sm hover:text-crema transition-colors pt-3 sm:pt-4">
-                ← Ver tratamiento de carillas
-              </Link>
+          <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div>
+              <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">
+                AM Estética Dental · Puerto Madero · Buenos Aires · Guía 2026
+              </span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-manrope font-light text-crema leading-[1.0] mb-7">
+                Precio de Carillas Dentales
+                <br />
+                <span className="font-cormorant italic text-oro">en Buenos Aires</span>
+              </h1>
+              <p className="text-crema/68 font-manrope text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
+                Si estás buscando precio, lo más importante no es una cifra vacía: es entender qué material conviene, cuántas piezas necesitás y qué tipo de resultado estás buscando.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 items-start">
+                <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-7 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-colors">
+                  Pedir presupuesto orientativo →
+                </a>
+                <Link href="/carillas-dentales" className="inline-flex items-center gap-2 text-crema/55 font-manrope text-sm hover:text-crema transition-colors pt-3 sm:pt-4">
+                  ← Ver tratamiento de carillas
+                </Link>
+              </div>
+            </div>
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-oro/15 hidden lg:block">
+              <Image
+                src="https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan/diseno-sonrisa-plano-quebrado-carillas-ceramicas-antes-despues-portada-paciente-italia-milan-dr-ariel-merino-am-estetica-dental"
+                alt="Antes y después de diseño de sonrisa con carillas cerámicas — caso real AM Estética Dental, Dr. Ariel Merino, Puerto Madero"
+                fill priority sizes="(max-width: 1024px) 0vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-carbon/50 via-transparent to-transparent" />
+              <span className="absolute bottom-5 left-5 inline-flex items-center gap-1.5 border border-oro/30 bg-carbon/80 backdrop-blur-sm rounded-full px-3 py-1.5 text-[9px] uppercase tracking-[0.3em] text-oro">
+                Caso real · Carillas cerámicas
+              </span>
             </div>
           </div>
         </section>
