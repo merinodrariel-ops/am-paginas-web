@@ -5,8 +5,8 @@ import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "¿Las carillas dañan los dientes? Mitos y realidades | AM Estética Dental",
-    description: "La pregunta más frecuente antes de hacerse carillas. Qué pasa realmente con el esmalte, qué técnicas minimizan el impacto y cuándo no hay ningún desgaste.",
+    title: "Carillas Sin Daño: Las 3 técnicas que NO desgastan esmalte | Dr. Ariel Merino",
+    description: "Descubrí cuáles son las técnicas de carillas sin desgaste de esmalte. Análisis clínico + casos reales de pacientes con dientes intactos después de 10+ años.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog/las-carillas-danan-los-dientes",
     },

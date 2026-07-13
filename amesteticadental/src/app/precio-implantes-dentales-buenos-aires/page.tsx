@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Precio Implantes Dentales Buenos Aires 2026 · AM Estética Dental",
   description:
-    "Precio real e inversión de implantes dentales en Buenos Aires 2026. Tabla por material (Titanio/Zirconio), financiación propia y calculadora de cuotas. Dr. Ariel Merino, Puerto Madero.",
+    "Implantes desde USD 1.200 — Neodent + Straumann. Precios 2026, regeneración ósea incluida, financiación propia. Comparativa de sistemas, casos reales, Dr. Merino.",
   keywords: "precio implantes dentales Buenos Aires, costo implante dental Argentina, implantes dentales precio 2026, financiación implantes Puerto Madero, cuánto cuestan los implantes dentales",
   alternates: {
     canonical: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",
