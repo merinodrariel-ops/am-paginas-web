@@ -1,6 +1,6 @@
 # Working Context — AM Estética Dental
 
-Última actualización: 2026-07-08
+Última actualización: 2026-07-13
 
 ## Propósito
 
@@ -49,7 +49,15 @@ Las siguientes páginas han sido creadas o modificadas sustancialmente y requier
 ## Sprint Actual e Historial Reciente de Modificaciones
 
 ### Completado con éxito en esta sesión:
-1. **Puesta en valor de la Clínica y Tecnología de Puerto Madero (Oficina 101)**:
+1. **Mejora de la interacción mediante elementos visuales interactivos y responsivos (13-07-2026)**:
+   * **Cabecera Responsiva en Carillas**: Rediseñamos el Hero de `/precio-carillas-dentales-buenos-aires` para que la imagen de antes/después no se oculte en móviles (donde ingresa la gran mayoría del tráfico) y se apile de forma fluida.
+   * **Tarjetas Comparativas Premium**: Rediseñamos estéticamente la sección "Porcelana vs Resina" en la landing de carillas, destacando la porcelana como opción recomendada a largo plazo con borde dorado y etiquetas premium.
+   * **Hero con Foto Real en Implantes**: Modificamos el Hero de `/precio-implantes-dentales-buenos-aires` para pasar de solo texto a un diseño de dos columnas que incluye una imagen de un caso clínico real.
+   * **Esquema de Estructura de un Implante**: Creamos un gráfico anatómico con SVG y tarjetas en Tailwind v4 para educar al paciente sobre las tres partes de un implante (Corona, Pilar y Tornillo de Titanio), justificando el valor de la inversión.
+   * **Medidor de Desgaste de Esmalte en Blog**: Agregamos un infográfico en CSS dentro del artículo `/blog/las-carillas-danan-los-dientes` que compara visualmente el espesor total de esmalte natural (~2.2mm) vs el desgaste mínimo para una carilla (~0.4mm), reduciendo la fricción y el miedo al tratamiento.
+   * **Restauración de Scripts CLI**: Copiamos `ads.mjs` y `gsc.mjs` desde `amesteticadental-transfer-bundle/` a la raíz del monorepo.
+   * **Sincronización en Producción**: Ejecutamos el build de producción de Next.js (`npm run build`) para verificar la compilación e hicimos `git commit` + `push origin main` para desplegar automáticamente en Vercel.
+2. **Puesta en valor de la Clínica y Tecnología de Puerto Madero (Oficina 101) (08-07-2026)**:
    * **Curaduría y Optimización de Fotos**: Filtramos las 13 fotos del consultorio localizadas en `D:\FOTOS\` para seleccionar las 8 mejores y más distintivas (3 exteriores, 5 interiores) eliminando tomas muy parecidas.
    * **Integración con Cloudinary**: Escribimos y ejecutamos el script `upload-clinica-cloudinary.mjs` para subir de forma optimizada las fotos al bucket oficial (`drctvgyqd`) en el folder `clinica/`.
    * **Galería Interactiva con Lightbox**: Diseñamos el componente de cliente `ClinicaGallery.tsx` con un visor lightbox a pantalla completa y soporte de navegación por teclado y mouse para las instalaciones.
