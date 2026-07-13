@@ -159,6 +159,78 @@ export default function ArticuloCarillasDananDientes() {
                                     <p className="text-crema/40 font-manrope text-xs">Lumineers · Lentes de contacto dental</p>
                                 </div>
                             </div>
+
+                            {/* Medidor visual de desgaste */}
+                            <div className="border border-oro/20 rounded-2xl p-6 bg-carbon-soft/50 my-10">
+                                <h4 className="text-crema font-manrope font-semibold text-sm mb-2 flex items-center gap-2">
+                                    <span className="w-2 h-2 rounded-full bg-oro animate-pulse" />
+                                    Medidor Clínico de Desgaste de Esmalte
+                                </h4>
+                                <p className="text-crema/55 font-manrope text-xs leading-relaxed mb-6">
+                                    El esmalte dental tiene un espesor de 2.0 a 2.5 mm en la cara frontal del diente. Compará la proporción de tejido que realmente se prepara:
+                                </p>
+
+                                <div className="space-y-6">
+                                    {/* Caso 1: Esmalte Natural */}
+                                    <div>
+                                        <div className="flex justify-between text-[11px] font-manrope mb-1.5">
+                                            <span className="text-crema/70">Espesor Promedio del Esmalte Natural</span>
+                                            <span className="text-crema font-semibold">2.2 mm (100%)</span>
+                                        </div>
+                                        <div className="w-full h-3 bg-carbon rounded-full overflow-hidden border border-crema/10">
+                                            <div className="h-full bg-crema/80 rounded-full w-full" />
+                                        </div>
+                                    </div>
+
+                                    {/* Caso 2: Carilla Cerámica */}
+                                    <div>
+                                        <div className="flex justify-between text-[11px] font-manrope mb-1.5">
+                                            <span className="text-crema/70 flex items-center gap-1.5">
+                                                Preparación Mínima <span className="text-oro/70">(Carilla Cerámica)</span>
+                                            </span>
+                                            <span className="text-oro font-semibold">0.4 mm (aprox. 18%)</span>
+                                        </div>
+                                        <div className="w-full h-3 bg-carbon rounded-full overflow-hidden border border-oro/10 relative">
+                                            <div className="h-full bg-oro rounded-full w-[18%] shadow-[0_0_8px_rgba(201,169,110,0.5)]" />
+                                            <div className="absolute right-0 top-0 h-full w-[82%] bg-crema/25" title="Esmalte intacto conservado" />
+                                        </div>
+                                        <span className="text-[10px] text-crema/40 font-manrope mt-1 block">
+                                            Se conserva más del 80% del espesor total del esmalte intacto debajo de la carilla.
+                                        </span>
+                                    </div>
+
+                                    {/* Caso 3: Lente de contacto dental */}
+                                    <div>
+                                        <div className="flex justify-between text-[11px] font-manrope mb-1.5">
+                                            <span className="text-crema/70">Sin Preparación <span className="text-green-400/70">(Lente de Contacto Dental)</span></span>
+                                            <span className="text-green-400 font-semibold">0.0 mm (0% de desgaste)</span>
+                                        </div>
+                                        <div className="w-full h-3 bg-carbon rounded-full overflow-hidden border border-green-500/20 relative">
+                                            <div className="h-full bg-green-500/30 rounded-full w-0" />
+                                            <div className="absolute inset-0 bg-crema/80" />
+                                        </div>
+                                        <span className="text-[10px] text-green-400/60 font-manrope mt-1 block">
+                                            El diente se mantiene 100% intacto. La carilla ultra delgada se adhiere directamente.
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div className="mt-6 pt-5 border-t border-oro/10 grid grid-cols-3 gap-2 text-center text-[10px] font-manrope text-crema/45">
+                                    <div>
+                                        <span className="text-oro block font-bold text-xs mb-0.5">ESMALTE</span>
+                                        Solo capa exterior
+                                    </div>
+                                    <div className="border-x border-oro/10">
+                                        <span className="text-crema/60 block font-bold text-xs mb-0.5">DENTINA</span>
+                                        100% intacta
+                                    </div>
+                                    <div>
+                                        <span className="text-crema/60 block font-bold text-xs mb-0.5">NERVIO</span>
+                                        Totalmente protegido
+                                    </div>
+                                </div>
+                            </div>
+
                             <p className="text-crema/70 font-manrope text-base leading-relaxed">
                                 En ambos casos, el adhesivo con que se cementan las carillas es tan fuerte que la unión carilla-diente es más resistente que el esmalte natural. El punto de falla, cuando ocurre, es la carilla — no el diente debajo.
                             </p>

@@ -6,7 +6,9 @@ import "./globals.css";
 
 const gtmId = (process.env.NEXT_PUBLIC_GTM_ID || "GTM-P9KCL5W7").trim();
 const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID || "";
-const plausibleScriptId = process.env.NEXT_PUBLIC_PLAUSIBLE_SCRIPT_ID || "pa-IVsi12we0zqH_TNpn9oAv";
+const plausibleEnabled = process.env.NEXT_PUBLIC_PLAUSIBLE_ENABLED !== "false";
+const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN || "amesteticadental.com";
+const plausibleBaseUrl = (process.env.NEXT_PUBLIC_PLAUSIBLE_BASE_URL || "https://plausible.io").replace(/\/$/, "");
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -163,12 +165,12 @@ fbq('track', 'PageView');`,
             }}
           />
         ) : null}
-        {plausibleScriptId ? (
+        {plausibleEnabled ? (
           <Script
             id="plausible-script"
             strategy="afterInteractive"
-            src="https://plausible.io/js/script.js"
-            data-domain="amesteticadental.com"
+            src={`${plausibleBaseUrl}/js/script.js`}
+            data-domain={plausibleDomain}
           />
         ) : null}
         <script
@@ -245,6 +247,14 @@ fbq('track', 'PageView');`,
                   window.fbq('track', 'Contact', {
                     content_name: 'WhatsApp Click',
                     content_category: page
+                  });
+                }
+                if (window.plausible) {
+                  window.plausible('WhatsApp Click', {
+                    props: {
+                      page: page,
+                      source: source ? decodeURIComponent(source[1]).slice(0,60) : 'directo'
+                    }
                   });
                 }
               });

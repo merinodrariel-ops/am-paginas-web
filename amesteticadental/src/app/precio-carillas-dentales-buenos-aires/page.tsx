@@ -135,11 +135,11 @@ export default function PrecioCarillasPage() {
                 </Link>
               </div>
             </div>
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-oro/15 hidden lg:block">
+            <div className="relative aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/5] w-full rounded-2xl overflow-hidden border border-oro/15 mt-10 lg:mt-0">
               <Image
                 src="https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan/diseno-sonrisa-plano-quebrado-carillas-ceramicas-antes-despues-portada-paciente-italia-milan-dr-ariel-merino-am-estetica-dental"
                 alt="Antes y después de diseño de sonrisa con carillas cerámicas — caso real AM Estética Dental, Dr. Ariel Merino, Puerto Madero"
-                fill priority sizes="(max-width: 1024px) 0vw, 50vw"
+                fill priority sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-carbon/50 via-transparent to-transparent" />
@@ -293,55 +293,68 @@ export default function PrecioCarillasPage() {
               <span className="font-cormorant italic text-oro">¿cuál te conviene?</span>
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border border-oro/15 rounded-2xl p-7 bg-carbon">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-crema font-manrope font-medium text-lg">Porcelana</h3>
-                  <span className="text-oro font-manrope font-semibold text-sm">USD 1.000 – 1.500</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Porcelana - Tarjeta Premium Destacada */}
+              <div className="border border-oro/40 rounded-2xl p-8 bg-carbon relative overflow-hidden shadow-lg shadow-oro/5">
+                <div className="absolute top-5 right-[-38px] rotate-45 bg-oro text-carbon font-manrope text-[9px] font-bold uppercase tracking-widest px-12 py-1">
+                  Recomendado
                 </div>
-                <ul className="space-y-2 mb-6">
+                <div className="flex items-baseline justify-between mb-2">
+                  <h3 className="text-crema font-cormorant italic text-2xl">Porcelana</h3>
+                  <span className="text-oro/60 font-manrope text-[10px] uppercase tracking-[0.2em] mr-8">Largo Plazo</span>
+                </div>
+                <p className="text-oro font-manrope font-semibold text-xl mb-6">USD 1.000 – 1.500 <span className="text-crema/40 text-xs font-light">/ pieza</span></p>
+                <ul className="space-y-3 mb-8">
                   {[
-                    "Estética superior y natural",
-                    "Estabilidad de color permanente",
-                    "Durabilidad de 10 a 20 años",
-                    "Resistente a manchas y desgaste",
-                    "Mínimo mantenimiento",
-                    "Mayor inversión inicial",
+                    "Estética superior y translucidez natural",
+                    "Estabilidad de color permanente (no se mancha)",
+                    "Máxima durabilidad (10 a 20 años en boca)",
+                    "Altamente resistente a la fractura y desgaste",
+                    "Mínimo mantenimiento en consultorio",
+                    "Mayor inversión inicial con mayor vida útil",
                   ].map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-crema/70 font-manrope text-sm">
-                      <span className="text-oro mt-0.5">✓</span>
+                    <li key={item} className="flex items-start gap-2.5 text-crema/70 font-manrope text-sm">
+                      <span className="text-oro mt-1 text-xs">✓</span>
                       {item}
                     </li>
                   ))}
                 </ul>
-                <Link href="/carillas-de-porcelana-vs-resina" className="text-oro/70 hover:text-oro transition-colors text-sm">
-                  Ver comparación completa →
-                </Link>
+                <div className="pt-6 border-t border-oro/10">
+                  <Link href="/carillas-de-porcelana-vs-resina" className="inline-flex items-center gap-1.5 text-oro text-sm hover:text-oro-light transition-colors">
+                    Ver comparación detallada <span>→</span>
+                  </Link>
+                </div>
               </div>
 
-              <div className="border border-oro/15 rounded-2xl p-7 bg-carbon">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-crema font-manrope font-medium text-lg">Resina</h3>
-                  <span className="text-oro font-manrope font-semibold text-sm">USD 500</span>
+              {/* Resina - Tarjeta Alternativa */}
+              <div className="border border-oro/15 rounded-2xl p-8 bg-carbon flex flex-col justify-between">
+                <div>
+                  <div className="flex items-baseline justify-between mb-2">
+                    <h3 className="text-crema font-cormorant italic text-2xl">Resina Compuesta</h3>
+                    <span className="text-crema/40 font-manrope text-[10px] uppercase tracking-[0.2em]">Corto Plazo</span>
+                  </div>
+                  <p className="text-oro font-manrope font-semibold text-xl mb-6">USD 500 <span className="text-crema/40 text-xs font-light">/ pieza</span></p>
+                  <ul className="space-y-3 mb-8">
+                    {[
+                      "Inversión inicial más accesible",
+                      "Resolución rápida en 1 a 2 sesiones",
+                      "Ideal para correcciones estéticas menores",
+                      "Reparable de forma directa en consultorio",
+                      "Vida útil de 5 a 7 años",
+                      "Requiere pulido y mantenimiento periódico",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 text-crema/70 font-manrope text-sm">
+                        <span className="text-oro/50 mt-1 text-xs">✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-2 mb-6">
-                  {[
-                    "Precio más accesible",
-                    "Resolución en 1 a 2 sesiones",
-                    "Ideal para correcciones menores",
-                    "Reparable si se fractura",
-                    "Vida útil de 5 a 7 años",
-                    "Requiere más mantenimiento",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-crema/70 font-manrope text-sm">
-                      <span className="text-oro mt-0.5">✓</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/carillas-de-porcelana-vs-resina" className="text-oro/70 hover:text-oro transition-colors text-sm">
-                  Comparar opciones →
-                </Link>
+                <div className="pt-6 border-t border-oro/10">
+                  <Link href="/carillas-de-porcelana-vs-resina" className="inline-flex items-center gap-1.5 text-oro/70 hover:text-oro transition-colors text-sm">
+                    Comparar opciones de material <span>→</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

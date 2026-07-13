@@ -112,25 +112,39 @@ export default function InversionImplantesPage() {
         {/* ── HERO ── */}
         <section className="relative min-h-[90dvh] flex items-center px-6 md:px-12 pt-32 pb-24">
           <div className="absolute right-[-5%] top-[20%] w-[500px] h-[500px] rounded-full bg-oro/6 blur-[130px] pointer-events-none" />
-          <div className="max-w-4xl mx-auto w-full">
-            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">
-              AM Estética Dental · Puerto Madero · Buenos Aires · Guía 2026
-            </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-manrope font-light text-crema leading-[1.0] mb-7">
-              Inversión en Implantes
-              <br />
-              <span className="font-cormorant italic text-oro">en Buenos Aires</span>
-            </h1>
-            <p className="text-crema/68 font-manrope text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
-              Si estás buscando precio, lo más importante no es una cifra vacía: es entender qué material conviene, cuántas piezas necesitás y cómo es la planificación clínica para recuperar tu sonrisa de forma permanente.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 items-start">
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-7 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-colors">
-                Pedir presupuesto orientativo →
-              </a>
-              <Link href="/implantes-dentales-buenos-aires" className="inline-flex items-center gap-2 text-crema/55 font-manrope text-sm hover:text-crema transition-colors pt-3 sm:pt-4">
-                ← Ver tratamiento de implantes
-              </Link>
+          <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div>
+              <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">
+                AM Estética Dental · Puerto Madero · Buenos Aires · Guía 2026
+              </span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-manrope font-light text-crema leading-[1.0] mb-7">
+                Inversión en Implantes
+                <br />
+                <span className="font-cormorant italic text-oro">en Buenos Aires</span>
+              </h1>
+              <p className="text-crema/68 font-manrope text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
+                Si estás buscando precio, lo más importante no es una cifra vacía: es entender qué material conviene, cuántas piezas necesitás y cómo es la planificación clínica para recuperar tu sonrisa de forma permanente.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 items-start">
+                <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-7 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-colors">
+                  Pedir presupuesto orientativo →
+                </a>
+                <Link href="/implantes-dentales-buenos-aires" className="inline-flex items-center gap-2 text-crema/55 font-manrope text-sm hover:text-crema transition-colors pt-3 sm:pt-4">
+                  ← Ver tratamiento de implantes
+                </Link>
+              </div>
+            </div>
+            <div className="relative aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/5] w-full rounded-2xl overflow-hidden border border-oro/15 mt-10 lg:mt-0">
+              <Image
+                src="https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-rostro-portada-mega-transformacion-rehabilitacion-oral-dr-ariel-merino-am-estetica-dental"
+                alt="Antes y después de implantes dentales — caso real de rehabilitación en AM Estética Dental, Dr. Ariel Merino, Puerto Madero"
+                fill priority sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-carbon/50 via-transparent to-transparent" />
+              <span className="absolute bottom-5 left-5 inline-flex items-center gap-1.5 border border-oro/30 bg-carbon/80 backdrop-blur-sm rounded-full px-3 py-1.5 text-[9px] uppercase tracking-[0.3em] text-oro">
+                Caso real · Implantes y Cerámicas
+              </span>
             </div>
           </div>
         </section>
@@ -179,6 +193,113 @@ export default function InversionImplantesPage() {
             <p className="text-crema/40 font-manrope text-xs mt-6 text-center">
               * Valores en USD, incluyen la corona, la regeneración ósea y el manejo de tejidos blandos que el caso requiera. Se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago.
             </p>
+          </div>
+        </section>
+
+        {/* ── ESTRUCTURA DE UN IMPLANTE (ESQUEMA VISUAL) ── */}
+        <section className="py-24 px-6 md:px-12 bg-carbon border-b border-oro/10">
+          <div className="max-w-5xl mx-auto">
+            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6 text-center">
+              Anatomía de tu tratamiento
+            </span>
+            <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-4 text-center">
+              ¿Cómo se compone un{" "}
+              <span className="font-cormorant italic text-oro">implante dental</span>?
+            </h2>
+            <p className="text-crema/55 font-manrope text-sm text-center max-w-2xl mx-auto mb-16">
+              El valor "Desde USD 1.200" no es solo un tornillo. En nuestra clínica, cada pieza es una obra de ingeniería biológica que incluye los tres componentes clave.
+            </p>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              {/* Columna Izquierda: Diagrama SVG */}
+              <div className="lg:col-span-5 flex justify-center bg-carbon-soft p-8 rounded-3xl border border-oro/10 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-tr from-oro/5 via-transparent to-transparent opacity-50 pointer-events-none" />
+                
+                {/* SVG del Implante */}
+                <svg viewBox="0 0 200 400" className="w-full max-w-[200px] h-auto drop-shadow-[0_0_20px_rgba(201,169,110,0.08)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Corona (Crown) */}
+                  <g className="group/crown">
+                    <path d="M60 40 C60 10, 140 10, 140 40 C140 70, 150 110, 130 140 C110 160, 90 160, 70 140 C50 110, 60 70, 60 40 Z" fill="#F5F0E8" fillOpacity="0.85" stroke="#C9A96E" strokeWidth="2.5" />
+                    <path d="M75 35 C75 25, 125 25, 125 35 C125 45, 130 80, 115 105 C105 120, 95 120, 85 105 C70 80, 75 45, 75 35 Z" fill="#FFFFFF" fillOpacity="0.3" />
+                    <text x="100" y="85" fill="#141414" fontSize="10" fontWeight="700" letterSpacing="0.1em" textAnchor="middle" fontFamily="var(--font-manrope)">CORONA</text>
+                  </g>
+                  
+                  {/* Pilar de Conexión (Abutment) */}
+                  <g className="group/pilar">
+                    <path d="M82 140 L118 140 L122 170 L78 170 Z" fill="#C9A96E" stroke="#A6824B" strokeWidth="1.5" />
+                    <path d="M95 170 L105 170 L105 200 L95 200 Z" fill="#737373" />
+                    <circle cx="100" cy="155" r="5" fill="#141414" stroke="#C9A96E" strokeWidth="1.5" />
+                  </g>
+
+                  {/* Tornillo (Implante Titanio) */}
+                  <g className="group/screw">
+                    {/* Cuerpo roscado */}
+                    <path d="M78 200 H122 L116 230 H84 L88 260 H112 L106 290 H94 L98 320 H102 L95 365 H105 L100 390 L100 390 L85 290 H86 L78 200 Z" fill="#525252" stroke="#C9A96E" strokeWidth="2" />
+                    {/* Roscas detalladas */}
+                    <path d="M80 215 H120 M82 235 H118 M84 255 H116 M86 275 H114 M88 295 H112 M90 315 H110 M92 335 H108 M94 355 H106" stroke="#C9A96E" strokeWidth="3" strokeLinecap="round" />
+                  </g>
+                </svg>
+
+                {/* Etiquetas flotantes explicativas */}
+                <div className="absolute top-[18%] left-4 lg:left-6 border-l border-oro/30 pl-3">
+                  <span className="text-[10px] text-oro tracking-[0.2em] block">PARTE ESTÉTICA</span>
+                  <span className="text-xs text-crema font-medium">1. Corona</span>
+                </div>
+                <div className="absolute top-[42%] right-4 lg:right-6 border-r border-oro/30 pr-3 text-right">
+                  <span className="text-[10px] text-oro tracking-[0.2em] block">CONECTOR</span>
+                  <span className="text-xs text-crema font-medium">2. Pilar</span>
+                </div>
+                <div className="absolute bottom-[20%] left-4 lg:left-6 border-l border-oro/30 pl-3">
+                  <span className="text-[10px] text-oro tracking-[0.2em] block">RAÍZ BIOLÓGICA</span>
+                  <span className="text-xs text-crema font-medium">3. Implante</span>
+                </div>
+              </div>
+
+              {/* Columna Derecha: Tarjetas Descriptivas */}
+              <div className="lg:col-span-7 space-y-6">
+                {[
+                  {
+                    num: "01",
+                    titulo: "Corona Dental (Zirconio / Cerámica)",
+                    rol: "Componente Estético y Funcional",
+                    desc: "Es el diente visible que se diseña a medida para igualar el color, la forma y la translucidez de tus dientes vecinos. Utilizamos zirconio estratificado o porcelana pura libre de metal, los materiales más estéticos y resistentes que existen.",
+                    incluido: "Incluido en el presupuesto"
+                  },
+                  {
+                    num: "02",
+                    titulo: "Pilar de Conexión (Abutment)",
+                    rol: "Nexo Mecánico de Alta Precisión",
+                    desc: "La pieza de titanio o cerámica de grado médico que se atornilla al implante y sobre la cual se cementa o atornilla la corona. Su función es amortiguar la fuerza masticatoria y garantizar que la corona no se afloje.",
+                    incluido: "Incluido en el presupuesto"
+                  },
+                  {
+                    num: "03",
+                    titulo: "Implante de Titanio (Tornillo)",
+                    rol: "Raíz Artificial Osteointegrada",
+                    desc: "El tornillo de titanio puro que se coloca quirúrgicamente en el hueso maxilar. Actúa como la nueva raíz del diente. Trabajamos con Straumann® y Neodent®, marcas líderes que garantizan una fijación permanente de por vida.",
+                    incluido: "Incluido en el presupuesto"
+                  }
+                ].map((item) => (
+                  <div key={item.num} className="border border-oro/15 hover:border-oro/40 bg-carbon-soft p-6 rounded-2xl transition-all duration-300 group flex items-start gap-5">
+                    <span className="font-cormorant italic text-3xl text-oro/40 group-hover:text-oro transition-colors leading-none pt-1">
+                      {item.num}
+                    </span>
+                    <div>
+                      <div className="flex flex-wrap items-baseline gap-2 mb-2">
+                        <h3 className="text-crema font-manrope font-semibold text-base">{item.titulo}</h3>
+                        <span className="text-[10px] text-oro/60 font-manrope uppercase tracking-wider">· {item.rol}</span>
+                      </div>
+                      <p className="text-crema/60 font-manrope text-sm leading-relaxed mb-3">
+                        {item.desc}
+                      </p>
+                      <span className="inline-flex items-center gap-1.5 text-[9px] uppercase tracking-widest text-oro font-semibold bg-oro/5 px-2.5 py-1 rounded-full border border-oro/15">
+                        {item.incluido}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
