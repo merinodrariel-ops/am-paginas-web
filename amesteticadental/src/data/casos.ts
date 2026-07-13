@@ -613,16 +613,16 @@ Cuando la base es buena, hay que cuidarla.`,
         publicado: true,
     },
     {
-        slug: "carillas-resina-caries-transformacion-extrema-gingivectomia",
-        titulo: "En solo una sesión, transforma tu sonrisa.",
-        subtitulo: "Caries múltiples + resinas viejas mal hechas + encía montada — remoción completa y diseño de sonrisa en resina con gingivectomía láser",
-        descripcion: "Transformación extrema viral en TikTok. Caso de caries múltiples, resinas viejas mal ejecutadas y apiñamiento con encía montada. Remoción total, gingivectomía láser y diseño de sonrisa en resina. All-inclusive USD 5.000. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
-        seoTitle: "Rehabilitación de Caries y Carillas de Resina",
-        seoDescription: "Caso extremo de remoción de caries múltiples, gingivectomía láser y diseño de sonrisa con carillas de resina en Puerto Madero. Dr. Ariel Merino.",
-        categorias: ["Carillas de porcelana", "Diseño de sonrisa", "Apiñamiento"],
+        slug: "gingivectomia-laser-micro-diseno-sonrisa-resinas",
+        titulo: "Gingivectomía láser + micro diseño de sonrisa en resinas",
+        subtitulo: "Gingivectomía en todos los márgenes gingivales + micro diseño de sonrisa con carillas mínimamente invasivas en resina",
+        descripcion: "Caso de gingivectomía láser completa en todos los márgenes gingivales seguida de micro diseño de sonrisa. Carillas de resina mínimamente invasivas para detalles finos en bordes incisales. Paciente joven que vive de su imagen — transformación natural y discreta. USD 5.000 total. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
+        seoTitle: "Gingivectomía Láser con Diseño de Sonrisa en Resina",
+        seoDescription: "Gingivectomía láser completa y micro diseño de sonrisa con carillas de resina — caso premium de estética dental minimamente invasiva. Dr. Ariel Merino.",
+        categorias: ["Gingivectomía láser", "Diseño de sonrisa", "Carillas de resina"],
         duracion: "5 días",
-        piezas: "Carillas de resina compuesta — sector anterior completo",
-        tecnica: "Remoción de caries y resinas viejas + gingivectomía láser + carillas directas de resina compuesta — llave en mano",
+        piezas: "Gingivectomía láser + carillas de resina compuesta — sector anterior completo",
+        tecnica: "Gingivectomía láser en todos los márgenes gingivales + micro diseño de sonrisa con carillas directas de resina compuesta — mínimamente invasivo",
         fotoPortada: {
             src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-resina-caries/transformacion-extrema-caries-carillas-resina-gingivectomia-laser-antes-despues-rostro-labios-portada-dr-ariel-merino-am-estetica-dental-buenos-aires",
             alt: "Transformación extrema caries y carillas de resina viejas — gingivectomía láser — antes y después portada — Dr. Ariel Merino AM Estética Dental Buenos Aires",
@@ -659,18 +659,20 @@ Cuando la base es buena, hay que cuidarla.`,
                 caption: "Perfil — antes y después",
             },
         ],
-        copy: `Hay casos que van más allá de lo estético. Este fue uno.
+        copy: `Paciente joven, vive de su imagen. Esa fue la premisa.
 
-Llegó con caries activas, resinas viejas mal ejecutadas por otro profesional, encía montada y apiñamiento. La sonrisa estaba deteriorada en todos los frentes — estética, función y salud. Antes de pensar en el resultado final, había que resolver la base.
+El trabajo no era solo estético — era sobre armonía total. Comenzamos con gingivectomía láser en todos los márgenes gingivales, creando una línea de encía nivelada y simétrica que es la base invisible de cualquier sonrisa premium.
 
-El plan fue integral. Primero limpiamos todo: remoción de todas las caries, retiro de las resinas anteriores que estaban mal adaptadas. Después gingivectomía láser para nivelar y armonizar la línea gingival — cuando la encía no está a nivel, ninguna carilla va a quedar bien por más perfecta que sea.
+Una vez que la encía quedó perfecta, trabajamos el micro diseño de sonrisa. No se trataba de cambios drásticos, sino de detalles finos: ajustes en los bordes incisales, pequeñas correcciones de forma, mínimas carillas de resina en los puntos específicos que marcan la diferencia.
 
-Con la base sana y la encía correcta, colocamos las carillas de resina compuesta directa. El resultado fue tan drástico que el caso se viralizó en TikTok.
+Todo mínimamente invasivo. Casi sin tocar la estructura original de los dientes.
 
-Todo incluido en un precio: USD 5.000. Remoción de caries, retiro de resinas viejas, gingivectomía láser y diseño de sonrisa en resina — llave en mano.
+El resultado fue exacto a lo que buscaba: una sonrisa más pulida, más refinada, perfecta para alguien que vive bajo las luces. La paciente se fue súper contenta y feliz.
 
-A veces la transformación más grande empieza por limpiar lo que está mal.`,
-        copyRedes: `Caries activas. Resinas viejas mal hechas. Encía montada.
+USD 5.000 — gingivectomía láser completa + micro diseño de sonrisa en resina.`,
+        copyRedes: `Paciente joven que vive de su imagen.
+
+Gingivectomía láser en todos los márgenes + micro diseño de sonrisa en resina.
 
 Antes de cualquier estética, hubo que resolver la salud.
 
