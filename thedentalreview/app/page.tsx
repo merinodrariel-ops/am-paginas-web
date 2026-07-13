@@ -21,6 +21,18 @@ type Articulo = {
 
 const ARTICULOS: Articulo[] = [
   {
+    slug: "straumann-vs-neodent-comparativa-implantes-dentales-premium",
+    categoria: "Análisis Clínico",
+    titulo: "Straumann vs. Neodent: ¿Cuáles son las diferencias reales entre los dos líderes en implantes dentales?",
+    subtitulo:
+      "Ambos sistemas pertenecen al mismo grupo suizo y representan la elite de la implantología digital de titanio. Analizamos qué los separa en términos de predictibilidad y costo.",
+    autor: "Redacción TDR",
+    fecha: "Julio 2026",
+    portada:
+      "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires",
+    portadaAlt: "Detalle intraoral de rehabilitación de implantes dentales en boca",
+  },
+  {
     slug: "expodent-2026-dr-ariel-merino-inteligencia-artificial-diseno-sonrisa",
     href: "/conferencias/expodent-2026-dr-ariel-merino-inteligencia-artificial-diseno-sonrisa",
     categoria: "Conferencia",
@@ -35,7 +47,7 @@ const ARTICULOS: Articulo[] = [
   },
   {
     slug: "odontologo-argentino-inteligencia-artificial-simular-sonrisa",
-    categoria: "Tecnología Clínica",
+    categoria: "Tecnología Clínicas",
     titulo: "Odontólogo argentino usa inteligencia artificial para simular una sonrisa antes del tratamiento",
     subtitulo: "La herramienta permite generar una referencia visual inicial. Su utilidad no está en prometer un resultado, sino en abrir una conversación más concreta antes de la evaluación clínica.",
     autor: "Redacción TDR",

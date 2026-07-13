@@ -11,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${SITE}/casos/straumann-vs-neodent-comparativa-implantes-dentales-premium`,
+      lastModified: new Date("2026-07-13"),
+      changeFrequency: "monthly",
+      priority: 0.95,
+    },
+    {
       url: `${SITE}/conferencias/expodent-2026-dr-ariel-merino-inteligencia-artificial-diseno-sonrisa`,
       lastModified: new Date("2026-06-16"),
       changeFrequency: "monthly",
