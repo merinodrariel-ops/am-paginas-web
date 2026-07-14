@@ -681,7 +681,8 @@ Remoción de caries. Gingivectomía láser. Carillas de resina nuevas.
 El resultado se viralizó en TikTok. USD 5.000 all-inclusive.`,
         precio: {
             total: "USD 5.000",
-            nota: "Incluye: remoción de caries, retiro de resinas viejas, gingivectomía láser y diseño de sonrisa en resina — llave en mano",
+            porPieza: "USD 5.000 all-inclusive",
+            nota: "Incluye: gingivectomía láser en todos los márgenes + micro diseño de sonrisa en resina (10 dientes sector anterior). Financiación: USD 1.500 anticipo + USD 309/mes en 12 meses (18% anual)",
         },
         publicado: true,
     },
