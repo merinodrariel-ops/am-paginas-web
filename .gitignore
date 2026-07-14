@@ -32,3 +32,6 @@ amesteticadental-transfer-bundle/
 # macOS resource fork files (SSD montado)
 ._*
 **/._.DS_Store
+
+# Gemini / Google AI Studio (Nano Banana) — NUNCA subir
+.env.gemini
