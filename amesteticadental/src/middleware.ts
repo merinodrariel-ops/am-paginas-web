@@ -52,10 +52,6 @@ const REDIRECTS: Record<string, string> = {
     "/unete-al-team-am/": "/trabaja-en-am",
 
     // Caso publicado desde nombre de archivo con secuencia interna → slug editorial
-    "/casos/gingivectomia-laser-09-antes-despues-comparativa":
-        "/casos/gingivectomia-laser-sin-bisturi-sangrado-puntos",
-    "/casos/gingivectomia-laser-09-antes-despues-comparativa/":
-        "/casos/gingivectomia-laser-sin-bisturi-sangrado-puntos",
 
     // Formularios WordPress → home
     "/califica-nuestro-servicio-atencion": "/",
