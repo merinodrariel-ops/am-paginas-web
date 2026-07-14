@@ -1,0 +1,33 @@
+name: IndexNow — indexación automática en Bing
+
+# Se dispara solo cuando cambian páginas o casos de amesteticadental en main.
+# Espera a que Vercel deploye y luego notifica a IndexNow todas las URLs del sitemap.
+# La indexación en Google la maneja el sitemap dinámico + Search Console (Google no usa IndexNow).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "amesteticadental/src/data/casos.ts"
+      - "amesteticadental/src/data/casosStatic.ts"
+      - "amesteticadental/src/app/**/page.tsx"
+      - "amesteticadental/src/app/sitemap.ts"
+
+# Evita corridas solapadas si hay varios push seguidos
+concurrency:
+  group: indexnow-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Esperar a que Vercel deploye la nueva versión
+        run: sleep 150
+
+      - name: Notificar URLs a IndexNow
+        working-directory: amesteticadental
+        run: node scripts/notify-indexnow.mjs
