@@ -21,6 +21,18 @@ type Articulo = {
 
 const ARTICULOS: Articulo[] = [
   {
+    slug: "gingivectomia-laser-micro-diseno-sonrisa-resina",
+    categoria: "Técnica Clínica",
+    titulo: "El equilibrio invisible: cuando una sonrisa empieza en la encía",
+    subtitulo:
+      "Gingivectomía láser y micro diseño de sonrisa en resina. La estética no se juega solo en los dientes, sino en la relación entre la encía y el borde incisal. Un caso documentado en Puerto Madero.",
+    autor: "Redacción TDR",
+    fecha: "Julio 2026",
+    portada:
+      "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,g_face,q_auto,f_auto/casos/carillas-resina-caries/transformacion-extrema-caries-carillas-resina-gingivectomia-laser-antes-despues-rostro-labios-portada-dr-ariel-merino-am-estetica-dental-buenos-aires",
+    portadaAlt: "Antes y después de gingivectomía láser y diseño de sonrisa en resina — AM Estética Dental",
+  },
+  {
     slug: "straumann-vs-neodent-comparativa-implantes-dentales-premium",
     categoria: "Análisis Clínico",
     titulo: "Straumann vs. Neodent: ¿Cuáles son las diferencias reales entre los dos líderes en implantes dentales?",

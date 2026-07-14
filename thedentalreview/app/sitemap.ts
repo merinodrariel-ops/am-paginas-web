@@ -11,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${SITE}/casos/gingivectomia-laser-micro-diseno-sonrisa-resina`,
+      lastModified: new Date("2026-07-14"),
+      changeFrequency: "monthly",
+      priority: 0.95,
+    },
+    {
       url: `${SITE}/casos/straumann-vs-neodent-comparativa-implantes-dentales-premium`,
       lastModified: new Date("2026-07-13"),
       changeFrequency: "monthly",
