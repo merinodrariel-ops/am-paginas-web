@@ -36,6 +36,21 @@ node ads.mjs configurar
 - MCC: 620-029-5782 (dr.arielmerinopersonal@gmail.com)
 - Cuenta cliente: 548-608-5415
 
+## Generación de imágenes con IA (Nano Banana)
+
+Se pueden generar imágenes con Google Nano Banana (`gemini-2.5-flash-image`) desde el repo:
+
+```bash
+node generar-imagen.mjs "prompt en inglés describiendo la imagen" salida.png
+node generar-imagen.mjs "..." out.png --model gemini-3.1-flash-image   # otro modelo
+```
+
+- La API key se lee de `.env.gemini` (raíz del repo, **gitignoreado** — nunca se commitea) o de la env var `GEMINI_API_KEY`.
+- `.env.gemini` vive solo en la máquina del Dr.; otras máquinas necesitan su propia copia con la key.
+- Requiere billing habilitado en Google AI Studio. Costo ~US$0,03-0,04 por imagen (Nano Banana es barato).
+- **Uso recomendado**: headers editoriales abstractos, visuales de lifestyle/hero, ilustraciones conceptuales. NO para simular fotos clínicas reales (resta credibilidad). Para casos clínicos, siempre foto real.
+- Las imágenes generadas que se usen en los sitios deben subirse a Cloudinary (`drctvgyqd`), igual que el resto.
+
 ## Google Search Console CLI
 
 ```bash
