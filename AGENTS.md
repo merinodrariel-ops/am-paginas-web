@@ -57,6 +57,43 @@ node gsc.mjs estado     # muestra estado de indexación
 - Push a `main` → Vercel despliega automáticamente `amesteticadental/`
 - Después del deploy correr `node gsc.mjs indexar` para páginas nuevas
 
+## ⭐ FLUJO OBLIGATORIO — Publicar caso clínico o página nueva
+
+Cuando publiques un caso clínico nuevo (o cualquier página/URL nueva), NO termina en el push.
+Hay que indexarlo en Google **y** Bing. Ejecutá este flujo completo **sin esperar que te lo pidan**:
+
+1. **Publicar**: agregar el caso a `amesteticadental/src/data/casos.ts` con `publicado: true`.
+   El sitemap (`src/app/sitemap.ts`) lo incluye automáticamente vía `...casos.map()`.
+2. **Verificar build**: `npm run build` en `amesteticadental/` (debe compilar sin errores).
+3. **Commit + push a `main`** (regla de oro: nada queda en local).
+4. **Verificar que está en vivo**: `curl -s -o /dev/null -w "%{http_code}" https://www.amesteticadental.com/casos/<slug>` → debe dar `200`.
+5. **Indexar en Google**: `node gsc.mjs indexar` (o solicitar indexación manual en Search Console).
+6. **Indexar en Bing/Yandex** (IndexNow):
+   - **Automático**: el GitHub Action `.github/workflows/indexnow.yml` ya dispara IndexNow
+     en cada push que toque casos o páginas. No hace falta hacer nada.
+   - **Manual (si querés forzarlo ya)**: desde `amesteticadental/`:
+     - `npm run notify-index` → notifica TODAS las URLs del sitemap
+     - `node scripts/notify-indexnow.mjs /casos/<slug>` → notifica solo esa URL
+7. **The Dental Review**: evaluar si el caso amerita una nota periodística en thedentalreview.com
+   que enlace de vuelta al caso (ver sección backlinks abajo).
+
+**Datos IndexNow**: key `14c9604645864308b49cb8994e8d032c`, hosteada en
+`https://www.amesteticadental.com/14c9604645864308b49cb8994e8d032c.txt`.
+Google NO usa IndexNow — para Google es sitemap dinámico + `gsc.mjs indexar`.
+
+## The Dental Review — estrategia de backlinks
+
+`thedentalreview.com` es una publicación editorial independiente cuya función SEO es
+generar **backlinks de calidad** hacia amesteticadental.com (Bing lo marca como debilidad #1).
+
+Reglas al escribir para The Dental Review:
+- **Tono periodístico, tercera persona.** "Una clínica de Puerto Madero documentó..." NO "somos los mejores".
+- **Sin autobombo excesivo.** Creíble, informativo, como cobertura de prensa real.
+- **Enlazar a páginas profundas** de amesteticadental (el caso, la página de precio), no solo al home.
+- **Anchor text variado y natural** (no repetir siempre "carillas dentales Buenos Aires").
+- **Cubrir también temas de industria** (no solo AM) para que la publicación parezca legítima y no un PBN.
+- Cada caso clínico nuestro puede convertirse en una nota: técnica usada, resultado, contexto del sector.
+
 ## Cloudinary
 - Cloud: `drctvgyqd`
 - Imágenes de casos clínicos y landing pages
