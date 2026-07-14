@@ -21,6 +21,32 @@ type Articulo = {
 
 const ARTICULOS: Articulo[] = [
   {
+    slug: "carillas-ultrafinas-additive-dentistry-2026",
+    href: "/noticias/carillas-ultrafinas-additive-dentistry-2026",
+    categoria: "Actualidad",
+    titulo: "Cada vez se lima menos: el auge de las carillas ultrafinas en 2026",
+    subtitulo:
+      "La odontología aditiva y la resina impresa en 3D empujan el límite de lo conservador. La pregunta ya no es cuánto se puede modificar un diente, sino cuán poco es necesario tocarlo.",
+    autor: "Redacción TDR",
+    fecha: "Julio 2026",
+    portada:
+      "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/diseno-sonrisa-diastemas/fragmentos-ceramicos-lentes-contacto-dental-dedo-escala-carillas-am-dr-ariel-merino-am-estetica-dental",
+    portadaAlt: "Carilla ultrafina de 0,2 mm en la yema de un dedo — AM Estética Dental, Puerto Madero, Buenos Aires",
+  },
+  {
+    slug: "mercado-implantes-dentales-digital-2026",
+    href: "/noticias/mercado-implantes-dentales-digital-2026",
+    categoria: "Actualidad",
+    titulo: "El implante dental se vuelve digital: un mercado rumbo a los US$ 12.600 millones",
+    subtitulo:
+      "Un informe proyecta el mercado global de implantes en US$ 12.600 millones hacia 2032. La odontología digital, la IA y la impresión 3D redefinen la planificación.",
+    autor: "Redacción TDR",
+    fecha: "Julio 2026",
+    portada:
+      "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires",
+    portadaAlt: "Rehabilitación con implantes dentales — vista intraoral, AM Estética Dental, Puerto Madero, Buenos Aires",
+  },
+  {
     slug: "gingivectomia-laser-micro-diseno-sonrisa-resina",
     categoria: "Técnica Clínica",
     titulo: "El equilibrio invisible: cuando una sonrisa empieza en la encía",

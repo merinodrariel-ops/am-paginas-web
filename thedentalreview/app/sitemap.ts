@@ -11,6 +11,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${SITE}/noticias/carillas-ultrafinas-additive-dentistry-2026`,
+      lastModified: new Date("2026-07-14"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${SITE}/noticias/mercado-implantes-dentales-digital-2026`,
+      lastModified: new Date("2026-07-14"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${SITE}/casos/gingivectomia-laser-micro-diseno-sonrisa-resina`,
       lastModified: new Date("2026-07-14"),
       changeFrequency: "monthly",
