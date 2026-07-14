@@ -53,6 +53,12 @@ const REDIRECTS: Record<string, string> = {
 
     // Caso publicado desde nombre de archivo con secuencia interna → slug editorial
 
+    // Caso renombrado: quitar número, cambiar a micro diseño de sonrisa en resina
+    "/casos/gingivectomia-laser-10-procedimiento-recorte-gingival":
+        "/casos/gingivectomia-laser-micro-diseno-sonrisa-resinas",
+    "/casos/gingivectomia-laser-10-procedimiento-recorte-gingival/":
+        "/casos/gingivectomia-laser-micro-diseno-sonrisa-resinas",
+
     // Formularios WordPress → home
     "/califica-nuestro-servicio-atencion": "/",
     "/califica-nuestro-servicio-atencion/": "/",
