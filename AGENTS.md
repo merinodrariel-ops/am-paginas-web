@@ -121,3 +121,100 @@ Reglas al escribir para The Dental Review:
 - Next.js (Turbopack), Tailwind v4, TypeScript
 - Fuentes: Manrope + Cormorant Garamond
 - Colores: carbon `#141414`, oro `#C9A96E`, crema `#F5F0E8`
+
+## Publicación de Casos Clínicos — Flujo obligatorio
+
+**REGLA CRÍTICA**: Nunca publicar un caso clínico con título automático (slug, nombre de archivo, etc.). Todo título debe ser procesado, mejorado y validado por un LLM ANTES de commitear.
+
+### Checklist pre-commit para casos clínicos
+
+Antes de `git add casos.ts`, verifica TODOS estos puntos:
+
+1. **Título** (`titulo`)
+   - ✅ NO es un slug (no tiene guiones ni números raros)
+   - ✅ NO es una descripción técnica ("procedimiento-recorte-gingival")
+   - ✅ Está pensado para el paciente: beneficio, emoción, claridad
+   - ✅ Es corto y pegadizo (máx 8-10 palabras)
+   - ✅ Fue mejorado por un LLM (no automático)
+   - Ej. MALO: "gingivectomia-laser-10-procedimiento-recorte-gingival"
+   - Ej. BUENO: "Gingivectomía láser + micro diseño de sonrisa en resinas"
+
+2. **Subtítulo** (`subtitulo`)
+   - ✅ Expande el título: qué se hizo, por qué, para quién
+   - ✅ Máx 15-20 palabras
+   - Ej: "Gingivectomía en todos los márgenes + micro diseño de sonrisa mínimamente invasivo"
+
+3. **Descripción** (`descripcion`)
+   - ✅ Resumen ejecutivo: quién, qué, cómo, resultado, precio
+   - ✅ Incluye ubicación y profesional
+   - ✅ Tone: clínico pero accesible, sin jerga excesiva
+
+4. **Copy** (`copy`)
+   - ✅ Cuenta la historia: premisa → proceso → resultado
+   - ✅ Humaniza (paciente, emociones, por qué vino)
+   - ✅ Educativo: explica qué se hizo y por qué, no solo antes/después
+   - ✅ Fue procesado y mejorado por un LLM
+
+5. **Precio** (`precio`)
+   - ✅ Precio confirmado (no aproximado)
+   - ✅ Si hay financiación, incluir: anticipo + cuota mensual + plazo
+   - Ej: "USD 5.000 (o USD 1.500 + USD 309/mes en 12 meses)"
+
+6. **Slug** (`slug`)
+   - ✅ NO tiene números de secuencia o versión (-09, -10, etc.)
+   - ✅ Descriptivo y único
+   - ✅ Sin "procedimiento", "antes-despues", u otros rellenos
+
+### Prompt para mejorar títulos vía LLM (usa esto si dudas)
+
+Si un título suena raro o automático, pasalo por este prompt:
+
+```
+Eres editor de contenido clínico premium. Mejora este título de caso clínico.
+
+TÍTULO ACTUAL: [pegar slug o título raro]
+
+CONTEXTO DEL CASO:
+- Procedimientos: [ej: gingivectomía láser + micro diseño de sonrisa]
+- Tipo de paciente: [ej: joven, vive de su imagen]
+- Resultado: [ej: sonrisa más refinada, línea gingival nivelada]
+- Precio: [ej: USD 5.000]
+
+REGLAS:
+- Máx 8-10 palabras
+- Beneficio o resultado, no procedimiento técnico
+- Para el paciente, no para el dentista
+- Pegadizo y memorable
+- Evitar: números, guiones, palabras técnicas innecesarias
+
+NUEVO TÍTULO:
+[LLM devuelve 3 opciones]
+
+PICK UNA. Si te gusta, úsala.
+```
+
+### Ejemplo: Cómo NO hacer vs. BIEN
+
+**❌ MAL** (automático, título raro):
+```
+slug: "gingivectomia-laser-10-procedimiento-recorte-gingival"
+titulo: "gingivectomia laser 10 procedimiento recorte gingival"
+```
+↳ Suena como un nombre de archivo interno. El paciente no entiende qué es.
+
+**✅ BIEN** (procesado, pensado):
+```
+slug: "gingivectomia-laser-micro-diseno-sonrisa-resinas"
+titulo: "Gingivectomía láser + micro diseño de sonrisa en resinas"
+subtitulo: "Gingivectomía en todos los márgenes gingivales + micro diseño mínimamente invasivo"
+```
+↳ Claro, atractivo, explica qué se hizo. El paciente entiende el beneficio.
+
+### Validación automática (TODO para futuro)
+
+En el futuro, un script pre-commit puede validar:
+- Slug no contiene números de secuencia (`-09`, `-10`, `-11`, etc.)
+- Título no es igual al slug
+- Título no contiene palabras técnicas innecesarias ("procedimiento", "antes-despues")
+- Descripción tiene mínimo 100 caracteres
+- Copy tiene mínimo 300 caracteres
