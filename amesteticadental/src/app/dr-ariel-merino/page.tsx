@@ -31,6 +31,7 @@ const EXPODENT_VIDEO_EMBED_URL = "https://www.youtube-nocookie.com/embed/4tH0A3Q
 const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://www.arielmerino.com/#person",
     name: "Dr. Ariel Merino",
     url: "https://www.amesteticadental.com/dr-ariel-merino",
     image: [
@@ -40,6 +41,7 @@ const personSchema = {
     jobTitle: "Odontólogo Estético",
     worksFor: {
         "@type": "Dentist",
+        "@id": "https://www.amesteticadental.com/#clinic",
         name: "AM Estética Dental",
         url: "https://www.amesteticadental.com",
     },
@@ -56,6 +58,7 @@ const personSchema = {
         name: "UCALP",
     },
     sameAs: [
+        "https://www.arielmerino.com",
         "https://www.wikidata.org/wiki/Q134287655",
         "https://www.instagram.com/drarielmerino",
         "https://www.tiktok.com/@drarielmerino",

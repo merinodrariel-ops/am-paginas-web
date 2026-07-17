@@ -268,7 +268,7 @@ export default function StraumannVsNeodentPage() {
           Neodent es una marca nacida en Brasil y adquirida en su totalidad por el Grupo Straumann debido a su excelente rendimiento y diseño mecánico. Aunque se sitúa en un escalón de inversión más competitivo, no debe confundirse con una opción genérica: comparte los estándares de control de calidad de la matriz suiza.
         </p>
         <p style={paragraphStyle}>
-          A nivel de diseño, Neodent destaca por su conexión **Grand Morse**, una interfaz mecánica en forma de cono Morse que sella herméticamente el implante para evitar la microfiltración de bacterias. Su tratamiento de superficie (denominado Acqua) busca replicar el comportamiento hidrofílico para acelerar la curación, y sus roscas están especialmente diseñadas para obtener una alta estabilidad inicial incluso en huesos blandos. Representa la "puerta de entrada premium" al universo Straumann, con una relación costo-beneficio inmejorable.
+          A nivel de diseño, Neodent destaca por su conexión Grand Morse, una interfaz mecánica en forma de cono Morse que busca reducir la microfiltración bacteriana. Su tratamiento de superficie, denominado Acqua, favorece la humectabilidad, y sus roscas están diseñadas para obtener estabilidad inicial incluso en huesos blandos. Representa una &ldquo;puerta de entrada premium&rdquo; al universo Straumann, con una relación costo-beneficio competitiva.
         </p>
 
         <div style={{ display: "grid", gap: 18, margin: "36px 0 48px" }}>

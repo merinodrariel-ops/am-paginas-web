@@ -14,10 +14,17 @@ import Financiacion from "@/components/Financiacion";
 import FAQ from "@/components/FAQ";
 import Contacto from "@/components/Contacto";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
+import { generateFaqSchema } from "@/data/faq";
+
+const faqSchema = generateFaqSchema();
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+      />
       <BreadcrumbsSchema items={[{ name: "Inicio", item: "/" }]} />
       <Navbar />
 

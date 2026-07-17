@@ -251,7 +251,7 @@ export default function ArticuloDisenoSonrisaDigital() {
                         <section className="border-t border-oro/15 pt-10">
                             <h2 className="text-2xl font-manrope font-light text-crema mb-4">En resumen</h2>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed">
-                                El diseño de sonrisa digital es la diferencia entre elegir una sonrisa nueva con información completa o hacerlo a ciegas. Combinado con un mockup provisorio, la experiencia del paciente pasa de "espero que quede bien" a "ya sé exactamente cómo va a quedar". Para un tratamiento de esta inversión y esta permanencia, esa diferencia importa.
+                                El diseño de sonrisa digital es la diferencia entre elegir una sonrisa nueva con información completa o hacerlo a ciegas. Combinado con un mockup provisorio, la experiencia del paciente pasa de &ldquo;espero que quede bien&rdquo; a &ldquo;ya sé exactamente cómo va a quedar&rdquo;. Para un tratamiento de esta inversión y esta permanencia, esa diferencia importa.
                             </p>
                         </section>
 

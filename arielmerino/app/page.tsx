@@ -11,15 +11,18 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://www.arielmerino.com/#person",
   name: "Dr. Ariel Merino",
   jobTitle: "Odontólogo Especialista en Estética Dental",
-  worksFor: { "@type": "Organization", name: "AM Estética Dental", url: "https://www.amesteticadental.com" },
+  worksFor: { "@type": "Dentist", "@id": "https://www.amesteticadental.com/#clinic", name: "AM Estética Dental", url: "https://www.amesteticadental.com" },
   address: { "@type": "PostalAddress", addressLocality: "Puerto Madero", addressRegion: "Buenos Aires", addressCountry: "AR" },
   url: "https://www.arielmerino.com",
   sameAs: [
-    "https://www.amesteticadental.com",
+    "https://www.amesteticadental.com/dr-ariel-merino",
+    "https://www.wikidata.org/wiki/Q134287655",
     "https://www.instagram.com/drarielmerino",
     "https://www.youtube.com/c/ArielMerino",
+    "https://www.linkedin.com/in/drarielmerino/",
   ],
 };
 
@@ -48,11 +51,11 @@ const CASOS = [
 ];
 
 export default function HomePage() {
-  const WA = "https://api.whatsapp.com/send?phone=541170219298&text=Hola%20Dr.%20Merino%2C%20lo%20contacto%20desde%20arielmerino.com";
+  const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%20Dr.%20Merino%2C%20lo%20contacto%20desde%20arielmerino.com";
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
 
       <main style={{ minHeight: "100vh" }}>
 

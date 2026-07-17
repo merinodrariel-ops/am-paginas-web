@@ -114,7 +114,7 @@ export default function ImplantesPage() {
                     <h2 className="font-light text-3xl text-crema mb-4">Recuperá tu sonrisa <span className="font-cormorant italic text-oro">de forma permanente.</span></h2>
                     <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Valoración clínica inicial con tomografía incluida.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">Consultar por WhatsApp →</a>
-                    <p className="text-crema/25 text-xs mt-4">Camila O'Gorman 412, Puerto Madero · Buenos Aires</p>
+                    <p className="text-crema/25 text-xs mt-4">Camila O&apos;Gorman 412, Puerto Madero · Buenos Aires</p>
                 </section>
             </main>
         </>

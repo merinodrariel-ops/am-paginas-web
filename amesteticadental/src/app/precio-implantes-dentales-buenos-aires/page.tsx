@@ -207,7 +207,7 @@ export default function InversionImplantesPage() {
               <span className="font-cormorant italic text-oro">implante dental</span>?
             </h2>
             <p className="text-crema/55 font-manrope text-sm text-center max-w-2xl mx-auto mb-16">
-              El valor "Desde USD 1.200" no es solo un tornillo. En nuestra clínica, cada pieza es una obra de ingeniería biológica que incluye los tres componentes clave.
+              El valor &ldquo;Desde USD 1.200&rdquo; no es solo un tornillo. En nuestra clínica, cada pieza es una obra de ingeniería biológica que incluye los tres componentes clave.
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

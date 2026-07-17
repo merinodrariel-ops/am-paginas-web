@@ -44,10 +44,32 @@ export const metadata: Metadata = {
   },
 };
 
+const publisherSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.thedentalreview.com/#publisher",
+      name: "The Dental Review",
+      url: "https://www.thedentalreview.com",
+      description: "Publicación especializada en odontología estética, rehabilitación oral y tecnología clínica.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.thedentalreview.com/#website",
+      url: "https://www.thedentalreview.com",
+      name: "The Dental Review",
+      inLanguage: "es-AR",
+      publisher: { "@id": "https://www.thedentalreview.com/#publisher" },
+    },
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${playfair.variable} ${inter.variable}`}>
       <body className="min-h-screen" style={{ background: "var(--paper)", color: "var(--ink)" }}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publisherSchema).replace(/</g, "\\u003c") }} />
         {children}
       </body>
     </html>

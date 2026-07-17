@@ -71,6 +71,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/casos/gingivectomia-laser-09-antes-despues-comparativa-2",
+        destination: "/casos/gingivectomia-laser-micro-diseno-sonrisa-resinas",
+        permanent: true,
+      },
+      {
         source: "/carillas-dentales-buenos-aires",
         destination: "/precio-carillas-dentales-buenos-aires",
         permanent: true,

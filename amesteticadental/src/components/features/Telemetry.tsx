@@ -3,17 +3,17 @@
 import { useEffect, useState, useRef } from "react";
 import { Terminal, Activity } from "lucide-react";
 
-export default function Telemetry() {
-    const [text, setText] = useState("");
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    const fullText = `> Inicializando escáner intraoral... [OK]
+const FULL_TEXT = `> Inicializando escáner intraoral... [OK]
 > Calibrando sensores ópticos... [OK]
 > Iniciando captura 3D (Precisión: 10 micras)...
 > Analizando biomecánica oclusal...
 > Detectando puntos de contacto... 14 anomalías detectadas.
 > Generando malla poligonal... 450,000 vértices capturados.
 > Exportando caso a laboratorio digital... [COMPLETADO]`;
+
+export default function Telemetry() {
+    const [text, setText] = useState("");
+    const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         let i = 0;
@@ -26,8 +26,8 @@ export default function Telemetry() {
                 i = 0;
 
                 const typeChar = () => {
-                    if (i < fullText.length) {
-                        setText(fullText.substring(0, i + 1));
+                    if (i < FULL_TEXT.length) {
+                        setText(FULL_TEXT.substring(0, i + 1));
                         i++;
                         // Randomize typing speed slightly
                         timer = setTimeout(typeChar, Math.random() * 30 + 10);

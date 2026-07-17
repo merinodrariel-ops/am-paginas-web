@@ -6,9 +6,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: SITE,
-      lastModified: new Date("2026-06-16"),
+      lastModified: new Date("2026-07-17"),
       changeFrequency: "weekly",
       priority: 1,
+    },
+    {
+      url: `${SITE}/noticias`,
+      lastModified: new Date("2026-07-17"),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE}/acerca-de`,
+      lastModified: new Date("2026-07-17"),
+      changeFrequency: "yearly",
+      priority: 0.5,
     },
     {
       url: `${SITE}/noticias/carillas-ultrafinas-additive-dentistry-2026`,
@@ -36,7 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE}/conferencias/expodent-2026-dr-ariel-merino-inteligencia-artificial-diseno-sonrisa`,
-      lastModified: new Date("2026-06-16"),
+      lastModified: new Date("2026-07-17"),
       changeFrequency: "monthly",
       priority: 0.92,
     },

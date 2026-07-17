@@ -125,13 +125,15 @@ export default function HomePage() {
             <div style={{ fontSize: 9, letterSpacing: "0.4em", textTransform: "uppercase", color: "var(--muted, #6b6560)", marginBottom: 4 }}>
               Publicación especializada
             </div>
-            <span style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: 26, fontWeight: 700, letterSpacing: "-0.01em" }}>
+            <h1 style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: 26, fontWeight: 700, letterSpacing: "-0.01em", margin: 0 }}>
               The Dental Review
-            </span>
+            </h1>
           </div>
-          <div style={{ fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--gold, #b8954a)", border: "1px solid var(--gold, #b8954a)", padding: "6px 14px", borderRadius: 2 }}>
-            Buenos Aires · Argentina
-          </div>
+          <nav aria-label="Navegación principal" style={{ display: "flex", alignItems: "center", gap: 18, fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            <Link href="/noticias" style={{ color: "var(--muted)", textDecoration: "none" }}>Noticias</Link>
+            <Link href="/acerca-de" style={{ color: "var(--muted)", textDecoration: "none" }}>Acerca de</Link>
+            <span style={{ color: "var(--gold, #b8954a)", border: "1px solid var(--gold, #b8954a)", padding: "6px 14px", borderRadius: 2 }}>Buenos Aires · Argentina</span>
+          </nav>
         </div>
       </header>
 
@@ -186,9 +188,10 @@ export default function HomePage() {
       <footer style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", padding: "28px 24px", marginTop: 80 }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
           <span style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: 16 }}>The Dental Review</span>
-          <span style={{ fontSize: 10, color: "var(--muted, #6b6560)", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-            © 2026 · Todos los derechos reservados
-          </span>
+          <div style={{ display: "flex", gap: 18, alignItems: "center", flexWrap: "wrap" }}>
+            <Link href="/acerca-de" style={{ fontSize: 10, color: "var(--muted)", textDecoration: "none" }}>Criterios editoriales</Link>
+            <span style={{ fontSize: 10, color: "var(--muted, #6b6560)", letterSpacing: "0.12em", textTransform: "uppercase" }}>© 2026</span>
+          </div>
         </div>
       </footer>
 

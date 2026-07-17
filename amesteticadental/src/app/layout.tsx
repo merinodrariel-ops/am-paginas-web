@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
-import { generateFaqSchema } from "@/data/faq";
 import "./globals.css";
 
 const gtmId = (process.env.NEXT_PUBLIC_GTM_ID || "GTM-P9KCL5W7").trim();
@@ -64,7 +63,8 @@ export const metadata: Metadata = {
 const schemaOrg = {
   "@context": "https://schema.org",
   "@type": ["Dentist", "LocalBusiness"],
-  "name": "Carillas Dentales y Diseño de Sonrisa | AM Estética Dental",
+  "@id": "https://www.amesteticadental.com/#clinic",
+  "name": "AM Estética Dental",
   "description": "Clínica de estética dental premium en Puerto Madero reconocida por Forbes. Especialistas en Carillas de Porcelana y diseño de sonrisa digital.",
   "url": "https://www.amesteticadental.com",
   "telephone": "+5491170219298",
@@ -99,10 +99,13 @@ const schemaOrg = {
   },
   "employee": {
     "@type": "Person",
+    "@id": "https://www.arielmerino.com/#person",
     "name": "Dr. Ariel Merino",
     "jobTitle": "Odontólogo Estético",
     "sameAs": [
       "https://www.wikidata.org/wiki/Q134287655",
+      "https://www.arielmerino.com",
+      "https://www.amesteticadental.com/dr-ariel-merino",
       "https://www.instagram.com/drarielmerino",
       "https://www.tiktok.com/@drarielmerino",
       "https://www.linkedin.com/in/drarielmerino/",
@@ -112,19 +115,19 @@ const schemaOrg = {
       "https://cde.dental.upenn.edu/Course/38-Full-Veneers"
     ]
   },
+  "founder": {
+    "@type": "Person",
+    "@id": "https://www.arielmerino.com/#person",
+    "name": "Dr. Ariel Merino"
+  },
   "sameAs": [
     "https://www.wikidata.org/wiki/Q138862170",
     "https://www.instagram.com/amesteticadental",
-    "https://www.tiktok.com/@drarielmerino",
-    "https://www.youtube.com/@ArielMerino",
     "https://ar.linkedin.com/company/am-est%C3%A9tica-dental",
-    "https://www.linkedin.com/in/drarielmerino/",
     "https://maps.app.goo.gl/5kWar9VL6qjhdEGM7",
     "https://g.page/r/CQ3df5Xn-J6oEBM"
   ]
 };
-
-const faqSchema = generateFaqSchema();
 
 export default function RootLayout({
   children,
@@ -175,11 +178,7 @@ fbq('track', 'PageView');`,
         ) : null}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg).replace(/</g, "\\u003c") }}
         />
       </head>
       <body className="bg-carbon text-crema font-manrope relative min-h-screen">

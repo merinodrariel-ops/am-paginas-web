@@ -98,8 +98,6 @@ const ARTICULOS = [
     },
 ];
 
-const CATEGORIAS = ["Todos", "Carillas", "Diseño de Sonrisa", "Casos", "Proceso", "Guía"];
-
 export default function BlogPage() {
     return (
         <>

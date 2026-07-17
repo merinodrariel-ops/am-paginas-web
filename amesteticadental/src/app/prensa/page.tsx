@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 
@@ -111,7 +109,7 @@ export default function PrensaPage() {
               Recursos <span className="font-cormorant italic text-oro">Descargables</span>
             </h2>
             <p className="text-crema/50 text-sm mb-8">
-              Al utilizar las fotografías, por favor citar: "Cortesía de AM Estética Dental / Dr. Ariel Merino".
+              Al utilizar las fotografías, por favor citar: &ldquo;Cortesía de AM Estética Dental / Dr. Ariel Merino&rdquo;.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -74,7 +74,7 @@ export default function DientesPorcelanaPage() {
                         <div>
                             <h2 className="text-2xl font-light text-crema mb-4">¿Qué son los <span className="font-cormorant italic text-oro">dientes de porcelana?</span></h2>
                             <p className="text-crema/60 text-sm leading-relaxed mb-4">
-                                "Dientes de porcelana" es el término popular para las carillas cerámicas — láminas ultra delgadas que se adhieren a la cara frontal del diente para cambiar su color, forma y tamaño.
+                                &ldquo;Dientes de porcelana&rdquo; es el término popular para las carillas cerámicas — láminas ultra delgadas que se adhieren a la cara frontal del diente para cambiar su color, forma y tamaño.
                             </p>
                             <p className="text-crema/60 text-sm leading-relaxed">
                                 En AM usamos la versión más avanzada: lentes de contacto dental AM, de apenas 0.2mm de espesor. Sin desgaste del diente natural. Sin anestesia en la mayoría de los casos. Resultado indistinguible del diente natural.
@@ -157,7 +157,7 @@ export default function DientesPorcelanaPage() {
                         className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">
                         Consultar por WhatsApp →
                     </a>
-                    <p className="text-crema/25 text-xs mt-4">Camila O'Gorman 412, Puerto Madero · Buenos Aires</p>
+                    <p className="text-crema/25 text-xs mt-4">Camila O&apos;Gorman 412, Puerto Madero · Buenos Aires</p>
                 </section>
             </main>
         </>

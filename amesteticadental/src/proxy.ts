@@ -88,7 +88,7 @@ const REDIRECTS: Record<string, string> = {
     "/financiacion-estetica-dental-buenos-aires/": "/#financiacion",
 };
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
     const { pathname, searchParams } = request.nextUrl;
 
     // ── Redirects de URLs viejas

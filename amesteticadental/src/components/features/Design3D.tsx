@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -56,9 +57,11 @@ export default function Design3D() {
                     style={{ zIndex: idx }}
                 >
                     {/* TODO: Replace with user provided before/after images */}
-                    <img
+                    <Image
                         src={src}
                         alt={`Caso 3D ${idx + 1}`}
+                        fill
+                        sizes="(max-width: 768px) 75vw, 384px"
                         className="w-full h-full object-cover filter brightness-[0.9]"
                     />
                     <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-crema tracking-wide">

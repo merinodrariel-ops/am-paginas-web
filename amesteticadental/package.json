@@ -19,7 +19,7 @@
     "clsx": "^2.1.1",
     "gsap": "^3.14.2",
     "lucide-react": "^0.576.0",
-    "next": "^16.2.7",
+    "next": "16.2.10",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "tailwind-merge": "^3.5.0"
@@ -33,7 +33,7 @@
     "@types/react-dom": "^19",
     "cloudinary": "^2.10.0",
     "eslint": "^9",
-    "eslint-config-next": "^16.2.7",
+    "eslint-config-next": "16.2.10",
     "remotion": "^4.0.445",
     "tailwindcss": "^4",
     "typescript": "^5"

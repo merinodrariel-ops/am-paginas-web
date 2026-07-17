@@ -185,7 +185,7 @@ export default function Hero() {
             ref={headlineRef}
             className="text-5xl md:text-6xl lg:text-[5.25rem] font-manrope font-light text-crema leading-[0.98] mb-7 will-change-transform"
           >
-            Carillas, Diseño de Sonrisa<br />
+            Carillas, Diseño de Sonrisa{" "}<br />
             <span className="font-cormorant italic text-oro">y Estética Dental Natural.</span>
           </h1>
 

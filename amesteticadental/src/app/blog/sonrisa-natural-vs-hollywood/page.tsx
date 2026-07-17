@@ -94,7 +94,7 @@ export default function ArticuloSonrisaNatural() {
                             <span className="font-cormorant italic text-oro">cuál es la diferencia real</span>
                         </h1>
                         <p className="text-crema/65 font-manrope text-lg font-light leading-relaxed mb-8">
-                            Antes de decidirte por carillas o un diseño de sonrisa, hay una pregunta que vale la pena hacerse: ¿qué tipo de resultado estás buscando realmente? No es la misma pregunta que "¿qué color quiero?" — es más profunda que eso.
+                            Antes de decidirte por carillas o un diseño de sonrisa, hay una pregunta que vale la pena hacerse: ¿qué tipo de resultado estás buscando realmente? No es la misma pregunta que &ldquo;¿qué color quiero?&rdquo; — es más profunda que eso.
                         </p>
                         <div className="flex items-center gap-6 text-crema/35 font-manrope text-xs">
                             <span>Dr. Ariel Merino</span>
@@ -174,7 +174,7 @@ export default function ArticuloSonrisaNatural() {
                                 Una sonrisa natural requiere que el odontólogo y el ceramista del laboratorio tomen decisiones estéticas sutiles: qué tan translúcido queda el borde incisal, cómo varía levemente el tono entre el incisivo central y el lateral, cómo la textura superficial de la carilla capta la luz del mismo modo que el esmalte natural.
                             </p>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed">
-                                Esas decisiones no tienen una fórmula — requieren criterio estético y experiencia. Por eso el resultado "natural" varía mucho más entre profesionales que el resultado "Hollywood".
+                                Esas decisiones no tienen una fórmula — requieren criterio estético y experiencia. Por eso el resultado &ldquo;natural&rdquo; varía mucho más entre profesionales que el resultado &ldquo;Hollywood&rdquo;.
                             </p>
                         </section>
 

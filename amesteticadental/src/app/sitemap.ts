@@ -1,303 +1,78 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 import { getCasosPublicadosMerged } from "@/lib/public-cases";
+
+const SITE = "https://www.amesteticadental.com";
+
+type SitemapEntry = {
+  path: string;
+  changeFrequency: "weekly" | "monthly";
+  priority: number;
+};
+
+// Solo URLs canónicas que responden 200. `lastModified` se omite a propósito:
+// una fecha inventada en cada build perjudica la confianza en la señal de frescura.
+const STATIC_ROUTES: SitemapEntry[] = [
+  { path: "", changeFrequency: "weekly", priority: 1 },
+  { path: "/estetica-dental", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/carillas-dentales", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/diseno-de-sonrisa", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/sonrisa", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/alineadores-invisibles", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/lentes-de-contacto-dental", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/carillas-sin-desgaste", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/invisalign", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/dr-ariel-merino", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/equipo-am", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/trabaja-en-am", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/precio-carillas-dentales-buenos-aires", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/carillas-vs-alineadores", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/carillas-de-porcelana-vs-resina", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/odontologia-estetica-buenos-aires", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/dentista-puerto-madero", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/implantes-dentales-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/periodoncia-precio-buenos-aires", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/alineadores-invisibles-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/blanqueamiento-dental-precio-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/dientes-de-porcelana-carillas-precio", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/diseno-de-sonrisa-precio-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/lentes-de-contacto-dental-precio-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/precio-implantes-dentales-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/bruxismo-desgaste-dental-carillas-ceramicas", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/coronas-y-fundas-dentales", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/carillas-de-resina", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/puentes-dentales", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/contacto", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/turismo-dental", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/opiniones", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/prensa", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/casos", changeFrequency: "weekly", priority: 0.95 },
+  { path: "/clinica", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/blog", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/blog/cuanto-duran-las-carillas-de-porcelana", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/blog/las-carillas-danan-los-dientes", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/blog/diseno-de-sonrisa-digital-como-funciona", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/blog/carillas-porcelana-antes-despues", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/blog/cuantas-sesiones-se-necesitan-para-las-carillas", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/blog/preguntas-antes-de-hacerse-carillas", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/carillas-disilicato-vs-porcelana-feldespatica", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/cuanto-cuesta-un-implante-dental-en-argentina", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/cuanto-cuestan-las-carillas-dentales-en-argentina", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/como-blanquear-los-dientes-sin-danar-el-esmalte", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/blog/sonrisa-natural-vs-hollywood", changeFrequency: "monthly", priority: 0.8 },
+];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const casos = await getCasosPublicadosMerged();
 
   return [
-    {
-      url: "https://www.amesteticadental.com",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: "https://www.amesteticadental.com/estetica-dental",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://www.amesteticadental.com/carillas-dentales",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://www.amesteticadental.com/diseno-de-sonrisa",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://www.amesteticadental.com/sonrisa",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://www.amesteticadental.com/alineadores-invisibles",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://www.amesteticadental.com/lentes-de-contacto-dental",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://www.amesteticadental.com/carillas-sin-desgaste",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://www.amesteticadental.com/invisalign",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://www.amesteticadental.com/dr-ariel-merino",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/equipo-am",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/trabaja-en-am",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: "https://www.amesteticadental.com/precio-carillas-dentales-buenos-aires",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/carillas-vs-alineadores",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/carillas-de-porcelana-vs-resina",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/odontologia-estetica-buenos-aires",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://www.amesteticadental.com/dentista-puerto-madero",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://www.amesteticadental.com/implantes-dentales-buenos-aires",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: "https://www.amesteticadental.com/periodoncia-precio-buenos-aires",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/alineadores-invisibles-buenos-aires",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: "https://www.amesteticadental.com/blanqueamiento-dental-precio-buenos-aires",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: "https://www.amesteticadental.com/dientes-de-porcelana-carillas-precio",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: "https://www.amesteticadental.com/diseno-de-sonrisa-precio-buenos-aires",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: "https://www.amesteticadental.com/lentes-de-contacto-dental-precio-buenos-aires",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: "https://www.amesteticadental.com/bruxismo-desgaste-dental-carillas-ceramicas",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: "https://www.amesteticadental.com/coronas-y-fundas-dentales",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/carillas-de-resina",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/puentes-dentales",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/contacto",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://www.amesteticadental.com/turismo-dental",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://www.amesteticadental.com/opiniones",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: "https://www.amesteticadental.com/prensa",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/casos",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.95,
-    },
-    {
-      url: "https://www.amesteticadental.com/antes-y-despues",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://www.amesteticadental.com/clinica",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
+    ...STATIC_ROUTES.map(({ path, ...entry }) => ({
+      url: `${SITE}${path}`,
+      ...entry,
+    })),
     ...casos.map((caso) => ({
-      url: `https://www.amesteticadental.com/casos/${caso.slug}`,
-      lastModified: new Date(),
+      url: `${SITE}/casos/${caso.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.85,
     })),
-    {
-      url: "https://www.amesteticadental.com/blog",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/blog/cuanto-duran-las-carillas-de-porcelana",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://www.amesteticadental.com/blog/las-carillas-danan-los-dientes",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://www.amesteticadental.com/blog/diseno-de-sonrisa-digital-como-funciona",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://www.amesteticadental.com/blog/carillas-porcelana-antes-despues",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://www.amesteticadental.com/blog/cuantas-sesiones-se-necesitan-para-las-carillas",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://www.amesteticadental.com/blog/preguntas-antes-de-hacerse-carillas",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/blog/carillas-disilicato-vs-porcelana-feldespatica",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/blog/cuanto-cuesta-un-implante-dental-en-argentina",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/blog/cuanto-cuestan-las-carillas-dentales-en-argentina",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.amesteticadental.com/blog/como-blanquear-los-dientes-sin-danar-el-esmalte",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: "https://www.amesteticadental.com/blog/sonrisa-natural-vs-hollywood",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
   ];
 }

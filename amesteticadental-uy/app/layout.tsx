@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com.uy"),
   title: { default: "AM Estética Dental Uruguay — Carillas y Diseño de Sonrisa", template: "%s | AM Estética Dental Uruguay" },
   description: "Especialistas en carillas de porcelana y diseño de sonrisa para pacientes uruguayos. Dr. Ariel Merino, AM Estética Dental. Atención en Buenos Aires, Argentina.",
-  openGraph: { siteName: "AM Estética Dental Uruguay", locale: "es_UY" },
+  robots: { index: true, follow: true },
+  openGraph: { siteName: "AM Estética Dental Uruguay", locale: "es_UY", type: "website" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

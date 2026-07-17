@@ -111,7 +111,7 @@ export default function ArticuloCarillasDananDientes() {
                         {/* Intro */}
                         <div className="border-l-2 border-oro/30 pl-6">
                             <p className="text-crema/70 font-manrope text-base leading-relaxed">
-                                Las carillas dentales tienen una reputación ambigua: para algunos son la solución definitiva, para otros hay una duda persistente sobre si "arruinan el diente natural". La realidad es más matizada y depende del tipo de carilla, del caso y de la técnica del operador.
+                                Las carillas dentales tienen una reputación ambigua: para algunos son la solución definitiva, para otros hay una duda persistente sobre si &ldquo;arruinan el diente natural&rdquo;. La realidad es más matizada y depende del tipo de carilla, del caso y de la técnica del operador.
                             </p>
                         </div>
 

@@ -54,7 +54,7 @@ export default function ContactoPage() {
             <div className="space-y-6">
               <div>
                 <p className="text-crema/40 text-xs uppercase tracking-widest mb-2">Dirección</p>
-                <p className="text-crema/80">Camila O'Gorman 412, of. 101</p>
+                <p className="text-crema/80">Camila O&apos;Gorman 412, of. 101</p>
                 <p className="text-crema/60 text-sm">Puerto Madero, Buenos Aires</p>
               </div>
               <div>
@@ -84,7 +84,7 @@ export default function ContactoPage() {
             <h2 className="text-2xl font-light text-crema mb-2">
               Ubicación en <span className="font-cormorant italic text-oro">Puerto Madero</span>
             </h2>
-            <p className="text-crema/60 text-sm">Camila O'Gorman 412, Oficina 101, C1107DED, Ciudad Autónoma de Buenos Aires</p>
+            <p className="text-crema/60 text-sm">Camila O&apos;Gorman 412, Oficina 101, C1107DED, Ciudad Autónoma de Buenos Aires</p>
           </div>
 
           <div className="w-full h-96 rounded-2xl overflow-hidden border border-oro/10">

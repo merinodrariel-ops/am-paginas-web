@@ -28,6 +28,13 @@ type PublicClinicalCaseAssetRow = {
   sort_order: number;
 };
 
+// Versiones de importación que no deben competir con el caso editorial definitivo.
+// Se conservan con redirect permanente, pero se excluyen de listados y sitemap.
+const LEGACY_CASE_SLUGS = new Set([
+  "gingivectomia-laser-10-procedimiento-recorte-gingival",
+  "gingivectomia-laser-09-antes-despues-comparativa-2",
+]);
+
 function getSupabasePublic() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -112,7 +119,7 @@ export async function getCasosPublicadosMerged(): Promise<Caso[]> {
   for (const caso of staticCases) merged.set(caso.slug, caso);
   for (const caso of dynamicCases) merged.set(caso.slug, caso);
 
-  return Array.from(merged.values());
+  return Array.from(merged.values()).filter((caso) => !LEGACY_CASE_SLUGS.has(caso.slug));
 }
 
 export async function getCasoBySlugMerged(slug: string): Promise<Caso | undefined> {

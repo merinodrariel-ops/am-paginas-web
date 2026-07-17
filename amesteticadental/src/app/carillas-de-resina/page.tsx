@@ -272,7 +272,7 @@ export default function CarillasResinaPage() {
                         ¿Resina o porcelana?<br />
                         <span className="font-cormorant italic text-oro">Te ayudamos a elegir.</span>
                     </h2>
-                    <p className="text-crema/55 mb-8 max-w-xl mx-auto">Dr. Ariel Merino · AM Estética Dental · Camila O'Gorman 412, Puerto Madero, Buenos Aires.</p>
+                    <p className="text-crema/55 mb-8 max-w-xl mx-auto">Dr. Ariel Merino · AM Estética Dental · Camila O&apos;Gorman 412, Puerto Madero, Buenos Aires.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-all">
                         Escribinos por WhatsApp →

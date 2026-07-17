@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 
@@ -116,12 +117,12 @@ export default function DisenoSonrisaPage() {
                                 >
                                     Consultar sobre diseño de sonrisa →
                                 </a>
-                                <a
+                                <Link
                                     href="/"
                                     className="inline-flex items-center gap-2 text-crema/55 font-manrope text-sm hover:text-crema transition-colors pt-3 sm:pt-4"
                                 >
                                     ← Volver al sitio
-                                </a>
+                                </Link>
                             </div>
                             <div className="flex flex-wrap items-center gap-6 mt-14 pt-8 border-t border-oro/10">
                                 {[
@@ -315,7 +316,7 @@ export default function DisenoSonrisaPage() {
                             Consultar por WhatsApp →
                         </a>
                         <p className="text-crema/30 font-manrope text-xs mt-6">
-                            Camila O'Gorman 412, Oficina 101, Puerto Madero · Lun–Vie 10:00–18:00
+                            Camila O&apos;Gorman 412, Oficina 101, Puerto Madero · Lun–Vie 10:00–18:00
                         </p>
                     </div>
                 </section>

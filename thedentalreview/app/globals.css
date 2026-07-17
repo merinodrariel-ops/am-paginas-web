@@ -22,3 +22,27 @@ body {
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
 }
+
+.article-body {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--ink);
+}
+
+.article-body p {
+  margin: 0 0 1.5rem;
+}
+
+.article-body h2 {
+  margin: 3rem 0 1rem;
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: clamp(1.65rem, 4vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.article-body a {
+  color: #806323;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
