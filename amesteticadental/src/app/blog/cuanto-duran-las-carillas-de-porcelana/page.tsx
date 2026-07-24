@@ -108,7 +108,7 @@ export default function ArticuloDuracionCarillas() {
                                     {
                                         tipo: "Lentes de contacto dental",
                                         duracion: "8 a 15 años",
-                                        detalle: "Al ser más delgadas (0,3 mm), son levemente más sensibles al impacto. Pero su ventaja es que no requieren desgaste del diente, lo que las hace reversibles.",
+                                        detalle: "Al ser más delgadas (0,3 mm), son levemente más sensibles al impacto. Su ventaja es que suelen requerir un desgaste mínimo o nulo del diente, lo que las hace especialmente conservadoras.",
                                     },
                                     {
                                         tipo: "Carillas de resina compuesta",

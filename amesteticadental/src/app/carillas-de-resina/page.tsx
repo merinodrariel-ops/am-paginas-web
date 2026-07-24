@@ -46,7 +46,7 @@ const schema = {
             {
                 "@type": "Question",
                 name: "¿Las carillas de resina dañan el diente?",
-                acceptedAnswer: { "@type": "Answer", text: "En general no. Las carillas de resina se adhieren directamente al esmalte sin necesidad de desgastar el diente. Son reversibles en muchos casos." }
+                acceptedAnswer: { "@type": "Answer", text: "En general no. Las carillas de resina se adhieren directamente al esmalte y suelen requerir un desgaste mínimo o nulo del diente. Es un tratamiento conservador y mínimamente invasivo." }
             }
         ]
     }
@@ -76,7 +76,7 @@ const FAQS = [
     },
     {
         q: "¿Las carillas de resina dañan el diente?",
-        a: "En general no. Las carillas de resina se adhieren directamente al esmalte sin necesidad de desgastar el diente y son reversibles en la mayoría de los casos."
+        a: "En general no. Las carillas de resina se adhieren directamente al esmalte y suelen requerir un desgaste mínimo o nulo del diente. Es un tratamiento conservador y mínimamente invasivo, pensado para preservar la mayor cantidad de estructura dental posible."
     },
     {
         q: "¿Puedo pasar de resina a porcelana en el futuro?",
