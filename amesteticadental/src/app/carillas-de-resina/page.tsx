@@ -244,7 +244,7 @@ export default function CarillasResinaPage() {
                             <h2 className="text-2xl font-light text-crema">
                                 Sonrisas reales, <span className="font-cormorant italic text-oro">sin filtros.</span>
                             </h2>
-                            <p className="text-crema/45 text-sm mt-3 max-w-xl">Transformaciones con carillas de resina y cerámica. Casos clínicos reales del Dr. Ariel Merino en Puerto Madero.</p>
+                            <p className="text-crema/45 text-sm mt-3 max-w-xl">Transformaciones con <Link href="/casos/carillas-resina-diseno-sonrisa-gingivectomia-laser" className="text-oro/80 hover:text-oro underline underline-offset-2">carillas de resina</Link> y cerámica. Casos clínicos reales del Dr. Ariel Merino en Puerto Madero.</p>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                             {[

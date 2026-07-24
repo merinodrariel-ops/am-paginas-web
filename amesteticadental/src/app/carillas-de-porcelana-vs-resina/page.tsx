@@ -103,6 +103,7 @@ export default function PorcelanaVsResinaPage() {
               { nombre: "Carillas Dentales", href: "/carillas-dentales" },
               { nombre: "Precio de Carillas", href: "/precio-carillas-dentales-buenos-aires" },
               { nombre: "Lentes de Contacto Dental", href: "/lentes-de-contacto-dental" },
+              { nombre: "Caso: carillas de resina", href: "/casos/carillas-resina-diseno-sonrisa-gingivectomia-laser" },
             ].map((item) => (
               <Link key={item.nombre} href={item.href} className="border border-oro/15 rounded-2xl p-6 bg-carbon hover:border-oro/35 transition-colors group">
                 <h3 className="text-crema font-manrope font-medium text-sm group-hover:text-oro transition-colors">{item.nombre}</h3>
