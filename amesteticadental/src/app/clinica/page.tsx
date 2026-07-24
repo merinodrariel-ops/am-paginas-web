@@ -111,7 +111,7 @@ export default function ClinicaPage() {
         <div className="grid grid-cols-2 gap-4 h-[450px] md:h-[600px] relative">
           <div className="relative rounded-2xl overflow-hidden border border-oro/10">
             <Image
-              src="/images/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg"
+              src="https://res.cloudinary.com/drctvgyqd/image/upload/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg"
               alt="Recepción de AM Estética Dental con iluminación cálida en Puerto Madero, Buenos Aires"
               fill
               sizes="(max-width: 768px) 50vw, 25vw"
@@ -120,7 +120,7 @@ export default function ClinicaPage() {
           </div>
           <div className="relative rounded-2xl overflow-hidden border border-oro/10 mt-8">
             <Image
-              src="/images/clinica/sala-de-espera-exclusiva-boutique-puerto-madero.jpg"
+              src="https://res.cloudinary.com/drctvgyqd/image/upload/v1782405028/clinica/sala-de-espera-exclusiva-boutique-puerto-madero.jpg"
               alt="Vista general de la sala de espera boutique y recepción premium de AM Estética Dental"
               fill
               sizes="(max-width: 768px) 50vw, 25vw"
@@ -154,7 +154,7 @@ export default function ClinicaPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1 relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden border border-oro/10">
             <Image
-              src="/images/clinica/recepcion-experiencia-digital-pacientes-am-estetica-dental.jpg"
+              src="https://res.cloudinary.com/drctvgyqd/image/upload/v1782405031/clinica/recepcion-experiencia-digital-pacientes-am-estetica-dental.jpg"
               alt="Tecnología digital de diagnóstico 3D y scanner intraoral en AM Estética Dental"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

@@ -77,7 +77,7 @@ export default function DrMerino() {
                     <div className="relative order-2 lg:order-1">
                         <div ref={photoRef} className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-carbon-soft border border-oro/10" style={{ filter: "grayscale(1) brightness(0.65) contrast(1.05)" }}>
                             <Image
-                                src="/images/dr-merino/dr-ariel-merino-ambo-principal.webp"
+                                src="https://res.cloudinary.com/drctvgyqd/image/upload/v1784870272/dr-merino/dr-ariel-merino-ambo-principal.webp"
                                 alt="Dr. Ariel Merino — Odontólogo Estético AM Estética Dental Puerto Madero"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"

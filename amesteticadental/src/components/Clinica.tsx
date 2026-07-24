@@ -8,19 +8,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const FOTOS = [
     {
-        src: "/images/clinica/consultorio-am-estetica-dental-puerto-madero-01.jpg",
+        src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870241/clinica/consultorio-am-estetica-dental-puerto-madero-01.jpg",
         alt: "Consultorio AM Estética Dental — Puerto Madero, Buenos Aires",
     },
     {
-        src: "/images/clinica/consultorio-am-estetica-dental-puerto-madero-02.jpg",
+        src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870243/clinica/consultorio-am-estetica-dental-puerto-madero-02.jpg",
         alt: "Sala de tratamiento AM Estética Dental — equipamiento de última generación",
     },
     {
-        src: "/images/clinica/consultorio-am-estetica-dental-puerto-madero-03.jpg",
+        src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870245/clinica/consultorio-am-estetica-dental-puerto-madero-03.jpg",
         alt: "Interior AM Estética Dental — clínica odontológica Puerto Madero",
     },
     {
-        src: "/images/clinica/consultorio-am-estetica-dental-puerto-madero-04.jpg",
+        src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870246/clinica/consultorio-am-estetica-dental-puerto-madero-04.jpg",
         alt: "Recepción AM Estética Dental — Camila O'Gorman 412, Oficina 101",
     },
 ];

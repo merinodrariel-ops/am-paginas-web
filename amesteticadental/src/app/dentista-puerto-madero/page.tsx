@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         title: "Dentista en Puerto Madero | AM Estética Dental",
         description: "Clínica dental boutique en Puerto Madero. Carillas, diseño de sonrisa e implantes. Dr. Ariel Merino · 4.9★ en Google.",
         url: CANONICAL,
-        images: ["/images/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg"],
+        images: ["https://res.cloudinary.com/drctvgyqd/image/upload/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg"],
     },
 };
 
@@ -43,11 +43,11 @@ const OPINIONES = [
 ];
 
 const FOTOS_CLINICA = [
-    { src: "/images/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg", alt: "Recepción boutique de AM Estética Dental, clínica dental en Puerto Madero, Buenos Aires", span: "col-span-2 row-span-2" },
-    { src: "/images/clinica/entrada-clinica-cartel-iluminado-am-estetica-dental-puerto-madero.jpg", alt: "Entrada de la clínica dental AM Estética Dental con cartel iluminado en Puerto Madero", span: "col-span-1 row-span-1" },
-    { src: "/images/clinica/sala-de-espera-exclusiva-boutique-puerto-madero.jpg", alt: "Sala de espera exclusiva de la clínica odontológica en Puerto Madero", span: "col-span-1 row-span-1" },
-    { src: "/images/clinica/decoracion-recepcion-boutique-crema-oro-am-estetica-dental.jpg", alt: "Decoración en tonos crema y oro de la recepción de AM Estética Dental", span: "col-span-1 row-span-1" },
-    { src: "/images/clinica/sillon-relax-confort-sala-espera-clinica-dental.jpg", alt: "Sillón de confort en la sala de espera de la clínica dental en Puerto Madero", span: "col-span-1 row-span-1" },
+    { src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg", alt: "Recepción boutique de AM Estética Dental, clínica dental en Puerto Madero, Buenos Aires", span: "col-span-2 row-span-2" },
+    { src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1782405022/clinica/entrada-clinica-cartel-iluminado-am-estetica-dental-puerto-madero.jpg", alt: "Entrada de la clínica dental AM Estética Dental con cartel iluminado en Puerto Madero", span: "col-span-1 row-span-1" },
+    { src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1782405028/clinica/sala-de-espera-exclusiva-boutique-puerto-madero.jpg", alt: "Sala de espera exclusiva de la clínica odontológica en Puerto Madero", span: "col-span-1 row-span-1" },
+    { src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1782405027/clinica/decoracion-recepcion-boutique-crema-oro-am-estetica-dental.jpg", alt: "Decoración en tonos crema y oro de la recepción de AM Estética Dental", span: "col-span-1 row-span-1" },
+    { src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1782405029/clinica/sillon-relax-confort-sala-espera-clinica-dental.jpg", alt: "Sillón de confort en la sala de espera de la clínica dental en Puerto Madero", span: "col-span-1 row-span-1" },
 ];
 
 const FAQS = [
@@ -80,7 +80,7 @@ const schema = {
             "@type": "Dentist",
             name: "AM Estética Dental",
             url: CANONICAL,
-            image: "https://www.amesteticadental.com/images/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg",
+            image: "https://www.amesteticadental.comhttps://res.cloudinary.com/drctvgyqd/image/upload/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg",
             telephone: "+54 9 11 7021-9298",
             priceRange: "USD 150 - USD 30000",
             address: {
@@ -119,7 +119,7 @@ export default function DentistaPuertoMaderoPage() {
                 <section className="relative overflow-hidden">
                     <div className="absolute inset-0">
                         <Image
-                            src="/images/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg"
+                            src="https://res.cloudinary.com/drctvgyqd/image/upload/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg"
                             alt="Recepción de AM Estética Dental, clínica dental boutique en Puerto Madero, Buenos Aires"
                             fill
                             priority
@@ -187,7 +187,7 @@ export default function DentistaPuertoMaderoPage() {
                     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         <div className="relative aspect-[4/5] max-w-md rounded-3xl overflow-hidden border border-oro/15">
                             <Image
-                                src="/images/dr-merino/dr-ariel-merino-ambo-principal.webp"
+                                src="https://res.cloudinary.com/drctvgyqd/image/upload/v1784870272/dr-merino/dr-ariel-merino-ambo-principal.webp"
                                 alt="Dr. Ariel Merino, dentista especialista en estética dental en Puerto Madero, Buenos Aires"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 40vw"
@@ -295,7 +295,7 @@ export default function DentistaPuertoMaderoPage() {
                         </div>
                         <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-oro/15">
                             <Image
-                                src="/images/clinica/entrada-clinica-cartel-iluminado-am-estetica-dental-puerto-madero.jpg"
+                                src="https://res.cloudinary.com/drctvgyqd/image/upload/v1782405022/clinica/entrada-clinica-cartel-iluminado-am-estetica-dental-puerto-madero.jpg"
                                 alt="Entrada de AM Estética Dental en Camila O'Gorman 412, Puerto Madero"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"

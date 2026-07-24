@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.amesteticadental.com/images/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
+        url: "https://www.amesteticadental.comhttps://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
         width: 1200,
         height: 1608,
         alt: "Equipo AM de AM Estética Dental en Puerto Madero",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description:
       "Odontología estética, alineadores, laboratorio dental digital y atención a pacientes en AM Estética Dental.",
     images: [
-      "https://www.amesteticadental.com/images/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
+      "https://www.amesteticadental.comhttps://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
     ],
   },
 };
@@ -51,7 +51,7 @@ const teamSchema = {
   "@type": "Dentist",
   name: "Equipo AM | AM Estética Dental",
   url: "https://www.amesteticadental.com/equipo-am",
-  image: "https://www.amesteticadental.com/images/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
+  image: "https://www.amesteticadental.comhttps://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
   description:
     "Equipo multidisciplinario de AM Estética Dental en Puerto Madero, Buenos Aires.",
   address: {

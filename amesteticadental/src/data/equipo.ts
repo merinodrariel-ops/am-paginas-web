@@ -19,7 +19,7 @@ export const equipoAM: EquipoMiembro[] = [
     descripcion:
       "Director clinico de AM Estetica Dental. Lidera la planificacion de casos de estetica dental, carillas, diseno de sonrisa digital y rehabilitacion estetica.",
     imagen:
-      "/images/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
+      "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
     alt: "Dr. Ariel Merino, director clinico y odontologo estetico de AM Estetica Dental en Puerto Madero",
     schemaType: "Dentist",
     keywords: ["odontologo estetico", "director clinico", "carillas dentales", "diseno de sonrisa"],
@@ -32,7 +32,7 @@ export const equipoAM: EquipoMiembro[] = [
     descripcion:
       "Odontologa del area de estetica facial, armonizacion orofacial y procedimientos complementarios de estetica dental.",
     imagen:
-      "/images/equipo-am/dra-candela-cruz-armonizacion-orofacial-estetica-dental-am-estetica-dental-puerto-madero.jpeg",
+      "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870265/equipo-am/dra-candela-cruz-armonizacion-orofacial-estetica-dental-am-estetica-dental-puerto-madero.jpg",
     alt: "Dra. Candela Cruz, odontologa de armonizacion orofacial y estetica dental en AM Estetica Dental Puerto Madero",
     schemaType: "Dentist",
     keywords: ["armonizacion orofacial", "estetica facial", "odontologa", "estetica dental"],
@@ -45,7 +45,7 @@ export const equipoAM: EquipoMiembro[] = [
     descripcion:
       "Odontologa del area de ortodoncia, odontologia general y alineadores invisibles dentro del flujo digital de AM.",
     imagen:
-      "/images/equipo-am/dra-luz-ferron-ortodoncia-alineadores-invisibles-am-estetica-dental-puerto-madero.jpeg",
+      "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870267/equipo-am/dra-luz-ferron-ortodoncia-alineadores-invisibles-am-estetica-dental-puerto-madero.jpg",
     alt: "Dra. Luz Ferron, odontologa de ortodoncia y alineadores invisibles en AM Estetica Dental Puerto Madero",
     schemaType: "Dentist",
     keywords: ["ortodoncia", "alineadores invisibles", "odontologa", "AM Aligners"],
@@ -58,7 +58,7 @@ export const equipoAM: EquipoMiembro[] = [
     descripcion:
       "Odontologa especialista en estetica dental. Se enfoca en carillas de porcelana, lentes de contacto dental y restauraciones de alta gama con un criterio natural.",
     imagen:
-      "/images/equipo-am/dra-emily-lugo-estetica-dental-am-estetica-dental-puerto-madero.jpeg",
+      "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870266/equipo-am/dra-emily-lugo-estetica-dental-am-estetica-dental-puerto-madero.jpg",
     alt: "Dra. Emily Lugo, odontologa de estetica dental de AM Estetica Dental en Puerto Madero",
     schemaType: "Dentist",
     keywords: ["odontologa", "estetica dental", "carillas dentales", "lentes de contacto dental"],
@@ -71,7 +71,7 @@ export const equipoAM: EquipoMiembro[] = [
     descripcion:
       "Parte del laboratorio dental digital, con foco en diseno 3D dental y soporte tecnico para tratamientos planificados digitalmente.",
     imagen:
-      "/images/equipo-am/julian-batista-laboratorio-dental-diseno-3d-am-estetica-dental-puerto-madero.jpeg",
+      "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870268/equipo-am/julian-batista-laboratorio-dental-diseno-3d-am-estetica-dental-puerto-madero.jpg",
     alt: "Julian Batista, laboratorio dental y diseno 3D dental en AM Estetica Dental Puerto Madero",
     schemaType: "Person",
     keywords: ["laboratorio dental", "diseno 3D dental", "flujo digital"],
@@ -84,7 +84,7 @@ export const equipoAM: EquipoMiembro[] = [
     descripcion:
       "Integra el area de laboratorio dental, clave para sostener la precision tecnica de los tratamientos esteticos.",
     imagen:
-      "/images/equipo-am/georgi-veglio-laboratorio-dental-am-estetica-dental-puerto-madero.jpeg",
+      "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870268/equipo-am/georgi-veglio-laboratorio-dental-am-estetica-dental-puerto-madero.jpg",
     alt: "Georgi Veglio, laboratorio dental de AM Estetica Dental en Puerto Madero",
     schemaType: "Person",
     keywords: ["laboratorio dental", "soporte tecnico", "AM Estetica Dental"],
@@ -97,7 +97,7 @@ export const equipoAM: EquipoMiembro[] = [
     descripcion:
       "Asistente dental del equipo clinico. Acompana la preparacion, organizacion y soporte durante la atencion de pacientes.",
     imagen:
-      "/images/equipo-am/micaela-di-leva-asistente-dental-am-estetica-dental-puerto-madero.jpeg",
+      "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870269/equipo-am/micaela-di-leva-asistente-dental-am-estetica-dental-puerto-madero.jpg",
     alt: "Micaela Di Leva, asistente dental de AM Estetica Dental en Puerto Madero",
     schemaType: "Person",
     keywords: ["asistente dental", "asistencia clinica", "equipo odontologico"],
@@ -110,7 +110,7 @@ export const equipoAM: EquipoMiembro[] = [
     descripcion:
       "Asistente dental del equipo AM. Brinda soporte clinico de alta gama, asistiendo en los procedimientos esteticos y asegurando el maximo confort del paciente.",
     imagen:
-      "/images/equipo-am/caterina-asistente-dental-am-estetica-dental-puerto-madero.jpeg",
+      "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870263/equipo-am/caterina-asistente-dental-am-estetica-dental-puerto-madero.jpg",
     alt: "Caterina, asistente dental de AM Estetica Dental en Puerto Madero",
     schemaType: "Person",
     keywords: ["asistente dental", "equipo AM", "AM Estetica Dental"],
@@ -123,7 +123,7 @@ export const equipoAM: EquipoMiembro[] = [
     descripcion:
       "Odontologa encargada de la direccion del consultorio, administracion y logistica de AM Estetica Dental.",
     imagen:
-      "/images/equipo-am/claudia-hernandez-administracion-am-estetica-dental-puerto-madero.jpeg",
+      "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/claudia-hernandez-administracion-am-estetica-dental-puerto-madero.jpg",
     alt: "Dra. Claudia Hernandez, odontologa y coordinacion de AM Estetica Dental en Puerto Madero",
     schemaType: "Dentist",
     keywords: ["odontologa", "coordinacion clinica", "gestion operativa", "AM Estetica Dental"],
@@ -136,7 +136,7 @@ export const equipoAM: EquipoMiembro[] = [
     descripcion:
       "Atencion, seguimiento y fidelizacion de pacientes. Acompana la continuidad de la experiencia AM antes y despues de la consulta.",
     imagen:
-      "/images/equipo-am/romina-lima-atencion-fidelizacion-pacientes-am-estetica-dental-puerto-madero.jpeg",
+      "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870270/equipo-am/romina-lima-atencion-fidelizacion-pacientes-am-estetica-dental-puerto-madero.jpg",
     alt: "Romina Lima, atencion y fidelizacion de pacientes en AM Estetica Dental Puerto Madero",
     schemaType: "Person",
     keywords: ["atencion a pacientes", "fidelizacion", "experiencia del paciente"],

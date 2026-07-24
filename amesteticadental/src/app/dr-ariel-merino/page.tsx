@@ -35,8 +35,8 @@ const personSchema = {
     name: "Dr. Ariel Merino",
     url: "https://www.amesteticadental.com/dr-ariel-merino",
     image: [
-        "https://www.amesteticadental.com/images/dr-merino/dr-ariel-merino-traje-perfil.webp",
-        "https://www.amesteticadental.com/images/dr-merino/dr-ariel-merino-ambo-principal.webp",
+        "https://www.amesteticadental.comhttps://res.cloudinary.com/drctvgyqd/image/upload/v1784870282/dr-merino/dr-ariel-merino-traje-perfil.webp",
+        "https://www.amesteticadental.comhttps://res.cloudinary.com/drctvgyqd/image/upload/v1784870272/dr-merino/dr-ariel-merino-ambo-principal.webp",
     ],
     jobTitle: "Odontólogo Estético",
     worksFor: {
@@ -159,7 +159,7 @@ export default function DrArielMerinoPage() {
                         <div className="relative">
                             <div className="relative aspect-[4/5] rounded-[28px] overflow-hidden border border-oro/10 bg-carbon-soft">
                                 <Image
-                                    src="/images/dr-merino/dr-ariel-merino-traje-perfil.webp"
+                                    src="https://res.cloudinary.com/drctvgyqd/image/upload/v1784870282/dr-merino/dr-ariel-merino-traje-perfil.webp"
                                     alt="Dr. Ariel Merino con traje azul en AM Estética Dental Puerto Madero"
                                     fill
                                     priority
@@ -182,7 +182,7 @@ export default function DrArielMerinoPage() {
                     <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-14 items-center">
                         <div className="relative aspect-[4/5] rounded-[28px] overflow-hidden border border-oro/10 bg-carbon">
                             <Image
-                                src="/images/dr-merino/dr-ariel-merino-ambo-principal.webp"
+                                src="https://res.cloudinary.com/drctvgyqd/image/upload/v1784870272/dr-merino/dr-ariel-merino-ambo-principal.webp"
                                 alt="Dr. Ariel Merino con ambo en la clínica AM Estética Dental"
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 36vw"
