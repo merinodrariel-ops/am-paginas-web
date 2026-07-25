@@ -39,10 +39,11 @@
 
 ## AM Estética Dental Business Rules
 
-- Clinical case photos must be uploaded to and served from Cloudinary (`drctvgyqd`), not from `public/images/casos` or other local app paths.
-- Use Cloudinary delivery URLs with `q_auto,f_auto` and descriptive `casos/...` paths.
-- Local copies of clinical photos are backup/source material only; do not reference them in app UI, metadata, galleries, or case data unless there is an explicit documented fallback.
-- Before replacing or adding a clinical case image reference, verify the Cloudinary URL returns HTTP 200.
+- **ALL images (not only clinical cases) must be uploaded to and served from Cloudinary (`drctvgyqd`)** — clinic, team, Dr. Merino, landing, headers, everything. NEVER reference `/public/images/...` from a `next/image` component.
+- **Why (technical, non-negotiable):** `next.config.ts` sets `images.loaderFile: ./src/lib/cloudinary-image-loader.ts`. A custom `loaderFile` disables Next.js built-in optimization (`/_next/image`). The loader only transforms `res.cloudinary.com` URLs; a local `src` is returned as-is → served raw, full-size, no WebP. This caused 43 clinic/team/dr photos to ship at 2-3.4 MB each until they were migrated to Cloudinary (2026-07, −94% size).
+- Use Cloudinary delivery URLs with `q_auto,f_auto` and descriptive folder paths (`casos/...`, `clinica/...`, `equipo-am/...`, `dr-merino/...`).
+- Local copies in `/public` are backup/source only; do not reference them in app UI, metadata, galleries, or case data unless there is an explicit documented fallback. Exception: `src/remotion/*` uses local `staticFile()` for video render (not web-served).
+- Before adding/replacing any image reference, verify the Cloudinary URL returns HTTP 200.
 
 ### Project Config
 

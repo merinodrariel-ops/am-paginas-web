@@ -109,13 +109,13 @@ Reglas al escribir para The Dental Review:
 - **Cubrir también temas de industria** (no solo AM) para que la publicación parezca legítima y no un PBN.
 - Cada caso clínico nuestro puede convertirse en una nota: técnica usada, resultado, contexto del sector.
 
-## Cloudinary
+## Cloudinary — TODAS las imágenes, no solo casos clínicos
 - Cloud: `drctvgyqd`
-- Imágenes de casos clínicos y landing pages
-- **Regla obligatoria para casos clínicos**: todas las fotos de casos clínicos deben subirse y servirse desde Cloudinary, no desde `public/images/casos` ni rutas locales del repo.
-- Usar URLs Cloudinary con transformaciones `q_auto,f_auto` y rutas descriptivas, por ejemplo `https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/...`.
-- Las copias locales de fotos clínicas pueden quedar solo como backup/fuente, pero la app no debe referenciarlas salvo fallback explícito y justificado.
-- Antes de cambiar una referencia de imagen clínica, verificar que la URL de Cloudinary responde `200`.
+- **⚠️ REGLA OBLIGATORIA (aplica a TODA imagen del sitio):** cualquier imagen que se sirva en `amesteticadental/` — casos clínicos, fotos de clínica, equipo, del Dr. Merino, landing pages, headers, lo que sea — **debe subirse a Cloudinary y referenciarse con su URL `res.cloudinary.com`**. NUNCA referenciar `/public/images/...` desde un componente `next/image`.
+- **Por qué (causa técnica, no negociable):** `next.config.ts` define `images.loaderFile: ./src/lib/cloudinary-image-loader.ts`. Un `loaderFile` custom **desactiva la optimización propia de Next.js** (`/_next/image`). El loader solo transforma URLs de `res.cloudinary.com` (les agrega `w_/c_limit/q_auto/f_auto`); si la `src` es local hace `return src` → la imagen se sirve **cruda, a tamaño completo, sin resize ni WebP**. Por esto en 2026-07 había 43 fotos de clínica/equipo/dr sirviéndose a 2-3.4 MB c/u y frenando el sitio (se corrigió migrándolas a Cloudinary: bajaron −94%).
+- **Flujo correcto al agregar imágenes nuevas:** (1) subir a Cloudinary a un folder descriptivo (`casos/`, `clinica/`, `equipo-am/`, `dr-merino/`, etc.) — hay firma HMAC en `amesteticadental/.env.local`; (2) referenciar `https://res.cloudinary.com/drctvgyqd/image/upload/v.../<folder>/<nombre>` (el loader agrega las transformaciones solo); (3) verificar que la URL responde `200`.
+- Las copias locales en `/public` valen solo como backup/fuente; la app no debe referenciarlas salvo fallback explícito y justificado.
+- **Única excepción:** `src/remotion/*` usa `staticFile()` con rutas locales para render de video (no es web servida) — ahí sí van locales.
 
 ## Stack amesteticadental.com
 - Next.js (Turbopack), Tailwind v4, TypeScript
