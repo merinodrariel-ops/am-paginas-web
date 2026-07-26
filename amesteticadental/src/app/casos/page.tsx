@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import CasosClient from "./CasosClient";
-import { getCasosPublicadosMerged } from "@/lib/public-cases";
+import { getAllPublishedCases } from "@/lib/public-clinical-cases";
 
 const CANONICAL = "https://www.amesteticadental.com/casos";
-export const revalidate = 300;
+export const revalidate = 60;
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -23,8 +23,7 @@ export const metadata: Metadata = {
 };
 
 export default async function CasosPage() {
-    const casos = await getCasosPublicadosMerged();
-
+    const casos = await getAllPublishedCases();
     return (
         <>
             <Navbar />
