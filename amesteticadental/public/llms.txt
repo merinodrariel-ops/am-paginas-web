@@ -109,9 +109,17 @@ Porcelain veneers, ultra-thin (contact lens) veneers, digital smile design, comp
 
 ## English pages
 
+- /en — Homepage in English
 - /en/dental-tourism-argentina — Dental tourism guide for international patients
 - /en/porcelain-veneers-buenos-aires — Porcelain veneers: types, process, FAQ
+- /en/ultra-thin-veneers-buenos-aires — Ultra-thin (contact lens) veneers
 - /en/smile-design-buenos-aires — Digital smile design: process and FAQ
+- /en/veneers-cost-buenos-aires — Investment in veneers: USD figures and financing
+- /en/dr-ariel-merino — Professional profile of Dr. Ariel Merino
+- /en/before-after — Real documented clinical cases
+- /en/clinic — The clinic in Puerto Madero
+- /en/team — The AM team
+- /en/contact — Contact and booking
 
 ## Location & contact
 

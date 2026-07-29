@@ -1,18 +1,18 @@
 import { supabase } from "./supabase-client";
 
 export const TRATAMIENTOS = [
-  { value: "carillas", label: "Carillas estéticas" },
-  { value: "diseno_sonrisa", label: "Diseño de sonrisa" },
-  { value: "implantes", label: "Implantes dentales" },
-  { value: "ortodoncia_invisible", label: "Ortodoncia invisible" },
-  { value: "blanqueamiento", label: "Blanqueamiento" },
-  { value: "bruxismo", label: "Bruxismo / desgaste dental" },
-  { value: "periodoncia", label: "Periodoncia (encías)" },
-  { value: "estetica_general", label: "Estética dental general" },
-  { value: "limpieza", label: "Limpieza / Profilaxis" },
-  { value: "endodoncia", label: "Endodoncia" },
-  { value: "protesis", label: "Prótesis" },
-  { value: "otro", label: "Otro / No estoy seguro" },
+  { value: "carillas", label: "Carillas estéticas", labelEn: "Veneers" },
+  { value: "diseno_sonrisa", label: "Diseño de sonrisa", labelEn: "Smile design" },
+  { value: "implantes", label: "Implantes dentales", labelEn: "Dental implants" },
+  { value: "ortodoncia_invisible", label: "Ortodoncia invisible", labelEn: "Invisible aligners" },
+  { value: "blanqueamiento", label: "Blanqueamiento", labelEn: "Whitening" },
+  { value: "bruxismo", label: "Bruxismo / desgaste dental", labelEn: "Bruxism / tooth wear" },
+  { value: "periodoncia", label: "Periodoncia (encías)", labelEn: "Periodontics (gums)" },
+  { value: "estetica_general", label: "Estética dental general", labelEn: "General cosmetic dentistry" },
+  { value: "limpieza", label: "Limpieza / Profilaxis", labelEn: "Cleaning / Prophylaxis" },
+  { value: "endodoncia", label: "Endodoncia", labelEn: "Root canal" },
+  { value: "protesis", label: "Prótesis", labelEn: "Prosthetics" },
+  { value: "otro", label: "Otro / No estoy seguro", labelEn: "Other / Not sure" },
 ] as const;
 
 export type TratamientoSlug = typeof TRATAMIENTOS[number]["value"];

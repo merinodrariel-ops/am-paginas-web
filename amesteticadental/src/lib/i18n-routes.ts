@@ -12,6 +12,7 @@ export const EN_BY_ES: Record<string, string> = {
   "/lentes-de-contacto-dental": "/en/ultra-thin-veneers-buenos-aires",
   "/precio-carillas-dentales-buenos-aires": "/en/veneers-cost-buenos-aires",
   "/dr-ariel-merino": "/en/dr-ariel-merino",
+  "/contacto": "/en/contact",
 };
 
 export const ES_BY_EN: Record<string, string> = Object.fromEntries(

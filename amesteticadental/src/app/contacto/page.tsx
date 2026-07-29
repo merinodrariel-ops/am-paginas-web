@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
+import { hreflangFor } from "@/lib/i18n-routes";
 
 const CANONICAL = "https://www.amesteticadental.com/contacto";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n.";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   title: "Contacto · AM Estética Dental Buenos Aires",
   description:
     "Consultanos por email o WhatsApp. AM Estética Dental, Camila O'Gorman 412, Puerto Madero, Buenos Aires. Dr. Ariel Merino.",
-  alternates: { canonical: CANONICAL },
+  alternates: { canonical: CANONICAL, languages: hreflangFor("/contacto") },
   openGraph: {
     title: "Contacto · AM Estética Dental",
     description:

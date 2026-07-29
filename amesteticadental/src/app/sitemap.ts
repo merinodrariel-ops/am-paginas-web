@@ -54,6 +54,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/en/ultra-thin-veneers-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
   { path: "/en/veneers-cost-buenos-aires", changeFrequency: "monthly", priority: 0.9 },
   { path: "/en/dr-ariel-merino", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/en/contact", changeFrequency: "monthly", priority: 0.7 },
   { path: "/opiniones", changeFrequency: "monthly", priority: 0.85 },
   { path: "/prensa", changeFrequency: "monthly", priority: 0.8 },
   { path: "/casos-antes-y-despues", changeFrequency: "weekly", priority: 0.95 },

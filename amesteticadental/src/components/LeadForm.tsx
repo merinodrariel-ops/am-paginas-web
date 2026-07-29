@@ -6,9 +6,46 @@ import { submitLead, TRATAMIENTOS, getUTMs } from "@/lib/leads";
 interface Props {
   defaultTreatment?: string;
   context?: string;
+  lang?: "es" | "en";
 }
 
-export default function LeadForm({ defaultTreatment, context }: Props) {
+const FORM_COPY = {
+  es: {
+    received: "Recibido",
+    thanksA: "Gracias por tu",
+    thanksB: "consulta",
+    thanksLead: "El equipo de AM Estética Dental te va a contactar en las próximas 24 horas hábiles.",
+    name: "Nombre completo *",
+    namePh: "Tu nombre",
+    emailPh: "tu@email.com",
+    phonePh: "+54 9 11 ...",
+    atLeastOne: "Necesitamos al menos uno para contactarte.",
+    treatment: "Tratamiento de interés",
+    message: "Mensaje (opcional)",
+    messagePh: "Contanos qué necesitás...",
+    sending: "Enviando...",
+    submit: "Enviar consulta",
+  },
+  en: {
+    received: "Received",
+    thanksA: "Thank you for your",
+    thanksB: "enquiry",
+    thanksLead: "The AM Estética Dental team will get back to you within the next 24 business hours.",
+    name: "Full name *",
+    namePh: "Your name",
+    emailPh: "you@email.com",
+    phonePh: "+1 555 ...",
+    atLeastOne: "We need at least one of these to get back to you.",
+    treatment: "Treatment of interest",
+    message: "Message (optional)",
+    messagePh: "Tell us what you need...",
+    sending: "Sending...",
+    submit: "Send enquiry",
+  },
+} as const;
+
+export default function LeadForm({ defaultTreatment, context, lang = "es" }: Props) {
+  const c = FORM_COPY[lang];
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
@@ -76,12 +113,12 @@ export default function LeadForm({ defaultTreatment, context }: Props) {
   if (done) {
     return (
       <div className="border border-oro/30 rounded-2xl p-10 text-center bg-oro/5">
-        <p className="text-oro uppercase tracking-[0.4em] text-xs mb-6">Recibido</p>
+        <p className="text-oro uppercase tracking-[0.4em] text-xs mb-6">{c.received}</p>
         <h3 className="text-3xl font-light text-crema mb-4">
-          Gracias por tu <span className="font-cormorant italic text-oro">consulta</span>
+          {c.thanksA} <span className="font-cormorant italic text-oro">{c.thanksB}</span>
         </h3>
         <p className="text-crema/60 leading-relaxed max-w-md mx-auto">
-          El equipo de AM Estética Dental te va a contactar en las próximas 24 horas hábiles.
+          {c.thanksLead}
         </p>
       </div>
     );
@@ -106,7 +143,7 @@ export default function LeadForm({ defaultTreatment, context }: Props) {
       />
 
       <div>
-        <label className={labelClass}>Nombre completo *</label>
+        <label className={labelClass}>{c.name}</label>
         <input
           type="text"
           required
@@ -114,7 +151,7 @@ export default function LeadForm({ defaultTreatment, context }: Props) {
           onChange={(e) => setFullName(e.target.value)}
           maxLength={200}
           className={inputClass}
-          placeholder="Tu nombre"
+          placeholder={c.namePh}
         />
       </div>
 
@@ -127,7 +164,7 @@ export default function LeadForm({ defaultTreatment, context }: Props) {
             onChange={(e) => setEmail(e.target.value)}
             maxLength={200}
             className={inputClass}
-            placeholder="tu@email.com"
+            placeholder={c.emailPh}
           />
         </div>
         <div>
@@ -138,14 +175,14 @@ export default function LeadForm({ defaultTreatment, context }: Props) {
             onChange={(e) => setWhatsapp(e.target.value)}
             maxLength={50}
             className={inputClass}
-            placeholder="+54 9 11 ..."
+            placeholder={c.phonePh}
           />
         </div>
       </div>
-      <p className="text-crema/40 text-xs -mt-2">Necesitamos al menos uno para contactarte.</p>
+      <p className="text-crema/40 text-xs -mt-2">{c.atLeastOne}</p>
 
       <div>
-        <label className={labelClass}>Tratamiento de interés</label>
+        <label className={labelClass}>{c.treatment}</label>
         <div className="flex flex-wrap gap-2">
           {TRATAMIENTOS.map((t) => {
             const active = tags.includes(t.value);
@@ -160,7 +197,7 @@ export default function LeadForm({ defaultTreatment, context }: Props) {
                     : "border-oro/20 text-crema/70 hover:border-oro/50"
                 }`}
               >
-                {t.label}
+                {lang === "en" ? t.labelEn : t.label}
               </button>
             );
           })}
@@ -168,14 +205,14 @@ export default function LeadForm({ defaultTreatment, context }: Props) {
       </div>
 
       <div>
-        <label className={labelClass}>Mensaje (opcional)</label>
+        <label className={labelClass}>{c.message}</label>
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           maxLength={2000}
           rows={4}
           className={inputClass + " resize-none"}
-          placeholder="Contanos qué necesitás..."
+          placeholder={c.messagePh}
         />
       </div>
 
@@ -190,7 +227,7 @@ export default function LeadForm({ defaultTreatment, context }: Props) {
         disabled={submitting}
         className="w-full bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-all disabled:opacity-50"
       >
-        {submitting ? "Enviando..." : "Enviar consulta"}
+        {submitting ? c.sending : c.submit}
       </button>
 
       <p className="text-crema/40 text-xs text-center">
