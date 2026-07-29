@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
-import { getCasoBySlug as getStaticCasoBySlug, getCasosPublicados as getStaticCasosPublicados, type Caso, type FotoCaso } from "@/data/casos";
+import { getCasoBySlug as getStaticCasoBySlug, getCasosPublicados as getStaticCasosPublicados, localizeCaso, type Caso, type FotoCaso } from "@/data/casos";
 
 type PublicClinicalCaseRow = {
   id: string;
@@ -160,7 +160,7 @@ export async function getDynamicCasosPublicados(lang: "es" | "en" = "es"): Promi
 }
 
 export async function getCasosPublicadosMerged(lang: "es" | "en" = "es"): Promise<Caso[]> {
-  const staticCases = getStaticCasosPublicados();
+  const staticCases = getStaticCasosPublicados().map((c) => localizeCaso(c, lang));
   const dynamicCases = await getDynamicCasosPublicados(lang);
 
   // El caso curado (estático) es autoritativo: se aplica ÚLTIMO para que gane
@@ -177,7 +177,7 @@ export async function getCasoBySlugMerged(slug: string, lang: "es" | "en" = "es"
   if (LEGACY_CASE_SLUGS.has(slug)) return undefined;
   // Curado (estático) primero — es la fuente autoritativa.
   const staticCase = getStaticCasoBySlug(slug);
-  if (staticCase) return staticCase;
+  if (staticCase) return localizeCaso(staticCase, lang);
   const dynamicCases = await getDynamicCasosPublicados(lang);
   return dynamicCases.find((caso) => caso.slug === slug);
 }

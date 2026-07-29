@@ -6,6 +6,23 @@ export interface FotoCaso {
     caption?: string;
 }
 
+// Traducción al inglés de un caso curado. Si falta, la galería en inglés cae al
+// español para ese campo (mejor mostrar el original que una traducción a medias).
+export interface CasoEn {
+    titulo: string;
+    subtitulo: string;
+    descripcion: string;
+    seoTitle?: string;
+    seoDescription?: string;
+    categorias?: string[];
+    duracion?: string;
+    piezas?: string;
+    tecnica?: string;
+    copy: string;
+    /** alt/caption por foto, en el mismo orden que `fotos`. */
+    fotos?: { alt: string; caption?: string }[];
+}
+
 export interface Caso {
     slug: string;
     titulo: string;
@@ -29,6 +46,32 @@ export interface Caso {
     videoUrl?: string;         // YouTube embed URL
     videoAspect?: "16/9" | "9/16"; // horizontal (16/9) o Short vertical (9/16)
     publicado: boolean;
+    en?: CasoEn;
+}
+
+/** Devuelve el caso con los campos en inglés aplicados, si existen. */
+export function localizeCaso(caso: Caso, lang: "es" | "en"): Caso {
+    if (lang !== "en" || !caso.en) return caso;
+    const t = caso.en;
+    const fotos = caso.fotos.map((foto, i) => {
+        const tf = t.fotos?.[i];
+        return tf ? { ...foto, alt: tf.alt, caption: tf.caption ?? foto.caption } : foto;
+    });
+    return {
+        ...caso,
+        titulo: t.titulo,
+        subtitulo: t.subtitulo,
+        descripcion: t.descripcion,
+        seoTitle: t.seoTitle ?? caso.seoTitle,
+        seoDescription: t.seoDescription ?? caso.seoDescription,
+        categorias: (t.categorias as Caso["categorias"]) ?? caso.categorias,
+        duracion: t.duracion ?? caso.duracion,
+        piezas: t.piezas ?? caso.piezas,
+        tecnica: t.tecnica ?? caso.tecnica,
+        copy: t.copy,
+        fotoPortada: fotos[0] ?? caso.fotoPortada,
+        fotos,
+    };
 }
 
 export const CASOS: Caso[] = [
@@ -102,6 +145,36 @@ Una de nuestras primeras pacientes y una de las transformaciones más representa
             nota: "Estimación orientativa al 15 de junio de 2026 para una rehabilitación comparable. El valor definitivo depende del diagnóstico, la cantidad de piezas, los materiales y la complejidad clínica.",
         },
         publicado: true,
+        en: {
+            titulo: "A transformation that has been in place for more than 13 years.",
+            subtitulo: "Dental crowding resolved with smile design and ceramic rehabilitation of both arches — no surgery, no orthodontics",
+            descripcion: "A clinical case of dental crowding treated without surgery or orthodontics, through smile design and ceramic rehabilitation of both arches. A result with more than 13 years of follow-up by Dr. Ariel Merino at AM Estética Dental, Puerto Madero.",
+            seoTitle: "Ceramic Rehabilitation Without Surgery or Orthodontics",
+            seoDescription: "Before and after of a ceramic rehabilitation of both arches, without surgery or orthodontics, with more than 13 years in the mouth.",
+            categorias: ["Full rehabilitation", "Smile design", "Porcelain veneers", "Crowding"],
+            duracion: "13+ years in place",
+            piezas: "Rehabilitation of both arches",
+            tecnica: "Smile design and ceramic restorations, without surgery or orthodontics",
+            copy: `She was one of our very first patients. She came to AM Estética Dental with crowded teeth and the desire to transform her smile, but with two very clear conditions: she did not want to go through surgery, and she did not want orthodontic treatment.
+
+Starting from a comprehensive diagnosis, we designed an oral rehabilitation for both arches. The treatment was carried out with ceramic restorations, aiming to visually reorganise the smile, improve its proportions and build a result in harmony with her facial features.
+
+The before and after shows a profound transformation. But the most important value of this case appears with the passing of time: the rehabilitation has been in her mouth for more than 13 years.
+
+For us it is a particularly meaningful case. Not only was it part of the early years of AM Estética Dental, it also lets us show the importance of diagnosis, planning and follow-up in a high-complexity ceramic rehabilitation.
+
+The patient remains grateful for the change, and her smile is still one of the most representative transformations of our trajectory.
+
+Results correspond to this particular clinical case. Every treatment requires individual diagnosis and planning.`,
+            fotos: [
+                { alt: "Facial before and after of a ceramic rehabilitation of both arches without surgery or orthodontics, with more than 13 years of follow-up — Dr. Ariel Merino, AM Estética Dental", caption: "Facial before and after — more than 13 years of follow-up" },
+                { alt: "Starting point of a patient with dental crowding before a ceramic rehabilitation without surgery or orthodontics", caption: "Starting point — dental crowding" },
+                { alt: "Facial result of smile design and ceramic rehabilitation after more than 13 years in place", caption: "Long-term facial result" },
+                { alt: "Smile comparison before and after ceramic rehabilitation of both arches without orthodontics", caption: "Smile before and after" },
+                { alt: "Clinical sequence of smile design and oral rehabilitation with ceramics on both arches", caption: "Model, starting point and clinical result" },
+                { alt: "Dental model and ceramic restorations used in the aesthetic rehabilitation of both arches", caption: "Dental model and ceramic restorations" },
+            ],
+        },
     },
     {
         slug: "diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan",
@@ -161,6 +234,32 @@ No era solo hacer dientes más blancos. Era reconstruir la arquitectura de la so
             nota: "Diseño de sonrisa completo con carillas cerámicas AM. El valor final depende de cantidad de piezas, planificación y complejidad clínica.",
         },
         publicado: true,
+        en: {
+            titulo: "He flew in from Milan with a broken smile. We fixed it in a week.",
+            subtitulo: "Broken smile plane + fractured incisal edges — complete smile design with AM ceramic veneers",
+            descripcion: "An extreme smile design case with a broken smile plane and fractured incisal edges. A patient from Italy, living in Milan, treated in one week with AM ceramic veneers by Dr. Ariel Merino at AM Estética Dental, Puerto Madero, Buenos Aires.",
+            seoTitle: "Smile Design with Ceramic Veneers",
+            seoDescription: "A smile design case with ceramic veneers on a patient from Milan. Incisal plane and edges corrected in 1 week by Dr. Ariel Merino.",
+            categorias: ["Smile design", "Porcelain veneers", "Full rehabilitation"],
+            duracion: "1 week",
+            piezas: "Complete smile design",
+            tecnica: "AM ceramic veneers, facial planning and incisal plane correction",
+            copy: `He arrived from Italy with a completely disordered smile. He lives in Milan and had a very short window to resolve it: one week.
+
+The aesthetic diagnosis was clear: the smile plane was broken. The incisal edges did not follow the interpupillary line or the architecture of his face. The front teeth looked fractured, irregular, with no harmonious reading.
+
+This kind of case is not solved by lightening the colour. We had to rebuild the shape, the length, the proportion and the visual direction of the entire smile.
+
+The plan was a smile design with AM ceramic veneers, guided by facial analysis. We corrected the incisal plane, levelled the edges, restored volume and reorganised the smile so the result integrated with his face.
+
+In one week he went from a broken smile to a clean, harmonious and natural one. An extreme before and after, but with a very AM premise: the result should look powerful without looking artificial.`,
+            fotos: [
+                { alt: "Before and after smile design for a broken smile plane with ceramic veneers — patient from Milan — Dr. Ariel Merino, AM Estética Dental Puerto Madero", caption: "Before and after — complete smile design" },
+                { alt: "Initial photo showing a broken smile plane with fractured incisors and incisal edges — patient from Italy — AM Estética Dental Buenos Aires", caption: "Starting point — broken plane and incisal edges" },
+                { alt: "Final result of smile design with ceramic veneers completed in one week — patient from Milan — Dr. Ariel Merino", caption: "Final result — AM ceramic veneers" },
+                { alt: "Lips before and after smile design with ceramic veneers for a broken smile plane — AM Estética Dental Puerto Madero", caption: "Lips — before and after" },
+            ],
+        },
     },
     {
         slug: "carilla-unitaria-incisivo-central-oscurecido",
@@ -240,6 +339,36 @@ Cuando una carilla unitaria está bien hecha, no se ve la carilla. Se ve una son
             nota: "Carilla cerámica unitaria en incisivo central + planificación de color + cementado adhesivo. El valor final depende del contexto clínico, blanqueamiento y restauraciones complementarias.",
         },
         publicado: true,
+        en: {
+            titulo: "A single tooth can change an entire smile.",
+            subtitulo: "A central incisor darkened by a childhood trauma — resolved with whitening, contextual composites and a single layered ceramic veneer",
+            descripcion: "A clinical case of a single veneer on a central incisor darkened by trauma and root canal treatment. Shade selection, artistic ceramic characterisation, adhesive bonding and a natural result at AM Estética Dental, Puerto Madero, Buenos Aires.",
+            seoTitle: "Single Veneer on a Darkened Central Incisor",
+            seoDescription: "A case of a single porcelain veneer on a central incisor darkened by trauma. Natural result and shade trial by Dr. Ariel Merino.",
+            categorias: ["Single veneer", "Porcelain veneers", "Smile design", "Whitening"],
+            duracion: "Tailored treatment",
+            piezas: "1 central incisor + contextual composites on neighbouring teeth",
+            tecnica: "Layered single ceramic veneer, shade trial, ceramic characterisation and adhesive bonding",
+            copy: `A single veneer on a central incisor is one of the most artistic challenges in cosmetic dentistry. Making a white tooth is not enough. It has to integrate with the neighbouring tooth, copy its light, its texture, its small translucencies — and even its imperfections.
+
+In this case, the patient came in with one of her central incisors darkened. This is common after a childhood impact: the tooth may need root canal treatment and, over the years, start to look darker.
+
+The plan was to improve the context first: dental whitening to organise the overall colour, and composites on the neighbouring teeth to harmonise proportions. Then the ceramic was worked as an individual piece, trying three shade alternatives before choosing the one that integrated best.
+
+The ceramic was finished by hand, like a small white canvas: characterised layer by layer to reproduce the neighbouring tooth. Once colour and texture were right, the adhesive bonding was done — the definitive placement of the piece.
+
+The result aimed at something very precise: that the restored tooth should not be noticeable. With a single veneer, success is not the ceramic drawing attention. Success is it disappearing into the smile.`,
+            fotos: [
+                { alt: "Before and after of a single veneer on a central incisor darkened by childhood trauma — Dr. Ariel Merino, AM Estética Dental Puerto Madero", caption: "Before and after — single veneer on a central incisor" },
+                { alt: "Initial photo of a darkened central incisor before the single ceramic veneer — AM Estética Dental Puerto Madero", caption: "Starting point of the darkened central incisor" },
+                { alt: "Natural result of a single ceramic veneer on a central incisor — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Final result with the single ceramic veneer" },
+                { alt: "Adhesive bonding process of the single veneer on the central incisor — AM Estética Dental Puerto Madero", caption: "Adhesive bonding of the ceramic" },
+                { alt: "Before and after of the single veneer on the central incisor, right profile view — AM Estética Dental Buenos Aires", caption: "Before and after — right profile" },
+                { alt: "Comparison with lips of the single veneer and harmonisation with composites and whitening — AM Estética Dental", caption: "Comparison with lips and smile" },
+                { alt: "Model and 3D render comparison for planning the single veneer on the central incisor — Dr. Ariel Merino", caption: "Digital planning and 3D model" },
+                { alt: "Three-shade trial and artistic ceramic characterisation for the single veneer — AM Estética Dental", caption: "Shade trial and ceramic characterisation" },
+            ],
+        },
     },
     {
         slug: "20-carillas-porcelana-apinamiento-sin-ortodoncia",
@@ -306,6 +435,30 @@ Eso es lo que más nos gusta lograr.`,
             nota: "20 lentes de contacto dental · porcelana feldespática · técnica mínimamente invasiva",
         },
         publicado: true,
+        en: {
+            titulo: "20 veneers in 10 days. No braces. No whitening. And nobody noticed.",
+            subtitulo: "Residual crowding + wear + colour — solved with the shape of the veneers alone",
+            descripcion: "A patient with residual crowding and worn teeth. 20 minimally invasive porcelain veneers in 10 days, with no prior orthodontics. A natural result — none of his friends realised.",
+            seoTitle: "20 Porcelain Veneers Without Prior Orthodontics",
+            seoDescription: "A case of crowding and tooth wear resolved with 20 porcelain veneers in 10 days, without the need for prior orthodontics. Dr. Ariel Merino.",
+            categorias: ["Porcelain veneers", "Ultra-thin veneers", "Smile design", "Crowding"],
+            duracion: "10 days",
+            piezas: "20 units (10 upper + 10 lower)",
+            tecnica: "Minimally invasive, controlled preparation",
+            copy: `He came in with worn teeth, mild crowding and years of orthodontics behind him. He did not want to wear braces again. He wanted to look good — but natural.
+
+In 10 days we placed 20 ultra-thin veneers, widened his smile by incorporating the premolars that were barely visible, corrected the crowding through the shape of the veneers themselves, and improved the colour by a tone and a half.
+
+The result: a smile that looks like it was always there. None of his friends realised he had anything done. That, for us, is the definition of success.`,
+            fotos: [
+                { alt: "Before and after — intraoral view of the bite with 20 porcelain veneers — AM Estética Dental", caption: "Intraoral view — bite before and after" },
+                { alt: "Before and after smile with lips — 20 porcelain veneers without orthodontics — AM Estética Dental", caption: "Front smile before and after" },
+                { alt: "Upper arch before and after — minimally invasive porcelain veneers — AM Estética Dental", caption: "Upper arch" },
+                { alt: "Lower arch before and after — minimally invasive porcelain veneers — AM Estética Dental", caption: "Lower arch" },
+                { alt: "Starting point — crowding and tooth wear before veneers — AM Estética Dental", caption: "Starting point" },
+                { alt: "Final result — natural smile with ultra-thin veneers — AM Estética Dental", caption: "Final result" },
+            ],
+        },
     },
     {
         slug: "agenesia-dental-rehabilitacion-completa-implantes-24-ceramicas",
@@ -422,6 +575,43 @@ Eso es lo que entendemos por transformación de vida.`,
         videoUrl: "https://www.youtube.com/embed/oqcaGGGAs5Y",
         videoAspect: "9/16",
         publicado: true,
+        en: {
+            titulo: "He was born missing teeth. Today he has the face he always wanted.",
+            subtitulo: "Dental agenesis + microdontia + dark teeth — resolved with 2 years of aligners, implants and 24 ceramic restorations",
+            descripcion: "A case of dental agenesis with microdontia and darkened teeth. A 2-year multidisciplinary treatment: AM invisible aligners with laser therapy, implants in the edentulous areas, and 24 ceramic restorations with an increase in vertical dimension. Puerto Madero, Buenos Aires.",
+            seoTitle: "Dental Agenesis Case with Implants and 24 Ceramics",
+            seoDescription: "Complete rehabilitation of dental agenesis with AM invisible aligners, dental implants and 24 ceramic restorations in Puerto Madero. Dr. Ariel Merino.",
+            categorias: ["Agenesis", "Implants", "Aligners", "Smile design"],
+            duracion: "2 years",
+            piezas: "24 ceramic restorations (upper and lower arch) + implants in the agenesis areas",
+            tecnica: "AM invisible aligners + laser therapy + implants + full oral rehabilitation + increase in vertical dimension",
+            copy: `He came to the practice with small, brown teeth and several empty spaces where teeth had never erupted. Dental agenesis is not only an aesthetic problem — it changes your face, your bite, the way you see yourself in the mirror.
+
+The plan was long but clear: first, two years of AM invisible aligners, accelerated with laser therapy (without the laser it would have been three years). The orthodontics closed spaces, prepared the ground and aligned the structure for what came next.
+
+Then, implants in the areas where teeth were missing and where the bone allowed it. And to finish: 24 ceramic restorations, upper and lower, with an increase in vertical dimension to restore the bite and change the proportions of the lower third of the face.
+
+The result was not just a new smile. It was another face. Another bearing. Another presence.
+
+That is what matters most to us about this case — not only what changed in the mouth, but what changed in how this person stands in front of the world.`,
+            fotos: [
+                { alt: "Before and after — dental agenesis — full transformation — complete oral rehabilitation with implants and 24 ceramic restorations — Dr. Ariel Merino, AM Estética Dental Puerto Madero Buenos Aires", caption: "Before and after of the case. Complete facial transformation: invisible aligners, dental implants and 24 ceramic restorations." },
+                { alt: "Three stages of dental agenesis treatment — before, during invisible orthodontics and after with 24 ceramic restorations — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "The three stages: starting point, closing spaces with AM aligners, and the final result with 24 ceramic restorations." },
+                { alt: "Before — intraoral — small brown teeth and dental agenesis — microdontia — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Starting point: microdontia with brown teeth and empty spaces from agenesis." },
+                { alt: "Intraoral before and after — dental implants and 24 ceramic restorations — complete oral rehabilitation — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Complete intraoral comparison. Implants in the agenesis areas + 24 ceramic restorations." },
+                { alt: "Before and after — lips and smile — ceramic veneers and invisible aligners — Dr. Ariel Merino, AM Estética Dental", caption: "Smile before and after. High-translucency ceramics." },
+                { alt: "Before and after — face and lips — complete facial transformation — Dr. Ariel Merino, AM Estética Dental Puerto Madero", caption: "Complete facial comparison. The increase in vertical dimension transformed the lower third of the face." },
+                { alt: "After — lateral profile — implants and ceramic veneers — increase in vertical dimension — Dr. Ariel Merino, AM Estética Dental", caption: "Lateral profile after treatment. The increase in vertical dimension is reflected in the facial aesthetics." },
+                { alt: "Facial transformation — profile — complete oral rehabilitation — Dr. Ariel Merino, AM Estética Dental Puerto Madero", caption: "Profile cover image. The photograph that best summarises this life transformation." },
+                { alt: "Before and after — face — white background — complete transformation — Dr. Ariel Merino, AM Estética Dental", caption: "Comparison on a white background. An integral facial transformation." },
+                { alt: "Lips before and after — implants and 24 ceramic restorations — new bite — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Lip detail. The new bite and vertical dimension gave a natural lip posture at rest." },
+                { alt: "Lips before and after — new smile — ceramic veneers — Dr. Ariel Merino, AM Estética Dental", caption: "Natural smile after treatment. The smile line design was guided digitally." },
+                { alt: "Final result — facial profile — 24 ceramic restorations and dental implants — Dr. Ariel Merino, AM Estética Dental Puerto Madero", caption: "Final profile result. The multidisciplinary treatment achieved an integral transformation." },
+                { alt: "Result — profile and smile — ceramic veneers and implants — Dr. Ariel Merino, AM Estética Dental Puerto Madero", caption: "Profile with smile. Dento-facial harmony achieved with orthodontics, implantology and rehabilitation." },
+                { alt: "Result — profile — complete oral rehabilitation — porcelain veneers — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Final profile view. The proportions of the lower third of the face were completely restored." },
+                { alt: "Before — frontal face — dark teeth and agenesis — microdontia — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Initial facial photograph. The aesthetic impact was evident both at rest and when smiling." },
+            ],
+        },
     },
     {
         slug: "diseno-sonrisa-cierre-diastemas-dientes-conoidos",
@@ -516,6 +706,37 @@ El caso que definió mi carrera.`,
         videoUrl: "https://www.youtube.com/embed/RIUEvt7Zq3c",
         videoAspect: "16/9",
         publicado: true,
+        en: {
+            titulo: "The case that went viral before Instagram existed.",
+            subtitulo: "Smile design · Closing diastemas · Conical teeth — 10 AM ultra-thin contact lens veneers",
+            descripcion: "An iconic smile design case closing diastemas on conical teeth. 10 ultra-thin AM veneers (0.2-0.3mm). It went viral on Facebook before Instagram and TikTok existed, and dental professors around the world recognised it. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
+            seoTitle: "Smile Design and Closing Diastemas with Veneers",
+            seoDescription: "A case of closing diastemas on conical teeth with 10 ultra-thin veneers (0.2mm) and minimal enamel preparation in Puerto Madero. Dr. Ariel Merino.",
+            categorias: ["Porcelain veneers", "Ultra-thin veneers", "Smile design", "Diastemas", "Conical teeth"],
+            duracion: "10 days",
+            piezas: "10 AM ultra-thin contact lens veneers (0.2-0.3mm) — anterior sector",
+            tecnica: "Ultra-thin AM contact lens veneers — minimal preparation — closing diastemas and correcting conical teeth",
+            copy: `When I did this case, Instagram did not exist. Neither did TikTok. I uploaded the video to YouTube and within days dental professors from all over the world were writing to me.
+
+The patient had conical teeth — small, cone-shaped — with diastemas between them. Those gaps were not caused by a lack of orthodontics. They were structural. Even with orthodontics, they would have come back. The only real solution was veneers.
+
+We placed 10 AM contact lens veneers: ceramic fragments of just 0.2 to 0.3mm in thickness, with minimal preparation of the natural tooth. Without anaesthesia for most of the steps. In 10 days.
+
+The result transformed not only his smile but the way I understood cosmetic dentistry. It was the case that defined my career and opened doors for me around the world.`,
+            fotos: [
+                { alt: "Smile design closing diastemas — before and after, face — Dr. Ariel Merino, AM Estética Dental Puerto Madero Buenos Aires", caption: "Before and after — face" },
+                { alt: "Smile design for conical teeth — before and after, face and intraoral — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Before and after — face and intraoral" },
+                { alt: "Closing diastemas, intraoral before and after with AM ceramic veneers — Dr. Ariel Merino, AM Estética Dental Puerto Madero", caption: "Intraoral — closing diastemas before and after" },
+                { alt: "Conical teeth and closing diastemas — intraoral before and after — ultra-thin contact lens veneers — Dr. Ariel Merino, AM Estética Dental", caption: "Conical teeth — closing diastemas, intraoral" },
+                { alt: "Ceramic fragments, ultra-thin contact lens veneers 0.2-0.3mm — AM veneers — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Ceramic fragments — 0.2mm thick" },
+                { alt: "Ultra-fine contact lens veneer on a fingertip showing the real scale — 0.2-0.3mm — AM veneers — Dr. Ariel Merino, AM Estética Dental", caption: "Real scale — a contact lens veneer on a fingertip" },
+                { alt: "Bite before and after smile design closing diastemas — ceramic veneers — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Bite — before and after" },
+                { alt: "Ceramic fragments, AM veneers for smile design — Dr. Ariel Merino, AM Estética Dental Puerto Madero", caption: "Ceramic fragments before bonding" },
+                { alt: "Plaster models before and after, planning the smile design closing diastemas — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Plaster models — case planning" },
+                { alt: "Shade selection for ceramic veneers in smile design — Dr. Ariel Merino, AM Estética Dental Puerto Madero Buenos Aires", caption: "Shade selection — choosing the ceramic" },
+                { alt: "Bonding ceramic veneers two teeth at a time — smile design — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Bonding day — two veneers at a time" },
+            ],
+        },
     },
     {
         slug: "carillas-resina-diseno-sonrisa-gingivectomia-laser",
@@ -611,6 +832,55 @@ Cuando la base es buena, hay que cuidarla.`,
             nota: "10 carillas de resina compuesta directa + gingivectomía láser incluida",
         },
         publicado: true,
+        en: {
+            titulo: "Healthy teeth, a new smile. Why start with composite.",
+            subtitulo: "10 composite veneers + laser gingivectomy — smile design on a young patient with no cavities and no previous treatment",
+            descripcion: "A smile design case with 10 composite veneers and laser gingivectomy on a young patient with healthy teeth. No cavities, no previous crowns. USD 500 per unit. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
+            seoTitle: "Smile Design with Composite Veneers",
+            seoDescription: "A smile design case with 10 composite veneers and laser gingivectomy on a young patient with healthy teeth, minimally invasive, by Dr. Ariel Merino.",
+            categorias: ["Composite veneers", "Smile design", "Gum contouring"],
+            duracion: "5 days",
+            piezas: "10 composite veneers — upper and lower anterior sector",
+            tecnica: "Direct composite veneers + laser gingivectomy to harmonise the gum line",
+            copy: `Fabricio arrived with something that is not so common: completely healthy teeth. No cavities, no crowns, no previous treatment. An impeccable base of natural enamel to work on.
+
+In young patients with healthy teeth, composite is often the first option. Not because it is inferior — but because it respects as much as possible of what is already there. Composite reaches 86-88% of the strength of natural enamel. Ceramic, by contrast, doubles that strength.
+
+For this case we designed 10 direct composite veneers in the anterior sector and complemented them with a laser gingivectomy to harmonise the gum line — that border of gum tissue which, when it is not level, takes symmetry away from any smile.
+
+The result was a new smile in 5 days, with minimal preparation of the original enamel.
+
+— — —
+
+Are composites as good as ceramics?
+
+They are different materials with different indications. Composite is excellent for young patients with healthy teeth because it is more conservative. Ceramic is more durable, more resistant and does not stain. Both give very good aesthetic results.
+
+Do composites stain?
+
+Over time, yes — slightly more than ceramic. Coffee, wine, tea and tobacco affect them more. With good habits and an annual polish this is minimised considerably.
+
+Can they fracture?
+
+Composite is more fragile than ceramic. It does not withstand the same extreme bite forces. That is why in patients with bruxism we always prefer ceramic.
+
+What maintenance does composite require?
+
+An annual check-up is essential. We assess wear, polish the surface, and if there is any microchip it is repaired directly in the mouth without replacing the whole veneer.
+
+What is the investment for composite vs ceramic veneers?
+
+Composite veneers are USD 500 per tooth. Ceramic veneers range from USD 1,000 to 1,500 per unit.`,
+            fotos: [
+                { alt: "Smile design with composite veneers and laser gingivectomy, before and after — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Before and after — cover image" },
+                { alt: "Composite veneers — before — frontal face of a young patient — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Before — frontal face" },
+                { alt: "Composite veneers smile design after — frontal face — Dr. Ariel Merino, AM Estética Dental Puerto Madero", caption: "After — frontal face" },
+                { alt: "Composite veneers, lips before and after smile design — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Lips — before and after" },
+                { alt: "Composite veneers, lips in profile before and after — Dr. Ariel Merino, AM Estética Dental Puerto Madero Buenos Aires", caption: "Profile — before and after" },
+                { alt: "Composite veneers result, lips in profile — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Final result — profile" },
+                { alt: "Laser gingivectomy and composite veneers before and after smile design — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Laser gingivectomy + veneers — before and after" },
+            ],
+        },
     },
     {
         slug: "gingivectomia-laser-micro-diseno-sonrisa-resinas",
@@ -685,6 +955,36 @@ El resultado se viralizó en TikTok. USD 5.000 all-inclusive.`,
             nota: "Incluye: gingivectomía láser en todos los márgenes + micro diseño de sonrisa en resina (10 dientes sector anterior). Financiación: USD 1.500 anticipo + USD 309/mes en 12 meses (18% anual)",
         },
         publicado: true,
+        en: {
+            titulo: "Laser gingivectomy + micro smile design in composite",
+            subtitulo: "Gingivectomy across all gum margins + micro smile design with minimally invasive composite veneers",
+            descripcion: "A clinical case combining laser gingivectomy across all gum margins with a micro smile design using minimally invasive composite veneers. USD 5,000. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
+            seoTitle: "Laser Gingivectomy + Micro Smile Design",
+            seoDescription: "Laser gingivectomy across all gum margins plus a micro smile design with minimally invasive composite veneers. Dr. Ariel Merino, Puerto Madero.",
+            categorias: ["Gum contouring", "Smile design", "Composite veneers"],
+            duracion: "5 days",
+            piezas: "Laser gingivectomy + composite veneers — complete anterior sector",
+            tecnica: "Laser gingivectomy across all gum margins + micro smile design with direct composite veneers",
+            copy: `A young patient who lives off her image. That was the premise.
+
+The work was not only aesthetic — it was about total harmony. We started with a laser gingivectomy across all the gum margins, creating a level, symmetrical gum line that is the invisible foundation of any premium smile.
+
+Once the gum was right, we worked on the micro smile design. This was not about drastic changes, but fine detail: adjustments to the incisal edges, small corrections in shape, minimal composite veneers at the specific points that make the difference.
+
+All minimally invasive. Barely touching the original structure of the teeth.
+
+The result was exactly what she was looking for: a more polished, more refined smile, perfect for someone who lives under the lights. She left extremely happy.
+
+USD 5,000 — complete laser gingivectomy + micro smile design in composite.`,
+            fotos: [
+                { alt: "Laser gingivectomy and micro smile design in composite, before and after — Dr. Ariel Merino, AM Estética Dental Puerto Madero", caption: "Before and after — cover image" },
+                { alt: "Before — cavities, old composites and overgrown gum tissue — AM Estética Dental Buenos Aires", caption: "Before — cavities, old composites and overgrown gum" },
+                { alt: "After — complete transformation with laser gingivectomy and composite veneers — AM Estética Dental", caption: "After — complete transformation" },
+                { alt: "Face comparison before and after laser gingivectomy and micro smile design — Dr. Ariel Merino, AM Estética Dental", caption: "Face comparison — before and after" },
+                { alt: "Lips before and after laser gingivectomy and micro smile design in composite — AM Estética Dental Puerto Madero", caption: "Lips — before and after" },
+                { alt: "Profile before and after laser gingivectomy and composite micro smile design — AM Estética Dental Buenos Aires", caption: "Profile — before and after" },
+            ],
+        },
     },
     {
         slug: "bruxismo-desgaste-dental-rehabilitacion-carillas-ceramicas",
@@ -769,6 +1069,37 @@ Diez años menos en la cara. Una boca que vuelve a funcionar.`,
             nota: "Rehabilitación cerámica completa — carillas AM lentes de contacto dental — restauración de dimensión vertical",
         },
         publicado: true,
+        en: {
+            titulo: "Teeth never lie about your age. Veneers do.",
+            subtitulo: "Severe bruxism + wear + yellowing — complete ceramic rehabilitation with AM veneers that gave back years",
+            descripcion: "A clinical case of severe bruxism with tooth wear and yellowing, resolved with a complete ceramic rehabilitation using AM veneers and restoration of vertical dimension. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
+            seoTitle: "Bruxism and Tooth Wear: Ceramic Rehabilitation",
+            seoDescription: "Severe bruxism and tooth wear resolved with a complete ceramic rehabilitation and restored vertical dimension in 15 days. Dr. Ariel Merino.",
+            categorias: ["Porcelain veneers", "Bruxism", "Smile design", "Full rehabilitation"],
+            duracion: "15 days",
+            piezas: "Complete ceramic rehabilitation — AM veneers, upper and lower arch",
+            tecnica: "AM contact lens veneers — occlusal rehabilitation — increase in vertical dimension lost to wear",
+            copy: `Bruxism gives no warning. It wears the teeth down little by little, year after year, until one day the patient looks in the mirror and sees a smile they do not recognise. Short teeth, yellow, with a crowding that grew without anyone noticing.
+
+That is what Gustavo brought with him when he came to the clinic. Years of clenching and grinding at night had left their mark. Not only on the aesthetics — on function too. His bite was compromised.
+
+The plan was comprehensive: AM contact lens veneers to restore volume, shape and colour to every tooth, with an adjustment of the vertical dimension that re-established the bite and released the accumulated pressure.
+
+The result was not just a new smile. It was a different face. Ten years younger. A mouth that worked the way it was supposed to work again.
+
+Sometimes ceramic is not aesthetic. It is therapeutic.`,
+            fotos: [
+                { alt: "Bruxism and tooth wear, before and after complete ceramic rehabilitation with AM veneers — Dr. Ariel Merino, AM Estética Dental", caption: "Before and after — cover image" },
+                { alt: "Before — frontal face with worn and yellowed teeth from severe bruxism — AM Estética Dental Buenos Aires", caption: "Before — frontal face" },
+                { alt: "After — frontal face following complete ceramic rehabilitation — Dr. Ariel Merino, AM Estética Dental", caption: "After — frontal face" },
+                { alt: "Intraoral before and after ceramic rehabilitation for bruxism with restored vertical dimension — AM Estética Dental", caption: "Intraoral — before and after" },
+                { alt: "Lower arch before and after complete ceramic rehabilitation — AM Estética Dental Puerto Madero", caption: "Lower arch — before and after" },
+                { alt: "Lips and smile before and after ceramic rehabilitation with AM veneers — AM Estética Dental Buenos Aires", caption: "Lips and smile — before and after" },
+                { alt: "Lips with mouth slightly open after ceramic rehabilitation — AM Estética Dental Puerto Madero", caption: "Lips — mouth slightly open" },
+                { alt: "Profile before and after ceramic rehabilitation with increased vertical dimension — AM Estética Dental", caption: "Profile — before and after" },
+                { alt: "Profile comparison before and after complete ceramic rehabilitation for bruxism — Dr. Ariel Merino, AM Estética Dental", caption: "Profile comparison — before and after" },
+            ],
+        },
     },
     {
         slug: "gingivectomia-laser-sin-bisturi-sangrado-puntos",
@@ -833,6 +1164,35 @@ Menos trauma, más precisión y una cicatrización más rápida.`,
             nota: "Gingivectomía láser + limpieza periodontal por ultrasonido. El valor depende de la extensión del remodelado y del estado periodontal.",
         },
         publicado: true,
+        en: {
+            titulo: "Laser gingivectomy: healthy gums without a scalpel, bleeding or stitches",
+            subtitulo: "Inflamed and enlarged gums in the lower arch — tissue reshaped with a laser, without a scalpel or stitches, combined with ultrasonic cleaning",
+            descripcion: "A clinical case of laser gingivectomy in the lower arch, with gingival inflammation and enlarged gums. A technique without a scalpel, without stitches and with less bleeding, combined with ultrasound for faster recovery. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
+            seoTitle: "Laser Gingivectomy Without Scalpel or Stitches",
+            seoDescription: "A case of laser gingivectomy for inflamed and enlarged gums in the lower arch: tissue reshaped without a scalpel, without stitches and with less bleeding. Dr. Ariel Merino.",
+            categorias: ["Gum contouring", "Periodontics"],
+            duracion: "Tailored treatment",
+            piezas: "Gum reshaping of the lower anterior sector + periodontal cleaning",
+            tecnica: "Laser gingivectomy (tissue ablation, no scalpel or stitches) + ultrasonic periodontal cleaning",
+            copy: `The patient came in with marked gingival inflammation in the lower arch. It was not only a question of colour or hygiene: the gums were enlarged, with excess tissue, and that made the smile look heavier and less defined.
+
+The plan was to treat the problem conservatively and precisely: a laser gingivectomy to reshape the gum tissue, and periodontal cleaning combining laser with ultrasound. The goal was not to "trim for the sake of trimming", but to give the gum a healthier, cleaner and more harmonious architecture.
+
+The difference this technique makes is significant. The laser works by ablation, allowing tissue to be removed with great precision while also supporting faster recovery. By not using a scalpel, the procedure reduces bleeding, avoids stitches and tends to produce fewer post-operative symptoms.
+
+It was then complemented with ultrasound to remove plaque, calculus and irritants that were sustaining the inflammation. That combination is key: the laser improves the handling of soft tissue, but the deep cleaning eliminates the cause keeping the gum inflamed.
+
+The result shows a less inflamed gum, with a better contour and a visually more organised smile. Technology applied with clinical judgment: less trauma, more precision and faster healing.
+
+Results correspond to this particular clinical case. Every treatment requires individual diagnosis and planning.`,
+            fotos: [
+                { alt: "Before and after laser gingivectomy in the lower arch — inflamed, enlarged gum versus healthy, contoured gum — Dr. Ariel Merino, AM Estética Dental Puerto Madero", caption: "Before and after — from inflamed gum to healthy, defined tissue" },
+                { alt: "Planning the gum reshaping before the laser gingivectomy — AM Estética Dental Buenos Aires", caption: "Planning the gum contour" },
+                { alt: "Ultrasonic periodontal cleaning complementing the laser gingivectomy — AM Estética Dental Puerto Madero", caption: "Ultrasonic periodontal cleaning" },
+                { alt: "Post-operative check-up of the laser gingivectomy with healed gum tissue — AM Estética Dental Buenos Aires", caption: "Post-operative check-up — gum healing" },
+                { alt: "Initial intraoral record of the laser gingivectomy case in the lower arch — AM Estética Dental Puerto Madero", caption: "Initial intraoral record" },
+            ],
+        },
     },
 ];
 
