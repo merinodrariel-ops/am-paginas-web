@@ -4,6 +4,7 @@
 export const EN_BY_ES: Record<string, string> = {
   "/turismo-dental": "/en/dental-tourism-argentina",
   "/carillas-dentales": "/en/porcelain-veneers-buenos-aires",
+  "/diseno-de-sonrisa": "/en/smile-design-buenos-aires",
 };
 
 export const ES_BY_EN: Record<string, string> = Object.fromEntries(
