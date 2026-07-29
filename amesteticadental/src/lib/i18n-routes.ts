@@ -3,6 +3,7 @@
 // toman automáticamente. La clave es la URL en español; el valor, la de inglés.
 export const EN_BY_ES: Record<string, string> = {
   "/turismo-dental": "/en/dental-tourism-argentina",
+  "/carillas-dentales": "/en/porcelain-veneers-buenos-aires",
 };
 
 export const ES_BY_EN: Record<string, string> = Object.fromEntries(
