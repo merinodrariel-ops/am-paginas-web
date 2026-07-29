@@ -41,8 +41,8 @@ const NAV_LINKS_EN = [
     { label: "Smile Design",   href: "/en/smile-design-buenos-aires" },
     { label: "Dental Tourism", href: "/en/dental-tourism-argentina" },
     { label: "Before & After", href: "/casos-antes-y-despues" },
-    { label: "Clinic",         href: "/clinica" },
-    { label: "Team",           href: "/equipo-am" },
+    { label: "Clinic",         href: "/en/clinic" },
+    { label: "Team",           href: "/en/team" },
 ];
 
 const FEATURED_LINKS_EN = [

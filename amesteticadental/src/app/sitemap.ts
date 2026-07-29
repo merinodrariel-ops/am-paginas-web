@@ -47,6 +47,8 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/en/dental-tourism-argentina", changeFrequency: "monthly", priority: 0.85 },
   { path: "/en/porcelain-veneers-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
   { path: "/en/smile-design-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/en/clinic", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/en/team", changeFrequency: "monthly", priority: 0.8 },
   { path: "/opiniones", changeFrequency: "monthly", priority: 0.85 },
   { path: "/prensa", changeFrequency: "monthly", priority: 0.8 },
   { path: "/casos-antes-y-despues", changeFrequency: "weekly", priority: 0.95 },

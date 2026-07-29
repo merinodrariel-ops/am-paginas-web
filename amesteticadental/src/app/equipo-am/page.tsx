@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Contacto from "@/components/Contacto";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import { equipoAM, equipoClinico } from "@/data/equipo";
+import { hreflangFor } from "@/lib/i18n-routes";
 
 const TRABAJA_EN_AM_URL = "/trabaja-en-am";
 
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "Conocé al Equipo AM de AM Estética Dental en Puerto Madero: odontología estética, alineadores invisibles, laboratorio dental digital, asistencia clínica y atención a pacientes.",
   alternates: {
     canonical: "https://www.amesteticadental.com/equipo-am",
+    languages: hreflangFor("/equipo-am"),
   },
   keywords:
     "Equipo AM, AM Estética Dental, equipo odontológico Puerto Madero, odontólogos estética dental Buenos Aires, clínica dental Puerto Madero",

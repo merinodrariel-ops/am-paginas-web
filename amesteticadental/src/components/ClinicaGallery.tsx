@@ -19,26 +19,36 @@ const FOTOS_INTERIORES = [
     src: getImgSrc("recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg"),
     alt: "Recepción de AM Estética Dental con iluminación cálida en Puerto Madero, Buenos Aires",
     title: "Recepción Boutique de la Clínica",
+    altEn: "AM Estética Dental reception with warm lighting in Puerto Madero, Buenos Aires",
+    titleEn: "Boutique Clinic Reception",
   },
   {
     src: getImgSrc("decoracion-recepcion-boutique-crema-oro-am-estetica-dental.jpg"),
     alt: "Detalles decorativos en tonos crema y oro de la recepción de AM Estética Dental",
     title: "Diseño Interior Crema y Oro",
+    altEn: "Cream and gold decorative details in the AM Estética Dental reception",
+    titleEn: "Cream & Gold Interior Design",
   },
   {
     src: getImgSrc("sala-de-espera-exclusiva-boutique-puerto-madero.jpg"),
     alt: "Vista general de la sala de espera boutique y recepción premium de AM Estética Dental",
     title: "Sala de Espera Exclusiva Boutique",
+    altEn: "Overview of the boutique waiting lounge and premium reception at AM Estética Dental",
+    titleEn: "Exclusive Boutique Waiting Lounge",
   },
   {
     src: getImgSrc("sillon-relax-confort-sala-espera-clinica-dental.jpg"),
     alt: "Sillón relax de gran confort y diseño moderno en el área de espera boutique de la clínica",
     title: "Sillón de Relajación y Descanso",
+    altEn: "High-comfort relaxation armchair in the clinic's boutique waiting area",
+    titleEn: "Relaxation Armchair",
   },
   {
     src: getImgSrc("recepcion-experiencia-digital-pacientes-am-estetica-dental.jpg"),
     alt: "Espacio tecnológico y recepción interactiva de AM Estética Dental en Puerto Madero",
     title: "Entorno Digital y Hospitalidad",
+    altEn: "Digital patient experience and interactive reception at AM Estética Dental",
+    titleEn: "Digital Environment & Hospitality",
   }
 ];
 
@@ -47,22 +57,62 @@ const FOTOS_EXTERIORES = [
     src: getImgSrc("entrada-clinica-cartel-iluminado-am-estetica-dental-puerto-madero.jpg"),
     alt: "Entrada principal de AM Estética Dental con el logotipo iluminado en Puerto Madero",
     title: "Logotipo Exterior Iluminado",
+    altEn: "Main entrance of AM Estética Dental with the illuminated logo in Puerto Madero",
+    titleEn: "Illuminated Exterior Logo",
   },
   {
     src: getImgSrc("ingreso-clinica-cartel-luminoso-am-estetica-dental-puerto-madero.jpg"),
     alt: "Ingreso premium a AM Estética Dental, cartel iluminado en Camila O'Gorman 412",
     title: "Cartel Luminoso de Bienvenida",
+    altEn: "Premium entrance to AM Estética Dental, illuminated sign at Camila O'Gorman 412",
+    titleEn: "Illuminated Welcome Sign",
   },
   {
     src: getImgSrc("letrero-entrada-am-estetica-dental-dr-ariel-merino-puerto-madero.jpg"),
     alt: "Cartel exterior identificatorio del Dr. Ariel Merino en Puerto Madero, Buenos Aires",
     title: "Letrero Identificatorio del Doctor",
+    altEn: "Exterior sign identifying Dr. Ariel Merino in Puerto Madero, Buenos Aires",
+    titleEn: "Doctor's Exterior Sign",
   }
 ];
 
 const ALL_PHOTOS = [...FOTOS_INTERIORES, ...FOTOS_EXTERIORES];
 
-export default function ClinicaGallery() {
+const UI = {
+  es: {
+    interiorTitleA: "La Recepción y ",
+    interiorTitleB: "Sala de Espera Boutique",
+    interiorSub: "Atmósfera de confort crema & oro · 5 tomas de interior",
+    exteriorTitleA: "El Acceso Exterior y ",
+    exteriorTitleB: "Cartel Oficial de AM",
+    exteriorSub: "Lo que encontrás al llegar · 3 tomas de exterior",
+    viewDetail: "Ver en detalle",
+    lightboxEyebrow: "{t.lightboxEyebrow}",
+    close: "Cerrar",
+    prev: "Foto anterior",
+    next: "Siguiente foto",
+  },
+  en: {
+    interiorTitleA: "The Reception & ",
+    interiorTitleB: "Boutique Waiting Lounge",
+    interiorSub: "Cream & gold comfort atmosphere · 5 interior shots",
+    exteriorTitleA: "The Entrance & ",
+    exteriorTitleB: "Official AM Sign",
+    exteriorSub: "What you'll find on arrival · 3 exterior shots",
+    viewDetail: "View in detail",
+    lightboxEyebrow: "Facility Gallery · AM Estética Dental",
+    close: "Close",
+    prev: "Previous photo",
+    next: "Next photo",
+  },
+} as const;
+
+type Foto = (typeof ALL_PHOTOS)[number];
+const fotoText = (f: Foto, lang: "es" | "en") =>
+  lang === "en" ? { alt: f.altEn, title: f.titleEn } : { alt: f.alt, title: f.title };
+
+export default function ClinicaGallery({ lang = "es" }: { lang?: "es" | "en" }) {
+  const t = UI[lang];
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
 
   // Funciones de navegación memorizadas
@@ -111,10 +161,10 @@ export default function ClinicaGallery() {
       {/* ── SECCIÓN INTERIORES ── */}
       <div className="mb-8 border-b border-oro/10 pb-4">
         <h3 className="text-2xl font-light text-crema">
-          La Recepción y <span className="font-cormorant italic text-oro">Sala de Espera Boutique</span>
+          {t.interiorTitleA}<span className="font-cormorant italic text-oro">{t.interiorTitleB}</span>
         </h3>
         <p className="text-crema/40 text-xs mt-1 uppercase tracking-widest">
-          Atmósfera de confort crema & oro · 5 tomas de interior
+          {t.interiorSub}
         </p>
       </div>
 
@@ -127,7 +177,7 @@ export default function ClinicaGallery() {
           >
             <Image
               src={foto.src}
-              alt={foto.alt}
+              alt={fotoText(foto, lang).alt}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -135,9 +185,9 @@ export default function ClinicaGallery() {
             <div className="absolute inset-0 bg-gradient-to-t from-carbon/90 via-carbon/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
               <div>
                 <span className="text-oro font-cormorant italic text-sm block mb-1">AM Estética Dental</span>
-                <h4 className="text-crema font-medium text-base leading-tight mb-2">{foto.title}</h4>
+                <h4 className="text-crema font-medium text-base leading-tight mb-2">{fotoText(foto, lang).title}</h4>
                 <span className="inline-flex items-center gap-1.5 text-xs text-oro border-b border-oro/35 pb-0.5">
-                  Ver en detalle
+                  {t.viewDetail}
                 </span>
               </div>
             </div>
@@ -148,10 +198,10 @@ export default function ClinicaGallery() {
       {/* ── SECCIÓN EXTERIORES ── */}
       <div className="mb-8 border-b border-oro/10 pb-4">
         <h3 className="text-2xl font-light text-crema">
-          El Acceso Exterior y <span className="font-cormorant italic text-oro">Cartel Oficial de AM</span>
+          {t.exteriorTitleA}<span className="font-cormorant italic text-oro">{t.exteriorTitleB}</span>
         </h3>
         <p className="text-crema/40 text-xs mt-1 uppercase tracking-widest">
-          Lo que encontrás al llegar · 3 tomas de exterior
+          {t.exteriorSub}
         </p>
       </div>
 
@@ -164,7 +214,7 @@ export default function ClinicaGallery() {
           >
             <Image
               src={foto.src}
-              alt={foto.alt}
+              alt={fotoText(foto, lang).alt}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -172,9 +222,9 @@ export default function ClinicaGallery() {
             <div className="absolute inset-0 bg-gradient-to-t from-carbon/90 via-carbon/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
               <div>
                 <span className="text-oro font-cormorant italic text-sm block mb-1">AM Estética Dental</span>
-                <h4 className="text-crema font-medium text-base leading-tight mb-2">{foto.title}</h4>
+                <h4 className="text-crema font-medium text-base leading-tight mb-2">{fotoText(foto, lang).title}</h4>
                 <span className="inline-flex items-center gap-1.5 text-xs text-oro border-b border-oro/35 pb-0.5">
-                  Ver en detalle
+                  {t.viewDetail}
                 </span>
               </div>
             </div>
@@ -189,17 +239,17 @@ export default function ClinicaGallery() {
           <div className="flex items-center justify-between w-full z-10 pt-4 px-4">
             <div className="text-left">
               <span className="text-oro uppercase tracking-[0.25em] text-[10px] block mb-1">
-                Galería de Instalaciones · AM Estética Dental
+                {t.lightboxEyebrow}
               </span>
               <h4 className="text-crema text-base md:text-lg font-light leading-tight">
-                {ALL_PHOTOS[activeIdx].title}
+                {fotoText(ALL_PHOTOS[activeIdx], lang).title}
               </h4>
             </div>
             
             <button
               onClick={closeLightbox}
               className="p-3 text-crema/60 hover:text-oro transition-colors rounded-full border border-crema/10 hover:border-oro/30 bg-carbon-soft"
-              aria-label="Cerrar"
+              aria-label={t.close}
             >
               <X className="w-5 h-5" />
             </button>
@@ -211,7 +261,7 @@ export default function ClinicaGallery() {
             <button
               onClick={prevPhoto}
               className="absolute left-2 md:left-6 p-4 text-crema/60 hover:text-oro transition-colors rounded-full border border-crema/10 hover:border-oro/30 bg-carbon-soft z-20"
-              aria-label="Foto anterior"
+              aria-label={t.prev}
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -220,7 +270,7 @@ export default function ClinicaGallery() {
             <div className="relative w-full max-w-5xl h-[55vh] md:h-[70vh] transition-transform duration-500">
               <Image
                 src={ALL_PHOTOS[activeIdx].src}
-                alt={ALL_PHOTOS[activeIdx].alt}
+                alt={fotoText(ALL_PHOTOS[activeIdx], lang).alt}
                 fill
                 sizes="(max-width: 1200px) 100vw, 80vw"
                 className="object-contain"
@@ -232,7 +282,7 @@ export default function ClinicaGallery() {
             <button
               onClick={nextPhoto}
               className="absolute right-2 md:right-6 p-4 text-crema/60 hover:text-oro transition-colors rounded-full border border-crema/10 hover:border-oro/30 bg-carbon-soft z-20"
-              aria-label="Siguiente foto"
+              aria-label={t.next}
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -241,7 +291,7 @@ export default function ClinicaGallery() {
           {/* Footer del Lightbox */}
           <div className="flex flex-col md:flex-row items-center justify-between w-full px-4 pb-4 gap-3 z-10">
             <p className="text-crema/40 text-xs text-center md:text-left max-w-2xl font-light">
-              {ALL_PHOTOS[activeIdx].alt}
+              {fotoText(ALL_PHOTOS[activeIdx], lang).alt}
             </p>
             <div className="text-oro font-manrope text-sm font-medium bg-oro/5 px-4 py-1.5 rounded-full border border-oro/10">
               {activeIdx + 1} / {ALL_PHOTOS.length}
