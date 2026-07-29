@@ -17,6 +17,18 @@ type PublicClinicalCaseRow = {
   copy_social: string | null;
   published_at: string | null;
   status: string;
+  translations: Record<string, {
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    seoTitle?: string;
+    seoDescription?: string;
+    categories?: string[];
+    duration?: string;
+    pieces?: string;
+    technique?: string;
+    copy?: string;
+  }> | null;
 };
 
 type PublicClinicalCaseAssetRow = {
@@ -26,6 +38,7 @@ type PublicClinicalCaseAssetRow = {
   caption: string | null;
   role: string;
   sort_order: number;
+  translations: Record<string, { alt?: string; caption?: string }> | null;
 };
 
 // Versiones de importación que no deben competir con el caso editorial definitivo.
@@ -65,48 +78,54 @@ function getSupabasePublic() {
   return createClient(url, anon, { auth: { persistSession: false } });
 }
 
-function mapAssetToFoto(asset: PublicClinicalCaseAssetRow): FotoCaso {
+function mapAssetToFoto(asset: PublicClinicalCaseAssetRow, lang: "es" | "en"): FotoCaso {
+  const localized = lang === "en" ? asset.translations?.en : undefined;
   return {
     src: asset.public_url,
-    alt: asset.alt,
-    caption: asset.caption || undefined,
+    alt: localized?.alt || asset.alt,
+    caption: localized?.caption || asset.caption || undefined,
   };
 }
 
-function mapDynamicCase(row: PublicClinicalCaseRow, assets: PublicClinicalCaseAssetRow[]): Caso | null {
+function mapDynamicCase(
+  row: PublicClinicalCaseRow,
+  assets: PublicClinicalCaseAssetRow[],
+  lang: "es" | "en",
+): Caso | null {
+  const localized = lang === "en" ? row.translations?.en : undefined;
   const fotos = assets
     .sort((a, b) => a.sort_order - b.sort_order)
-    .map(mapAssetToFoto);
+    .map((asset) => mapAssetToFoto(asset, lang));
 
   const fotoPortada = fotos[0];
   if (!fotoPortada) return null;
 
   return {
     slug: row.slug,
-    titulo: row.title,
-    subtitulo: row.subtitle || row.description,
-    descripcion: row.description,
-    seoTitle: row.seo_title || undefined,
-    seoDescription: row.seo_description || undefined,
-    categorias: row.categories || ["Caso clínico"],
-    duracion: row.duration || "Caso clínico",
-    piezas: row.pieces || undefined,
-    tecnica: row.technique || undefined,
+    titulo: localized?.title || row.title,
+    subtitulo: localized?.subtitle || localized?.description || row.subtitle || row.description,
+    descripcion: localized?.description || row.description,
+    seoTitle: localized?.seoTitle || row.seo_title || undefined,
+    seoDescription: localized?.seoDescription || row.seo_description || undefined,
+    categorias: localized?.categories || row.categories || (lang === "en" ? ["Clinical case"] : ["Caso clínico"]),
+    duracion: localized?.duration || row.duration || (lang === "en" ? "Clinical case" : "Caso clínico"),
+    piezas: localized?.pieces || row.pieces || undefined,
+    tecnica: localized?.technique || row.technique || undefined,
     fotoPortada,
     fotos,
-    copy: row.copy,
+    copy: localized?.copy || localized?.description || row.copy,
     copyRedes: row.copy_social || undefined,
     publicado: row.status === "published",
   };
 }
 
-export async function getDynamicCasosPublicados(): Promise<Caso[]> {
+export async function getDynamicCasosPublicados(lang: "es" | "en" = "es"): Promise<Caso[]> {
   const supabase = getSupabasePublic();
   if (!supabase) return [];
 
   const { data: caseRows, error: caseError } = await supabase
     .from("public_clinical_cases")
-    .select("id, slug, title, subtitle, description, seo_title, seo_description, categories, duration, pieces, technique, copy, copy_social, published_at, status")
+    .select("id, slug, title, subtitle, description, seo_title, seo_description, categories, duration, pieces, technique, copy, copy_social, published_at, status, translations")
     .eq("status", "published")
     .order("published_at", { ascending: false });
 
@@ -115,7 +134,7 @@ export async function getDynamicCasosPublicados(): Promise<Caso[]> {
   const caseIds = caseRows.map((row) => row.id);
   const { data: assetRows, error: assetError } = await supabase
     .from("public_clinical_case_assets")
-    .select("case_id, public_url, alt, caption, role, sort_order")
+    .select("case_id, public_url, alt, caption, role, sort_order, translations")
     .in("case_id", caseIds)
     .order("sort_order", { ascending: true });
 
@@ -136,13 +155,13 @@ export async function getDynamicCasosPublicados(): Promise<Caso[]> {
       }
       return true;
     })
-    .map((row) => mapDynamicCase(row, assetsByCase.get(row.id) || []))
+    .map((row) => mapDynamicCase(row, assetsByCase.get(row.id) || [], lang))
     .filter((value): value is Caso => Boolean(value));
 }
 
-export async function getCasosPublicadosMerged(): Promise<Caso[]> {
+export async function getCasosPublicadosMerged(lang: "es" | "en" = "es"): Promise<Caso[]> {
   const staticCases = getStaticCasosPublicados();
-  const dynamicCases = await getDynamicCasosPublicados();
+  const dynamicCases = await getDynamicCasosPublicados(lang);
 
   // El caso curado (estático) es autoritativo: se aplica ÚLTIMO para que gane
   // sobre su equivalente del bridge con el mismo slug (evita, p. ej., que una
@@ -154,11 +173,11 @@ export async function getCasosPublicadosMerged(): Promise<Caso[]> {
   return Array.from(merged.values()).filter((caso) => !LEGACY_CASE_SLUGS.has(caso.slug));
 }
 
-export async function getCasoBySlugMerged(slug: string): Promise<Caso | undefined> {
+export async function getCasoBySlugMerged(slug: string, lang: "es" | "en" = "es"): Promise<Caso | undefined> {
   if (LEGACY_CASE_SLUGS.has(slug)) return undefined;
   // Curado (estático) primero — es la fuente autoritativa.
   const staticCase = getStaticCasoBySlug(slug);
   if (staticCase) return staticCase;
-  const dynamicCases = await getDynamicCasosPublicados();
+  const dynamicCases = await getDynamicCasosPublicados(lang);
   return dynamicCases.find((caso) => caso.slug === slug);
 }

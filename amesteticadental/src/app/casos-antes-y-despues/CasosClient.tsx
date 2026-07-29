@@ -36,7 +36,7 @@ const UI = {
         eyebrow: "Real before & afters",
         h1a: "Documented",
         h1b: "clinical cases.",
-        lead: "Every before & after in this gallery is a real, documented case: diagnosis, technique, timeline, photos and follow-up. No stock images, no filters. Case write-ups are in Spanish — send us a message and we'll walk you through any case in English.",
+        lead: "Every before & after in this gallery is a real, documented case: diagnosis, technique, timeline, photos and follow-up. No stock images, no filters.",
         empty: "No published cases in this category yet.",
         featured: "Featured",
         viewCase: "View full case",
@@ -123,7 +123,7 @@ export default function CasosClient({ todos, fijos = [], lang = "es" }: { todos:
                         {casos.map((caso) => {
                             const destacado = fijosSet.has(caso.slug);
                             return (
-                            <Link key={caso.slug} href={`/casos/${caso.slug}`} className="group block">
+                            <Link key={caso.slug} href={lang === "en" ? `/en/cases/${caso.slug}` : `/casos/${caso.slug}`} className="group block">
                                 <article className="bg-carbon border border-crema/5 rounded-2xl overflow-hidden hover:border-oro/20 transition-colors duration-300">
                                     <div className="relative aspect-square overflow-hidden">
                                         <Image

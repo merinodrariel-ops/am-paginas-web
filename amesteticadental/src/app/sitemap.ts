@@ -86,5 +86,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.85,
     })),
+    ...casos.map((caso) => ({
+      url: `${SITE}/en/cases/${caso.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
   ];
 }

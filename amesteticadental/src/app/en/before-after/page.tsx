@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 export default async function BeforeAfterPage() {
-    const casos = ordenarGaleria(await getCasosPublicadosMerged());
+    const casos = ordenarGaleria(await getCasosPublicadosMerged("en"));
     return (
         <>
             <Navbar />
