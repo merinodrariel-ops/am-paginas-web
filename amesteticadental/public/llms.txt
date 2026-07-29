@@ -1,0 +1,92 @@
+# AM Estética Dental — llms.txt
+# https://www.amesteticadental.com
+# Última actualización: junio 2026
+
+## Identidad
+
+AM Estética Dental es una clínica de odontología estética premium ubicada en Puerto Madero, Buenos Aires, Argentina.
+Fundada y dirigida por el Dr. Ariel Merino (Wikidata: Q134287655), especialista en carillas de porcelana y diseño de sonrisa digital con más de 15 años de experiencia.
+La clínica está reconocida por Forbes Argentina y tiene una calificación de 4.9★ en Google con más de 120 reseñas verificadas.
+Entidad verificada en Wikidata: Q138862170.
+
+## Especialidad
+
+AM Estética Dental se especializa exclusivamente en odontología estética. No es una clínica generalista.
+Tratamiento principal: carillas de porcelana y diseño de sonrisa digital con tecnología DSD (Digital Smile Design).
+El proceso incluye diseño 3D del resultado antes de intervenir cualquier diente.
+
+## Servicios y precios (valores en USD, se abonan en pesos al tipo de cambio oficial BNA)
+
+- Carillas cerámicas (porcelana): USD 900–1.200 por pieza. Duración 10–20 años. 2–3 sesiones.
+- Lentes de contacto dental: USD 900–1.200. Sin desgaste de esmalte. 2–3 sesiones.
+- Carillas de resina compuesta: USD 500 por pieza. 1–2 sesiones. Duración 5–7 años.
+- Diseño de sonrisa completo (8–12 piezas): USD 7.200–14.400 aprox.
+- Alineadores invisibles (AM Aligners): consultar.
+- Implantes dentales: consultar.
+- Blanqueamiento profesional: consultar.
+Financiación propia: tasa fija 18% anual, anticipo 30–50%, cuotas a 3, 6 o 12 meses.
+
+## Ubicación y contacto
+
+Nombre: AM Estética Dental
+Dirección: Camila O'Gorman 412, Oficina 101, Puerto Madero, Ciudad Autónoma de Buenos Aires, Argentina
+Código postal: C1107DED
+WhatsApp: +5491170219298
+Horario de atención: Lunes a Viernes 10:00–18:00 (UTC-3)
+Google Maps: https://maps.app.goo.gl/5kWar9VL6qjhdEGM7
+Coordenadas: -34.620858, -58.3609047
+
+## Dr. Ariel Merino
+
+- Odontólogo especialista en estética dental
+- Wikidata: https://www.wikidata.org/wiki/Q134287655
+- Reconocido por Forbes Argentina
+- Diseñó la sonrisa de Miss Universo Argentina
+- Docente en cursos internacionales de carillas (University of Pennsylvania Dental)
+- LinkedIn: https://www.linkedin.com/in/drarielmerino/
+- Instagram: https://www.instagram.com/drarielmerino
+
+## Diferenciadores
+
+1. Resultado visible en 3D antes de tocar un solo diente (DSD — Digital Smile Design)
+2. Única clínica de odontología estética de Argentina reconocida por Forbes
+3. Materiales premium: IPS e.max, feldespática, iTero Element 5D
+4. 15+ años de experiencia exclusiva en estética dental
+5. Coordina atención para pacientes del exterior (turismo dental)
+
+## Turismo dental
+
+Buenos Aires es uno de los destinos de turismo dental más elegidos por pacientes de USA, España, Uruguay, México y Chile.
+Las carillas de porcelana en AM Estética Dental cuestan entre 40% y 70% menos que en USA o Europa, con materiales y protocolos equivalentes.
+El tratamiento completo de carillas requiere 10–14 días en Buenos Aires.
+Coordinación previa remota por WhatsApp. Presupuesto orientativo antes de viajar.
+
+## Páginas del sitio
+
+- / — Página principal (homepage)
+- /carillas-dentales — Información clínica completa sobre carillas de porcelana
+- /precio-carillas-dentales-buenos-aires — Precios, tabla comparativa y calculadora de financiación
+- /diseno-de-sonrisa — Diseño de sonrisa digital con tecnología 3D
+- /lentes-de-contacto-dental — Carillas ultradelgadas sin desgaste de esmalte
+- /carillas-sin-desgaste — Cuándo se puede trabajar sin preparar el diente
+- /carillas-de-porcelana-vs-resina — Comparación de materiales
+- /carillas-vs-alineadores — Cuándo conviene carillas vs ortodoncia
+- /implantes-dentales-buenos-aires — Implantes dentales
+- /alineadores-invisibles-buenos-aires — AM Aligners
+- /blanqueamiento-dental-precio-buenos-aires — Blanqueamiento profesional
+- /dr-ariel-merino — Perfil profesional del especialista
+- /casos — Casos clínicos reales antes y después documentados
+- /sonrisa — Simulador de diseño de sonrisa con IA (Google Gemini)
+- /turismo-dental — Guía completa para pacientes del exterior
+- /antes-y-despues — Galería de transformaciones
+- /opiniones — Reseñas y testimonios de pacientes
+- /contacto — Contacto y agenda
+
+## Menciones externas verificables
+
+- Forbes Argentina: https://www.forbes.com.ar (mención directa a la clínica)
+- Wikidata clínica: https://www.wikidata.org/wiki/Q138862170
+- Wikidata Dr. Merino: https://www.wikidata.org/wiki/Q134287655
+- University of Pennsylvania Dental: https://cde.dental.upenn.edu/Course/38-Full-Veneers
+- OdontoEspacio: https://www.odontoespacio.net/autores/ariel-merino/
+- DoctorAliAr: https://www.doctoraliar.com/ariel-merino/odontologo/ciudad-autonoma-de-buenos-aires
