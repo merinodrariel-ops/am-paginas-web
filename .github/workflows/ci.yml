@@ -1,0 +1,49 @@
+name: CI — build de los sitios
+
+# Red de seguridad: verifica que cada sitio compile en cada push a main.
+# Vercel deploya igual por su cuenta; esto avisa POR QUÉ algo se rompió y
+# deja el error legible en GitHub (el Dr. solo mira la web, no la terminal).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "amesteticadental/**"
+      - "thedentalreview/**"
+      - "arielmerino/**"
+      - ".github/workflows/ci.yml"
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        site: [amesteticadental, thedentalreview, arielmerino]
+    name: build ${{ matrix.site }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ${{ matrix.site }}/package-lock.json
+
+      - name: Install
+        working-directory: ${{ matrix.site }}
+        run: npm ci
+
+      - name: Build
+        working-directory: ${{ matrix.site }}
+        run: npm run build
+        env:
+          # Claves públicas dummy para que el build no falle sin Supabase real.
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co' }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder' }}

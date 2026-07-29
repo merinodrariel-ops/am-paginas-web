@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Manrope, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
@@ -29,6 +30,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" className={`${manrope.variable} ${cormorant.variable}`}>
       <body style={{ background: "var(--carbon)", color: "var(--crema)", fontFamily: "var(--font-manrope, sans-serif)" }}>
         {children}
+        <Script
+          id="plausible-script"
+          strategy="afterInteractive"
+          src="https://plausible.io/js/script.js"
+          data-domain="arielmerino.com"
+        />
       </body>
     </html>
   );

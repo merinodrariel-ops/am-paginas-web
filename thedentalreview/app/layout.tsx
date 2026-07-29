@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -71,6 +72,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen" style={{ background: "var(--paper)", color: "var(--ink)" }}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publisherSchema).replace(/</g, "\\u003c") }} />
         {children}
+        <Script
+          id="plausible-script"
+          strategy="afterInteractive"
+          src="https://plausible.io/js/script.js"
+          data-domain="thedentalreview.com"
+        />
       </body>
     </html>
   );

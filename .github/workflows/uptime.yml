@@ -1,0 +1,48 @@
+name: Uptime — URLs críticas
+
+# Chequea 2 veces por día que las URLs que sostienen el negocio respondan.
+# Si algo falla, el workflow falla → GitHub notifica por email al dueño del repo.
+# Nació de un caso real: /llms.txt dio 404 durante días y nadie lo notó.
+
+on:
+  schedule:
+    - cron: "0 10,22 * * *" # 07:00 y 19:00 hora Argentina
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar URLs críticas
+        run: |
+          set -e
+          fail=0
+          check() {
+            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 -L "$1")
+            if [ "$code" = "200" ]; then
+              echo "✅ $code  $1"
+            else
+              echo "❌ $code  $1"
+              fail=1
+            fi
+          }
+
+          # amesteticadental.com — núcleo
+          check "https://www.amesteticadental.com/"
+          check "https://www.amesteticadental.com/sitemap.xml"
+          check "https://www.amesteticadental.com/robots.txt"
+          check "https://www.amesteticadental.com/llms.txt"
+          check "https://www.amesteticadental.com/casos-antes-y-despues"
+          check "https://www.amesteticadental.com/carillas-dentales"
+          check "https://www.amesteticadental.com/turismo-dental"
+          check "https://www.amesteticadental.com/sonrisa"
+          # sitio en inglés
+          check "https://www.amesteticadental.com/en/dental-tourism-argentina"
+          check "https://www.amesteticadental.com/en/porcelain-veneers-buenos-aires"
+          check "https://www.amesteticadental.com/en/smile-design-buenos-aires"
+          # satélites
+          check "https://www.thedentalreview.com/"
+          check "https://www.thedentalreview.com/sitemap.xml"
+          check "https://www.arielmerino.com/"
+
+          exit $fail
