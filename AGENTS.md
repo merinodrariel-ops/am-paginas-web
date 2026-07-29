@@ -149,12 +149,19 @@ Piezas de la base (en `amesteticadental/`):
 7. Si la página ya tiene versión EN, actualizar los links internos de las otras páginas EN.
 8. `npm run build` → push. IndexNow notifica a Bing solo.
 
-**Hecho (2026-07-29):** `/en/dental-tourism-argentina`, `/en/porcelain-veneers-buenos-aires`,
-`/en/smile-design-buenos-aires`, `/en/clinic`, `/en/team`, `/en/before-after`.
-Componentes bilingües (prop `lang`): `Contacto`, `ClinicaGallery`, `CasosClient`, `Navbar`.
-Data de equipo con campos EN (`rolEn/areaEn/descripcionEn/altEn`).
-**Pendiente:** home `/en` (índice), lentes de contacto (ultra-thin), Dr. Merino,
-simulador `/sonrisa` en EN, contacto standalone, resto de páginas + blog + títulos de casos.
+**Hecho (2026-07-29) — 11 páginas EN:** `/en` (home), `/en/dental-tourism-argentina`,
+`/en/porcelain-veneers-buenos-aires`, `/en/ultra-thin-veneers-buenos-aires`,
+`/en/smile-design-buenos-aires`, `/en/veneers-cost-buenos-aires`, `/en/dr-ariel-merino`,
+`/en/before-after`, `/en/clinic`, `/en/team`, `/en/contact`.
+
+**16 componentes bilingües** (prop `lang`, ES por defecto): Hero, Casos, DrMerino,
+Testimonios, Autoridad, Tratamientos, Features, Clinica, PorQueAM, Prensa, ClientesVIP,
+FAQ, Contacto, ClinicaGallery, CasosClient, LeadForm + Navbar (menú EN completo).
+Data con campos EN: `equipo.ts` (rolEn/areaEn/descripcionEn/altEn), `faq.ts` (`faqDataEn`),
+`leads.ts` (`labelEn`). `RootSchema` evita schema español en /en.
+
+**Pendiente:** blog en inglés, simulador `/sonrisa` en EN, títulos/copys de los casos
+clínicos en EN, y páginas secundarias (comparativas, implantes, blanqueamiento, etc.).
 
 ## Galería de casos — arquitectura de datos (2026-07-28)
 

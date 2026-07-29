@@ -36,10 +36,18 @@ jobs:
           check "https://www.amesteticadental.com/carillas-dentales"
           check "https://www.amesteticadental.com/turismo-dental"
           check "https://www.amesteticadental.com/sonrisa"
-          # sitio en inglés
+          # sitio en inglés (11 páginas)
+          check "https://www.amesteticadental.com/en"
           check "https://www.amesteticadental.com/en/dental-tourism-argentina"
           check "https://www.amesteticadental.com/en/porcelain-veneers-buenos-aires"
+          check "https://www.amesteticadental.com/en/ultra-thin-veneers-buenos-aires"
           check "https://www.amesteticadental.com/en/smile-design-buenos-aires"
+          check "https://www.amesteticadental.com/en/veneers-cost-buenos-aires"
+          check "https://www.amesteticadental.com/en/dr-ariel-merino"
+          check "https://www.amesteticadental.com/en/before-after"
+          check "https://www.amesteticadental.com/en/clinic"
+          check "https://www.amesteticadental.com/en/team"
+          check "https://www.amesteticadental.com/en/contact"
           # satélites
           check "https://www.thedentalreview.com/"
           check "https://www.thedentalreview.com/sitemap.xml"
