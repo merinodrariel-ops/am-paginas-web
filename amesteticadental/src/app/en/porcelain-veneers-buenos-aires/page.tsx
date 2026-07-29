@@ -27,11 +27,11 @@ export const metadata: Metadata = {
 const faqItems = [
     {
         pregunta: "How much do porcelain veneers cost in Buenos Aires?",
-        respuesta: "The price depends on the material (porcelain or composite), the number of teeth and the starting condition of your dentition. At AM Estética Dental we price in USD and offer in-house financing. The initial assessment defines the exact quote for your case — typically a fraction of US or European prices for equivalent quality.",
+        respuesta: "The price depends on the material (porcelain or composite), the number of teeth and the starting condition of your dentition. At AM Estética Dental we price in USD and offer in-house financing. The initial assessment defines the exact quote for your case. What most patients value is the speed: our own laboratory lets us deliver the final result in days.",
     },
     {
         pregunta: "Do veneers damage or wear down your teeth?",
-        respuesta: "Minimally invasive porcelain veneers and no-prep contact-lens veneers require little or no enamel reduction. The technique depends on the case: in some situations we can work directly on the tooth with no preparation. This is assessed at the initial consultation.",
+        respuesta: "We work with minimally invasive techniques: in most cases the enamel preparation is minimal — but it's honest to say that some preparation is usually needed, even with ultra-thin veneers. How much depends on your case, and we explain it clearly at the initial consultation. Our goal is always to remove as little tooth structure as possible.",
     },
     {
         pregunta: "What's the difference between porcelain and composite veneers?",
@@ -42,8 +42,8 @@ const faqItems = [
         respuesta: "The full process is completed in 2 to 3 sessions over 2 to 4 weeks. In the first session we design your smile digitally and show you the preview. Only once you approve it do we move forward with preparation and placement. For international patients we compress this into a single 10–14 day trip.",
     },
     {
-        pregunta: "What are no-prep (contact lens) veneers?",
-        respuesta: "No-prep veneers are ultra-thin shells (0.3 mm) bonded directly to the tooth with no enamel reduction. They are the most conservative option, indicated when the tooth is healthy and you only want to improve color or surface shape.",
+        pregunta: "What are ultra-thin (contact lens) veneers?",
+        respuesta: "Ultra-thin veneers are very fine ceramic shells (around 0.3 mm) bonded to the tooth with minimal enamel preparation. They are the most conservative option, indicated when the tooth is healthy and you only want to improve color or surface shape. Even with this technique a minimal preparation is usually required — we'd rather tell you that up front than promise otherwise.",
     },
     {
         pregunta: "How long do porcelain veneers last?",
@@ -66,7 +66,7 @@ const serviceSchema = {
     "@type": "Service",
     "name": "Porcelain Veneers",
     "serviceType": "Cosmetic Dentistry",
-    "description": "Porcelain veneers and no-prep contact-lens veneers to improve the color, shape and symmetry of the smile.",
+    "description": "Porcelain veneers and ultra-thin contact-lens veneers to improve the color, shape and symmetry of the smile.",
     "provider": {
         "@type": "Dentist",
         "name": "AM Estética Dental",
@@ -107,7 +107,7 @@ export default function PorcelainVeneersPage() {
                             <span className="font-cormorant italic text-oro">in Buenos Aires</span>
                         </h1>
                         <p className="text-crema/68 font-manrope text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
-                            Porcelain, composite and no-prep contact-lens veneers. We change the color, shape and symmetry of your smile with minimally invasive techniques — without compromising the health of your teeth.
+                            Porcelain, composite and ultra-thin contact-lens veneers. We change the color, shape and symmetry of your smile with minimally invasive techniques — and our own in-house lab means natural results in days, not months.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 items-start">
                             <a
@@ -179,7 +179,7 @@ export default function PorcelainVeneersPage() {
                         <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Types of veneers</span>
                         <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-14">
                             Porcelain, composite{" "}
-                            <span className="font-cormorant italic text-oro">and no-prep veneers</span>
+                            <span className="font-cormorant italic text-oro">and ultra-thin veneers</span>
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {[
@@ -190,9 +190,9 @@ export default function PorcelainVeneersPage() {
                                     duracion: "10–20 years",
                                 },
                                 {
-                                    tipo: "No-Prep (Contact Lens) Veneers",
-                                    descripcion: "Ultra-thin veneers (0.3 mm) bonded with no enamel reduction. The most conservative option when the tooth is healthy and only needs a surface improvement.",
-                                    ideal: "Color or shape corrections without removing enamel.",
+                                    tipo: "Ultra-Thin (Contact Lens) Veneers",
+                                    descripcion: "Very fine ceramic shells (around 0.3 mm) bonded with minimal enamel preparation. The most conservative option when the tooth is healthy and only needs a surface improvement.",
+                                    ideal: "Color or shape corrections with the least possible tooth reduction.",
                                     duracion: "8–15 years",
                                 },
                                 {

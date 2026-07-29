@@ -9,8 +9,8 @@ const CANONICAL = "https://www.amesteticadental.com/en/dental-tourism-argentina"
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Dental Tourism in Buenos Aires | Porcelain Veneers & Smile Design",
-    description: "Porcelain veneers and smile design in Buenos Aires for international patients. Up to 70% lower cost than the US or Europe. Dr. Ariel Merino, Puerto Madero.",
+    title: "Dental Tourism in Buenos Aires | Veneers in One Trip — Own Lab",
+    description: "Porcelain veneers and smile design in Buenos Aires for international patients. Our in-house lab delivers natural results in days — for people who value their time. Dr. Ariel Merino, Puerto Madero.",
     alternates: {
         canonical: CANONICAL,
         languages: hreflangFor("/turismo-dental"),
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 
 const faqItems = [
     {
-        pregunta: "How much do veneers in Buenos Aires cost compared to the US or Europe?",
-        respuesta: "Porcelain veneers in Buenos Aires cost between 40% and 70% less than in the United States, Canada or Spain for equivalent clinical quality. A set of 8 veneers that can exceed USD 12,000 in the US is done at AM Estética Dental with premium materials for a fraction of that price — without compromising protocol or result.",
+        pregunta: "How much do porcelain veneers cost in Buenos Aires?",
+        respuesta: "We price in USD and offer in-house financing. The exact quote depends on the number of teeth and the complexity of your case, defined at the initial assessment. What most international patients value isn't the price — it's getting a natural result in a single trip thanks to our own laboratory.",
     },
     {
         pregunta: "How long do I need to stay in Buenos Aires for the treatment?",
@@ -66,7 +66,7 @@ const serviceSchema = {
     "@type": "Service",
     "name": "Dental Tourism in Buenos Aires — Porcelain Veneers & Smile Design",
     "serviceType": "Cosmetic Dentistry",
-    "description": "Porcelain veneers, no-prep veneers and digital smile design for international patients in Puerto Madero, Buenos Aires, Argentina.",
+    "description": "Porcelain veneers, ultra-thin veneers and digital smile design for international patients in Puerto Madero, Buenos Aires, Argentina.",
     "provider": {
         "@type": "Dentist",
         "name": "AM Estética Dental",
@@ -91,13 +91,10 @@ const serviceSchema = {
 
 const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I'm%20interested%20in%20traveling%20to%20Buenos%20Aires%20for%20my%20veneers.%20Could%20you%20send%20me%20more%20information%3F";
 
-const COUNTRIES = [
-    { pais: "United States", ahorro: "up to 70%" },
-    { pais: "Canada", ahorro: "up to 65%" },
-    { pais: "Spain", ahorro: "up to 60%" },
-    { pais: "Mexico", ahorro: "up to 55%" },
-    { pais: "United Kingdom", ahorro: "up to 65%" },
-    { pais: "Chile", ahorro: "up to 50%" },
+const REASONS = [
+    { t: "Our own in-house lab", d: "We control every step of fabrication — no outsourcing, no waiting on third-party labs." },
+    { t: "Results in 10–14 days", d: "A full smile transformation compressed into a single, focused trip." },
+    { t: "Direct with the specialist", d: "Dr. Merino designs and places your case personally, from start to finish." },
 ];
 
 export default function DentalTourismPage() {
@@ -120,12 +117,12 @@ export default function DentalTourismPage() {
                         </span>
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-manrope font-light text-crema leading-[1.0] mb-7">
                             Your new smile in Buenos Aires —{" "}
-                            <span className="font-cormorant italic text-oro">at a price you won't find back home</span>
+                            <span className="font-cormorant italic text-oro">done in days, not months</span>
                         </h1>
                         <p className="text-crema/68 font-manrope text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
-                            Porcelain veneers, no-prep veneers and digital smile design in Puerto Madero.
-                            Same materials, same protocol — up to 70% less than in the US, Canada or Europe.
-                            All in 10 to 14 days.
+                            Porcelain veneers, ultra-thin veneers and digital smile design in Puerto Madero.
+                            Our own in-house laboratory lets us deliver natural, minimally invasive results in 10 to 14 days —
+                            for people whose time is worth more than the wait.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 items-start">
                             <a
@@ -149,7 +146,7 @@ export default function DentalTourismPage() {
                                 { v: "4.9★", l: "Google Reviews" },
                                 { v: "Forbes", l: "Argentina" },
                                 { v: "10–14 days", l: "Full treatment" },
-                                { v: "Up to 70%", l: "savings vs the US" },
+                                { v: "Own lab", l: "in-house, faster" },
                             ].map((s) => (
                                 <div key={s.l}>
                                     <div className="text-oro font-manrope font-semibold text-lg">{s.v}</div>
@@ -167,19 +164,19 @@ export default function DentalTourismPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
                             <div>
                                 <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-6">
-                                    First-world quality{" "}
-                                    <span className="font-cormorant italic text-oro">at Latin American prices</span>
+                                    World-class quality,{" "}
+                                    <span className="font-cormorant italic text-oro">on your timeline</span>
                                 </h2>
                                 <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
                                     Argentina has one of the strongest dental schools in Latin America. The materials we use — IPS e.max porcelain, feldspathic ceramic, zirconia — are the same ones used in premium clinics in Madrid, New York or São Paulo.
                                 </p>
                                 <p className="text-crema/70 font-manrope text-base leading-relaxed">
-                                    The difference is the exchange rate and cost structure. That translates into real savings of 40% to 70% depending on your country of origin — without compromising protocol, materials or result.
+                                    The real difference is our own in-house laboratory. We control every step of fabrication, so we compress what takes months elsewhere into a single 10–14 day trip — with natural, minimally invasive results.
                                 </p>
                             </div>
                             <div className="space-y-4">
                                 {[
-                                    { n: "01", t: "Certified premium materials", d: "IPS e.max and feldspathic porcelain from European-certified laboratories." },
+                                    { n: "01", t: "Our own in-house laboratory", d: "We control fabrication end to end — that's what makes natural results in days, not months, possible." },
                                     { n: "02", t: "Digital design before we start", d: "You see your new smile on screen before a single tooth is touched." },
                                     { n: "03", t: "Coordination by WhatsApp beforehand", d: "Preliminary assessment from photos before you travel. You arrive with the plan set." },
                                     { n: "04", t: "Full treatment in 10 to 14 days", d: "Designed for patients traveling from abroad: no waiting, no unnecessary trips." },
@@ -198,28 +195,25 @@ export default function DentalTourismPage() {
                     </div>
                 </section>
 
-                {/* ── SAVINGS BY COUNTRY ── */}
+                {/* ── WHY PATIENTS FLY IN ── */}
                 <section className="py-24 px-6 md:px-12">
                     <div className="max-w-4xl mx-auto">
-                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Estimated savings</span>
+                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Why patients fly in</span>
                         <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-4">
-                            Where are you coming from?
+                            The real advantage isn't the price.{" "}
+                            <span className="font-cormorant italic text-oro">It's the time.</span>
                         </h2>
-                        <p className="text-crema/60 font-manrope text-base mb-12">
-                            Savings vary by country, but in every case the cost of the trip plus treatment in Buenos Aires comes out lower than doing it at home.
+                        <p className="text-crema/60 font-manrope text-base mb-12 max-w-2xl">
+                            Our patients don't come chasing the lowest quote. They come because our own in-house lab lets us do in one trip what takes months elsewhere — with natural, minimally invasive results. For a busy professional, time is the real cost.
                         </p>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            {COUNTRIES.map((p) => (
-                                <div key={p.pais} className="border border-oro/15 rounded-2xl p-6 bg-carbon-soft hover:border-oro/30 transition-colors">
-                                    <div className="text-crema font-manrope font-medium text-base mb-1">{p.pais}</div>
-                                    <div className="text-oro font-manrope font-semibold text-2xl mb-1">{p.ahorro}</div>
-                                    <div className="text-crema/40 font-manrope text-xs">estimated savings</div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            {REASONS.map((r) => (
+                                <div key={r.t} className="border border-oro/15 rounded-2xl p-6 bg-carbon-soft hover:border-oro/30 transition-colors">
+                                    <div className="text-crema font-manrope font-medium text-base mb-2">{r.t}</div>
+                                    <div className="text-crema/55 font-manrope text-sm leading-relaxed">{r.d}</div>
                                 </div>
                             ))}
                         </div>
-                        <p className="text-crema/30 font-manrope text-xs mt-6">
-                            * Estimated percentages comparing reference clinic prices in each country for equivalent treatments. Actual savings depend on the number of units and complexity of the case.
-                        </p>
                     </div>
                 </section>
 
@@ -287,8 +281,8 @@ export default function DentalTourismPage() {
                                     tiempo: "10–14 days",
                                 },
                                 {
-                                    nombre: "No-Prep Veneers (Contact Lens)",
-                                    desc: "Ultra-thin veneers with no enamel reduction. For cases where the tooth is healthy and you only want to improve color or surface shape.",
+                                    nombre: "Ultra-Thin Veneers (Contact Lens)",
+                                    desc: "Very thin veneers with minimal enamel preparation. For cases where the tooth is healthy and you only want to improve color or surface shape.",
                                     tiempo: "7–10 days",
                                 },
                                 {

@@ -279,7 +279,7 @@ export default function SmileDesignPage() {
                         <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">Related treatments</span>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {[
-                                { label: "Porcelain Veneers", href: "/en/porcelain-veneers-buenos-aires", desc: "Porcelain, composite and no-prep veneers." },
+                                { label: "Porcelain Veneers", href: "/en/porcelain-veneers-buenos-aires", desc: "Porcelain, composite and ultra-thin veneers." },
                                 { label: "Dental Tourism in Argentina", href: "/en/dental-tourism-argentina", desc: "Get it done in a single trip to Buenos Aires." },
                             ].map((t) => (
                                 <a
