@@ -160,8 +160,14 @@ FAQ, Contacto, ClinicaGallery, CasosClient, LeadForm + Navbar (menú EN completo
 Data con campos EN: `equipo.ts` (rolEn/areaEn/descripcionEn/altEn), `faq.ts` (`faqDataEn`),
 `leads.ts` (`labelEn`). `RootSchema` evita schema español en /en.
 
-**Pendiente:** blog en inglés, simulador `/sonrisa` en EN, títulos/copys de los casos
-clínicos en EN, y páginas secundarias (comparativas, implantes, blanqueamiento, etc.).
+**Casos clínicos en inglés:** `/en/cases/[slug]` (detalle) + `/en/before-after` (listado).
+La traducción del contenido vive en la columna `translations` de Supabase
+(`{ en: { title, subtitle, description, copy, ... } }`) y en `translations` de los assets
+(`{ en: { alt, caption } }`). `getCasosPublicadosMerged(lang)` y `getCasoBySlugMerged(slug, lang)`
+resuelven el idioma; si no hay traducción, cae al español.
+
+**Pendiente:** blog en inglés, simulador `/sonrisa` en EN, y páginas secundarias
+(comparativas, implantes, blanqueamiento, coronas, puentes, etc.).
 
 ## Galería de casos — arquitectura de datos (2026-07-28)
 
