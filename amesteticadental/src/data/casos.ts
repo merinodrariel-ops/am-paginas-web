@@ -770,6 +770,70 @@ Diez años menos en la cara. Una boca que vuelve a funcionar.`,
         },
         publicado: true,
     },
+    {
+        slug: "gingivectomia-laser-sin-bisturi-sangrado-puntos",
+        titulo: "Gingivectomía láser: encías sanas sin bisturí, sangrado ni puntos",
+        subtitulo: "Encías inflamadas y agrandadas en el maxilar inferior — remodelado del tejido con láser, sin bisturí y sin puntos, combinado con limpieza por ultrasonido",
+        descripcion: "Caso clínico de gingivectomía láser en el maxilar inferior, con inflamación gingival y encías agrandadas. Técnica sin bisturí, sin puntos y con menor sangrado, combinada con ultrasonido para una recuperación más rápida. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
+        seoTitle: "Gingivectomía Láser sin Bisturí ni Puntos",
+        seoDescription: "Caso de gingivectomía láser para encías inflamadas y agrandadas del maxilar inferior: remodelado del tejido sin bisturí, sin puntos y con menor sangrado, más limpieza por ultrasonido. Dr. Ariel Merino.",
+        categorias: ["Gingivectomía láser", "Periodoncia"],
+        duracion: "Tratamiento personalizado",
+        piezas: "Remodelado gingival del sector anteroinferior + limpieza periodontal",
+        tecnica: "Gingivectomía con láser (ablación del tejido, sin bisturí ni puntos) + limpieza periodontal por ultrasonido",
+        fotoPortada: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/gingivectomia-laser-09-antes-despues-comparativa-2/01-gingivectomia-laser-09-antes-despues-comparativa.png",
+            alt: "Antes y después de gingivectomía láser en el maxilar inferior — encía inflamada y agrandada vs. encía sana y contorneada — Dr. Ariel Merino AM Estética Dental Puerto Madero",
+        },
+        fotos: [
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/gingivectomia-laser-09-antes-despues-comparativa-2/01-gingivectomia-laser-09-antes-despues-comparativa.png",
+                alt: "Antes y después de gingivectomía láser en el maxilar inferior — encía inflamada y agrandada vs. encía sana y contorneada — AM Estética Dental",
+                caption: "Antes y después — de la encía inflamada a una encía sana y definida",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/gingivectomia-laser-09-antes-despues-comparativa-2/05-gingivectomia-laser-01-planificacion-recorte-encias.png",
+                alt: "Planificación del remodelado gingival antes de la gingivectomía láser — AM Estética Dental Buenos Aires",
+                caption: "Planificación del contorno gingival",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/gingivectomia-laser-09-antes-despues-comparativa-2/02-gingivectomia-laser-11-limpieza-ultrasonido.jpg",
+                alt: "Limpieza periodontal con ultrasonido complementaria a la gingivectomía láser — AM Estética Dental Puerto Madero",
+                caption: "Limpieza periodontal por ultrasonido",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/gingivectomia-laser-09-antes-despues-comparativa-2/03-gingivectomia-laser-07-control-posoperatorio.png",
+                alt: "Control posoperatorio de la gingivectomía láser con encía cicatrizada — AM Estética Dental Buenos Aires",
+                caption: "Control posoperatorio — cicatrización de la encía",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/gingivectomia-laser-09-antes-despues-comparativa-2/04-gingivectomia-laser-06-registro-intraoral-inicial.jpg",
+                alt: "Registro intraoral inicial del caso de gingivectomía láser en el maxilar inferior — AM Estética Dental Puerto Madero",
+                caption: "Registro intraoral inicial",
+            },
+        ],
+        copy: `La paciente llegó con una inflamación gingival marcada en el maxilar inferior. No era solo una cuestión de color o de higiene: las encías estaban agrandadas, con exceso de tejido, y eso hacía que la sonrisa se viera más pesada y menos definida.
+
+El plan fue tratar el problema de forma conservadora y precisa: gingivectomía láser para remodelar el tejido gingival y limpieza periodontal combinando láser con ultrasonido. El objetivo no era "recortar por recortar", sino devolverle a la encía una arquitectura más sana, más limpia y más armónica.
+
+La diferencia de esta técnica es enorme. El láser trabaja por ablación, permite retirar tejido con mucha precisión y al mismo tiempo favorece una recuperación más rápida. Al no usar bisturí, el procedimiento reduce el sangrado, evita puntos y suele generar menos sintomatología postoperatoria.
+
+Después se complementó con ultrasonido para remover placa, cálculo e irritantes que sostenían la inflamación. Esa combinación es clave: el láser mejora el manejo del tejido blando, pero la limpieza profunda elimina la causa que mantiene la encía inflamada.
+
+El resultado muestra una encía más desinflamada, con mejor contorno y una sonrisa visualmente más ordenada. Tecnología aplicada con criterio clínico: menos trauma, más precisión y una cicatrización más rápida.
+
+Los resultados corresponden a este caso clínico particular. Cada tratamiento requiere diagnóstico y planificación individual.`,
+        copyRedes: `Encías inflamadas y agrandadas que le quitaban definición a la sonrisa.
+
+Gingivectomía con láser en el maxilar inferior: remodelamos el tejido sin bisturí, sin puntos y con menos sangrado. Y limpieza con ultrasonido para eliminar la causa de la inflamación.
+
+Menos trauma, más precisión y una cicatrización más rápida.`,
+        precio: {
+            total: "Consultar",
+            nota: "Gingivectomía láser + limpieza periodontal por ultrasonido. El valor depende de la extensión del remodelado y del estado periodontal.",
+        },
+        publicado: true,
+    },
 ];
 
 export function getCasoBySlug(slug: string): Caso | undefined {

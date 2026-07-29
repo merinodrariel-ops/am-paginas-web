@@ -138,7 +138,7 @@ export default function DentistaPuertoMaderoPage() {
                         </p>
                         <div className="flex flex-wrap items-center gap-4 mb-10">
                             <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">Agendá tu consulta</a>
-                            <Link href="/casos" className="inline-flex items-center gap-2 border border-oro/25 text-oro px-6 py-4 rounded-full text-sm hover:border-oro/50 transition-colors">Ver casos reales →</Link>
+                            <Link href="/casos-antes-y-despues" className="inline-flex items-center gap-2 border border-oro/25 text-oro px-6 py-4 rounded-full text-sm hover:border-oro/50 transition-colors">Ver casos reales →</Link>
                         </div>
                         <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
                             <span className="text-oro">★★★★★ <span className="text-crema/60">4.9 en Google · +120 reseñas</span></span>
@@ -274,7 +274,7 @@ export default function DentistaPuertoMaderoPage() {
                             ))}
                         </div>
                         <div className="mt-8 text-center">
-                            <Link href="/casos" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">Ver todos los casos clínicos →</Link>
+                            <Link href="/casos-antes-y-despues" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">Ver todos los casos clínicos →</Link>
                         </div>
                     </div>
                 </section>

@@ -50,7 +50,7 @@ export default function OdontologiaEsteticaPage() {
                     </p>
                     <div className="flex flex-wrap gap-4">
                         <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">Agendá tu consulta</a>
-                        <Link href="/casos" className="inline-flex items-center gap-2 border border-oro/25 text-oro px-6 py-4 rounded-full text-sm hover:border-oro/50 transition-colors">Ver casos reales →</Link>
+                        <Link href="/casos-antes-y-despues" className="inline-flex items-center gap-2 border border-oro/25 text-oro px-6 py-4 rounded-full text-sm hover:border-oro/50 transition-colors">Ver casos reales →</Link>
                     </div>
                 </section>
 
@@ -104,7 +104,7 @@ export default function OdontologiaEsteticaPage() {
                       ))}
                     </div>
                     <div className="mt-8 text-center">
-                      <Link href="/casos" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">
+                      <Link href="/casos-antes-y-despues" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">
                         Ver todos los casos clínicos →
                       </Link>
                     </div>

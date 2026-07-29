@@ -70,8 +70,19 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Listado de casos renombrado: /casos → /casos-antes-y-despues
+      // (los casos individuales siguen en /casos/:slug)
+      { source: "/casos", destination: "/casos-antes-y-despues", permanent: true },
+      // Duplicados sin curar de gingivectomía, consolidados por maxilar:
+      // -09 (maxilar inferior) → caso curado de periodoncia; -10 (maxilar
+      // superior) → caso de gingivectomía + micro diseño en resinas.
       {
         source: "/casos/gingivectomia-laser-09-antes-despues-comparativa-2",
+        destination: "/casos/gingivectomia-laser-sin-bisturi-sangrado-puntos",
+        permanent: true,
+      },
+      {
+        source: "/casos/gingivectomia-laser-10-procedimiento-recorte-gingival",
         destination: "/casos/gingivectomia-laser-micro-diseno-sonrisa-resinas",
         permanent: true,
       },
@@ -132,12 +143,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/antes-y-despues",
-        destination: "/casos",
+        destination: "/casos-antes-y-despues",
         permanent: true,
       },
       {
         source: "/antes-y-despues/",
-        destination: "/casos",
+        destination: "/casos-antes-y-despues",
         permanent: true,
       },
       // Casos clínicos: /antes-y-despues/[slug] → /casos/[slug]
@@ -147,10 +158,10 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       // URLs del sitio WordPress anterior
-      { source: "/testimonios", destination: "/casos", permanent: true },
-      { source: "/testimonios/", destination: "/casos", permanent: true },
-      { source: "/galeria-sonrisas-am", destination: "/casos", permanent: true },
-      { source: "/galeria-sonrisas-am/", destination: "/casos", permanent: true },
+      { source: "/testimonios", destination: "/casos-antes-y-despues", permanent: true },
+      { source: "/testimonios/", destination: "/casos-antes-y-despues", permanent: true },
+      { source: "/galeria-sonrisas-am", destination: "/casos-antes-y-despues", permanent: true },
+      { source: "/galeria-sonrisas-am/", destination: "/casos-antes-y-despues", permanent: true },
       { source: "/ubicacion", destination: "/", permanent: true },
       { source: "/ubicacion/", destination: "/", permanent: true },
       { source: "/unete-al-team-am", destination: "/trabaja-en-am", permanent: true },

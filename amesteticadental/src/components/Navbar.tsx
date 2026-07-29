@@ -15,7 +15,7 @@ const NAV_LINKS = [
     { label: "Clínica",       href: "/clinica" },
     { label: "Tecnología",    href: "/#tecnologia" },
     { label: "Testimonios",   href: "/#testimonios" },
-    { label: "Antes y después", href: "/casos" },
+    { label: "Antes y después", href: "/casos-antes-y-despues" },
     { label: "Equipo",        href: "/equipo-am" },
     { label: "FAQ",           href: "/#faq" },
 ];
@@ -28,7 +28,7 @@ const FEATURED_LINKS = [
     { label: "AM Aligners",   href: "/alineadores-invisibles" },
     { label: "Dr. Merino",    href: "/dr-ariel-merino" },
     { label: "Clínica",       href: "/clinica" },
-    { label: "Antes y después", href: "/casos" },
+    { label: "Antes y después", href: "/casos-antes-y-despues" },
     { label: "Precio",        href: "/precio-carillas-dentales-buenos-aires" },
 ];
 

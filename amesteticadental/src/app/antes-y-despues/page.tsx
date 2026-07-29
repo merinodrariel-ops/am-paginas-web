@@ -64,7 +64,7 @@ export default function AntesYDespuesPage() {
                                     No son imágenes de stock. Son pacientes reales atendidos en AM Estética Dental, Puerto Madero.
                                 </p>
                                 <Link
-                                    href="/casos"
+                                    href="/casos-antes-y-despues"
                                     className="inline-flex items-center gap-2 text-oro font-manrope text-xs uppercase tracking-widest hover:text-oro/70 transition-colors"
                                 >
                                     Ver casos documentados con historia clínica →

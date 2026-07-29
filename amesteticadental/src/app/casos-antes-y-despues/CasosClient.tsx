@@ -15,11 +15,13 @@ const FILTROS: { label: string; value: Categoria | "Todos" }[] = [
     { label: "Implantes", value: "Implantes" },
     { label: "Agenesia", value: "Agenesia" },
     { label: "Diastemas", value: "Diastemas" },
+    { label: "Gingivectomía", value: "Gingivectomía láser" },
     { label: "Rehabilitación", value: "Rehabilitación oral" },
 ];
 
-export default function CasosClient({ todos }: { todos: Caso[] }) {
+export default function CasosClient({ todos, fijos = [] }: { todos: Caso[]; fijos?: string[] }) {
     const [filtro, setFiltro] = useState<Categoria | "Todos">("Todos");
+    const fijosSet = new Set(fijos);
 
     const casos = filtro === "Todos"
         ? todos
@@ -75,7 +77,9 @@ export default function CasosClient({ todos }: { todos: Caso[] }) {
                     <p className="text-crema/30 text-center py-20">No hay casos publicados para esta categoría todavía.</p>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {casos.map((caso) => (
+                        {casos.map((caso) => {
+                            const destacado = fijosSet.has(caso.slug);
+                            return (
                             <Link key={caso.slug} href={`/casos/${caso.slug}`} className="group block">
                                 <article className="bg-carbon border border-crema/5 rounded-2xl overflow-hidden hover:border-oro/20 transition-colors duration-300">
                                     <div className="relative aspect-square overflow-hidden">
@@ -87,6 +91,16 @@ export default function CasosClient({ todos }: { todos: Caso[] }) {
                                             className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-carbon/70 via-transparent to-transparent" />
+                                        {destacado && (
+                                            <div className="absolute top-4 left-4">
+                                                <span className="inline-flex items-center gap-1.5 border border-oro/40 bg-carbon/80 backdrop-blur-sm rounded-full px-3 py-1 font-manrope text-[9px] uppercase tracking-[0.25em] text-oro">
+                                                    <svg viewBox="0 0 24 24" className="w-2.5 h-2.5" fill="currentColor" aria-hidden="true">
+                                                        <path d="M14.12 2.88a2 2 0 0 0-3.06.26L8.7 6.36l-3.9 1.2a1 1 0 0 0-.42 1.66l3.2 3.2-4.3 5.87a.6.6 0 0 0 .84.84l5.87-4.3 3.2 3.2a1 1 0 0 0 1.66-.42l1.2-3.9 3.22-2.36a2 2 0 0 0 .26-3.06z" />
+                                                    </svg>
+                                                    Destacado
+                                                </span>
+                                            </div>
+                                        )}
                                         <div className="absolute top-4 right-4">
                                             <span className="inline-flex items-center gap-1.5 border border-oro/30 bg-carbon/80 backdrop-blur-sm rounded-full px-3 py-1 font-manrope text-[9px] uppercase tracking-[0.25em] text-oro">
                                                 {caso.duracion}
@@ -114,7 +128,8 @@ export default function CasosClient({ todos }: { todos: Caso[] }) {
                                     </div>
                                 </article>
                             </Link>
-                        ))}
+                            );
+                        })}
                     </div>
                 )}
 

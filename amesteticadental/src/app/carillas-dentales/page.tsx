@@ -335,7 +335,7 @@ export default function CarillasDentalesPage() {
                             ))}
                         </div>
                         <div className="mt-8 text-center">
-                            <Link href="/casos" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">
+                            <Link href="/casos-antes-y-despues" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">
                                 Ver todos los casos clínicos →
                             </Link>
                         </div>

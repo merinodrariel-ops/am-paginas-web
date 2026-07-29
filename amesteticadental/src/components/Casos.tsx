@@ -118,7 +118,7 @@ export default function Casos() {
 
                 <div className="mt-10 text-center">
                     <Link
-                        href="/casos"
+                        href="/casos-antes-y-despues"
                         className="inline-flex items-center gap-3 border border-oro/25 px-7 py-3.5 font-manrope text-xs font-semibold uppercase tracking-[0.25em] text-oro transition-colors hover:border-oro hover:bg-oro hover:text-carbon"
                     >
                         Ver todos los casos

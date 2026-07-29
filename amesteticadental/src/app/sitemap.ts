@@ -45,7 +45,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/turismo-dental", changeFrequency: "monthly", priority: 0.9 },
   { path: "/opiniones", changeFrequency: "monthly", priority: 0.85 },
   { path: "/prensa", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/casos", changeFrequency: "weekly", priority: 0.95 },
+  { path: "/casos-antes-y-despues", changeFrequency: "weekly", priority: 0.95 },
   { path: "/clinica", changeFrequency: "monthly", priority: 0.9 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.8 },
   { path: "/blog/cuanto-duran-las-carillas-de-porcelana", changeFrequency: "monthly", priority: 0.7 },

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import CasoGaleria from "@/components/CasoGaleria";
-import { getAllPublishedCases, getPublishedCaseBySlug } from "@/lib/public-clinical-cases";
+import { getCasosPublicadosMerged, getCasoBySlugMerged } from "@/lib/public-cases";
 
 export const revalidate = 60;
 
@@ -12,12 +12,12 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-    return (await getAllPublishedCases()).map((caso) => ({ slug: caso.slug }));
+    return (await getCasosPublicadosMerged()).map((caso) => ({ slug: caso.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
-    const caso = await getPublishedCaseBySlug(slug);
+    const caso = await getCasoBySlugMerged(slug);
     if (!caso) return {};
 
     const canonical = `https://www.amesteticadental.com/casos/${caso.slug}`;
@@ -75,7 +75,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CasoPage({ params }: Props) {
     const { slug } = await params;
-    const caso = await getPublishedCaseBySlug(slug);
+    const caso = await getCasoBySlugMerged(slug);
     if (!caso) notFound();
 
     const canonical = `https://www.amesteticadental.com/casos/${caso.slug}`;
@@ -119,7 +119,7 @@ export default async function CasoPage({ params }: Props) {
 
                     {/* Breadcrumb */}
                     <nav className="mb-10 flex items-center gap-2 font-manrope text-xs text-crema/30 uppercase tracking-widest">
-                        <Link href="/casos" className="hover:text-oro transition-colors">
+                        <Link href="/casos-antes-y-despues" className="hover:text-oro transition-colors">
                             Antes y después
                         </Link>
                         <span>/</span>
@@ -211,7 +211,7 @@ export default async function CasoPage({ params }: Props) {
                     {/* Volver */}
                     <div className="mt-12">
                         <Link
-                            href="/casos"
+                            href="/casos-antes-y-despues"
                             className="font-manrope text-xs text-crema/30 hover:text-oro transition-colors uppercase tracking-widest"
                         >
                             ← Ver todos los casos
