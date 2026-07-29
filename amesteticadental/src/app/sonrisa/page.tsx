@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SmileEntryClient from "@/components/SmileEntryClient";
+import { hreflangFor } from "@/lib/i18n-routes";
 
 export const metadata: Metadata = {
   title: "Simulador de Diseño de Sonrisa con IA | AM Estética Dental",
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
     "Subí una foto y probá una simulación orientativa de diseño de sonrisa con IA. Pacientes y colegas pueden explorar la experiencia digital de AM Estética Dental.",
   alternates: {
     canonical: "https://www.amesteticadental.com/sonrisa",
+    languages: hreflangFor("/sonrisa"),
   },
   openGraph: {
     title: "Simulador de Diseño de Sonrisa con IA | AM Estética Dental",

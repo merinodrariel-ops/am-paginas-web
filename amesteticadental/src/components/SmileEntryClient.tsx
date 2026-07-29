@@ -31,31 +31,33 @@ type SmileResult = {
   afterDataUrl: string;
 };
 
-function buildWhatsappUrl(name: string, email: string, whatsapp: string) {
+type SimCopy = (typeof SIM_COPY)["es"] | (typeof SIM_COPY)["en"];
+
+function buildWhatsappUrl(name: string, email: string, whatsapp: string, t: SimCopy) {
   const message = [
-    "Hola AM Estética Dental, probé el simulador de sonrisa con IA en la web.",
+    t.waText,
     name ? `Mi nombre es ${name}.` : null,
     email ? `Mi email es ${email}.` : null,
     whatsapp ? `Mi WhatsApp es ${whatsapp}.` : null,
-    "Quiero una evaluación real para mi caso.",
+    t.emailBody,
   ]
     .filter(Boolean)
     .join("\n");
   return `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
 }
 
-function buildEmailUrl(name: string, email: string, whatsapp: string) {
-  const subject = "Consulta por simulador de diseño de sonrisa";
+function buildEmailUrl(name: string, email: string, whatsapp: string, t: SimCopy) {
+  const subject = t.emailSubject;
   const body = [
-    "Hola AM Estética Dental, probé el simulador de diseño de sonrisa con IA.",
+    t.waText,
     "",
     name ? `Nombre: ${name}` : null,
     email ? `Email: ${email}` : null,
     whatsapp ? `WhatsApp: ${whatsapp}` : null,
     "",
-    "Quiero una evaluación real para mi caso.",
+    t.emailBody,
     "",
-    "Nota: puedo adjuntar la imagen descargada del simulador a este email.",
+    t.emailNote,
   ]
     .filter(Boolean)
     .join("\n");
@@ -93,7 +95,7 @@ async function compressFile(file: File): Promise<{ base64: string; dataUrl: stri
         0.9,
       );
     };
-    image.onerror = () => { URL.revokeObjectURL(url); reject(new Error("No pudimos abrir esa foto.")); };
+    image.onerror = () => { URL.revokeObjectURL(url); reject(new Error("IMAGE_OPEN_FAILED")); };
     image.src = url;
   });
 }
@@ -217,7 +219,85 @@ function BeforeAfterSlider({
 }
 
 // ─── Componente principal ─────────────────────────────────────────────────────
-export default function SmileEntryClient() {
+
+const SIM_COPY = {
+  es: {
+    eyebrow: "Simulador con IA · AM Estética Dental",
+    lead: "Subí una foto y generamos una simulación orientativa con IA. Gratis, en segundos.",
+    exampleLabel: "Ejemplo real · Carillas cerámicas AM Estética Dental",
+    exampleNote: "Caso clínico real. La simulación IA sobre tu foto puede variar según tus características faciales.",
+    tryNow: "Ahora probalo con tu foto",
+    dropzone: "Arrastrá o elegí una foto de tu rostro",
+    dropzoneHint: "Frontal, nítida, con buena luz y sonrisa visible.",
+    yourPhoto: "Tu foto",
+    namePh: "Tu nombre",
+    emailPh: "tu@email.com",
+    phonePh: "+54 9 11...",
+    consent: "Acepto el procesamiento temporal de la foto y entiendo que esta imagen es orientativa: no constituye un diagnóstico ni una promesa de resultado. La foto se envía a Google Gemini y AM no la guarda.",
+    generate: "Generar mi simulación",
+    generating: "Generando simulación…",
+    resultNote: "Simulación lista. Para saber qué se puede lograr clínicamente en tu caso, pedí una evaluación real.",
+    wa: "Consultar por WhatsApp",
+    email: "Enviar por email",
+    download: "Descargar imagen",
+    before: "Antes",
+    after: "Después IA",
+    beforeAlt: "Tu foto original antes del diseño de sonrisa",
+    afterAlt: "Tu simulación IA de diseño de sonrisa",
+    comparator: "Comparador antes y después",
+    errNoPhoto: "Subí una foto de rostro para generar la simulación.",
+    errFormat: "Subí una foto JPG, PNG o WebP.",
+    errConsent: "Aceptá que esto es una simulación orientativa antes de continuar.",
+    errName: "Ingresá tu nombre para que podamos identificar la consulta.",
+    errOpen: "No pudimos abrir esa foto.",
+    errGenerate: "No pudimos generar la simulación.",
+    errDownload: "No pudimos descargar la imagen.",
+    waText: "Hola AM Estética Dental, probé el simulador de diseño de sonrisa con IA.",
+    emailSubject: "Consulta por simulador de diseño de sonrisa",
+    emailBody: "Quiero una evaluación real para mi caso.",
+    emailNote: "Nota: puedo adjuntar la imagen descargada del simulador a este email.",
+  },
+  en: {
+    eyebrow: "AI Simulator · AM Estética Dental",
+    lead: "Upload a photo and we generate an indicative AI simulation. Free, in seconds.",
+    exampleLabel: "Real example · Ceramic veneers at AM Estética Dental",
+    exampleNote: "A real clinical case. The AI simulation on your own photo may differ depending on your facial characteristics.",
+    tryNow: "Now try it with your photo",
+    dropzone: "Drag or choose a photo of your face",
+    dropzoneHint: "Front-facing, sharp, well lit and with your smile visible.",
+    yourPhoto: "Your photo",
+    namePh: "Your name",
+    emailPh: "you@email.com",
+    phonePh: "+1 555...",
+    consent: "I accept the temporary processing of my photo and understand that this image is indicative only: it is not a diagnosis nor a promise of result. The photo is sent to Google Gemini and AM does not store it.",
+    generate: "Generate my simulation",
+    generating: "Generating simulation…",
+    resultNote: "Your simulation is ready. To find out what can actually be achieved clinically in your case, request a real assessment.",
+    wa: "Ask on WhatsApp",
+    email: "Send by email",
+    download: "Download image",
+    before: "Before",
+    after: "After (AI)",
+    beforeAlt: "Your original photo before smile design",
+    afterAlt: "Your AI smile design simulation",
+    comparator: "Before and after comparison slider",
+    errNoPhoto: "Upload a photo of your face to generate the simulation.",
+    errFormat: "Upload a JPG, PNG or WebP photo.",
+    errConsent: "Please accept that this is an indicative simulation before continuing.",
+    errName: "Enter your name so we can identify your enquiry.",
+    errOpen: "We could not open that photo.",
+    errGenerate: "We could not generate the simulation.",
+    errDownload: "We could not download the image.",
+    waText: "Hi AM Estética Dental, I tried the AI smile design simulator.",
+    emailSubject: "Enquiry from the smile design simulator",
+    emailBody: "I'd like a real assessment for my case.",
+    emailNote: "Note: I can attach the image downloaded from the simulator to this email.",
+  },
+} as const;
+
+
+export default function SmileEntryClient({ lang = "es" }: { lang?: "es" | "en" }) {
+  const t = SIM_COPY[lang];
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [file, setFile] = useState<File | null>(null);
   const [dragging, setDragging] = useState(false);
@@ -229,11 +309,11 @@ export default function SmileEntryClient() {
   const [processing, setProcessing] = useState(false);
   const [result, setResult] = useState<SmileResult | null>(null);
 
-  const whatsappUrl = useMemo(() => buildWhatsappUrl(fullName.trim(), email.trim(), whatsapp.trim()), [fullName, email, whatsapp]);
-  const emailUrl = useMemo(() => buildEmailUrl(fullName.trim(), email.trim(), whatsapp.trim()), [fullName, email, whatsapp]);
+  const whatsappUrl = useMemo(() => buildWhatsappUrl(fullName.trim(), email.trim(), whatsapp.trim(), t), [fullName, email, whatsapp, t]);
+  const emailUrl = useMemo(() => buildEmailUrl(fullName.trim(), email.trim(), whatsapp.trim(), t), [fullName, email, whatsapp, t]);
 
   function validateFile(nextFile: File) {
-    if (!ACCEPTED_TYPES.includes(nextFile.type)) return "Subí una foto JPG, PNG o WebP.";
+    if (!ACCEPTED_TYPES.includes(nextFile.type)) return t.errFormat;
     if (nextFile.size > MAX_FILE_MB * 1024 * 1024) return `La foto no puede pesar más de ${MAX_FILE_MB} MB.`;
     return null;
   }
@@ -255,9 +335,9 @@ export default function SmileEntryClient() {
 
   async function generateSmile() {
     setError(null);
-    if (!file) { setError("Subí una foto de rostro para generar la simulación."); return; }
-    if (!accepted) { setError("Aceptá que esto es una simulación orientativa antes de continuar."); return; }
-    if (fullName.trim().length < 2) { setError("Ingresá tu nombre para que podamos identificar la consulta."); return; }
+    if (!file) { setError(t.errNoPhoto); return; }
+    if (!accepted) { setError(t.errConsent); return; }
+    if (fullName.trim().length < 2) { setError(t.errName); return; }
     if (!email.trim() && !whatsapp.trim()) { setError("Dejanos un email o WhatsApp para contactarte si querés avanzar."); return; }
 
     setProcessing(true);
@@ -293,7 +373,7 @@ export default function SmileEntryClient() {
         body: JSON.stringify({ imageBase64: compressed.base64, mimeType: compressed.mimeType }),
       });
       const data = await response.json();
-      if (!response.ok || data.error) throw new Error(data.error || "No pudimos generar la simulación.");
+      if (!response.ok || data.error) throw new Error(data.error || t.errGenerate);
 
       setResult({ beforeDataUrl: compressed.dataUrl, afterDataUrl: `data:${data.mimeType};base64,${data.imageBase64}` });
     } catch (err) {
@@ -324,7 +404,7 @@ export default function SmileEntryClient() {
 
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-oro/25 bg-carbon/45 px-4 py-2 text-[11px] font-black uppercase tracking-[0.24em] text-oro backdrop-blur">
             <Sparkles className="h-3.5 w-3.5" />
-            Simulador con IA · AM Estética Dental
+            {t.eyebrow}
           </div>
 
           <h1 className="text-5xl font-light leading-[0.96] tracking-tight text-crema md:text-7xl">
@@ -333,7 +413,7 @@ export default function SmileEntryClient() {
             antes de venir.
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-base font-light leading-8 text-crema/68 md:text-lg">
-            Subí una foto y generamos una simulación orientativa con IA. Gratis, en segundos.
+            {t.lead}
           </p>
         </div>
       </section>
@@ -342,7 +422,7 @@ export default function SmileEntryClient() {
       <section className="relative px-4 pb-0 pt-12">
         <div className="mx-auto max-w-2xl">
           <p className="mb-4 text-center text-[11px] font-black uppercase tracking-[0.28em] text-oro/70">
-            Ejemplo real · Carillas cerámicas AM Estética Dental
+            {t.exampleLabel}
           </p>
           <BeforeAfterSlider
             beforeSrc={DEMO_BEFORE}
@@ -351,7 +431,7 @@ export default function SmileEntryClient() {
             afterAlt="Después de carillas cerámicas — AM Estética Dental"
           />
           <p className="mt-3 text-center text-xs text-crema/35">
-            Caso clínico real. La simulación IA sobre tu foto puede variar según tus características faciales.
+            {t.exampleNote}
           </p>
         </div>
       </section>
@@ -360,7 +440,7 @@ export default function SmileEntryClient() {
       <section className="px-4 pb-20 pt-14" id="simulador">
         <div className="mx-auto max-w-2xl">
           <p className="mb-6 text-center text-[11px] font-black uppercase tracking-[0.28em] text-oro/70">
-            Ahora probalo con tu foto
+            {t.tryNow}
           </p>
 
           {!result ? (
@@ -391,7 +471,7 @@ export default function SmileEntryClient() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={URL.createObjectURL(file)}
-                      alt="Tu foto"
+                      alt={t.yourPhoto}
                       className="mb-5 h-48 w-auto rounded-xl object-cover shadow-lg"
                     />
                     <p className="text-lg font-light text-crema">{file.name}</p>
@@ -409,10 +489,10 @@ export default function SmileEntryClient() {
                       <UploadCloud className="h-10 w-10" />
                     </div>
                     <h2 className="text-2xl font-light text-crema md:text-3xl">
-                      Arrastrá o elegí una foto de tu rostro
+                      {t.dropzone}
                     </h2>
                     <p className="mt-3 max-w-sm text-sm leading-6 text-crema/48">
-                      Frontal, nítida, con buena luz y sonrisa visible.
+                      {t.dropzoneHint}
                       JPG, PNG o WebP · máx. {MAX_FILE_MB} MB
                     </p>
                     <button
@@ -437,7 +517,7 @@ export default function SmileEntryClient() {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     className="w-full rounded-xl border border-oro/16 bg-carbon px-4 py-3 text-sm text-crema outline-none transition-colors placeholder:text-crema/25 focus:border-oro/60"
-                    placeholder="Tu nombre"
+                    placeholder={t.namePh}
                     autoComplete="name"
                   />
                 </label>
@@ -449,7 +529,7 @@ export default function SmileEntryClient() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full rounded-xl border border-oro/16 bg-carbon px-4 py-3 text-sm text-crema outline-none transition-colors placeholder:text-crema/25 focus:border-oro/60"
-                    placeholder="tu@email.com"
+                    placeholder={t.emailPh}
                     type="email"
                     autoComplete="email"
                   />
@@ -462,7 +542,7 @@ export default function SmileEntryClient() {
                     value={whatsapp}
                     onChange={(e) => setWhatsapp(e.target.value)}
                     className="w-full rounded-xl border border-oro/16 bg-carbon px-4 py-3 text-sm text-crema outline-none transition-colors placeholder:text-crema/25 focus:border-oro/60"
-                    placeholder="+54 9 11..."
+                    placeholder={t.phonePh}
                     type="tel"
                     autoComplete="tel"
                   />
@@ -478,8 +558,7 @@ export default function SmileEntryClient() {
                   className="mt-0.5 h-4 w-4 accent-oro"
                 />
                 <span>
-                  Acepto el procesamiento temporal de la foto y entiendo que esta imagen es orientativa: no constituye
-                  un diagnóstico ni una promesa de resultado. La foto se envía a Google Gemini y AM no la guarda.
+                  {t.consent}
                 </span>
               </label>
 
@@ -497,7 +576,7 @@ export default function SmileEntryClient() {
                 className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-oro py-4 text-base font-semibold text-carbon transition-colors hover:bg-oro-light disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {processing ? <Loader2 className="h-5 w-5 animate-spin" /> : <Sparkles className="h-5 w-5" />}
-                {processing ? "Generando simulación…" : "Generar mi simulación"}
+                {processing ? t.generating : t.generate}
               </button>
             </div>
 
@@ -507,8 +586,8 @@ export default function SmileEntryClient() {
               <BeforeAfterSlider
                 beforeSrc={result.beforeDataUrl}
                 afterSrc={result.afterDataUrl}
-                beforeAlt="Tu foto original antes del diseño de sonrisa"
-                afterAlt="Tu simulación IA de diseño de sonrisa"
+                beforeAlt={t.beforeAlt}
+                afterAlt={t.afterAlt}
               />
 
               {error ? (
@@ -522,7 +601,7 @@ export default function SmileEntryClient() {
                 <div className="mb-4 flex items-start gap-2 text-sm text-crema/60">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-oro" />
                   <p>
-                    Simulación lista. Para saber qué se puede lograr clínicamente en tu caso, pedí una evaluación real.
+                    {t.resultNote}
                   </p>
                 </div>
                 <div className="grid gap-2 sm:grid-cols-3">
@@ -533,14 +612,14 @@ export default function SmileEntryClient() {
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-oro px-5 py-3 text-sm font-semibold text-carbon transition-colors hover:bg-oro-light"
                   >
                     <MessageCircle className="h-4 w-4" />
-                    Consultar por WhatsApp
+                    {t.wa}
                   </a>
                   <a
                     href={emailUrl}
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-oro/24 px-5 py-3 text-sm font-semibold text-crema transition-colors hover:border-oro/50"
                   >
                     <Mail className="h-4 w-4" />
-                    Enviar por email
+                    {t.email}
                   </a>
                   <button
                     type="button"
@@ -552,13 +631,13 @@ export default function SmileEntryClient() {
                           window.dataLayer.push({ event: "smile_simulator_download", event_category: "engagement", event_label: "comparacion_antes_despues" });
                         }
                       } catch (downloadError) {
-                        setError(downloadError instanceof Error ? downloadError.message : "No pudimos descargar la imagen.");
+                        setError(downloadError instanceof Error ? downloadError.message : t.errDownload);
                       }
                     }}
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-oro/24 px-5 py-3 text-sm font-semibold text-crema transition-colors hover:border-oro/50"
                   >
                     <Download className="h-4 w-4" />
-                    Descargar imagen
+                    {t.download}
                   </button>
                 </div>
                 <button

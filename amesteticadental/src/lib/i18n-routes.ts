@@ -22,6 +22,7 @@ export const EN_BY_ES: Record<string, string> = {
   "/opiniones": "/en/reviews",
   "/blog": "/en/blog",
   "/prensa": "/en/press",
+  "/sonrisa": "/en/smile-simulator",
 };
 
 export const ES_BY_EN: Record<string, string> = Object.fromEntries(

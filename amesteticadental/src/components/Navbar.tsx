@@ -53,7 +53,7 @@ const FEATURED_LINKS_EN = [
     { label: "Veneers",        href: "/en/porcelain-veneers-buenos-aires" },
     { label: "Smile Design",   href: "/en/smile-design-buenos-aires" },
     { label: "Dental Tourism", href: "/en/dental-tourism-argentina" },
-    { label: "AI Simulator",   href: "/sonrisa" },
+    { label: "AI Simulator",   href: "/en/smile-simulator" },
     { label: "Dr. Merino",     href: "/en/dr-ariel-merino" },
     { label: "Before & After", href: "/en/before-after" },
 ];

@@ -64,6 +64,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/en/reviews", changeFrequency: "monthly", priority: 0.85 },
   { path: "/en/blog", changeFrequency: "monthly", priority: 0.8 },
   { path: "/en/press", changeFrequency: "monthly", priority: 0.75 },
+  { path: "/en/smile-simulator", changeFrequency: "weekly", priority: 0.9 },
   { path: "/en/blog/veneers-cost-argentina", changeFrequency: "monthly", priority: 0.7 },
   { path: "/en/blog/do-veneers-damage-your-teeth", changeFrequency: "monthly", priority: 0.7 },
   { path: "/en/blog/how-long-do-porcelain-veneers-last", changeFrequency: "monthly", priority: 0.7 },
