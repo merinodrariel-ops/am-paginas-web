@@ -149,10 +149,12 @@ Piezas de la base (en `amesteticadental/`):
 7. Si la página ya tiene versión EN, actualizar los links internos de las otras páginas EN.
 8. `npm run build` → push. IndexNow notifica a Bing solo.
 
-**Hecho:** `/en/dental-tourism-argentina`, `/en/porcelain-veneers-buenos-aires`,
-`/en/smile-design-buenos-aires`.
-**Pendiente:** home `/en`, lentes de contacto (ultra-thin), Dr. Merino, before & after,
-contacto, y el resto de las ~50 páginas.
+**Hecho (2026-07-29):** `/en/dental-tourism-argentina`, `/en/porcelain-veneers-buenos-aires`,
+`/en/smile-design-buenos-aires`, `/en/clinic`, `/en/team`, `/en/before-after`.
+Componentes bilingües (prop `lang`): `Contacto`, `ClinicaGallery`, `CasosClient`, `Navbar`.
+Data de equipo con campos EN (`rolEn/areaEn/descripcionEn/altEn`).
+**Pendiente:** home `/en` (índice), lentes de contacto (ultra-thin), Dr. Merino,
+simulador `/sonrisa` en EN, contacto standalone, resto de páginas + blog + títulos de casos.
 
 ## Galería de casos — arquitectura de datos (2026-07-28)
 
