@@ -44,6 +44,7 @@ const NAV_LINKS_EN = [
     { label: "Before & After", href: "/en/before-after" },
     { label: "Clinic",         href: "/en/clinic" },
     { label: "Team",           href: "/en/team" },
+    { label: "Investment",     href: "/en/veneers-cost-buenos-aires" },
 ];
 
 const FEATURED_LINKS_EN = [
@@ -51,7 +52,7 @@ const FEATURED_LINKS_EN = [
     { label: "Smile Design",   href: "/en/smile-design-buenos-aires" },
     { label: "Dental Tourism", href: "/en/dental-tourism-argentina" },
     { label: "AI Simulator",   href: "/sonrisa" },
-    { label: "Dr. Merino",     href: "/dr-ariel-merino" },
+    { label: "Dr. Merino",     href: "/en/dr-ariel-merino" },
     { label: "Before & After", href: "/en/before-after" },
 ];
 

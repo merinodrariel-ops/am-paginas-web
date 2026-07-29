@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { hreflangFor } from "@/lib/i18n-routes";
 import SeoFaq from "@/components/seo/SeoFaq";
 
 export const metadata: Metadata = {
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     "Lentes de contacto dental en Puerto Madero, Buenos Aires. Carillas ultradelgadas para mejorar color y forma con mínima o nula intervención. Resultados naturales, caso por caso.",
   alternates: {
     canonical: "https://www.amesteticadental.com/lentes-de-contacto-dental",
+    languages: hreflangFor("/lentes-de-contacto-dental"),
   },
   openGraph: {
     title: "Lentes de Contacto Dental en Buenos Aires | AM Estética Dental",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { hreflangFor } from "@/lib/i18n-routes";
 import SeoFaq from "@/components/seo/SeoFaq";
 import CalculadoraFinanciacion from "@/components/CalculadoraFinanciacion";
 import { getCasosPublicados } from "@/data/casos";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   keywords: "precio carillas dentales Buenos Aires, costo carillas porcelana Argentina, carillas dentales precio 2026, financiación carillas Puerto Madero, cuánto cuestan las carillas dentales",
   alternates: {
     canonical: "https://www.amesteticadental.com/precio-carillas-dentales-buenos-aires",
+    languages: hreflangFor("/precio-carillas-dentales-buenos-aires"),
   },
   openGraph: {
     title: "¿Qué son y cuánto cuestan las Carillas Dentales? Precios 2026",

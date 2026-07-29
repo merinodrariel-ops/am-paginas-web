@@ -9,6 +9,9 @@ export const EN_BY_ES: Record<string, string> = {
   "/clinica": "/en/clinic",
   "/equipo-am": "/en/team",
   "/casos-antes-y-despues": "/en/before-after",
+  "/lentes-de-contacto-dental": "/en/ultra-thin-veneers-buenos-aires",
+  "/precio-carillas-dentales-buenos-aires": "/en/veneers-cost-buenos-aires",
+  "/dr-ariel-merino": "/en/dr-ariel-merino",
 };
 
 export const ES_BY_EN: Record<string, string> = Object.fromEntries(

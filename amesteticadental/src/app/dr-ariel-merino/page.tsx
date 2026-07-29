@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { hreflangFor } from "@/lib/i18n-routes";
 import Prensa from "@/components/Prensa";
 import EquipoAM from "@/components/EquipoAM";
 
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
         "Dr. Ariel Merino: más de 20 años en odontología y 15 años de especialización en estética dental. Fundador de AM Estética Dental, Puerto Madero. Carillas y diseño de sonrisa.",
     alternates: {
         canonical: "https://www.amesteticadental.com/dr-ariel-merino",
+    languages: hreflangFor("/dr-ariel-merino"),
     },
     openGraph: {
         title: "Dr. Ariel Merino | Odontólogo Estético en Puerto Madero",
