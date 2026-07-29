@@ -2,7 +2,63 @@
 
 import Image from "next/image";
 
-export default function Contacto() {
+const COPY = {
+    es: {
+        eyebrow: "Puerto Madero, Buenos Aires",
+        h2a: "Tu sonrisa tiene",
+        h2b: "nombre y apellido.",
+        lead: "Cada tratamiento empieza con una evaluacion inicial donde entendemos exactamente que queres lograr y definimos el plan indicado para tu caso.",
+        scarcity: "Agenda limitada · Solo 4 evaluaciones iniciales disponibles este mes",
+        waCta: "Solicitar evaluacion por WhatsApp",
+        waHref: "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%20buenas!%20%F0%9F%91%8B%20Me%20gustaria%20solicitar%20una%20evaluacion%20inicial.",
+        location: "Ubicación",
+        schedule: "Horario",
+        weekdays: "Lunes a Viernes",
+        directContact: "Contacto directo",
+        waAvailable: "WhatsApp disponible",
+        follow: "Seguinos",
+        mapTitle: "Ubicación de AM Estética Dental en Google Maps",
+        openMaps: "Abrir en Google Maps",
+        openWaze: "Abrir en Waze",
+        review: "★ Dejar una reseña en Google",
+        navTourism: "Turismo Dental",
+        navPrices: "Precios",
+        navDentist: "Dentista en Puerto Madero",
+        hrefTourism: "/turismo-dental",
+        hrefPrices: "/precio-carillas-dentales-buenos-aires",
+        hrefDoctor: "/dr-ariel-merino",
+        hrefDentist: "/dentista-puerto-madero",
+    },
+    en: {
+        eyebrow: "Puerto Madero, Buenos Aires",
+        h2a: "Your smile deserves",
+        h2b: "a name of its own.",
+        lead: "Every treatment starts with an initial assessment where we understand exactly what you want to achieve and define the right plan for your case.",
+        scarcity: "Limited availability · Only 4 initial assessments left this month",
+        waCta: "Request an assessment on WhatsApp",
+        waHref: "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20%F0%9F%91%8B%20I'd%20like%20to%20request%20an%20initial%20assessment.",
+        location: "Location",
+        schedule: "Hours",
+        weekdays: "Monday to Friday",
+        directContact: "Direct contact",
+        waAvailable: "WhatsApp available",
+        follow: "Follow us",
+        mapTitle: "AM Estética Dental location on Google Maps",
+        openMaps: "Open in Google Maps",
+        openWaze: "Open in Waze",
+        review: "★ Leave a review on Google",
+        navTourism: "Dental Tourism",
+        navPrices: "Veneers",
+        navDentist: "Smile Design",
+        hrefTourism: "/en/dental-tourism-argentina",
+        hrefPrices: "/en/porcelain-veneers-buenos-aires",
+        hrefDoctor: "/dr-ariel-merino",
+        hrefDentist: "/en/smile-design-buenos-aires",
+    },
+} as const;
+
+export default function Contacto({ lang = "es" }: { lang?: "es" | "en" }) {
+    const t = COPY[lang];
     return (
         <section id="contacto" className="py-32 px-4 bg-carbon-soft relative overflow-hidden">
 
@@ -16,19 +72,19 @@ export default function Contacto() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
-                        Puerto Madero, Buenos Aires
+                        {t.eyebrow}
                     </span>
                     <h2 className="text-4xl md:text-6xl font-manrope font-light text-crema leading-tight mb-6">
-                        Tu sonrisa tiene{" "}
-                        <span className="font-cormorant italic text-oro">nombre y apellido.</span>
+                        {t.h2a}{" "}
+                        <span className="font-cormorant italic text-oro">{t.h2b}</span>
                     </h2>
                     <p className="text-crema-muted font-manrope text-lg font-light max-w-xl mx-auto">
-                        Cada tratamiento empieza con una evaluacion inicial donde entendemos exactamente que queres lograr y definimos el plan indicado para tu caso.
+{t.lead}
                     </p>
                     <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-oro/15 bg-carbon/45 px-4 py-2 backdrop-blur-sm">
                         <span className="h-2 w-2 rounded-full bg-oro" />
                         <span className="text-[11px] font-manrope uppercase tracking-[0.24em] text-crema/72">
-                            Agenda limitada · Solo 4 evaluaciones iniciales disponibles este mes
+                            {t.scarcity}
                         </span>
                     </div>
                 </div>
@@ -36,7 +92,7 @@ export default function Contacto() {
                 {/* CTA principal — WhatsApp */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
                     <a
-                        href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola%20buenas!%20%F0%9F%91%8B%20Me%20gustaria%20solicitar%20una%20evaluacion%20inicial."
+                        href={t.waHref}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro-light transition-all hover:scale-[1.02] active:scale-100"
@@ -44,7 +100,7 @@ export default function Contacto() {
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
-                        Solicitar evaluacion por WhatsApp
+                        {t.waCta}
                     </a>
                     <a
                         href="https://www.instagram.com/amesteticadental"
@@ -60,19 +116,19 @@ export default function Contacto() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                     {[
                         {
-                            label: "Ubicación",
+                            label: t.location,
                             value: "Camila O'Gorman 412, Of. 101",
                             sub: "Puerto Madero, C1107DED CABA",
                         },
                         {
-                            label: "Horario",
-                            value: "Lunes a Viernes",
+                            label: t.schedule,
+                            value: t.weekdays,
                             sub: "10:00 — 18:00",
                         },
                         {
-                            label: "Contacto directo",
+                            label: t.directContact,
                             value: "+54 9 11 7021-9298",
-                            sub: "WhatsApp disponible",
+                            sub: t.waAvailable,
                         },
                     ].map((item) => (
                         <div key={item.label} className="border border-oro/10 rounded-2xl px-6 py-8 bg-carbon hover:border-oro/20 transition-colors">
@@ -89,7 +145,7 @@ export default function Contacto() {
 
             {/* Redes sociales */}
             <div className="mt-16 pt-10 border-t border-oro/10">
-                <p className="text-crema/30 font-manrope uppercase tracking-[0.4em] text-[10px] text-center mb-8">Seguinos</p>
+                <p className="text-crema/30 font-manrope uppercase tracking-[0.4em] text-[10px] text-center mb-8">{t.follow}</p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
                     {[
                         { label: "Instagram", href: "https://www.instagram.com/amesteticadental", handle: "@amesteticadental" },
@@ -122,7 +178,7 @@ export default function Contacto() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Ubicación de AM Estética Dental en Google Maps"
+                    title={t.mapTitle}
                     className="w-full"
                 />
             </div>
@@ -138,7 +194,7 @@ export default function Contacto() {
                     <svg className="w-3.5 h-3.5 text-oro/50" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                     </svg>
-                    Abrir en Google Maps
+                    {t.openMaps}
                 </a>
                 <span className="text-oro/15">·</span>
                 <a
@@ -148,7 +204,7 @@ export default function Contacto() {
                     className="flex items-center gap-2 text-crema/40 font-manrope text-xs hover:text-crema/70 transition-colors"
                 >
                     <Image src="/images/waze-mark.svg" alt="Waze" width={14} height={14} className="h-3.5 w-3.5" />
-                    Abrir en Waze
+                    {t.openWaze}
                 </a>
                 <span className="text-oro/15">·</span>
                 <a
@@ -157,7 +213,7 @@ export default function Contacto() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-crema/40 font-manrope text-xs hover:text-crema/70 transition-colors"
                 >
-                    ★ Dejar una reseña en Google
+                    {t.review}
                 </a>
             </div>
 
@@ -173,13 +229,13 @@ export default function Contacto() {
                 <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[10px] font-manrope uppercase tracking-widest text-crema/30">
                     <span>© 2026 AM Estética Dental</span>
                     <span className="text-oro/20 hidden sm:inline">|</span>
-                    <a href="/turismo-dental" className="hover:text-oro transition-colors">Turismo Dental</a>
+                    <a href={t.hrefTourism} className="hover:text-oro transition-colors">{t.navTourism}</a>
                     <span className="text-oro/20 hidden sm:inline">|</span>
-                    <a href="/precio-carillas-dentales-buenos-aires" className="hover:text-oro transition-colors">Precios</a>
+                    <a href={t.hrefPrices} className="hover:text-oro transition-colors">{t.navPrices}</a>
                     <span className="text-oro/20 hidden sm:inline">|</span>
-                    <a href="/dr-ariel-merino" className="hover:text-oro transition-colors">Dr. Ariel Merino</a>
+                    <a href={t.hrefDoctor} className="hover:text-oro transition-colors">Dr. Ariel Merino</a>
                     <span className="text-oro/20 hidden sm:inline">|</span>
-                    <a href="/dentista-puerto-madero" className="hover:text-oro transition-colors">Dentista en Puerto Madero</a>
+                    <a href={t.hrefDentist} className="hover:text-oro transition-colors">{t.navDentist}</a>
                 </div>
             </div>
 
