@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
+import { hreflangFor } from "@/lib/i18n-routes";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     description: "Carillas de porcelana y diseño de sonrisa en Buenos Aires para pacientes del exterior. Precios hasta 70% menores. Dr. Ariel Merino, Puerto Madero.",
     alternates: {
         canonical: "https://www.amesteticadental.com/turismo-dental",
+        languages: hreflangFor("/turismo-dental"),
     },
     openGraph: {
         title: "Turismo Dental en Buenos Aires | Carillas de Porcelana | AM Estética Dental",

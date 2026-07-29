@@ -43,6 +43,8 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/puentes-dentales", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contacto", changeFrequency: "monthly", priority: 0.7 },
   { path: "/turismo-dental", changeFrequency: "monthly", priority: 0.9 },
+  // Sitio en inglés (/en) — se agrega cada página a medida que se traduce.
+  { path: "/en/dental-tourism-argentina", changeFrequency: "monthly", priority: 0.85 },
   { path: "/opiniones", changeFrequency: "monthly", priority: 0.85 },
   { path: "/prensa", changeFrequency: "monthly", priority: 0.8 },
   { path: "/casos-antes-y-despues", changeFrequency: "weekly", priority: 0.95 },

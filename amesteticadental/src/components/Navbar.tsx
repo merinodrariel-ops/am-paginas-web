@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import CometButton from "./CometButton";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const NAV_LINKS = [
     { label: "Simulador IA", href: "/sonrisa" },
@@ -130,6 +131,7 @@ export default function Navbar() {
 
                 {/* CTA + mobile hamburger */}
                 <div className="flex-none flex items-center gap-3">
+                    <LanguageSwitcher />
                     <div className="hidden lg:block">
                         <CometButton
                             href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20gustaria%20solicitar%20una%20evaluacion%20inicial."
