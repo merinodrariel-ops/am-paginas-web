@@ -7,6 +7,7 @@ export const EN_BY_ES: Record<string, string> = {
   "/diseno-de-sonrisa": "/en/smile-design-buenos-aires",
   "/clinica": "/en/clinic",
   "/equipo-am": "/en/team",
+  "/casos-antes-y-despues": "/en/before-after",
 };
 
 export const ES_BY_EN: Record<string, string> = Object.fromEntries(

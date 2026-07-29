@@ -40,7 +40,7 @@ const NAV_LINKS_EN = [
     { label: "Veneers",        href: "/en/porcelain-veneers-buenos-aires" },
     { label: "Smile Design",   href: "/en/smile-design-buenos-aires" },
     { label: "Dental Tourism", href: "/en/dental-tourism-argentina" },
-    { label: "Before & After", href: "/casos-antes-y-despues" },
+    { label: "Before & After", href: "/en/before-after" },
     { label: "Clinic",         href: "/en/clinic" },
     { label: "Team",           href: "/en/team" },
 ];
@@ -51,7 +51,7 @@ const FEATURED_LINKS_EN = [
     { label: "Dental Tourism", href: "/en/dental-tourism-argentina" },
     { label: "AI Simulator",   href: "/sonrisa" },
     { label: "Dr. Merino",     href: "/dr-ariel-merino" },
-    { label: "Before & After", href: "/casos-antes-y-despues" },
+    { label: "Before & After", href: "/en/before-after" },
 ];
 
 const COPY = {

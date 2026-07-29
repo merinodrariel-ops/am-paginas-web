@@ -5,6 +5,47 @@ import Link from "next/link";
 import { useState } from "react";
 import type { Caso, Categoria } from "@/data/casos";
 
+const FILTROS_EN: Record<string, string> = {
+    "Todos": "All",
+    "Diseño de Sonrisa": "Smile Design",
+    "Carillas": "Veneers",
+    "Lentes de Contacto": "Ultra-Thin Veneers",
+    "Bruxismo": "Bruxism",
+    "Alineadores": "Aligners",
+    "Implantes": "Implants",
+    "Agenesia": "Agenesis",
+    "Diastemas": "Diastemas",
+    "Gingivectomía": "Gum Contouring",
+    "Rehabilitación": "Full Rehab",
+};
+
+const UI = {
+    es: {
+        eyebrow: "Antes y después reales",
+        h1a: "Casos clínicos",
+        h1b: "documentados.",
+        lead: "La galería de antes y después está organizada por caso real: diagnóstico, técnica, duración, fotos y seguimiento. Sin stock, sin filtros.",
+        empty: "No hay casos publicados para esta categoría todavía.",
+        featured: "Destacado",
+        viewCase: "Ver caso completo",
+        ctaQ: "¿Querés saber qué tratamiento se adapta a tu caso?",
+        ctaBtn: "Agendá tu consulta",
+        wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Vi%20los%20casos%20cl%C3%ADnicos%20y%20me%20gustar%C3%ADa%20una%20consulta.",
+    },
+    en: {
+        eyebrow: "Real before & afters",
+        h1a: "Documented",
+        h1b: "clinical cases.",
+        lead: "Every before & after in this gallery is a real, documented case: diagnosis, technique, timeline, photos and follow-up. No stock images, no filters. Case write-ups are in Spanish — send us a message and we'll walk you through any case in English.",
+        empty: "No published cases in this category yet.",
+        featured: "Featured",
+        viewCase: "View full case",
+        ctaQ: "Want to know which treatment fits your case?",
+        ctaBtn: "Book your consultation",
+        wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I%20saw%20the%20clinical%20cases%20and%20I'd%20like%20a%20consultation.",
+    },
+} as const;
+
 const FILTROS: { label: string; value: Categoria | "Todos" }[] = [
     { label: "Todos", value: "Todos" },
     { label: "Diseño de Sonrisa", value: "Diseño de sonrisa" },
@@ -19,7 +60,9 @@ const FILTROS: { label: string; value: Categoria | "Todos" }[] = [
     { label: "Rehabilitación", value: "Rehabilitación oral" },
 ];
 
-export default function CasosClient({ todos, fijos = [] }: { todos: Caso[]; fijos?: string[] }) {
+export default function CasosClient({ todos, fijos = [], lang = "es" }: { todos: Caso[]; fijos?: string[]; lang?: "es" | "en" }) {
+    const t = UI[lang];
+    const filterLabel = (label: string) => (lang === "en" ? FILTROS_EN[label] || label : label);
     const [filtro, setFiltro] = useState<Categoria | "Todos">("Todos");
     const fijosSet = new Set(fijos);
 
@@ -33,14 +76,14 @@ export default function CasosClient({ todos, fijos = [] }: { todos: Caso[]; fijo
 
                 {/* Header */}
                 <div className="mb-16">
-                    <span className="text-oro uppercase tracking-[0.4em] text-xs block mb-6">Antes y después reales</span>
+                    <span className="text-oro uppercase tracking-[0.4em] text-xs block mb-6">{t.eyebrow}</span>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
                         <h1 className="text-4xl md:text-5xl font-light text-crema leading-tight">
-                            Casos clínicos{" "}
-                            <span className="font-cormorant italic text-oro">documentados.</span>
+                            {t.h1a}{" "}
+                            <span className="font-cormorant italic text-oro">{t.h1b}</span>
                         </h1>
                         <p className="text-crema/60 text-lg font-light leading-relaxed">
-                            La galería de antes y después está organizada por caso real: diagnóstico, técnica, duración, fotos y seguimiento. Sin stock, sin filtros.
+                            {t.lead}
                         </p>
                     </div>
                 </div>
@@ -63,7 +106,7 @@ export default function CasosClient({ todos, fijos = [] }: { todos: Caso[]; fijo
                                         : "border border-crema/10 text-crema/40 hover:border-oro/30 hover:text-oro/70"
                                 }`}
                             >
-                                {f.label}
+                                {filterLabel(f.label)}
                                 <span className={`text-[9px] ${active ? "text-carbon/60" : "text-crema/25"}`}>
                                     {count}
                                 </span>
@@ -74,7 +117,7 @@ export default function CasosClient({ todos, fijos = [] }: { todos: Caso[]; fijo
 
                 {/* Grid */}
                 {casos.length === 0 ? (
-                    <p className="text-crema/30 text-center py-20">No hay casos publicados para esta categoría todavía.</p>
+                    <p className="text-crema/30 text-center py-20">{t.empty}</p>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {casos.map((caso) => {
@@ -97,7 +140,7 @@ export default function CasosClient({ todos, fijos = [] }: { todos: Caso[]; fijo
                                                     <svg viewBox="0 0 24 24" className="w-2.5 h-2.5" fill="currentColor" aria-hidden="true">
                                                         <path d="M14.12 2.88a2 2 0 0 0-3.06.26L8.7 6.36l-3.9 1.2a1 1 0 0 0-.42 1.66l3.2 3.2-4.3 5.87a.6.6 0 0 0 .84.84l5.87-4.3 3.2 3.2a1 1 0 0 0 1.66-.42l1.2-3.9 3.22-2.36a2 2 0 0 0 .26-3.06z" />
                                                     </svg>
-                                                    Destacado
+                                                    {t.featured}
                                                 </span>
                                             </div>
                                         )}
@@ -122,7 +165,7 @@ export default function CasosClient({ todos, fijos = [] }: { todos: Caso[]; fijo
                                             {caso.subtitulo}
                                         </p>
                                         <div className="mt-5 flex items-center gap-2 text-oro font-manrope text-xs uppercase tracking-widest">
-                                            Ver caso completo
+                                            {t.viewCase}
                                             <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                                         </div>
                                     </div>
@@ -134,13 +177,13 @@ export default function CasosClient({ todos, fijos = [] }: { todos: Caso[]; fijo
                 )}
 
                 <div className="mt-24 text-center">
-                    <p className="text-crema/40 font-manrope text-sm mb-6">¿Querés saber qué tratamiento se adapta a tu caso?</p>
+                    <p className="text-crema/40 font-manrope text-sm mb-6">{t.ctaQ}</p>
                     <a
-                        href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Vi%20los%20casos%20cl%C3%ADnicos%20y%20me%20gustar%C3%ADa%20una%20consulta."
+                        href={t.wa}
                         target="_blank" rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro/90 transition-all"
                     >
-                        Agendá tu consulta <span>→</span>
+                        {t.ctaBtn} <span>→</span>
                     </a>
                 </div>
 
