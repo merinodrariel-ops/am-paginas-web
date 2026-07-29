@@ -3,6 +3,34 @@
 import Image from "next/image";
 import { useMemo, useState, useCallback } from "react";
 
+const testimoniosEscritosEn = [
+    {
+        nombre: "Agustina Zacariaz",
+        tratamiento: "Composite veneers",
+        texto: "I went in for composite veneers on my two front teeth, and honestly I'm very happy with the results.",
+    },
+    {
+        nombre: "Santiago Ferraro",
+        tratamiento: "Overall experience",
+        texto: "My experience was great, from walking into the practice to leaving. The care — not just from Ari, but from the whole team working with him — is excellent.",
+    },
+    {
+        nombre: "Valentina Oyarzun",
+        tratamiento: "Whitening",
+        texto: "I'd wanted to book a consultation with the doctor for a while, and we arranged a whitening. The work turned out beautiful. So happy.",
+    },
+    {
+        nombre: "Camila Rossi",
+        tratamiento: "Smile transformation",
+        texto: "The only question I ask myself today is why I didn't give myself this smile sooner. It changed my life.",
+    },
+    {
+        nombre: "Julieta Marquez",
+        tratamiento: "Premium veneers",
+        texto: "I never felt like I was being sold something. They explained everything, and the result looked natural from the very first moment.",
+    },
+];
+
 const testimoniosEscritos = [
     {
         nombre: "Agustina Zacariaz",
@@ -162,7 +190,33 @@ function VideoCard({ video }: { video: typeof videosTestimonios[0] }) {
 const VISIBLE_DESKTOP = 3;
 const VISIBLE_MOBILE  = 1;
 
-function VideoCarousel() {
+const UI = {
+    es: {
+        eyebrow: "Testimonios",
+        h2a: "Pacientes reales,",
+        h2b: "en sus propias palabras",
+        h2ca: "Lo que dicen quienes ya",
+        h2cb: "confiaron en nosotros",
+        play: "Reproducir testimonio",
+        prev: "Anterior",
+        next: "Siguiente",
+        note: "",
+    },
+    en: {
+        eyebrow: "Testimonials",
+        h2a: "Real patients,",
+        h2b: "in their own words",
+        h2ca: "What those who already",
+        h2cb: "trusted us have to say",
+        play: "Play testimonial",
+        prev: "Previous",
+        next: "Next",
+        note: "Written testimonials translated from Spanish. Video testimonials are in Spanish.",
+    },
+} as const;
+
+function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
+    const ui = UI[lang];
     const [idx, setIdx] = useState(0);
     const total = videosTestimonios.length;
 
@@ -247,7 +301,7 @@ function VideoCarousel() {
                         onClick={prev}
                         disabled={!canPrev}
                         className="flex h-10 w-10 items-center justify-center rounded-full border border-oro/20 text-crema/60 transition-all hover:border-oro/50 hover:text-oro disabled:opacity-20 disabled:cursor-not-allowed"
-                        aria-label="Anterior"
+                        aria-label={ui.prev}
                     >
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -258,7 +312,7 @@ function VideoCarousel() {
                         onClick={() => next(VISIBLE_MOBILE)}
                         disabled={idx >= maxIdx(VISIBLE_MOBILE)}
                         className="flex h-10 w-10 items-center justify-center rounded-full border border-oro/20 text-crema/60 transition-all hover:border-oro/50 hover:text-oro disabled:opacity-20 disabled:cursor-not-allowed"
-                        aria-label="Siguiente"
+                        aria-label={ui.next}
                     >
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -270,9 +324,12 @@ function VideoCarousel() {
     );
 }
 
-export default function Testimonios() {
-    const marqueeTrack = useMemo(() => [...testimoniosEscritos, ...testimoniosEscritos], []);
-    const marqueeTrackReverse = useMemo(() => [...testimoniosEscritos].reverse().concat([...testimoniosEscritos].reverse()), []);
+
+export default function Testimonios({ lang = "es" }: { lang?: "es" | "en" }) {
+    const ui = UI[lang];
+    const escritos = lang === "en" ? testimoniosEscritosEn : testimoniosEscritos;
+    const marqueeTrack = useMemo(() => [...escritos, ...escritos], [escritos]);
+    const marqueeTrackReverse = useMemo(() => [...escritos].reverse().concat([...escritos].reverse()), [escritos]);
 
     return (
         <>
@@ -281,15 +338,15 @@ export default function Testimonios() {
                 <div className="mx-auto max-w-[88rem]">
                     <div className="mb-12 max-w-2xl px-4 md:px-8">
                         <span className="mb-4 block font-manrope text-[10px] uppercase tracking-[0.4em] text-oro">
-                            Testimonios
+                            {ui.eyebrow}
                         </span>
                         <h2 className="font-manrope text-3xl font-light leading-tight text-crema md:text-4xl">
-                            Pacientes reales,{" "}
-                            <span className="font-cormorant italic text-oro">en sus propias palabras</span>
+                            {ui.h2a}{" "}
+                            <span className="font-cormorant italic text-oro">{ui.h2b}</span>
                         </h2>
                     </div>
                     <div className="px-1 md:px-5">
-                        <VideoCarousel />
+                        <VideoCarousel lang={lang} />
                     </div>
                 </div>
             </section>
@@ -322,8 +379,8 @@ export default function Testimonios() {
                                 </div>
                             </a>
                             <h2 className="max-w-lg font-manrope text-2xl font-light leading-snug text-crema/70 md:text-3xl md:text-right">
-                                Lo que dicen quienes ya{" "}
-                                <span className="font-cormorant italic text-oro">confiaron en nosotros</span>
+                                {ui.h2ca}{" "}
+                                <span className="font-cormorant italic text-oro">{ui.h2cb}</span>
                             </h2>
                         </div>
                     </div>

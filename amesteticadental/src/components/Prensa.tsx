@@ -134,7 +134,27 @@ const NOTAS_DESTACADAS = [
     },
 ];
 
-export default function Prensa() {
+// Los titulares y medios NO se traducen: son publicaciones reales en español.
+// Solo se traduce el chrome (encabezados y etiquetas de la UI).
+const UI = {
+    es: {
+        eyebrow: "Presencia en medios",
+        h2a: "El Dr. Merino es fuente",
+        h2b: "de referencia",
+        lead: "Presencia editorial en los medios más influyentes de Argentina como especialista de estética dental.",
+        read: "Leer nota →",
+    },
+    en: {
+        eyebrow: "In the press",
+        h2a: "Dr. Merino is a go-to",
+        h2b: "expert source",
+        lead: "Editorial presence in Argentina's most influential media as a cosmetic dentistry specialist. Articles are published in Spanish.",
+        read: "Read the article →",
+    },
+} as const;
+
+export default function Prensa({ lang = "es" }: { lang?: "es" | "en" }) {
+    const ui = UI[lang];
     return (
         <section id="prensa" className="py-24 bg-carbon-soft border-y border-oro/10 overflow-hidden">
 
@@ -143,15 +163,15 @@ export default function Prensa() {
                 <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
                     <div>
                         <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-5">
-                            Presencia en medios
+                            {ui.eyebrow}
                         </span>
                         <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight">
-                            El Dr. Merino es fuente{" "}
-                            <span className="font-cormorant italic text-oro">de referencia</span>
+                            {ui.h2a}{" "}
+                            <span className="font-cormorant italic text-oro">{ui.h2b}</span>
                         </h2>
                     </div>
                     <p className="text-crema/55 font-manrope text-sm leading-relaxed max-w-xs md:text-right">
-                        Presencia editorial en los medios más influyentes de Argentina como especialista de estética dental.
+                        {ui.lead}
                     </p>
                 </div>
             </div>
@@ -210,7 +230,7 @@ export default function Prensa() {
                                 {nota.extracto}
                             </p>
                             <span className="text-oro/40 group-hover:text-oro transition-colors text-sm mt-auto">
-                                Leer nota →
+                                {ui.read}
                             </span>
                         </a>
                     ))}

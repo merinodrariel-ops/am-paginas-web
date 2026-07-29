@@ -5,6 +5,14 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+const REVIEWS_EN = [
+    { name: "Maria L.", text: "The result exceeded all my expectations and gave me back the confidence to smile." },
+    { name: "Santiago R.", text: "Absolute professionalism. Every step was clear, careful and never improvised." },
+    { name: "Valentina C.", text: "I came from Córdoba and it was worth every kilometre. The change showed from day one." },
+    { name: "Juliana M.", text: "The veneers came out natural, elegant and exactly as I had pictured them." },
+    { name: "Rodrigo P.", text: "The consultation was honest, with no pressure, and I left with a plan made for my case." },
+];
+
 const REVIEWS = [
     { name: "Maria L.", text: "El resultado supero todas mis expectativas y me devolvio seguridad al sonreir." },
     { name: "Santiago R.", text: "Profesionalismo absoluto. Cada paso fue claro, cuidado y sin improvisaciones." },
@@ -49,7 +57,38 @@ function LaurelBranch({ flip = false }: { flip?: boolean }) {
     );
 }
 
-export default function Autoridad() {
+const UI = {
+    es: {
+        googleReviews: "Google Reviews",
+        reviewsCount: "+120 reseñas verificadas",
+        forbesA: "La unica clinica odontologica de Argentina",
+        forbesB: "reconocida por Forbes.",
+        forbesLead: "No es un premio de industria. Es reconocimiento editorial en el medio de negocios mas exigente del mundo por el impacto real que generamos en la vida de nuestros pacientes.",
+        forbesCta: "Leer nota en Forbes →",
+        stats: [
+            { number: "15+", label: "en estética dental", sub: "Dr. Ariel Merino" },
+            { number: "Miss Universo", label: "Sonrisa mas estudiada", sub: "del mundo" },
+            { number: "100%", label: "Casos reales", sub: "Sin stock, sin filtros" },
+        ],
+    },
+    en: {
+        googleReviews: "Google Reviews",
+        reviewsCount: "120+ verified reviews",
+        forbesA: "The only dental clinic in Argentina",
+        forbesB: "featured by Forbes.",
+        forbesLead: "This is not an industry award. It is editorial recognition from the most demanding business publication in the world, for the real impact we create in our patients' lives.",
+        forbesCta: "Read the Forbes feature →",
+        stats: [
+            { number: "15+", label: "years in cosmetic dentistry", sub: "Dr. Ariel Merino" },
+            { number: "Miss Universe", label: "Most studied smile", sub: "in the world" },
+            { number: "100%", label: "Real cases", sub: "No stock, no filters" },
+        ],
+    },
+} as const;
+
+export default function Autoridad({ lang = "es" }: { lang?: "es" | "en" }) {
+    const ui = UI[lang];
+    const reviews = lang === "en" ? REVIEWS_EN : REVIEWS;
     const [reviewIdx, setReviewIdx] = useState(0);
     const [visible, setVisible] = useState(true);
     const statsRef = useRef<HTMLDivElement>(null);
@@ -102,7 +141,7 @@ export default function Autoridad() {
         const interval = setInterval(() => {
             setVisible(false);
             setTimeout(() => {
-                setReviewIdx((prev) => (prev + 1) % REVIEWS.length);
+                setReviewIdx((prev) => (prev + 1) % reviews.length);
                 setVisible(true);
             }, 280);
         }, 4200);
@@ -144,14 +183,14 @@ export default function Autoridad() {
                             <div className="flex items-center justify-between gap-4">
                                 <div>
                                     <span className="mb-3 inline-flex rounded-full border border-oro/20 bg-oro/8 px-3 py-1 font-manrope text-[10px] uppercase tracking-[0.3em] text-oro-light">
-                                        Google Reviews
+                                        {ui.googleReviews}
                                     </span>
                                     <div className="flex items-end gap-4">
                                         <span className="font-manrope text-6xl font-light leading-none text-crema md:text-7xl">4.9</span>
                                         <div className="space-y-2 pb-2">
                                             <Stars />
                                             <p className="font-manrope text-[11px] uppercase tracking-[0.28em] text-crema/45">
-                                                +120 reseñas verificadas
+                                                {ui.reviewsCount}
                                             </p>
                                         </div>
                                     </div>
@@ -170,11 +209,11 @@ export default function Autoridad() {
                                 }}
                             >
                                 <p className="mb-3 font-manrope text-sm leading-relaxed text-crema/82 md:text-[15px]">
-                                    &ldquo;{REVIEWS[reviewIdx].text}&rdquo;
+                                    &ldquo;{reviews[reviewIdx].text}&rdquo;
                                 </p>
                                 <div className="flex items-center justify-between gap-3">
                                     <span className="font-manrope text-[11px] uppercase tracking-[0.24em] text-oro/60">
-                                        {REVIEWS[reviewIdx].name}
+                                        {reviews[reviewIdx].name}
                                     </span>
                                     <span className="font-manrope text-[10px] uppercase tracking-[0.24em] text-crema/35">
                                         confianza inmediata
@@ -235,25 +274,21 @@ export default function Autoridad() {
 
                         <div className="relative flex flex-1 flex-col justify-center">
                             <h3 className="mb-4 font-manrope text-2xl leading-snug font-light text-crema md:text-3xl">
-                                La unica clinica odontologica de Argentina{" "}
-                                <span className="font-cormorant italic text-oro">reconocida por Forbes.</span>
+                                {ui.forbesA}{" "}
+                                <span className="font-cormorant italic text-oro">{ui.forbesB}</span>
                             </h3>
                             <p className="font-manrope text-sm leading-relaxed text-crema-muted">
-                                No es un premio de industria. Es reconocimiento editorial en el medio de negocios mas exigente del mundo por el impacto real que generamos en la vida de nuestros pacientes.
+                                {ui.forbesLead}
                             </p>
                             <span className="mt-4 block font-manrope text-xs text-oro/50 transition-colors group-hover:text-oro">
-                                Leer nota en Forbes →
+                                {ui.forbesCta}
                             </span>
                         </div>
                     </a>
                 </div>
 
                 <div ref={statsRef} className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-oro/10 bg-oro/10">
-                    {[
-                        { number: "15+", label: "en estética dental", sub: "Dr. Ariel Merino" },
-                        { number: "Miss Universo", label: "Sonrisa mas estudiada", sub: "del mundo" },
-                        { number: "100%", label: "Casos reales", sub: "Sin stock, sin filtros" },
-                    ].map((stat) => (
+                    {ui.stats.map((stat) => (
                         <div key={stat.label} className="bg-carbon px-4 py-8 text-center transition-colors hover:bg-carbon-soft">
                             <div className="mb-2 font-manrope text-2xl leading-tight font-light text-oro md:text-3xl">
                                 {stat.number}

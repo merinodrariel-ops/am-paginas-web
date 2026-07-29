@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Casos from "@/components/Casos";
+import Testimonios from "@/components/Testimonios";
+import Autoridad from "@/components/Autoridad";
+import Prensa from "@/components/Prensa";
 import DrMerino from "@/components/DrMerino";
 import Tratamientos from "@/components/Tratamientos";
 import Features from "@/components/Features";
@@ -107,6 +110,12 @@ export default function EnglishHome() {
       {/* 3. DR. MERINO — who is behind the cases (E-E-A-T) */}
       <DrMerino lang="en" />
 
+      {/* 3b. TESTIMONIALS */}
+      <Testimonios lang="en" />
+
+      {/* 3c. AUTHORITY — Google 4.9 + Forbes */}
+      <Autoridad lang="en" />
+
       {/* 4. TREATMENTS */}
       <div id="treatments">
         <Tratamientos lang="en" />
@@ -120,6 +129,9 @@ export default function EnglishHome() {
 
       {/* 7. WHY AM — explicit differentiation */}
       <PorQueAM lang="en" />
+
+      {/* 7b. PRESS */}
+      <Prensa lang="en" />
 
       {/* 8. NOTABLE PATIENTS */}
       <ClientesVIP lang="en" />

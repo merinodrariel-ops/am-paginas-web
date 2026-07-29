@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
+import RootSchema from "@/components/seo/RootSchema";
 import "./globals.css";
 
 const gtmId = (process.env.NEXT_PUBLIC_GTM_ID || "GTM-P9KCL5W7").trim();
@@ -176,10 +177,7 @@ fbq('track', 'PageView');`,
             data-domain={plausibleDomain}
           />
         ) : null}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg).replace(/</g, "\\u003c") }}
-        />
+        <RootSchema schema={schemaOrg} />
       </head>
       <body className="bg-carbon text-crema font-manrope relative min-h-screen">
         {gtmId ? (
