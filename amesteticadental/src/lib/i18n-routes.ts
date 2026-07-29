@@ -13,6 +13,10 @@ export const EN_BY_ES: Record<string, string> = {
   "/precio-carillas-dentales-buenos-aires": "/en/veneers-cost-buenos-aires",
   "/dr-ariel-merino": "/en/dr-ariel-merino",
   "/contacto": "/en/contact",
+  "/alineadores-invisibles": "/en/invisible-aligners-buenos-aires",
+  "/implantes-dentales-buenos-aires": "/en/dental-implants-buenos-aires",
+  "/blanqueamiento-dental-precio-buenos-aires": "/en/teeth-whitening-buenos-aires",
+  "/estetica-dental": "/en/cosmetic-dentistry-buenos-aires",
 };
 
 export const ES_BY_EN: Record<string, string> = Object.fromEntries(

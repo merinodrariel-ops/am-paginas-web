@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { hreflangFor } from "@/lib/i18n-routes";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Implantes Dentales en Buenos Aires | Precio y Turno",
     description: "Implantes dentales en Buenos Aires: precio y proceso. Titanio, zirconio y planificación digital por el Dr. Ariel Merino, Puerto Madero.",
-    alternates: { canonical: CANONICAL },
+    alternates: { canonical: CANONICAL , languages: hreflangFor("/implantes-dentales-buenos-aires") },
     keywords: "implantes dentales Buenos Aires, implante dental precio Buenos Aires, implantes dentales precio Argentina, implante dental Puerto Madero",
 };
 

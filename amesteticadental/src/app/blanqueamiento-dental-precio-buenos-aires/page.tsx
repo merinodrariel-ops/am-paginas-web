@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { hreflangFor } from "@/lib/i18n-routes";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Precio de Blanqueamiento Dental en Buenos Aires 2026",
     description: "Precio del blanqueamiento dental profesional en Buenos Aires 2026. Blanqueamiento láser y LED en una sesión en Puerto Madero. Dr. Ariel Merino.",
-    alternates: { canonical: CANONICAL },
+    alternates: { canonical: CANONICAL , languages: hreflangFor("/blanqueamiento-dental-precio-buenos-aires") },
     openGraph: {
         title: "Blanqueamiento Dental Precio Buenos Aires | AM Estética Dental",
         description: "Blanqueamiento dental profesional en una sesión. Precio real, resultado inmediato. Puerto Madero, Buenos Aires.",

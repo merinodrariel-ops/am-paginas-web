@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { hreflangFor } from "@/lib/i18n-routes";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     description: "Ortodoncia sin brackets en Puerto Madero, CABA. Alineadores invisibles e Invisalign con planificación digital por el Dr. Ariel Merino.",
     alternates: {
         canonical: "https://www.amesteticadental.com/alineadores-invisibles",
+    languages: hreflangFor("/alineadores-invisibles"),
     },
     openGraph: {
         title: "Alineadores Invisibles en Buenos Aires | AM Estética Dental",

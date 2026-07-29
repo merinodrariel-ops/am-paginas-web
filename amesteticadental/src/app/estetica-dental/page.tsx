@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { hreflangFor } from "@/lib/i18n-routes";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     description: "Especialistas en estética dental de alta complejidad en Buenos Aires. Carillas de porcelana, diseño de sonrisa, implantes y alineadores. Dr. Ariel Merino · Puerto Madero · Forbes Argentina.",
     alternates: {
         canonical: "https://www.amesteticadental.com/estetica-dental",
+    languages: hreflangFor("/estetica-dental"),
     },
     openGraph: {
         title: "Estética Dental Buenos Aires · Carillas, Implantes, Diseño de Sonrisa · AM",
