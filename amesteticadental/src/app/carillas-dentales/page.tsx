@@ -29,7 +29,7 @@ const faqItems = [
     },
     {
         pregunta: "¿Las carillas dañan o desgastan los dientes?",
-        respuesta: "Las carillas de porcelana mínimamente invasivas y los lentes de contacto dental requieren un desgaste mínimo o nulo del esmalte. La técnica depende del caso: hay situaciones en que se puede trabajar directamente sobre el diente sin preparación previa. Esto se evalúa en la consulta inicial.",
+        respuesta: "Trabajamos con técnicas mínimamente invasivas: en la mayoría de los casos la preparación del esmalte es mínima. Somos honestos en esto — en general algo de preparación hace falta, incluso con carillas ultrafinas. Cuánto depende de tu caso y te lo explicamos con claridad en la consulta inicial. El objetivo siempre es conservar la mayor cantidad de diente posible.",
     },
     {
         pregunta: "¿Cuál es la diferencia entre carillas de porcelana y de resina?",
@@ -41,7 +41,7 @@ const faqItems = [
     },
     {
         pregunta: "¿Qué son los lentes de contacto dental?",
-        respuesta: "Los lentes de contacto dental son carillas ultradelgadas (0,3 mm) que se adhieren directamente al diente sin requerir desgaste del esmalte. Son la opción más conservadora y están indicados para casos en los que el diente está en buen estado y solo se quiere mejorar el color o la forma superficial.",
+        respuesta: "Los lentes de contacto dental son carillas ultradelgadas (0,3 mm) que se adhieren al diente con una preparación mínima del esmalte. Son la opción más conservadora y están indicados para casos en los que el diente está en buen estado y solo se quiere mejorar el color o la forma superficial. Incluso con esta técnica suele hacer falta una preparación mínima — preferimos decírtelo de entrada.",
     },
     {
         pregunta: "¿Cuánto duran las carillas de porcelana?",
@@ -189,8 +189,8 @@ export default function CarillasDentalesPage() {
                                 },
                                 {
                                     tipo: "Lentes de Contacto Dental",
-                                    descripcion: "Carillas ultradelgadas (0,3 mm) que se adhieren sin desgaste. La opción más conservadora cuando el diente está sano y solo necesita una mejora superficial.",
-                                    ideal: "Correcciones de color o forma sin quitar esmalte.",
+                                    descripcion: "Carillas ultradelgadas (0,3 mm) que requieren una preparación mínima del esmalte. La opción más conservadora cuando el diente está sano y solo necesita una mejora superficial.",
+                                    ideal: "Correcciones de color o forma con la menor reducción posible.",
                                     duracion: "8–15 años",
                                 },
                                 {

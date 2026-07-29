@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Carillas Sin Daño: Las 3 técnicas que NO desgastan esmalte | Dr. Ariel Merino",
-    description: "Descubrí cuáles son las técnicas de carillas sin desgaste de esmalte. Análisis clínico + casos reales de pacientes con dientes intactos después de 10+ años.",
+    description: "Qué técnicas de carillas conservan más el esmalte y cuánta preparación necesita realmente cada caso. Análisis clínico honesto + casos reales con 10+ años de seguimiento.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog/las-carillas-danan-los-dientes",
     },
@@ -154,7 +154,7 @@ export default function ArticuloCarillasDananDientes() {
                                 <div className="border border-oro/15 rounded-xl p-6 bg-carbon-soft">
                                     <h3 className="text-crema font-manrope font-medium text-sm mb-3">Carillas sin preparación (lentes de contacto dental)</h3>
                                     <p className="text-crema/60 font-manrope text-xs leading-relaxed mb-3">
-                                        Se adhieren directamente al esmalte sin desgaste. Solo aplican para casos específicos donde el diente tiene el tamaño y posición correctos.
+                                        Se adhieren al esmalte con una preparación mínima. Solo aplican para casos específicos donde el diente tiene el tamaño y posición correctos.
                                     </p>
                                     <p className="text-crema/40 font-manrope text-xs">Lumineers · Lentes de contacto dental</p>
                                 </div>

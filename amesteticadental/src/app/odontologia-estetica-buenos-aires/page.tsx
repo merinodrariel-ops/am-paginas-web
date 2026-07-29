@@ -19,7 +19,7 @@ const SERVICIOS = [
     { titulo: "Blanqueamiento Dental", desc: "LED y láser en una sola sesión. Resultado inmediato.", href: "/blanqueamiento-dental-precio-buenos-aires", desde: "USD 150" },
     { titulo: "Alineadores Invisibles", desc: "Ortodoncia invisible AM. Sin brackets, sin alambre.", href: "/alineadores-invisibles", desde: "Consultar" },
     { titulo: "Implantes Dentales", desc: "Titanio y zirconio. Planificación guiada por computadora.", href: "/implantes-dentales-buenos-aires", desde: "Consultar" },
-    { titulo: "Lentes de Contacto Dental", desc: "0.2mm de espesor. Sin desgaste del diente natural.", href: "/lentes-de-contacto-dental-precio-buenos-aires", desde: "USD 1.000/pieza" },
+    { titulo: "Lentes de Contacto Dental", desc: "0.2mm de espesor. Mínima preparación del esmalte.", href: "/lentes-de-contacto-dental-precio-buenos-aires", desde: "USD 1.000/pieza" },
 ];
 
 const schema = {

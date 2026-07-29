@@ -247,7 +247,7 @@ export default function CarillasSinDesgastePage() {
             <div className="mb-10">
               <span className="text-oro font-manrope uppercase tracking-[0.4em] text-[10px] block mb-3">Casos reales</span>
               <h2 className="text-2xl font-manrope font-light text-crema">
-                Sin tocar el diente, <span className="font-cormorant italic text-oro">resultados reales.</span>
+                Mínima intervención, <span className="font-cormorant italic text-oro">resultados reales.</span>
               </h2>
               <p className="text-crema/45 font-manrope text-sm mt-3 max-w-xl">Lentes de contacto dental y carillas sin desgaste. Los resultados más naturales de la odontología estética moderna.</p>
             </div>

@@ -9,7 +9,7 @@ const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/cas
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Bruxismo y Desgaste Dental — Tratamiento con Carillas Cerámicas | AM Estética Dental",
-    description: "El bruxismo desgasta tus dientes sin que lo notes. Recuperá la función y la estética con carillas cerámicas AM. Sin desgaste adicional. Puerto Madero, Buenos Aires. Dr. Ariel Merino.",
+    description: "El bruxismo desgasta tus dientes sin que lo notes. Recuperá la función y la estética con carillas cerámicas AM, con mínima preparación. Puerto Madero, Buenos Aires. Dr. Ariel Merino.",
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Bruxismo y Desgaste Dental — Carillas Cerámicas | AM Estética Dental",
@@ -46,7 +46,7 @@ const SINTOMAS = [
 const PASOS = [
     { num: "01", titulo: "Evaluación digital", desc: "Escáner intraoral y análisis del desgaste. En la misma consulta ves el diagnóstico en pantalla." },
     { num: "02", titulo: "Diseño de sonrisa", desc: "Diseñamos el resultado antes de tocar ningún diente. Ves exactamente cómo vas a quedar." },
-    { num: "03", titulo: "Carillas AM", desc: "Cerámicas ultrafinas de 0.2mm. Se adhieren sobre el diente sin desgaste adicional." },
+    { num: "03", titulo: "Carillas AM", desc: "Cerámicas ultrafinas de 0.2mm. Se adhieren sobre el diente con una preparación mínima." },
     { num: "04", titulo: "Resultado", desc: "Sonrisa restaurada, función recuperada. Todo en 10 a 15 días." },
 ];
 
@@ -78,7 +78,7 @@ export default function BruxismoPage() {
                                 <span className="font-cormorant italic text-oro">Las carillas, sí.</span>
                             </h1>
                             <p className="text-crema/65 text-lg font-light leading-relaxed mb-8">
-                                Años de rechinar los dientes desgastan el esmalte, acortan las piezas y envejecen la sonrisa. Con carillas AM recuperás forma, color y función — sin desgaste adicional.
+                                Años de rechinar los dientes desgastan el esmalte, acortan las piezas y envejecen la sonrisa. Con carillas AM recuperás forma, color y función, con mínima preparación del diente.
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <a href={WA} target="_blank" rel="noopener noreferrer"

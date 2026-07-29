@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Carillas de Resina vs Porcelana Buenos Aires | AM Estética Dental",
-        description: "Carillas de resina: una sesión, sin desgaste del diente. Comparativa honesta con las carillas de porcelana. Dr. Ariel Merino, Puerto Madero.",
+        description: "Carillas de resina: una sesión, con mínima preparación del diente. Comparativa honesta con las carillas de porcelana. Dr. Ariel Merino, Puerto Madero.",
         url: CANONICAL,
     },
     keywords: "carillas de resina Buenos Aires, carillas resina precio, carillas resina compuesta dental, carillas composite Buenos Aires, carillas resina vs porcelana"

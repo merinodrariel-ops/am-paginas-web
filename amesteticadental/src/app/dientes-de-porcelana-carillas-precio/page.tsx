@@ -77,7 +77,7 @@ export default function DientesPorcelanaPage() {
                                 &ldquo;Dientes de porcelana&rdquo; es el término popular para las carillas cerámicas — láminas ultra delgadas que se adhieren a la cara frontal del diente para cambiar su color, forma y tamaño.
                             </p>
                             <p className="text-crema/60 text-sm leading-relaxed">
-                                En AM usamos la versión más avanzada: lentes de contacto dental AM, de apenas 0.2mm de espesor. Sin desgaste del diente natural. Sin anestesia en la mayoría de los casos. Resultado indistinguible del diente natural.
+                                En AM usamos la versión más avanzada: lentes de contacto dental AM, de apenas 0.2mm de espesor, con una preparación mínima del esmalte. Sin anestesia en la mayoría de los casos. Resultado indistinguible del diente natural.
                             </p>
                         </div>
                         <div>

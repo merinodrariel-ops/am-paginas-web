@@ -111,7 +111,7 @@ const PREGUNTAS = [
         por_que: "Para colocar una carilla, a veces hay que preparar mínimamente el esmalte del diente. \"Mínimamente\" es la palabra clave. Hay odontólogos que desgastan 0,3 mm (casi nada) y otros que desgastan 1 mm o más (que es prácticamente una corona). La diferencia es irreversible.",
         respuesta_correcta: "\"Mínimo posible. En muchos casos trabajo con lentes de contacto que no requieren ningún desgaste.\"",
         señal_alerta: "Si no pueden cuantificarte aproximadamente cuánto van a desgastar, o si no mencionan la posibilidad de trabajar sin desgaste (lentes de contacto), es una señal de que no están priorizando la conservación de tu tejido dental.",
-        en_am: "Nuestro principio es mínima intervención. Usamos lentes de contacto dental siempre que el caso lo permite — 0,3 mm de grosor, sin desgaste de esmalte. Cuando se necesita preparación, es de 0,3 a 0,5 mm máximo.",
+        en_am: "Nuestro principio es mínima intervención. Usamos lentes de contacto dental siempre que el caso lo permite — 0,3 mm de grosor, con la mínima preparación de esmalte posible. Cuando se necesita preparación, es de 0,3 a 0,5 mm máximo.",
     },
     {
         n: "04",

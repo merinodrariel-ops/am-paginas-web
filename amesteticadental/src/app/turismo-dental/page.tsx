@@ -8,7 +8,7 @@ import { hreflangFor } from "@/lib/i18n-routes";
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Turismo Dental en Buenos Aires | Carillas y Diseño de Sonrisa",
-    description: "Carillas de porcelana y diseño de sonrisa en Buenos Aires para pacientes del exterior. Precios hasta 70% menores. Dr. Ariel Merino, Puerto Madero.",
+    description: "Carillas de porcelana y diseño de sonrisa en Buenos Aires para pacientes del exterior. Laboratorio propio: resultados naturales en 10 a 14 días. Dr. Ariel Merino, Puerto Madero.",
     alternates: {
         canonical: "https://www.amesteticadental.com/turismo-dental",
         languages: hreflangFor("/turismo-dental"),
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
 
 const faqItems = [
     {
-        pregunta: "¿Cuánto cuesta un diseño de sonrisa con carillas en Buenos Aires comparado con USA o Europa?",
-        respuesta: "El costo de carillas de porcelana en Buenos Aires es entre un 40% y un 70% menor que en Estados Unidos, Canadá o España para una calidad clínica equivalente. Un juego de 8 carillas que en USA puede superar los USD 12.000 en AM Estética Dental se realiza con materiales de primera categoría a una fracción de ese valor, sin resignar protocolo ni resultado.",
+        pregunta: "¿Cuál es la inversión de un diseño de sonrisa con carillas en Buenos Aires?",
+        respuesta: "Trabajamos con valores en USD y financiación propia. La inversión exacta depende de la cantidad de piezas y la complejidad de tu caso, y se define en la evaluación inicial. Lo que más valoran nuestros pacientes del exterior no es el valor, sino poder resolverlo en un solo viaje gracias a nuestro laboratorio propio.",
     },
     {
         pregunta: "¿Cuánto tiempo tengo que quedarme en Buenos Aires para hacer el tratamiento?",
@@ -89,13 +89,10 @@ const serviceSchema = {
 
 const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Estoy%20interesado%20en%20viajar%20a%20Buenos%20Aires%20para%20hacerme%20las%20carillas.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F";
 
-const PAISES = [
-    { pais: "México", ahorro: "hasta 65%", keyword: "carillas porcelana México" },
-    { pais: "Colombia", ahorro: "hasta 55%", keyword: "diseño de sonrisa Colombia" },
-    { pais: "España", ahorro: "hasta 60%", keyword: "veneers España" },
-    { pais: "Estados Unidos", ahorro: "hasta 70%", keyword: "veneers USA" },
-    { pais: "Chile", ahorro: "hasta 50%", keyword: "carillas Chile" },
-    { pais: "Uruguay", ahorro: "hasta 45%", keyword: "carillas Uruguay" },
+const MOTIVOS = [
+    { t: "Laboratorio propio en la clínica", d: "Controlamos cada paso de la fabricación — sin tercerizar, sin esperar a laboratorios externos." },
+    { t: "Resultados en 10 a 14 días", d: "Una transformación completa condensada en un solo viaje." },
+    { t: "Directo con el especialista", d: "El Dr. Merino diseña y coloca tu caso personalmente, de principio a fin." },
 ];
 
 export default function TurismoDentalPage() {
@@ -118,12 +115,12 @@ export default function TurismoDentalPage() {
                         </span>
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-manrope font-light text-crema leading-[1.0] mb-7">
                             Tu sonrisa en Buenos Aires —{" "}
-                            <span className="font-cormorant italic text-oro">al costo que en tu país no encontrás</span>
+                            <span className="font-cormorant italic text-oro">resuelta en días, no en meses</span>
                         </h1>
                         <p className="text-crema/68 font-manrope text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
                             Carillas de porcelana, lentes de contacto dental y diseño de sonrisa digital en Puerto Madero.
-                            Mismos materiales, mismo protocolo — precio hasta un 70% menor que en USA, Canadá o Europa.
-                            Todo en 10 a 14 días.
+                            Nuestro laboratorio propio nos permite resolver en un solo viaje lo que en otros lados lleva meses:
+                            resultados naturales y mínimamente invasivos en 10 a 14 días.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 items-start">
                             <a
@@ -147,7 +144,7 @@ export default function TurismoDentalPage() {
                                 { v: "4.9★", l: "Google Reviews" },
                                 { v: "Forbes", l: "Argentina" },
                                 { v: "10–14 días", l: "Tratamiento completo" },
-                                { v: "Hasta 70%", l: "de ahorro vs USA" },
+                                { v: "Lab propio", l: "en la clínica" },
                             ].map((s) => (
                                 <div key={s.l}>
                                     <div className="text-oro font-manrope font-semibold text-lg">{s.v}</div>
@@ -166,18 +163,18 @@ export default function TurismoDentalPage() {
                             <div>
                                 <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-6">
                                     Calidad de primer mundo{" "}
-                                    <span className="font-cormorant italic text-oro">a precio latinoamericano</span>
+                                    <span className="font-cormorant italic text-oro">en el tiempo que no tenés</span>
                                 </h2>
                                 <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
                                     Argentina tiene una de las escuelas odontológicas más sólidas de América Latina. Los materiales que usamos — porcelana IPS e.max, feldespática, zirconio — son los mismos que se usan en clínicas premium de Madrid, Nueva York o Sao Paulo.
                                 </p>
                                 <p className="text-crema/70 font-manrope text-base leading-relaxed">
-                                    La diferencia está en el tipo de cambio y la estructura de costos. Eso se traduce en un ahorro real de entre el 40% y el 70% dependiendo del país de origen — sin resignar protocolo, materiales ni resultado.
+                                    La verdadera diferencia es nuestro laboratorio propio. Controlamos cada paso de la fabricación, y por eso podemos condensar en un solo viaje de 10 a 14 días lo que en otros lados lleva meses — con resultados naturales y mínimamente invasivos.
                                 </p>
                             </div>
                             <div className="space-y-4">
                                 {[
-                                    { n: "01", t: "Materiales certificados de primera línea", d: "Porcelana IPS e.max y feldespática de laboratorios con certificación europea." },
+                                    { n: "01", t: "Laboratorio propio en la clínica", d: "Controlamos la fabricación de punta a punta — por eso logramos resultados naturales en días, no en meses." },
                                     { n: "02", t: "Diseño digital antes de empezar", d: "Ves el resultado de tu sonrisa en pantalla antes de que se toque un solo diente." },
                                     { n: "03", t: "Coordinación previa por WhatsApp", d: "Evaluación preliminar con fotos antes de viajar. Llegás con el plan definido." },
                                     { n: "04", t: "Tratamiento completo en 10 a 14 días", d: "Pensado para quienes viajan desde el exterior: sin esperas ni vueltas innecesarias." },
@@ -196,28 +193,25 @@ export default function TurismoDentalPage() {
                     </div>
                 </section>
 
-                {/* ── AHORRO POR PAÍS ── */}
+                {/* ── POR QUÉ VIAJAN ── */}
                 <section className="py-24 px-6 md:px-12">
                     <div className="max-w-4xl mx-auto">
-                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Ahorro estimado</span>
+                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Por qué viajan</span>
                         <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-4">
-                            ¿De dónde venís?
+                            La ventaja real no es el precio.{" "}
+                            <span className="font-cormorant italic text-oro">Es el tiempo.</span>
                         </h2>
-                        <p className="text-crema/60 font-manrope text-base mb-12">
-                            El ahorro varía según el país, pero en todos los casos el costo del viaje más el tratamiento en Buenos Aires es menor que hacerlo localmente.
+                        <p className="text-crema/60 font-manrope text-base mb-12 max-w-2xl">
+                            Nuestros pacientes no vienen buscando el presupuesto más bajo. Vienen porque nuestro laboratorio propio nos permite hacer en un solo viaje lo que en otros lados lleva meses — con resultados naturales y mínimamente invasivos. Para alguien con una agenda exigente, el tiempo es el costo real.
                         </p>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            {PAISES.map((p) => (
-                                <div key={p.pais} className="border border-oro/15 rounded-2xl p-6 bg-carbon-soft hover:border-oro/30 transition-colors">
-                                    <div className="text-crema font-manrope font-medium text-base mb-1">{p.pais}</div>
-                                    <div className="text-oro font-manrope font-semibold text-2xl mb-1">{p.ahorro}</div>
-                                    <div className="text-crema/40 font-manrope text-xs">de ahorro estimado</div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            {MOTIVOS.map((m) => (
+                                <div key={m.t} className="border border-oro/15 rounded-2xl p-6 bg-carbon-soft hover:border-oro/30 transition-colors">
+                                    <div className="text-crema font-manrope font-medium text-base mb-2">{m.t}</div>
+                                    <div className="text-crema/55 font-manrope text-sm leading-relaxed">{m.d}</div>
                                 </div>
                             ))}
                         </div>
-                        <p className="text-crema/30 font-manrope text-xs mt-6">
-                            * Porcentajes estimados comparando precios de clínicas de referencia en cada país para tratamientos equivalentes. El ahorro real depende de la cantidad de piezas y complejidad del caso.
-                        </p>
                     </div>
                 </section>
 
@@ -286,7 +280,7 @@ export default function TurismoDentalPage() {
                                 },
                                 {
                                     nombre: "Lentes de Contacto Dental",
-                                    desc: "Carillas ultradelgadas sin desgaste de esmalte. Para casos donde el diente está sano y solo se quiere mejorar color o forma superficial.",
+                                    desc: "Carillas ultradelgadas con mínima preparación del esmalte. Para casos donde el diente está sano y solo se quiere mejorar color o forma superficial.",
                                     tiempo: "7–10 días",
                                 },
                                 {

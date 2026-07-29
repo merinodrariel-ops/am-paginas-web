@@ -10,11 +10,11 @@ const CDN2 = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/ca
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Lentes de Contacto Dental Precio Buenos Aires 2026 | AM Estética Dental",
-    description: "Precio e inversión en lentes de contacto dental en Buenos Aires 2026. Carillas AM ultra delgadas de 0.2mm sin desgaste. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.",
+    description: "Precio e inversión en lentes de contacto dental en Buenos Aires 2026. Carillas AM ultra delgadas de 0.2mm, mínimamente invasivas. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.",
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Lentes de Contacto Dental Precio Buenos Aires | AM Estética Dental",
-        description: "Carillas AM ultra delgadas 0.2mm. Sin desgaste del diente natural. Precio real, resultado inmediato. Puerto Madero, Buenos Aires.",
+        description: "Carillas AM ultra delgadas 0.2mm, con mínima preparación del esmalte. Inversión real, resultado inmediato. Puerto Madero, Buenos Aires.",
         url: CANONICAL,
         images: [{ url: `${CDN1}/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires` }],
     },
@@ -24,14 +24,14 @@ const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     name: "Lentes de contacto dental precio Buenos Aires — AM Estética Dental",
-    description: "Precio de lentes de contacto dental (carillas AM ultra delgadas 0.2mm) en Buenos Aires. Sin desgaste del diente. Dr. Ariel Merino, Puerto Madero.",
+    description: "Precio de lentes de contacto dental (carillas AM ultra delgadas 0.2mm) en Buenos Aires. Técnica mínimamente invasiva. Dr. Ariel Merino, Puerto Madero.",
     url: CANONICAL,
     about: { "@type": "MedicalProcedure", name: "Lentes de contacto dental — carillas AM ultra delgadas" },
 };
 
 const DIFERENCIAS = [
     { titulo: "Carilla tradicional", items: ["Requiere desgaste del diente", "0.5 a 0.7mm de espesor", "Proceso irreversible", "Mayor invasividad"], color: "border-crema/10" },
-    { titulo: "Lente de contacto AM", items: ["Sin desgaste del diente natural", "Solo 0.2 a 0.3mm de espesor", "Mínimamente invasivo", "El diente original intacto"], color: "border-oro/30", highlight: true },
+    { titulo: "Lente de contacto AM", items: ["Mínima preparación del esmalte", "Solo 0.2 a 0.3mm de espesor", "Mínimamente invasivo", "Máxima conservación del diente"], color: "border-oro/30", highlight: true },
 ];
 
 export default function LentesContactoDentalLanding() {
@@ -52,13 +52,13 @@ export default function LentesContactoDentalLanding() {
                 <section className="px-6 py-20 max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <span className="text-oro uppercase tracking-[0.4em] text-xs block mb-6">Buenos Aires · Sin desgaste</span>
+                            <span className="text-oro uppercase tracking-[0.4em] text-xs block mb-6">Buenos Aires · Mínimamente invasivo</span>
                             <h1 className="text-4xl md:text-5xl font-light text-crema leading-tight mb-6">
                                 Lentes de contacto<br />
                                 <span className="font-cormorant italic text-oro">dental en Buenos Aires.</span>
                             </h1>
                             <p className="text-crema/65 text-lg font-light leading-relaxed mb-4">
-                                Carillas AM de apenas 0.2mm — como una lente de contacto, pero para tus dientes. Resultado inmediato, sin tocar el diente natural.
+                                Carillas AM de apenas 0.2mm — como una lente de contacto, pero para tus dientes. Resultado inmediato, con la mínima preparación que tu caso requiera.
                             </p>
                             <div className="flex items-center gap-3 mb-8 p-4 border border-oro/20 rounded-xl">
                                 <span className="text-oro text-2xl font-cormorant italic">0.2mm</span>
@@ -193,10 +193,10 @@ export default function LentesContactoDentalLanding() {
                 <section className="px-6 py-16 text-center border-t border-oro/10">
                     <h2 className="font-light text-3xl text-crema mb-4">
                         Sonrisa nueva.<br />
-                        <span className="font-cormorant italic text-oro">Diente original intacto.</span>
+                        <span className="font-cormorant italic text-oro">Mínima intervención.</span>
                     </h2>
                     <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">
-                        Consultanos por WhatsApp y te decimos si sos candidato y cuánto costaría tu caso.
+                        Consultanos por WhatsApp y te decimos si sos candidato y cuál sería la inversión para tu caso.
                     </p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 const SERVICIOS = [
-    { titulo: "Carillas Dentales", desc: "Porcelana y resina. Lentes de contacto dental AM de 0.2mm, sin desgaste del diente natural.", href: "/carillas-dentales", desde: "USD 500 resina · USD 1.000 cerámica" },
+    { titulo: "Carillas Dentales", desc: "Porcelana y resina. Lentes de contacto dental AM de 0.2mm, con mínima preparación del esmalte.", href: "/carillas-dentales", desde: "USD 500 resina · USD 1.000 cerámica" },
     { titulo: "Diseño de Sonrisa", desc: "Ves tu sonrisa terminada en 3D antes de que toquemos un solo diente.", href: "/diseno-de-sonrisa", desde: "Desde USD 4.000" },
     { titulo: "Implantes Dentales", desc: "Titanio y zirconio con planificación guiada por computadora.", href: "/implantes-dentales-buenos-aires", desde: "Consultar" },
     { titulo: "Blanqueamiento Dental", desc: "LED y láser en una sola sesión. Resultado inmediato.", href: "/blanqueamiento-dental-precio-buenos-aires", desde: "USD 150" },
