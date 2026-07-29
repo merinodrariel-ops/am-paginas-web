@@ -1,9 +1,32 @@
 "use client";
 
 import { useState } from "react";
-import { faqData } from "@/data/faq";
+import { faqData, faqDataEn } from "@/data/faq";
 
-export default function FAQ() {
+const UI = {
+    es: {
+        eyebrow: "Preguntas frecuentes",
+        h2a: "Preguntas sobre carillas,",
+        h2b: "alineadores y diseño de sonrisa",
+        lead: "Respondemos las preguntas que casi nadie hace en voz alta.",
+        ctaQ: "¿Tenés una pregunta que no está acá?",
+        ctaBtn: "Escribinos por WhatsApp →",
+        wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Tengo%20una%20consulta%20sobre...",
+    },
+    en: {
+        eyebrow: "Frequently asked questions",
+        h2a: "Questions about veneers,",
+        h2b: "aligners and smile design",
+        lead: "We answer the questions almost nobody asks out loud.",
+        ctaQ: "Have a question that isn't here?",
+        ctaBtn: "Message us on WhatsApp →",
+        wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I%20have%20a%20question%20about...",
+    },
+} as const;
+
+export default function FAQ({ lang = "es" }: { lang?: "es" | "en" }) {
+    const ui = UI[lang];
+    const items = lang === "en" ? faqDataEn : faqData;
     const [abierto, setAbierto] = useState<number | null>(0);
 
     return (
@@ -13,20 +36,20 @@ export default function FAQ() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
-                        Preguntas frecuentes
+                        {ui.eyebrow}
                     </span>
                     <h2 className="text-4xl md:text-5xl font-manrope font-light text-crema leading-tight mb-6">
-                        Preguntas sobre carillas,{" "}
-                        <span className="font-cormorant italic text-oro">alineadores y diseño de sonrisa</span>
+                        {ui.h2a}{" "}
+                        <span className="font-cormorant italic text-oro">{ui.h2b}</span>
                     </h2>
                     <p className="text-crema-muted font-manrope text-lg font-light">
-                        Respondemos las preguntas que casi nadie hace en voz alta.
+                        {ui.lead}
                     </p>
                 </div>
 
                 {/* Acordeón */}
                 <div className="space-y-2">
-                    {faqData.map((faq: { pregunta: string; respuesta: string }, i: number) => (
+                    {items.map((faq: { pregunta: string; respuesta: string }, i: number) => (
                         <div
                             key={i}
                             className={`border rounded-xl overflow-hidden transition-colors ${
@@ -60,15 +83,15 @@ export default function FAQ() {
                 {/* CTA debajo del FAQ */}
                 <div className="mt-12 text-center">
                     <p className="text-crema-muted font-manrope text-sm mb-4">
-                        ¿Tenés una pregunta que no está acá?
+                        {ui.ctaQ}
                     </p>
                     <a
-                        href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Tengo%20una%20consulta%20sobre..."
+                        href={ui.wa}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-oro font-manrope text-sm font-medium hover:text-oro-light transition-colors"
                     >
-                        Escribinos por WhatsApp →
+                        {ui.ctaBtn}
                     </a>
                 </div>
 

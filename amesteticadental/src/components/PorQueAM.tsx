@@ -41,7 +41,61 @@ const diferenciadores = [
     },
 ];
 
-export default function PorQueAM() {
+const diferenciadoresEn = [
+    {
+        titulo: "Signed results",
+        descripcion: "Every photo we publish carries the @drarielmerino watermark. These are not anonymous results from a generic clinic — they are cases with a name and a clinician who takes public responsibility for them.",
+        icono: "✦",
+    },
+    {
+        titulo: "Our own laboratory, inside the clinic",
+        descripcion: "We do not outsource fabrication. Designing and milling in-house is what lets us compress a full smile transformation into a single 10–14 day trip instead of months of back-and-forth with an external lab.",
+        icono: "◆",
+    },
+    {
+        titulo: "Puerto Madero is not a detail",
+        descripcion: "Camila O'Gorman 412, Office 101, Puerto Madero — on the most expensive square metre in Argentina. This is not marketing: it is a standard of infrastructure, equipment and clientele that defines everything we do inside.",
+        icono: "◈",
+    },
+    {
+        titulo: "Forbes. Miss Universe. That's it.",
+        descripcion: "AM Estética Dental is the only dental clinic in Argentina featured in the pages of Forbes. The smile of a Miss Universe was designed by our team. We do not ask for trust — we show why others already place it here.",
+        icono: "◉",
+    },
+    {
+        titulo: "3D technology before touching a tooth",
+        descripcion: "We design your smile digitally and show you the result before we start. You approve it or we adjust it. Only when the design is exactly what you want do we begin. That removes the biggest fear any patient has.",
+        icono: "◎",
+    },
+    {
+        titulo: "No impressions. No moulds. No anxiety.",
+        descripcion: "Digital intraoral scanner. Zero paste in your mouth. Zero traditional impressions. A clinical process that respects the fact that coming to the dentist takes courage — and makes sure it is worth it.",
+        icono: "◐",
+    },
+];
+
+const UI = {
+    es: {
+        eyebrow: "Por qué AM Estética Dental",
+        h2a: "Hay muchas clínicas en Buenos Aires.",
+        h2b: "Solo una en Puerto Madero con este nivel.",
+        lead: "No compete por precio. No compite por volumen. AM Estética Dental compite por resultado — y en ese terreno, la conversación es diferente.",
+        cta: "Agendá tu consulta inicial",
+        wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20conocer%20m%C3%A1s%20sobre%20AM%20Est%C3%A9tica%20Dental.",
+    },
+    en: {
+        eyebrow: "Why AM Estética Dental",
+        h2a: "There are many clinics in Buenos Aires.",
+        h2b: "Only one in Puerto Madero at this level.",
+        lead: "We do not compete on price. We do not compete on volume. AM Estética Dental competes on result and on time — and on that ground, the conversation is different.",
+        cta: "Book your initial assessment",
+        wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I'd%20like%20to%20know%20more%20about%20AM%20Est%C3%A9tica%20Dental.",
+    },
+} as const;
+
+export default function PorQueAM({ lang = "es" }: { lang?: "es" | "en" }) {
+    const ui = UI[lang];
+    const items = lang === "en" ? diferenciadoresEn : diferenciadores;
     const sectionRef = useRef<HTMLElement>(null);
     const headingRef = useRef<HTMLDivElement>(null);
     const gridRef = useRef<HTMLDivElement>(null);
@@ -92,22 +146,22 @@ export default function PorQueAM() {
                 {/* Header */}
                 <div ref={headingRef} className="mb-20">
                     <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
-                        Por qué AM Estética Dental
+                        {ui.eyebrow}
                     </span>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
                         <h2 className="text-4xl md:text-5xl font-manrope font-light text-crema leading-tight">
-                            Hay muchas clínicas en Buenos Aires.{" "}
-                            <span className="font-cormorant italic text-oro">Solo una en Puerto Madero con este nivel.</span>
+                            {ui.h2a}{" "}
+                            <span className="font-cormorant italic text-oro">{ui.h2b}</span>
                         </h2>
                         <p className="text-crema-muted font-manrope text-lg font-light leading-relaxed">
-                            No compete por precio. No compite por volumen. AM Estética Dental compite por resultado — y en ese terreno, la conversación es diferente.
+                            {ui.lead}
                         </p>
                     </div>
                 </div>
 
                 {/* Grilla de diferenciadores */}
                 <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-oro/10">
-                    {diferenciadores.map((d) => (
+                    {items.map((d) => (
                         <div
                             key={d.titulo}
                             className="diferenciador-card bg-carbon p-8 hover:bg-carbon-soft transition-colors group"
@@ -128,12 +182,12 @@ export default function PorQueAM() {
                 {/* CTA base */}
                 <div className="mt-16 text-center">
                     <a
-                        href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20conocer%20m%C3%A1s%20sobre%20AM%20Est%C3%A9tica%20Dental."
+                        href={ui.wa}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro-light transition-all"
                     >
-                        Agendá tu consulta inicial
+                        {ui.cta}
                         <span>→</span>
                     </a>
                 </div>

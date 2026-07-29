@@ -15,6 +15,17 @@ import FAQ from "@/components/FAQ";
 import Contacto from "@/components/Contacto";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import { generateFaqSchema } from "@/data/faq";
+import { hreflangFor } from "@/lib/i18n-routes";
+import type { Metadata } from "next";
+
+// La home hereda title/description del layout raíz; acá solo declaramos el par
+// de idiomas (hreflang) para que no se aplique al resto de las páginas.
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://www.amesteticadental.com",
+    languages: hreflangFor("/"),
+  },
+};
 
 const faqSchema = generateFaqSchema();
 

@@ -37,6 +37,7 @@ const FEATURED_LINKS = [
 // Menú en inglés para las páginas /en. Apunta a las páginas ya traducidas; el
 // resto lleva a su equivalente en español hasta que se traduzca.
 const NAV_LINKS_EN = [
+    { label: "Home",           href: "/en" },
     { label: "Veneers",        href: "/en/porcelain-veneers-buenos-aires" },
     { label: "Smile Design",   href: "/en/smile-design-buenos-aires" },
     { label: "Dental Tourism", href: "/en/dental-tourism-argentina" },

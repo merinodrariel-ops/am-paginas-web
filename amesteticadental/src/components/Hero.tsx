@@ -33,7 +33,45 @@ const PARTICLES = [
   { x: 46,  y: 14,  size: 2.0, delay: 2.2, dur: 4.0 },
 ];
 
-export default function Hero() {
+const COPY = {
+  es: {
+    eyebrow: "AM Estética Dental · Puerto Madero",
+    h1a: "Carillas, Diseño de Sonrisa",
+    h1b: "y Estética Dental Natural.",
+    lead: "Carillas de porcelana, lentes de contacto dental y diseño de sonrisa digital para lograr resultados naturales en Puerto Madero. AM Aligners cuando el caso pide movimiento, no artificio.",
+    cta: "Solicitar evaluacion inicial",
+    wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20solicitar%20una%20evaluacion%20inicial.",
+    secondary: "Ver tratamientos principales",
+    secondaryHref: "#tratamientos",
+    scarcity: "Agenda limitada · Solo 4 evaluaciones iniciales disponibles este mes",
+    stats: [
+      { v: "4.9★", l: "Google" },
+      { v: "Forbes", l: "Argentina" },
+      { v: "+20 años", l: "transformando sonrisas" },
+    ],
+    scroll: "Descubrir",
+  },
+  en: {
+    eyebrow: "AM Estética Dental · Puerto Madero, Buenos Aires",
+    h1a: "Veneers, Smile Design",
+    h1b: "and Natural Cosmetic Dentistry.",
+    lead: "Porcelain veneers, ultra-thin veneers and digital smile design for natural results in Puerto Madero. Our own in-house laboratory means a complete transformation in days, not months.",
+    cta: "Request an initial assessment",
+    wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I'd%20like%20to%20request%20an%20initial%20assessment.",
+    secondary: "See main treatments",
+    secondaryHref: "#treatments",
+    scarcity: "Limited availability · Only 4 initial assessments left this month",
+    stats: [
+      { v: "4.9★", l: "Google" },
+      { v: "Forbes", l: "Argentina" },
+      { v: "20+ years", l: "transforming smiles" },
+    ],
+    scroll: "Discover",
+  },
+} as const;
+
+export default function Hero({ lang = "es" }: { lang?: "es" | "en" }) {
+  const t = COPY[lang];
   const sectionRef   = useRef<HTMLElement>(null);
   const headlineRef  = useRef<HTMLHeadingElement>(null);
   const subRef       = useRef<HTMLParagraphElement>(null);
@@ -178,57 +216,53 @@ export default function Hero() {
         {/* ── Columna izquierda: texto */}
         <div className="relative flex flex-col justify-center max-w-xl lg:max-w-[34rem]">
           <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">
-            AM Estética Dental · Puerto Madero
+            {t.eyebrow}
           </span>
 
           <h1
             ref={headlineRef}
             className="text-5xl md:text-6xl lg:text-[5.25rem] font-manrope font-light text-crema leading-[0.98] mb-7 will-change-transform"
           >
-            Carillas, Diseño de Sonrisa{" "}<br />
-            <span className="font-cormorant italic text-oro">y Estética Dental Natural.</span>
+            {t.h1a}{" "}<br />
+            <span className="font-cormorant italic text-oro">{t.h1b}</span>
           </h1>
 
           <p
             ref={subRef}
             className="text-crema/68 font-manrope text-lg md:text-[1.12rem] font-light leading-relaxed max-w-sm mb-9"
           >
-            Carillas de porcelana, lentes de contacto dental y diseño de sonrisa digital para lograr resultados naturales en Puerto Madero. AM Aligners cuando el caso pide movimiento, no artificio.
+            {t.lead}
           </p>
 
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <CometButton
-              href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20solicitar%20una%20evaluacion%20inicial."
+              href={t.wa}
               target="_blank"
               rel="noopener noreferrer"
               size="lg"
               speed={5.8}
             >
-              Solicitar evaluacion inicial
+              {t.cta}
               <span>→</span>
             </CometButton>
             <a
-              href="#tratamientos"
+              href={t.secondaryHref}
               className="inline-flex items-center justify-center gap-2 text-crema/60 font-manrope text-sm hover:text-crema transition-colors"
             >
-              Ver tratamientos principales
+              {t.secondary}
             </a>
           </div>
 
           <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-oro/15 bg-carbon/55 px-4 py-2 backdrop-blur-sm">
             <span className="h-2 w-2 rounded-full bg-oro" />
             <span className="text-[11px] font-manrope uppercase tracking-[0.24em] text-crema/72">
-              Agenda limitada · Solo 4 evaluaciones iniciales disponibles este mes
+              {t.scarcity}
             </span>
           </div>
 
           {/* Stats */}
           <div className="flex items-center gap-8 mt-12 pt-7 border-t border-oro/10">
-            {[
-              { v: "4.9★", l: "Google" },
-              { v: "Forbes", l: "Argentina" },
-              { v: "+20 años", l: "transformando sonrisas" },
-            ].map((s) => (
+            {t.stats.map((s) => (
               <div key={s.l}>
                 <div className="text-oro font-manrope font-semibold text-lg">{s.v}</div>
                 <div className="text-crema-muted font-manrope text-xs">{s.l}</div>
@@ -296,7 +330,7 @@ export default function Hero() {
 
       {/* ── Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-40">
-        <span className="text-crema text-xs tracking-widest uppercase font-manrope mb-2">Descubrir</span>
+        <span className="text-crema text-xs tracking-widest uppercase font-manrope mb-2">{t.scroll}</span>
         <div className="w-px h-10 bg-crema/30 relative overflow-hidden">
           <div className="w-full h-full bg-crema absolute top-0 animate-[scrollDown_2s_ease-in-out_infinite]" />
         </div>

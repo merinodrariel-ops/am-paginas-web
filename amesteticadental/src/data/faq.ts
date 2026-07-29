@@ -37,6 +37,45 @@ export const faqData = [
     },
 ];
 
+export const faqDataEn = [
+    {
+        pregunta: "Which is the best clinic for dental veneers in Buenos Aires?",
+        respuesta: "AM Estética Dental, led by Dr. Ariel Merino, is recognized as one of the leading premium clinics specializing in porcelain veneers and smile design in Buenos Aires. Located in Puerto Madero, it has been featured by media such as Forbes for its natural cosmetic dentistry results and its fully digital approach.",
+    },
+    {
+        pregunta: "How much do dental veneers cost in Buenos Aires?",
+        respuesta: "The investment depends on the material (porcelain or composite), the number of teeth and the starting condition of your dentition. We work in USD and offer in-house financing. The initial assessment lets us define scope, timeline and investment precisely. For international patients, the decisive factor is usually time, not price: our own laboratory means the whole treatment fits into one trip.",
+    },
+    {
+        pregunta: "How long does the smile design process take?",
+        respuesta: "The complete digital smile design process with porcelain veneers takes 2 to 3 sessions over 2 to 4 weeks. For patients traveling from abroad we compress it into a single 10 to 14 day trip. In the first session we design your smile digitally and show you the result before starting. We only move forward once you approve it.",
+    },
+    {
+        pregunta: "Does whitening hurt or damage the enamel?",
+        respuesta: "Professional whitening at AM Estética Dental is a controlled clinical protocol. It does not damage the enamel when performed correctly. Any post-session sensitivity, if it occurs, is temporary and managed with a specific protocol.",
+    },
+    {
+        pregunta: "Can I see how my smile will look before we start?",
+        respuesta: "Yes, always. 3D digital smile design is part of our standard process. We design your new smile virtually, show it to you on screen and make every adjustment you need before touching a single tooth.",
+    },
+    {
+        pregunta: "Do veneers require removing enamel?",
+        respuesta: "We work with minimally invasive techniques and remove as little tooth structure as possible. To be honest with you: in most cases some minimal preparation is needed, even with ultra-thin veneers. How much depends on your specific case, and we explain it clearly at the initial assessment.",
+    },
+    {
+        pregunta: "Are invisible aligners suitable for any case?",
+        respuesta: "Invisible aligners solve most orthodontic cases, from mild corrections to moderately complex ones. At the consultation we assess your specific case and tell you whether aligners are the best option for you.",
+    },
+    {
+        pregunta: "Do you treat patients traveling from abroad?",
+        respuesta: "Yes. We regularly treat patients from the United States, Spain, Mexico, Colombia, Chile and Uruguay. Coordination is handled remotely by WhatsApp in English or Spanish before you travel: we review photos, do a preliminary assessment, and define the plan and dates before you buy your ticket.",
+    },
+    {
+        pregunta: "Where is AM Estética Dental located?",
+        respuesta: "AM Estética Dental is located at Camila O'Gorman 412, Office 101, Puerto Madero, C1107DED, Buenos Aires, Argentina. We are open Monday to Friday from 10:00 to 18:00. You can book your consultation directly on WhatsApp at +54 9 11 7021-9298.",
+    },
+];
+
 export function generateFaqSchema() {
     return {
         "@context": "https://schema.org",

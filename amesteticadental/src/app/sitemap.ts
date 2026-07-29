@@ -44,6 +44,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/contacto", changeFrequency: "monthly", priority: 0.7 },
   { path: "/turismo-dental", changeFrequency: "monthly", priority: 0.9 },
   // Sitio en inglés (/en) — se agrega cada página a medida que se traduce.
+  { path: "/en", changeFrequency: "weekly", priority: 0.95 },
   { path: "/en/dental-tourism-argentina", changeFrequency: "monthly", priority: 0.85 },
   { path: "/en/porcelain-veneers-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
   { path: "/en/smile-design-buenos-aires", changeFrequency: "monthly", priority: 0.85 },

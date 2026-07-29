@@ -25,7 +25,35 @@ const FOTOS = [
     },
 ];
 
-export default function Clinica() {
+const UI = {
+    es: {
+        eyebrow: "El espacio",
+        h2a: "Puerto Madero.",
+        h2b: "El estándar que define todo lo demás.",
+        lead: "No es solo una dirección. El metro cuadrado más caro de Argentina impone un criterio — en infraestructura, equipamiento y en el tipo de paciente que exige excelencia en todo lo que consume.",
+        addr2: "Puerto Madero · Buenos Aires · Argentina",
+        cta: "Conocer la Clínica y Tecnología →",
+        ctaHref: "/clinica",
+        addrLabel: "Dirección",
+        phoneLabel: "Teléfono",
+        maps: "Ver en Google Maps →",
+    },
+    en: {
+        eyebrow: "The space",
+        h2a: "Puerto Madero.",
+        h2b: "The standard that defines everything else.",
+        lead: "It is not just an address. The most expensive square metre in Argentina sets a standard — in infrastructure, in equipment, and in the kind of patient who demands excellence in everything they choose.",
+        addr2: "Puerto Madero · Buenos Aires · Argentina",
+        cta: "See the Clinic & Technology →",
+        ctaHref: "/en/clinic",
+        addrLabel: "Address",
+        phoneLabel: "Phone",
+        maps: "View on Google Maps →",
+    },
+} as const;
+
+export default function Clinica({ lang = "es" }: { lang?: "es" | "en" }) {
+    const ui = UI[lang];
     const sectionRef = useRef<HTMLElement>(null);
     const headRef = useRef<HTMLDivElement>(null);
     const mosaicRef = useRef<HTMLDivElement>(null);
@@ -69,18 +97,18 @@ export default function Clinica() {
                 <div ref={headRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-16">
                     <div>
                         <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
-                            El espacio
+                            {ui.eyebrow}
                         </span>
                         <h2 className="text-4xl md:text-5xl font-manrope font-light text-crema leading-tight">
-                            Puerto Madero.{" "}
+                            {ui.h2a}{" "}
                             <span className="font-cormorant italic text-oro">
-                                El estándar que define todo lo demás.
+                                {ui.h2b}
                             </span>
                         </h2>
                     </div>
                     <div className="space-y-6">
                         <p className="text-crema-muted font-manrope text-lg font-light leading-relaxed">
-                            No es solo una dirección. El metro cuadrado más caro de Argentina impone un criterio — en infraestructura, equipamiento y en el tipo de paciente que exige excelencia en todo lo que consume.
+                            {ui.lead}
                         </p>
                         {/* Dirección */}
                         <div className="inline-flex items-start gap-3 border border-oro/15 bg-carbon/60 backdrop-blur-sm rounded-2xl px-5 py-4">
@@ -90,7 +118,7 @@ export default function Clinica() {
                                     Camila O&apos;Gorman 412, Oficina 101
                                 </p>
                                 <p className="text-crema/50 font-manrope text-xs mt-0.5 uppercase tracking-widest">
-                                    Puerto Madero · Buenos Aires · Argentina
+                                    {ui.addr2}
                                 </p>
                             </div>
                         </div>
@@ -98,10 +126,10 @@ export default function Clinica() {
                         {/* Botón Protagónico */}
                         <div className="pt-2">
                             <Link
-                                href="/clinica"
+                                href={ui.ctaHref}
                                 className="inline-flex items-center gap-2 bg-oro text-carbon px-6 py-3.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-lg hover:shadow-oro/10"
                             >
-                                Conocer la Clínica y Tecnología →
+                                {ui.cta}
                             </Link>
                         </div>
                     </div>
@@ -147,12 +175,12 @@ export default function Clinica() {
                 <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div className="flex items-center gap-6">
                         <div>
-                            <p className="font-manrope text-[10px] uppercase tracking-[0.3em] text-oro/60 mb-0.5">Dirección</p>
+                            <p className="font-manrope text-[10px] uppercase tracking-[0.3em] text-oro/60 mb-0.5">{ui.addrLabel}</p>
                             <p className="font-manrope text-sm text-crema/70">Camila O&apos;Gorman 412, Of. 101 · Puerto Madero</p>
                         </div>
                         <div className="w-px h-8 bg-oro/15 hidden sm:block" />
                         <div>
-                            <p className="font-manrope text-[10px] uppercase tracking-[0.3em] text-oro/60 mb-0.5">Teléfono</p>
+                            <p className="font-manrope text-[10px] uppercase tracking-[0.3em] text-oro/60 mb-0.5">{ui.phoneLabel}</p>
                             <p className="font-manrope text-sm text-crema/70">+54 11 7021-9298</p>
                         </div>
                     </div>
@@ -162,7 +190,7 @@ export default function Clinica() {
                         rel="noopener noreferrer"
                         className="font-manrope text-xs text-oro/50 hover:text-oro transition-colors uppercase tracking-widest"
                     >
-                        Ver en Google Maps →
+                        {ui.maps}
                     </a>
                 </div>
 

@@ -9,7 +9,33 @@ import { getCasosPublicados } from "@/data/casos";
 
 const CASOS_DESTACADOS = getCasosPublicados().slice(0, 6);
 
-export default function Casos() {
+const UI = {
+    es: {
+        eyebrow: "Antes y después reales",
+        h2a: "Fotos reales, ordenadas",
+        h2b: "por caso clínico.",
+        lead: "Cada portada abre la historia completa del paciente: diagnóstico, tratamiento, duración, técnica, seguimiento y más fotos del resultado.",
+        all: "Ver todos los casos",
+        allHref: "/casos-antes-y-despues",
+        ctaQ: "¿Querés un resultado así para tu sonrisa?",
+        ctaBtn: "Agendá tu consulta",
+        wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Vi%20los%20casos%20y%20me%20gustar%C3%ADa%20una%20consulta.",
+    },
+    en: {
+        eyebrow: "Real before & afters",
+        h2a: "Real photos, organized",
+        h2b: "by clinical case.",
+        lead: "Each cover opens the patient's full story: diagnosis, treatment, timeline, technique, follow-up and more photos of the result.",
+        all: "See all cases",
+        allHref: "/en/before-after",
+        ctaQ: "Want a result like this for your smile?",
+        ctaBtn: "Book your consultation",
+        wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I%20saw%20the%20cases%20and%20I'd%20like%20a%20consultation.",
+    },
+} as const;
+
+export default function Casos({ lang = "es" }: { lang?: "es" | "en" }) {
+    const ui = UI[lang];
     const sectionRef = useRef<HTMLElement>(null);
     const gridRef = useRef<HTMLDivElement>(null);
 
@@ -47,15 +73,15 @@ export default function Casos() {
                 {/* Header */}
                 <div className="mb-20">
                     <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
-                        Antes y después reales
+                        {ui.eyebrow}
                     </span>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
                         <h2 className="text-4xl md:text-5xl font-manrope font-light text-crema leading-tight">
-                            Fotos reales, ordenadas{" "}
-                            <span className="font-cormorant italic text-oro">por caso clínico.</span>
+                            {ui.h2a}{" "}
+                            <span className="font-cormorant italic text-oro">{ui.h2b}</span>
                         </h2>
                         <p className="text-crema-muted font-manrope text-lg font-light leading-relaxed">
-                            Cada portada abre la historia completa del paciente: diagnóstico, tratamiento, duración, técnica, seguimiento y más fotos del resultado.
+                            {ui.lead}
                         </p>
                     </div>
                 </div>
@@ -118,10 +144,10 @@ export default function Casos() {
 
                 <div className="mt-10 text-center">
                     <Link
-                        href="/casos-antes-y-despues"
+                        href={ui.allHref}
                         className="inline-flex items-center gap-3 border border-oro/25 px-7 py-3.5 font-manrope text-xs font-semibold uppercase tracking-[0.25em] text-oro transition-colors hover:border-oro hover:bg-oro hover:text-carbon"
                     >
-                        Ver todos los casos
+                        {ui.all}
                         <span>→</span>
                     </Link>
                 </div>
@@ -129,15 +155,15 @@ export default function Casos() {
                 {/* CTA */}
                 <div className="mt-20 text-center">
                     <p className="text-crema/40 font-manrope text-sm mb-6">
-                        ¿Querés un resultado así para tu sonrisa?
+                        {ui.ctaQ}
                     </p>
                     <a
-                        href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Vi%20los%20casos%20y%20me%20gustar%C3%ADa%20una%20consulta."
+                        href={ui.wa}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro-light transition-all"
                     >
-                        Agendá tu consulta
+                        {ui.ctaBtn}
                         <span>→</span>
                     </a>
                 </div>
