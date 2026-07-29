@@ -166,8 +166,16 @@ La traducción del contenido vive en la columna `translations` de Supabase
 (`{ en: { alt, caption } }`). `getCasosPublicadosMerged(lang)` y `getCasoBySlugMerged(slug, lang)`
 resuelven el idioma; si no hay traducción, cae al español.
 
-**Pendiente:** blog en inglés, simulador `/sonrisa` en EN, y páginas secundarias
-(comparativas, implantes, blanqueamiento, coronas, puentes, etc.).
+**Ola 2 (2026-07-29) — 24 páginas EN.** Suma: cosmetic-dentistry (paraguas),
+invisible-aligners, dental-implants, teeth-whitening, porcelain-vs-composite-veneers,
+veneers-vs-aligners, smile-simulator, reviews, blog (+3 artículos), press.
+`SmileEntryClient` y `LeadForm` también bilingües.
+
+**Pendiente:** artículos de blog restantes (8 en español sin versión EN), y páginas
+secundarias de menor tráfico: coronas-y-fundas, puentes-dentales, carillas-de-resina,
+periodoncia, turismo-dental ya está, dientes-de-porcelana-precio, precio-implantes,
+odontologia-estetica-buenos-aires, dentista-puerto-madero, carillas-sin-desgaste,
+lentes-precio, invisalign, alineadores-buenos-aires, bruxismo, trabaja-en-am, ig.
 
 ## Galería de casos — arquitectura de datos (2026-07-28)
 

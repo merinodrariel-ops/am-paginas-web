@@ -120,6 +120,16 @@ Porcelain veneers, ultra-thin (contact lens) veneers, digital smile design, comp
 - /en/clinic — The clinic in Puerto Madero
 - /en/team — The AM team
 - /en/contact — Contact and booking
+- /en/cosmetic-dentistry-buenos-aires — Cosmetic dentistry overview — all treatments
+- /en/invisible-aligners-buenos-aires — Invisible aligners (AM Aligners)
+- /en/dental-implants-buenos-aires — Dental implants: cost, process and timelines
+- /en/teeth-whitening-buenos-aires — Professional teeth whitening
+- /en/porcelain-vs-composite-veneers — Porcelain vs composite veneers compared
+- /en/veneers-vs-aligners — Veneers vs invisible aligners: which one you need
+- /en/smile-simulator — AI smile design simulator
+- /en/reviews — Patient reviews (4.9★ on Google)
+- /en/blog — Blog in English
+- /en/press — Press and media kit
 
 ## Location & contact
 
