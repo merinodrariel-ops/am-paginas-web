@@ -37,6 +37,18 @@
 - Use the `project.id` notebook for project-specific sources and session summaries.
 - Use the `brain.id` notebook only for reusable cross-project learnings.
 
+## ⚠️ Leer primero: `../AGENTS.md` (raíz del monorepo)
+
+`AGENTS.md` en la raíz es la fuente de verdad compartida por todos los agentes (Claude,
+Codex, etc.). Contiene, entre otras cosas:
+- **Reglas de copy del Dr. Merino**: nunca prometer "sin desgaste"/"no-prep"; el
+  posicionamiento es **tiempo + laboratorio propio**, NO precio; en el contenido se dice
+  **"inversión"**, no "precio" (la URL sí puede decir precio, por SEO).
+- **`git fetch` obligatorio antes de tocar nada** — el local suele estar commits atrás de
+  este monorepo multi-sitio; pushear WIP viejo revierte trabajo de otros. Nunca `--force`.
+- **Sitio en inglés `/en`**: arquitectura de páginas espejo + checklist para traducir.
+- **Galería de casos**: usar `src/lib/public-cases.ts`, blocklist + gate anti-basura.
+
 ## AM Estética Dental Business Rules
 
 - **ALL images (not only clinical cases) must be uploaded to and served from Cloudinary (`drctvgyqd`)** — clinic, team, Dr. Merino, landing, headers, everything. NEVER reference `/public/images/...` from a `next/image` component.

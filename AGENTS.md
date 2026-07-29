@@ -21,6 +21,35 @@ Es odontólogo, no programador. Explicar sin jerga técnica cuando se comunica c
 - CTA principal: WhatsApp `https://api.whatsapp.com/send?phone=5491170219298`
 - Marca: AM Estética Dental · Dr. Ariel Merino · Puerto Madero · Forbes Argentina
 
+### ⚠️ Reglas de copy — dictadas por el Dr. Merino (2026-07-28)
+
+Estas tres aplican a **todo**: web ES e EN, ads, slogans, redes, The Dental Review.
+
+**1. NUNCA prometer "sin desgaste" / "no-prep" / "no enamel reduction".**
+En ~90% de los casos hace falta una preparación mínima del esmalte, aunque la técnica sea
+ultrafina. Prometer cero desgaste es **publicidad engañosa** y AM no la necesita.
+- ✅ Usar: "mínimamente invasivo", "mínima preparación", "minimal prep", "minimally invasive",
+  "ultra-thin veneers", "lentes de contacto dental" (como nombre de producto).
+- ❌ Evitar: "sin desgaste", "no se tocan tus dientes", "no-prep", "without removing enamel".
+- Palabras del Dr.: *"alguien que es muy bueno en lo que hace no necesita estar engañando
+  con pancartas con ese tipo de eslogan"*.
+
+**2. El posicionamiento NO es el precio. Es el TIEMPO.**
+AM **no compite** contra otros países/consultorios por ser más barato. Nada de tablas de
+"ahorro por país" ni "hasta 70% menos que en USA".
+- El eje real: **laboratorio propio → resultados naturales en días, no meses**.
+- El paciente objetivo (extranjero, empresario, yankee) **valora su tiempo**, no busca ahorrar:
+  paga mucho por resultados rápidos y naturales.
+- Palabras del Dr.: *"no estamos en la mentalidad de la competencia del precio... la gente
+  quiere resultados naturales lo más rápido posible y va a pagar mucho dinero por eso"*.
+
+**3. "Precio" solo para SEO; en el contenido se dice "INVERSIÓN".**
+- ✅ URL, `<title>` y meta description pueden decir "precio"/"price" — así busca la gente
+  (intención de búsqueda real, no se toca el SEO).
+- ✅ En el **cuerpo, headings y copy** se habla de **"inversión" / "investment"**.
+- Por qué: es el lenguaje de quien decide por valor. La gente de mucho dinero habla de
+  inversión, no de precio. Más elegante y coherente con no competir por precio.
+
 ## Google Ads CLI
 Credenciales en `am-paginas-web/.env.ads` (no subir a git).
 
@@ -71,6 +100,79 @@ node gsc.mjs estado     # muestra estado de indexación
 ## Deploy
 - Push a `main` → Vercel despliega automáticamente `amesteticadental/`
 - Después del deploy correr `node gsc.mjs indexar` para páginas nuevas
+
+## 🚨 ANTES DE TOCAR NADA: `git fetch` (leer esto SIEMPRE)
+
+**El checkout local puede estar MUY desactualizado.** El 2026-07-28 el `main` local estaba
+**51 commits atrás** del remoto y divergido: era una línea vieja/paralela. Este es un
+**monorepo con 4 sitios** que se edita desde varias máquinas/sesiones (Claude, Codex, etc.).
+
+Riesgos reales si no se chequea:
+- Pushear WIP viejo **revierte trabajo del equipo** (pasó a punto de ocurrir con dr-merino,
+  layout, Hero ya migrados a Cloudinary).
+- Trabajás sobre archivos que ya fueron refactorizados y duplicás/rompés lo hecho.
+
+**Flujo obligatorio:**
+```bash
+git fetch origin main && git status -sb   # ¿dice "behind N"? → sincronizar PRIMERO
+```
+- Si divergió: reconciliar **sobre el remoto**. **NUNCA `git push --force`** (se pierde
+  trabajo real de otros).
+- Nada de ramas/worktrees locales olvidados: el trabajo termina **pusheado a `main`** o no
+  existe. El Dr. **solo mira la versión online (Vercel)** — nunca revisa local.
+- Antes de commitear, verificar que no se cuelen artefactos ajenos (`JB BALAYAGE/`,
+  `*-transfer-bundle*`, `.env*`) — ya están en `.gitignore`.
+
+## Sitio en inglés (`/en`) — turismo dental internacional
+
+Arquitectura elegida (2026-07-28): **páginas espejo `/en/...` con slugs en inglés**.
+El sitio en español **no se toca** (cero riesgo). NO se usó `app/[lang]/` (refactor
+riesgoso de 50 páginas). Nada de plugins/widgets de traducción: no indexan y son basura SEO.
+
+Piezas de la base (en `amesteticadental/`):
+| Archivo | Rol |
+|---|---|
+| `src/lib/i18n-routes.ts` | Mapa `EN_BY_ES` (clave = URL ES, valor = URL EN) + `hreflangFor()` |
+| `src/components/LanguageSwitcher.tsx` | Banderita 🇦🇷/🇬🇧 en el Navbar |
+| `src/components/HtmlLangSetter.tsx` + `src/app/en/layout.tsx` | `<html lang="en">` en /en |
+| `src/components/Navbar.tsx` | Detecta `/en` → menú, CTA y WhatsApp en inglés |
+
+**Para traducir una página nueva (checklist):**
+1. Copiar la página ES (son autocontenidas, JSX inline) a `src/app/en/<slug-en>/page.tsx`.
+2. Traducir **localizando keywords**, no literal: *Porcelain Veneers*, *Smile Design*,
+   *Dental Tourism*, *Ultra-thin veneers*. Aplicar las **reglas de copy** de arriba.
+3. Metadata: `canonical` propio + `languages: hreflangFor("/ruta-espanola")` +
+   `openGraph.locale: "en_US"`.
+4. Agregar el par al mapa en `src/lib/i18n-routes.ts` (la banderita y el hreflang salen solos).
+5. Agregar `hreflangFor()` también en la metadata de la página **española** (bidireccional).
+6. Agregar la URL `/en/...` a `STATIC_ROUTES` en `src/app/sitemap.ts`.
+7. Si la página ya tiene versión EN, actualizar los links internos de las otras páginas EN.
+8. `npm run build` → push. IndexNow notifica a Bing solo.
+
+**Hecho:** `/en/dental-tourism-argentina`, `/en/porcelain-veneers-buenos-aires`,
+`/en/smile-design-buenos-aires`.
+**Pendiente:** home `/en`, lentes de contacto (ultra-thin), Dr. Merino, before & after,
+contacto, y el resto de las ~50 páginas.
+
+## Galería de casos — arquitectura de datos (2026-07-28)
+
+- **Listado**: `/casos-antes-y-despues` (antes era `/casos`, que ahora redirige 301).
+  Los casos individuales siguen en `/casos/[slug]`.
+- **Capa de datos correcta: `src/lib/public-cases.ts`** (`getCasosPublicadosMerged()` /
+  `getCasoBySlugMerged()`). La vieja `public-clinical-cases.ts` quedó sin uso.
+- `LEGACY_CASE_SLUGS`: blocklist de slugs basura (excluidos de listados y sitemap).
+- `looksAutogeneratedTitle()`: **gate genérico** que oculta cualquier caso del bridge de
+  Supabase con título auto-generado (empieza en minúscula / parece nombre de archivo).
+  Complementa el checklist manual de más abajo: si el pipeline publica basura, no llega a la web.
+- **El caso curado (estático en `casos.ts`) es autoritativo** sobre el mismo slug del bridge.
+- **Casos fijos ("pin" tipo Instagram)**: `CASOS_FIJOS` en
+  `src/app/casos-antes-y-despues/page.tsx` — hoy Milán, 20 carillas y 13 años. El resto rota
+  con shuffle diario determinista.
+- ⚠️ La web usa la **anon key** de Supabase → **no puede escribir**. Limpiar filas basura de
+  la DB requiere service role / panel del pipeline.
+- Los dos casos de gingivectomía son **distintos** (mirar las fotos, no el nombre del archivo):
+  `-09` = maxilar **inferior** (periodoncia, `gingivectomia-laser-sin-bisturi-sangrado-puntos`);
+  `-10` = maxilar **superior** (`gingivectomia-laser-micro-diseno-sonrisa-resinas`).
 
 ## ⭐ FLUJO OBLIGATORIO — Publicar caso clínico o página nueva
 
