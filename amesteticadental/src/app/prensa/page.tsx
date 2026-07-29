@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { hreflangFor } from "@/lib/i18n-routes";
 import Navbar from "@/components/Navbar";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   description: "Recursos oficiales, biografías, logos y fotografías de alta calidad para periodistas y medios de comunicación. Dr. Ariel Merino, especialista en carillas en Buenos Aires.",
   alternates: {
     canonical: "https://www.amesteticadental.com/prensa",
+    languages: hreflangFor("/prensa"),
   },
   robots: {
     index: true, // Queremos que los periodistas la encuentren

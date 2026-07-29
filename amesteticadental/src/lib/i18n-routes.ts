@@ -19,6 +19,9 @@ export const EN_BY_ES: Record<string, string> = {
   "/estetica-dental": "/en/cosmetic-dentistry-buenos-aires",
   "/carillas-de-porcelana-vs-resina": "/en/porcelain-vs-composite-veneers",
   "/carillas-vs-alineadores": "/en/veneers-vs-aligners",
+  "/opiniones": "/en/reviews",
+  "/blog": "/en/blog",
+  "/prensa": "/en/press",
 };
 
 export const ES_BY_EN: Record<string, string> = Object.fromEntries(

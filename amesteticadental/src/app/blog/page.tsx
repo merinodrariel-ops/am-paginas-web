@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { hreflangFor } from "@/lib/i18n-routes";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
     description: "Artículos sobre carillas de porcelana, diseño de sonrisa, lentes de contacto dental y estética dental en Buenos Aires. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog",
+    languages: hreflangFor("/blog"),
     },
     openGraph: {
         title: "Blog de Estética Dental | AM Estética Dental",

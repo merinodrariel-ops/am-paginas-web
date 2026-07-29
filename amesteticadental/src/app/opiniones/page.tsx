@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { hreflangFor } from "@/lib/i18n-routes";
 import Navbar from "@/components/Navbar";
 import Testimonios from "@/components/Testimonios";
 import Link from "next/link";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     description: "Lee las opiniones reales de pacientes de AM Estética Dental en Buenos Aires. 4.9 sobre 5 con más de 120 reseñas verificadas en Google. Dr. Ariel Merino, Puerto Madero.",
     alternates: {
         canonical: "https://www.amesteticadental.com/opiniones",
+    languages: hreflangFor("/opiniones"),
     },
     openGraph: {
         title: "Opiniones y Reseñas de AM Estética Dental · 4.9★ Google",

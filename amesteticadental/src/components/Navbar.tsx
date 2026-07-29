@@ -45,6 +45,8 @@ const NAV_LINKS_EN = [
     { label: "Clinic",         href: "/en/clinic" },
     { label: "Team",           href: "/en/team" },
     { label: "Investment",     href: "/en/veneers-cost-buenos-aires" },
+    { label: "Reviews",        href: "/en/reviews" },
+    { label: "Blog",           href: "/en/blog" },
 ];
 
 const FEATURED_LINKS_EN = [
