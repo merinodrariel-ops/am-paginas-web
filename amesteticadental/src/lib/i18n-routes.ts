@@ -17,6 +17,8 @@ export const EN_BY_ES: Record<string, string> = {
   "/implantes-dentales-buenos-aires": "/en/dental-implants-buenos-aires",
   "/blanqueamiento-dental-precio-buenos-aires": "/en/teeth-whitening-buenos-aires",
   "/estetica-dental": "/en/cosmetic-dentistry-buenos-aires",
+  "/carillas-de-porcelana-vs-resina": "/en/porcelain-vs-composite-veneers",
+  "/carillas-vs-alineadores": "/en/veneers-vs-aligners",
 };
 
 export const ES_BY_EN: Record<string, string> = Object.fromEntries(

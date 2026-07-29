@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { hreflangFor } from "@/lib/i18n-routes";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: "Carillas vs Alineadores Invisibles | AM Estética Dental",
   description:
     "Qué conviene según tu caso: carillas dentales o alineadores invisibles. Diferencias reales en objetivo, tiempos, naturalidad y cuándo se combinan ambos tratamientos.",
-  alternates: { canonical: "https://www.amesteticadental.com/carillas-vs-alineadores" },
+  alternates: { canonical: "https://www.amesteticadental.com/carillas-vs-alineadores" , languages: hreflangFor("/carillas-vs-alineadores") },
   openGraph: {
     title: "Carillas vs Alineadores Invisibles | AM Estética Dental",
     description:

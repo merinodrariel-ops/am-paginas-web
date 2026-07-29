@@ -59,6 +59,8 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/en/dental-implants-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
   { path: "/en/teeth-whitening-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
   { path: "/en/cosmetic-dentistry-buenos-aires", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/en/porcelain-vs-composite-veneers", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/en/veneers-vs-aligners", changeFrequency: "monthly", priority: 0.8 },
   { path: "/opiniones", changeFrequency: "monthly", priority: 0.85 },
   { path: "/prensa", changeFrequency: "monthly", priority: 0.8 },
   { path: "/casos-antes-y-despues", changeFrequency: "weekly", priority: 0.95 },
