@@ -24,6 +24,7 @@ const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "How much do veneers cost in Argentina?",
+    "image": "https://www.amesteticadental.com/og-image.jpg",
     description: "Veneer investment in Argentina 2026: USD figures per unit, what changes the number, what should be included, and why international patients actually travel here.",
     inLanguage: "en",
     author: {

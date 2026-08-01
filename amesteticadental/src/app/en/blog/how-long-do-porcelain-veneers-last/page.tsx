@@ -24,6 +24,7 @@ const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "How long do porcelain veneers last?",
+    "image": "https://www.amesteticadental.com/og-image.jpg",
     description: "Porcelain veneers last 10 to 20 years with the right care. What wears them down, how to protect them and when they need replacing. By Dr. Ariel Merino.",
     inLanguage: "en",
     author: {

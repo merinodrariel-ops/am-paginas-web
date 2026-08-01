@@ -10,7 +10,7 @@ import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Carillas Dentales desde USD 1.000 — Precios 2026 + Financiación Propia",
+  title: "Carillas Dentales desde USD 1.000 — Precios 2026 | AM",
   description:
     "Precios actualizados 2026: USD 500-1.500 por pieza. Tabla de costos reales, casos antes/después, calculadora de financiación sin interés. Dr. Ariel Merino, Puerto Madero.",
   keywords: "precio carillas dentales Buenos Aires, costo carillas porcelana Argentina, carillas dentales precio 2026, financiación carillas Puerto Madero, cuánto cuestan las carillas dentales",

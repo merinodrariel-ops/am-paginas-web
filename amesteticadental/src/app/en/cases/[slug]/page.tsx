@@ -50,8 +50,39 @@ export default async function EnglishCasePage({ params }: Props) {
     const caso = await getCasoBySlugMerged(slug, "en");
     if (!caso) notFound();
 
+    const canonical = `https://www.amesteticadental.com/en/cases/${caso.slug}`;
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "MedicalWebPage",
+        name: caso.titulo,
+        headline: caso.titulo,
+        description: caso.seoDescription || caso.descripcion,
+        url: canonical,
+        inLanguage: "en",
+        image: caso.fotos.map((foto) => foto.src),
+        about: caso.categorias,
+        medicalSpecialty: "Dentistry",
+        publisher: {
+            "@type": "MedicalBusiness",
+            name: "AM Estética Dental",
+            url: "https://www.amesteticadental.com",
+            telephone: "+5491170219298",
+            address: {
+                "@type": "PostalAddress",
+                addressLocality: "Puerto Madero",
+                addressRegion: "Buenos Aires",
+                addressCountry: "AR",
+            },
+            founder: { "@type": "Person", name: "Dr. Ariel Merino" },
+        },
+    };
+
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+            />
             <Navbar />
             <main className="bg-carbon min-h-screen pt-32 pb-32 px-4">
                 <div className="max-w-5xl mx-auto">

@@ -64,6 +64,7 @@ const clinicSchemaEn = {
   "@type": "Dentist",
   name: "AM Estética Dental",
   url: CANONICAL,
+  image: "https://www.amesteticadental.com/og-image.jpg",
   description:
     "Premium cosmetic dentistry clinic in Puerto Madero, Buenos Aires. Porcelain veneers, ultra-thin veneers and digital smile design with an in-house dental laboratory.",
   address: {

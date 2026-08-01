@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "¿Cuántas sesiones se necesitan para las carillas de porcelana? | AM Estética Dental",
+    title: "¿Cuántas sesiones se necesitan para las carillas? | AM",
     description: "El cronograma real de un tratamiento de carillas: qué pasa en cada sesión, cuánto tiempo hay entre ellas y qué podés hacer en el medio. Dr. Ariel Merino, Puerto Madero.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog/cuantas-sesiones-se-necesitan-para-las-carillas",
@@ -22,6 +22,7 @@ const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "¿Cuántas sesiones se necesitan para las carillas de porcelana?",
+    "image": "https://www.amesteticadental.com/og-image.jpg",
     "description": "Cronograma detallado del tratamiento de carillas de porcelana: sesiones, tiempos entre sesiones y qué ocurre en cada etapa.",
     "author": {
         "@type": "Person",

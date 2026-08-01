@@ -7,7 +7,7 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20qui
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Alineadores Invisibles Buenos Aires — Precio 2026 | AM Estética Dental",
+    title: "Alineadores Invisibles Buenos Aires 2026 | AM",
     description: "Alineadores invisibles en Buenos Aires: precio, marcas y proceso. Ortodoncia sin brackets. Alineadores AM, Invisalign y más. Dr. Ariel Merino, Puerto Madero.",
     alternates: { canonical: CANONICAL },
     keywords: "alineadores invisibles Buenos Aires, alineadores dentales precio Buenos Aires, Invisalign Buenos Aires precio, ortodoncia invisible Buenos Aires, aparatos invisibles precio Argentina",

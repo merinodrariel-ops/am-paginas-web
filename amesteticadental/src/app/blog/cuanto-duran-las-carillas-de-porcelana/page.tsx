@@ -22,6 +22,7 @@ const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "¿Cuánto duran las carillas de porcelana?",
+    "image": "https://www.amesteticadental.com/og-image.jpg",
     "description": "Las carillas de porcelana duran entre 10 y 20 años con el cuidado correcto. Factores que afectan la durabilidad y cómo maximizar su vida útil.",
     "author": {
         "@type": "Person",

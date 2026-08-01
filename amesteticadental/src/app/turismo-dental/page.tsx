@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         languages: hreflangFor("/turismo-dental"),
     },
     openGraph: {
-        title: "Turismo Dental en Buenos Aires | Carillas de Porcelana | AM Estética Dental",
+        title: "Turismo Dental en Buenos Aires | AM Estética Dental",
         description: "Buenos Aires es uno de los destinos de turismo dental más elegidos del mundo. Carillas, diseño de sonrisa y veneers con el Dr. Ariel Merino en Puerto Madero.",
         url: "https://www.amesteticadental.com/turismo-dental",
         locale: "es_AR",

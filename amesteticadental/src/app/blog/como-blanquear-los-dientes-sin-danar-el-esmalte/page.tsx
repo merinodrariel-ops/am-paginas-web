@@ -25,6 +25,7 @@ const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Cómo blanquear los dientes sin dañar el esmalte",
+    "image": "https://www.amesteticadental.com/og-image.jpg",
     description: "Guía clínica para entender cómo funciona el blanqueamiento dental profesional, qué cuidados requiere y cómo evitar errores comunes.",
     author: {
         "@type": "Person",

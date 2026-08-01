@@ -74,7 +74,7 @@ export default function BlogEnPage() {
                                     {post.titulo}
                                 </h2>
                                 <p className="text-crema/55 font-manrope text-sm leading-relaxed flex-1">{post.resumen}</p>
-                                <span className="text-oro/40 group-hover:text-oro transition-colors text-sm mt-5 block">Read →</span>
+                                <span className="text-oro/40 group-hover:text-oro transition-colors text-sm mt-5 block">Read the article →</span>
                             </Link>
                         ))}
                     </div>

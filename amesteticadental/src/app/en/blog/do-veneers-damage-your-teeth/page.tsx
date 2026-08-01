@@ -24,6 +24,7 @@ const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Do veneers damage your teeth?",
+    "image": "https://www.amesteticadental.com/og-image.jpg",
     description: "Veneers require minimal enamel preparation in most cases. Why blanket 'no-prep' promises are a half-truth, what is reversible and what genuinely damages teeth.",
     inLanguage: "en",
     author: {

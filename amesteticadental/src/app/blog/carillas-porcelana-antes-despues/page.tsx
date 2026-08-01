@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Carillas de Porcelana: Antes y Después — Qué casos resuelven y cuáles no | AM Estética Dental",
+    title: "Carillas de Porcelana: Antes y Después | AM Estética Dental",
     description: "Casos reales de AM Estética Dental con carillas de porcelana. Para qué sirven, para qué no, y cómo saber si sos candidato antes de ir al consultorio.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog/carillas-porcelana-antes-despues",
@@ -22,6 +22,7 @@ const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Carillas de Porcelana: Antes y Después — Qué casos resuelven y cuáles no",
+    "image": "https://www.amesteticadental.com/og-image.jpg",
     "description": "Análisis clínico de los casos más frecuentes tratados con carillas de porcelana en AM Estética Dental, Buenos Aires.",
     "author": {
         "@type": "Person",

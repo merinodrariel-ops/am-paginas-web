@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Carillas Sin Daño: Las 3 técnicas que NO desgastan esmalte | Dr. Ariel Merino",
+    title: "Carillas de Mínima Preparación del Esmalte | Dr. Ariel Merino",
     description: "Qué técnicas de carillas conservan más el esmalte y cuánta preparación necesita realmente cada caso. Análisis clínico honesto + casos reales con 10+ años de seguimiento.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog/las-carillas-danan-los-dientes",
@@ -23,6 +23,7 @@ const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "¿Las carillas dañan los dientes? Mitos y realidades",
+    "image": "https://www.amesteticadental.com/og-image.jpg",
     "description": "Qué pasa realmente con el esmalte cuando se colocan carillas dentales. Análisis clínico de mitos frecuentes.",
     "author": {
         "@type": "Person",

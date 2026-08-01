@@ -9,7 +9,7 @@ const CANONICAL = "https://www.amesteticadental.com/en/dr-ariel-merino";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Dr. Ariel Merino — Cosmetic Dentist in Buenos Aires | AM Estética Dental",
+  title: "Dr. Ariel Merino — Cosmetic Dentist, Buenos Aires | AM",
   description:
     "Dr. Ariel Merino: 20+ years in dentistry, 15 dedicated exclusively to high-complexity cosmetic dentistry. Founder of AM Estética Dental, the only dental clinic in Argentina featured by Forbes.",
   alternates: {

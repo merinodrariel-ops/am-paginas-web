@@ -11,7 +11,7 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Antes y Después Reales — Casos Clínicos Documentados | AM Estética Dental",
+    title: "Antes y Después Reales: Casos Documentados | AM",
     description: "Antes y después reales documentados como casos clínicos: diagnóstico, técnica, fotos, duración y seguimiento de tratamientos del Dr. Ariel Merino en Puerto Madero.",
     alternates: {
         canonical: CANONICAL,

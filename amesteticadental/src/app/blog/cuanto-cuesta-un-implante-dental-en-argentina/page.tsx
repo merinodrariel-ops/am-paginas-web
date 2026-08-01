@@ -6,7 +6,7 @@ const CANONICAL = "https://www.amesteticadental.com/blog/cuanto-cuesta-un-implan
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "¿Cuánto cuesta un implante dental en Argentina? Guía 2026 | AM Estética Dental",
+    title: "¿Cuánto cuesta un implante dental? Guía 2026 | AM",
     description: "Cuánto cuesta un implante dental en Argentina en 2026: qué incluye el precio, por qué varía entre clínicas, la diferencia entre el tornillo y la corona, y cuándo hace falta injerto óseo.",
     alternates: {
         canonical: CANONICAL,
@@ -25,6 +25,7 @@ const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "¿Cuánto cuesta un implante dental en Argentina? Guía 2026",
+    "image": "https://www.amesteticadental.com/og-image.jpg",
     "description": "Cuánto cuesta un implante dental en Argentina en 2026: qué incluye el precio, por qué varía entre clínicas y cuándo hace falta injerto óseo.",
     "author": {
         "@type": "Person",

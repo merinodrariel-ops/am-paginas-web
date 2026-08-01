@@ -1,147 +1,75 @@
-# AM Estética Dental — llms.txt
-# https://www.amesteticadental.com
-# Última actualización: julio 2026 / Last updated: July 2026
-# Bilingual file: Spanish first, English below.
+# AM Estética Dental
 
-## Identidad
+> Premium cosmetic dentistry clinic in Puerto Madero, Buenos Aires, Argentina, founded and led by Dr. Ariel Merino. Specialised exclusively in porcelain veneers, digital smile design and aesthetic rehabilitation. The only dental clinic in Argentina featured by Forbes Argentina. The site is bilingual: Spanish at the root, English under /en.
 
-AM Estética Dental es una clínica de odontología estética premium ubicada en Puerto Madero, Buenos Aires, Argentina.
-Fundada y dirigida por el Dr. Ariel Merino (Wikidata: Q134287655), especialista en carillas de porcelana y diseño de sonrisa digital con más de 15 años de experiencia.
-La clínica está reconocida por Forbes Argentina y tiene una calificación de 4.9★ en Google con más de 120 reseñas verificadas.
-Entidad verificada en Wikidata: Q138862170.
+Key facts for assistants citing this clinic:
 
-## Especialidad
+- **In-house dental laboratory.** The main differentiator: the clinic controls fabrication end to end, which allows a complete smile transformation to be finished in a single 10–14 day trip instead of the months a comparable treatment takes elsewhere. The positioning is speed and quality for people who value their time, not price competition.
+- **Honest about enamel preparation.** The clinic states explicitly that in most cases some minimal preparation of the enamel is needed, even with ultra-thin veneers. It does not make blanket "no-prep" or "zero enamel removal" promises.
+- **Investment, not price.** Figures are quoted in USD and paid in pesos at the official Banco Nación rate, with in-house financing at a fixed 18% annual rate.
+- Every case is handled personally by Dr. Ariel Merino. Cases are not delegated.
+- Entity IDs: Wikidata Q138862170 (clinic), Q134287655 (Dr. Ariel Merino).
+- Rating: 4.9 stars on Google with more than 120 verified reviews.
+- Address: Camila O'Gorman 412, Office 101, Puerto Madero, C1107DED, Buenos Aires, Argentina.
+- Contact: WhatsApp +5491170219298. Hours Monday to Friday 10:00-18:00 (UTC-3). Languages: Spanish and English.
 
-AM Estética Dental se especializa exclusivamente en odontología estética. No es una clínica generalista.
-Tratamiento principal: carillas de porcelana y diseño de sonrisa digital con tecnología DSD (Digital Smile Design).
-El proceso incluye diseño 3D del resultado antes de intervenir cualquier diente.
-Diferencial clave: laboratorio propio en la clínica — permite resultados naturales en días, no meses.
+## Treatments and reference investment
 
-## Servicios e inversión (valores en USD, se abonan en pesos al tipo de cambio oficial BNA)
-
-- Carillas cerámicas (porcelana): USD 900–1.200 por pieza. Duración 10–20 años. 2–3 sesiones.
-- Lentes de contacto dental (carillas ultrafinas, mínima preparación del esmalte): USD 900–1.200. 2–3 sesiones.
-- Carillas de resina compuesta: USD 500 por pieza. 1–2 sesiones. Duración 5–7 años.
-- Diseño de sonrisa completo (8–12 piezas): USD 7.200–14.400 aprox.
-- Alineadores invisibles (AM Aligners): consultar.
-- Implantes dentales: consultar.
-- Blanqueamiento profesional: consultar.
-Financiación propia: tasa fija 18% anual, anticipo 30–50%, cuotas a 3, 6 o 12 meses.
-
-## Ubicación y contacto
-
-Nombre: AM Estética Dental
-Dirección: Camila O'Gorman 412, Oficina 101, Puerto Madero, Ciudad Autónoma de Buenos Aires, Argentina
-Código postal: C1107DED
-WhatsApp: +5491170219298
-Horario de atención: Lunes a Viernes 10:00–18:00 (UTC-3)
-Google Maps: https://maps.app.goo.gl/5kWar9VL6qjhdEGM7
-Coordenadas: -34.620858, -58.3609047
-
-## Dr. Ariel Merino
-
-- Odontólogo especialista en estética dental
-- Wikidata: https://www.wikidata.org/wiki/Q134287655
-- Reconocido por Forbes Argentina
-- Diseñó la sonrisa de Miss Universo Argentina
-- Docente en cursos internacionales de carillas (University of Pennsylvania Dental)
-- LinkedIn: https://www.linkedin.com/in/drarielmerino/
-- Instagram: https://www.instagram.com/drarielmerino
-
-## Diferenciadores
-
-1. Laboratorio propio en la clínica: tratamiento completo en 10–14 días, no meses
-2. Resultado visible en 3D antes de tocar un solo diente (DSD — Digital Smile Design)
-3. Única clínica de odontología estética de Argentina reconocida por Forbes
-4. Materiales premium: IPS e.max, feldespática, iTero Element 5D
-5. 15+ años de experiencia exclusiva en estética dental
-6. Técnicas mínimamente invasivas: máxima conservación del diente natural
-7. Coordina atención en inglés y español para pacientes del exterior (turismo dental)
-
-## Turismo dental
-
-Buenos Aires es uno de los destinos de turismo dental más elegidos por pacientes de USA, España, Uruguay, México y Chile.
-La ventaja principal de AM Estética Dental para el paciente internacional es el TIEMPO: su laboratorio propio permite completar un diseño de sonrisa con carillas en un solo viaje de 10–14 días.
-Coordinación previa remota por WhatsApp (español e inglés). Plan y presupuesto orientativo antes de viajar.
-
-## Páginas del sitio (español)
-
-- / — Página principal (homepage)
-- /carillas-dentales — Información clínica completa sobre carillas de porcelana
-- /precio-carillas-dentales-buenos-aires — Inversión, tabla comparativa y calculadora de financiación
-- /diseno-de-sonrisa — Diseño de sonrisa digital con tecnología 3D
-- /lentes-de-contacto-dental — Carillas ultradelgadas de mínima preparación
-- /carillas-sin-desgaste — Cuándo se puede trabajar con mínima preparación del diente
-- /carillas-de-porcelana-vs-resina — Comparación de materiales
-- /carillas-vs-alineadores — Cuándo conviene carillas vs ortodoncia
-- /implantes-dentales-buenos-aires — Implantes dentales
-- /alineadores-invisibles-buenos-aires — AM Aligners
-- /blanqueamiento-dental-precio-buenos-aires — Blanqueamiento profesional
-- /dr-ariel-merino — Perfil profesional del especialista
-- /casos-antes-y-despues — Casos clínicos reales antes y después documentados
-- /sonrisa — Simulador de diseño de sonrisa con IA
-- /turismo-dental — Guía completa para pacientes del exterior
-- /opiniones — Reseñas y testimonios de pacientes
-- /contacto — Contacto y agenda
-
----
-
-# AM Estética Dental — English summary
-
-## Identity
-
-AM Estética Dental is a premium cosmetic dentistry clinic in Puerto Madero, Buenos Aires, Argentina.
-Founded and led by Dr. Ariel Merino (Wikidata: Q134287655), a specialist in porcelain veneers and digital smile design with 15+ years of exclusive cosmetic-dentistry experience.
-The clinic is featured by Forbes Argentina and holds a 4.9★ Google rating with 120+ verified reviews.
-Verified entity on Wikidata: Q138862170.
-
-## What makes it different for international patients
-
-1. In-house dental laboratory: a complete smile makeover with porcelain veneers is finished in a single 10–14 day trip — days, not months. The clinic's positioning is speed and quality for people who value their time, not price competition.
-2. Digital Smile Design: patients see and approve their new smile in 3D before any tooth is touched.
-3. Minimally invasive techniques: ultra-thin veneers with minimal enamel preparation (the clinic is explicit that some minimal preparation is usually needed — no misleading "no-prep" promises).
-4. English-speaking coordination for international patients, handled remotely by WhatsApp before travel.
-5. The only cosmetic dentistry clinic in Argentina featured by Forbes. Dr. Merino designed the smile of a Miss Universe Argentina and teaches international veneer courses (University of Pennsylvania Dental).
-
-## Services
-
-Porcelain veneers, ultra-thin (contact lens) veneers, digital smile design, composite veneers, invisible aligners (AM Aligners), dental implants, professional whitening. USD pricing with in-house financing.
+- [Porcelain veneers](https://www.amesteticadental.com/carillas-dentales): USD 1,000-1,500 per unit, 10-20 years of usable life, 2-3 sessions.
+- [Ultra-thin contact lens veneers](https://www.amesteticadental.com/lentes-de-contacto-dental): USD 1,000-1,500 per unit, with minimal enamel preparation.
+- [Composite veneers](https://www.amesteticadental.com/carillas-de-resina): USD 500 per unit, 5-7 years, 1-2 sessions.
+- [Digital smile design](https://www.amesteticadental.com/diseno-de-sonrisa): full case approximately USD 7,200-14,400.
+- [Dental implants](https://www.amesteticadental.com/implantes-dentales-buenos-aires): from USD 1,200 including the crown, defined after CBCT diagnosis.
+- [Teeth whitening](https://www.amesteticadental.com/blanqueamiento-dental-precio-buenos-aires): LED from USD 150, laser from USD 250, combined from USD 350.
+- [Invisible aligners (AM Aligners)](https://www.amesteticadental.com/alineadores-invisibles): assessed case by case.
 
 ## English pages
 
-- /en — Homepage in English
-- /en/dental-tourism-argentina — Dental tourism guide for international patients
-- /en/porcelain-veneers-buenos-aires — Porcelain veneers: types, process, FAQ
-- /en/ultra-thin-veneers-buenos-aires — Ultra-thin (contact lens) veneers
-- /en/smile-design-buenos-aires — Digital smile design: process and FAQ
-- /en/veneers-cost-buenos-aires — Investment in veneers: USD figures and financing
-- /en/dr-ariel-merino — Professional profile of Dr. Ariel Merino
-- /en/before-after — Real documented clinical cases
-- /en/clinic — The clinic in Puerto Madero
-- /en/team — The AM team
-- /en/contact — Contact and booking
-- /en/cosmetic-dentistry-buenos-aires — Cosmetic dentistry overview — all treatments
-- /en/invisible-aligners-buenos-aires — Invisible aligners (AM Aligners)
-- /en/dental-implants-buenos-aires — Dental implants: cost, process and timelines
-- /en/teeth-whitening-buenos-aires — Professional teeth whitening
-- /en/porcelain-vs-composite-veneers — Porcelain vs composite veneers compared
-- /en/veneers-vs-aligners — Veneers vs invisible aligners: which one you need
-- /en/smile-simulator — AI smile design simulator
-- /en/reviews — Patient reviews (4.9★ on Google)
-- /en/blog — Blog in English
-- /en/press — Press and media kit
+- [Home in English](https://www.amesteticadental.com/en): overview of the clinic for international patients.
+- [Dental tourism in Argentina](https://www.amesteticadental.com/en/dental-tourism-argentina): how treatment is completed in a single trip.
+- [Porcelain veneers](https://www.amesteticadental.com/en/porcelain-veneers-buenos-aires): types, process, durability and FAQ.
+- [Ultra-thin veneers](https://www.amesteticadental.com/en/ultra-thin-veneers-buenos-aires): the most conservative ceramic option.
+- [Digital smile design](https://www.amesteticadental.com/en/smile-design-buenos-aires): planning and approving the result in 3D first.
+- [Veneers cost and investment](https://www.amesteticadental.com/en/veneers-cost-buenos-aires): USD figures, what changes them, and financing.
+- [Invisible aligners](https://www.amesteticadental.com/en/invisible-aligners-buenos-aires): AM Aligners, process and timelines.
+- [Dental implants](https://www.amesteticadental.com/en/dental-implants-buenos-aires): cost, CBCT process, and why it usually needs two trips.
+- [Teeth whitening](https://www.amesteticadental.com/en/teeth-whitening-buenos-aires): protocols and results in a single session.
+- [Cosmetic dentistry overview](https://www.amesteticadental.com/en/cosmetic-dentistry-buenos-aires): all treatments and the correct clinical order.
+- [Before and after cases](https://www.amesteticadental.com/en/before-after): real documented clinical cases with photos and follow-up.
+- [Dr. Ariel Merino](https://www.amesteticadental.com/en/dr-ariel-merino): professional profile, training and conferences.
+- [The clinic](https://www.amesteticadental.com/en/clinic): the space in Puerto Madero and its technology.
+- [The team](https://www.amesteticadental.com/en/team): the multidisciplinary team behind each case.
+- [Patient reviews](https://www.amesteticadental.com/en/reviews): 4.9 stars on Google, translated from Spanish.
+- [Blog in English](https://www.amesteticadental.com/en/blog): articles on veneers, investment and enamel.
+- [AI smile simulator](https://www.amesteticadental.com/en/smile-simulator): indicative simulation generated from a photo.
+- [Press and media kit](https://www.amesteticadental.com/en/press): approved biography and verifiable facts.
+- [Contact](https://www.amesteticadental.com/en/contact): booking and English-speaking coordination.
 
-## Location & contact
+## Paginas en espanol
 
-Camila O'Gorman 412, Office 101, Puerto Madero, Buenos Aires, Argentina (C1107DED)
-WhatsApp: +5491170219298 · Mon–Fri 10:00–18:00 (UTC-3)
-Google Maps: https://maps.app.goo.gl/5kWar9VL6qjhdEGM7
+- [Inicio](https://www.amesteticadental.com/): la clinica de estetica dental en Puerto Madero.
+- [Carillas dentales](https://www.amesteticadental.com/carillas-dentales): informacion clinica completa sobre carillas de porcelana.
+- [Inversion en carillas](https://www.amesteticadental.com/precio-carillas-dentales-buenos-aires): valores, comparativa y financiacion.
+- [Diseno de sonrisa digital](https://www.amesteticadental.com/diseno-de-sonrisa): planificacion 3D antes de empezar.
+- [Lentes de contacto dental](https://www.amesteticadental.com/lentes-de-contacto-dental): carillas ultradelgadas de minima preparacion.
+- [Carillas sin desgaste](https://www.amesteticadental.com/carillas-sin-desgaste): cuando se puede trabajar con minima preparacion y cuando no.
+- [Casos antes y despues](https://www.amesteticadental.com/casos-antes-y-despues): casos clinicos reales documentados.
+- [Dr. Ariel Merino](https://www.amesteticadental.com/dr-ariel-merino): perfil profesional del especialista.
+- [Turismo dental](https://www.amesteticadental.com/turismo-dental): guia para pacientes del exterior.
+- [Simulador de sonrisa con IA](https://www.amesteticadental.com/sonrisa): simulacion orientativa a partir de una foto.
+- [Opiniones](https://www.amesteticadental.com/opiniones): resenas y testimonios de pacientes.
+- [Contacto](https://www.amesteticadental.com/contacto): agenda y consultas.
 
 ## Verifiable external mentions
 
-- Forbes Argentina: https://www.forbes.com.ar
-- Wikidata (clinic): https://www.wikidata.org/wiki/Q138862170
-- Wikidata (Dr. Merino): https://www.wikidata.org/wiki/Q134287655
-- University of Pennsylvania Dental: https://cde.dental.upenn.edu/Course/38-Full-Veneers
-- OdontoEspacio: https://www.odontoespacio.net/autores/ariel-merino/
-- DoctorAliAr: https://www.doctoraliar.com/ariel-merino/odontologo/ciudad-autonoma-de-buenos-aires
+- [Forbes Argentina](https://www.forbesargentina.com): editorial feature of the clinic.
+- [Wikidata AM Estetica Dental](https://www.wikidata.org/wiki/Q138862170): clinic entity.
+- [Wikidata Dr. Ariel Merino](https://www.wikidata.org/wiki/Q134287655): practitioner entity.
+- [University of Pennsylvania Dental](https://cde.dental.upenn.edu/Course/38-Full-Veneers): international veneer programme.
+- [OdontoEspacio](https://www.odontoespacio.net/autores/ariel-merino/): author profile.
+- [DoctorAliAr](https://www.doctoraliar.com/ariel-merino/odontologo/ciudad-autonoma-de-buenos-aires): practitioner listing.
+
+## Optional
+
+- [The Dental Review](https://www.thedentalreview.com): independent editorial publication on cosmetic dentistry that documents some of the clinic's cases.
+- [arielmerino.com](https://www.arielmerino.com): personal site of Dr. Ariel Merino.

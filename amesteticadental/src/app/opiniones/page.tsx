@@ -26,6 +26,8 @@ const reviewsSchema = {
     "@type": "Dentist",
     "name": "AM Estética Dental",
     "url": "https://www.amesteticadental.com",
+    "image": "https://www.amesteticadental.com/og-image.jpg",
+    "priceRange": "$$$$",
     "telephone": "+5491170219298",
     "address": {
         "@type": "PostalAddress",
