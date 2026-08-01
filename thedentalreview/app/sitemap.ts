@@ -35,6 +35,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${SITE}/noticias/nobel-biocare-s-series-implantologia-2026`,
+      lastModified: new Date("2026-08-01"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${SITE}/noticias/ia-diseno-sonrisa-digital-dsd-2026`,
+      lastModified: new Date("2026-08-01"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${SITE}/casos/gingivectomia-laser-micro-diseno-sonrisa-resina`,
       lastModified: new Date("2026-07-14"),
       changeFrequency: "monthly",

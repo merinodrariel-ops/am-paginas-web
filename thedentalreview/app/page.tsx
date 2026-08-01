@@ -47,6 +47,32 @@ const ARTICULOS: Articulo[] = [
     portadaAlt: "Rehabilitación con implantes dentales — vista intraoral, AM Estética Dental, Puerto Madero, Buenos Aires",
   },
   {
+    slug: "nobel-biocare-s-series-implantologia-2026",
+    href: "/noticias/nobel-biocare-s-series-implantologia-2026",
+    categoria: "Actualidad",
+    titulo: "Nobel Biocare S Series: una nueva era en diseño de implantes",
+    subtitulo:
+      "La plataforma unificada de implantes lanzada en marzo de 2026 simplifica la implantología mediante una única conexión protésica que reduce complejidad operativa y mejora predictibilidad.",
+    autor: "Redacción TDR",
+    fecha: "Agosto 2026",
+    portada:
+      "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires",
+    portadaAlt: "Plataforma de implantes dentales — implantología digital de precisión",
+  },
+  {
+    slug: "ia-diseno-sonrisa-digital-dsd-2026",
+    href: "/noticias/ia-diseno-sonrisa-digital-dsd-2026",
+    categoria: "Actualidad",
+    titulo: "IA y Diseño Digital de Sonrisa: cuando la máquina elige mejor que el experto",
+    subtitulo:
+      "Estudios 2025-2026 demuestran que inteligencia artificial supera a diseñadores expertos. Pacientes prefieren diseños generados por IA en 69,7% de los casos.",
+    autor: "Redacción TDR",
+    fecha: "Agosto 2026",
+    portada:
+      "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,g_face,q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires",
+    portadaAlt: "Diseño digital de sonrisa con inteligencia artificial — simulación estética predictiva",
+  },
+  {
     slug: "gingivectomia-laser-micro-diseno-sonrisa-resina",
     categoria: "Técnica Clínica",
     titulo: "El equilibrio invisible: cuando una sonrisa empieza en la encía",
