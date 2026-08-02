@@ -80,7 +80,7 @@ export const CASOS: Caso[] = [
         titulo: "Renovó su sonrisa completa en menos de un mes",
         subtitulo: "Recambio de coronas, puentes y coronas sobre implantes + carillas cerámicas en dientes naturales, con mejora de la mordida.",
         descripcion: "Rehabilitación oral estética completa: recambio de coronas, puentes y coronas sobre implantes más carillas cerámicas en dientes naturales, con mejora de la mordida, en menos de un mes. Dr. Ariel Merino, AM Estética Dental, Camila O'Gorman 412, Puerto Madero, Buenos Aires.",
-        seoTitle: "Rehabilitación Oral Completa con Carillas, Coronas e Implantes | AM Estética Dental",
+        seoTitle: "Rehabilitación Oral Completa con Carillas, Coronas e Implantes",
         seoDescription: "Caso real de rehabilitación estética completa — coronas, puentes, coronas sobre implantes y carillas cerámicas con mejora de mordida en menos de un mes. Puerto Madero. Dr. Ariel Merino.",
         categorias: ["Rehabilitación oral", "Diseño de sonrisa", "Carillas de porcelana", "Implantes"],
         duracion: "Menos de 1 mes",
