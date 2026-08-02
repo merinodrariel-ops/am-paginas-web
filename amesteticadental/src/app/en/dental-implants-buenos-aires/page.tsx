@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Dental Implants in Buenos Aires | Cost and Process | AM Estética Dental",
   description:
-    "Dental implants in Buenos Aires: cost, process and timelines. Titanium and zirconia with computer-guided digital planning by Dr. Ariel Merino, Puerto Madero.",
+    "Dental implants in Buenos Aires from USD 2,400 total (two phases). Straumann and Neodent implants with digital planning by Dr. Ariel Merino, Puerto Madero.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/implantes-dentales-buenos-aires") },
   keywords: "dental implants Buenos Aires, dental implant cost Argentina, implants Puerto Madero, dental tourism implants",
   openGraph: {
     title: "Dental Implants in Buenos Aires | AM Estética Dental",
     description:
-      "The permanent solution for missing teeth, with digital planning and CBCT diagnosis in Puerto Madero, Buenos Aires.",
+      "Dental implants from USD 2,400 total. Straumann and Neodent, two-phase treatment with digital planning in Puerto Madero, Buenos Aires.",
     url: CANONICAL,
     locale: "en_US",
     type: "website",
@@ -30,7 +30,7 @@ const faqItems = [
   {
     pregunta: "How long does the dental implant process take?",
     respuesta:
-      "The implant is placed in a 45 to 60 minute surgery. Integration with the bone (osseointegration) takes between 3 and 6 months. Once integrated, the definitive crown is placed. The total process runs 4 to 8 months.",
+      "The implant is placed in a 45 to 60 minute surgery (Phase 1). Osseointegration takes 2 to 3 months. Once integrated, the definitive crown is placed (Phase 2). The total process runs 3 to 4 months.",
   },
   {
     pregunta: "Does getting an implant hurt?",
@@ -50,12 +50,12 @@ const faqItems = [
   {
     pregunta: "What is the investment for a dental implant in Buenos Aires?",
     respuesta:
-      "At AM Estética Dental a single implant starts from USD 1,200 including the crown. The investment varies with the crown material (ceramic or zirconia) and the complexity of the case, and is defined precisely after the CBCT diagnosis.",
+      "At AM Estética Dental the treatment is split into two phases. Phase 1 (implant + extraction + bone graft + tissue graft) ranges from USD 1,200 to 1,500. Phase 2 (definitive crown) ranges from USD 1,200 to 1,500. The completed implant with crown totals USD 2,400 to 3,000. We use Straumann and Neodent implants (Straumann Group, Switzerland).",
   },
   {
     pregunta: "Can I get implants if I am traveling from abroad?",
     respuesta:
-      "Implants require a healing period of 3 to 6 months between surgery and the final crown, so they usually mean two trips rather than one. We plan the schedule with you in advance and coordinate remotely between visits. If you only have one trip available, we will tell you honestly what can and cannot be completed.",
+      "Implants require a healing period of 2 to 3 months between surgery and the final crown, so they usually mean two trips rather than one. We plan the schedule with you in advance and coordinate remotely between visits. If you only have one trip available, we will tell you honestly what can and cannot be completed.",
   },
 ];
 
@@ -79,9 +79,10 @@ const medicalSchema = {
 };
 
 const OPTIONS = [
-  { tipo: "Single implant", precio: "From USD 1,200", nota: "Per unit · crown included" },
-  { tipo: "Implant + zirconia crown", precio: "From USD 1,200", nota: "Higher aesthetics and biocompatibility" },
-  { tipo: "Full-arch rehabilitation", precio: "Assessed case by case", nota: "Depends on the number of units" },
+  { tipo: "Phase 1 — Implant", precio: "USD 1,200 – 1,500", nota: "All-inclusive: extraction + bone graft + tissue graft" },
+  { tipo: "Phase 2 — Crown", precio: "USD 1,200 – 1,500", nota: "Ceramic or biomimetic zirconia" },
+  { tipo: "Completed implant", precio: "USD 2,400 – 3,000", nota: "Straumann or Neodent (Straumann Group, Switzerland)" },
+  { tipo: "Full-arch rehabilitation", precio: "Assessed case by case", nota: "Fixed arch on 4 or 6 implants" },
 ];
 
 export default function DentalImplantsPage() {
@@ -104,7 +105,7 @@ export default function DentalImplantsPage() {
               <span className="font-cormorant italic text-oro">in Buenos Aires</span>
             </h1>
             <p className="text-crema/68 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-2xl">
-              The permanent solution for missing teeth. Computer-guided digital planning. Titanium and zirconia. Full integration with the bone in 3 to 6 months.
+              The permanent solution for missing teeth. Swiss Straumann and Neodent implants. Computer-guided digital planning. Full osseointegration in 2 to 3 months.
             </p>
             <a
               href={WA}
@@ -125,7 +126,7 @@ export default function DentalImplantsPage() {
               What is the investment for an implant{" "}
               <span className="font-cormorant italic text-oro">in Buenos Aires?</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
               {OPTIONS.map((o) => (
                 <div key={o.tipo} className="border border-oro/15 rounded-2xl p-6 bg-carbon">
                   <p className="text-oro text-[9px] uppercase tracking-widest mb-2">{o.tipo}</p>
@@ -153,7 +154,7 @@ export default function DentalImplantsPage() {
                 { n: "01", t: "CBCT diagnosis", d: "A 3D scan lets us measure bone volume and plan the exact position of the implant before any surgery." },
                 { n: "02", t: "Guided digital planning", d: "We design the placement on computer so the surgery is as precise and predictable as possible." },
                 { n: "03", t: "Placement surgery", d: "A 45 to 60 minute procedure under local anaesthesia. Most patients return to normal activity the next day." },
-                { n: "04", t: "Osseointegration", d: "The implant integrates with your bone over 3 to 6 months. During this period we coordinate check-ups." },
+                { n: "04", t: "Osseointegration", d: "The implant integrates with your bone over 2 to 3 months. During this period we coordinate check-ups." },
                 { n: "05", t: "Definitive crown", d: "Once integrated, we place the final ceramic or zirconia crown, made in our own laboratory." },
               ].map((step, i, arr) => (
                 <div key={step.n} className={`flex gap-8 py-8 ${i < arr.length - 1 ? "border-b border-oro/10" : ""}`}>
@@ -177,6 +178,28 @@ export default function DentalImplantsPage() {
               <span className="font-cormorant italic text-oro">dental implants</span>
             </h2>
             <SeoFaq items={faqItems} />
+          </div>
+        </section>
+
+        {/* STRAUMANN GROUP */}
+        <section className="py-24 px-6 md:px-12">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="relative aspect-square max-w-sm mx-auto">
+              <Image
+                src="https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/implantes-dentales-am/implante-dental-neodent-grupo-straumann-despiece-corona-pilar-tornillo-fondo-negro-am-estetica-dental-puerto-madero"
+                alt="Neodent dental implant from the Straumann Group, 3D exploded view: crown, abutment and titanium screw — AM Estética Dental, Puerto Madero, Buenos Aires"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-contain"
+              />
+            </div>
+            <div>
+              <span className="text-oro uppercase tracking-[0.4em] text-xs block mb-4">Straumann Group · Switzerland</span>
+              <h2 className="text-2xl font-light text-crema mb-4">Top-tier Swiss <span className="font-cormorant italic text-oro">implants.</span></h2>
+              <p className="text-crema/60 text-sm leading-relaxed mb-4">We work exclusively with implants from the Straumann Group: Neodent (high-end) and Straumann (top-of-the-line, world #1). Both are Swiss titanium implants backed by the strongest scientific evidence in the field.</p>
+              <p className="text-crema/60 text-sm leading-relaxed mb-6">Every crown is designed to mimic the colour and translucency of your natural teeth. Our approach is always biomimetic: nobody should notice you have an implant.</p>
+              <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-oro text-sm hover:text-oro/80 transition-colors">Ask about the investment for my case →</a>
+            </div>
           </div>
         </section>
 
