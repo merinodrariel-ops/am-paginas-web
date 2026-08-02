@@ -145,7 +145,7 @@ export default function PorcelainVeneersPage() {
                 <section className="py-24 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
                     <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                         <div>
-                            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Who they're for</span>
+                            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Who they&apos;re for</span>
                             <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-6">
                                 Veneers for those who want{" "}
                                 <span className="font-cormorant italic text-oro">a definitive change</span>

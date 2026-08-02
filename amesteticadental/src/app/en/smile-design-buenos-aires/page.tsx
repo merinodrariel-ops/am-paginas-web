@@ -159,10 +159,10 @@ export default function SmileDesignPage() {
                 {/* ── WHAT'S INCLUDED ── */}
                 <section className="py-24 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
                     <div className="max-w-4xl mx-auto">
-                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">What's included</span>
+                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">What&apos;s included</span>
                         <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-14">
-                            It's not just aesthetics.{" "}
-                            <span className="font-cormorant italic text-oro">It's total planning.</span>
+                            It&apos;s not just aesthetics.{" "}
+                            <span className="font-cormorant italic text-oro">It&apos;s total planning.</span>
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {[

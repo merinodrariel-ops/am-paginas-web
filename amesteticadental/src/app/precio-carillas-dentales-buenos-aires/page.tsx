@@ -181,7 +181,7 @@ export default function PrecioCarillasPage() {
                     { tratamiento: "Carillas cerámicas", precio: "USD 1.000 – 1.500", duracion: "10 – 20 años", sesiones: "2 – 3" },
                     { tratamiento: "Carillas de resina compuesta", precio: "USD 500", duracion: "5 – 7 años", sesiones: "1 – 2" },
                     { tratamiento: "Lentes de contacto dental", precio: "USD 1.000 – 1.500", duracion: "10 – 15 años", sesiones: "2 – 3" },
-                    { tratamiento: "Carillas sin desgaste", precio: "USD 1.000 – 1.500", duracion: "10 – 20 años", sesiones: "2 – 3" },
+                    { tratamiento: "Lentes de contacto dental", precio: "USD 1.000 – 1.500", duracion: "10 – 20 años", sesiones: "2 – 3" },
                     { tratamiento: "Diseño de sonrisa digital (completo)", precio: "A evaluar", duracion: "Permanente", sesiones: "3 – 4" },
                   ].map((row, i) => (
                     <tr key={row.tratamiento} className={`border-b border-oro/10 ${i % 2 === 0 ? "bg-carbon" : "bg-carbon-soft"}`}>

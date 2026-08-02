@@ -6,16 +6,16 @@ import SeoFaq from "@/components/seo/SeoFaq";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Carillas sin Desgaste en Buenos Aires | AM Estética Dental",
+  title: "Carillas de Mínima Preparación en Buenos Aires | AM",
   description:
-    "Carillas sin desgaste en Puerto Madero, Buenos Aires. Evaluamos cuándo realmente se puede trabajar sin preparar el diente y cuándo conviene otra alternativa más honesta y natural.",
+    "Carillas de mínima preparación en Puerto Madero, Buenos Aires. Evaluamos la alternativa más conservadora para cada sonrisa, con diagnóstico honesto y resultado natural.",
   alternates: {
     canonical: "https://www.amesteticadental.com/carillas-sin-desgaste",
   },
   openGraph: {
-    title: "Carillas sin Desgaste en Buenos Aires | AM Estética Dental",
+    title: "Carillas de Mínima Preparación en Buenos Aires | AM",
     description:
-      "No todos los casos califican para carillas sin desgaste. Diagnóstico honesto, diseño natural y criterio clínico en Puerto Madero.",
+      "Diagnóstico honesto, diseño natural y preparación mínima cuando corresponde. Puerto Madero, Buenos Aires.",
     url: "https://www.amesteticadental.com/carillas-sin-desgaste",
     locale: "es_AR",
     type: "website",
@@ -24,19 +24,19 @@ export const metadata: Metadata = {
 
 const faqItems = [
   {
-    pregunta: "¿Qué significa exactamente carillas sin desgaste?",
+    pregunta: "¿Qué son las carillas de mínima preparación?",
     respuesta:
-      "Significa que, en determinados casos, se puede mejorar la sonrisa sin tallar ni preparar el esmalte de forma visible. No es una promesa universal: depende de la posición del diente, del espacio disponible y del tipo de cambio que buscás.",
+      "Son restauraciones ultradelgadas indicadas para cambios sutiles. La preparación se define caso por caso según la posición del diente, el espacio disponible y el cambio buscado.",
   },
   {
-    pregunta: "¿Todos los pacientes pueden hacerse carillas sin desgaste?",
+    pregunta: "¿Todos los pacientes califican para esta técnica?",
     respuesta:
-      "No. Si el diente está muy salido, girado, desgastado en exceso o si hace falta cambiar mucho volumen, una opción completamente sin desgaste puede no ser la mejor. En esos casos es más honesto indicar una preparación mínima o incluso ordenar primero con alineadores.",
+      "No. Si el diente está muy salido, girado, desgastado en exceso o si hace falta cambiar mucho volumen, puede convenir otra alternativa. En esos casos es más honesto indicar una preparación mínima o incluso ordenar primero con alineadores.",
   },
   {
-    pregunta: "¿Las carillas sin desgaste son lo mismo que los lentes de contacto dental?",
+    pregunta: "¿Las carillas ultradelgadas son lo mismo que los lentes de contacto dental?",
     respuesta:
-      "Muchas veces sí se solapan, porque los lentes de contacto dental suelen ser la solución indicada cuando el caso permite trabajar sin preparación visible. Pero el nombre comercial no reemplaza el diagnóstico. Primero definimos si el caso califica; después elegimos el tipo exacto de restauración.",
+      "Muchas veces se solapan, porque los lentes de contacto dental suelen ser la solución indicada en casos de intervención mínima. Pero el nombre comercial no reemplaza el diagnóstico. Primero definimos si el caso califica; después elegimos el tipo exacto de restauración.",
   },
   {
     pregunta: "¿Se ven naturales?",
@@ -44,12 +44,12 @@ const faqItems = [
       "Bien indicadas, sí. De hecho, su mayor fortaleza es que respetan la estructura original del diente y permiten un resultado muy sutil. El problema aparece cuando se fuerzan en casos que no corresponden. Ahí es donde el resultado deja de verse natural.",
   },
   {
-    pregunta: "¿Cómo sé si mi caso permite una opción sin desgaste?",
+    pregunta: "¿Cómo sé si mi caso permite una opción ultradelgada?",
     respuesta:
-      "En la evaluación inicial analizamos mordida, espesor del esmalte, posición de los dientes y el cambio estético buscado. Si podés resolverlo sin desgaste, te lo decimos. Si no, te explicamos cuál es la alternativa más conservadora para lograr un buen resultado.",
+      "En la evaluación inicial analizamos mordida, espesor del esmalte, posición de los dientes y el cambio estético buscado. Te explicamos cuál es la alternativa más conservadora para lograr un buen resultado.",
   },
   {
-    pregunta: "¿Cuánto cuestan las carillas sin desgaste?",
+    pregunta: "¿Cuál es la inversión de las carillas ultradelgadas?",
     respuesta:
       "El presupuesto depende del número de piezas, el diseño del caso y el laboratorio. Trabajamos con valores en USD y financiación propia. Primero definimos si tu caso realmente califica para esta técnica; después te damos un presupuesto exacto.",
   },
@@ -68,7 +68,7 @@ const faqSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Carillas sin Desgaste",
+  name: "Carillas de mínima preparación",
   serviceType: "Odontología Estética",
   description:
     "Evaluación y resolución conservadora con carillas ultradelgadas o alternativas de mínima intervención cuando el caso lo permite.",
@@ -88,7 +88,7 @@ const serviceSchema = {
 };
 
 const WA_LINK =
-  "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20saber%20si%20mi%20caso%20permite%20carillas%20sin%20desgaste.";
+  "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20saber%20cu%C3%A1l%20es%20la%20alternativa%20m%C3%A1s%20conservadora%20para%20mi%20caso.";
 
 export default function CarillasSinDesgastePage() {
   return (
@@ -106,12 +106,12 @@ export default function CarillasSinDesgastePage() {
               AM Estética Dental · Puerto Madero · Buenos Aires
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-manrope font-light text-crema leading-[1.0] mb-7">
-              Carillas sin Desgaste
+              Carillas de mínima preparación
               <br />
               <span className="font-cormorant italic text-oro">en Buenos Aires</span>
             </h1>
             <p className="text-crema/68 font-manrope text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
-              No vendemos el concepto por moda. Evaluamos cuándo realmente se puede trabajar sin preparar el diente y cuándo otra alternativa va a darte un resultado más natural, más duradero y más honesto.
+              No vendemos promesas por moda. Evaluamos qué alternativa permite un resultado natural, duradero y clínicamente responsable para tu caso.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 items-start">
               <a
@@ -162,7 +162,7 @@ export default function CarillasSinDesgastePage() {
               <div className="border border-oro/15 rounded-2xl p-7 bg-carbon">
                 <h3 className="text-crema font-manrope font-medium text-base mb-3">Conviene otra cosa si…</h3>
                 <p className="text-crema/65 font-manrope text-sm leading-relaxed">
-                  Hay protrusión, rotaciones, desgaste severo, poco espacio o un cambio grande de volumen. En esos casos, forzar una opción sin desgaste suele comprometer el resultado.
+                  Hay protrusión, rotaciones, desgaste severo, poco espacio o un cambio grande de volumen. En esos casos, forzar una opción ultradelgada puede comprometer el resultado.
                 </p>
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function CarillasSinDesgastePage() {
               {
                 titulo: "Lo que no prometemos",
                 texto:
-                  "No decimos que todos los casos se resuelven sin desgaste. Esa promesa vende, pero muchas veces termina en resultados poco creíbles o poco durables.",
+                  "No prometemos la misma técnica para todos. Un buen resultado depende de indicar la alternativa correcta, no de aplicar una fórmula de marketing.",
               },
             ].map((item) => (
               <div key={item.titulo} className="border border-oro/15 rounded-2xl p-7 bg-carbon-soft">
@@ -195,7 +195,7 @@ export default function CarillasSinDesgastePage() {
           <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <p className="text-crema font-manrope font-medium text-lg mb-1">La mejor forma de saberlo es ver tu caso.</p>
-              <p className="text-crema/55 font-manrope text-sm">Si calificás para una opción sin desgaste, te lo decimos. Si no, también.</p>
+              <p className="text-crema/55 font-manrope text-sm">Te explicamos la alternativa más conservadora para tu caso y cuándo no conviene indicarla.</p>
             </div>
             <a
               href={WA_LINK}
@@ -213,7 +213,7 @@ export default function CarillasSinDesgastePage() {
             <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6 text-center">Preguntas frecuentes</span>
             <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-14 text-center">
               Todo sobre{" "}
-              <span className="font-cormorant italic text-oro">carillas sin desgaste</span>
+              <span className="font-cormorant italic text-oro">carillas ultradelgadas</span>
             </h2>
             <SeoFaq items={faqItems} />
           </div>
@@ -249,7 +249,7 @@ export default function CarillasSinDesgastePage() {
               <h2 className="text-2xl font-manrope font-light text-crema">
                 Mínima intervención, <span className="font-cormorant italic text-oro">resultados reales.</span>
               </h2>
-              <p className="text-crema/45 font-manrope text-sm mt-3 max-w-xl">Lentes de contacto dental y carillas sin desgaste. Los resultados más naturales de la odontología estética moderna.</p>
+              <p className="text-crema/45 font-manrope text-sm mt-3 max-w-xl">Lentes de contacto dental y carillas ultradelgadas. Resultados naturales planificados para cada caso.</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
               {[

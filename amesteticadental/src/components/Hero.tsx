@@ -36,14 +36,14 @@ const PARTICLES = [
 const COPY = {
   es: {
     eyebrow: "AM Estética Dental · Puerto Madero",
-    h1a: "Carillas, Diseño de Sonrisa",
-    h1b: "y Estética Dental Natural.",
-    lead: "Carillas de porcelana, lentes de contacto dental y diseño de sonrisa digital para lograr resultados naturales en Puerto Madero. AM Aligners cuando el caso pide movimiento, no artificio.",
-    cta: "Solicitar evaluacion inicial",
-    wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20solicitar%20una%20evaluacion%20inicial.",
+    h1a: "Diseño de Sonrisa Natural,",
+    h1b: "con resultados en días.",
+    lead: "Carillas de porcelana, lentes de contacto dental y diseño digital con laboratorio propio en Puerto Madero. Un proceso clínico pensado para resultados naturales sin postergar tu tiempo.",
+    cta: "Solicitar evaluación inicial",
+    wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20solicitar%20una%20evaluaci%C3%B3n%20inicial.",
     secondary: "Ver tratamientos principales",
     secondaryHref: "#tratamientos",
-    scarcity: "Agenda limitada · Solo 4 evaluaciones iniciales disponibles este mes",
+    scarcity: "Atención personalizada · Evaluaciones con agenda previa",
     stats: [
       { v: "4.9★", l: "Google" },
       { v: "Forbes", l: "Argentina" },
@@ -60,7 +60,7 @@ const COPY = {
     wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I'd%20like%20to%20request%20an%20initial%20assessment.",
     secondary: "See main treatments",
     secondaryHref: "#treatments",
-    scarcity: "Limited availability · Only 4 initial assessments left this month",
+    scarcity: "Personalized care · Initial assessments by appointment",
     stats: [
       { v: "4.9★", l: "Google" },
       { v: "Forbes", l: "Argentina" },

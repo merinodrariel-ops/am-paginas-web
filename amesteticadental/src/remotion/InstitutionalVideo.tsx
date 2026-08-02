@@ -84,7 +84,7 @@ const scenes: Scene[] = [
   },
   {
     kicker: "Agenda",
-    title: "Solicita tu evaluacion inicial",
+    title: "Solicitá tu evaluación inicial",
     subtitle:
       "AM Estetica Dental. Sonrisas naturales, tecnologia de precision y un proceso claro desde el primer contacto.",
     bullets: ["WhatsApp directo", "Agenda limitada", "Puerto Madero, Buenos Aires"],

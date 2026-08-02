@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lentes de Contacto Dental en Buenos Aires | AM Estética Dental",
     description:
-      "Carillas ultradelgadas para quienes buscan una sonrisa natural sin desgaste visible cuando el caso lo permite. Puerto Madero, Buenos Aires.",
+      "Carillas ultradelgadas para quienes buscan una sonrisa natural con preparación mínima cuando el caso lo permite. Puerto Madero, Buenos Aires.",
     url: "https://www.amesteticadental.com/lentes-de-contacto-dental",
     locale: "es_AR",
     type: "website",
@@ -30,9 +30,9 @@ const faqItems = [
       "Son carillas cerámicas ultradelgadas, de alrededor de 0,3 mm, diseñadas para adherirse a la superficie del diente con mínima intervención. Se indican cuando la base dental está sana y el objetivo es mejorar forma, color o pequeños detalles sin recurrir a una preparación convencional.",
   },
   {
-    pregunta: "¿Siempre se colocan sin desgaste?",
+    pregunta: "¿Requieren preparación?",
     respuesta:
-      "No siempre. En muchos casos se pueden colocar sin desgaste visible, pero depende de la posición del diente, el grosor del esmalte, la mordida y el objetivo estético. En AM Estética Dental evaluamos cada caso para indicarte con honestidad si realmente calificás para una opción sin desgaste o si conviene otra solución.",
+      "La preparación depende de la posición del diente, el grosor del esmalte, la mordida y el objetivo estético. En AM Estética Dental evaluamos cada caso para indicar una preparación mínima cuando corresponde o recomendar otra solución.",
   },
   {
     pregunta: "¿Qué diferencia hay entre lentes de contacto dental y carillas de porcelana?",
@@ -204,7 +204,7 @@ export default function LentesContactoDentalPage() {
         <section className="py-16 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
           <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
-              <p className="text-crema font-manrope font-medium text-lg mb-1">¿Querés saber si calificás para una opción sin desgaste?</p>
+              <p className="text-crema font-manrope font-medium text-lg mb-1">¿Querés saber cuál es la opción más conservadora para tu caso?</p>
               <p className="text-crema/55 font-manrope text-sm">En la evaluación inicial te lo decimos con criterio clínico, no con promesas vacías.</p>
             </div>
             <a
@@ -235,7 +235,7 @@ export default function LentesContactoDentalPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 { nombre: "Carillas Dentales", desc: "Cambios más amplios de forma, color y simetría.", href: "/carillas-dentales" },
-                { nombre: "Carillas sin desgaste", desc: "Cuándo realmente se puede trabajar sin preparar el diente.", href: "/carillas-sin-desgaste" },
+                { nombre: "Carillas de mínima preparación", desc: "Cuándo una alternativa ultrafina es clínicamente indicada.", href: "/carillas-sin-desgaste" },
                 { nombre: "Diseño de Sonrisa", desc: "Planificación digital completa antes de empezar.", href: "/diseno-de-sonrisa" },
               ].map((t) => (
                 <Link

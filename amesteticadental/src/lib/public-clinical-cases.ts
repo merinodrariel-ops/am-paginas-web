@@ -71,6 +71,8 @@ function mapPublishedCase(row: PublicCaseRow, assets: PublicAssetRow[]): Caso | 
 }
 
 async function getDatabaseCases(): Promise<Caso[]> {
+  if (!supabase) return [];
+
   const [{ data: rows, error: casesError }, { data: assets, error: assetsError }] = await Promise.all([
     supabase
       .from("public_clinical_cases")

@@ -200,11 +200,11 @@ export default function DentalTourismPage() {
                     <div className="max-w-4xl mx-auto">
                         <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Why patients fly in</span>
                         <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-4">
-                            The real advantage isn't the price.{" "}
-                            <span className="font-cormorant italic text-oro">It's the time.</span>
+                            The real advantage isn&apos;t the price.{" "}
+                            <span className="font-cormorant italic text-oro">It&apos;s the time.</span>
                         </h2>
                         <p className="text-crema/60 font-manrope text-base mb-12 max-w-2xl">
-                            Our patients don't come chasing the lowest quote. They come because our own in-house lab lets us do in one trip what takes months elsewhere — with natural, minimally invasive results. For a busy professional, time is the real cost.
+                            Our patients don&apos;t come chasing the lowest quote. They come because our own in-house lab lets us do in one trip what takes months elsewhere — with natural, minimally invasive results. For a busy professional, time is the real cost.
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             {REASONS.map((r) => (
@@ -390,10 +390,10 @@ export default function DentalTourismPage() {
                         <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Get started</span>
                         <h2 className="text-4xl md:text-5xl font-manrope font-light text-crema leading-tight mb-6">
                             Send your photos{" "}
-                            <span className="font-cormorant italic text-oro">and we'll tell you if you're a candidate</span>
+                            <span className="font-cormorant italic text-oro">and we&apos;ll tell you if you&apos;re a candidate</span>
                         </h2>
                         <p className="text-crema/60 font-manrope text-base mb-10">
-                            Preliminary case assessment. If you're a candidate, we send you the plan and estimated investment before you buy your ticket.
+                            Preliminary case assessment. If you&apos;re a candidate, we send you the plan and estimated investment before you buy your ticket.
                         </p>
                         <a
                             href={WA_LINK}

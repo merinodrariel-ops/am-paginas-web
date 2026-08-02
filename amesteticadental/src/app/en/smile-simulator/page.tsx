@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "AI Smile Design Simulator | AM Estética Dental",
   description:
-    "Upload a photo and try an indicative AI smile design simulation. Free, in seconds. Patients and colleagues can explore the digital experience of AM Estética Dental.",
+    "Upload a photo and try an indicative AI smile design simulation in seconds. Patients and colleagues can explore the digital experience of AM Estética Dental.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/sonrisa") },
   openGraph: {
     title: "AI Smile Design Simulator | AM Estética Dental",

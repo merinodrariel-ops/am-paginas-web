@@ -147,7 +147,7 @@ export default function Autoridad({ lang = "es" }: { lang?: "es" | "en" }) {
         }, 4200);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [reviews.length]);
 
     return (
         <section className="relative overflow-hidden border-y border-oro/10 bg-carbon px-4 py-24">

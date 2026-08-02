@@ -623,7 +623,7 @@ That is what matters most to us about this case — not only what changed in the
         categorias: ["Carillas de porcelana", "Lentes de contacto dental", "Diseño de sonrisa", "Diastemas", "Dientes conoidos"],
         duracion: "10 días",
         piezas: "10 carillas AM lentes de contacto dental (0.2-0.3mm) — sector anterior",
-        tecnica: "Carillas AM ultra delgadas tipo lente de contacto dental — sin desgaste significativo — cierre de diastemas y corrección de dientes conoidos",
+        tecnica: "Carillas AM ultradelgadas tipo lente de contacto dental — preparación mínima según el caso — cierre de diastemas y corrección de dientes conoides",
         fotoPortada: {
             src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires",
             alt: "Diseño de sonrisa con cierre de diastemas — antes y después rostro — Dr. Ariel Merino AM Estética Dental Puerto Madero Buenos Aires",
@@ -744,7 +744,7 @@ The result transformed not only his smile but the way I understood cosmetic dent
         subtitulo: "10 carillas de resina + gingivectomía láser — diseño de sonrisa en paciente joven sin caries ni tratamientos previos",
         descripcion: "Caso de diseño de sonrisa con 10 carillas de resina compuesta y gingivectomía láser en paciente joven con dientes sanos. Sin caries, sin coronas previas. USD 500 por pieza. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
         seoTitle: "Diseño de Sonrisa con Carillas de Resina",
-        seoDescription: "Caso de diseño de sonrisa con 10 carillas de resina y gingivectomía láser en paciente joven con dientes sanos, sin desgaste por el Dr. Ariel Merino.",
+        seoDescription: "Caso de diseño de sonrisa con 10 carillas de resina y gingivectomía láser en paciente joven con dientes sanos, con enfoque mínimamente invasivo por el Dr. Ariel Merino.",
         categorias: ["Carillas de porcelana", "Diseño de sonrisa", "Lentes de contacto dental"],
         duracion: "5 días",
         piezas: "10 carillas de resina compuesta — sector anterior superior e inferior",
@@ -796,7 +796,7 @@ En pacientes jóvenes con dientes sanos, la resina compuesta es muchas veces la 
 
 Para este caso diseñamos 10 carillas directas de resina en el sector anterior y complementamos con gingivectomía láser para armonizar la línea gingival — ese borde de encía que cuando no está nivelado le quita simetría a cualquier sonrisa.
 
-El resultado fue una sonrisa nueva, en 5 días, sin desgaste del esmalte original.
+El resultado fue una sonrisa nueva, en 5 días, con una preparación mínima y planificada del esmalte.
 
 — — —
 

@@ -54,6 +54,11 @@ export async function submitLead(input: LeadInput): Promise<LeadResult> {
     return { success: false, error: "Mensaje demasiado largo" };
   }
 
+  if (!supabase) {
+    console.error("submitLead called without public Supabase configuration");
+    return { success: false, error: "No pudimos enviar el formulario. Intentá de nuevo." };
+  }
+
   const { error } = await supabase.from("marketing_leads").insert({
     full_name: fullName,
     email,

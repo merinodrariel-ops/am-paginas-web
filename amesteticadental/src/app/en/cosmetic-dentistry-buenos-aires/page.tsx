@@ -118,7 +118,7 @@ export default function CosmeticDentistryPage() {
             <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Treatments</span>
             <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-14">
               Everything we do,{" "}
-              <span className="font-cormorant italic text-oro">and nothing we don't</span>
+              <span className="font-cormorant italic text-oro">and nothing we don&apos;t</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {TREATMENTS.map((t) => (
