@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# amesteticadental.com
 
-## Getting Started
+Sitio principal de **AM Estética Dental** — Dr. Ariel Merino, Puerto Madero, Buenos Aires.
 
-First, run the development server:
+Es el único sitio del monorepo **en producción con campañas de Google Ads activas**. Cualquier cambio acá se ve en tráfico pagado el mismo día.
+
+## Qué es
+
+Clínica de estética dental premium: carillas de porcelana, lentes de contacto dental, diseño de sonrisa digital, implantes y alineadores. Público en español (Buenos Aires) y en inglés (`/en`, turismo dental).
+
+- **Conversión principal:** WhatsApp → solicitud de evaluación inicial.
+- **Landings con presupuesto de Ads:** `/precio-carillas-dentales-buenos-aires`, `/implantes-dentales-buenos-aires`, `/diseno-de-sonrisa-precio-buenos-aires`.
+- **Deploy:** push a `main` → Vercel publica automáticamente esta carpeta.
+
+## Antes de tocar el copy
+
+Las reglas de mensaje las dictó el Dr. Merino y están en el `AGENTS.md` de la raíz del monorepo. Las tres que más se violan sin querer:
+
+1. **Nunca prometer "sin desgaste" / "no-prep".** Usar "mínimamente invasivo" o "mínima preparación".
+2. **El posicionamiento es el tiempo, no el precio.** Laboratorio propio → resultados en días, no en meses. Nada de comparativas de ahorro por país.
+3. **"Precio" solo para SEO** (URL, `title`, meta description). En el texto visible se dice **"inversión"**.
+
+Leerlas completas antes de escribir una línea de copy.
+
+## Desarrollo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run lint
+npm run build   # obligatorio antes de commitear
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Las imágenes se sirven desde Cloudinary (`drctvgyqd`), nunca desde `public/`. El detalle técnico está en `CLAUDE.md`.

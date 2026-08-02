@@ -36,9 +36,9 @@ const PARTICLES = [
 const COPY = {
   es: {
     eyebrow: "AM Estética Dental · Puerto Madero",
-    h1a: "Diseño de Sonrisa Natural,",
-    h1b: "con resultados en días.",
-    lead: "Carillas de porcelana, lentes de contacto dental y diseño digital con laboratorio propio en Puerto Madero. Un proceso clínico pensado para resultados naturales sin postergar tu tiempo.",
+    h1a: "Carillas y Diseño de Sonrisa.",
+    h1b: "Resultados naturales, en días.",
+    lead: "Carillas de porcelana, lentes de contacto dental y diseño de sonrisa digital para lograr resultados naturales en Puerto Madero. Laboratorio propio: la transformación completa se resuelve en días, no en meses.",
     cta: "Solicitar evaluación inicial",
     wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20solicitar%20una%20evaluaci%C3%B3n%20inicial.",
     secondary: "Ver tratamientos principales",

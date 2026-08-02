@@ -335,7 +335,7 @@ export default function ArticuloCarillasDananDientes() {
                                     Probá cómo quedaría tu sonrisa <span className="font-cormorant italic text-oro">en segundos</span>
                                 </h3>
                                 <p className="text-crema/65 font-manrope text-sm mb-6 max-w-md mx-auto">
-                                    Subí una foto y nuestro simulador con IA te muestra una vista previa de tu sonrisa con carillas. Sin compromiso, gratis y online.
+                                    Subí una foto y nuestro simulador con IA te muestra una vista previa de tu sonrisa con carillas. Sin compromiso y online, en segundos.
                                 </p>
                                 <Link
                                     href="/sonrisa"
