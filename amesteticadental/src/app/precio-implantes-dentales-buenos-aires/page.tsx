@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Precio Implantes Dentales Buenos Aires 2026 · AM Estética Dental",
   description:
-    "Implantes desde USD 1.200 — Neodent + Straumann. Precios 2026, regeneración ósea incluida, financiación propia. Comparativa de sistemas, casos reales, Dr. Merino.",
+    "Implantes dentales desde USD 2.400 total (dos fases). Neodent y Straumann, grupo suizo #1 del mundo. Precios 2026, extracción e injertos incluidos, financiación propia. Dr. Merino, Puerto Madero.",
   keywords: "precio implantes dentales Buenos Aires, costo implante dental Argentina, implantes dentales precio 2026, financiación implantes Puerto Madero, cuánto cuestan los implantes dentales",
   alternates: {
     canonical: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Precio de Implantes Dentales en Buenos Aires 2026 | AM Estética Dental",
     description:
-      "Tabla de precios actualizada en USD. Implante unitario desde $800. Financiación propia con tasa fija del 18% anual. Evaluación inicial en Puerto Madero.",
+      "Implantes dentales Straumann y Neodent desde USD 2.400 total (dos fases). Financiación propia. Evaluación inicial en Puerto Madero, Buenos Aires.",
     url: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",
     locale: "es_AR",
     type: "website",
@@ -29,12 +29,12 @@ const faqItems = [
   {
     pregunta: "¿Cuánto cuesta un implante dental en Buenos Aires?",
     respuesta:
-      "En AM Estética Dental trabajamos con dos sistemas de primer nivel: el implante Neodent® (Brasil, Grupo Straumann) desde USD 1.200 y el implante Straumann® (Suiza) desde USD 1.600. En ambos casos el valor incluye la corona, la regeneración ósea y el manejo de tejidos blandos que el caso requiera. Ofrecemos financiación propia con tasa fija del 18% anual.",
+      "En AM Estética Dental el tratamiento se divide en dos fases. La primera fase (colocación del implante, que ya incluye la posible extracción, injerto de hueso e injerto de tejido) va de USD 1.200 a USD 1.500. La segunda fase (la corona definitiva) va de USD 1.200 a USD 1.500. El total terminado con corona incluida queda entre USD 2.400 y USD 3.000. Trabajamos exclusivamente con implantes del Grupo Straumann: Neodent® (gama alta) y Straumann® (tope de gama, #1 del mundo). Ofrecemos financiación propia con tasa fija del 18% anual.",
   },
   {
     pregunta: "¿Qué diferencia hay entre el implante Neodent y el Straumann?",
     respuesta:
-      "Los dos son sistemas tope de gama y pertenecen al mismo grupo suizo: Neodent forma parte del Grupo Straumann. Straumann es la marca de implantes más reconocida del mundo, con la mayor trayectoria y respaldo científico, y es nuestra opción de referencia para las zonas estéticas más exigentes. Neodent ofrece una relación calidad–precio excelente dentro de la gama premium. En la evaluación inicial te asesoramos sobre cuál conviene para tu caso.",
+      "Los dos son sistemas tope de gama y pertenecen al mismo grupo suizo: Neodent forma parte del Grupo Straumann. Straumann es la marca de implantes más reconocida del mundo, con la mayor trayectoria y respaldo científico, y es nuestra opción de referencia para las zonas estéticas más exigentes. Neodent ofrece una relación calidad–precio excelente dentro de la gama premium. Ambos están dentro del rango de USD 1.200 a USD 1.500 por fase. En la evaluación inicial te asesoramos sobre cuál conviene para tu caso.",
   },
   {
     pregunta: "¿Se cobra por implante o por tratamiento completo?",
@@ -153,37 +153,38 @@ export default function InversionImplantesPage() {
         <section className="py-24 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
           <div className="max-w-4xl mx-auto">
             <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6 text-center">
-              Valores estimados por pieza · Actualizado 2026
+              Inversión por fase · Actualizado 2026
             </span>
             <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-4 text-center">
               Tabla de inversión para{" "}
               <span className="font-cormorant italic text-oro">implantes dentales</span>
             </h2>
             <p className="text-crema/55 font-manrope text-sm text-center max-w-2xl mx-auto mb-12">
-              Los valores son estimativos y pueden variar según la complejidad del caso y la necesidad de injertos óseos. El presupuesto definitivo se entrega después del diagnóstico con CBCT.
+              El tratamiento se divide en dos fases. La primera fase ya incluye la posible extracción, el injerto de hueso y el injerto de tejido que el caso requiera. El presupuesto definitivo se entrega después del diagnóstico con CBCT.
             </p>
 
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="border-b border-oro/20">
-                    <th className="text-left py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Tratamiento</th>
-                    <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Precio USD / pieza</th>
-                    <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Duración estimada</th>
-                    <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Cirugía</th>
+                    <th className="text-left py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Fase</th>
+                    <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Inversión USD</th>
+                    <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Qué incluye</th>
+                    <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Tiempo</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { tratamiento: "Implante Neodent® (Grupo Straumann) + corona", precio: "Desde USD 1.200", duracion: "Permanente", sesiones: "45 min" },
-                    { tratamiento: "Implante Straumann® (Suiza) + corona", precio: "Desde USD 1.600", duracion: "Permanente", sesiones: "45 min" },
-                    { tratamiento: "Rehabilitación completa sobre implantes", precio: "Consultar caso", duracion: "Permanente", sesiones: "A evaluar" },
+                    { fase: "1ª Fase — Colocación del implante", precio: "USD 1.200 – 1.500", incluye: "Implante + extracción + injerto óseo + injerto de tejido", tiempo: "45 min cirugía" },
+                    { fase: "Oseointegración", precio: "—", incluye: "El implante se fusiona con el hueso", tiempo: "2 a 3 meses" },
+                    { fase: "2ª Fase — Corona definitiva", precio: "USD 1.200 – 1.500", incluye: "Corona de cerámica o zirconio biomimética", tiempo: "2 sesiones" },
+                    { fase: "Total terminado con corona", precio: "USD 2.400 – 3.000", incluye: "Implante Neodent® o Straumann® (Grupo Straumann)", tiempo: "3 a 4 meses" },
                   ].map((row, i) => (
-                    <tr key={row.tratamiento} className={`border-b border-oro/10 ${i % 2 === 0 ? "bg-carbon" : "bg-carbon-soft"}`}>
-                      <td className="py-4 px-6 text-crema font-manrope text-sm font-medium">{row.tratamiento}</td>
-                      <td className="py-4 px-6 text-oro font-manrope text-sm font-semibold text-center">{row.precio}</td>
-                      <td className="py-4 px-6 text-crema/60 font-manrope text-sm text-center">{row.duracion}</td>
-                      <td className="py-4 px-6 text-crema/60 font-manrope text-sm text-center">{row.sesiones}</td>
+                    <tr key={row.fase} className={`border-b border-oro/10 ${i === 3 ? "bg-oro/5" : i % 2 === 0 ? "bg-carbon" : "bg-carbon-soft"}`}>
+                      <td className={`py-4 px-6 font-manrope text-sm font-medium ${i === 3 ? "text-oro" : "text-crema"}`}>{row.fase}</td>
+                      <td className={`py-4 px-6 font-manrope text-sm font-semibold text-center ${i === 3 ? "text-oro" : "text-oro/80"}`}>{row.precio}</td>
+                      <td className="py-4 px-6 text-crema/60 font-manrope text-sm text-center">{row.incluye}</td>
+                      <td className="py-4 px-6 text-crema/60 font-manrope text-sm text-center">{row.tiempo}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -191,7 +192,7 @@ export default function InversionImplantesPage() {
             </div>
 
             <p className="text-crema/40 font-manrope text-xs mt-6 text-center">
-              * Valores en USD, incluyen la corona, la regeneración ósea y el manejo de tejidos blandos que el caso requiera. Se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago.
+              * Valores en USD. La 1ª fase es all-inclusive: ya contempla extracción, injerto de hueso e injerto de tejido si el caso lo requiere. Se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago.
             </p>
           </div>
         </section>
@@ -207,49 +208,29 @@ export default function InversionImplantesPage() {
               <span className="font-cormorant italic text-oro">implante dental</span>?
             </h2>
             <p className="text-crema/55 font-manrope text-sm text-center max-w-2xl mx-auto mb-16">
-              El valor &ldquo;Desde USD 1.200&rdquo; no es solo un tornillo. En nuestra clínica, cada pieza es una obra de ingeniería biológica que incluye los tres componentes clave.
+              Cada fase es una inversión en ingeniería biológica. La primera fase incluye el implante, la posible extracción y los injertos. La segunda fase es la corona biomimética que completa tu sonrisa.
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Columna Izquierda: Diagrama SVG */}
               <div className="lg:col-span-5 flex justify-center bg-carbon-soft p-8 rounded-3xl border border-oro/10 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-oro/5 via-transparent to-transparent opacity-50 pointer-events-none" />
-                
-                {/* SVG del Implante */}
-                <svg viewBox="0 0 200 400" className="w-full max-w-[200px] h-auto drop-shadow-[0_0_20px_rgba(201,169,110,0.08)]" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  {/* Corona (Crown) */}
-                  <g className="group/crown">
-                    <path d="M60 40 C60 10, 140 10, 140 40 C140 70, 150 110, 130 140 C110 160, 90 160, 70 140 C50 110, 60 70, 60 40 Z" fill="#F5F0E8" fillOpacity="0.85" stroke="#C9A96E" strokeWidth="2.5" />
-                    <path d="M75 35 C75 25, 125 25, 125 35 C125 45, 130 80, 115 105 C105 120, 95 120, 85 105 C70 80, 75 45, 75 35 Z" fill="#FFFFFF" fillOpacity="0.3" />
-                    <text x="100" y="85" fill="#141414" fontSize="10" fontWeight="700" letterSpacing="0.1em" textAnchor="middle" fontFamily="var(--font-manrope)">CORONA</text>
-                  </g>
-                  
-                  {/* Pilar de Conexión (Abutment) */}
-                  <g className="group/pilar">
-                    <path d="M82 140 L118 140 L122 170 L78 170 Z" fill="#C9A96E" stroke="#A6824B" strokeWidth="1.5" />
-                    <path d="M95 170 L105 170 L105 200 L95 200 Z" fill="#737373" />
-                    <circle cx="100" cy="155" r="5" fill="#141414" stroke="#C9A96E" strokeWidth="1.5" />
-                  </g>
-
-                  {/* Tornillo (Implante Titanio) */}
-                  <g className="group/screw">
-                    {/* Cuerpo roscado */}
-                    <path d="M78 200 H122 L116 230 H84 L88 260 H112 L106 290 H94 L98 320 H102 L95 365 H105 L100 390 L100 390 L85 290 H86 L78 200 Z" fill="#525252" stroke="#C9A96E" strokeWidth="2" />
-                    {/* Roscas detalladas */}
-                    <path d="M80 215 H120 M82 235 H118 M84 255 H116 M86 275 H114 M88 295 H112 M90 315 H110 M92 335 H108 M94 355 H106" stroke="#C9A96E" strokeWidth="3" strokeLinecap="round" />
-                  </g>
-                </svg>
-
-                {/* Etiquetas flotantes explicativas */}
-                <div className="absolute top-[18%] left-4 lg:left-6 border-l border-oro/30 pl-3">
+                <Image
+                  src="https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/implantes-dentales-am/implante-dental-straumann-despiece-corona-pilar-tornillo-fondo-blanco-am-estetica-dental-buenos-aires"
+                  alt="Implante dental Straumann despiece 3D: corona, pilar de conexión y tornillo de titanio — AM Estética Dental, Puerto Madero, Buenos Aires"
+                  width={400}
+                  height={400}
+                  className="w-full max-w-[320px] h-auto drop-shadow-[0_0_30px_rgba(201,169,110,0.12)] relative z-10"
+                />
+                <div className="absolute top-[15%] left-4 lg:left-6 border-l border-oro/30 pl-3 z-20">
                   <span className="text-[10px] text-oro tracking-[0.2em] block">PARTE ESTÉTICA</span>
                   <span className="text-xs text-crema font-medium">1. Corona</span>
                 </div>
-                <div className="absolute top-[42%] right-4 lg:right-6 border-r border-oro/30 pr-3 text-right">
+                <div className="absolute top-[42%] right-4 lg:right-6 border-r border-oro/30 pr-3 text-right z-20">
                   <span className="text-[10px] text-oro tracking-[0.2em] block">CONECTOR</span>
                   <span className="text-xs text-crema font-medium">2. Pilar</span>
                 </div>
-                <div className="absolute bottom-[20%] left-4 lg:left-6 border-l border-oro/30 pl-3">
+                <div className="absolute bottom-[18%] left-4 lg:left-6 border-l border-oro/30 pl-3 z-20">
                   <span className="text-[10px] text-oro tracking-[0.2em] block">RAÍZ BIOLÓGICA</span>
                   <span className="text-xs text-crema font-medium">3. Implante</span>
                 </div>
@@ -328,13 +309,13 @@ export default function InversionImplantesPage() {
                   <h3 className="text-crema font-cormorant italic text-2xl">Neodent®</h3>
                   <span className="text-oro/60 font-manrope text-[10px] uppercase tracking-[0.2em]">Grupo Straumann®</span>
                 </div>
-                <p className="text-oro font-manrope font-semibold text-xl mb-6">Desde USD 1.200</p>
+                <p className="text-oro font-manrope font-semibold text-xl mb-6">Desde USD 1.200 / fase</p>
                 <div className="space-y-3 flex-1">
                   {[
                     "Parte del Grupo Straumann® (Suiza) — el mismo grupo detrás de la marca de implantes #1 del mundo",
                     "La puerta de entrada premium al universo Straumann, con la mejor relación calidad–precio",
                     "Titanio de grado médico con el respaldo del grupo líder mundial en implantología",
-                    "Incluye corona, regeneración ósea y tejidos blandos",
+                    "1ª fase all-inclusive: extracción + injerto óseo + tejidos blandos",
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-3">
                       <span className="text-oro/50 flex-none mt-1 text-xs">◆</span>
@@ -354,13 +335,13 @@ export default function InversionImplantesPage() {
                   <h3 className="text-crema font-cormorant italic text-2xl">Straumann®</h3>
                   <span className="text-crema/40 font-manrope text-[10px] uppercase tracking-[0.2em]">Suiza</span>
                 </div>
-                <p className="text-oro font-manrope font-semibold text-xl mb-6">Desde USD 1.600</p>
+                <p className="text-oro font-manrope font-semibold text-xl mb-6">Desde USD 1.500 / fase</p>
                 <div className="space-y-3 flex-1">
                   {[
                     "La marca de implantes más reconocida del mundo",
                     "Ingeniería suiza y el mayor respaldo científico del sector",
                     "La opción de referencia para las zonas estéticas más exigentes",
-                    "Incluye corona, regeneración ósea y tejidos blandos",
+                    "1ª fase all-inclusive: extracción + injerto óseo + tejidos blandos",
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-3">
                       <span className="text-oro flex-none mt-1 text-xs">◆</span>
@@ -416,7 +397,7 @@ export default function InversionImplantesPage() {
               Calculá tu{" "}
               <span className="font-cormorant italic text-oro">plan de pago</span>
             </h2>
-            <CalculadoraFinanciacion defaultMonto={800} />
+            <CalculadoraFinanciacion defaultMonto={2400} />
           </div>
         </section>
 

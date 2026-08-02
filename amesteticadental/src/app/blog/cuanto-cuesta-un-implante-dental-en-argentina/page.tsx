@@ -39,7 +39,7 @@ const articleSchema = {
         "url": "https://www.amesteticadental.com",
     },
     "datePublished": "2026-07-08",
-    "dateModified": "2026-07-08",
+    "dateModified": "2026-08-02",
     "mainEntityOfPage": CANONICAL,
 };
 
@@ -52,7 +52,7 @@ const faqSchema = {
             "name": "¿Cuánto cuesta un implante dental en Argentina en 2026?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "El precio de un implante unitario varía según la clínica y lo que incluya el presupuesto. En AM Estética Dental un implante unitario con corona parte desde USD 1.200, e incluye tornillo de titanio, pilar y corona. Es clave confirmar siempre si el precio incluye la corona o solo el tornillo, porque muchos presupuestos separan ambas cosas.",
+                "text": "En AM Estética Dental el tratamiento se divide en dos fases. La 1ª fase (implante + extracción + injerto de hueso + injerto de tejido) va de USD 1.200 a USD 1.500. La 2ª fase (corona definitiva) va de USD 1.200 a USD 1.500. El total terminado con corona queda entre USD 2.400 y USD 3.000. Trabajamos con implantes Straumann y Neodent del Grupo Straumann (Suiza).",
             },
         },
         {
@@ -60,7 +60,7 @@ const faqSchema = {
             "name": "¿El precio del implante incluye la corona?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "No siempre, y es la principal causa de confusión al comparar presupuestos. Un implante completo tiene tres partes: el tornillo de titanio, el pilar y la corona visible. Algunas clínicas publican solo el precio del tornillo. En AM Estética Dental el valor desde USD 1.200 ya incluye la corona.",
+                "text": "En AM Estética Dental sí, pero se divide en dos fases para mayor claridad. La 1ª fase (USD 1.200–1.500) incluye el implante, la posible extracción, el injerto de hueso y el de tejido. La 2ª fase (USD 1.200–1.500) incluye la corona definitiva. Al comparar presupuestos, es clave confirmar si te están cotizando solo el tornillo o el tratamiento completo.",
             },
         },
         {
@@ -76,7 +76,7 @@ const faqSchema = {
             "name": "¿Por qué necesito un injerto óseo y cuánto suma al precio?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "El implante necesita suficiente hueso para integrarse. Si perdiste la pieza hace tiempo, es habitual que haya reabsorción ósea y haga falta un injerto previo. Es el factor que más puede modificar el presupuesto, y solo se puede evaluar con una tomografía en la consulta inicial.",
+                "text": "El implante necesita suficiente hueso para integrarse. Si perdiste la pieza hace tiempo, es habitual que haya reabsorción ósea y haga falta un injerto. En AM Estética Dental, la 1ª fase ya incluye la posible extracción, el injerto de hueso y el injerto de tejido que el caso requiera — no se cobra por separado.",
             },
         },
         {
@@ -102,16 +102,22 @@ const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20
 
 const RANGOS = [
     {
-        tipo: "Implante unitario (incluye corona)",
-        rango: "Desde USD 1.200",
-        duracion: "Tornillo: permanente · Corona: 15–20 años",
-        nota: "Reemplazo de una pieza. El precio ya contempla tornillo de titanio, pilar y corona.",
+        tipo: "1ª Fase — Implante",
+        rango: "USD 1.200 – 1.500",
+        duracion: "Tornillo: permanente",
+        nota: "All-inclusive: implante + posible extracción + injerto de hueso + injerto de tejido. Straumann o Neodent (Grupo Straumann, Suiza).",
     },
     {
-        tipo: "Implante + corona de zirconio",
-        rango: "Desde USD 1.200",
+        tipo: "2ª Fase — Corona definitiva",
+        rango: "USD 1.200 – 1.500",
+        duracion: "Corona: 15–20 años",
+        nota: "Cerámica o zirconio biomimético. Se coloca tras la oseointegración (2-3 meses).",
+    },
+    {
+        tipo: "Total terminado (implante + corona)",
+        rango: "USD 2.400 – 3.000",
         duracion: "Tornillo: permanente · Corona: 15–20 años",
-        nota: "La opción más estética para dientes visibles: mejor translucidez y biocompatibilidad de la encía.",
+        nota: "El implante completo con diente funcionando. El rango depende del tipo de implante y la corona elegida.",
     },
     {
         tipo: "Rehabilitación completa (All-on-4 / All-on-6)",
@@ -125,7 +131,7 @@ const FACTORES = [
     {
         n: "01",
         titulo: "Qué incluye el presupuesto (tornillo vs. corona)",
-        texto: "Es el punto donde más se confunden los precios. Un implante completo tiene tres partes: el tornillo de titanio que se integra al hueso, el pilar que lo conecta y la corona visible. Hay clínicas que publican solo el precio del tornillo — y la corona se suma aparte. Antes de comparar dos presupuestos, confirmá que ambos incluyan lo mismo. En AM el valor desde USD 1.200 ya incluye la corona.",
+        texto: "Es el punto donde más se confunden los precios. Un implante completo tiene tres partes: el tornillo de titanio que se integra al hueso, el pilar que lo conecta y la corona visible. Hay clínicas que publican solo el precio del tornillo — y la corona se suma aparte. En AM Estética Dental el tratamiento se divide en dos fases: la 1ª fase (implante + extracción + injertos) va de USD 1.200 a 1.500, y la 2ª fase (corona) de USD 1.200 a 1.500. Total terminado: entre USD 2.400 y 3.000.",
     },
     {
         n: "02",
