@@ -5,7 +5,8 @@ import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import CalculadoraFinanciacion from "@/components/CalculadoraFinanciacion";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
-import ImplantVideoShowcase from "@/components/ImplantVideoShowcase";
+import ImplantHeroVideo from "@/components/ImplantHeroVideo";
+import ImplantRehabilitationCase from "@/components/ImplantRehabilitationCase";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
@@ -135,39 +136,11 @@ export default function InversionImplantesPage() {
                 </Link>
               </div>
             </div>
-            <div className="relative aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/5] w-full rounded-2xl overflow-hidden border border-oro/15 mt-10 lg:mt-0">
-              <Image
-                src="https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-rostro-portada-mega-transformacion-rehabilitacion-oral-dr-ariel-merino-am-estetica-dental"
-                alt="Antes y después de implantes dentales — caso real de rehabilitación en AM Estética Dental, Dr. Ariel Merino, Puerto Madero"
-                fill priority sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-carbon/50 via-transparent to-transparent" />
-              <span className="absolute bottom-5 left-5 inline-flex items-center gap-1.5 border border-oro/30 bg-carbon/80 backdrop-blur-sm rounded-full px-3 py-1.5 text-[9px] uppercase tracking-[0.3em] text-oro">
-                Caso real · Implantes y Cerámicas
-              </span>
-            </div>
+            <ImplantHeroVideo />
           </div>
         </section>
 
-        <section className="py-20 px-6 md:px-12 bg-carbon border-y border-oro/10">
-          <div className="max-w-5xl mx-auto rounded-3xl border border-oro/20 bg-carbon-soft p-8 md:p-12 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 items-center">
-            <div>
-              <span className="text-oro font-manrope uppercase tracking-[0.35em] text-[10px] block mb-4">Dos escenarios diferentes</span>
-              <h2 className="text-3xl md:text-4xl font-light text-crema leading-tight">
-                Implante individual o <span className="font-cormorant italic text-oro">rehabilitación integral.</span>
-              </h2>
-            </div>
-            <div>
-              <p className="text-crema/65 text-sm md:text-base leading-relaxed mb-4">
-                Los valores por pieza sirven para reemplazos aislados. Si la indicación es una rehabilitación oral completa, la inversión total suele ubicarse entre <strong className="text-crema font-medium">USD 24.000 y 30.000</strong> y se planifica como un conjunto.
-              </p>
-              <p className="text-crema/55 text-sm leading-relaxed">
-                En ese plan integral, de uno a cuatro implantes suelen estar incluidos, al igual que los rellenos o injertos de hueso y los injertos de tejido necesarios. La tomografía CBCT define la cantidad, la distribución y el alcance final.
-              </p>
-            </div>
-          </div>
-        </section>
+        <ImplantRehabilitationCase />
 
         {/* ── TABLA DE PRECIOS ── */}
         <section className="py-24 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
@@ -176,8 +149,8 @@ export default function InversionImplantesPage() {
               Inversión por fase · Actualizado 2026
             </span>
             <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-4 text-center">
-              Tabla de inversión para{" "}
-              <span className="font-cormorant italic text-oro">implantes dentales</span>
+              Inversión para un{" "}
+              <span className="font-cormorant italic text-oro">implante individual</span>
             </h2>
             <p className="text-crema/55 font-manrope text-sm text-center max-w-2xl mx-auto mb-12">
               El tratamiento se divide en dos fases. La primera fase ya incluye la posible extracción, el injerto de hueso y el injerto de tejido que el caso requiera. El presupuesto definitivo se entrega después del diagnóstico con CBCT.
@@ -199,7 +172,6 @@ export default function InversionImplantesPage() {
                     { fase: "Oseointegración", precio: "—", incluye: "El implante se fusiona con el hueso", tiempo: "2 a 3 meses" },
                     { fase: "2ª Fase — Corona definitiva", precio: "USD 1.200 – 1.500", incluye: "Corona de cerámica o zirconio biomimética", tiempo: "2 sesiones" },
                     { fase: "Total terminado con corona", precio: "USD 2.400 – 3.000", incluye: "Implante Neodent® o Straumann® (Grupo Straumann)", tiempo: "3 a 4 meses" },
-                    { fase: "Rehabilitación oral integral", precio: "USD 24.000 – 30.000", incluye: "Cerámicas + 1 a 4 implantes e injertos, según diagnóstico", tiempo: "Según plan" },
                   ].map((row, i) => (
                     <tr key={row.fase} className={`border-b border-oro/10 ${i >= 3 ? "bg-oro/5" : i % 2 === 0 ? "bg-carbon" : "bg-carbon-soft"}`}>
                       <td className={`py-4 px-6 font-manrope text-sm font-medium ${i >= 3 ? "text-oro" : "text-crema"}`}>{row.fase}</td>
@@ -304,8 +276,6 @@ export default function InversionImplantesPage() {
             </div>
           </div>
         </section>
-
-        <ImplantVideoShowcase selection="investment" />
 
         {/* ── COMPARATIVA DE MARCAS: STRAUMANN vs NEODENT ── */}
         <section className="py-24 px-6 md:px-12 border-t border-oro/10 bg-carbon-soft">
@@ -421,35 +391,6 @@ export default function InversionImplantesPage() {
               <span className="font-cormorant italic text-oro">plan de pago</span>
             </h2>
             <CalculadoraFinanciacion defaultMonto={2400} />
-          </div>
-        </section>
-
-        {/* ── GALERÍA DE CASOS ── */}
-        <section className="py-24 px-6 md:px-12 border-t border-oro/10 bg-carbon-soft">
-          <div className="max-w-6xl mx-auto">
-              <div className="mb-10 text-center">
-                  <span className="text-oro font-manrope uppercase tracking-[0.4em] text-[10px] block mb-3">Casos reales</span>
-                  <h2 className="text-3xl md:text-4xl font-light text-crema">
-                      Rehabilitaciones con implantes <span className="font-cormorant italic text-oro">en AM Estética Dental.</span>
-                  </h2>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto">
-                  {[
-                      { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-rostro-portada-mega-transformacion-rehabilitacion-oral-dr-ariel-merino-am-estetica-dental", alt: "Agenesia dental antes y después — rehabilitación completa con implantes y cerámicas — Dr. Ariel Merino AM Estética Dental" },
-                      { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires", alt: "Intraoral antes y después — implantes dentales y 24 cerámicas — rehabilitación completa — AM Estética Dental Buenos Aires" },
-                      { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-labios-sonrisa-portada-carillas-ceramicas-alineadores-invisibles-dr-ariel-merino-am-estetica-dental", alt: "Antes y después labios y sonrisa — agenesia dental con implantes y carillas cerámicas — Dr. Ariel Merino AM Estética Dental" },
-                  ].map((foto) => (
-                      <div key={foto.src} className="relative aspect-square rounded-2xl overflow-hidden border border-oro/10 group">
-                          <Image src={foto.src} alt={foto.alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-carbon/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </div>
-                  ))}
-              </div>
-              <div className="mt-8 text-center">
-                  <Link href="/casos/agenesia-dental-rehabilitacion-completa-implantes-24-ceramicas" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">
-                      Ver el caso clínico completo →
-                  </Link>
-              </div>
           </div>
         </section>
 

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { hreflangFor } from "@/lib/i18n-routes";
 import Image from "next/image";
 import Link from "next/link";
-import ImplantVideoShowcase from "@/components/ImplantVideoShowcase";
+import ImplantHeroVideo from "@/components/ImplantHeroVideo";
+import ImplantRehabilitationCase from "@/components/ImplantRehabilitationCase";
 
 const CANONICAL = "https://www.amesteticadental.com/implantes-dentales-buenos-aires";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20implantes%20dentales.";
@@ -33,51 +34,31 @@ export default function ImplantesPage() {
                     <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">Quiero saber si necesito implante →</a>
                 </header>
 
-                <section className="px-6 py-20 max-w-6xl mx-auto">
-                    <span className="text-oro uppercase tracking-[0.4em] text-xs block mb-6">Buenos Aires · Puerto Madero</span>
-                    <h1 className="text-4xl md:text-5xl font-light text-crema leading-tight mb-6">
-                        Implantes dentales<br /><span className="font-cormorant italic text-oro">en Buenos Aires.</span>
-                    </h1>
-                    <p className="text-crema/65 text-lg font-light leading-relaxed mb-8 max-w-xl">
-                        Una solución estable y de largo plazo para dientes perdidos. Implantes Straumann y Neodent del grupo suizo Straumann. Planificación digital. Oseointegración en 2 a 3 meses.
-                    </p>
-                    <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">Quiero saber si necesito implante →</a>
-                </section>
-
-                <section className="px-6 py-16 border-y border-oro/10 bg-carbon-soft">
-                    <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+                <section className="px-6 py-12 md:py-20">
+                    <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                         <div>
-                            <span className="text-oro uppercase tracking-[0.4em] text-[10px] block mb-4">Rehabilitación oral integral</span>
-                            <h2 className="text-3xl md:text-4xl font-light text-crema leading-tight mb-5">
-                                De 1 a 4 implantes suelen estar <span className="font-cormorant italic text-oro">incluidos en la rehabilitación.</span>
-                            </h2>
-                            <p className="text-crema/60 text-sm md:text-base leading-relaxed max-w-2xl">
-                                Cuando el objetivo es rehabilitar la sonrisa completa, no pensamos cada implante como un tratamiento aislado. En planes con una inversión total de <strong className="text-crema font-medium">USD 24.000 a 30.000</strong>, uno a cuatro implantes suelen quedar contemplados dentro del plan integral, junto con las restauraciones cerámicas.
+                            <span className="text-oro uppercase tracking-[0.4em] text-xs block mb-6">Buenos Aires · Puerto Madero</span>
+                            <h1 className="text-5xl md:text-6xl font-light text-crema leading-[1.02] mb-6">
+                                Implantes dentales<br /><span className="font-cormorant italic text-oro">en Buenos Aires.</span>
+                            </h1>
+                            <p className="text-crema/65 text-lg font-light leading-relaxed mb-8 max-w-xl">
+                                Implantes Straumann y Neodent del Grupo Straumann. Planificación digital, cirugía de precisión y una mirada estética que integra cada pieza con el resto de la sonrisa.
                             </p>
+                            <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">Quiero saber si necesito implante →</a>
                         </div>
-                        <div className="border border-oro/20 rounded-2xl p-6 md:p-8 bg-carbon">
-                            <p className="text-oro text-xs uppercase tracking-[0.25em] mb-5">Según indicación clínica, el plan puede incluir</p>
-                            <ul className="space-y-3 text-crema/65 text-sm">
-                                <li className="flex gap-3"><span className="text-oro">◆</span> Entre 1 y 4 implantes Straumann® o Neodent®</li>
-                                <li className="flex gap-3"><span className="text-oro">◆</span> Relleno o injerto de hueso cuando sea necesario</li>
-                                <li className="flex gap-3"><span className="text-oro">◆</span> Injerto de tejido para sostener el resultado estético</li>
-                                <li className="flex gap-3"><span className="text-oro">◆</span> Coronas y cerámicas planificadas como un conjunto</li>
-                            </ul>
-                            <p className="text-crema/35 text-xs leading-relaxed mt-5 pt-5 border-t border-oro/10">La cantidad incluida depende del diagnóstico, la distribución de los implantes y la complejidad biológica del caso. Se confirma con tomografía CBCT y planificación clínica.</p>
-                        </div>
+                        <ImplantHeroVideo />
                     </div>
                 </section>
 
-                <ImplantVideoShowcase />
+                <ImplantRehabilitationCase />
 
                 <section className="px-6 py-16 border-y border-oro/8 max-w-6xl mx-auto">
                     <h2 className="text-2xl font-light text-crema mb-10">¿Cuál es la inversión en un implante dental <span className="font-cormorant italic text-oro">en Buenos Aires?</span></h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                         {[
                             { tipo: "1ª Fase — Implante", precio: "USD 1.200 – 1.500", nota: "All-inclusive: extracción + injerto óseo + tejidos" },
                             { tipo: "2ª Fase — Corona", precio: "USD 1.200 – 1.500", nota: "Cerámica o zirconio biomimético" },
                             { tipo: "Total terminado", precio: "USD 2.400 – 3.000", nota: "Implante Straumann o Neodent (Grupo Straumann)" },
-                            { tipo: "Rehabilitación integral", precio: "USD 24.000 – 30.000", nota: "De 1 a 4 implantes suelen estar incluidos" },
                         ].map((o) => (
                             <div key={o.tipo} className="border border-oro/15 rounded-2xl p-6">
                                 <p className="text-oro text-[9px] uppercase tracking-widest mb-2">{o.tipo}</p>
@@ -127,36 +108,6 @@ export default function ImplantesPage() {
                             <p className="text-crema/60 text-sm leading-relaxed mb-4">Trabajamos exclusivamente con implantes del Grupo Straumann: Neodent (gama alta) y Straumann (tope de gama, #1 del mundo). Ambos son implantes suizos de titanio con el mayor respaldo científico del sector.</p>
                             <p className="text-crema/60 text-sm leading-relaxed mb-6">Cada corona se diseña para mimetizarse con el color y la translucidez de tus dientes naturales. El enfoque es siempre biomimético: que nadie note que tenés un implante.</p>
                             <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-oro text-sm hover:text-oro/80 transition-colors">Consultar inversión para mi caso →</a>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Galería — casos reales */}
-                <section className="px-6 py-16 border-t border-oro/8">
-                    <div className="max-w-6xl mx-auto">
-                        <div className="mb-10">
-                            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-[10px] block mb-3">Casos reales</span>
-                            <h2 className="text-2xl font-light text-crema">
-                                Rehabilitaciones reales <span className="font-cormorant italic text-oro">en AM Estética Dental.</span>
-                            </h2>
-                            <p className="text-crema/45 text-sm mt-3 max-w-xl">Agenesia dental: implantes + 24 cerámicas. Una de las rehabilitaciones más complejas resueltas por el Dr. Ariel Merino.</p>
-                        </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-                            {[
-                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-rostro-portada-mega-transformacion-rehabilitacion-oral-dr-ariel-merino-am-estetica-dental", alt: "Agenesia dental antes y después — rehabilitación completa con implantes y cerámicas — Dr. Ariel Merino AM Estética Dental" },
-                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires", alt: "Intraoral antes y después — implantes dentales y 24 cerámicas — rehabilitación completa — AM Estética Dental Buenos Aires" },
-                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-labios-sonrisa-portada-carillas-ceramicas-alineadores-invisibles-dr-ariel-merino-am-estetica-dental", alt: "Antes y después labios y sonrisa — agenesia dental con implantes y carillas cerámicas — Dr. Ariel Merino AM Estética Dental" },
-                            ].map((foto) => (
-                                <div key={foto.src} className="relative aspect-square rounded-2xl overflow-hidden border border-oro/10 group">
-                                    <Image src={foto.src} alt={foto.alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-carbon/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                </div>
-                            ))}
-                        </div>
-                        <div className="mt-8 text-center">
-                            <Link href="/casos/agenesia-dental-rehabilitacion-completa-implantes-24-ceramicas" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">
-                                Ver el caso completo →
-                            </Link>
                         </div>
                     </div>
                 </section>
