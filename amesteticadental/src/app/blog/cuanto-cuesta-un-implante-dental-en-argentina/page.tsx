@@ -136,7 +136,7 @@ const FACTORES = [
     {
         n: "02",
         titulo: "El hueso disponible",
-        texto: "El implante necesita suficiente hueso para osteointegrarse. Si perdiste el diente hace tiempo, es frecuente que haya reabsorción ósea y se necesite un injerto de hueso previo. Es el factor que más puede mover el presupuesto — y no es un extra que se pueda inventar: se ve con una tomografía en la primera consulta. Desconfiá de quien te da precio de implante sin haber visto tu hueso.",
+        texto: "El implante necesita suficiente hueso para osteointegrarse. Si perdiste el diente hace tiempo, es frecuente que haya reabsorción ósea y se necesite un injerto de hueso previo. En la primera consulta hacemos la evaluación clínica y revisamos las radiografías o estudios que ya tengas; no son un requisito excluyente para atenderte. Si hace falta una tomografía para estudiar el hueso, se indica por separado antes de la planificación quirúrgica.",
     },
     {
         n: "03",
@@ -146,7 +146,7 @@ const FACTORES = [
     {
         n: "04",
         titulo: "La planificación y la tecnología",
-        texto: "Un implante bien puesto empieza con una tomografía y una planificación 3D de la posición exacta, no con el taladro. Esa planificación guiada reduce riesgos, acorta la cirugía y mejora el resultado final. Es trabajo clínico que un presupuesto muy bajo suele resignar — y en implantes, la diferencia entre bien planificado y improvisado se paga con el tiempo.",
+        texto: "Un implante bien planificado empieza con el diagnóstico clínico y los estudios adecuados para el caso. Cuando está indicada, una tomografía permite planificar en 3D la posición exacta antes de la cirugía y se solicita por separado en un centro de diagnóstico. Esa planificación guiada aporta precisión y previsibilidad.",
     },
 ];
 
@@ -258,12 +258,12 @@ export default function ArticuloPreciosImplantesArgentina() {
 
                         {/* CTA */}
                         <section className="border border-oro/20 rounded-2xl p-8 bg-carbon-soft text-center">
-                            <span className="text-oro font-manrope uppercase tracking-[0.3em] text-xs block mb-4">Presupuesto real, con tomografía</span>
+                            <span className="text-oro font-manrope uppercase tracking-[0.3em] text-xs block mb-4">Evaluación clínica y estudios indicados</span>
                             <h3 className="text-crema font-manrope font-light text-xl mb-4">
                                 Tu caso tiene un número exacto
                             </h3>
                             <p className="text-crema/55 font-manrope text-sm mb-6 max-w-md mx-auto">
-                                En la evaluación inicial revisamos tu hueso, definimos el tipo de implante y corona que necesitás y te damos el presupuesto por escrito. Sin sorpresas después.
+                                Si ya tenés radiografías o estudios recientes, podés traerlos, pero no son excluyentes para la primera consulta. Si el caso requiere una tomografía, se indica por separado antes de completar la planificación.
                             </p>
                             <a
                                 href={WA_LINK}

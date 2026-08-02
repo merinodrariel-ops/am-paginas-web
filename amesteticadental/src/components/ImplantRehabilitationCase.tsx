@@ -60,7 +60,7 @@ export default function ImplantRehabilitationCase() {
               Ver la transformación completa →
             </Link>
             <span className="text-[10px] leading-relaxed text-crema/30">
-              *La cantidad se confirma con CBCT y diagnóstico clínico.
+              *La cantidad se confirma con la evaluación clínica y los estudios indicados.
             </span>
           </div>
         </div>

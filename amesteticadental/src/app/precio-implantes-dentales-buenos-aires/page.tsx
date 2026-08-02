@@ -51,7 +51,7 @@ const faqItems = [
   {
     pregunta: "¿Cómo funciona la primera consulta de implantes?",
     respuesta:
-      "En la primera consulta evaluamos tu hueso maxilar mediante una tomografía (CBCT), te explicamos las opciones de tratamiento y te entregamos un presupuesto detallado. Es el punto de partida para entender exactamente qué necesitás y qué resultado podés esperar.",
+      "La primera consulta es una evaluación clínica. Si ya tenés radiografías o estudios recientes, te pedimos que los traigas, pero no son un requisito excluyente para atenderte. Si después de evaluarte hace falta una tomografía CBCT, se indica por separado en un centro de diagnóstico; AM no la realiza ni está incluida en la consulta.",
   },
   {
     pregunta: "¿Cuánto dura un implante dental?",
@@ -153,7 +153,7 @@ export default function InversionImplantesPage() {
               <span className="font-cormorant italic text-oro">implante individual</span>
             </h2>
             <p className="text-crema/55 font-manrope text-sm text-center max-w-2xl mx-auto mb-12">
-              El tratamiento se divide en dos fases. La primera fase ya incluye la posible extracción, el injerto de hueso y el injerto de tejido que el caso requiera. El presupuesto definitivo se entrega después del diagnóstico con CBCT.
+              El tratamiento se divide en dos fases. La primera fase ya incluye la posible extracción, el injerto de hueso y el injerto de tejido que el caso requiera. La inversión definitiva se establece después de la evaluación clínica y de los estudios que estén indicados, que se realizan por separado.
             </p>
 
             <div className="overflow-x-auto">
@@ -417,7 +417,7 @@ export default function InversionImplantesPage() {
               Recuperá tu sonrisa <span className="font-cormorant italic text-oro">con seguridad.</span>
             </h2>
             <p className="text-crema/60 font-manrope text-lg leading-relaxed max-w-xl mx-auto mb-10">
-              Evaluamos tu caso mediante tomografía 3D (CBCT) y planificamos la cirugía de forma digital.
+              La primera consulta es clínica. Si el caso requiere una tomografía 3D (CBCT), la indicamos por separado para completar la planificación digital.
             </p>
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-5 rounded-full font-manrope font-semibold text-lg hover:bg-oro-light transition-colors">
               Agendar mi evaluación inicial →

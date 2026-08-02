@@ -136,8 +136,8 @@ export default function ImplantVideoShowcase({
         </div>
         <p className="text-crema/30 text-[10px] mt-5 text-center">
           {isEnglish
-            ? "3D visualisation for educational purposes. Treatment is planned individually from a CBCT scan."
-            : "Visualización 3D con fines educativos. El tratamiento se planifica de forma individual a partir de una tomografía CBCT."}
+            ? "3D visualisation for educational purposes. A CBCT scan is requested separately when clinically indicated."
+            : "Visualización 3D con fines educativos. Cuando está clínicamente indicada, la tomografía CBCT se solicita por separado."}
         </p>
       </div>
     </section>

@@ -67,7 +67,7 @@ export default function ImplantesPage() {
                             </div>
                         ))}
                     </div>
-                    <p className="text-crema/30 text-xs">Inversión según diagnóstico con CBCT (tomografía). Implantes del Grupo Straumann (Suiza), los más reconocidos del mundo.</p>
+                    <p className="text-crema/30 text-xs">La inversión final se define después de la evaluación clínica y de los estudios que estén indicados para el caso. Los estudios de diagnóstico se realizan por separado.</p>
                 </section>
 
                 <section className="px-6 py-16 border-t border-oro/8 max-w-6xl mx-auto">
@@ -77,9 +77,10 @@ export default function ImplantesPage() {
                             { q: "¿Cuánto tiempo dura el proceso de un implante dental?", a: "El implante se coloca en una cirugía de 45-60 minutos (1ª fase). La oseointegración lleva entre 2 y 3 meses según el tipo de implante. Una vez integrado, se coloca la corona definitiva (2ª fase). El proceso total es de 3 a 4 meses." },
                             { q: "¿El implante duele?", a: "La cirugía se realiza con anestesia local, por lo que no se siente dolor durante el procedimiento. Los primeros 2-3 días pueden haber molestias leves controladas con analgésicos. La mayoría de los pacientes vuelve a sus actividades al día siguiente." },
                             { q: "¿Cuánto dura un implante dental?", a: "Con buena higiene, controles periódicos y hábitos saludables, un implante puede mantenerse durante muchos años. Su evolución depende de la salud general, el hueso, los tejidos y el mantenimiento. La corona sobre el implante también puede requerir recambio con el tiempo." },
-                            { q: "¿Cualquiera puede ponerse implantes?", a: "Se necesita cantidad suficiente de hueso maxilar para colocar el implante. En casos de pérdida ósea, se puede hacer un injerto previo. La condición general de salud también influye. Lo evaluamos con una tomografía (CBCT) en la primera consulta." },
+                            { q: "¿Cualquiera puede ponerse implantes?", a: "Se necesita cantidad suficiente de hueso maxilar y una condición de salud compatible con el tratamiento. En la primera consulta hacemos una evaluación clínica. Si el caso requiere una tomografía CBCT para estudiar el hueso, se indica por separado en un centro de diagnóstico." },
+                            { q: "¿Necesito llevar radiografías o una tomografía a la primera consulta?", a: "Si ya tenés radiografías o estudios recientes, te pedimos que los traigas porque pueden aportar información útil. No son un requisito excluyente: podés realizar igualmente la primera consulta. Si después de evaluarte hace falta una tomografía CBCT, se indica por separado y no está incluida en la consulta." },
                             { q: "¿Cuál es la inversión en un implante dental en Buenos Aires?", a: "En AM Estética Dental, el tratamiento se divide en dos fases: la 1ª fase (implante + extracción + injertos) va de USD 1.200 a 1.500, y la 2ª fase (corona) de USD 1.200 a 1.500. El total terminado con corona queda entre USD 2.400 y 3.000. Trabajamos con implantes Straumann y Neodent, del grupo suizo #1 del mundo." },
-                            { q: "¿Los implantes están incluidos en una rehabilitación completa?", a: "En rehabilitaciones integrales con una inversión total de USD 24.000 a 30.000, entre uno y cuatro implantes suelen estar contemplados dentro del plan, junto con las restauraciones cerámicas. También pueden incluirse los rellenos o injertos de hueso y los injertos de tejido que el caso requiera. La cantidad y el alcance exactos se confirman después del diagnóstico con tomografía CBCT." },
+                            { q: "¿Los implantes están incluidos en una rehabilitación completa?", a: "En rehabilitaciones integrales con una inversión total de USD 24.000 a 30.000, entre uno y cuatro implantes suelen estar contemplados dentro del plan, junto con las restauraciones cerámicas. También pueden incluirse los rellenos o injertos de hueso y los injertos de tejido que el caso requiera. La cantidad y el alcance exactos se confirman después de la evaluación clínica y de los estudios que estén indicados." },
                         ].map(({ q, a }) => (
                             <details key={q} className="border border-oro/12 rounded-xl group">
                                 <summary className="px-6 py-4 cursor-pointer list-none flex items-center justify-between text-crema font-manrope text-sm font-medium select-none">
@@ -114,7 +115,7 @@ export default function ImplantesPage() {
 
                 <section className="px-6 py-16 text-center border-t border-oro/10">
                     <h2 className="font-light text-3xl text-crema mb-4">Recuperá tu sonrisa <span className="font-cormorant italic text-oro">con estabilidad a largo plazo.</span></h2>
-                    <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Valoración clínica inicial con tomografía incluida.</p>
+                    <p className="text-crema/50 text-base mb-8 max-w-md mx-auto">Primera consulta clínica. Si ya tenés radiografías o estudios recientes, podés traerlos; no son un requisito excluyente.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">Consultar por WhatsApp →</a>
                     <p className="text-crema/25 text-xs mt-4">Camila O&apos;Gorman 412, Puerto Madero · Buenos Aires</p>
                 </section>

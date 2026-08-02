@@ -46,7 +46,12 @@ const faqItems = [
   {
     pregunta: "Can anyone get implants?",
     respuesta:
-      "You need enough jawbone volume to place the implant. In cases of bone loss, a graft can be done beforehand. General health also plays a role. We assess all of this with a CBCT scan at the first consultation.",
+      "You need enough jawbone volume and a health profile compatible with implant treatment. The first appointment is a clinical assessment. If a CBCT scan is needed to evaluate the bone, it is requested separately at an imaging centre.",
+  },
+  {
+    pregunta: "Do I need X-rays or a CBCT scan for the first consultation?",
+    respuesta:
+      "If you already have recent X-rays or imaging, please bring them because they may be useful. They are not required to attend the first consultation. If a CBCT scan is clinically indicated afterwards, it is requested separately and is not included in the consultation.",
   },
   {
     pregunta: "What is the investment for a dental implant in Buenos Aires?",
@@ -56,7 +61,7 @@ const faqItems = [
   {
     pregunta: "Are implants included in a complete oral rehabilitation?",
     respuesta:
-      "In comprehensive oral rehabilitations with a total investment of USD 24,000 to 30,000, one to four implants are usually included in the overall plan, together with the ceramic restorations. Bone grafting and soft-tissue grafting may also be included when clinically indicated. The exact number and scope are confirmed after the CBCT diagnosis.",
+      "In comprehensive oral rehabilitations with a total investment of USD 24,000 to 30,000, one to four implants are usually included in the overall plan, together with the ceramic restorations. Bone grafting and soft-tissue grafting may also be included when clinically indicated. The exact number and scope are confirmed after the clinical assessment and any imaging that is indicated.",
   },
   {
     pregunta: "Can I get implants if I am traveling from abroad?",
@@ -143,7 +148,7 @@ export default function DentalImplantsPage() {
                 <li className="flex gap-3"><span className="text-oro">◆</span> Soft-tissue grafting for aesthetic support</li>
                 <li className="flex gap-3"><span className="text-oro">◆</span> Crowns and ceramic restorations planned as one system</li>
               </ul>
-              <p className="text-crema/35 text-xs leading-relaxed mt-5 pt-5 border-t border-oro/10">The exact scope depends on diagnosis, implant distribution and biological complexity. It is confirmed after CBCT imaging and clinical planning.</p>
+              <p className="text-crema/35 text-xs leading-relaxed mt-5 pt-5 border-t border-oro/10">The exact scope depends on diagnosis, implant distribution and biological complexity. If CBCT imaging is clinically indicated, it is requested separately.</p>
             </div>
           </div>
         </section>
@@ -168,7 +173,7 @@ export default function DentalImplantsPage() {
               ))}
             </div>
             <p className="text-crema/30 text-xs">
-              Investment defined after CBCT (3D scan) diagnosis. USD amounts are paid in pesos at the official Banco Nación exchange rate.
+              Investment is defined after the clinical assessment and any imaging that is indicated. Imaging studies are arranged separately.
             </p>
           </div>
         </section>
@@ -183,11 +188,12 @@ export default function DentalImplantsPage() {
             </h2>
             <div className="space-y-0">
               {[
-                { n: "01", t: "CBCT diagnosis", d: "A 3D scan lets us measure bone volume and plan the exact position of the implant before any surgery." },
-                { n: "02", t: "Guided digital planning", d: "We design the placement on computer so the surgery is as precise and predictable as possible." },
-                { n: "03", t: "Placement surgery", d: "A 45 to 60 minute procedure under local anaesthesia. Most patients return to normal activity the next day." },
-                { n: "04", t: "Osseointegration", d: "The implant integrates with your bone over 2 to 3 months. During this period we coordinate check-ups." },
-                { n: "05", t: "Definitive crown", d: "Once integrated, we place the final ceramic or zirconia crown, made in our own laboratory." },
+                { n: "01", t: "Clinical assessment", d: "We assess your oral health and review any recent X-rays you may already have. These studies are not required for the first appointment." },
+                { n: "02", t: "Imaging when indicated", d: "If a CBCT scan is needed to measure bone volume, we request it separately at an imaging centre before surgical planning." },
+                { n: "03", t: "Guided digital planning", d: "We design the placement on computer so the surgery is as precise and predictable as possible." },
+                { n: "04", t: "Placement surgery", d: "A 45 to 60 minute procedure under local anaesthesia. Most patients return to normal activity the next day." },
+                { n: "05", t: "Osseointegration", d: "The implant integrates with your bone over 2 to 3 months. During this period we coordinate check-ups." },
+                { n: "06", t: "Definitive crown", d: "Once integrated, we place the final ceramic or zirconia crown, made in our own laboratory." },
               ].map((step, i, arr) => (
                 <div key={step.n} className={`flex gap-8 py-8 ${i < arr.length - 1 ? "border-b border-oro/10" : ""}`}>
                   <span className="text-oro/35 font-manrope font-light text-3xl flex-none w-12 pt-1">{step.n}</span>
