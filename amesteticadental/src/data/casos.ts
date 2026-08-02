@@ -76,6 +76,77 @@ export function localizeCaso(caso: Caso, lang: "es" | "en"): Caso {
 
 export const CASOS: Caso[] = [
     {
+        slug: "rehabilitacion-oral-completa-carillas-coronas-implantes",
+        titulo: "Renovó su sonrisa completa en menos de un mes",
+        subtitulo: "Recambio de coronas, puentes y coronas sobre implantes + carillas cerámicas en dientes naturales, con mejora de la mordida.",
+        descripcion: "Rehabilitación oral estética completa: recambio de coronas, puentes y coronas sobre implantes más carillas cerámicas en dientes naturales, con mejora de la mordida, en menos de un mes. Dr. Ariel Merino, AM Estética Dental, Camila O'Gorman 412, Puerto Madero, Buenos Aires.",
+        seoTitle: "Rehabilitación Oral Completa con Carillas, Coronas e Implantes | AM Estética Dental",
+        seoDescription: "Caso real de rehabilitación estética completa — coronas, puentes, coronas sobre implantes y carillas cerámicas con mejora de mordida en menos de un mes. Puerto Madero. Dr. Ariel Merino.",
+        categorias: ["Rehabilitación oral", "Diseño de sonrisa", "Carillas de porcelana", "Implantes"],
+        duracion: "Menos de 1 mes",
+        piezas: "Recambio de coronas, puentes y coronas sobre implantes + carillas cerámicas en dientes naturales — arcada superior e inferior",
+        tecnica: "Rehabilitación oral estética integral: recambio de restauraciones antiguas (coronas, puentes y coronas sobre implantes) + carillas cerámicas en dientes naturales + ajuste de la mordida (oclusión)",
+        fotoPortada: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/rehabilitacion-oral-completa-antes-despues-rostro-labios-portada-carillas-coronas-implantes-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+            alt: "Antes y después de rehabilitación oral completa con carillas cerámicas, coronas y coronas sobre implantes — rostro y labios — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires",
+        },
+        fotos: [
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/rehabilitacion-oral-completa-antes-despues-rostro-labios-portada-carillas-coronas-implantes-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+                alt: "Antes y después de rehabilitación oral completa con carillas cerámicas, coronas y coronas sobre implantes — rostro y labios — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires",
+                caption: "Antes y después — rehabilitación oral completa",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/sonrisa-envejecida-antes-rostro-frontal-rehabilitacion-oral-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.jpg",
+                alt: "Antes del tratamiento: sonrisa envejecida con restauraciones antiguas y color apagado — rostro frontal — AM Estética Dental, Puerto Madero, Buenos Aires",
+                caption: "Antes — restauraciones antiguas y color apagado",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/rehabilitacion-oral-completa-despues-rostro-frontal-resultado-natural-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.jpg",
+                alt: "Después de la rehabilitación oral completa: sonrisa renovada, fresca y natural — rostro frontal — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires",
+                caption: "Después — sonrisa renovada y natural",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/carillas-coronas-arcada-superior-antes-despues-intraoral-rehabilitacion-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+                alt: "Arcada superior antes y después — carillas cerámicas y coronas, vista intraoral — rehabilitación oral — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires",
+                caption: "Arcada superior — intraoral antes y después",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/carillas-coronas-arcada-inferior-antes-despues-intraoral-rehabilitacion-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+                alt: "Arcada inferior antes y después — carillas cerámicas y coronas, vista intraoral — rehabilitación oral — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires",
+                caption: "Arcada inferior — intraoral antes y después",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/rehabilitacion-oral-completa-labios-frontal-antes-despues-diseno-sonrisa-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+                alt: "Diseño de sonrisa en rehabilitación oral completa — labios frontal antes y después — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires",
+                caption: "Labios frontal — antes y después",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/rehabilitacion-oral-perfil-lateral-antes-despues-mordida-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+                alt: "Rehabilitación oral con mejora de mordida — vista lateral de la sonrisa antes y después — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires",
+                caption: "Vista lateral — antes y después",
+            },
+            {
+                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/rehabilitacion-oral-vista-lateral-oblicua-antes-despues-coronas-implantes-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+                alt: "Rehabilitación oral con coronas sobre implantes — vista lateral oblicua antes y después — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires",
+                caption: "Vista lateral oblicua — antes y después",
+            },
+        ],
+        copy: `Llegó con una sonrisa que ya no la representaba. Tenía coronas, puentes y coronas sobre implantes de años anteriores, con el color apagado y la forma envejecida. Quería algo más fresco y más joven, sin resignar naturalidad.
+
+El plan fue integral. Recambiamos todas las restauraciones antiguas —coronas, puentes y coronas sobre implantes— y sumamos carillas cerámicas en sus dientes naturales para unificar color y forma en toda la sonrisa. En el mismo proceso ajustamos la mordida, que era una de las cosas que más le importaba resolver.
+
+Todo en menos de un mes. Es una paciente exigente, una profesional que expone en público, y necesitaba un resultado que se viera real y le devolviera seguridad. Lo que más la sorprendió fue lo rápido que se pudo hacer con la tecnología actual.
+
+Hoy sonríe —y habla en público— con una confianza distinta.`,
+        copyRedes: `Coronas, puentes, coronas sobre implantes y carillas cerámicas. Recambio completo + mejora de mordida, en menos de un mes. Una sonrisa más fresca, más joven y natural.`,
+        precio: {
+            total: "Desde USD 26.000",
+            nota: "Rehabilitación oral completa. Valor orientativo: el definitivo depende del diagnóstico, la cantidad de piezas y las restauraciones sobre implantes.",
+        },
+        publicado: true,
+    },
+    {
         slug: "rehabilitacion-ceramica-ambos-maxilares-sin-cirugia-ortodoncia",
         titulo: "Una transformación que lleva más de 13 años en boca.",
         subtitulo: "Apiñamiento dentario resuelto con diseño de sonrisa y rehabilitación cerámica en ambos maxilares, sin cirugía y sin ortodoncia",
