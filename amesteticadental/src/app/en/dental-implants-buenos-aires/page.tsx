@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import Contacto from "@/components/Contacto";
 import { hreflangFor } from "@/lib/i18n-routes";
+import ImplantVideoShowcase from "@/components/ImplantVideoShowcase";
 
 const CANONICAL = "https://www.amesteticadental.com/en/dental-implants-buenos-aires";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I'd%20like%20information%20about%20dental%20implants.";
@@ -40,7 +41,7 @@ const faqItems = [
   {
     pregunta: "How long does a dental implant last?",
     respuesta:
-      "With normal care — good hygiene, annual check-ups, not smoking — dental implants can last a lifetime. The crown on top of the implant may need replacing every 15 to 20 years.",
+      "With good hygiene, regular check-ups and healthy habits, an implant can remain stable for many years. Its long-term performance depends on general health, bone, soft tissue and maintenance. The crown may also require replacement over time.",
   },
   {
     pregunta: "Can anyone get implants?",
@@ -51,6 +52,11 @@ const faqItems = [
     pregunta: "What is the investment for a dental implant in Buenos Aires?",
     respuesta:
       "At AM Estética Dental the treatment is split into two phases. Phase 1 (implant + extraction + bone graft + tissue graft) ranges from USD 1,200 to 1,500. Phase 2 (definitive crown) ranges from USD 1,200 to 1,500. The completed implant with crown totals USD 2,400 to 3,000. We use Straumann and Neodent implants (Straumann Group, Switzerland).",
+  },
+  {
+    pregunta: "Are implants included in a complete oral rehabilitation?",
+    respuesta:
+      "In comprehensive oral rehabilitations with a total investment of USD 24,000 to 30,000, one to four implants are usually included in the overall plan, together with the ceramic restorations. Bone grafting and soft-tissue grafting may also be included when clinically indicated. The exact number and scope are confirmed after the CBCT diagnosis.",
   },
   {
     pregunta: "Can I get implants if I am traveling from abroad?",
@@ -82,7 +88,7 @@ const OPTIONS = [
   { tipo: "Phase 1 — Implant", precio: "USD 1,200 – 1,500", nota: "All-inclusive: extraction + bone graft + tissue graft" },
   { tipo: "Phase 2 — Crown", precio: "USD 1,200 – 1,500", nota: "Ceramic or biomimetic zirconia" },
   { tipo: "Completed implant", precio: "USD 2,400 – 3,000", nota: "Straumann or Neodent (Straumann Group, Switzerland)" },
-  { tipo: "Full-arch rehabilitation", precio: "Assessed case by case", nota: "Fixed arch on 4 or 6 implants" },
+  { tipo: "Comprehensive rehabilitation", precio: "USD 24,000 – 30,000", nota: "One to four implants are usually included" },
 ];
 
 export default function DentalImplantsPage() {
@@ -105,7 +111,7 @@ export default function DentalImplantsPage() {
               <span className="font-cormorant italic text-oro">in Buenos Aires</span>
             </h1>
             <p className="text-crema/68 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-2xl">
-              The permanent solution for missing teeth. Swiss Straumann and Neodent implants. Computer-guided digital planning. Full osseointegration in 2 to 3 months.
+              A stable, long-term solution for missing teeth. Straumann and Neodent implants from the Swiss Straumann Group. Computer-guided digital planning. Osseointegration in 2 to 3 months.
             </p>
             <a
               href={WA}
@@ -117,6 +123,32 @@ export default function DentalImplantsPage() {
             </a>
           </div>
         </section>
+
+        <section className="py-20 px-6 md:px-12 bg-carbon border-y border-oro/10">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+            <div>
+              <span className="text-oro uppercase tracking-[0.4em] text-[10px] block mb-4">Comprehensive oral rehabilitation</span>
+              <h2 className="text-3xl md:text-4xl font-light text-crema leading-tight mb-5">
+                One to four implants are usually <span className="font-cormorant italic text-oro">included in the plan.</span>
+              </h2>
+              <p className="text-crema/60 text-sm md:text-base leading-relaxed">
+                For a complete smile rehabilitation, implants are not planned as isolated items. In comprehensive plans with a total investment of <strong className="text-crema font-medium">USD 24,000 to 30,000</strong>, one to four implants are usually included together with the ceramic restorations.
+              </p>
+            </div>
+            <div className="border border-oro/20 rounded-2xl p-6 md:p-8 bg-carbon-soft">
+              <p className="text-oro text-xs uppercase tracking-[0.25em] mb-5">When clinically indicated, the plan may include</p>
+              <ul className="space-y-3 text-crema/65 text-sm">
+                <li className="flex gap-3"><span className="text-oro">◆</span> One to four Straumann® or Neodent® implants</li>
+                <li className="flex gap-3"><span className="text-oro">◆</span> Bone augmentation or grafting</li>
+                <li className="flex gap-3"><span className="text-oro">◆</span> Soft-tissue grafting for aesthetic support</li>
+                <li className="flex gap-3"><span className="text-oro">◆</span> Crowns and ceramic restorations planned as one system</li>
+              </ul>
+              <p className="text-crema/35 text-xs leading-relaxed mt-5 pt-5 border-t border-oro/10">The exact scope depends on diagnosis, implant distribution and biological complexity. It is confirmed after CBCT imaging and clinical planning.</p>
+            </div>
+          </div>
+        </section>
+
+        <ImplantVideoShowcase lang="en" />
 
         {/* INVESTMENT */}
         <section className="py-24 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">

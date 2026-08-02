@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import CalculadoraFinanciacion from "@/components/CalculadoraFinanciacion";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
+import ImplantVideoShowcase from "@/components/ImplantVideoShowcase";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
@@ -39,7 +40,7 @@ const faqItems = [
   {
     pregunta: "¿Se cobra por implante o por tratamiento completo?",
     respuesta:
-      "Depende del caso. Para reemplazos unitarios se trabaja por pieza. Para rehabilitaciones completas sobre implantes (como dentaduras fijas All-on-4 o All-on-6) se planifica un presupuesto integral. En la evaluación inicial definimos el alcance exacto.",
+      "Depende del caso. Para reemplazos unitarios se trabaja por pieza. En rehabilitaciones integrales con una inversión de USD 24.000 a 30.000, entre uno y cuatro implantes suelen estar incluidos dentro del plan completo, junto con las restauraciones cerámicas y los injertos de hueso o tejido que estén indicados. La cantidad y el alcance exactos se confirman después del diagnóstico.",
   },
   {
     pregunta: "¿Ofrecen financiación para implantes?",
@@ -54,7 +55,7 @@ const faqItems = [
   {
     pregunta: "¿Cuánto dura un implante dental?",
     respuesta:
-      "Con los cuidados adecuados de higiene, no fumar y controles anuales, el tornillo de titanio del implante está diseñado para durar toda la vida. La corona sobre el implante puede necesitar reemplazo cada 15 a 20 años.",
+      "Con buena higiene, controles periódicos y hábitos saludables, un implante puede mantenerse durante muchos años. Su evolución depende de la salud general, el hueso, los tejidos y el mantenimiento. La corona sobre el implante también puede requerir recambio con el tiempo.",
   },
   {
     pregunta: "¿Los valores en USD se pagan en dólares o en pesos?",
@@ -123,11 +124,11 @@ export default function InversionImplantesPage() {
                 <span className="font-cormorant italic text-oro">en Buenos Aires</span>
               </h1>
               <p className="text-crema/68 font-manrope text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
-                Si estás buscando precio, lo más importante no es una cifra vacía: es entender qué material conviene, cuántas piezas necesitás y cómo es la planificación clínica para recuperar tu sonrisa de forma permanente.
+                La inversión no es una cifra aislada: depende del material, de cuántas piezas necesitás y de cómo se integra cada implante en una planificación clínica de largo plazo.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start">
                 <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-7 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-colors">
-                  Pedir presupuesto orientativo →
+                  Consultar la inversión para mi caso →
                 </a>
                 <Link href="/implantes-dentales-buenos-aires" className="inline-flex items-center gap-2 text-crema/55 font-manrope text-sm hover:text-crema transition-colors pt-3 sm:pt-4">
                   ← Ver tratamiento de implantes
@@ -145,6 +146,25 @@ export default function InversionImplantesPage() {
               <span className="absolute bottom-5 left-5 inline-flex items-center gap-1.5 border border-oro/30 bg-carbon/80 backdrop-blur-sm rounded-full px-3 py-1.5 text-[9px] uppercase tracking-[0.3em] text-oro">
                 Caso real · Implantes y Cerámicas
               </span>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 px-6 md:px-12 bg-carbon border-y border-oro/10">
+          <div className="max-w-5xl mx-auto rounded-3xl border border-oro/20 bg-carbon-soft p-8 md:p-12 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 items-center">
+            <div>
+              <span className="text-oro font-manrope uppercase tracking-[0.35em] text-[10px] block mb-4">Dos escenarios diferentes</span>
+              <h2 className="text-3xl md:text-4xl font-light text-crema leading-tight">
+                Implante individual o <span className="font-cormorant italic text-oro">rehabilitación integral.</span>
+              </h2>
+            </div>
+            <div>
+              <p className="text-crema/65 text-sm md:text-base leading-relaxed mb-4">
+                Los valores por pieza sirven para reemplazos aislados. Si la indicación es una rehabilitación oral completa, la inversión total suele ubicarse entre <strong className="text-crema font-medium">USD 24.000 y 30.000</strong> y se planifica como un conjunto.
+              </p>
+              <p className="text-crema/55 text-sm leading-relaxed">
+                En ese plan integral, de uno a cuatro implantes suelen estar incluidos, al igual que los rellenos o injertos de hueso y los injertos de tejido necesarios. La tomografía CBCT define la cantidad, la distribución y el alcance final.
+              </p>
             </div>
           </div>
         </section>
@@ -179,10 +199,11 @@ export default function InversionImplantesPage() {
                     { fase: "Oseointegración", precio: "—", incluye: "El implante se fusiona con el hueso", tiempo: "2 a 3 meses" },
                     { fase: "2ª Fase — Corona definitiva", precio: "USD 1.200 – 1.500", incluye: "Corona de cerámica o zirconio biomimética", tiempo: "2 sesiones" },
                     { fase: "Total terminado con corona", precio: "USD 2.400 – 3.000", incluye: "Implante Neodent® o Straumann® (Grupo Straumann)", tiempo: "3 a 4 meses" },
+                    { fase: "Rehabilitación oral integral", precio: "USD 24.000 – 30.000", incluye: "Cerámicas + 1 a 4 implantes e injertos, según diagnóstico", tiempo: "Según plan" },
                   ].map((row, i) => (
-                    <tr key={row.fase} className={`border-b border-oro/10 ${i === 3 ? "bg-oro/5" : i % 2 === 0 ? "bg-carbon" : "bg-carbon-soft"}`}>
-                      <td className={`py-4 px-6 font-manrope text-sm font-medium ${i === 3 ? "text-oro" : "text-crema"}`}>{row.fase}</td>
-                      <td className={`py-4 px-6 font-manrope text-sm font-semibold text-center ${i === 3 ? "text-oro" : "text-oro/80"}`}>{row.precio}</td>
+                    <tr key={row.fase} className={`border-b border-oro/10 ${i >= 3 ? "bg-oro/5" : i % 2 === 0 ? "bg-carbon" : "bg-carbon-soft"}`}>
+                      <td className={`py-4 px-6 font-manrope text-sm font-medium ${i >= 3 ? "text-oro" : "text-crema"}`}>{row.fase}</td>
+                      <td className={`py-4 px-6 font-manrope text-sm font-semibold text-center ${i >= 3 ? "text-oro" : "text-oro/80"}`}>{row.precio}</td>
                       <td className="py-4 px-6 text-crema/60 font-manrope text-sm text-center">{row.incluye}</td>
                       <td className="py-4 px-6 text-crema/60 font-manrope text-sm text-center">{row.tiempo}</td>
                     </tr>
@@ -257,7 +278,7 @@ export default function InversionImplantesPage() {
                     num: "03",
                     titulo: "Implante de Titanio (Tornillo)",
                     rol: "Raíz Artificial Osteointegrada",
-                    desc: "El tornillo de titanio puro que se coloca quirúrgicamente en el hueso maxilar. Actúa como la nueva raíz del diente. Trabajamos con Straumann® y Neodent®, marcas líderes que garantizan una fijación permanente de por vida.",
+                    desc: "El tornillo de titanio puro que se coloca quirúrgicamente en el hueso maxilar. Actúa como la nueva raíz del diente. Trabajamos con Straumann® y Neodent®, sistemas de referencia con amplio respaldo clínico y científico.",
                     incluido: "Incluido en el presupuesto"
                   }
                 ].map((item) => (
@@ -283,6 +304,8 @@ export default function InversionImplantesPage() {
             </div>
           </div>
         </section>
+
+        <ImplantVideoShowcase selection="investment" />
 
         {/* ── COMPARATIVA DE MARCAS: STRAUMANN vs NEODENT ── */}
         <section className="py-24 px-6 md:px-12 border-t border-oro/10 bg-carbon-soft">
