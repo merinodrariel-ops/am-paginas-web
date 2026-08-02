@@ -223,7 +223,7 @@ function BeforeAfterSlider({
 const SIM_COPY = {
   es: {
     eyebrow: "Simulador con IA · AM Estética Dental",
-    lead: "Subí una foto y generamos una simulación orientativa con IA. Gratis, en segundos.",
+    lead: "Subí una foto y generamos una simulación orientativa con IA. Sin compromiso, en segundos.",
     exampleLabel: "Ejemplo real · Carillas cerámicas AM Estética Dental",
     exampleNote: "Caso clínico real. La simulación IA sobre tu foto puede variar según tus características faciales.",
     tryNow: "Ahora probalo con tu foto",

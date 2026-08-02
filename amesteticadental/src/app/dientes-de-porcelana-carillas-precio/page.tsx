@@ -28,7 +28,7 @@ export default function DientesPorcelanaPage() {
                     <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">
-                        Consultar precio →
+                        Consultar inversión →
                     </a>
                 </header>
 
@@ -46,7 +46,7 @@ export default function DientesPorcelanaPage() {
                             </p>
                             <a href={WA} target="_blank" rel="noopener noreferrer"
                                 className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">
-                                Consultar precio →
+                                Consultar inversión →
                             </a>
                         </div>
                         <div className="grid grid-cols-2 gap-4">
