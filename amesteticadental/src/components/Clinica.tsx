@@ -181,7 +181,7 @@ export default function Clinica({ lang = "es" }: { lang?: "es" | "en" }) {
                         <div className="w-px h-8 bg-oro/15 hidden sm:block" />
                         <div>
                             <p className="font-manrope text-[10px] uppercase tracking-[0.3em] text-oro/60 mb-0.5">{ui.phoneLabel}</p>
-                            <p className="font-manrope text-sm text-crema/70">+54 11 7021-9298</p>
+                            <p className="font-manrope text-sm text-crema/70">+54 9 11 7021-9298</p>
                         </div>
                     </div>
                     <a

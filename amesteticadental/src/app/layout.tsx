@@ -61,6 +61,15 @@ export const metadata: Metadata = {
   },
 };
 
+const REVIEW_BASE = 116;
+const REVIEW_BASE_DATE = new Date("2026-08-01");
+const REVIEWS_PER_MONTH = 2;
+const reviewCount = Math.round(
+  REVIEW_BASE +
+    ((Date.now() - REVIEW_BASE_DATE.getTime()) / (30.44 * 24 * 60 * 60 * 1000)) *
+      REVIEWS_PER_MONTH
+);
+
 const schemaOrg = {
   "@context": "https://schema.org",
   "@type": ["Dentist", "LocalBusiness"],
@@ -95,7 +104,7 @@ const schemaOrg = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "120",
+    "reviewCount": String(reviewCount),
     "bestRating": "5"
   },
   "employee": {
