@@ -145,6 +145,34 @@ Hoy sonríe —y habla en público— con una confianza distinta.`,
             nota: "Rehabilitación oral completa. Valor orientativo: el definitivo depende del diagnóstico, la cantidad de piezas y las restauraciones sobre implantes.",
         },
         publicado: true,
+        en: {
+            titulo: "She renewed her entire smile in less than a month",
+            subtitulo: "Replacement of crowns, bridges and implant-supported crowns + ceramic veneers on her natural teeth, with an improved bite.",
+            descripcion: "Complete aesthetic oral rehabilitation: replacement of crowns, bridges and implant-supported crowns plus ceramic veneers on the natural teeth, with an improved bite, in less than a month. Dr. Ariel Merino, AM Estética Dental, Camila O'Gorman 412, Puerto Madero, Buenos Aires.",
+            seoTitle: "Full Oral Rehabilitation with Veneers, Crowns and Implants",
+            seoDescription: "Real case of complete aesthetic rehabilitation — crowns, bridges, implant-supported crowns and ceramic veneers with an improved bite in less than a month. Puerto Madero. Dr. Ariel Merino.",
+            categorias: ["Full rehabilitation", "Smile design", "Porcelain veneers", "Implants"],
+            duracion: "Less than 1 month",
+            piezas: "Replacement of crowns, bridges and implant-supported crowns + ceramic veneers on the natural teeth — upper and lower arches",
+            tecnica: "Comprehensive aesthetic oral rehabilitation: replacement of old restorations (crowns, bridges and implant-supported crowns) + ceramic veneers on the natural teeth + bite (occlusion) adjustment",
+            copy: `She arrived with a smile that no longer represented her. She had crowns, bridges and implant-supported crowns from previous years, with a dull colour and an aged shape. She wanted something fresher and younger, without giving up a natural look.
+
+The plan was comprehensive. We replaced all the old restorations —crowns, bridges and implant-supported crowns— and added ceramic veneers on her natural teeth to unify colour and shape across the whole smile. In the same process we adjusted the bite, which was one of the things she most wanted to resolve.
+
+All of it in less than a month. She is a demanding patient, a professional who speaks in public, and she needed a result that looked real and gave her back her confidence. What surprised her most was how quickly it could be done with today's technology.
+
+Today she smiles —and speaks in public— with a different kind of confidence.`,
+            fotos: [
+                { alt: "Before and after of a complete oral rehabilitation with ceramic veneers, crowns and implant-supported crowns — face and lips — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires", caption: "Before and after — full oral rehabilitation" },
+                { alt: "Before treatment: an aged smile with old restorations and dull colour — frontal face — AM Estética Dental, Puerto Madero, Buenos Aires", caption: "Before — old restorations and dull colour" },
+                { alt: "After the full oral rehabilitation: a renewed, fresh and natural smile — frontal face — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires", caption: "After — renewed, natural smile" },
+                { alt: "Upper arch before and after — ceramic veneers and crowns, intraoral view — oral rehabilitation — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires", caption: "Upper arch — intraoral before and after" },
+                { alt: "Lower arch before and after — ceramic veneers and crowns, intraoral view — oral rehabilitation — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires", caption: "Lower arch — intraoral before and after" },
+                { alt: "Smile design in a full oral rehabilitation — lips frontal before and after — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires", caption: "Lips frontal — before and after" },
+                { alt: "Oral rehabilitation with an improved bite — lateral view of the smile before and after — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires", caption: "Lateral view — before and after" },
+                { alt: "Oral rehabilitation with implant-supported crowns — oblique lateral view before and after — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires", caption: "Oblique lateral view — before and after" },
+            ],
+        },
     },
     {
         slug: "rehabilitacion-ceramica-ambos-maxilares-sin-cirugia-ortodoncia",
