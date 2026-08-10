@@ -47,6 +47,14 @@ const faqItems = [
         pregunta: "¿Cuánto duran las carillas de porcelana?",
         respuesta: "Con los cuidados adecuados, las carillas de porcelana duran entre 10 y 20 años. Es importante evitar morder objetos duros, usar protector nocturno si hay bruxismo y mantener la higiene dental de rutina.",
     },
+    {
+        pregunta: "¿Dónde puedo hacerme carillas dentales en Buenos Aires?",
+        respuesta: "AM Estética Dental atiende en Camila O'Gorman 412, Oficina 101, Puerto Madero, Ciudad Autónoma de Buenos Aires. Antes de elegir clínica conviene verificar tres cosas: con qué material trabajan, si el laboratorio es propio o tercerizado, y si te dejan probar el diseño en boca antes del cementado definitivo. Nosotros trabajamos con laboratorio propio dentro de la clínica y con prueba en boca en todos los casos de porcelana.",
+    },
+    {
+        pregunta: "¿Trabajan con laboratorio propio o tercerizado?",
+        respuesta: "Nuestro laboratorio es propio y funciona dentro de la clínica: el ceramista está en el mismo lugar donde te atendemos. Esto tiene dos consecuencias concretas. Primero, los tiempos: un diseño de sonrisa se completa en 2 a 3 sesiones en lugar de los meses que suele llevar coordinar con un laboratorio externo. Segundo, el control del detalle: si en la prueba en boca hay que corregir un matiz de color o un borde, se corrige ese mismo día y no en la próxima tanda de envíos.",
+    },
 ];
 
 const faqSchema = {
@@ -64,7 +72,7 @@ const serviceSchema = {
     "@type": "Service",
     "name": "Carillas Dentales",
     "serviceType": "Odontología Estética",
-    "description": "Carillas de porcelana y lentes de contacto dental mínimamente invasivos para mejorar color, forma y simetría de la sonrisa.",
+    "description": "Carillas de porcelana feldespática, disilicato de litio (IPS e.max) y lentes de contacto dental mínimamente invasivos para mejorar color, forma y simetría de la sonrisa. Laboratorio propio dentro de la clínica en Puerto Madero: el tratamiento se completa en 2 a 3 sesiones a lo largo de 2 a 4 semanas.",
     "provider": {
         "@type": "Dentist",
         "name": "AM Estética Dental",
@@ -136,6 +144,44 @@ export default function CarillasDentalesPage() {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                </section>
+
+                {/* ── FICHA / RESUMEN EXTRAÍBLE ──
+                    Texto plano y atómico, visible en el HTML (no en acordeón): es el bloque
+                    que buscadores y respuestas generativas citan. Dirección + materiales +
+                    laboratorio propio + tiempos, en frases cortas y verificables. */}
+                <section className="py-16 px-6 md:px-12 border-b border-oro/10">
+                    <div className="max-w-4xl mx-auto">
+                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">En resumen</span>
+                        <p className="text-crema/75 font-manrope text-base md:text-lg leading-relaxed mb-4">
+                            AM Estética Dental es una clínica de odontología estética ubicada en Camila O&apos;Gorman 412, Oficina 101, Puerto Madero, Ciudad Autónoma de Buenos Aires. Hacemos carillas de porcelana feldespática, disilicato de litio (IPS e.max) y lentes de contacto dental, siempre con técnicas mínimamente invasivas.
+                        </p>
+                        <p className="text-crema/75 font-manrope text-base md:text-lg leading-relaxed mb-10">
+                            Tenemos <strong className="text-crema font-medium">laboratorio propio dentro de la clínica</strong>: el ceramista trabaja en el mismo lugar donde te atendemos. Eso nos permite completar un diseño de sonrisa en 2 a 3 sesiones a lo largo de 2 a 4 semanas, y corregir un detalle de color o forma el mismo día en lugar de esperar semanas a un laboratorio externo. El equipo lo dirige el Dr. Ariel Merino, con más de 15 años dedicados exclusivamente a la estética dental.
+                        </p>
+                        <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-5">
+                            {[
+                                { k: "Dónde", v: "Camila O'Gorman 412, Of. 101 — Puerto Madero, CABA" },
+                                { k: "Materiales", v: "Porcelana feldespática, disilicato de litio (IPS e.max) y resina compuesta" },
+                                { k: "Laboratorio", v: "Propio, dentro de la clínica" },
+                                { k: "Sesiones", v: "2 a 3 sesiones, en 2 a 4 semanas" },
+                                { k: "Técnica", v: "Mínimamente invasiva, con diseño digital aprobado antes de tocar un diente" },
+                                { k: "Especialista", v: "Dr. Ariel Merino — 15+ años en estética dental" },
+                            ].map((f) => (
+                                <div key={f.k} className="border-t border-oro/10 pt-4">
+                                    <dt className="text-oro/70 font-manrope text-xs uppercase tracking-widest mb-1.5">{f.k}</dt>
+                                    <dd className="text-crema/80 font-manrope text-sm leading-relaxed">{f.v}</dd>
+                                </div>
+                            ))}
+                        </dl>
+                        <p className="text-crema/50 font-manrope text-sm leading-relaxed mt-10">
+                            ¿Estás comparando clínicas? Escribimos una guía con los siete criterios que conviene verificar antes de decidir —{" "}
+                            <Link href="/donde-hacerse-carillas-buenos-aires" className="text-oro/80 hover:text-oro underline underline-offset-4 transition-colors">
+                                dónde hacerte carillas en Buenos Aires
+                            </Link>
+                            .
+                        </p>
                     </div>
                 </section>
 
@@ -294,6 +340,7 @@ export default function CarillasDentalesPage() {
                         <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8 text-center">También puede interesarte</span>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             {[
+                                { nombre: "Dónde hacerte carillas", desc: "Los 7 criterios para comparar clínicas en Buenos Aires antes de decidir.", href: "/donde-hacerse-carillas-buenos-aires" },
                                 { nombre: "Lentes de Contacto Dental", desc: "La versión más conservadora para casos que permiten mínima o nula intervención.", href: "/lentes-de-contacto-dental" },
                                 { nombre: "Carillas sin Desgaste", desc: "Cuándo realmente se puede trabajar sin preparar el diente.", href: "/carillas-sin-desgaste" },
                                 { nombre: "Precio de Carillas", desc: "Qué cambia el valor según material, piezas y complejidad del caso.", href: "/precio-carillas-dentales-buenos-aires" },

@@ -25,6 +25,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/equipo-am", changeFrequency: "monthly", priority: 0.8 },
   { path: "/trabaja-en-am", changeFrequency: "monthly", priority: 0.6 },
   { path: "/precio-carillas-dentales-buenos-aires", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/donde-hacerse-carillas-buenos-aires", changeFrequency: "monthly", priority: 0.9 },
   { path: "/carillas-vs-alineadores", changeFrequency: "monthly", priority: 0.8 },
   { path: "/carillas-de-porcelana-vs-resina", changeFrequency: "monthly", priority: 0.8 },
   { path: "/odontologia-estetica-buenos-aires", changeFrequency: "monthly", priority: 0.9 },
