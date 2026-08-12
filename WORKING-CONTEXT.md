@@ -27,8 +27,13 @@ prioridades. Resumen de lo que cambió en producción:
   títulos de 70-90 caracteres con la marca duplicada.
 
 ### Pendiente y bloqueado por el Dr.
-- [ ] **Verificar `amesteticadental.uy` en Search Console y enviar el sitemap.**
-      Sin esto nada de lo anterior es medible. Es el paso #1.
+- [ ] 🚨 **Cargar los secretos de Search Console en GitHub.** El workflow
+      `search-console-sitemaps.yml` viene dando "success" en cada push pero es un
+      no-op: faltan `GOOGLE_SEARCH_CONSOLE_CLIENT_ID`, `_CLIENT_SECRET` y
+      `_REFRESH_TOKEN`, así que **nunca se envió un sitemap a Google desde el CI**,
+      ni de Argentina ni de Uruguay. Se arregla con `node get-token-gsc.mjs` +
+      cargar los tres valores en Settings → Secrets and variables → Actions.
+- [ ] **Verificar `amesteticadental.uy` en Search Console** y enviar el sitemap.
 - [ ] Google Business Profile de la sede uruguaya (requiere dirección atendible).
 
 ## Propósito

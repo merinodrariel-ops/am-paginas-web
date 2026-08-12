@@ -119,9 +119,19 @@ en URL y title mientras el cuerpo habla de **inversión**.
 
 ## 4. Lo que sigue, en orden de palanca
 
+0. **🚨 El envío automático de sitemaps a Google está apagado desde siempre.**
+   El workflow `search-console-sitemaps.yml` figura en verde en cada push, pero es
+   un no-op: los secretos `GOOGLE_SEARCH_CONSOLE_CLIENT_ID`, `_CLIENT_SECRET` y
+   `_REFRESH_TOKEN` **no están cargados en GitHub**, así que el job salta directo al
+   paso "Avisar si faltan secretos" y termina con éxito sin haber enviado nada.
+   Afecta a los cuatro sitios, no sólo a Uruguay. El script en sí está bien y ya
+   contempla `amesteticadental.uy/sitemap.xml`.
+   **Para arreglarlo:** correr `node get-token-gsc.mjs` (genera el refresh token) y
+   cargar los tres valores en Settings → Secrets and variables → Actions del repo.
+   Es lo único que hace falta; el workflow ya está escrito.
+
 1. **Verificar `amesteticadental.uy` en Search Console** y enviar el sitemap. Sin
-   esto, nada de lo anterior es medible. Es el paso #1 y requiere al Dr. (acceso a
-   la cuenta).
+   esto, nada de lo anterior es medible. Requiere al Dr. (acceso a la cuenta).
 2. **Google Business Profile de la sede uruguaya.** No se puede publicar hasta que
    haya dirección atendible, pero se puede preparar. Es el input más pesado del SEO
    local en Montevideo.
