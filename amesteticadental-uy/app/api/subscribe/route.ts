@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const BREVO_KEY = process.env.BREVO_API_KEY;
+const BREVO_LIST_ID = Number(process.env.BREVO_LIST_ID);
 
 export async function POST(req: NextRequest) {
   const { email, nombre } = await req.json();
@@ -9,9 +10,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Email requerido" }, { status: 400 });
   }
 
-  if (!BREVO_KEY) {
-    console.error("BREVO_API_KEY no configurada");
-    return NextResponse.json({ ok: true }); // No bloqueamos el UX
+  if (!BREVO_KEY || !Number.isInteger(BREVO_LIST_ID) || BREVO_LIST_ID < 1) {
+    console.error("Brevo no configurado");
+    return NextResponse.json({ error: "No podemos registrar datos en este momento." }, { status: 503 });
   }
 
   // Agregar contacto a Brevo
@@ -24,7 +25,7 @@ export async function POST(req: NextRequest) {
     body: JSON.stringify({
       email,
       attributes: { FIRSTNAME: nombre || "" },
-      listIds: [2], // Lista "AM Uruguay - Lista de Espera"
+      listIds: [BREVO_LIST_ID],
       updateEnabled: true,
     }),
   });
