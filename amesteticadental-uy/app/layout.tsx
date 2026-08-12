@@ -6,9 +6,9 @@ const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], weight
 const cormorant = Cormorant_Garamond({ variable: "--font-cormorant", subsets: ["latin"], weight: ["300","400"], style: ["normal","italic"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.amesteticadental.com.uy"),
+  metadataBase: new URL("https://www.amesteticadental.uy"),
   title: { default: "AM Estética Dental Uruguay — Carillas y Diseño de Sonrisa", template: "%s | AM Estética Dental Uruguay" },
-  description: "Especialistas en carillas de porcelana y diseño de sonrisa para pacientes uruguayos. Dr. Ariel Merino, AM Estética Dental. Atención en Buenos Aires, Argentina.",
+  description: "AM Estética Dental prepara su nueva sede en Montevideo, Uruguay. Carillas de porcelana, diseño de sonrisa y estética dental con el enfoque clínico del Dr. Ariel Merino.",
   robots: { index: true, follow: true },
   openGraph: { siteName: "AM Estética Dental Uruguay", locale: "es_UY", type: "website" },
 };

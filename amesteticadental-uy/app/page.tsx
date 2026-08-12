@@ -3,13 +3,13 @@ import Image from "next/image";
 import LeadForm from "./LeadForm";
 
 export const metadata: Metadata = {
-  title: "AM Estética Dental — Próximamente en Carrasco, Montevideo",
-  description: "La clínica de estética dental premium de Buenos Aires llega a Montevideo. Carrasco, Uruguay. Sé de los primeros en saberlo — dejá tu email y te avisamos.",
-  alternates: { canonical: "https://www.amesteticadental.com.uy" },
+  title: "AM Estética Dental — Próximamente en Montevideo",
+  description: "AM Estética Dental prepara su nueva sede en Miraflores 1445, Oficina 202, Montevideo. Sé de los primeros en conocer la apertura en Uruguay.",
+  alternates: { canonical: "https://www.amesteticadental.uy" },
   openGraph: {
-    title: "AM Estética Dental — Próximamente en Carrasco, Montevideo",
-    description: "La marca argentina de estética dental de alto nivel abre su primera sede en Uruguay. Dejá tu email y sé el primero en saberlo.",
-    url: "https://www.amesteticadental.com.uy",
+    title: "AM Estética Dental — Próximamente en Montevideo",
+    description: "La marca argentina de estética dental de alto nivel prepara su primera sede en Uruguay. Dejá tu email y sé de los primeros en saberlo.",
+    url: "https://www.amesteticadental.uy",
     images: [{ url: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires" }],
   },
 };
@@ -49,7 +49,7 @@ export default function HomePage() {
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: "1px solid rgba(201,169,110,0.4)", borderRadius: 100, padding: "8px 20px", marginBottom: 32 }}>
             <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--oro, #C9A96E)", display: "inline-block", animation: "pulse 2s infinite" }} />
             <span style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--oro, #C9A96E)" }}>
-              Próximamente · Carrasco, Montevideo
+              Próxima apertura · Montevideo
             </span>
           </div>
 
@@ -61,7 +61,7 @@ export default function HomePage() {
           </h1>
 
           <p style={{ fontSize: 15, lineHeight: 1.85, color: "var(--crema-dim, #A89F92)", marginBottom: 48, maxWidth: 480, margin: "0 auto 48px" }}>
-            AM Estética Dental — referente en carillas de porcelana y diseño de sonrisa en Argentina — abre su primera sede en Carrasco. Dejá tu email y sé de los primeros en saberlo.
+            AM Estética Dental — referente en carillas de porcelana y diseño de sonrisa en Argentina — prepara su primera sede uruguaya en Miraflores 1445, Oficina 202, Montevideo. Dejá tu email y sé de los primeros en saberlo.
           </p>
 
           {/* Formulario de leads */}
@@ -69,7 +69,7 @@ export default function HomePage() {
 
           {/* Social proof */}
           <div style={{ marginTop: 48, display: "flex", justifyContent: "center", gap: 40, flexWrap: "wrap" }}>
-            {[["20+", "Años de experiencia"], ["Puerto Madero", "Sede original Buenos Aires"], ["100%", "Casos reales documentados"]].map(([n, l]) => (
+            {[["20+", "Años de experiencia"], ["Miraflores 1445", "Nueva sede Montevideo"], ["100%", "Casos reales documentados"]].map(([n, l]) => (
               <div key={n} style={{ textAlign: "center" }}>
                 <div style={{ fontFamily: "var(--font-cormorant, Georgia, serif)", fontSize: 22, color: "var(--oro, #C9A96E)", marginBottom: 4 }}>{n}</div>
                 <div style={{ fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--crema-dim, #A89F92)" }}>{l}</div>
