@@ -109,6 +109,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="financing-section">
+        <div className="shell financing-grid">
+          <div><p className="eyebrow">FINANCIACIÓN</p><h2>Tu inversión,<br /><em>ordenada desde el inicio.</em></h2></div>
+          <div><p>Simulá el anticipo y las cuotas en USD. Vas a ver también el equivalente en pesos uruguayos con la cotización vendedora de Banco República.</p><Link href="/financiacion" data-track="uy_financing_click" className="button button-gold">Simular cuotas</Link></div>
+        </div>
+      </section>
+
       <section className="founder-section">
         <div className="shell founder-grid">
           <div className="founder-portrait"><Image src="https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg" alt="Dr. Ariel Merino, director clínico de AM Estética Dental" fill sizes="(max-width: 800px) 100vw, 40vw" /></div>

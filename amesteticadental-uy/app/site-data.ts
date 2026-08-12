@@ -3,6 +3,7 @@ export const ARGENTINA_URL = "https://www.amesteticadental.com";
 export const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=5491170219298";
 export const URUGUAY_JOBS_URL = "https://am-clinica-main.vercel.app/trabaja-en-am?source=uy";
 export const URUGUAY_SMILE_SIMULATOR_URL = "https://www.amesteticadental.com/sonrisa?source=uy";
+export const BROU_EXCHANGE_RATE_URL = "https://www.brou.com.uy/cotizaciones";
 export const LOGO_PUBLIC_ID = "am/uy/brand/logo-am-uruguay-clinica-dental-estetica-dental-carrasco-montevideo-miraflores-1445-oficina-202.png";
 export const LOGO_VERSION = "v1786512714";
 export const LOGO_BASE_URL = `https://res.cloudinary.com/drctvgyqd/image/upload/${LOGO_VERSION}/${LOGO_PUBLIC_ID}`;
