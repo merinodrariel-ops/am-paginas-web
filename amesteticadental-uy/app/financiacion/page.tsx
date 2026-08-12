@@ -7,7 +7,7 @@ import { breadcrumbSchema, JsonLd } from "../StructuredData";
 import { SITE_URL } from "../site-data";
 
 export const metadata: Metadata = {
-  title: "Financiación de estética dental en Montevideo",
+  title: { absolute: "Financiación de estética dental | AM Uruguay" },
   description: "Simulá anticipo y cuotas para tu tratamiento en AM Estética Dental Uruguay. Valores en USD y equivalente en pesos uruguayos según cotización BROU.",
   alternates: { canonical: `${SITE_URL}/financiacion` },
 };

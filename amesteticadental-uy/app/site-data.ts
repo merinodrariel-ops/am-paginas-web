@@ -189,7 +189,7 @@ export type TreatmentPage = {
 export const treatmentPages: Record<string, TreatmentPage> = {
   "carillas-dentales-montevideo": {
     title: "Carillas dentales en Montevideo",
-    metaTitle: "Carillas dentales en Montevideo — AM Estética Dental",
+    metaTitle: "Carillas dentales en Montevideo | AM Estética Dental",
     metaDescription:
       "Carillas cerámicas con criterio clínico y laboratorio propio. AM Estética Dental prepara su sede en Carrasco, Montevideo, y hoy atiende pacientes uruguayos en Buenos Aires.",
     eyebrow: "Próxima sede en zona Carrasco",
@@ -250,7 +250,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
 
   "diseno-de-sonrisa-montevideo": {
     title: "Diseño de sonrisa en Montevideo",
-    metaTitle: "Diseño de sonrisa en Montevideo — AM Estética Dental",
+    metaTitle: "Diseño de sonrisa en Montevideo | AM Estética Dental",
     metaDescription:
       "Diseño de sonrisa con planificación digital y criterio clínico. AM Estética Dental prepara su sede en Carrasco, Montevideo, y atiende pacientes uruguayos en Buenos Aires.",
     eyebrow: "Estética dental en Carrasco",
@@ -311,7 +311,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
 
   "estetica-dental-montevideo": {
     title: "Estética dental en Montevideo",
-    metaTitle: "Estética dental en Montevideo — AM Estética Dental",
+    metaTitle: "Estética dental en Montevideo | AM Estética Dental",
     metaDescription:
       "Estética dental con criterio clínico, materiales indicados y laboratorio propio. Próxima sede de AM Estética Dental en zona Carrasco, Montevideo.",
     eyebrow: "Próxima apertura · Carrasco",
@@ -372,7 +372,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
 
   "carillas-de-porcelana-montevideo": {
     title: "Carillas de porcelana en Montevideo",
-    metaTitle: "Carillas de porcelana en Montevideo — AM Estética Dental",
+    metaTitle: "Carillas de porcelana en Montevideo | AM Uruguay",
     metaDescription:
       "Carillas de porcelana con laboratorio propio y planificación digital. Próxima sede de AM Estética Dental en Carrasco, Montevideo.",
     eyebrow: "Planificación clínica individual",
@@ -433,7 +433,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
 
   "implantes-dentales-montevideo": {
     title: "Implantes dentales en Montevideo",
-    metaTitle: "Implantes dentales en Montevideo — AM Estética Dental",
+    metaTitle: "Implantes dentales en Montevideo | AM Estética Dental",
     metaDescription:
       "Implantes dentales con planificación digital y corona cerámica de laboratorio propio. Próxima sede de AM Estética Dental en Carrasco, Montevideo.",
     eyebrow: "Rehabilitación · Carrasco",
@@ -494,7 +494,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
 
   "blanqueamiento-dental-montevideo": {
     title: "Blanqueamiento dental en Montevideo",
-    metaTitle: "Blanqueamiento dental en Montevideo — AM Estética Dental",
+    metaTitle: "Blanqueamiento dental en Montevideo | AM Uruguay",
     metaDescription:
       "Blanqueamiento dental profesional con control clínico del esmalte y la sensibilidad. Próxima sede de AM Estética Dental en Carrasco, Montevideo.",
     eyebrow: "Tratamiento de entrada",
@@ -555,7 +555,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
 
   "precio-carillas-dentales-montevideo": {
     title: "Carillas dentales en Montevideo: la inversión",
-    metaTitle: "Precio de carillas dentales en Montevideo — AM Estética Dental",
+    metaTitle: "Precio de carillas dentales en Montevideo | AM Uruguay",
     metaDescription:
       "Cómo se compone la inversión en carillas dentales para pacientes de Montevideo: rangos en dólares, qué incluye y qué la hace variar. AM Estética Dental.",
     eyebrow: "Transparencia · Inversión",
@@ -632,7 +632,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
 
   "clinica-dental-carrasco": {
     title: "Clínica dental en Carrasco",
-    metaTitle: "Clínica dental en Carrasco, Montevideo — AM Estética Dental",
+    metaTitle: "Clínica dental en Carrasco, Montevideo | AM Uruguay",
     metaDescription:
       "La futura clínica de AM Estética Dental en Miraflores 1445, Oficina 202, zona Carrasco, Montevideo. Proyecto, avances y lista de novedades de apertura.",
     eyebrow: "Miraflores 1445 · Oficina 202",
@@ -693,7 +693,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
 
   "tratamiento-en-buenos-aires-desde-uruguay": {
     title: "Tratarte en Buenos Aires viviendo en Uruguay",
-    metaTitle: "Tratamiento dental en Buenos Aires desde Uruguay — AM Estética Dental",
+    metaTitle: "Tratamiento dental en Buenos Aires desde Uruguay | AM",
     metaDescription:
       "Cómo se organiza un tratamiento de estética dental en Puerto Madero para pacientes que viven en Montevideo: etapas, viajes y planificación a distancia.",
     eyebrow: "Mientras Carrasco se prepara",

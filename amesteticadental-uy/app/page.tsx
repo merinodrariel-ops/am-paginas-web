@@ -23,7 +23,7 @@ import {
 const heroImage = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires";
 
 export const metadata: Metadata = {
-  title: "AM Estética Dental en Carrasco, Montevideo",
+  title: { absolute: "AM Estética Dental — Carrasco, Montevideo" },
   description: "AM Estética Dental prepara su sede en Carrasco, Montevideo, con tecnología, laboratorio propio y el método AM: resultados no en meses, en días.",
   alternates: {
     canonical: SITE_URL,

@@ -25,7 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = treatmentPages[slug as TreatmentSlug];
   if (!page) return {};
   return {
-    title: page.metaTitle,
+    // `absolute` evita el template del layout: el metaTitle ya trae la marca y
+    // encadenarlos dejaba títulos de 80-90 caracteres con la marca repetida.
+    title: { absolute: page.metaTitle },
     description: page.metaDescription,
     alternates: {
       canonical: `${SITE_URL}/${slug}`,
