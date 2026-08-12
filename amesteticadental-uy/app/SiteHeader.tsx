@@ -6,6 +6,7 @@ const links = [
   ["Casos", "/casos-clinicos"],
   ["Tratamientos", "/estetica-dental-montevideo"],
   ["Dr. Merino", "/dr-ariel-merino"],
+  ["Trabajá", "/trabaja-en-am"],
   ["Prensa", "/prensa"],
 ] as const;
 

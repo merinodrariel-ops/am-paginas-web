@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import LeadForm from "./LeadForm";
 import SiteHeader from "./SiteHeader";
-import { ARGENTINA_URL, clinicAssets, sharedCases, treatmentPages, WHATSAPP_URL } from "./site-data";
+import { ARGENTINA_URL, URUGUAY_JOBS_URL, clinicAssets, sharedCases, treatmentPages, WHATSAPP_URL } from "./site-data";
 
 const heroImage = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires";
 
@@ -117,6 +117,13 @@ export default function HomePage() {
 
       <section className="location-section">
         <div className="shell location-grid"><div><p className="eyebrow">LA FUTURA SEDE</p><h2>Miraflores 1445,<br /><em>zona Carrasco.</em></h2></div><div><p>Estamos preparando la nueva sede de AM Estética Dental en una de las zonas más exclusivas de Montevideo.</p><p>Publicaremos avances reales del proyecto, imágenes del espacio y la fecha de apertura apenas estén confirmados.</p><a href={WHATSAPP_URL} data-track="uy_location_whatsapp_click" target="_blank" rel="noreferrer" className="text-link">Hablar con el equipo</a></div></div>
+      </section>
+
+      <section className="jobs-section">
+        <div className="shell jobs-grid">
+          <div><p className="eyebrow">EQUIPO URUGUAY</p><h2>Estamos armando<br /><em>la base de talento.</em></h2></div>
+          <div><p>Recibimos postulaciones de odontólogos, asistentes, laboratorio dental, arquitectura, edición, marketing y perfiles operativos para la sede de Carrasco.</p><p>Mientras desarrollamos la administración propia de Uruguay, las solicitudes entran al panel central de AM para gestionarlas sin demora.</p><a href={URUGUAY_JOBS_URL} data-track="uy_jobs_click" target="_blank" rel="noreferrer" className="button button-gold">Enviar postulación</a></div>
+        </div>
       </section>
 
       <section id="novedades" className="lead-section"><div className="shell lead-grid"><div><p className="eyebrow">LISTA DE NOVEDADES</p><h2>Conocé la apertura<br /><em>antes que nadie.</em></h2><p>Te contactaremos sólo con información concreta sobre la sede, la agenda y los próximos avances.</p></div><LeadForm /></div></section>
