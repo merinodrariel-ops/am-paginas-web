@@ -1,6 +1,35 @@
 # Working Context — AM Estética Dental
 
-Última actualización: 2026-07-13
+Última actualización: 2026-08-12
+
+---
+
+## Sesión del 12-08-2026 — la red AM pasa a ser un solo activo
+
+Ver **`docs/PLAN-MAESTRO-RED-AM.md`** para el diagnóstico completo y el orden de
+prioridades. Resumen de lo que cambió en producción:
+
+- **Cluster hreflang `es-AR` / `es-UY`** en 13 pares, declarado en los dos sitemaps
+  (24 entradas del lado argentino, 13 del uruguayo). Antes no existía: los dos
+  sitios en español competían entre sí por las mismas queries.
+- **Grafo de schema con `@id` compartidos**: `.uy` es `subOrganization` de la marca
+  y `branchOf` de la clínica argentina; el Dr. Merino reusa el `@id` de
+  `arielmerino.com` en los tres dominios.
+- **Enlaces de red**: fila "AM en la región" en el footer de `.com` (21 páginas),
+  footer completo nuevo en `.uy`, nota de The Dental Review sobre el corredor
+  rioplatense enlazando a `.uy`, y `arielmerino.com` enlazando a las cuatro.
+- **Uruguay pasa de 11 a 14 URLs indexables**, todas con contenido real. Nuevas:
+  implantes, blanqueamiento, precio/inversión, clínica de Carrasco y
+  `/tratamiento-en-buenos-aires-desde-uruguay` (la que puede convertir hoy, antes
+  de que abra la sede).
+- **Fixes**: los dos redirects salieron del sitemap uruguayo; la nav dejó de ser
+  `display:none` en mobile; el índice de noticias de TDR listaba 2 de 4 notas;
+  títulos de 70-90 caracteres con la marca duplicada.
+
+### Pendiente y bloqueado por el Dr.
+- [ ] **Verificar `amesteticadental.uy` en Search Console y enviar el sitemap.**
+      Sin esto nada de lo anterior es medible. Es el paso #1.
+- [ ] Google Business Profile de la sede uruguaya (requiere dirección atendible).
 
 ## Propósito
 
