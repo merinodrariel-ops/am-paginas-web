@@ -7,9 +7,12 @@ body { margin: 0; background: var(--carbon); color: var(--crema); -webkit-font-s
 a { color: inherit; }
 .shell { width: min(1180px, calc(100% - 64px)); margin: 0 auto; }
 .site-header { height: 82px; width: min(1280px, calc(100% - 48px)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 28px; position: relative; z-index: 10; }
-.brand { display: flex; flex-direction: column; line-height: 1; text-decoration: none; min-width: 100px; }
-.brand span { font-family: var(--font-cormorant), Georgia, serif; color: var(--oro); font-size: 29px; letter-spacing: 0; }
-.brand small { font-size: 7px; letter-spacing: .25em; color: var(--crema); margin-top: 3px; white-space: nowrap; }
+.brand { display: inline-flex; align-items: center; gap: 10px; line-height: 1; text-decoration: none; min-width: 142px; }
+.brand img { width: 40px; height: 40px; flex: 0 0 40px; object-fit: cover; border-radius: 50%; box-shadow: 0 0 0 1px rgba(246,241,231,.14); }
+.brand span { display: flex; flex-direction: column; min-width: 0; }
+.brand strong { font-family: var(--font-cormorant), Georgia, serif; color: var(--oro); font-size: 28px; font-weight: 300; letter-spacing: 0; }
+.brand small { font-size: 7px; letter-spacing: .2em; color: var(--crema); margin-top: 3px; white-space: nowrap; }
+.footer-brand { min-width: 210px; }
 .site-header nav { display: flex; align-items: center; gap: 25px; }
 .site-header nav a, .header-cta, .text-link, .site-footer a { font-size: 10px; letter-spacing: .13em; text-transform: uppercase; text-decoration: none; }
 .site-header nav a { color: var(--crema-dim); transition: color .2s; }.site-header nav a:hover { color: var(--oro); }

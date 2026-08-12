@@ -1,6 +1,12 @@
 export const SITE_URL = "https://www.amesteticadental.uy";
 export const ARGENTINA_URL = "https://www.amesteticadental.com";
 export const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=5491170219298";
+export const LOGO_PUBLIC_ID = "am/uy/brand/logo-am-uruguay-clinica-dental-estetica-dental-carrasco-montevideo-miraflores-1445-oficina-202.png";
+export const LOGO_VERSION = "v1786512714";
+export const LOGO_BASE_URL = `https://res.cloudinary.com/drctvgyqd/image/upload/${LOGO_VERSION}/${LOGO_PUBLIC_ID}`;
+export const LOGO_ICON_URL = `https://res.cloudinary.com/drctvgyqd/image/upload/w_192,h_192,c_fill,q_auto,f_auto/${LOGO_VERSION}/${LOGO_PUBLIC_ID}`;
+export const LOGO_APPLE_ICON_URL = `https://res.cloudinary.com/drctvgyqd/image/upload/w_180,h_180,c_fill,q_auto,f_auto/${LOGO_VERSION}/${LOGO_PUBLIC_ID}`;
+export const LOGO_OG_URL = `https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_630,c_pad,b_rgb:151716,q_auto,f_auto/${LOGO_VERSION}/${LOGO_PUBLIC_ID}`;
 
 export const sharedCases = [
   {

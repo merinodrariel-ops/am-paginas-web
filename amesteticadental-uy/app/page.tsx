@@ -3,9 +3,10 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import LeadForm from "./LeadForm";
 import SiteHeader from "./SiteHeader";
-import { ARGENTINA_URL, sharedCases, treatmentPages, WHATSAPP_URL } from "./site-data";
+import { ARGENTINA_URL, LOGO_PUBLIC_ID, LOGO_VERSION, sharedCases, treatmentPages, WHATSAPP_URL } from "./site-data";
 
 const heroImage = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires";
+const footerLogo = `https://res.cloudinary.com/drctvgyqd/image/upload/w_80,h_80,c_fill,q_auto,f_auto/${LOGO_VERSION}/${LOGO_PUBLIC_ID}`;
 
 export const metadata: Metadata = {
   title: "AM Estética Dental en Carrasco, Montevideo",
@@ -97,7 +98,7 @@ export default function HomePage() {
 
       <section id="novedades" className="lead-section"><div className="shell lead-grid"><div><p className="eyebrow">LISTA DE NOVEDADES</p><h2>Conocé la apertura<br /><em>antes que nadie.</em></h2><p>Te contactaremos sólo con información concreta sobre la sede, la agenda y los próximos avances.</p></div><LeadForm /></div></section>
 
-      <footer className="site-footer shell"><div className="brand"><span>AM</span><small>ESTÉTICA DENTAL · URUGUAY</small></div><p>Miraflores 1445 · Oficina 202 · Montevideo</p><a href={ARGENTINA_URL} target="_blank" rel="noreferrer">Conocé AM Estética Dental</a></footer>
+      <footer className="site-footer shell"><div className="brand footer-brand"><Image src={footerLogo} width={40} height={40} alt="" unoptimized /><span><strong>AM</strong><small>ESTÉTICA DENTAL · URUGUAY</small></span></div><p>Miraflores 1445 · Oficina 202 · Montevideo</p><a href={ARGENTINA_URL} target="_blank" rel="noreferrer">Conocé AM Estética Dental</a></footer>
     </main>
   );
 }
