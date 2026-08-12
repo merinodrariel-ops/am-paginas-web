@@ -9,7 +9,7 @@ const heroImage = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_au
 
 export const metadata: Metadata = {
   title: "AM Estética Dental en Carrasco, Montevideo",
-  description: "AM Estética Dental prepara su próxima sede en zona Carrasco, Montevideo. Conocé el enfoque clínico, los casos documentados y las novedades de apertura.",
+  description: "AM Estética Dental prepara su próxima sede en zona Carrasco, Montevideo. Conocé el método AM, su portfolio clínico y las novedades de apertura.",
   alternates: { canonical: "https://www.amesteticadental.uy" },
   openGraph: {
     title: "AM Estética Dental — Próximamente en Carrasco, Montevideo",
@@ -24,12 +24,12 @@ export default function HomePage() {
     <main>
       <SiteHeader />
       <section className="hero">
-        <Image src={heroImage} alt="Caso clínico documentado por AM Estética Dental en Buenos Aires" fill priority sizes="100vw" className="hero-image" />
+        <Image src={heroImage} alt="Transformación de sonrisa con el método AM Estética Dental" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-shade" />
         <div className="hero-content shell">
           <p className="eyebrow">PRÓXIMA APERTURA · ZONA CARRASCO</p>
           <h1>Una nueva forma de<br /><em>mirar tu sonrisa.</em></h1>
-          <p className="hero-lead">AM Estética Dental prepara su sede en Montevideo con el criterio clínico, los casos documentados y la atención al detalle que distinguen a la marca en Buenos Aires.</p>
+          <p className="hero-lead">AM Estética Dental prepara su sede en Montevideo con el método, el criterio clínico y la atención al detalle que distinguen a la marca.</p>
           <div className="hero-actions">
             <a href="#novedades" data-track="uy_waitlist_cta_click" className="button button-gold">Recibir novedades</a>
             <Link href="/casos-clinicos" data-track="uy_cases_archive_click" className="button button-quiet">Ver casos clínicos</Link>
@@ -43,27 +43,27 @@ export default function HomePage() {
           <p className="eyebrow">AM ESTÉTICA DENTAL EN URUGUAY</p>
           <div>
             <h2>El estándar ya existe.<br /><em>La sede está por abrir.</em></h2>
-            <p>La futura sede de zona Carrasco no parte de una promesa vacía. Parte de años de práctica clínica, planificación digital y casos reales documentados por el Dr. Ariel Merino y AM Estética Dental en Buenos Aires.</p>
-            <p>Mostramos ese archivo con total transparencia para que puedas conocer cómo pensamos antes de que la agenda uruguaya esté abierta.</p>
+            <p>La futura sede de zona Carrasco no parte de una promesa vacía. Parte de años de práctica clínica, planificación digital y transformaciones reales realizadas con el método AM.</p>
+            <p>Este portfolio muestra cómo pensamos, cómo planificamos y el nivel de resultado que queremos llevar a Montevideo.</p>
           </div>
         </div>
       </section>
 
       <section className="cases-section shell">
         <div className="section-heading">
-          <div><p className="eyebrow">CASOS REALES · BUENOS AIRES</p><h2>Resultados que hablan<br /><em>por el método.</em></h2></div>
+          <div><p className="eyebrow">PORTFOLIO CLÍNICO AM</p><h2>Resultados que hablan<br /><em>por el método.</em></h2></div>
           <Link href="/casos-clinicos" className="text-link">Explorar archivo clínico</Link>
         </div>
         <div className="case-grid">
           {sharedCases.slice(0, 3).map((caseItem) => (
             <a className="case-card" data-track="uy_case_to_ar_click" key={caseItem.slug} href={`${ARGENTINA_URL}/casos/${caseItem.slug}`} target="_blank" rel="noreferrer">
-              <Image src={caseItem.image} alt={`${caseItem.title}. Caso clínico documentado en Buenos Aires.`} fill sizes="(max-width: 700px) 100vw, 33vw" />
+              <Image src={caseItem.image} alt={`${caseItem.title}. Transformación realizada con el método AM.`} fill sizes="(max-width: 700px) 100vw, 33vw" />
               <span className="case-overlay" />
               <span className="case-copy"><small>{caseItem.treatment}</small><strong>{caseItem.title}</strong><i>Ver documentación completa</i></span>
             </a>
           ))}
         </div>
-        <p className="disclosure">Los tratamientos y las fotografías de esta sección fueron documentados por AM Estética Dental en Buenos Aires. Se presentan como antecedente clínico de la marca; la atención en Uruguay comenzará al confirmar la apertura de la sede.</p>
+        <p className="disclosure">Cada transformación refleja el método AM: diagnóstico, planificación digital, precisión clínica y un resultado diseñado para integrarse naturalmente a cada persona.</p>
       </section>
 
       <section className="method-section">
@@ -97,7 +97,7 @@ export default function HomePage() {
 
       <section id="novedades" className="lead-section"><div className="shell lead-grid"><div><p className="eyebrow">LISTA DE NOVEDADES</p><h2>Conocé la apertura<br /><em>antes que nadie.</em></h2><p>Te contactaremos sólo con información concreta sobre la sede, la agenda y los próximos avances.</p></div><LeadForm /></div></section>
 
-      <footer className="site-footer shell"><div className="brand"><span>AM</span><small>ESTÉTICA DENTAL · URUGUAY</small></div><p>Miraflores 1445 · Oficina 202 · Montevideo</p><a href={ARGENTINA_URL} target="_blank" rel="noreferrer">Sede Buenos Aires</a></footer>
+      <footer className="site-footer shell"><div className="brand"><span>AM</span><small>ESTÉTICA DENTAL · URUGUAY</small></div><p>Miraflores 1445 · Oficina 202 · Montevideo</p><a href={ARGENTINA_URL} target="_blank" rel="noreferrer">Conocé AM Estética Dental</a></footer>
     </main>
   );
 }

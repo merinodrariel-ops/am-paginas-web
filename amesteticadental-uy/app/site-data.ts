@@ -77,8 +77,8 @@ export const localFaqs = [
     answer: "Todavía no. Estamos preparando la sede de zona Carrasco en Miraflores 1445, Oficina 202. La web y la lista de novedades permiten conocer el proyecto y recibir la fecha de apertura cuando esté confirmada.",
   },
   {
-    question: "¿Los casos clínicos publicados fueron realizados en Uruguay?",
-    answer: "Los casos que mostramos fueron documentados en la sede de AM Estética Dental en Buenos Aires. Los presentamos para que conozcas el criterio clínico, el nivel de detalle y los resultados reales que respaldan la marca antes de la apertura en Uruguay.",
+    question: "¿Qué distingue al método AM?",
+    answer: "El método AM integra diagnóstico, planificación digital, criterio clínico, materiales indicados y atención a los detalles que hacen que una sonrisa se vea natural. Cada tratamiento se diseña de forma individual y se ejecuta con el mismo estándar de la marca.",
   },
   {
     question: "¿Qué tipo de tratamientos ofrecerá la sede de Carrasco?",

@@ -20,7 +20,7 @@ En GTM crear eventos/conversiones sobre los eventos ya emitidos por la web:
 | `uy_waitlist_cta_click` | Intención de lead |
 | `uy_whatsapp_click` | Inicio de conversación |
 | `uy_location_whatsapp_click` | Contacto desde ubicación |
-| `uy_case_to_ar_click` | Consulta de antecedente clínico |
+| `uy_case_to_ar_click` | Consulta de portfolio clínico |
 
 Crear una propiedad GA4 y, cuando haya pauta, una cuenta o conversión separada de Google Ads para Uruguay. No mezclar esos leads con Argentina: se pierde atribución, presupuesto y lectura comercial.
 
@@ -36,7 +36,7 @@ Crear una propiedad GA4 y, cuando haya pauta, una cuenta o conversión separada 
 
 ## Autoridad y contenido
 
-- Los casos uruguayos enlazan a la documentación clínica original en Buenos Aires y declaran su procedencia. Mantener esa transparencia.
+- Los casos representan el portfolio clínico de AM y enlazan a su detalle completo. El foco editorial es el método, la planificación y el estándar de la marca.
 - Hacer enlaces cruzados sólo cuando explican una relación real: perfil del Dr. Merino, archivo de casos, expansión de la marca y notas de prensa.
 - Conseguir enlaces locales reales: arquitecto del proyecto, proveedores, medios de Montevideo/Carrasco, sociedades profesionales y cobertura editorial del lanzamiento.
 - Publicar avances con material propio: inicio de obra, decisiones de diseño, equipamiento, final de obra y fecha de apertura. Cada publicación debe aportar información nueva, no sólo cambiar Buenos Aires por Montevideo.
