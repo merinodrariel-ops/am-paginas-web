@@ -8,6 +8,33 @@ export const LOGO_ICON_URL = `https://res.cloudinary.com/drctvgyqd/image/upload/
 export const LOGO_APPLE_ICON_URL = `https://res.cloudinary.com/drctvgyqd/image/upload/w_180,h_180,c_fill,q_auto,f_auto/${LOGO_VERSION}/${LOGO_PUBLIC_ID}`;
 export const LOGO_OG_URL = `https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_630,c_pad,b_rgb:151716,q_auto,f_auto/${LOGO_VERSION}/${LOGO_PUBLIC_ID}`;
 
+export const clinicAssets = [
+  {
+    title: "Miraflores 1445",
+    label: "Foto real exterior",
+    src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/v1786513859/am/uy/clinica-carrasco/fachada-consultorio-am-estetica-dental-uruguay-miraflores-1445-carrasco-montevideo.webp",
+    alt: "Fachada exterior de la futura clínica AM Estética Dental Uruguay en Miraflores 1445, zona Carrasco, Montevideo",
+  },
+  {
+    title: "Edificio en Carrasco",
+    label: "Foto real exterior",
+    src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/v1786513860/am/uy/clinica-carrasco/exterior-edificio-clinica-dental-am-uruguay-carrasco-montevideo-oficina-202.webp",
+    alt: "Exterior del edificio de la futura clínica dental AM Uruguay en Carrasco, Montevideo",
+  },
+  {
+    title: "Tecnología y laboratorio propio",
+    label: "Render del proyecto",
+    src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/v1786513860/am/uy/clinica-carrasco/render-proyecto-clinica-dental-tecnologia-laboratorio-propio-am-uruguay-carrasco.webp",
+    alt: "Render del proyecto de clínica dental AM Uruguay con foco en tecnología y laboratorio propio en Carrasco",
+  },
+  {
+    title: "Recepción AM Uruguay",
+    label: "Render del proyecto",
+    src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/v1786513861/am/uy/clinica-carrasco/render-recepcion-clinica-dental-premium-am-estetica-dental-uruguay-montevideo.webp",
+    alt: "Render de recepción premium para AM Estética Dental Uruguay en Montevideo",
+  },
+] as const;
+
 export const sharedCases = [
   {
     slug: "rehabilitacion-oral-completa-carillas-coronas-implantes",
