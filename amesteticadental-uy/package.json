@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "notify-index": "node scripts/notify-indexnow.mjs",
     "lint": "eslint"
   },
   "dependencies": {

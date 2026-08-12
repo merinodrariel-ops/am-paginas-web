@@ -1,0 +1,52 @@
+name: Google Search Console — enviar sitemaps
+
+# Google no ofrece indexación instantánea para páginas clínicas normales.
+# Este workflow usa la vía soportada: reenviar el sitemap actualizado a Search Console
+# después del deploy.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "amesteticadental/src/data/casos.ts"
+      - "amesteticadental/src/data/casosStatic.ts"
+      - "amesteticadental/src/app/**/page.tsx"
+      - "amesteticadental/src/app/sitemap.ts"
+      - "amesteticadental-uy/app/**/page.tsx"
+      - "amesteticadental-uy/app/sitemap.ts"
+      - "thedentalreview/app/**/page.tsx"
+      - "thedentalreview/app/sitemap.ts"
+      - "arielmerino/app/**/page.tsx"
+      - "arielmerino/app/sitemap.ts"
+      - "scripts/submit-google-sitemaps.mjs"
+  workflow_dispatch:
+
+concurrency:
+  group: google-search-console-sitemaps-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    env:
+      HAS_GSC_SECRETS: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_ID != '' && secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET != '' && secrets.GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN != '' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Esperar a que Vercel publique la nueva versión
+        if: env.HAS_GSC_SECRETS == 'true'
+        run: sleep 150
+
+      - name: Enviar sitemaps a Google Search Console
+        if: env.HAS_GSC_SECRETS == 'true'
+        env:
+          GOOGLE_SEARCH_CONSOLE_CLIENT_ID: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_ID }}
+          GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET }}
+          GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN }}
+        run: node scripts/submit-google-sitemaps.mjs
+
+      - name: Avisar si faltan secretos
+        if: env.HAS_GSC_SECRETS != 'true'
+        run: |
+          echo "::warning::Faltan secretos GOOGLE_SEARCH_CONSOLE_CLIENT_ID, GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET o GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN. No se enviaron sitemaps a Google."

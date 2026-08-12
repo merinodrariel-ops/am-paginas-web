@@ -12,6 +12,8 @@ on:
       - "amesteticadental/src/data/casosStatic.ts"
       - "amesteticadental/src/app/**/page.tsx"
       - "amesteticadental/src/app/sitemap.ts"
+      - "amesteticadental-uy/app/**/page.tsx"
+      - "amesteticadental-uy/app/sitemap.ts"
       - "thedentalreview/app/**/page.tsx"
       - "thedentalreview/app/sitemap.ts"
       - "arielmerino/app/**/page.tsx"
@@ -34,6 +36,10 @@ jobs:
 
       - name: Notificar URLs a IndexNow
         working-directory: amesteticadental
+        run: node scripts/notify-indexnow.mjs
+
+      - name: Notificar AM Uruguay a IndexNow
+        working-directory: amesteticadental-uy
         run: node scripts/notify-indexnow.mjs
 
       - name: Notificar The Dental Review a IndexNow
