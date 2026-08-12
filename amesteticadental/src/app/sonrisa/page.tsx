@@ -33,6 +33,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function SonrisaPage() {
-  return <SmileEntryClient />;
+type SonrisaPageProps = {
+  searchParams: Promise<{ source?: string }>;
+};
+
+export default async function SonrisaPage({ searchParams }: SonrisaPageProps) {
+  const { source } = await searchParams;
+  return <SmileEntryClient market={source === "uy" ? "uy" : "ar"} />;
 }

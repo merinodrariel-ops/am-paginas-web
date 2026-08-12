@@ -5,6 +5,7 @@ const links = [
   ["Clínica", "/#clinica"],
   ["Casos", "/casos-clinicos"],
   ["Tratamientos", "/estetica-dental-montevideo"],
+  ["Simulador IA", "/simulador-sonrisa"],
   ["Dr. Merino", "/dr-ariel-merino"],
   ["Trabajá", "/trabaja-en-am"],
   ["Prensa", "/prensa"],

@@ -25,6 +25,7 @@ export interface LeadInput {
   interestTags?: string[];
   message?: string;
   metadata?: Record<string, unknown>;
+  origin?: string;
 }
 
 export interface LeadResult {
@@ -62,7 +63,7 @@ export async function submitLead(input: LeadInput): Promise<LeadResult> {
     interest_tags: input.interestTags ?? [],
     notes: message,
     metadata: input.metadata ?? {},
-    origin: "web_form_amesteticadental",
+    origin: input.origin || "web_form_amesteticadental",
   });
 
   if (error) {

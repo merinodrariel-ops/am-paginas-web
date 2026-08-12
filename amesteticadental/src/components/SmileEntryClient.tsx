@@ -18,7 +18,6 @@ import { getUTMs, submitLead } from "@/lib/leads";
 
 const ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 const MAX_FILE_MB = 10;
-const WHATSAPP_NUMBER = "5491170219298";
 
 // Caso real AM Estética Dental para el demo
 const DEMO_BEFORE =
@@ -32,8 +31,28 @@ type SmileResult = {
 };
 
 type SimCopy = (typeof SIM_COPY)["es"] | (typeof SIM_COPY)["en"];
+type SmileMarket = "ar" | "uy";
 
-function buildWhatsappUrl(name: string, email: string, whatsapp: string, t: SimCopy) {
+const MARKET_CONFIG = {
+  ar: {
+    brand: "AM Estética Dental",
+    homeHref: "/",
+    whatsappNumber: "5491170219298",
+    email: "info@amesteticadental.com",
+    leadOrigin: "web_form_amesteticadental",
+    leadSource: "simulador_sonrisa_web",
+  },
+  uy: {
+    brand: "AM Estética Dental Uruguay",
+    homeHref: "https://www.amesteticadental.uy",
+    whatsappNumber: "5491170219298",
+    email: "amesteticadentaluruguay@gmail.com",
+    leadOrigin: "web_form_amesteticadental_uy",
+    leadSource: "simulador_sonrisa_web_uy",
+  },
+} as const;
+
+function buildWhatsappUrl(name: string, email: string, whatsapp: string, t: SimCopy, whatsappNumber: string) {
   const message = [
     t.waText,
     name ? `Mi nombre es ${name}.` : null,
@@ -43,10 +62,10 @@ function buildWhatsappUrl(name: string, email: string, whatsapp: string, t: SimC
   ]
     .filter(Boolean)
     .join("\n");
-  return `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+  return `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
 }
 
-function buildEmailUrl(name: string, email: string, whatsapp: string, t: SimCopy) {
+function buildEmailUrl(name: string, email: string, whatsapp: string, t: SimCopy, recipient: string) {
   const subject = t.emailSubject;
   const body = [
     t.waText,
@@ -61,7 +80,7 @@ function buildEmailUrl(name: string, email: string, whatsapp: string, t: SimCopy
   ]
     .filter(Boolean)
     .join("\n");
-  return `mailto:info@amesteticadental.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 async function compressFile(file: File): Promise<{ base64: string; dataUrl: string; mimeType: string }> {
@@ -223,7 +242,7 @@ function BeforeAfterSlider({
 const SIM_COPY = {
   es: {
     eyebrow: "Simulador con IA · AM Estética Dental",
-    lead: "Subí una foto y generamos una simulación orientativa con IA. Gratis, en segundos.",
+    lead: "Subí una foto y generamos una simulación orientativa con IA, en segundos.",
     exampleLabel: "Ejemplo real · Carillas cerámicas AM Estética Dental",
     exampleNote: "Caso clínico real. La simulación IA sobre tu foto puede variar según tus características faciales.",
     tryNow: "Ahora probalo con tu foto",
@@ -296,8 +315,9 @@ const SIM_COPY = {
 } as const;
 
 
-export default function SmileEntryClient({ lang = "es" }: { lang?: "es" | "en" }) {
+export default function SmileEntryClient({ lang = "es", market = "ar" }: { lang?: "es" | "en"; market?: SmileMarket }) {
   const t = SIM_COPY[lang];
+  const marketConfig = MARKET_CONFIG[market];
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [file, setFile] = useState<File | null>(null);
   const [dragging, setDragging] = useState(false);
@@ -309,8 +329,8 @@ export default function SmileEntryClient({ lang = "es" }: { lang?: "es" | "en" }
   const [processing, setProcessing] = useState(false);
   const [result, setResult] = useState<SmileResult | null>(null);
 
-  const whatsappUrl = useMemo(() => buildWhatsappUrl(fullName.trim(), email.trim(), whatsapp.trim(), t), [fullName, email, whatsapp, t]);
-  const emailUrl = useMemo(() => buildEmailUrl(fullName.trim(), email.trim(), whatsapp.trim(), t), [fullName, email, whatsapp, t]);
+  const whatsappUrl = useMemo(() => buildWhatsappUrl(fullName.trim(), email.trim(), whatsapp.trim(), t, marketConfig.whatsappNumber), [fullName, email, whatsapp, t, marketConfig]);
+  const emailUrl = useMemo(() => buildEmailUrl(fullName.trim(), email.trim(), whatsapp.trim(), t, marketConfig.email), [fullName, email, whatsapp, t, marketConfig]);
 
   function validateFile(nextFile: File) {
     if (!ACCEPTED_TYPES.includes(nextFile.type)) return t.errFormat;
@@ -348,11 +368,13 @@ export default function SmileEntryClient({ lang = "es" }: { lang?: "es" | "en" }
         email,
         whatsapp,
         interestTags: ["diseno_sonrisa", "carillas", "simulador_ia"],
-        message: "Lead generado desde el simulador público de sonrisa con IA.",
+        message: `Lead generado desde el simulador público de sonrisa con IA (${marketConfig.brand}).`,
+        origin: marketConfig.leadOrigin,
         metadata: {
           ...getUTMs(),
-          source: "simulador_sonrisa_web",
+          source: marketConfig.leadSource,
           page: "/sonrisa",
+          market,
           photoName: file.name,
           consent: true,
           referrer: typeof document !== "undefined" ? document.referrer : null,
@@ -363,8 +385,8 @@ export default function SmileEntryClient({ lang = "es" }: { lang?: "es" | "en" }
 
       if (typeof window !== "undefined") {
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: "smile_simulator_lead", event_category: "conversion", event_label: "simulador_sonrisa_ia" });
-        if (window.fbq) window.fbq("track", "Lead", { content_name: "Simulador sonrisa IA", content_category: "diseno_sonrisa" });
+        window.dataLayer.push({ event: "smile_simulator_lead", event_category: "conversion", event_label: marketConfig.leadSource, market });
+        if (window.fbq) window.fbq("track", "Lead", { content_name: `Simulador sonrisa IA ${marketConfig.brand}`, content_category: "diseno_sonrisa", market });
       }
 
       const response = await fetch("/api/smile-design/enhance", {
@@ -397,14 +419,14 @@ export default function SmileEntryClient({ lang = "es" }: { lang?: "es" | "en" }
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,13,13,0.96)_0%,rgba(13,13,13,0.80)_100%)]" />
 
         <div className="relative mx-auto max-w-3xl text-center">
-          <Link href="/" className="mb-10 inline-flex items-center gap-3">
+          <Link href={marketConfig.homeHref} className="mb-10 inline-flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="AM Estética Dental" className="h-9 w-auto" />
+            <img src="/logo.png" alt={marketConfig.brand} className="h-9 w-auto" />
           </Link>
 
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-oro/25 bg-carbon/45 px-4 py-2 text-[11px] font-black uppercase tracking-[0.24em] text-oro backdrop-blur">
             <Sparkles className="h-3.5 w-3.5" />
-            {t.eyebrow}
+            {t.eyebrow}{market === "uy" ? " · Uruguay" : ""}
           </div>
 
           <h1 className="text-5xl font-light leading-[0.96] tracking-tight text-crema md:text-7xl">

@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import LeadForm from "./LeadForm";
 import SiteHeader from "./SiteHeader";
-import { ARGENTINA_URL, URUGUAY_JOBS_URL, clinicAssets, sharedCases, treatmentPages, WHATSAPP_URL } from "./site-data";
+import { ARGENTINA_URL, URUGUAY_JOBS_URL, URUGUAY_SMILE_SIMULATOR_URL, clinicAssets, sharedCases, treatmentPages, WHATSAPP_URL } from "./site-data";
 
 const heroImage = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires";
 
@@ -97,6 +97,7 @@ export default function HomePage() {
             <article><span>01</span><div><h3>Diagnóstico antes que tendencia</h3><p>La estética empieza por entender la sonrisa, el rostro, la mordida y los objetivos de cada persona.</p></div></article>
             <article><span>02</span><div><h3>Planificación visible</h3><p>El diseño digital permite conversar las decisiones antes de iniciar un tratamiento.</p></div></article>
             <article><span>03</span><div><h3>Detalles que sostienen el resultado</h3><p>Materiales, textura, proporción y función se consideran en conjunto, no por separado.</p></div></article>
+            <div className="method-cta"><p>Conocé una primera visualización orientativa del diseño de sonrisa antes de solicitar una evaluación clínica.</p><a href={URUGUAY_SMILE_SIMULATOR_URL} data-track="uy_smile_simulator_click" className="button button-gold">Probar simulador con IA</a></div>
           </div>
         </div>
       </section>
