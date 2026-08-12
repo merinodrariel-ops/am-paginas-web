@@ -9,6 +9,7 @@ on:
     branches: [main]
     paths:
       - "amesteticadental/**"
+      - "amesteticadental-uy/**"
       - "thedentalreview/**"
       - "arielmerino/**"
       - ".github/workflows/ci.yml"
@@ -25,7 +26,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        site: [amesteticadental, thedentalreview, arielmerino]
+        site: [amesteticadental, amesteticadental-uy, thedentalreview, arielmerino]
     name: build ${{ matrix.site }}
     steps:
       - uses: actions/checkout@v4

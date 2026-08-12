@@ -1,5 +1,13 @@
 import type { MetadataRoute } from "next";
 import { getCasosPublicadosMerged } from "@/lib/public-cases";
+import { ES_BY_EN, hreflangFor } from "@/lib/i18n-routes";
+
+// Una página /en pertenece al mismo cluster que su par español: se resuelve el par
+// y se reusa el mismo bloque de idiomas.
+function languagesForPath(path: string): Record<string, string> {
+  const esPath = path.startsWith("/en") ? ES_BY_EN[path] : path === "" ? "/" : path;
+  return esPath ? hreflangFor(esPath) : {};
+}
 
 const SITE = "https://www.amesteticadental.com";
 
@@ -91,10 +99,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const casos = await getCasosPublicadosMerged();
 
   return [
-    ...STATIC_ROUTES.map(({ path, ...entry }) => ({
-      url: `${SITE}${path}`,
-      ...entry,
-    })),
+    // Cada ruta declara su cluster hreflang (es-AR / en-US / es-UY). Google acepta
+    // el cluster desde el sitemap; el sitemap de amesteticadental.uy declara el
+    // recíproco. Así queda bidireccional sin tocar las 50 páginas una por una.
+    ...STATIC_ROUTES.map(({ path, ...entry }) => {
+      const languages = languagesForPath(path);
+      return {
+        url: `${SITE}${path}`,
+        ...entry,
+        ...(Object.keys(languages).length > 0 ? { alternates: { languages } } : {}),
+      };
+    }),
     ...casos.map((caso) => ({
       url: `${SITE}/casos/${caso.slug}`,
       changeFrequency: "monthly" as const,

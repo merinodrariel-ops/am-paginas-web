@@ -35,16 +35,45 @@ export const EN_HOME = "/en";
 export const ES_HOME = "/";
 
 const SITE = "https://www.amesteticadental.com";
+const SITE_UY = "https://www.amesteticadental.uy";
 
-// Devuelve el bloque `languages` de hreflang para una página, dado su par ES/EN.
+// Mapa de pares Argentina ↔ Uruguay. Mismo idioma, distinto país: sin hreflang
+// es-AR/es-UY, Google trata a las dos páginas como duplicados en competencia y
+// suprime una. La clave es la URL argentina; el valor, la uruguaya.
+//
+// Sólo se emparejan páginas de intención equivalente. El recíproco vive en
+// `amesteticadental-uy/app/site-data.ts` (`AR_BY_UY`); los dos lados tienen que
+// declarar el cluster o Google lo ignora.
+export const UY_BY_ES: Record<string, string> = {
+  "/": "/",
+  "/carillas-dentales": "/carillas-dentales-montevideo",
+  "/diseno-de-sonrisa": "/diseno-de-sonrisa-montevideo",
+  "/estetica-dental": "/estetica-dental-montevideo",
+  "/dientes-de-porcelana-carillas-precio": "/carillas-de-porcelana-montevideo",
+  "/implantes-dentales-buenos-aires": "/implantes-dentales-montevideo",
+  "/blanqueamiento-dental-precio-buenos-aires": "/blanqueamiento-dental-montevideo",
+  "/precio-carillas-dentales-buenos-aires": "/precio-carillas-dentales-montevideo",
+  "/dentista-puerto-madero": "/clinica-dental-carrasco",
+  "/turismo-dental": "/tratamiento-en-buenos-aires-desde-uruguay",
+  "/casos-antes-y-despues": "/casos-clinicos",
+  "/dr-ariel-merino": "/dr-ariel-merino",
+  "/prensa": "/prensa",
+};
+
+// Devuelve el bloque `languages` de hreflang para una página, dado su par ES/EN
+// y, si existe, su equivalente uruguaya.
 export function hreflangFor(esPath: string): Record<string, string> {
   const enPath = EN_BY_ES[esPath];
-  if (!enPath) return {};
-  return {
-    "es-AR": `${SITE}${esPath}`,
-    "en-US": `${SITE}${enPath}`,
-    "x-default": `${SITE}${esPath}`,
+  const uyPath = UY_BY_ES[esPath];
+  if (!enPath && !uyPath) return {};
+
+  const languages: Record<string, string> = {
+    "es-AR": `${SITE}${esPath === "/" ? "" : esPath}`,
+    "x-default": `${SITE}${esPath === "/" ? "" : esPath}`,
   };
+  if (enPath) languages["en-US"] = `${SITE}${enPath}`;
+  if (uyPath) languages["es-UY"] = `${SITE_UY}${uyPath === "/" ? "" : uyPath}`;
+  return languages;
 }
 
 // Todos los pares, para el sitemap.

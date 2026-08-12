@@ -2,26 +2,47 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import LeadForm from "./LeadForm";
+import SiteFooter from "./SiteFooter";
 import SiteHeader from "./SiteHeader";
-import { ARGENTINA_URL, URUGUAY_JOBS_URL, URUGUAY_SMILE_SIMULATOR_URL, clinicAssets, sharedCases, treatmentPages, WHATSAPP_URL } from "./site-data";
+import { faqSchema, JsonLd } from "./StructuredData";
+import {
+  ARGENTINA_URL,
+  clinicAssets,
+  FEATURED_TREATMENTS,
+  hreflangFor,
+  localFaqs,
+  sharedCases,
+  SITE_URL,
+  treatmentPages,
+  URUGUAY_JOBS_URL,
+  URUGUAY_SMILE_SIMULATOR_URL,
+  whatsappFor,
+  type TreatmentSlug,
+} from "./site-data";
 
 const heroImage = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires";
 
 export const metadata: Metadata = {
   title: "AM Estética Dental en Carrasco, Montevideo",
   description: "AM Estética Dental prepara su sede en Carrasco, Montevideo, con tecnología, laboratorio propio y el método AM: resultados no en meses, en días.",
-  alternates: { canonical: "https://www.amesteticadental.uy" },
+  alternates: {
+    canonical: SITE_URL,
+    languages: hreflangFor("/"),
+  },
   openGraph: {
     title: "AM Estética Dental — Próximamente en Carrasco, Montevideo",
     description: "La próxima sede de AM Estética Dental en zona Carrasco, Montevideo.",
-    url: "https://www.amesteticadental.uy",
+    url: SITE_URL,
     images: [{ url: heroImage, width: 1200, height: 630, alt: "AM Estética Dental, próxima apertura en Carrasco" }],
   },
 };
 
 export default function HomePage() {
+  const featured = FEATURED_TREATMENTS.map((slug) => ({ slug, page: treatmentPages[slug as TreatmentSlug] }));
+
   return (
     <main>
+      <JsonLd data={faqSchema(localFaqs)} />
       <SiteHeader />
       <section className="hero">
         <Image src={heroImage} alt="Transformación de sonrisa con el método AM Estética Dental" fill priority sizes="100vw" className="hero-image" />
@@ -61,6 +82,9 @@ export default function HomePage() {
               <span>Flujo digital</span>
               <span>Zona Carrasco</span>
             </div>
+            <p style={{ marginTop: 28 }}>
+              <Link href="/clinica-dental-carrasco" className="text-link">Conocer el proyecto de Carrasco</Link>
+            </p>
           </div>
           <div className="clinic-gallery" aria-label="Imágenes de la futura clínica AM Estética Dental Uruguay">
             {clinicAssets.map((asset, index) => (
@@ -103,9 +127,33 @@ export default function HomePage() {
       </section>
 
       <section className="treatments shell">
-        <div className="section-heading"><div><p className="eyebrow">PRÓXIMAMENTE EN CARRASCO</p><h2>Estética dental con<br /><em>criterio clínico.</em></h2></div></div>
+        <div className="section-heading">
+          <div><p className="eyebrow">PRÓXIMAMENTE EN CARRASCO</p><h2>Estética dental con<br /><em>criterio clínico.</em></h2></div>
+          <Link href="/estetica-dental-montevideo" className="text-link">Ver todos los tratamientos</Link>
+        </div>
         <div className="treatment-grid">
-          {Object.entries(treatmentPages).map(([slug, page]) => <Link key={slug} href={`/${slug}`}><span>0{Object.keys(treatmentPages).indexOf(slug) + 1}</span><h3>{page.title}</h3><p>{page.intro}</p><i>Conocer el enfoque</i></Link>)}
+          {featured.map(({ slug, page }, index) => (
+            <Link key={slug} href={`/${slug}`}>
+              <span>0{index + 1}</span>
+              <h3>{page.title}</h3>
+              <p>{page.intro}</p>
+              <i>Conocer el enfoque</i>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="bridge-section">
+        <div className="shell bridge-grid">
+          <div>
+            <p className="eyebrow">MIENTRAS CARRASCO SE PREPARA</p>
+            <h2>Si no querés esperar,<br /><em>se resuelve en Buenos Aires.</em></h2>
+          </div>
+          <div>
+            <p>Hasta la apertura de la sede uruguaya, los pacientes de Montevideo se atienden en Puerto Madero. Menos de una hora de vuelo, y una planificación armada para concentrar el trabajo clínico en pocos días en lugar de estirarlo en viajes repetidos.</p>
+            <p>La evaluación inicial arranca a distancia, con fotos y antecedentes, antes de que compres un pasaje.</p>
+            <Link href="/tratamiento-en-buenos-aires-desde-uruguay" data-track="uy_bridge_click" className="button button-gold">Cómo se organiza</Link>
+          </div>
         </div>
       </section>
 
@@ -124,7 +172,17 @@ export default function HomePage() {
       </section>
 
       <section className="location-section">
-        <div className="shell location-grid"><div><p className="eyebrow">LA FUTURA SEDE</p><h2>Miraflores 1445,<br /><em>zona Carrasco.</em></h2></div><div><p>Estamos preparando la nueva sede de AM Estética Dental en una de las zonas más exclusivas de Montevideo.</p><p>Publicaremos avances reales del proyecto, imágenes del espacio y la fecha de apertura apenas estén confirmados.</p><a href={WHATSAPP_URL} data-track="uy_location_whatsapp_click" target="_blank" rel="noreferrer" className="text-link">Hablar con el equipo</a></div></div>
+        <div className="shell location-grid"><div><p className="eyebrow">LA FUTURA SEDE</p><h2>Miraflores 1445,<br /><em>zona Carrasco.</em></h2></div><div><p>Estamos preparando la nueva sede de AM Estética Dental en una de las zonas más exclusivas de Montevideo.</p><p>Publicaremos avances reales del proyecto, imágenes del espacio y la fecha de apertura apenas estén confirmados.</p><a href={whatsappFor("la futura sede de Carrasco")} data-track="uy_location_whatsapp_click" target="_blank" rel="noreferrer" className="text-link">Hablar con el equipo</a></div></div>
+      </section>
+
+      <section className="faq-section shell">
+        <p className="eyebrow">PREGUNTAS FRECUENTES</p>
+        {localFaqs.map((faq) => (
+          <details key={faq.question}>
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
       </section>
 
       <section className="jobs-section">
@@ -136,7 +194,7 @@ export default function HomePage() {
 
       <section id="novedades" className="lead-section"><div className="shell lead-grid"><div><p className="eyebrow">LISTA DE NOVEDADES</p><h2>Conocé la apertura<br /><em>antes que nadie.</em></h2><p>Te contactaremos sólo con información concreta sobre la sede, la agenda y los próximos avances.</p></div><LeadForm /></div></section>
 
-      <footer className="site-footer shell"><div className="brand footer-brand"><span>AM</span><small>ESTÉTICA DENTAL · URUGUAY</small></div><p>Miraflores 1445 · Oficina 202 · Montevideo</p><a href={ARGENTINA_URL} target="_blank" rel="noreferrer">Conocé AM Estética Dental</a></footer>
+      <SiteFooter />
     </main>
   );
 }
