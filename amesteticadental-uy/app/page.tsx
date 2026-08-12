@@ -1,10 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import LeadForm from "./LeadForm";
 import SiteHeader from "./SiteHeader";
 import { ARGENTINA_URL, sharedCases, treatmentPages, WHATSAPP_URL } from "./site-data";
 
 const heroImage = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires";
+
+export const metadata: Metadata = {
+  title: "AM Estética Dental en Carrasco, Montevideo",
+  description: "AM Estética Dental prepara su próxima sede en zona Carrasco, Montevideo. Conocé el enfoque clínico, los casos documentados y las novedades de apertura.",
+  alternates: { canonical: "https://www.amesteticadental.uy" },
+  openGraph: {
+    title: "AM Estética Dental — Próximamente en Carrasco, Montevideo",
+    description: "La próxima sede de AM Estética Dental en zona Carrasco, Montevideo.",
+    url: "https://www.amesteticadental.uy",
+    images: [{ url: heroImage, width: 1200, height: 630, alt: "AM Estética Dental, próxima apertura en Carrasco" }],
+  },
+};
 
 export default function HomePage() {
   return (
