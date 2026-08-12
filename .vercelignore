@@ -5,7 +5,6 @@ Carillas dentales/
 portafolio-diseno-de-sonrisa-am-estetica-dental/
 
 # Ignorar otros proyectos en desarrollo para no sobrecargar el despliegue
-amesteticadental-uy/
 arielmerino/
 
 # Ignorar dependencias y compilados locales (se compilan en los servidores de Vercel)
