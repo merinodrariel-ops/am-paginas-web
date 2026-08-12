@@ -9,9 +9,31 @@ Es odontólogo, no programador. Explicar sin jerga técnica cuando se comunica c
 | Carpeta | Sitio | Estado |
 |---|---|---|
 | `amesteticadental/` | amesteticadental.com | Producción (Vercel) |
-| `amesteticadental-uy/` | Uruguay (pendiente) | En desarrollo |
-| `arielmerino/` | arielmerino.com | En desarrollo |
-| `thedentalreview/` | thedentalreview.com | En desarrollo |
+| `amesteticadental-uy/` | amesteticadental.uy | Producción (preapertura Carrasco) |
+| `arielmerino/` | arielmerino.com | Producción |
+| `thedentalreview/` | thedentalreview.com | Producción |
+
+**Los cuatro son una sola marca, no cuatro proyectos.** Antes de tocar SEO,
+enlaces, schema o páginas nuevas, leer **`docs/PLAN-MAESTRO-RED-AM.md`**: explica
+cómo están conectadas las propiedades y qué NO hay que romper.
+
+### ⚠️ Cluster hreflang AR ↔ UY — se toca de a dos
+
+`amesteticadental.com` y `amesteticadental.uy` son los dos en español. El cluster
+`es-AR` / `es-UY` es lo único que evita que Google los trate como duplicados en
+competencia. Vive en dos mapas que **tienen que moverse juntos**:
+
+- `amesteticadental/src/lib/i18n-routes.ts` → `UY_BY_ES`
+- `amesteticadental-uy/app/site-data.ts` → `AR_BY_UY`
+
+Agregar una página a uno solo rompe la bidireccionalidad y Google ignora el cluster
+entero.
+
+### Páginas nuevas en Uruguay
+
+No se crean archivos: se agrega una entrada a `treatmentPages` en
+`amesteticadental-uy/app/site-data.ts`. La plantilla `app/[slug]/page.tsx` resuelve
+sitemap, hreflang, breadcrumbs, FAQ schema y enlaces relacionados sola.
 
 ## Reglas de negocio — NO ignorar
 
