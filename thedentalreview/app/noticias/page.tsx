@@ -8,7 +8,16 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.thedentalreview.com/noticias" },
 };
 
+// Todas las notas publicadas. Antes faltaban tres: quedaban huérfanas, sin
+// ningún enlace interno que las alcanzara desde el índice.
 const NEWS = [
+  {
+    href: "/noticias/estetica-dental-uruguay-montevideo-carrasco-2026",
+    title: "Montevideo entra al mapa de la estética dental premium",
+    description: "El corredor odontológico rioplatense se reconfigura: ahora son las clínicas las que cruzan el río.",
+    image: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/carillas-sin-ortodoncia/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental",
+    alt: "Resultado de diseño de sonrisa con carillas cerámicas",
+  },
   {
     href: "/noticias/carillas-ultrafinas-additive-dentistry-2026",
     title: "Cada vez se lima menos: el auge de las carillas ultrafinas en 2026",
@@ -22,6 +31,20 @@ const NEWS = [
     description: "La planificación digital, la inteligencia artificial y la impresión 3D redefinen el sector.",
     image: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires",
     alt: "Rehabilitación oral con implantes dentales y restauraciones cerámicas",
+  },
+  {
+    href: "/noticias/nobel-biocare-s-series-implantologia-2026",
+    title: "Nobel Biocare S Series: una nueva era en diseño de implantes",
+    description: "Una única conexión protésica para toda la plataforma. Qué cambia en el flujo clínico.",
+    image: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/rehabilitacion-oral-completa-antes-despues-rostro-labios-portada-carillas-coronas-implantes-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+    alt: "Rehabilitación oral completa con coronas e implantes dentales",
+  },
+  {
+    href: "/noticias/ia-diseno-sonrisa-digital-dsd-2026",
+    title: "IA y diseño digital de sonrisa: cuando la máquina elige mejor que el experto",
+    description: "Hasta dónde llega el algoritmo en la planificación estética y dónde empieza el criterio clínico.",
+    image: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+    alt: "Diseño de sonrisa con cierre de diastemas, antes y después",
   },
 ];
 

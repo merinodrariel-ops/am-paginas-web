@@ -15,10 +15,18 @@ const schema = {
   name: "Dr. Ariel Merino",
   jobTitle: "Odontólogo Especialista en Estética Dental",
   worksFor: { "@type": "Dentist", "@id": "https://www.amesteticadental.com/#clinic", name: "AM Estética Dental", url: "https://www.amesteticadental.com" },
+  // Este sitio es el ancla de la entidad Persona: los tres dominios de la marca
+  // reusan este mismo @id. Declarar acá las dos sedes cierra el grafo.
+  affiliation: [
+    { "@type": "Dentist", "@id": "https://www.amesteticadental.com/#clinic", name: "AM Estética Dental", url: "https://www.amesteticadental.com" },
+    { "@type": "Dentist", "@id": "https://www.amesteticadental.uy/#clinic", name: "AM Estética Dental Uruguay", url: "https://www.amesteticadental.uy" },
+  ],
   address: { "@type": "PostalAddress", addressLocality: "Puerto Madero", addressRegion: "Buenos Aires", addressCountry: "AR" },
   url: "https://www.arielmerino.com",
   sameAs: [
     "https://www.amesteticadental.com/dr-ariel-merino",
+    "https://www.amesteticadental.uy/dr-ariel-merino",
+    "https://www.thedentalreview.com",
     "https://www.wikidata.org/wiki/Q134287655",
     "https://www.instagram.com/drarielmerino",
     "https://www.youtube.com/c/ArielMerino",
@@ -106,6 +114,7 @@ export default function HomePage() {
             {[
               ["20+", "Años de experiencia"],
               ["Puerto Madero", "Buenos Aires, Argentina"],
+              ["Carrasco", "Montevideo, Uruguay · próxima sede"],
               ["Internacional", "Casos reconocidos en todo el mundo"],
             ].map(([n, l]) => (
               <div key={n} style={{ textAlign: "center" }}>
@@ -135,7 +144,8 @@ export default function HomePage() {
               ))}
             </div>
             <div style={{ marginTop: 40 }}>
-              <Link href="https://www.amesteticadental.com/casos" target="_blank" style={{ fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--oro, #C9A96E)", textDecoration: "none" }}>
+              {/* /casos redirige 301 a /casos-antes-y-despues: se enlaza el destino final. */}
+              <Link href="https://www.amesteticadental.com/casos-antes-y-despues" target="_blank" style={{ fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--oro, #C9A96E)", textDecoration: "none" }}>
                 Ver todos los casos →
               </Link>
             </div>
@@ -159,8 +169,10 @@ export default function HomePage() {
         <footer style={{ borderTop: "1px solid rgba(201,169,110,0.1)", padding: "20px 40px" }}>
           <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
             <span style={{ fontFamily: "var(--font-cormorant, Georgia, serif)", fontSize: 15 }}>Dr. Ariel Merino</span>
-            <div style={{ display: "flex", gap: 24 }}>
+            <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
               <Link href="https://www.amesteticadental.com" target="_blank" style={{ fontSize: 11, color: "var(--crema-dim, #A89F92)", textDecoration: "none" }}>AM Estética Dental</Link>
+              <Link href="https://www.amesteticadental.uy" target="_blank" style={{ fontSize: 11, color: "var(--crema-dim, #A89F92)", textDecoration: "none" }}>AM Uruguay</Link>
+              <Link href="https://www.thedentalreview.com" target="_blank" style={{ fontSize: 11, color: "var(--crema-dim, #A89F92)", textDecoration: "none" }}>The Dental Review</Link>
               <Link href="https://www.instagram.com/drarielmerino" target="_blank" style={{ fontSize: 11, color: "var(--crema-dim, #A89F92)", textDecoration: "none" }}>Instagram</Link>
               <Link href="https://www.youtube.com/c/ArielMerino" target="_blank" style={{ fontSize: 11, color: "var(--crema-dim, #A89F92)", textDecoration: "none" }}>YouTube</Link>
             </div>

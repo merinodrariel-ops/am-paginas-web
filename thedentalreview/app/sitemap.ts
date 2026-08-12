@@ -47,6 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${SITE}/noticias/estetica-dental-uruguay-montevideo-carrasco-2026`,
+      lastModified: new Date("2026-08-12"),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
       url: `${SITE}/casos/gingivectomia-laser-micro-diseno-sonrisa-resina`,
       lastModified: new Date("2026-07-14"),
       changeFrequency: "monthly",
