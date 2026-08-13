@@ -52,7 +52,12 @@ export const UY_BY_ES: Record<string, string> = {
   "/dientes-de-porcelana-carillas-precio": "/carillas-de-porcelana-montevideo",
   "/implantes-dentales-buenos-aires": "/implantes-dentales-montevideo",
   "/blanqueamiento-dental-precio-buenos-aires": "/blanqueamiento-dental-montevideo",
-  "/precio-carillas-dentales-buenos-aires": "/precio-carillas-dentales-montevideo",
+  // NO se empareja /precio-carillas-dentales-buenos-aires con su equivalente
+  // uruguaya, y es a propósito. Search Console (may–ago 2026) muestra que esa
+  // página se lleva 37 de los 97 clics uruguayos del sitio, en posición 5,6.
+  // El hreflang le diría a Google que a un uruguayo le muestre la versión .uy:
+  // una página sin autoridad, de una sede que todavía no atiende. Sería cambiar
+  // un activo que convierte por una promesa. Se agrega cuando Carrasco abra.
   "/dentista-puerto-madero": "/clinica-dental-carrasco",
   "/turismo-dental": "/tratamiento-en-buenos-aires-desde-uruguay",
   "/casos-antes-y-despues": "/casos-clinicos",

@@ -7,7 +7,8 @@ const CANONICAL = "https://www.amesteticadental.com/blog/cuanto-cuestan-las-cari
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "¿Cuánto cuestan las carillas en Argentina? Guía 2026 | AM",
-    description: "Cuánto cuesta ponerse carillas dentales en Argentina en 2026: rangos de mercado por material, por qué varían tanto los precios, y qué explica la diferencia entre una carilla económica y una premium.",
+    // 198 caracteres: Google la cortaba a la mitad. Recortada a 156.
+    description: "Cuánto cuesta ponerse carillas en Argentina en 2026: rangos por material y qué explica que una carilla cueste tres veces más que otra en la clínica de al lado.",
     alternates: {
         canonical: CANONICAL,
     },

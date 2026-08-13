@@ -10,9 +10,15 @@ import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Carillas Dentales desde USD 1.000 — Precios 2026 | AM",
+  // Página con 148.122 impresiones y 1,6% de CTR en posición 6,3 (may–ago 2026):
+  // la de mayor volumen del sitio por lejos. El título anterior decía "desde USD
+  // 1.000" y la descripción "USD 500-1.500", contradiciéndose en la misma SERP; y
+  // prometía "financiación sin interés" cuando la propia página informa tasa fija
+  // del 18% anual. Ahora el título ancla en la cerámica (el producto premium, no
+  // el más barato) y la descripción coincide con lo que el paciente encuentra.
+  title: "Carillas cerámicas desde USD 1.000 — Precios 2026 | AM",
   description:
-    "Precios actualizados 2026: USD 500-1.500 por pieza. Tabla de costos reales, casos antes/después, calculadora de financiación sin interés. Dr. Ariel Merino, Puerto Madero.",
+    "Carillas cerámicas de USD 1.000 a 1.500 y resina USD 500 por pieza. Tabla de inversión, casos reales y financiación propia. Laboratorio propio en Puerto Madero.",
   keywords: "precio carillas dentales Buenos Aires, costo carillas porcelana Argentina, carillas dentales precio 2026, financiación carillas Puerto Madero, cuánto cuestan las carillas dentales",
   alternates: {
     canonical: "https://www.amesteticadental.com/precio-carillas-dentales-buenos-aires",

@@ -784,11 +784,22 @@ export const INDEXABLE_ROUTES: { path: string; priority: number; changeFrequency
  * equivalente. Sin hreflang, Google elige uno y suprime el otro (canibalización).
  * La clave es la ruta uruguaya; el valor, su equivalente argentina.
  */
+
+// Pares excluidos del cluster aunque la página uruguaya tenga equivalente argentina.
+//
+// `/precio-carillas-dentales-montevideo` queda afuera por datos: Search Console
+// (may–ago 2026) muestra que la página argentina de precios se lleva 37 de los 97
+// clics uruguayos del sitio, en posición 5,6. Declarar el par haría que Google le
+// sirva a los uruguayos la versión .uy — sin autoridad y de una sede que todavía
+// no atiende. El enlace hacia la página argentina se mantiene; lo que no se hace
+// es pedirle a Google que la reemplace. Se suma cuando Carrasco abra.
+const PARES_EN_ESPERA = new Set(["/precio-carillas-dentales-montevideo"]);
+
 export const AR_BY_UY: Record<string, string> = {
   "/": "/",
   ...Object.fromEntries(
     Object.entries(treatmentPages)
-      .filter(([, page]) => page.arCounterpart)
+      .filter(([slug, page]) => page.arCounterpart && !PARES_EN_ESPERA.has(`/${slug}`))
       .map(([slug, page]) => [`/${slug}`, page.arCounterpart as string]),
   ),
   "/casos-clinicos": "/casos-antes-y-despues",

@@ -5,8 +5,12 @@ import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Carillas de Mínima Preparación del Esmalte | Dr. Ariel Merino",
-    description: "Qué técnicas de carillas conservan más el esmalte y cuánta preparación necesita realmente cada caso. Análisis clínico honesto + casos reales con 10+ años de seguimiento.",
+    // El <title> tiene que responder la pregunta que la gente escribe. El anterior
+    // ("Carillas de Mínima Preparación del Esmalte") no coincidía con ninguna query
+    // real: la página acumulaba 17.093 impresiones con 0,4% de CTR en posición 5,9,
+    // mientras el openGraph y el schema de esta misma página sí preguntaban bien.
+    title: "¿Las carillas dañan los dientes? Qué pasa con tu esmalte | AM",
+    description: "Cuánto esmalte se prepara realmente para una carilla: 0,4 mm frente a los 2,2 mm de espesor natural. Respuesta clínica honesta y casos con más de 10 años de seguimiento.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog/las-carillas-danan-los-dientes",
     },
@@ -46,7 +50,7 @@ const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20
 const MITOS = [
     {
         mito: "«Las carillas destruyen el esmalte»",
-        realidad: "El desgaste de esmalte en carillas modernas es mínimo — entre 0,3 y 0,7 mm en el caso de las carillas de porcelana convencionales, y cero en los lentes de contacto dental. Para ponerlo en contexto: el esmalte natural tiene entre 2 y 2,5 mm de grosor. El desgaste necesario representa menos del 30% de la capa de esmalte, y solo en la superficie frontal.",
+        realidad: "La preparación del esmalte en carillas modernas es mínima — entre 0,3 y 0,7 mm en las carillas de porcelana convencionales, y aún menor en los lentes de contacto dental. Para ponerlo en contexto: el esmalte natural tiene entre 2 y 2,5 mm de grosor. La preparación necesaria representa menos del 30% de la capa de esmalte, y solo en la superficie frontal. En la mayoría de los casos hace falta alguna preparación: el objetivo es que sea la menor compatible con un resultado estable.",
         veredicto: "Mito",
     },
     {
@@ -203,15 +207,15 @@ export default function ArticuloCarillasDananDientes() {
                                     {/* Caso 3: Lente de contacto dental */}
                                     <div>
                                         <div className="flex justify-between text-[11px] font-manrope mb-1.5">
-                                            <span className="text-crema/70">Sin Preparación <span className="text-green-400/70">(Lente de Contacto Dental)</span></span>
-                                            <span className="text-green-400 font-semibold">0.0 mm (0% de desgaste)</span>
+                                            <span className="text-crema/70">Preparación Mínima <span className="text-green-400/70">(Lente de Contacto Dental)</span></span>
+                                            <span className="text-green-400 font-semibold">hasta 0.3 mm (aprox. 13%)</span>
                                         </div>
                                         <div className="w-full h-3 bg-carbon rounded-full overflow-hidden border border-green-500/20 relative">
-                                            <div className="h-full bg-green-500/30 rounded-full w-0" />
-                                            <div className="absolute inset-0 bg-crema/80" />
+                                            <div className="h-full bg-green-500/30 rounded-full w-[13%]" />
+                                            <div className="absolute right-0 top-0 h-full w-[87%] bg-crema/80" />
                                         </div>
                                         <span className="text-[10px] text-green-400/60 font-manrope mt-1 block">
-                                            El diente se mantiene 100% intacto. La carilla ultra delgada se adhiere directamente.
+                                            La técnica ultrafina reduce la preparación al mínimo. El grado exacto se define en cada caso.
                                         </span>
                                     </div>
                                 </div>
