@@ -45,13 +45,41 @@ async function getAccessToken() {
   return body.access_token;
 }
 
-function getSiteUrl(sitemapUrl) {
-  const parsed = new URL(sitemapUrl);
-  return `${parsed.origin}/`;
+/**
+ * Devuelve las propiedades verificadas de la cuenta.
+ *
+ * Hace falta consultarlas porque el identificador de una propiedad NO se puede
+ * derivar del dominio: Search Console distingue entre propiedad de prefijo de URL
+ * (`https://www.thedentalreview.com/`) y propiedad de dominio
+ * (`sc-domain:amesteticadental.com`). Construir el identificador a mano —como se
+ * hacía antes— apuntaba a una propiedad inexistente y la API respondía 403.
+ */
+async function fetchVerifiedSites(accessToken) {
+  const response = await fetch("https://www.googleapis.com/webmasters/v3/sites", {
+    headers: { Authorization: `Bearer ${accessToken}` },
+  });
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new Error(`No se pudo leer la lista de propiedades (HTTP ${response.status}): ${JSON.stringify(body)}`);
+  }
+  return (body.siteEntry || []).map((entry) => entry.siteUrl);
 }
 
-async function submitSitemap(accessToken, sitemapUrl) {
-  const siteUrl = getSiteUrl(sitemapUrl);
+/** Resuelve qué propiedad verificada corresponde a un sitemap. */
+function resolveSiteUrl(sitemapUrl, verifiedSites) {
+  const { origin, hostname } = new URL(sitemapUrl);
+  const bareDomain = hostname.replace(/^www\./, "");
+
+  const urlPrefix = `${origin}/`;
+  if (verifiedSites.includes(urlPrefix)) return urlPrefix;
+
+  const domainProperty = `sc-domain:${bareDomain}`;
+  if (verifiedSites.includes(domainProperty)) return domainProperty;
+
+  return null;
+}
+
+async function submitSitemap(accessToken, sitemapUrl, siteUrl) {
   const endpoint = new URL(
     `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/sitemaps/${encodeURIComponent(sitemapUrl)}`
   );
@@ -71,14 +99,25 @@ async function main() {
   const sitemaps = process.argv.slice(2);
   const sitemapList = sitemaps.length > 0 ? sitemaps : DEFAULT_SITEMAPS;
   const accessToken = await getAccessToken();
+  const verifiedSites = await fetchVerifiedSites(accessToken);
   const failures = [];
 
   console.log(`Submitting ${sitemapList.length} sitemap(s) to Google Search Console...`);
+  console.log(`Propiedades verificadas en la cuenta: ${verifiedSites.join(", ") || "(ninguna)"}`);
 
   for (const sitemapUrl of sitemapList) {
+    const siteUrl = resolveSiteUrl(sitemapUrl, verifiedSites);
+
+    // Un dominio sin verificar no es un error del deploy: es una tarea pendiente
+    // en Search Console. Se avisa y se sigue, en vez de romper el workflow entero.
+    if (!siteUrl) {
+      console.warn(`SKIP ${sitemapUrl} — el dominio no está verificado en Search Console.`);
+      continue;
+    }
+
     try {
-      await submitSitemap(accessToken, sitemapUrl);
-      console.log(`OK ${sitemapUrl}`);
+      await submitSitemap(accessToken, sitemapUrl, siteUrl);
+      console.log(`OK ${sitemapUrl} → ${siteUrl}`);
     } catch (error) {
       failures.push(error);
       console.error(`FAIL ${error.message}`);
