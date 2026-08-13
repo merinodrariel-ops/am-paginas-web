@@ -117,33 +117,103 @@ en URL y title mientras el cuerpo habla de **inversión**.
 
 ---
 
+---
+
+## 3.bis Lo que dijeron los datos (2026-08-13)
+
+Con acceso a la API de Search Console se pudo contrastar el plan contra la realidad
+en vez de contra intuiciones. **Dos supuestos resultaron equivocados.**
+
+### El volumen del sitio está concentrado en una sola página
+
+`/precio-carillas-dentales-buenos-aires` acumula **148.122 impresiones** en tres
+meses — cerca del 78% de todas las impresiones argentinas del sitio — con **1,6% de
+CTR en posición 6,3**. El CTR esperado en esa posición ronda el 4-6%.
+
+Esa brecha es, por lejos, la mayor palanca de toda la red: llevar esa página de 1,6%
+a 4% valdría más clics que todo lo que puedan sumar las páginas uruguayas en un año.
+Parte de la brecha probablemente sea AI Overview comiéndose el clic (la query es
+"carillas dentales precio", exactamente el tipo de pregunta que el AIO responde sin
+que nadie entre), y eso no se arregla con metadatos. Pero sí se arreglaron dos cosas
+concretas: el título decía "desde USD 1.000" mientras la descripción decía
+"USD 500-1.500" —contradiciéndose en la misma SERP— y prometía "financiación sin
+interés" cuando la propia página informa una tasa fija del 18% anual.
+
+### La demanda uruguaya existe, pero no busca lo que suponíamos
+
+Uruguay es el **4º país** del sitio: 97 clics y 3.058 impresiones en tres meses,
+posición media 5,5. La demanda es real. Pero **ninguna de las búsquedas uruguayas
+contiene "Montevideo" ni "Uruguay"**. Buscan "carillas dentales precio", "carillas
+dentales costo", "cuánto cuestan las carillas dentales". Intención de precio, sin
+geografía.
+
+Ojo con la lectura: esto no prueba que nadie busque "carillas Montevideo" — si lo
+buscara, aparecerían clínicas uruguayas y no AM, así que esa query no puede figurar
+en estos datos. Lo que sí prueba es **qué demanda uruguaya puede capturar AM hoy**:
+precio de carillas, sin componente local.
+
+**Consecuencia directa sobre el plan:** `/precio-carillas-dentales-buenos-aires` se
+sacó del cluster hreflang. Esa página se lleva 37 de los 97 clics uruguayos. El
+hreflang le habría pedido a Google que a un uruguayo le muestre la versión `.uy` en
+su lugar — una página sin autoridad, de una sede que todavía no atiende. Era cambiar
+un activo que convierte por una promesa. Se vuelve a sumar cuando Carrasco abra.
+
+### Otras oportunidades que quedaron identificadas y sin trabajar
+
+| Página | Impresiones | CTR | Posición | Qué pasa |
+|---|---|---|---|---|
+| `/blog/las-carillas-danan-los-dientes` | 17.093 | 0,4% | 5,9 | ✅ corregido: el título no respondía la pregunta |
+| `/blog/cuanto-cuesta-un-implante-dental-en-argentina` | 13.222 | 1,7% | 5,7 | sin revisar |
+| `/blanqueamiento-dental-precio-buenos-aires` | 8.530 | 1,5% | 5,3 | sin revisar |
+| `/casos/carillas-resina-diseno-sonrisa-gingivectomia-laser` | 2.534 | 0,6% | 8,0 | sin revisar |
+| `/blog/como-blanquear-los-dientes-sin-danar-el-esmalte` | 1.183 | 0,3% | 8,7 | sin revisar |
+
+Y a tiro de piedra (posición 7,5-20 con volumen), todas apuntando a la misma página
+de precios: "precio de carillas dentales" (2.531 impr, pos 8,2), "precio de las
+carillas dentales" (1.368, pos 9,0), "carillas de porcelana precio" (1.176, pos 8,5),
+"cuanto cuestan las carillas dentales" (1.135, pos 7,6).
+
+### Baseline de medición
+
+Al 2026-08-13, las 5 páginas uruguayas nuevas figuran como **"URL desconocida para
+Google"**: el sitemap se envió recién hoy. El home y `/casos-clinicos` sí están
+indexados. Ese es el punto de partida contra el que medir en dos o tres semanas.
+
+---
+
 ## 4. Lo que sigue, en orden de palanca
 
-0. **🚨 El envío automático de sitemaps a Google está apagado desde siempre.**
-   El workflow `search-console-sitemaps.yml` figura en verde en cada push, pero es
-   un no-op: los secretos `GOOGLE_SEARCH_CONSOLE_CLIENT_ID`, `_CLIENT_SECRET` y
-   `_REFRESH_TOKEN` **no están cargados en GitHub**, así que el job salta directo al
-   paso "Avisar si faltan secretos" y termina con éxito sin haber enviado nada.
-   Afecta a los cuatro sitios, no sólo a Uruguay. El script en sí está bien y ya
-   contempla `amesteticadental.uy/sitemap.xml`.
-   **Para arreglarlo:** correr `node get-token-gsc.mjs` (genera el refresh token) y
-   cargar los tres valores en Settings → Secrets and variables → Actions del repo.
-   Es lo único que hace falta; el workflow ya está escrito.
+El orden cambió después de ver los datos: **el mayor retorno no está en Uruguay,
+está en la página de precios argentina.** Uruguay es la apuesta a mediano plazo;
+esa página es el activo de hoy.
 
-1. **Verificar `amesteticadental.uy` en Search Console** y enviar el sitemap. Sin
-   esto, nada de lo anterior es medible. Requiere al Dr. (acceso a la cuenta).
-2. **Google Business Profile de la sede uruguaya.** No se puede publicar hasta que
-   haya dirección atendible, pero se puede preparar. Es el input más pesado del SEO
-   local en Montevideo.
-3. **Reseñas.** El sitio argentino declara 4.9★ con base real; el uruguayo no puede
-   declarar nada propio todavía. En cuanto abra, es la primera prioridad.
-4. **Traducir la sede uruguaya al inglés** sólo si el turismo dental hacia Uruguay
-   lo justifica. Hoy el volumen está del lado argentino; no adelantarse.
-5. **Casos clínicos propios de la sede uruguaya.** Hoy `.uy` muestra el portfolio
+1. **Seguir trabajando el CTR de `/precio-carillas-dentales-buenos-aires`.**
+   148.122 impresiones al 1,6%. Ya se corrigieron título y descripción; falta medir
+   el efecto en 2-3 semanas y, si el problema resulta ser el AI Overview, atacarlo
+   por donde el AIO sí cita: dirección, material y método (ver
+   [[project_aio-carillas-estrategia]] — laboratorio propio es el dato extractable).
+2. **Las otras cuatro páginas de la tabla de CTR** de la sección 3.bis. Mismo
+   patrón, menor volumen, alta probabilidad de mejora barata.
+3. **Cargar los secretos de Search Console en GitHub** para que el envío de sitemaps
+   quede automático. Estado: el workflow figuraba en verde desde siempre sin enviar
+   nada (faltaban las credenciales) y además el script apuntaba mal la propiedad;
+   ambas cosas corregidas el 13-08 y los tres sitemaps enviados a mano. Falta sólo
+   que las credenciales vivan en el CI. Usar `node get-token-gsc.mjs`, que genera un
+   token acotado a Search Console — el de `.env.ads` sirve pero puede gastar en
+   Google Ads, y este repo es público.
+4. **Verificar `arielmerino.com` en Search Console.** Es el único de los cuatro sin
+   verificar, y es el ancla de la entidad Persona del grafo.
+5. **Google Business Profile de la sede uruguaya.** El input más pesado del SEO local
+   en Montevideo. No se puede publicar hasta que haya dirección atendible.
+6. **Casos clínicos propios de la sede uruguaya.** Hoy `.uy` muestra el portfolio
    argentino, que es honesto pero no genera contenido único. El primer caso hecho en
    Carrasco es el que empieza a construir autoridad local propia.
-6. **Más notas en The Dental Review** que enlacen a Uruguay a medida que haya hechos
+7. **Reincorporar `/precio-carillas-dentales-*` al cluster hreflang** cuando Carrasco
+   abra y la página uruguaya pueda atender de verdad.
+8. **Más notas en The Dental Review** que enlacen a Uruguay a medida que haya hechos
    reales que reportar (apertura, equipamiento, primeros casos).
+9. **Traducir la sede uruguaya al inglés** sólo si el turismo dental hacia Uruguay
+   lo justifica. Hoy el volumen está del lado argentino; no adelantarse.
 
 ## 5. Cosas que NO hay que hacer
 
@@ -155,3 +225,24 @@ en URL y title mientras el cuerpo habla de **inversión**.
 - **No hacer de `.uy` una copia de `.com`.** Si las páginas terminan siendo el mismo
   texto, el hreflang deja de ser una solución y pasa a ser un parche sobre contenido
   duplicado.
+- **No emparejar por hreflang una página argentina que ya rankea y convierte con una
+  uruguaya que todavía no puede atender.** El hreflang no es neutral: le dice a Google
+  cuál mostrar. Antes de agregar un par, mirar en Search Console cuánto tráfico
+  uruguayo tiene hoy la página argentina.
+- **No prometer "cero desgaste" ni "0% de preparación"**, tampoco dentro de un
+  gráfico o una tabla. El 13-08 se encontró exactamente eso en el infográfico de
+  `/blog/las-carillas-danan-los-dientes`, la nota de blog con más impresiones del
+  sitio. La regla aplica al copy y también a los datos que se dibujan.
+
+---
+
+## 6. Cómo mirar los datos
+
+La API de Search Console se consulta con las credenciales de `.env.ads`
+(`GOOGLE_ADS_CLIENT_ID` / `_CLIENT_SECRET` / `_REFRESH_TOKEN`, con scope
+`webmasters`). Las propiedades verificadas son `sc-domain:amesteticadental.com`,
+`sc-domain:amesteticadental.uy` y `thedentalreview.com` — `arielmerino.com` todavía no.
+
+Ojo con un detalle que costó un bug: las propiedades están registradas como
+**propiedad de dominio** (`sc-domain:...`), no como prefijo de URL. Construir el
+identificador a mano a partir del dominio devuelve 403.
