@@ -13,7 +13,19 @@ export const JOB_APPLICATION_AREAS = [
   "Otros",
 ] as const;
 
-export const MAX_JOB_APPLICATION_FILE_BYTES = 10 * 1024 * 1024;
+/**
+ * Tope real de un CV: 4 MB.
+ *
+ * Antes decía 10 MB, y era una promesa que la plataforma nunca podía cumplir.
+ * Vercel corta el cuerpo de una request en 4,5 MB **antes** de que llegue a este
+ * código, y responde 413 sin cabeceras CORS: desde el sitio uruguayo el navegador
+ * no puede leer esa respuesta y el fetch falla como si se hubiera caído la red.
+ * El usuario veía "revisá tu conexión" cuando en realidad su archivo era grande.
+ *
+ * 4 MB deja margen bajo el límite de la plataforma para el resto del formulario
+ * (los campos de texto también viajan en el mismo multipart).
+ */
+export const MAX_JOB_APPLICATION_FILE_BYTES = 4 * 1024 * 1024;
 
 export const ALLOWED_JOB_APPLICATION_MIME_TYPES = [
   "application/pdf",
@@ -65,7 +77,7 @@ export function validateJobApplicationFile(file: JobApplicationFileLike): { ok: 
   }
 
   if (file.size > MAX_JOB_APPLICATION_FILE_BYTES) {
-    return { ok: false, error: "El CV no puede pesar más de 10 MB." };
+    return { ok: false, error: "El CV no puede pesar más de 4 MB." };
   }
 
   const ext = getExtension(file.name);

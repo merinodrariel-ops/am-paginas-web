@@ -1,7 +1,19 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { JOBS_ENDPOINT } from "./site-data";
+
+/**
+ * Tope real de un CV, en bytes.
+ *
+ * Vercel corta el cuerpo de una request en 4,5 MB antes de que llegue al servidor,
+ * y responde 413 sin cabeceras CORS. Desde este dominio el navegador no puede leer
+ * esa respuesta, así que el fetch falla como si se hubiera caído la red: el usuario
+ * veía "revisá tu conexión" cuando el problema era el tamaño del archivo.
+ * Por eso el tamaño se valida acá, antes de subir nada.
+ */
+const MAX_CV_BYTES = 4 * 1024 * 1024;
+const EXTENSIONES_VALIDAS = ["pdf", "doc", "docx"];
 
 // Deben coincidir exactamente con JOB_APPLICATION_AREAS del sitio argentino: el
 // servidor valida el área contra esa lista y rechaza cualquier valor que no esté.
@@ -32,10 +44,50 @@ export default function JobApplicationForm() {
   const [area, setArea] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "ok">("idle");
   const [error, setError] = useState("");
+  const [cvFile, setCvFile] = useState<File | null>(null);
+  const [dragging, setDragging] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const startedAt = useMemo(() => Date.now(), []);
+
+  /** Valida el archivo apenas se elige o se suelta, para no hacer perder una subida entera. */
+  function aceptarArchivo(archivo: File) {
+    const extension = archivo.name.split(".").pop()?.toLowerCase() || "";
+
+    if (!EXTENSIONES_VALIDAS.includes(extension)) {
+      setError("El CV tiene que ser un PDF o un documento de Word.");
+      setCvFile(null);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+      return;
+    }
+
+    if (archivo.size > MAX_CV_BYTES) {
+      const pesa = (archivo.size / 1024 / 1024).toFixed(1);
+      setError(`Tu CV pesa ${pesa} MB y el máximo es 4 MB. Probá exportarlo de nuevo comprimiendo las imágenes.`);
+      setCvFile(null);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+      return;
+    }
+
+    // El input real es el que viaja en el FormData, así que hay que sincronizarlo
+    // cuando el archivo llegó por drag & drop y no por el selector.
+    if (fileInputRef.current) {
+      const transfer = new DataTransfer();
+      transfer.items.add(archivo);
+      fileInputRef.current.files = transfer.files;
+    }
+
+    setError("");
+    setCvFile(archivo);
+  }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (!cvFile) {
+      setError("Adjuntá tu CV para poder enviar la postulación.");
+      return;
+    }
+
     setStatus("sending");
     setError("");
 
@@ -54,6 +106,15 @@ export default function JobApplicationForm() {
         setStatus("ok");
         return;
       }
+      // 413 lo devuelve la infraestructura, no el servidor: llega sin JSON y sin
+      // cabeceras CORS. Se nombra aparte para no reportar un archivo grande como
+      // un problema de conexión, que fue exactamente lo que confundía antes.
+      if (response.status === 413) {
+        setError("El archivo es demasiado grande para enviarlo. Exportá el CV comprimiendo las imágenes y probá otra vez.");
+        setStatus("idle");
+        return;
+      }
+
       setError(data.error || "No pudimos recibir la postulación. Intentá de nuevo.");
       setStatus("idle");
     } catch {
@@ -136,10 +197,55 @@ export default function JobApplicationForm() {
 
       <fieldset>
         <legend>Tu CV</legend>
-        <label>
-          <span>Adjuntá tu CV * (PDF o Word, hasta 10 MB)</span>
-          <input required type="file" name="cv" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
-        </label>
+        <div
+          className={`jobs-drop${dragging ? " is-dragging" : ""}${cvFile ? " has-file" : ""}`}
+          onDragOver={(event) => {
+            event.preventDefault();
+            setDragging(true);
+          }}
+          onDragLeave={() => setDragging(false)}
+          onDrop={(event) => {
+            event.preventDefault();
+            setDragging(false);
+            const dropped = event.dataTransfer.files?.[0];
+            if (dropped) aceptarArchivo(dropped);
+          }}
+          onClick={() => fileInputRef.current?.click()}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              fileInputRef.current?.click();
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Adjuntar CV: arrastrá el archivo o hacé clic para elegirlo"
+        >
+          <input
+            ref={fileInputRef}
+            type="file"
+            name="cv"
+            className="jobs-file-input"
+            accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            onChange={(event) => {
+              const elegido = event.target.files?.[0];
+              if (elegido) aceptarArchivo(elegido);
+            }}
+          />
+          {cvFile ? (
+            <>
+              <strong className="jobs-drop-file">{cvFile.name}</strong>
+              <span className="jobs-drop-meta">{(cvFile.size / 1024 / 1024).toFixed(2)} MB · listo para enviar</span>
+              <span className="jobs-drop-change">Cambiar archivo</span>
+            </>
+          ) : (
+            <>
+              <span className="jobs-drop-icon" aria-hidden="true">↑</span>
+              <strong>Arrastrá tu CV acá</strong>
+              <span className="jobs-drop-meta">o hacé clic para elegirlo · PDF o Word · hasta 4 MB</span>
+            </>
+          )}
+        </div>
 
         <label className="jobs-consent">
           <input required type="checkbox" name="consent" />

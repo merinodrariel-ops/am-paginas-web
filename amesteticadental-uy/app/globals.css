@@ -93,3 +93,14 @@ h1, h2, h3, p { margin-top: 0; } h1, h2 { font-family: var(--font-cormorant), Ge
 @media (max-width: 800px) { .international-section { padding: 82px 0; }.international-grid { grid-template-columns: 1fr; gap: 40px; }.international-facts article { grid-template-columns: 60px 1fr; gap: 16px; padding: 20px 0; }.international-facts strong { font-size: 42px; } }
 .site-header nav .nav-jobs { color: var(--oro); border-bottom: 1px solid rgba(198,165,108,.45); padding-bottom: 3px; }.site-header nav .nav-jobs:hover { color: var(--crema); }
 @media (max-width: 800px) { .international-head { margin-bottom: 34px; }.international-facts { grid-template-columns: 1fr; margin-top: 34px; }.international-facts article { border-right: none; border-bottom: 1px solid var(--line); padding: 22px 0; grid-template-columns: 62px 1fr; gap: 14px; }.international-facts article:last-child { border-bottom: none; }.international-facts strong { font-size: 44px; } }
+.jobs-file-input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.jobs-drop { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; text-align: center; min-height: 168px; padding: 30px 24px; border: 1px dashed rgba(198,165,108,.4); background: rgba(198,165,108,.035); cursor: pointer; position: relative; transition: border-color .2s, background .2s, transform .2s; }
+.jobs-drop:hover, .jobs-drop:focus-visible { border-color: var(--oro); background: rgba(198,165,108,.075); outline: none; }
+.jobs-drop.is-dragging { border-color: var(--oro); border-style: solid; background: rgba(198,165,108,.13); transform: scale(1.01); }
+.jobs-drop.has-file { border-style: solid; border-color: rgba(198,165,108,.55); background: rgba(198,165,108,.06); }
+.jobs-drop-icon { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 1px solid rgba(198,165,108,.45); border-radius: 50%; color: var(--oro); font-size: 17px; margin-bottom: 5px; }
+.jobs-drop strong { font-family: var(--font-cormorant), Georgia, serif; font-size: 25px; font-weight: 400; color: var(--crema); line-height: 1.15; }
+.jobs-drop-file { word-break: break-all; padding: 0 8px; }
+.jobs-drop-meta { color: var(--crema-dim); font-size: 12px; line-height: 1.6; }
+.jobs-drop-change { color: var(--oro); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; margin-top: 6px; border-bottom: 1px solid rgba(198,165,108,.45); padding-bottom: 3px; }
+@media (max-width: 800px) { .jobs-drop { min-height: 148px; padding: 26px 18px; }.jobs-drop strong { font-size: 21px; } }
