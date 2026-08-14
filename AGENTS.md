@@ -65,6 +65,20 @@ AM **no compite** contra otros países/consultorios por ser más barato. Nada de
 - Palabras del Dr.: *"no estamos en la mentalidad de la competencia del precio... la gente
   quiere resultados naturales lo más rápido posible y va a pagar mucho dinero por eso"*.
 
+**2.bis NUNCA comparar la inversión contra otros países.**
+Nada de "en Estados Unidos cuesta X y acá Y", ni tablas de ahorro por país. AM está entre
+las clínicas más caras incluso a nivel internacional, y ese tipo de comparación atrae
+justamente al paciente que después se va a Turquía o Colombia por precio — que no es el
+nicho. Palabras del Dr.: *"no me pareció una buena manera compararse con otros países,
+porque si no todos se van a Turquía y a Colombia; ese no es mi nicho"*.
+- ✅ El eje correcto es **la proyección internacional de la clínica**: pacientes de tres
+  continentes, casos documentados, cobertura editorial y **estructura clínica propia en dos
+  países** (Buenos Aires en funcionamiento, Montevideo en obra). Ninguna clínica de estética
+  dental de la región opera así — es el diferencial más fuerte que tiene la marca, y en
+  Uruguay pesa todavía más que en Argentina.
+- ❌ No afirmar "la primera clínica internacional del país": es una superioridad que no se
+  puede verificar y el argumento se sostiene sin ella.
+
 **3. "Precio" solo para SEO; en el contenido se dice "INVERSIÓN".**
 - ✅ URL, `<title>` y meta description pueden decir "precio"/"price" — así busca la gente
   (intención de búsqueda real, no se toca el SEO).

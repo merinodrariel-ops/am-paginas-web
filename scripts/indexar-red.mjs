@@ -17,7 +17,12 @@
  * La vía que de verdad mueve la aguja en Google es el sitemap
  * (scripts/submit-google-sitemaps.mjs), que ya corre en cada deploy.
  *
- *   node scripts/indexar-red.mjs                    # toda la red
+ * CUOTA: la Indexing API permite 200 pedidos por día por proyecto. La red entera
+ * son ~126 URLs, así que entra una vez al día y no dos. Si aparece "Quota
+ * exceeded", no es un error de configuración: es que ya se corrió hoy. IndexNow
+ * no tiene ese límite y sigue funcionando igual.
+ *
+ *   node scripts/indexar-red.mjs                      # toda la red
  *   node scripts/indexar-red.mjs amesteticadental.uy  # un solo sitio
  */
 import { readFileSync } from "fs";
