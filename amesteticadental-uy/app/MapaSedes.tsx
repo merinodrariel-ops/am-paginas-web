@@ -12,6 +12,40 @@
  * `destacar` define cuál de las dos sedes se pinta como protagonista, para reusar el
  * mismo dibujo en el sitio uruguayo y en el argentino.
  */
+/** Bandera argentina: tres franjas y el Sol de Mayo sobre la blanca. */
+function BanderaArgentina({ x, y }: { x: number; y: number }) {
+  const w = 30;
+  const h = 19;
+  const franja = h / 3;
+  return (
+    <g>
+      <rect x={x} y={y} width={w} height={h} fill="#74ACDF" />
+      <rect x={x} y={y + franja} width={w} height={franja} fill="#FFFFFF" />
+      <circle cx={x + w / 2} cy={y + h / 2} r={2.6} fill="#F6B40E" />
+      <rect x={x} y={y} width={w} height={h} fill="none" stroke="rgba(246,241,231,.35)" strokeWidth="0.8" />
+    </g>
+  );
+}
+
+/** Bandera uruguaya: nueve franjas y el Sol de Mayo en el cantón. */
+function BanderaUruguay({ x, y }: { x: number; y: number }) {
+  const w = 30;
+  const h = 20;
+  const franja = h / 9;
+  const canton = franja * 5;
+  return (
+    <g>
+      <rect x={x} y={y} width={w} height={h} fill="#FFFFFF" />
+      {[1, 3, 5, 7].map((i) => (
+        <rect key={i} x={x} y={y + franja * i} width={w} height={franja} fill="#0038A8" />
+      ))}
+      <rect x={x} y={y} width={canton} height={canton} fill="#FFFFFF" />
+      <circle cx={x + canton / 2} cy={y + canton / 2} r={2.8} fill="#F6B40E" />
+      <rect x={x} y={y} width={w} height={h} fill="none" stroke="rgba(246,241,231,.35)" strokeWidth="0.8" />
+    </g>
+  );
+}
+
 export default function MapaSedes({ destacar = "montevideo" }: { destacar?: "montevideo" | "buenos-aires" }) {
   const uyEsProtagonista = destacar === "montevideo";
 
@@ -61,6 +95,7 @@ export default function MapaSedes({ destacar = "montevideo" }: { destacar?: "mon
 
         {/* Buenos Aires — etiquetas hacia abajo, sobre tierra argentina */}
         <g>
+          <BanderaArgentina x={154} y={161} />
           {!uyEsProtagonista && (
             <>
               <circle cx="169" cy="197" r="22" fill={oro} opacity="0.1" />
@@ -81,6 +116,7 @@ export default function MapaSedes({ destacar = "montevideo" }: { destacar?: "mon
 
         {/* Montevideo — etiquetas hacia arriba, sobre tierra uruguaya */}
         <g>
+          <BanderaUruguay x={461} y={148} />
           {uyEsProtagonista && (
             <>
               <circle cx="476" cy="236" r="24" fill={oro} opacity="0.11" />
@@ -95,7 +131,7 @@ export default function MapaSedes({ destacar = "montevideo" }: { destacar?: "mon
             ZONA CARRASCO
           </text>
           <text x="476" y="268" textAnchor="middle" fill="rgba(246,241,231,.34)" fontSize="9.5">
-            Miraflores 1445 · en obra
+            Sede en obra
           </text>
         </g>
       </svg>
