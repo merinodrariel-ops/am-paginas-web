@@ -16,6 +16,15 @@ const TEXTO = "#4a4d48";
 const LINEA = "#e8e5df";
 const SITIO = "https://www.amesteticadental.com";
 
+/**
+ * WhatsApp en el pie.
+ *
+ * Estos mails salen desde una casilla informativa y no esperan respuesta, pero
+ * siempre hay alguien que contesta igual. En vez de que esa consulta se pierda en
+ * un buzón que nadie mira, el pie ofrece el canal que el equipo sí atiende.
+ */
+const WHATSAPP = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20recib%C3%AD%20un%20mail%20de%20AM%20Est%C3%A9tica%20Dental%20y%20quer%C3%ADa%20hacer%20una%20consulta.";
+
 export type BotonEmail = { texto: string; href: string };
 
 /**
@@ -67,9 +76,14 @@ export function layoutEmail({
         ${bloqueBoton}
       </div>
 
-      <div style="padding:22px 32px;border-top:1px solid ${LINEA};font-size:11px;color:#9a9a9a;text-align:center">
-        AM Estética Dental · Camila O'Gorman 412, Oficina 101, Puerto Madero<br />
-        <a href="${SITIO}" style="color:#9a9a9a">amesteticadental.com</a>
+      <div style="padding:24px 32px;border-top:1px solid ${LINEA};text-align:center">
+        <p style="font-size:13px;color:${TEXTO};margin:0 0 16px">
+          ¿Tenés una consulta? <a href="${WHATSAPP}" style="color:#8a6f3d;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(198,165,108,.5)">Escribinos por WhatsApp</a>
+        </p>
+        <p style="font-size:11px;color:#9a9a9a;margin:0;line-height:1.7">
+          AM Estética Dental · Camila O'Gorman 412, Oficina 101, Puerto Madero<br />
+          <a href="${SITIO}" style="color:#9a9a9a">amesteticadental.com</a>
+        </p>
       </div>
     </div>
   `;

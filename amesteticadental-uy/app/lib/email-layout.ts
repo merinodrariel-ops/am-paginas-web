@@ -20,6 +20,15 @@ const CARBON = "#151716";
 const TEXTO = "#4a4d48";
 const LINEA = "#e8e5df";
 
+/**
+ * WhatsApp en el pie.
+ *
+ * Estos mails salen desde una casilla informativa y no esperan respuesta, pero
+ * siempre hay alguien que contesta igual. En vez de que esa consulta se pierda en
+ * un buzón que nadie mira, el pie ofrece el canal que el equipo sí atiende.
+ */
+const WHATSAPP = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20escribo%20desde%20Uruguay.%20Recib%C3%AD%20un%20mail%20de%20AM%20Est%C3%A9tica%20Dental%20y%20quer%C3%ADa%20hacer%20una%20consulta.";
+
 export type BotonEmail = { texto: string; href: string };
 
 export function layoutEmail({
@@ -60,9 +69,14 @@ export function layoutEmail({
         ${bloqueBoton}
       </div>
 
-      <div style="padding:22px 32px;border-top:1px solid ${LINEA};font-size:11px;color:#9a9a9a;text-align:center">
-        AM Estética Dental Uruguay · Zona Carrasco, Montevideo<br />
-        <a href="${SITE_URL}" style="color:#9a9a9a">amesteticadental.uy</a>
+      <div style="padding:24px 32px;border-top:1px solid ${LINEA};text-align:center">
+        <p style="font-size:13px;color:${TEXTO};margin:0 0 16px">
+          ¿Tenés una consulta? <a href="${WHATSAPP}" style="color:#8a6f3d;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(198,165,108,.5)">Escribinos por WhatsApp</a>
+        </p>
+        <p style="font-size:11px;color:#9a9a9a;margin:0;line-height:1.7">
+          AM Estética Dental Uruguay · Zona Carrasco, Montevideo<br />
+          <a href="${SITE_URL}" style="color:#9a9a9a">amesteticadental.uy</a>
+        </p>
       </div>
     </div>
   `;
