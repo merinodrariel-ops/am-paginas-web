@@ -278,6 +278,71 @@ Reglas al escribir para The Dental Review:
 - Las copias locales en `/public` valen solo como backup/fuente; la app no debe referenciarlas salvo fallback explícito y justificado.
 - **Única excepción:** `src/remotion/*` usa `staticFile()` con rutas locales para render de video (no es web servida) — ahí sí van locales.
 
+## Emails de la red — Resend (2026-08-14)
+
+**Un solo proveedor y un solo remitente para toda la marca.** Si cada sitio tuviera su
+cuenta habría dos reputaciones de envío que cuidar, y que un sitio caiga en spam
+arrastraría al otro.
+
+- **Proveedor:** Resend. La cuenta y la clave son las mismas que usa `am-clinica-main`.
+- **Remitente:** `info@amesteticadental.com`. Es el único dominio verificado en Resend.
+  `amesteticadental.uy` **no** está verificado y **no hace falta**: decisión del Dr., los
+  mails son informativos y no esperan respuesta.
+- **Variables** (cargadas en Vercel en los proyectos `am-estetica-dental` y
+  `amesteticadental-uy`): `RESEND_API_KEY`, `RESEND_FROM`.
+
+**El diseño del mail vive en el repo, no en el panel de Resend.** Resend sólo transporta
+un HTML ya armado. El envoltorio compartido está en `src/lib/email.ts` (Argentina) y
+`app/lib/email-layout.ts` (Uruguay): define encabezado, tipografía, botón y pie; cada mail
+sólo aporta saludo y párrafos.
+
+Reglas de maquetado, que en email no son las de la web:
+- **CSS en línea.** Gmail y Outlook descartan las hojas de estilo.
+- **Ancho fijo (540px) y estructura simple.** El soporte de flexbox y grid es irregular.
+- **Sin imágenes en el encabezado.** Muchos clientes las bloquean por defecto y un logo que
+  no carga deja el mail decapitado. La marca la sostienen tipografía, espaciado y el dorado.
+
+**Regla de oro:** si el mail falla, la acción del usuario NO falla. El CV ya está guardado
+y el lead ya está registrado; avisar de un error ahí sería mentirle a la persona. Por eso
+en la lista de novedades **primero se guarda el lead y después se manda el mail**.
+
+## Variables de entorno — dónde mirar primero (2026-08-14)
+
+Antes de diagnosticar "el formulario no anda", revisar que el proyecto tenga cargadas sus
+variables. El 14-08 el proyecto `amesteticadental-uy` en Vercel tenía **cero variables de
+entorno**: todo lo que dependía de configuración fallaba en silencio, y la lista de
+novedades venía devolviendo 503 a cada visitante perdiendo todos los leads.
+
+```bash
+vercel link --yes --project <proyecto>   # desde una carpeta vacía
+vercel env ls
+```
+
+Las claves reales viven en Vercel, no en el disco. Los `.env.local` del repo pueden estar
+vencidos: el de Brevo lo estaba.
+
+⚠️ Al probar una API con Python/urllib, un `403` puede ser Cloudflare bloqueando el cliente
+y no la clave. Verificar con `curl` antes de concluir que una credencial está mal.
+
+## Formularios entre sitios — el navegador nunca cruza de dominio (2026-08-14)
+
+Las webs de la red no tienen base de datos propia: postean a `amesteticadental.com`, que es
+el único que escribe en Supabase. Pero **el salto entre dominios lo hace el servidor, no el
+navegador**: cada sitio expone su propia ruta y desde ahí reenvía.
+
+Por qué: Safari (ITP), Brave y cualquier bloqueador de publicidad bloquean las peticiones
+entre sitios. Cuando eso pasa el `fetch` se rechaza sin respuesta y el formulario reporta un
+error de conexión con la conexión intacta. El formulario argentino nunca falló en 50+
+postulaciones justamente porque es del mismo origen.
+
+- Postulaciones: `amesteticadental-uy/app/api/job-applications` → `.com/api/job-applications`
+- Leads: `amesteticadental-uy/app/api/subscribe` → `.com/api/leads` → tabla `marketing_leads`
+- El endpoint argentino identifica la sede por el header `Origin` y etiqueta la fila
+  (`web_uruguay`). Al viajar servidor a servidor hay que declararlo explícitamente.
+
+⚠️ **Límite de tamaño: 4 MB.** Vercel corta el cuerpo de una request en 4,5 MB y responde
+413 sin cabeceras CORS. Validar tamaño y extensión en el navegador ANTES de subir.
+
 ## Stack amesteticadental.com
 - Next.js (Turbopack), Tailwind v4, TypeScript
 - Fuentes: Manrope + Cormorant Garamond
