@@ -175,19 +175,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bridge-section">
-        <div className="shell bridge-grid">
-          <div>
-            <p className="eyebrow">MIENTRAS CARRASCO SE PREPARA</p>
-            <h2>Si no querés esperar,<br /><em>se resuelve en Buenos Aires.</em></h2>
-          </div>
-          <div>
-            <p>Hasta la apertura de la sede uruguaya, los pacientes de Montevideo se atienden en Puerto Madero. Menos de una hora de vuelo, y una planificación armada para concentrar el trabajo clínico en pocos días en lugar de estirarlo en viajes repetidos.</p>
-            <p>La evaluación inicial arranca a distancia, con fotos y antecedentes, antes de que compres un pasaje.</p>
-            <Link href="/tratamiento-en-buenos-aires-desde-uruguay" data-track="uy_bridge_click" className="button button-gold">Cómo se organiza</Link>
-          </div>
+      <section className="jobs-section">
+        <div className="shell jobs-grid">
+          <div><p className="eyebrow">EQUIPO URUGUAY</p><h2>Estamos armando<br /><em>la base de talento.</em></h2></div>
+          <div><p>Recibimos postulaciones de odontólogos, asistentes, laboratorio dental, arquitectura, edición, marketing y perfiles operativos para la sede de Carrasco.</p><p>Las solicitudes entran al panel central de AM, donde las revisa el equipo interno de selección.</p><Link href="/trabaja-en-am" data-track="uy_jobs_click" className="button button-gold">Postularme</Link></div>
         </div>
       </section>
+
 
       <section className="financing-section">
         <div className="shell financing-grid">
@@ -215,13 +209,6 @@ export default function HomePage() {
             <p>{faq.answer}</p>
           </details>
         ))}
-      </section>
-
-      <section className="jobs-section">
-        <div className="shell jobs-grid">
-          <div><p className="eyebrow">EQUIPO URUGUAY</p><h2>Estamos armando<br /><em>la base de talento.</em></h2></div>
-          <div><p>Recibimos postulaciones de odontólogos, asistentes, laboratorio dental, arquitectura, edición, marketing y perfiles operativos para la sede de Carrasco.</p><p>Las solicitudes entran al panel central de AM, donde las revisa el equipo interno de selección.</p><Link href="/trabaja-en-am" data-track="uy_jobs_click" className="button button-gold">Postularme</Link></div>
-        </div>
       </section>
 
       <section id="novedades" className="lead-section"><div className="shell lead-grid"><div><p className="eyebrow">LISTA DE NOVEDADES</p><h2>Conocé la apertura<br /><em>antes que nadie.</em></h2><p>Te contactaremos sólo con información concreta sobre la sede, la agenda y los próximos avances.</p></div><LeadForm /></div></section>

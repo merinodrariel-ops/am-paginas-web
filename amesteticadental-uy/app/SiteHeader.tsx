@@ -12,6 +12,10 @@ const links = [
   ["Dr. Merino", "/dr-ariel-merino"],
 ] as const;
 
+// "Trabajá en AM" va aparte y destacado, no como un link más del menú: armar el
+// equipo de la sede uruguaya es la prioridad operativa hasta que Carrasco abra.
+const JOBS_LINK = ["Trabajá en AM", "/trabaja-en-am"] as const;
+
 export default function SiteHeader() {
   return (
     <header className="site-header">
@@ -27,6 +31,9 @@ export default function SiteHeader() {
             {label}
           </Link>
         ))}
+        <Link href={JOBS_LINK[1]} className="nav-jobs" data-track="uy_jobs_nav_click">
+          {JOBS_LINK[0]}
+        </Link>
       </nav>
       <a className="header-cta" data-track="uy_whatsapp_click" href={whatsappFor("los tratamientos de AM")} target="_blank" rel="noreferrer">
         Hablar con el equipo

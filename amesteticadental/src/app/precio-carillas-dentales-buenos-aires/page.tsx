@@ -474,17 +474,17 @@ export default function PrecioCarillasPage() {
                 La razón por la que un paciente cruza una frontera para tratarse acá no es el precio, y no queremos que lo sea. Es el <strong className="text-crema">laboratorio propio</strong>: el técnico ve el caso, participa de la prueba y ajusta en el momento. Eso concentra en pocos días lo que en un circuito con laboratorio externo se estira semanas. Quien viaja no está buscando gastar menos —está comprando tiempo.
               </p>
 
-              {/* Enlace contextual para lectores uruguayos: Search Console muestra que
-                  esta página se lleva 37 de los 97 clics que llegan desde Uruguay. Además
-                  de ser útil para ellos, es la vía de descubrimiento más transitada hacia
-                  amesteticadental.uy, que hoy tiene casi ningún enlace entrante. */}
+              {/* Enlace contextual para lectores uruguayos. Deliberadamente NO invita a
+                  tratarse en Buenos Aires: el sitio uruguayo tiene su propia sede en
+                  camino y derivar pacientes hacia acá le quitaría agenda a la sucursal
+                  antes de que abra. El enlace es de marca, no de captación. */}
               <h3 className="text-crema font-manrope font-medium text-xl mt-10 mb-4">¿Vivís en Uruguay?</h3>
               <p>
-                Montevideo está a menos de una hora de vuelo, y una parte de los pacientes que llegan a Puerto Madero cruza desde Uruguay. Mientras la sede de Carrasco avanza, podés ver{" "}
-                <Link href="https://www.amesteticadental.uy/tratamiento-en-buenos-aires-desde-uruguay" className="text-oro underline underline-offset-4 hover:text-oro-light" target="_blank" rel="noopener">
-                  cómo se organiza un tratamiento en Buenos Aires viviendo en Montevideo
+                AM Estética Dental está construyendo su{" "}
+                <Link href="https://www.amesteticadental.uy/clinica-dental-carrasco" className="text-oro underline underline-offset-4 hover:text-oro-light" target="_blank" rel="noopener">
+                  sede propia en zona Carrasco, Montevideo
                 </Link>
-                : la planificación se arma para concentrar el trabajo clínico en pocos días y reducir la cantidad de viajes.
+                , con el mismo equipo, el mismo método y laboratorio propio. Si vivís en Uruguay, podés seguir los avances de la obra y dejar tus datos para recibir la fecha de apertura y la información de agenda antes que nadie.
               </p>
             </div>
           </div>

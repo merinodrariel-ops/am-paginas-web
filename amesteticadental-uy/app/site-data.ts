@@ -148,7 +148,7 @@ export const sharedCases = [
 export const localFaqs = [
   {
     question: "¿AM Estética Dental ya atiende en Montevideo?",
-    answer: "Todavía no. Estamos preparando la sede de zona Carrasco en Miraflores 1445, Oficina 202. Mientras tanto, los pacientes uruguayos que quieren avanzar ya se atienden en la sede de Puerto Madero, Buenos Aires, con una planificación pensada para resolver el tratamiento en pocos días de viaje.",
+    answer: "Todavía no. Estamos preparando la sede de zona Carrasco en Miraflores 1445, Oficina 202, y vamos a comunicar la fecha de apertura apenas esté confirmada. Podés dejar tus datos en la lista de novedades para enterarte cuando abra la agenda.",
   },
   {
     question: "¿Qué distingue al método AM?",
@@ -224,7 +224,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
     title: "Carillas dentales en Montevideo",
     metaTitle: "Carillas dentales en Montevideo | AM Estética Dental",
     metaDescription:
-      "Carillas cerámicas con criterio clínico y laboratorio propio. AM Estética Dental prepara su sede en Carrasco, Montevideo, y hoy atiende pacientes uruguayos en Buenos Aires.",
+      "Carillas cerámicas con criterio clínico y laboratorio propio. AM Estética Dental prepara su sede en zona Carrasco, Montevideo.",
     eyebrow: "Próxima sede en zona Carrasco",
     lead: "AM Estética Dental prepara en Carrasco una propuesta centrada en carillas cerámicas diseñadas para integrarse a la expresión, las proporciones faciales y la función de cada paciente.",
     intro:
@@ -256,7 +256,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
       { label: "Material", text: "Cerámica de laboratorio, seleccionada según el caso y el color de base del diente." },
       { label: "Planificación", text: "Diseño digital previo para acordar forma, proporción y expresión antes de tocar un diente." },
       { label: "Preparación", text: "Mínimamente invasiva; el grado exacto se define recién después de evaluar el caso." },
-      { label: "Sede hoy", text: "Puerto Madero, Buenos Aires. Carrasco, Montevideo, en preparación." },
+      { label: "Sede", text: "Zona Carrasco, Montevideo. Apertura a confirmar." },
     ],
     faqs: [
       {
@@ -272,7 +272,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
       {
         question: "¿Puedo hacerlo si vivo en Montevideo?",
         answer:
-          "Sí. Hasta la apertura de la sede de Carrasco, el tratamiento se realiza en Puerto Madero, Buenos Aires, con la planificación concentrada para reducir la cantidad de viajes. La evaluación inicial puede empezar a distancia.",
+          "La sede de Carrasco está en preparación y todavía no tiene agenda abierta. Dejá tus datos y te escribimos apenas haya fecha confirmada: vas a ser de los primeros en poder reservar.",
       },
     ],
     cases: [
@@ -305,7 +305,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
     title: "Diseño de sonrisa en Montevideo",
     metaTitle: "Diseño de sonrisa en Montevideo | AM Estética Dental",
     metaDescription:
-      "Diseño de sonrisa con planificación digital y criterio clínico. AM Estética Dental prepara su sede en Carrasco, Montevideo, y atiende pacientes uruguayos en Buenos Aires.",
+      "Diseño de sonrisa con planificación digital y criterio clínico. AM Estética Dental prepara su sede en zona Carrasco, Montevideo.",
     eyebrow: "Estética dental en Carrasco",
     lead: "Una sonrisa natural no se resuelve con una fórmula. Se estudian proporciones, color, textura, función y la manera en que cada persona se expresa.",
     intro:
@@ -432,9 +432,9 @@ export const treatmentPages: Record<string, TreatmentPage> = {
           "La resina es más económica y reversible, y es una gran opción en casos acotados o como etapa intermedia. La cerámica mantiene mejor el color, la textura y el brillo en el tiempo. La elección depende del caso, del horizonte esperado y de lo que la persona busca.",
       },
       {
-        question: "¿Atienden pacientes de Montevideo antes de la apertura?",
+        question: "¿Se puede reservar turno antes de la apertura?",
         answer:
-          "Sí, en la sede de Puerto Madero, Buenos Aires. La planificación se organiza para minimizar la cantidad de viajes y concentrar el trabajo clínico.",
+          "Todavía no hay agenda abierta. Quienes dejen sus datos en la lista de novedades van a recibir primero la fecha de apertura y la información para reservar.",
       },
     ],
     cases: [
@@ -700,10 +700,10 @@ export const treatmentPages: Record<string, TreatmentPage> = {
         ],
       },
       {
-        heading: "El costo del viaje, dicho de frente",
+        heading: "Lo que la inversión sostiene en el tiempo",
         body: [
-          "Para un paciente uruguayo hay que sumar el traslado a Buenos Aires y la estadía hasta que abra la sede de Carrasco. Es un costo real y lo decimos sin adornarlo.",
-          "Lo que la planificación con laboratorio propio permite es reducir la cantidad de viajes concentrando el trabajo clínico en pocos días, en lugar de estirarlo en visitas espaciadas durante meses.",
+          "Una cerámica bien indicada conserva color, textura y brillo durante años; una resina, por buena que sea, empieza a tomar tinción y a perder pulido. Esa diferencia es la que explica el rango, y es la que conviene mirar antes que el número suelto.",
+          "El laboratorio propio entra acá también: el técnico ve el caso y ajusta en el momento, y eso concentra en días un trabajo que en un circuito con laboratorio externo se estira semanas. No es un servicio adicional que se cobra aparte — es la razón por la que el resultado se sostiene.",
         ],
       },
     ],
@@ -762,7 +762,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
     ],
     arCounterpart: "/precio-carillas-dentales-buenos-aires",
     arLabel: "Ver la tabla de inversión completa de la sede argentina",
-    related: ["carillas-dentales-montevideo", "carillas-de-porcelana-montevideo", "tratamiento-en-buenos-aires-desde-uruguay"],
+    related: ["carillas-dentales-montevideo", "carillas-de-porcelana-montevideo", "clinica-dental-carrasco"],
     whatsappContext: "conocer la inversión en carillas dentales",
   },
 
@@ -791,10 +791,10 @@ export const treatmentPages: Record<string, TreatmentPage> = {
         ],
       },
       {
-        heading: "Mientras tanto",
+        heading: "Cómo enterarte de la apertura",
         body: [
-          "Hasta la apertura, los pacientes uruguayos que quieren avanzar se atienden en la sede de Puerto Madero, Buenos Aires. El plan se organiza para concentrar el trabajo clínico y reducir la cantidad de viajes.",
-          "Si preferís esperar la apertura de Carrasco, dejá tus datos en la lista de novedades: te vamos a escribir solo con información concreta sobre fecha, agenda y avances verificados.",
+          "Dejá tus datos en la lista de novedades: te vamos a escribir sólo con información concreta sobre fecha de apertura, agenda y avances verificados de la obra. Sin spam y sin promesas que todavía no podamos sostener.",
+          "Quienes estén en esa lista van a recibir primero la fecha y la información para reservar, antes de que la agenda se abra al público.",
         ],
       },
     ],
@@ -802,7 +802,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
       { label: "Dirección", text: "Miraflores 1445, Oficina 202, Carrasco, Montevideo." },
       { label: "Estado", text: "En preparación. Fecha de apertura a confirmar." },
       { label: "Equipamiento", text: "Flujo digital completo y espacio de laboratorio propio." },
-      { label: "Atención hoy", text: "Sede de Puerto Madero, Buenos Aires." },
+      { label: "Agenda", text: "Se comunica al confirmarse la fecha de apertura." },
     ],
     faqs: [
       {
@@ -823,70 +823,10 @@ export const treatmentPages: Record<string, TreatmentPage> = {
     ],
     arCounterpart: "/dentista-puerto-madero",
     arLabel: "Conocer la sede de Puerto Madero, Buenos Aires",
-    related: ["estetica-dental-montevideo", "tratamiento-en-buenos-aires-desde-uruguay", "diseno-de-sonrisa-montevideo"],
+    related: ["estetica-dental-montevideo", "carillas-dentales-montevideo", "diseno-de-sonrisa-montevideo"],
     whatsappContext: "la apertura de la sede de Carrasco",
   },
 
-  "tratamiento-en-buenos-aires-desde-uruguay": {
-    title: "Tratarte en Buenos Aires viviendo en Uruguay",
-    metaTitle: "Tratamiento dental en Buenos Aires desde Uruguay | AM",
-    metaDescription:
-      "Cómo se organiza un tratamiento de estética dental en Puerto Madero para pacientes que viven en Montevideo: etapas, viajes y planificación a distancia.",
-    eyebrow: "Mientras Carrasco se prepara",
-    lead: "Hasta que abra la sede de Carrasco, los pacientes uruguayos se atienden en Puerto Madero. La planificación se organiza para que eso signifique pocos viajes, no muchos.",
-    intro:
-      "Cómo se organiza el tratamiento en Puerto Madero para pacientes que viven en Montevideo.",
-    sections: [
-      {
-        heading: "El argumento no es el precio",
-        body: [
-          "AM no propone viajar a Buenos Aires para gastar menos. Ese no es el eje y nunca lo fue.",
-          "El eje es el tiempo: el laboratorio propio permite concentrar en pocos días de trabajo clínico lo que en un circuito con laboratorio externo se distribuye en semanas de idas y vueltas. Para alguien que tiene que cruzar el río, esa diferencia es lo que hace el tratamiento posible.",
-        ],
-      },
-      {
-        heading: "Cómo se organiza en la práctica",
-        body: [
-          "La evaluación inicial arranca a distancia: fotos, antecedentes y una conversación sobre qué buscás. Con eso se define si el caso es viable y qué alcance tendría.",
-          "Después se planifica el viaje en función de las etapas clínicas reales del tratamiento. Un caso de carillas se comporta distinto a uno de implantes, donde la biología impone tiempos que no se pueden acelerar. En ambos casos, el objetivo de la planificación es el mismo: la menor cantidad de viajes compatible con hacer el trabajo bien.",
-        ],
-      },
-      {
-        heading: "Qué pasa con los controles",
-        body: [
-          "El seguimiento posterior combina controles a distancia con visitas puntuales cuando corresponde. Con la apertura de la sede de Carrasco, ese seguimiento va a poder hacerse directamente en Montevideo.",
-          "Los pacientes que empiecen ahora en Buenos Aires no quedan sueltos: son la misma clínica, el mismo equipo y la misma historia clínica.",
-        ],
-      },
-    ],
-    bullets: [
-      { label: "Distancia", text: "Montevideo–Buenos Aires: menos de una hora de vuelo." },
-      { label: "Evaluación", text: "Primera etapa a distancia, con fotos y antecedentes." },
-      { label: "Viajes", text: "Se planifican según las etapas clínicas reales del caso." },
-      { label: "Continuidad", text: "El seguimiento migra a Carrasco cuando la sede abra." },
-    ],
-    faqs: [
-      {
-        question: "¿Cuántos viajes necesito?",
-        answer:
-          "Depende del tratamiento. Un caso de carillas puede concentrarse en pocos días de trabajo clínico. Un caso con implantes requiere etapas separadas porque la oseointegración lleva meses y eso no se acelera. La cantidad exacta sale de la planificación, no de una promesa general.",
-      },
-      {
-        question: "¿Puedo empezar sin viajar?",
-        answer:
-          "La evaluación inicial sí: se hace con fotos y antecedentes, y sirve para saber si el caso es viable y qué alcance tendría. El diagnóstico definitivo requiere una evaluación clínica presencial.",
-      },
-      {
-        question: "¿Y si abre Carrasco en el medio de mi tratamiento?",
-        answer:
-          "Es la misma clínica y el mismo equipo. La historia clínica y el plan siguen siendo los mismos; lo que cambia es dónde se hacen los controles.",
-      },
-    ],
-    arCounterpart: "/turismo-dental",
-    arLabel: "Ver cómo AM recibe pacientes del exterior en Buenos Aires",
-    related: ["precio-carillas-dentales-montevideo", "clinica-dental-carrasco", "carillas-dentales-montevideo"],
-    whatsappContext: "tratarme en Buenos Aires viviendo en Uruguay",
-  },
 };
 
 export type TreatmentSlug = keyof typeof treatmentPages;

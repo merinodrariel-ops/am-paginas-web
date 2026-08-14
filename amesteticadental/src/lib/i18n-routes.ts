@@ -59,7 +59,6 @@ export const UY_BY_ES: Record<string, string> = {
   // una página sin autoridad, de una sede que todavía no atiende. Sería cambiar
   // un activo que convierte por una promesa. Se agrega cuando Carrasco abra.
   "/dentista-puerto-madero": "/clinica-dental-carrasco",
-  "/turismo-dental": "/tratamiento-en-buenos-aires-desde-uruguay",
   "/casos-antes-y-despues": "/casos-clinicos",
   "/dr-ariel-merino": "/dr-ariel-merino",
   "/prensa": "/prensa",
