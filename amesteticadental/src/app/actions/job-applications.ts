@@ -94,7 +94,19 @@ function validateTextPayload(payload: {
   return "";
 }
 
-export async function submitJobApplication(formData: FormData): Promise<SubmitJobApplicationResult> {
+/**
+ * Núcleo de procesamiento, compartido por dos entradas:
+ *  - la server action de este sitio (formulario de Puerto Madero)
+ *  - el route handler `/api/job-applications`, que recibe las postulaciones de
+ *    amesteticadental.uy
+ *
+ * `source` es lo que después permite separarlas en el panel de administración.
+ * Las filas históricas del sitio argentino son `web_public` (default de la tabla).
+ */
+export async function processJobApplication(
+  formData: FormData,
+  { source }: { source: string },
+): Promise<SubmitJobApplicationResult> {
   const startedAt = Number(formData.get("form_started_at") || 0);
   const company = sanitizeText(formData.get("company"), 120);
 
@@ -195,6 +207,7 @@ export async function submitJobApplication(formData: FormData): Promise<SubmitJo
       cv_original_filename: sanitizeJobApplicationFileName(cv.name),
       cv_mime_type: cv.type,
       cv_size_bytes: cv.size,
+      source,
       ip_hash: ipHash,
       user_agent_hash: userAgentHash,
     });
@@ -206,4 +219,9 @@ export async function submitJobApplication(formData: FormData): Promise<SubmitJo
   }
 
   return { success: true };
+}
+
+/** Formulario del sitio argentino. Mantiene el `source` histórico de la tabla. */
+export async function submitJobApplication(formData: FormData): Promise<SubmitJobApplicationResult> {
+  return processJobApplication(formData, { source: "web_public" });
 }

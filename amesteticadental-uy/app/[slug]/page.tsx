@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import LeadForm from "../LeadForm";
 import SiteFooter from "../SiteFooter";
 import SiteHeader from "../SiteHeader";
+import TreatmentHeroVideo from "../TreatmentHeroVideo";
 import { breadcrumbSchema, faqSchema, JsonLd, serviceSchema } from "../StructuredData";
 import {
   ARGENTINA_URL,
@@ -58,18 +60,21 @@ export default async function TreatmentPage({ params }: Props) {
       <JsonLd data={serviceSchema({ name: page.title, description: page.metaDescription, path: `/${slug}` })} />
       <SiteHeader />
 
-      <section className="page-hero shell">
-        <p className="eyebrow">{page.eyebrow}</p>
-        <h1>{page.title}</h1>
-        <p>{page.lead}</p>
-        <div className="hero-actions">
-          <a href={whatsappFor(page.whatsappContext)} data-track="uy_treatment_whatsapp_click" target="_blank" rel="noreferrer" className="button button-gold">
-            Consultar por WhatsApp
-          </a>
-          <Link href="/casos-clinicos" className="button button-quiet">
-            Ver casos reales
-          </Link>
+      <section className={page.video ? "page-hero shell page-hero-media" : "page-hero shell"}>
+        <div>
+          <p className="eyebrow">{page.eyebrow}</p>
+          <h1>{page.title}</h1>
+          <p>{page.lead}</p>
+          <div className="hero-actions">
+            <a href={whatsappFor(page.whatsappContext)} data-track="uy_treatment_whatsapp_click" target="_blank" rel="noreferrer" className="button button-gold">
+              Consultar por WhatsApp
+            </a>
+            <Link href="/casos-clinicos" className="button button-quiet">
+              Ver casos reales
+            </Link>
+          </div>
         </div>
+        {page.video ? <TreatmentHeroVideo video={page.video} /> : null}
       </section>
 
       {page.bullets ? (
@@ -80,6 +85,46 @@ export default async function TreatmentPage({ params }: Props) {
               <p>{bullet.text}</p>
             </div>
           ))}
+        </section>
+      ) : null}
+
+      {page.cases ? (
+        <section className="shell treatment-cases">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">CASOS REALES CON ESTE TRATAMIENTO</p>
+              <h2>
+                El estándar, <em>documentado.</em>
+              </h2>
+            </div>
+            <Link href="/casos-clinicos" className="text-link">
+              Ver el portfolio completo
+            </Link>
+          </div>
+          <div className="treatment-case-grid">
+            {page.cases.map((item) => (
+              <a
+                key={item.slug}
+                className="case-card"
+                data-track="uy_treatment_case_click"
+                href={`${ARGENTINA_URL}/casos/${item.slug}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image src={item.image} alt={item.alt} fill sizes="(max-width: 800px) 100vw, 33vw" />
+                <span className="case-overlay" />
+                <span className="case-copy">
+                  <small>Caso real</small>
+                  <strong>{item.caption}</strong>
+                  <i>Ver documentación completa</i>
+                </span>
+              </a>
+            ))}
+          </div>
+          <p className="disclosure">
+            Casos realizados en la sede de Puerto Madero con el mismo método que llega a Carrasco. Cada resultado
+            depende de la evaluación clínica individual del paciente.
+          </p>
         </section>
       ) : null}
 

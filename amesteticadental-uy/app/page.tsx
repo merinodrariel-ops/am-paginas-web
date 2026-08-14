@@ -14,7 +14,6 @@ import {
   sharedCases,
   SITE_URL,
   treatmentPages,
-  URUGUAY_JOBS_URL,
   URUGUAY_SMILE_SIMULATOR_URL,
   whatsappFor,
   type TreatmentSlug,
@@ -188,7 +187,7 @@ export default function HomePage() {
       <section className="jobs-section">
         <div className="shell jobs-grid">
           <div><p className="eyebrow">EQUIPO URUGUAY</p><h2>Estamos armando<br /><em>la base de talento.</em></h2></div>
-          <div><p>Recibimos postulaciones de odontólogos, asistentes, laboratorio dental, arquitectura, edición, marketing y perfiles operativos para la sede de Carrasco.</p><p>Mientras desarrollamos la administración propia de Uruguay, las solicitudes entran al panel central de AM para gestionarlas sin demora.</p><a href={URUGUAY_JOBS_URL} data-track="uy_jobs_click" target="_blank" rel="noreferrer" className="button button-gold">Enviar postulación</a></div>
+          <div><p>Recibimos postulaciones de odontólogos, asistentes, laboratorio dental, arquitectura, edición, marketing y perfiles operativos para la sede de Carrasco.</p><p>Las solicitudes entran al panel central de AM, donde las revisa el equipo interno de selección.</p><Link href="/trabaja-en-am" data-track="uy_jobs_click" className="button button-gold">Postularme</Link></div>
         </div>
       </section>
 

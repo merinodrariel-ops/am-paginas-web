@@ -4,7 +4,15 @@ export const REVIEW_URL = "https://www.thedentalreview.com";
 export const PERSON_URL = "https://www.arielmerino.com";
 export const WHATSAPP_NUMBER = "5491170219298";
 export const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}`;
-export const URUGUAY_JOBS_URL = "https://am-clinica-main.vercel.app/trabaja-en-am?source=uy";
+/**
+ * Endpoint de postulaciones, en el sitio argentino.
+ *
+ * El formulario vive acá pero escribe allá: la administración de postulaciones es
+ * una sola. Así la `SUPABASE_SERVICE_ROLE_KEY` no necesita existir en un segundo
+ * proyecto de Vercel. El servidor etiqueta la fila como `web_uruguay` según el
+ * origen de la petición, no según un campo que el navegador pueda falsear.
+ */
+export const JOBS_ENDPOINT = `${ARGENTINA_URL}/api/job-applications`;
 export const URUGUAY_SMILE_SIMULATOR_URL = "https://www.amesteticadental.com/sonrisa?source=uy";
 export const BROU_EXCHANGE_RATE_URL = "https://www.brou.com.uy/cotizaciones";
 
@@ -164,6 +172,27 @@ export const localFaqs = [
   },
 ];
 
+export const VIDEO_BASE = "https://res.cloudinary.com/drctvgyqd/video/upload/q_auto:eco,f_auto/implantes-dentales-am";
+export const VIDEO_POSTER_BASE = "https://res.cloudinary.com/drctvgyqd/video/upload/so_0,w_1000,q_auto,f_jpg/implantes-dentales-am";
+
+/** Video en loop del hero. Mismos assets que ya usa la sede argentina. */
+export type TreatmentVideo = {
+  id: string;
+  badge: string;
+  caption: string;
+  alt: string;
+  /** Segundos de duración, para el schema VideoObject. */
+  duration: number;
+};
+
+/** Caso real usado como prueba visual dentro de una página de tratamiento. */
+export type TreatmentCase = {
+  slug: string;
+  image: string;
+  alt: string;
+  caption: string;
+};
+
 export type TreatmentPage = {
   /** H1 de la página. */
   title: string;
@@ -178,6 +207,10 @@ export type TreatmentPage = {
   bullets?: { label: string; text: string }[];
   investment?: { label: string; value: string; note: string }[];
   faqs: { question: string; answer: string }[];
+  /** Video en loop junto al hero. */
+  video?: TreatmentVideo;
+  /** Casos reales que ilustran el tratamiento. Enlazan al detalle en el sitio argentino. */
+  cases?: TreatmentCase[];
   /** Página equivalente en amesteticadental.com — genera el hreflang es-AR ↔ es-UY. */
   arCounterpart?: string;
   /** Etiqueta del enlace hacia esa página argentina. */
@@ -242,6 +275,26 @@ export const treatmentPages: Record<string, TreatmentPage> = {
           "Sí. Hasta la apertura de la sede de Carrasco, el tratamiento se realiza en Puerto Madero, Buenos Aires, con la planificación concentrada para reducir la cantidad de viajes. La evaluación inicial puede empezar a distancia.",
       },
     ],
+    cases: [
+      {
+        slug: "20-carillas-porcelana-apinamiento-sin-ortodoncia",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-sin-ortodoncia/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental",
+        alt: "Antes y después de 20 carillas de porcelana que resolvieron un apiñamiento sin ortodoncia",
+        caption: "20 carillas para resolver un apiñamiento",
+      },
+      {
+        slug: "carilla-unitaria-incisivo-central-oscurecido",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/carilla-unitaria-incisivo-central-ceramica-resultado-natural-dr-ariel-merino-am-estetica-dental",
+        alt: "Antes y después de una carilla cerámica unitaria en un incisivo central oscurecido",
+        caption: "Una sola pieza, integrada a las vecinas",
+      },
+      {
+        slug: "rehabilitacion-ceramica-ambos-maxilares-sin-cirugia-ortodoncia",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-dentales-rehabilitacion-estetica-sonrisa/01-carillas-dentales-antes-despues-retrato-am-estetica-dental-puerto-madero.png",
+        alt: "Antes y después de una rehabilitación cerámica con más de 13 años de seguimiento clínico",
+        caption: "Más de 13 años de seguimiento",
+      },
+    ],
     arCounterpart: "/carillas-dentales",
     arLabel: "Ver la página completa de carillas dentales de la sede argentina",
     related: ["carillas-de-porcelana-montevideo", "diseno-de-sonrisa-montevideo", "precio-carillas-dentales-montevideo"],
@@ -301,6 +354,26 @@ export const treatmentPages: Record<string, TreatmentPage> = {
         question: "¿Se puede hacer sin ortodoncia previa?",
         answer:
           "En muchos casos sí, y AM tiene casos documentados de apiñamientos resueltos con cerámicas. En otros, la posición dentaria excede lo que la cerámica puede compensar sin desgastar de más, y entonces corresponde ortodoncia primero. Es una decisión de diagnóstico, no de preferencia.",
+      },
+    ],
+    cases: [
+      {
+        slug: "diseno-sonrisa-cierre-diastemas-dientes-conoidos",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+        alt: "Antes y después de un diseño de sonrisa con cierre de diastemas y corrección de dientes conoides",
+        caption: "Cierre de diastemas y proporciones",
+      },
+      {
+        slug: "diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan/diseno-sonrisa-plano-quebrado-carillas-ceramicas-antes-despues-portada-paciente-italia-milan-dr-ariel-merino-am-estetica-dental",
+        alt: "Antes y después del diseño de sonrisa de una paciente llegada desde Milán",
+        caption: "Paciente de Milán, plano quebrado",
+      },
+      {
+        slug: "gingivectomia-laser-micro-diseno-sonrisa-resinas",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-resina-caries/transformacion-extrema-caries-carillas-resina-gingivectomia-laser-antes-despues-rostro-labios-portada-dr-ariel-merino-am-estetica-dental-buenos-aires",
+        alt: "Antes y después de un micro diseño de sonrisa con resinas y gingivectomía láser",
+        caption: "Micro diseño con resinas y encía",
       },
     ],
     arCounterpart: "/diseno-de-sonrisa",
@@ -364,6 +437,20 @@ export const treatmentPages: Record<string, TreatmentPage> = {
           "Sí, en la sede de Puerto Madero, Buenos Aires. La planificación se organiza para minimizar la cantidad de viajes y concentrar el trabajo clínico.",
       },
     ],
+    cases: [
+      {
+        slug: "carillas-resina-diseno-sonrisa-gingivectomia-laser",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-resina/diseno-sonrisa-carillas-resina-gingivectomia-laser-antes-despues-rostro-labios-portada-dr-ariel-merino-am-estetica-dental-buenos-aires",
+        alt: "Antes y después de un diseño de sonrisa con resinas y gingivectomía láser",
+        caption: "Resinas, encía y armonía dental",
+      },
+      {
+        slug: "gingivectomia-laser-sin-bisturi-sangrado-puntos",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/gingivectomia-laser-09-antes-despues-comparativa-2/01-gingivectomia-laser-09-antes-despues-comparativa.png",
+        alt: "Antes y después de un contorneado gingival con láser, sin bisturí ni puntos",
+        caption: "Contorno gingival con láser",
+      },
+    ],
     arCounterpart: "/estetica-dental",
     arLabel: "Ver la página completa de estética dental de la sede argentina",
     related: ["diseno-de-sonrisa-montevideo", "carillas-dentales-montevideo", "implantes-dentales-montevideo"],
@@ -425,6 +512,20 @@ export const treatmentPages: Record<string, TreatmentPage> = {
           "No es una contraindicación absoluta, pero cambia el plan: se evalúa la función, se elige un material más resistente y se indica una placa de protección nocturna. Hacer cerámicas sobre un bruxismo no controlado es la vía más directa a una fractura.",
       },
     ],
+    cases: [
+      {
+        slug: "bruxismo-desgaste-dental-rehabilitacion-carillas-ceramicas",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/bruxismo-carillas-ceramicas/bruxismo-desgaste-dental-antes-despues-carillas-ceramicas-labios-portada-dr-ariel-merino-am-estetica-dental-buenos-aires",
+        alt: "Antes y después de una rehabilitación con carillas cerámicas en un caso de bruxismo",
+        caption: "Bruxismo con desgaste avanzado",
+      },
+      {
+        slug: "20-carillas-porcelana-apinamiento-sin-ortodoncia",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-sin-ortodoncia/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental",
+        alt: "Antes y después de 20 carillas de porcelana",
+        caption: "20 piezas de porcelana",
+      },
+    ],
     arCounterpart: "/dientes-de-porcelana-carillas-precio",
     arLabel: "Ver la página completa de carillas de porcelana de la sede argentina",
     related: ["carillas-dentales-montevideo", "precio-carillas-dentales-montevideo", "diseno-de-sonrisa-montevideo"],
@@ -484,6 +585,27 @@ export const treatmentPages: Record<string, TreatmentPage> = {
         question: "¿Puedo hacerlo viajando desde Montevideo?",
         answer:
           "Sí, y es un caso frecuente. Se organiza en etapas para que coincidan con la biología del proceso y se reduzca al mínimo la cantidad de viajes. La evaluación inicial y el seguimiento entre etapas se pueden hacer a distancia.",
+      },
+    ],
+    video: {
+      id: "implante-dental-neodent-grupo-straumann-3d-wireframe-am-estetica-dental-buenos-aires",
+      badge: "Grupo Straumann · Tecnología 3D",
+      caption: "Geometría y superficie de un implante Neodent® del Grupo Straumann®.",
+      alt: "Animación 3D de un implante dental Neodent del Grupo Straumann utilizado por AM Estética Dental",
+      duration: 8,
+    },
+    cases: [
+      {
+        slug: "agenesia-dental-rehabilitacion-completa-implantes-24-ceramicas",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-rostro-portada-mega-transformacion-rehabilitacion-oral-dr-ariel-merino-am-estetica-dental",
+        alt: "Antes y después de una rehabilitación completa con implantes y 24 restauraciones cerámicas",
+        caption: "Agenesia dental resuelta con implantes y 24 cerámicas",
+      },
+      {
+        slug: "rehabilitacion-oral-completa-carillas-coronas-implantes",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/rehabilitacion-oral-completa-antes-despues-rostro-labios-portada-carillas-coronas-implantes-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+        alt: "Antes y después de una rehabilitación oral completa con carillas, coronas e implantes",
+        caption: "Rehabilitación completa en menos de un mes",
       },
     ],
     arCounterpart: "/implantes-dentales-buenos-aires",
@@ -622,6 +744,20 @@ export const treatmentPages: Record<string, TreatmentPage> = {
         question: "¿Conviene esperar a que abra la sede de Carrasco?",
         answer:
           "Depende de tu caso y de tu urgencia. Si hay un problema funcional o de salud a resolver, esperar no es gratis. Si es un tratamiento puramente estético y no tenés apuro, es una decisión razonable: dejá tus datos y te avisamos cuando haya fecha.",
+      },
+    ],
+    cases: [
+      {
+        slug: "20-carillas-porcelana-apinamiento-sin-ortodoncia",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-sin-ortodoncia/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental",
+        alt: "Antes y después de un tratamiento de 20 carillas de porcelana",
+        caption: "Un plan de 20 piezas, de principio a fin",
+      },
+      {
+        slug: "carilla-unitaria-incisivo-central-oscurecido",
+        image: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/carilla-unitaria-incisivo-central-ceramica-resultado-natural-dr-ariel-merino-am-estetica-dental",
+        alt: "Antes y después de una carilla cerámica unitaria",
+        caption: "El extremo opuesto: una sola pieza",
       },
     ],
     arCounterpart: "/precio-carillas-dentales-buenos-aires",
@@ -774,6 +910,9 @@ export const INDEXABLE_ROUTES: { path: string; priority: number; changeFrequency
   })),
   { path: "/financiacion", priority: 0.8, changeFrequency: "monthly" },
   { path: "/dr-ariel-merino", priority: 0.8, changeFrequency: "monthly" },
+  // Vuelve al sitemap: dejó de ser un redirect externo y ahora es una página real
+  // con el formulario de postulación.
+  { path: "/trabaja-en-am", priority: 0.75, changeFrequency: "monthly" },
   { path: "/prensa", priority: 0.7, changeFrequency: "monthly" },
 ];
 

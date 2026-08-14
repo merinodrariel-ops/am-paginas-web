@@ -50,6 +50,7 @@ export default function SiteFooter() {
             <li><Link href="/financiacion">Financiación</Link></li>
             <li><Link href="/dr-ariel-merino">Dr. Ariel Merino</Link></li>
             <li><Link href="/prensa">Prensa</Link></li>
+            <li><Link href="/trabaja-en-am">Trabajá en AM Uruguay</Link></li>
             <li><Link href="/tratamiento-en-buenos-aires-desde-uruguay">Tratarte en Buenos Aires</Link></li>
           </ul>
         </div>
