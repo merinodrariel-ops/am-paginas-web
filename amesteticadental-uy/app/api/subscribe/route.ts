@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { enviarMail } from "../../lib/email";
+import { BOTON_PORTFOLIO, layoutEmail } from "../../lib/email-layout";
 import { ARGENTINA_URL, SITE_URL } from "../../site-data";
 
 /**
@@ -70,37 +71,15 @@ export async function POST(req: NextRequest) {
     para: emailLimpio,
     nombre: nombreLimpio,
     asunto: "Te avisamos cuando abramos en Carrasco",
-    html: `
-      <div style="font-family:-apple-system,Segoe UI,sans-serif;max-width:540px;margin:0 auto;color:#1a1a1a;background:#ffffff">
-        <div style="background:#151716;padding:34px 32px;text-align:center">
-          <p style="color:#c6a56c;letter-spacing:0.3em;font-size:11px;text-transform:uppercase;margin:0">AM Estética Dental</p>
-          <p style="color:rgba(246,241,231,.55);letter-spacing:0.18em;font-size:9px;text-transform:uppercase;margin:8px 0 0">Uruguay · Zona Carrasco</p>
-        </div>
-        <div style="padding:40px 32px">
-          <h2 style="font-weight:300;font-size:24px;margin:0 0 20px">Hola ${nombreLimpio},</h2>
-          <p style="line-height:1.75;color:#4a4d48;margin:0 0 18px">
-            Quedaste en la lista de la apertura de AM Estética Dental en zona Carrasco, Montevideo.
-            Te vamos a escribir apenas tengamos fecha confirmada y agenda abierta.
-          </p>
-          <p style="line-height:1.75;color:#4a4d48;margin:0 0 26px">
-            Sólo te vamos a escribir con información concreta. Nada de spam.
-          </p>
-          <div style="border-top:1px solid #e8e5df;padding-top:26px">
-            <p style="line-height:1.7;color:#7a7d78;font-size:14px;margin:0 0 14px">
-              Mientras tanto, podés conocer el trabajo que llega a Montevideo:
-            </p>
-            <a href="${ARGENTINA_URL}/casos-antes-y-despues"
-               style="display:inline-block;background:#c6a56c;color:#151716;padding:13px 28px;text-decoration:none;font-weight:600;font-size:13px">
-              Ver el portfolio clínico
-            </a>
-          </div>
-        </div>
-        <div style="padding:22px 32px;border-top:1px solid #e8e5df;font-size:11px;color:#9a9a9a;text-align:center">
-          AM Estética Dental Uruguay · Zona Carrasco, Montevideo<br />
-          <a href="${SITE_URL}" style="color:#9a9a9a">amesteticadental.uy</a>
-        </div>
-      </div>
-    `,
+    html: layoutEmail({
+      saludo: `Hola ${nombreLimpio},`,
+      parrafos: [
+        "Quedaste en la lista de la apertura de AM Estética Dental en zona Carrasco, Montevideo. Te vamos a escribir apenas tengamos fecha confirmada y agenda abierta.",
+        "Sólo te vamos a escribir con información concreta. Nada de spam.",
+      ],
+      notaFinal: "Mientras tanto, podés conocer el trabajo que llega a Montevideo:",
+      boton: BOTON_PORTFOLIO,
+    }),
   });
 
   return NextResponse.json({ ok: true });

@@ -14,6 +14,7 @@ import {
   sanitizeText,
   validateJobApplicationFile,
 } from "@/lib/job-applications";
+import { enviarAcuseDePostulacion } from "@/lib/email";
 
 const MIN_FORM_COMPLETION_MS = 4000;
 const RATE_LIMIT_WINDOW_MINUTES = 15;
@@ -217,6 +218,12 @@ export async function processJobApplication(
     await admin.storage.from("job-applications").remove([storagePath]);
     return { error: genericSubmitError() };
   }
+
+  // Acuse de recibo al postulante. Va después del insert y a propósito NO se deja
+  // que un fallo del mail rompa la postulación: el CV ya está guardado y la fila
+  // creada. Hasta hoy nadie recibía nada —más de 50 postulaciones sin una sola
+  // confirmación— porque este sitio no tenía proveedor de mail configurado.
+  await enviarAcuseDePostulacion(payload.email, payload.fullName.split(" ")[0] || "");
 
   return { success: true };
 }
