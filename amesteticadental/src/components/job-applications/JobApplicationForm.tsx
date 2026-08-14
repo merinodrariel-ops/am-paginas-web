@@ -1,8 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Briefcase, CheckCircle2, FileText, Loader2, Send, ShieldCheck } from "lucide-react";
 import { submitJobApplication } from "@/app/actions/job-applications";
+import { MAX_JOB_APPLICATION_FILE_BYTES } from "@/lib/job-applications";
+
+const EXTENSIONES_VALIDAS = ["pdf", "doc", "docx"];
 
 const AREAS = [
   "Odontólogo General",
@@ -35,9 +38,54 @@ export default function JobApplicationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [cvFile, setCvFile] = useState<File | null>(null);
+  const [dragging, setDragging] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const startedAt = useMemo(() => Date.now(), []);
 
+  /**
+   * Valida el archivo apenas se elige, antes de subir nada.
+   *
+   * Sin esto, un CV grande viaja entero para que recién la plataforma lo rechace
+   * con un 413 —Vercel corta el cuerpo de la request en 4,5 MB— y el usuario ve
+   * un error genérico después de esperar la subida completa.
+   */
+  function aceptarArchivo(archivo: File) {
+    const extension = archivo.name.split(".").pop()?.toLowerCase() || "";
+
+    if (!EXTENSIONES_VALIDAS.includes(extension)) {
+      setError("El CV tiene que ser un PDF o un documento de Word.");
+      setCvFile(null);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+      return;
+    }
+
+    if (archivo.size > MAX_JOB_APPLICATION_FILE_BYTES) {
+      const pesa = (archivo.size / 1024 / 1024).toFixed(1);
+      setError(`Tu CV pesa ${pesa} MB y el máximo es 4 MB. Probá exportarlo de nuevo comprimiendo las imágenes.`);
+      setCvFile(null);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+      return;
+    }
+
+    // El input real es el que viaja en el FormData: hay que sincronizarlo cuando
+    // el archivo llegó por drag & drop y no por el selector.
+    if (fileInputRef.current) {
+      const transfer = new DataTransfer();
+      transfer.items.add(archivo);
+      fileInputRef.current.files = transfer.files;
+    }
+
+    setError("");
+    setCvFile(archivo);
+  }
+
   async function handleSubmit(formData: FormData) {
+    if (!cvFile) {
+      setError("Adjuntá tu CV para poder enviar la postulación.");
+      return;
+    }
+
     setIsSubmitting(true);
     setError("");
 
@@ -155,16 +203,68 @@ export default function JobApplicationForm() {
 
           <div className="grid gap-5 rounded-lg border border-oro/12 bg-carbon-soft/45 p-5 md:p-7">
             <Field label="Adjuntá tu CV *">
-              <span className="flex items-center gap-3 rounded-lg border border-dashed border-oro/18 bg-carbon/40 px-4 py-4 text-sm text-crema/55">
-                <FileText size={18} className="text-oro/65" />
+              <div
+                role="button"
+                tabIndex={0}
+                aria-label="Adjuntar CV: arrastrá el archivo o hacé clic para elegirlo"
+                onClick={() => fileInputRef.current?.click()}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    fileInputRef.current?.click();
+                  }
+                }}
+                onDragOver={(event) => {
+                  event.preventDefault();
+                  setDragging(true);
+                }}
+                onDragLeave={() => setDragging(false)}
+                onDrop={(event) => {
+                  event.preventDefault();
+                  setDragging(false);
+                  const dropped = event.dataTransfer.files?.[0];
+                  if (dropped) aceptarArchivo(dropped);
+                }}
+                className={`flex min-h-[168px] cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border px-6 py-8 text-center transition-all ${
+                  dragging
+                    ? "border-solid border-oro bg-oro/12 scale-[1.01]"
+                    : cvFile
+                      ? "border-solid border-oro/55 bg-oro/6"
+                      : "border-dashed border-oro/35 bg-oro/[0.03] hover:border-oro hover:bg-oro/[0.07]"
+                }`}
+              >
                 <input
-                  required
+                  ref={fileInputRef}
                   type="file"
                   name="cv"
                   accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                  className="w-full text-sm file:mr-4 file:rounded-full file:border-0 file:bg-oro file:px-4 file:py-2 file:text-sm file:font-semibold file:text-carbon hover:file:bg-oro-light"
+                  className="pointer-events-none absolute h-px w-px opacity-0"
+                  onChange={(event) => {
+                    const elegido = event.target.files?.[0];
+                    if (elegido) aceptarArchivo(elegido);
+                  }}
                 />
-              </span>
+                {cvFile ? (
+                  <>
+                    <FileText size={22} className="text-oro" />
+                    <strong className="break-all px-2 font-cormorant text-2xl font-normal text-crema">{cvFile.name}</strong>
+                    <span className="text-xs text-crema/50">{(cvFile.size / 1024 / 1024).toFixed(2)} MB · listo para enviar</span>
+                    <span className="mt-1 border-b border-oro/45 pb-[3px] text-[10px] uppercase tracking-[0.13em] text-oro">
+                      Cambiar archivo
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span className="mb-1 flex h-10 w-10 items-center justify-center rounded-full border border-oro/45 text-oro">
+                      <FileText size={18} />
+                    </span>
+                    <strong className="font-cormorant text-2xl font-normal text-crema">Arrastrá tu CV acá</strong>
+                    <span className="text-xs leading-relaxed text-crema/50">
+                      o hacé clic para elegirlo · PDF o Word · hasta 4 MB
+                    </span>
+                  </>
+                )}
+              </div>
             </Field>
 
             <label className="flex items-start gap-3 text-sm leading-relaxed text-crema/58">
