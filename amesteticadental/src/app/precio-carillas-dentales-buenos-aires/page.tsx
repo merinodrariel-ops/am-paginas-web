@@ -458,6 +458,23 @@ export default function PrecioCarillasPage() {
               <p>
                 El <strong className="text-crema">turismo dental en Buenos Aires</strong> es una realidad cada vez más común. Pacientes de Estados Unidos, Europa y otros países de Latinoamérica viajan a Buenos Aires para realizarse tratamientos de estética dental con una diferencia de inversión importante frente a sus países de origen. Mientras que en Estados Unidos una carilla de porcelana puede costar entre USD 1.000 y 2.500, en AM Estética Dental las cerámicas tienen un valor de USD 1.000 a 1.500 por pieza.
               </p>
+
+              {/* Enlace contextual para lectores uruguayos: Search Console muestra que
+                  esta página se lleva 37 de los 97 clics que llegan desde Uruguay. Además
+                  de ser útil para ellos, es la vía de descubrimiento más transitada hacia
+                  amesteticadental.uy, que hoy tiene casi ningún enlace entrante. */}
+              <h3 className="text-crema font-manrope font-medium text-xl mt-10 mb-4">¿Vivís en Uruguay?</h3>
+              <p>
+                Montevideo está a menos de una hora de vuelo, y una parte de los pacientes que llegan a Puerto Madero cruza desde Uruguay. AM Estética Dental está preparando además su{" "}
+                <Link href="https://www.amesteticadental.uy/clinica-dental-carrasco" className="text-oro underline underline-offset-4 hover:text-oro-light" target="_blank" rel="noopener">
+                  sede en zona Carrasco, Montevideo
+                </Link>
+                . Mientras la obra avanza, podés ver{" "}
+                <Link href="https://www.amesteticadental.uy/tratamiento-en-buenos-aires-desde-uruguay" className="text-oro underline underline-offset-4 hover:text-oro-light" target="_blank" rel="noopener">
+                  cómo se organiza un tratamiento en Buenos Aires viviendo en Montevideo
+                </Link>
+                : la planificación se arma para concentrar el trabajo clínico en pocos días y reducir la cantidad de viajes.
+              </p>
             </div>
           </div>
         </section>
