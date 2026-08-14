@@ -236,6 +236,37 @@ esa página es el activo de hoy.
 
 ---
 
+## 5.bis Postulaciones de Uruguay — cómo funciona
+
+El formulario vive en `amesteticadental.uy/trabaja-en-am` pero **no escribe en la
+base**. Postea a `amesteticadental.com/api/job-applications`, y ese endpoint hace
+todo: valida, sube el CV y escribe en Supabase.
+
+Por qué así y no con un cliente de Supabase propio en el proyecto uruguayo: eso
+habría exigido copiar la `SUPABASE_SERVICE_ROLE_KEY` a un segundo proyecto de
+Vercel. Esa llave saltea las políticas de seguridad de la base entera; cuantos
+menos lugares la tengan, mejor. Con este diseño el sitio uruguayo no necesita
+**ningún** secreto.
+
+Piezas:
+
+| Archivo | Rol |
+|---|---|
+| `amesteticadental/src/app/actions/job-applications.ts` | `processJobApplication()` — validación, antispam, upload e insert |
+| `amesteticadental/src/app/api/job-applications/route.ts` | Endpoint con CORS; el origen permitido define el `source` |
+| `amesteticadental-uy/app/JobApplicationForm.tsx` | El formulario, que sólo hace `fetch` |
+
+Detalles que importan:
+- **El `source` lo decide el servidor** a partir del `Origin` de la petición, no un
+  campo del formulario: el navegador no puede falsearlo. Uruguay entra como
+  `web_uruguay`; las 102 filas históricas del sitio argentino son `web_public`.
+  Ese campo es el que permite separarlas en el panel central.
+- **La columna `source` ya existía** en `job_applications`. No hizo falta migrar nada.
+- Para sumar otra sede a futuro, alcanza con agregar su origen a `ALLOWED_ORIGINS`
+  en el route handler.
+- El antispam (honeypot + mínimo de 4 segundos + límite de 3 envíos por IP cada 15
+  minutos) es el mismo para las dos sedes, porque es el mismo código.
+
 ## 6. Cómo mirar los datos
 
 La API de Search Console se consulta con las credenciales de `.env.ads`
