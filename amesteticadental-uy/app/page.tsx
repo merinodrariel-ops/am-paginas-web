@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import LeadForm from "./LeadForm";
 import SiteFooter from "./SiteFooter";
+import MapaSedes from "./MapaSedes";
 import SiteHeader from "./SiteHeader";
 import { faqSchema, JsonLd } from "./StructuredData";
 import {
@@ -69,37 +70,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Posicionamiento internacional. Es el diferencial estructural más fuerte de
-          la marca en Uruguay y no depende de que la sede esté abierta: ninguna
-          clínica de estética dental de la región opera con estructura clínica en
-          dos países. A propósito NO se compara inversión contra otros países —
-          eso atrae al paciente que después se va a Turquía por precio. */}
+      {/* Posicionamiento internacional: el diferencial más fuerte de la marca en
+          Uruguay, y no depende de que la sede esté abierta.
+          A propósito NO se compara inversión contra otros países — eso atrae al
+          paciente que después se va a Turquía por precio. Y a propósito tampoco se
+          invita a tratarse en Buenos Aires: el mapa muestra la red, no una ruta. */}
       <section className="international-section">
-        <div className="shell international-grid">
-          <div>
-            <p className="eyebrow">UNA CLÍNICA, DOS PAÍSES</p>
-            <h2>No es una clínica local<br /><em>que exporta.</em></h2>
-            <p>AM Estética Dental atiende de forma habitual a pacientes de Latinoamérica, Estados Unidos y Europa, y documenta esos casos públicamente. La sede de Carrasco no es una franquicia ni una representación: es estructura clínica propia, con el mismo equipo y el mismo laboratorio.</p>
-          </div>
-          <div className="international-facts">
-            <article>
-              <strong>3</strong>
-              <p>continentes de origen entre los pacientes que ya se tratan con el método AM.</p>
-            </article>
-            <article>
-              <strong>2</strong>
-              <p>países con sede clínica propia: Buenos Aires en funcionamiento, Montevideo en obra.</p>
-            </article>
-            <article>
-              <strong>1</strong>
-              <p>laboratorio propio, la pieza que permite resolver en días lo que normalmente lleva meses.</p>
-            </article>
-            <p className="international-note">
-              El trabajo del Dr. Merino tiene cobertura editorial en Forbes Argentina, La Nación y Ámbito.{" "}
-              <Link href="/prensa" className="text-link">Ver la cobertura</Link>
-            </p>
-          </div>
+        <div className="shell international-head">
+          <p className="eyebrow">LA ÚNICA CLÍNICA INTERNACIONAL EN URUGUAY</p>
+          <h2>No abrimos una sucursal.<br /><em>Trajimos la clínica.</em></h2>
+          <p>Carrasco no es una franquicia, una representación ni un consultorio asociado. Es la misma clínica: el mismo equipo, el mismo método y el mismo laboratorio propio que ya opera en Buenos Aires. Ninguna otra clínica de estética dental en Uruguay funciona así.</p>
         </div>
+        <div className="shell">
+          <MapaSedes destacar="montevideo" />
+        </div>
+        <div className="shell international-facts">
+          <article>
+            <strong>3</strong>
+            <p>continentes de origen entre los pacientes que ya se tratan con el método AM.</p>
+          </article>
+          <article>
+            <strong>1</strong>
+            <p>laboratorio propio: la pieza que permite resolver en días lo que normalmente lleva meses.</p>
+          </article>
+          <article>
+            <strong>0</strong>
+            <p>intermediarios entre el diagnóstico y la pieza terminada. El técnico está en la clínica.</p>
+          </article>
+        </div>
+        <p className="shell international-note">
+          El trabajo del Dr. Merino tiene cobertura editorial en Forbes Argentina, La Nación y Ámbito.{" "}
+          <Link href="/prensa" className="text-link">Ver la cobertura</Link>
+        </p>
       </section>
 
       <section id="clinica" className="clinic-section">

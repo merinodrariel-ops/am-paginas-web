@@ -9,6 +9,7 @@ import DrMerino from "@/components/DrMerino";
 import Clinica from "@/components/Clinica";
 import PorQueAM from "@/components/PorQueAM";
 import Prensa from "@/components/Prensa";
+import Internacional from "@/components/Internacional";
 import ClientesVIP from "@/components/ClientesVIP";
 import Financiacion from "@/components/Financiacion";
 import FAQ from "@/components/FAQ";
@@ -66,7 +67,10 @@ export default function Home() {
       {/* 9. POR QUÉ AM — diferenciación explícita frente a ofertas genéricas. */}
       <PorQueAM />
 
-      {/* 10. PRENSA — autoridad editorial como refuerzo. */}
+      {/* 10. INTERNACIONAL — el diferencial que ningún competidor local puede copiar. */}
+      <Internacional />
+
+      {/* 11. PRENSA — autoridad editorial como refuerzo. */}
       <Prensa />
 
       {/* 11. CLIENTES VIP — prueba aspiracional. */}
