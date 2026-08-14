@@ -10,8 +10,18 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Email requerido" }, { status: 400 });
   }
 
-  if (!BREVO_KEY || !Number.isInteger(BREVO_LIST_ID) || BREVO_LIST_ID < 1) {
-    console.error("Brevo no configurado");
+  // Se nombra QUÉ falta. Antes decía sólo "Brevo no configurado" y en producción
+  // eso obligaba a adivinar entre la clave y el id de lista mientras el formulario
+  // devolvía 503 a cada visitante.
+  const faltantes: string[] = [];
+  if (!BREVO_KEY) faltantes.push("BREVO_API_KEY");
+  if (!Number.isInteger(BREVO_LIST_ID) || BREVO_LIST_ID < 1) faltantes.push("BREVO_LIST_ID");
+
+  if (faltantes.length > 0) {
+    console.error(
+      `[subscribe] Faltan variables de entorno en este proyecto de Vercel: ${faltantes.join(", ")}. ` +
+        `La lista de novedades está rechazando TODOS los registros.`,
+    );
     return NextResponse.json({ error: "No podemos registrar datos en este momento." }, { status: 503 });
   }
 

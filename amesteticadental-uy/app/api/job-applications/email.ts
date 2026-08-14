@@ -61,7 +61,10 @@ function plantilla(nombre: string) {
 
 export async function enviarAcuseDePostulacion(email: string, nombre: string) {
   if (!BREVO_KEY) {
-    console.warn("[job-applications] BREVO_API_KEY no configurada: no se envió el acuse al postulante.");
+    console.error(
+      "[job-applications] Falta BREVO_API_KEY en este proyecto de Vercel: la postulación se guardó " +
+        "pero el postulante NO recibió el acuse de recibo.",
+    );
     return;
   }
 
