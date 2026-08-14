@@ -6,13 +6,13 @@ import { breadcrumbSchema, JsonLd } from "../StructuredData";
 import { SITE_URL } from "../site-data";
 
 export const metadata: Metadata = {
-  title: { absolute: "Trabajá en AM Uruguay — Carrasco, Montevideo" },
+  title: { absolute: "Sé parte del staff de AM Uruguay — Carrasco, Montevideo" },
   description:
-    "Postulate para sumarte al equipo de AM Estética Dental en la nueva sede de Carrasco, Montevideo. Odontología, laboratorio, asistencia y perfiles operativos.",
+    "Sumate al equipo que abre la primera clínica internacional de estética dental en Uruguay. Odontología, laboratorio propio, asistencia y perfiles operativos en Carrasco.",
   alternates: { canonical: `${SITE_URL}/trabaja-en-am` },
   openGraph: {
-    title: "Trabajá en AM Estética Dental Uruguay",
-    description: "Postulaciones para la sede de Carrasco, Montevideo.",
+    title: "Sé parte del staff de AM Estética Dental Uruguay",
+    description: "El equipo que abre la sede de Carrasco se está eligiendo ahora.",
     url: `${SITE_URL}/trabaja-en-am`,
     type: "website",
   },
@@ -32,15 +32,21 @@ export default function UruguayJobsPage() {
       <SiteHeader />
 
       <section className="page-hero shell">
-        <p className="eyebrow">EQUIPO URUGUAY · ZONA CARRASCO</p>
+        <p className="eyebrow">SÉ PARTE DEL STAFF DE AM URUGUAY</p>
         <h1>
-          Estamos armando
+          ¿Te gustaría formar parte
           <br />
-          <em>el equipo desde cero.</em>
+          <em>de lo que viene?</em>
         </h1>
         <p>
-          La sede de Carrasco abre con gente que todavía no contratamos. Si querés ser parte de la primera formación
-          de AM Estética Dental en Uruguay, este es el momento en que se decide quién la integra.
+          En Uruguay todavía no existe una clínica de estética dental que trabaje así: con laboratorio propio,
+          planificación digital y un método que ya transformó sonrisas de tres continentes. La estamos por abrir en
+          Carrasco, y el equipo que la va a hacer funcionar se está eligiendo ahora.
+        </p>
+        <p>
+          No buscamos currículums perfectos. Buscamos gente que quiera trabajar con un estándar alto y aprender un
+          método que se enseña adentro. Si sos esa persona, dejanos tus datos: cinco minutos, y quedás en la lista de
+          los primeros.
         </p>
       </section>
 
@@ -56,15 +62,23 @@ export default function UruguayJobsPage() {
       <section className="detail-section">
         <div className="shell prose-stack">
           <article>
-            <h2>Qué estamos buscando</h2>
+            <h2>Por qué vale la pena</h2>
             <p>
-              Perfiles que entiendan que el estándar no se negocia. En AM el resultado depende de una cadena completa:
-              el diagnóstico, la planificación digital, la ejecución clínica y el laboratorio propio. Cada eslabón
-              tiene que sostener el mismo nivel.
+              Entrar a una clínica que ya funciona es ocupar un lugar que alguien diseñó antes que vos. Acá es al
+              revés: los procesos, el equipo y la forma de trabajar de AM Uruguay se están definiendo, y quien llegue
+              primero los va a ayudar a escribir.
             </p>
             <p>
-              No hace falta que tengas experiencia en una clínica de estética premium. Sí hace falta criterio, atención
-              al detalle y ganas reales de aprender un método que se enseña adentro.
+              Vas a trabajar con laboratorio propio —el técnico en la misma clínica, no un proveedor externo—,
+              planificación digital y un método probado que se enseña adentro. Es el tipo de lugar donde en un año
+              sabés bastante más que cuando entraste.
+            </p>
+          </article>
+          <article>
+            <h2>Qué buscamos</h2>
+            <p>
+              Criterio, atención al detalle y ganas reales de aprender. No hace falta que vengas de una clínica de
+              estética premium: el método se enseña. Lo que no se enseña es querer hacer las cosas bien.
             </p>
           </article>
           <article>
@@ -83,7 +97,7 @@ export default function UruguayJobsPage() {
 
       <section className="jobs-form-section">
         <div className="shell">
-          <p className="eyebrow">FORMULARIO DE POSTULACIÓN</p>
+          <p className="eyebrow">CINCO MINUTOS Y QUEDÁS ADENTRO</p>
           <h2>
             Contanos quién sos
             <br />

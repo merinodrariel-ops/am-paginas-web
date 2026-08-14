@@ -12,9 +12,9 @@ const links = [
   ["Dr. Merino", "/dr-ariel-merino"],
 ] as const;
 
-// "Trabajá en AM" va aparte y destacado, no como un link más del menú: armar el
+// El acceso a postulaciones va aparte y destacado, no como un link más del menú: armar el
 // equipo de la sede uruguaya es la prioridad operativa hasta que Carrasco abra.
-const JOBS_LINK = ["Trabajá en AM", "/trabaja-en-am"] as const;
+const JOBS_LINK = ["Sumate al equipo", "/trabaja-en-am"] as const;
 
 export default function SiteHeader() {
   return (

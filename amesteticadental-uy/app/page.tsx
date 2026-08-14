@@ -179,8 +179,8 @@ export default function HomePage() {
 
       <section className="jobs-section">
         <div className="shell jobs-grid">
-          <div><p className="eyebrow">EQUIPO URUGUAY</p><h2>Estamos armando<br /><em>la base de talento.</em></h2></div>
-          <div><p>Recibimos postulaciones de odontólogos, asistentes, laboratorio dental, arquitectura, edición, marketing y perfiles operativos para la sede de Carrasco.</p><p>Las solicitudes entran al panel central de AM, donde las revisa el equipo interno de selección.</p><Link href="/trabaja-en-am" data-track="uy_jobs_click" className="button button-gold">Postularme</Link></div>
+          <div><p className="eyebrow">SÉ PARTE DEL STAFF DE AM URUGUAY</p><h2>Los primeros nombres<br /><em>todavía no están escritos.</em></h2></div>
+          <div><p>Buscamos a las personas que van a inaugurar la primera clínica internacional de estética dental en Uruguay. Odontólogos, asistentes, laboratorio dental, recepción, marketing y perfiles operativos.</p><p>No es sumarse a un equipo que ya funciona: es estar desde el primer día, con laboratorio propio, tecnología de punta y un método que ya demostró resultados.</p><Link href="/trabaja-en-am" data-track="uy_jobs_click" className="button button-gold">Quiero ser parte</Link></div>
         </div>
       </section>
 
