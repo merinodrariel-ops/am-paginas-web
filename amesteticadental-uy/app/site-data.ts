@@ -12,7 +12,16 @@ export const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMB
  * proyecto de Vercel. El servidor etiqueta la fila como `web_uruguay` según el
  * origen de la petición, no según un campo que el navegador pueda falsear.
  */
-export const JOBS_ENDPOINT = `${ARGENTINA_URL}/api/job-applications`;
+/**
+ * Ruta propia, no la argentina.
+ *
+ * El navegador postea a este dominio y el reenvío a Argentina lo hace el servidor
+ * (ver `app/api/job-applications/route.ts`). Antes apuntaba directo a
+ * `amesteticadental.com` y esa petición entre sitios la bloquean Safari, Brave y
+ * los bloqueadores de publicidad: el fetch se rechazaba sin respuesta y el usuario
+ * veía un error de conexión con la conexión perfecta.
+ */
+export const JOBS_ENDPOINT = "/api/job-applications";
 export const URUGUAY_SMILE_SIMULATOR_URL = "https://www.amesteticadental.com/sonrisa?source=uy";
 export const BROU_EXCHANGE_RATE_URL = "https://www.brou.com.uy/cotizaciones";
 

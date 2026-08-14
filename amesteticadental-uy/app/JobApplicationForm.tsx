@@ -94,9 +94,8 @@ export default function JobApplicationForm() {
     const formData = new FormData(event.currentTarget);
 
     try {
-      // Va al sitio argentino a propósito: la administración de postulaciones es
-      // una sola y vive allá. La fila queda etiquetada como Uruguay del lado del
-      // servidor, según el origen de la petición.
+      // Va a una ruta de ESTE dominio, no directo a Argentina: el salto entre
+      // sitios lo hace el servidor. Así ningún navegador ni extensión lo bloquea.
       const response = await fetch(JOBS_ENDPOINT, { method: "POST", body: formData });
       const data = await response.json().catch(() => ({}));
 
