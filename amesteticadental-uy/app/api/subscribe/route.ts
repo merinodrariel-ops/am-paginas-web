@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
             <h2 style="font-weight:300;margin-bottom:16px">Hola${nombre ? ` ${nombre}` : ""}!</h2>
             <p style="line-height:1.7;color:#555">Quedaste en nuestra lista de espera para la apertura en <strong>zona Carrasco, Miraflores 1445, Oficina 202, Montevideo</strong>. Te escribimos en cuanto tengamos fecha confirmada.</p>
             <p style="line-height:1.7;color:#555">Mientras tanto, podés explorar el portfolio clínico de AM Estética Dental:</p>
-            <a href="https://www.amesteticadental.com/casos" style="display:inline-block;background:#C9A96E;color:#141414;padding:12px 28px;border-radius:100px;text-decoration:none;font-weight:600;font-size:13px;margin-top:8px">Explorar portfolio AM →</a>
+            <a href="https://www.amesteticadental.com/casos-antes-y-despues" style="display:inline-block;background:#C9A96E;color:#141414;padding:12px 28px;border-radius:100px;text-decoration:none;font-weight:600;font-size:13px;margin-top:8px">Explorar portfolio AM →</a>
           </div>
           <div style="padding:20px 32px;border-top:1px solid #eee;font-size:11px;color:#999;text-align:center">
             AM Estética Dental · Montevideo, Uruguay

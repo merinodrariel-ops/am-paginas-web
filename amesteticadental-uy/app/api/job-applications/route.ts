@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { ARGENTINA_URL, SITE_URL } from "../../site-data";
+import { enviarAcuseDePostulacion } from "./email";
 
 /**
  * Puente de postulaciones: el navegador postea acá, este servidor reenvía a Argentina.
@@ -54,6 +55,15 @@ export async function POST(request: Request) {
           ? "El archivo es demasiado grande para enviarlo. Exportá el CV comprimiendo las imágenes y probá otra vez."
           : "No pudimos procesar la postulación en este momento. Probá de nuevo en unos minutos.";
       return NextResponse.json({ error: detalle }, { status: upstream.status || 502 });
+    }
+
+    // Acuse al postulante, sólo si la postulación entró de verdad. Se espera el
+    // envío —la función ya declara maxDuration 60— pero un fallo del mail no
+    // convierte en error una postulación que sí se guardó.
+    if (upstream.ok && data?.success) {
+      const email = String(formData.get("email") || "").trim();
+      const nombre = String(formData.get("full_name") || "").trim().split(" ")[0] || "";
+      await enviarAcuseDePostulacion(email, nombre);
     }
 
     return NextResponse.json(data, { status: upstream.status });
