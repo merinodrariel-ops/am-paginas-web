@@ -1,18 +1,13 @@
+import { enviarMail } from "../../lib/email";
 import { ARGENTINA_URL, SITE_URL } from "../../site-data";
 
 /**
  * Acuse de recibo al postulante.
  *
- * Se manda por Brevo, que es el proveedor que el sitio ya usa para la lista de
- * novedades (`/api/subscribe`), así que no suma una integración nueva.
- *
- * Regla importante: si el mail falla, la postulación NO falla. El CV ya está
- * guardado y la fila creada; que el acuse no salga es una molestia, no un error
- * que justifique decirle a la persona que su postulación no entró.
+ * Regla: si el mail falla, la postulación NO falla. El CV ya está guardado y la
+ * fila creada; que el acuse no salga es una molestia, no un motivo para decirle a
+ * la persona que su postulación no entró.
  */
-const BREVO_KEY = process.env.BREVO_API_KEY;
-const REMITENTE = { name: "AM Estética Dental Uruguay", email: "amesteticadentaluruguay@gmail.com" };
-
 function plantilla(nombre: string) {
   const saludo = nombre ? `Hola ${nombre},` : "Hola,";
   return `
@@ -60,33 +55,12 @@ function plantilla(nombre: string) {
 }
 
 export async function enviarAcuseDePostulacion(email: string, nombre: string) {
-  if (!BREVO_KEY) {
-    console.error(
-      "[job-applications] Falta BREVO_API_KEY en este proyecto de Vercel: la postulación se guardó " +
-        "pero el postulante NO recibió el acuse de recibo.",
-    );
-    return;
-  }
-
   if (!email) return;
 
-  try {
-    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
-      method: "POST",
-      headers: { "api-key": BREVO_KEY, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        sender: REMITENTE,
-        to: [{ email, name: nombre || undefined }],
-        subject: "Recibimos tu postulación — AM Estética Dental Uruguay",
-        htmlContent: plantilla(nombre),
-      }),
-    });
-
-    if (!response.ok) {
-      const detalle = await response.text().catch(() => "");
-      console.error(`[job-applications] Brevo rechazó el acuse (HTTP ${response.status}): ${detalle}`);
-    }
-  } catch (error) {
-    console.error("[job-applications] falló el envío del acuse al postulante:", error);
-  }
+  await enviarMail({
+    para: email,
+    nombre: nombre || undefined,
+    asunto: "Recibimos tu postulación — AM Estética Dental Uruguay",
+    html: plantilla(nombre),
+  });
 }
