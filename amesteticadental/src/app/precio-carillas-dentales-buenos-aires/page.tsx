@@ -454,9 +454,24 @@ export default function PrecioCarillasPage() {
                 Sí. En AM Estética Dental ofrecemos <strong className="text-crema">financiación propia con tasa fija anual del 18%</strong> (1,5% mensual). Podés abonar un anticipo del 30% o 50% y financiar el saldo en 3, 6 o 12 cuotas. Los valores en USD se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago, lo que te permite planificar sin la volatilidad del dólar blue.
               </p>
 
-              <h3 className="text-crema font-manrope font-medium text-xl mt-10 mb-4">¿Vale la pena viajar a Buenos Aires para hacerse carillas?</h3>
+              {/* Este bloque reemplaza una comparación de precios por país. La regla de
+                  posicionamiento es explícita: AM no compite por ser más barata. Comparar
+                  contra otros países invita justamente al paciente que se va a ir a Turquía
+                  o Colombia por precio, que no es el nicho. El eje es la proyección
+                  internacional de la clínica, no el ahorro. */}
+              <h3 className="text-crema font-manrope font-medium text-xl mt-10 mb-4">Una clínica con pacientes de tres continentes</h3>
               <p>
-                El <strong className="text-crema">turismo dental en Buenos Aires</strong> es una realidad cada vez más común. Pacientes de Estados Unidos, Europa y otros países de Latinoamérica viajan a Buenos Aires para realizarse tratamientos de estética dental con una diferencia de inversión importante frente a sus países de origen. Mientras que en Estados Unidos una carilla de porcelana puede costar entre USD 1.000 y 2.500, en AM Estética Dental las cerámicas tienen un valor de USD 1.000 a 1.500 por pieza.
+                AM Estética Dental no es un consultorio de barrio que además recibe extranjeros. Es una clínica que trabaja de forma habitual con pacientes de <strong className="text-crema">Latinoamérica, Estados Unidos y Europa</strong>, y que documenta esos casos públicamente: desde una paciente de Milán que viajó por un diseño de sonrisa hasta rehabilitaciones completas resueltas en menos de un mes.
+              </p>
+              <p>
+                Esa proyección es también estructural. La clínica está construyendo su{" "}
+                <Link href="https://www.amesteticadental.uy/clinica-dental-carrasco" className="text-oro underline underline-offset-4 hover:text-oro-light" target="_blank" rel="noopener">
+                  segunda sede en Montevideo
+                </Link>
+                , y el trabajo del Dr. Merino tiene cobertura editorial en Forbes Argentina, La Nación y Ámbito. No es una clínica que atiende turismo dental: es una clínica internacional con sede en Buenos Aires.
+              </p>
+              <p>
+                La razón por la que un paciente cruza una frontera para tratarse acá no es el precio, y no queremos que lo sea. Es el <strong className="text-crema">laboratorio propio</strong>: el técnico ve el caso, participa de la prueba y ajusta en el momento. Eso concentra en pocos días lo que en un circuito con laboratorio externo se estira semanas. Quien viaja no está buscando gastar menos —está comprando tiempo.
               </p>
 
               {/* Enlace contextual para lectores uruguayos: Search Console muestra que
@@ -465,11 +480,7 @@ export default function PrecioCarillasPage() {
                   amesteticadental.uy, que hoy tiene casi ningún enlace entrante. */}
               <h3 className="text-crema font-manrope font-medium text-xl mt-10 mb-4">¿Vivís en Uruguay?</h3>
               <p>
-                Montevideo está a menos de una hora de vuelo, y una parte de los pacientes que llegan a Puerto Madero cruza desde Uruguay. AM Estética Dental está preparando además su{" "}
-                <Link href="https://www.amesteticadental.uy/clinica-dental-carrasco" className="text-oro underline underline-offset-4 hover:text-oro-light" target="_blank" rel="noopener">
-                  sede en zona Carrasco, Montevideo
-                </Link>
-                . Mientras la obra avanza, podés ver{" "}
+                Montevideo está a menos de una hora de vuelo, y una parte de los pacientes que llegan a Puerto Madero cruza desde Uruguay. Mientras la sede de Carrasco avanza, podés ver{" "}
                 <Link href="https://www.amesteticadental.uy/tratamiento-en-buenos-aires-desde-uruguay" className="text-oro underline underline-offset-4 hover:text-oro-light" target="_blank" rel="noopener">
                   cómo se organiza un tratamiento en Buenos Aires viviendo en Montevideo
                 </Link>
