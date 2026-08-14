@@ -1,36 +1,74 @@
 import { NextRequest, NextResponse } from "next/server";
-import { enviarMail, guardarContacto } from "../../lib/email";
+import { enviarMail } from "../../lib/email";
 import { ARGENTINA_URL, SITE_URL } from "../../site-data";
 
 /**
  * Lista de novedades de la apertura en Carrasco.
  *
- * Migrada de Brevo a Resend para que la red tenga un solo proveedor de mail (ver
- * `app/lib/email.ts`). Brevo había entrado en el commit 6570857 y su clave dejó de
- * ser válida: la API respondía 401 y este endpoint devolvía 503 a cada visitante,
- * así que todos los leads de la lista de espera se estaban perdiendo.
+ * El contacto se guarda en `marketing_leads` de Supabase, a través del endpoint
+ * del sitio argentino —la misma tabla que ya usan los formularios de Buenos
+ * Aires—, y recién después se manda el mail de confirmación.
  *
- * Orden deliberado: primero se guarda el contacto, después se manda el mail. Si el
- * mail falla pero el contacto quedó guardado, el lead NO se pierde y se responde
- * ok. Al revés sería peor: una confirmación linda para alguien que no quedó
- * anotado en ningún lado.
+ * Ese orden es deliberado. Antes esto vivía en un proveedor externo (Brevo) cuya
+ * clave dejó de ser válida: el endpoint devolvía 503 a cada visitante y cada lead
+ * se perdía sin dejar rastro. Ahora el lead queda guardado en una base propia
+ * aunque el proveedor de mail esté caído, que es el único orden en el que un
+ * fallo no cuesta un paciente.
  */
+export const runtime = "nodejs";
+export const maxDuration = 30;
+
+const LEADS_ENDPOINT = `${ARGENTINA_URL}/api/leads`;
+
 export async function POST(req: NextRequest) {
-  const { email, nombre } = await req.json().catch(() => ({}) as { email?: string; nombre?: string });
+  const { nombre, apellido, email } = await req
+    .json()
+    .catch(() => ({}) as { nombre?: string; apellido?: string; email?: string });
 
-  if (!email || typeof email !== "string") {
-    return NextResponse.json({ error: "Email requerido" }, { status: 400 });
+  const nombreLimpio = String(nombre || "").trim();
+  const apellidoLimpio = String(apellido || "").trim();
+  const emailLimpio = String(email || "").trim().toLowerCase();
+
+  if (!nombreLimpio || !apellidoLimpio) {
+    return NextResponse.json({ error: "Necesitamos tu nombre y apellido." }, { status: 400 });
   }
 
-  const contacto = await guardarContacto({ email, nombre });
-
-  if (!contacto.ok) {
-    return NextResponse.json({ error: "No podemos registrar datos en este momento." }, { status: 503 });
+  if (!emailLimpio || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailLimpio)) {
+    return NextResponse.json({ error: "Necesitamos un email válido." }, { status: 400 });
   }
 
+  // 1. Guardar el lead. Si esto falla, se corta: no tiene sentido mandar una
+  //    confirmación linda a alguien que no quedó registrado en ningún lado.
+  try {
+    const guardado = await fetch(LEADS_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Origin: SITE_URL },
+      body: JSON.stringify({
+        fullName: `${nombreLimpio} ${apellidoLimpio}`,
+        email: emailLimpio,
+        interestTags: ["apertura_carrasco"],
+        metadata: { sede: "uruguay", formulario: "lista_novedades" },
+      }),
+    });
+
+    if (!guardado.ok) {
+      const detalle = await guardado.json().catch(() => ({}));
+      console.error(`[subscribe] no se pudo guardar el lead (HTTP ${guardado.status}):`, detalle);
+      return NextResponse.json(
+        { error: detalle.error || "No podemos registrar tus datos en este momento." },
+        { status: 503 },
+      );
+    }
+  } catch (error) {
+    console.error("[subscribe] falló el guardado del lead:", error);
+    return NextResponse.json({ error: "No podemos registrar tus datos en este momento." }, { status: 503 });
+  }
+
+  // 2. Confirmación. Si falla, el lead YA está guardado: se registra el error
+  //    pero al visitante se le confirma, porque para él la acción sí funcionó.
   await enviarMail({
-    para: email,
-    nombre: nombre || undefined,
+    para: emailLimpio,
+    nombre: nombreLimpio,
     asunto: "Te avisamos cuando abramos en Carrasco",
     html: `
       <div style="font-family:-apple-system,Segoe UI,sans-serif;max-width:540px;margin:0 auto;color:#1a1a1a;background:#ffffff">
@@ -39,7 +77,7 @@ export async function POST(req: NextRequest) {
           <p style="color:rgba(246,241,231,.55);letter-spacing:0.18em;font-size:9px;text-transform:uppercase;margin:8px 0 0">Uruguay · Zona Carrasco</p>
         </div>
         <div style="padding:40px 32px">
-          <h2 style="font-weight:300;font-size:24px;margin:0 0 20px">Hola${nombre ? ` ${nombre}` : ""},</h2>
+          <h2 style="font-weight:300;font-size:24px;margin:0 0 20px">Hola ${nombreLimpio},</h2>
           <p style="line-height:1.75;color:#4a4d48;margin:0 0 18px">
             Quedaste en la lista de la apertura de AM Estética Dental en zona Carrasco, Montevideo.
             Te vamos a escribir apenas tengamos fecha confirmada y agenda abierta.

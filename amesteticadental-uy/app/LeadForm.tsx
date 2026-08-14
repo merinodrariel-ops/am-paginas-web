@@ -4,7 +4,9 @@ import { useState } from "react";
 export default function LeadForm() {
   const [email, setEmail] = useState("");
   const [nombre, setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "ok" | "error">("idle");
+  const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -12,13 +14,15 @@ export default function LeadForm() {
     const res = await fetch("/api/subscribe", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, nombre }),
+      body: JSON.stringify({ email, nombre, apellido }),
     });
+    const data = await res.json().catch(() => ({}));
     if (res.ok) {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: "uy_waitlist_submit", page_path: window.location.pathname });
       setStatus("ok");
     } else {
+      setError(data.error || "No pudimos registrar tus datos. Intentá nuevamente en unos minutos.");
       setStatus("error");
     }
   }
@@ -48,6 +52,14 @@ export default function LeadForm() {
         style={{ background: "rgba(245,240,232,0.06)", border: "1px solid rgba(201,169,110,0.25)", borderRadius: 8, padding: "14px 18px", color: "var(--crema, #F5F0E8)", fontSize: 14, outline: "none", width: "100%" }}
       />
       <input
+        type="text"
+        placeholder="Tu apellido"
+        value={apellido}
+        onChange={e => setApellido(e.target.value)}
+        required
+        style={{ background: "rgba(245,240,232,0.06)", border: "1px solid rgba(201,169,110,0.25)", borderRadius: 8, padding: "14px 18px", color: "var(--crema, #F5F0E8)", fontSize: 14, outline: "none", width: "100%" }}
+      />
+      <input
         type="email"
         placeholder="Tu email"
         value={email}
@@ -57,7 +69,7 @@ export default function LeadForm() {
       />
       {status === "error" && (
         <p style={{ fontSize: 12, color: "#f87171", textAlign: "center" }}>
-          No pudimos registrar tus datos. Intentá nuevamente en unos minutos.
+          {error || "No pudimos registrar tus datos. Intentá nuevamente en unos minutos."}
         </p>
       )}
       <button
