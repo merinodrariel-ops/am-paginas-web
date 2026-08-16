@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import SiteFooter from "../../components/SiteFooter";
 
 const SLUG = "/casos/odontologo-argentino-inteligencia-artificial-simular-sonrisa";
 const CANONICAL = `https://www.thedentalreview.com${SLUG}`;
@@ -309,21 +310,7 @@ export default function OdontologoArgentinoIaSimularSonrisaPage() {
         </div>
       </main>
 
-      <footer style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", marginTop: 60, padding: 24 }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <Link
-            href="/"
-            style={{
-              color: "var(--ink, #0e0e0e)",
-              fontFamily: "var(--font-playfair, Georgia, serif)",
-              fontSize: 15,
-              textDecoration: "none",
-            }}
-          >
-            The Dental Review
-          </Link>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

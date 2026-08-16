@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteFooter from "../../components/SiteFooter";
 
 const CANONICAL = "https://www.thedentalreview.com/noticias/nobel-biocare-s-series-implantologia-2026";
 
@@ -115,12 +116,7 @@ export default function ArticuloNobelSeries() {
 
         </main>
 
-        <footer style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", padding: "24px", marginTop: 60 }}>
-          <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-            <Link href="/" style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: 15, textDecoration: "none", color: "var(--ink, #0e0e0e)" }}>The Dental Review</Link>
-            <span style={{ fontSize: 10, color: "var(--muted, #6b6560)", letterSpacing: "0.2em", textTransform: "uppercase" }}>© 2026</span>
-          </div>
-        </footer>
+        <SiteFooter />
 
       </div>
     </>

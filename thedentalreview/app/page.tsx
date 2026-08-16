@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import SiteFooter from "./components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "The Dental Review — Odontología Estética de Alto Nivel",
@@ -211,15 +212,7 @@ export default function HomePage() {
 
       </main>
 
-      <footer style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", padding: "28px 24px", marginTop: 80 }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-          <span style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: 16 }}>The Dental Review</span>
-          <div style={{ display: "flex", gap: 18, alignItems: "center", flexWrap: "wrap" }}>
-            <Link href="/acerca-de" style={{ fontSize: 10, color: "var(--muted)", textDecoration: "none" }}>Criterios editoriales</Link>
-            <span style={{ fontSize: 10, color: "var(--muted, #6b6560)", letterSpacing: "0.12em", textTransform: "uppercase" }}>© 2026</span>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
 
     </div>
   );

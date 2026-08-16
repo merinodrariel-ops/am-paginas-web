@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import SiteFooter from "../../components/SiteFooter";
 
 const CANONICAL = "https://www.thedentalreview.com/conferencias/expodent-2026-dr-ariel-merino-inteligencia-artificial-diseno-sonrisa";
 const COVER = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/expodent-2026/expodent-2026-dr-ariel-merino-charla-ia-odontologia-portada.jpg";
@@ -82,12 +83,7 @@ export default function ExpodentArticle() {
         </article>
       </main>
 
-      <footer style={{ borderTop: "1px solid var(--paper-dim)", padding: "28px 24px", marginTop: 64 }}>
-        <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", justifyContent: "space-between", gap: 16, flexWrap: "wrap", fontSize: 11 }}>
-          <span>© 2026 The Dental Review</span>
-          <Link href="/acerca-de" style={{ color: "var(--muted)" }}>Criterios editoriales y contacto</Link>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

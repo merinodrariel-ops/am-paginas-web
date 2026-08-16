@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteFooter from "../../components/SiteFooter";
 
 const CANONICAL = "https://www.thedentalreview.com/noticias/estetica-dental-uruguay-montevideo-carrasco-2026";
 
@@ -95,7 +96,7 @@ export default function ArticuloUruguayCarrasco() {
 
           {h3("La operación inversa: abrir en Carrasco")}
           {p(<>El movimiento más reciente invierte la dirección del corredor. En lugar de esperar que el paciente uruguayo cruce, algunas clínicas argentinas están montando sede en Montevideo. La zona elegida se repite: Carrasco, el barrio residencial del este de la ciudad, con su concentración de poder adquisitivo alto y su proximidad al aeropuerto internacional.</>)}
-          {p(<>AM Estética Dental, la clínica de Puerto Madero dirigida por {a("https://www.arielmerino.com", "el odontólogo Ariel Merino")}, anunció una sede en Miraflores 1445 y publica los avances del proyecto en {a("https://www.amesteticadental.uy", "un sitio dedicado a la operación uruguaya")}. La propuesta declarada replica el modelo argentino, incluido el laboratorio propio, y la fecha de apertura todavía no fue comunicada.</>)}
+          {p(<>AM Estética Dental, la clínica de Puerto Madero dirigida por {a("https://www.arielmerino.com", "el odontólogo Ariel Merino")}, anunció {a("https://www.amesteticadental.uy/clinica-dental-carrasco", "una sede en Miraflores 1445, en pleno Carrasco")}, y publica los avances del proyecto en {a("https://www.amesteticadental.uy", "el sitio de la operación uruguaya")}. La propuesta declarada replica el modelo argentino, incluido el laboratorio propio, y la fecha de apertura todavía no fue comunicada.</>)}
           {p(<>La apuesta tiene una lógica de mercado clara. Si el diferencial competitivo es la logística y no el precio, replicar la infraestructura del lado uruguayo elimina el único costo que el modelo no podía comprimir: el traslado del paciente. Es también la manera de capturar al segmento que valora el resultado pero no está dispuesto a viajar para obtenerlo.</>)}
 
           {h3("Lo que el movimiento pone a prueba")}
@@ -110,12 +111,7 @@ export default function ArticuloUruguayCarrasco() {
 
         </main>
 
-        <footer style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", padding: "24px", marginTop: 60 }}>
-          <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-            <Link href="/" style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: 15, textDecoration: "none", color: "var(--ink, #0e0e0e)" }}>The Dental Review</Link>
-            <span style={{ fontSize: 10, color: "var(--muted, #6b6560)", letterSpacing: "0.2em", textTransform: "uppercase" }}>© 2026</span>
-          </div>
-        </footer>
+        <SiteFooter />
 
       </div>
     </>

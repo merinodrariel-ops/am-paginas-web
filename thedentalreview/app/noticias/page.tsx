@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import SiteFooter from "../components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Noticias de odontología estética y digital",
@@ -75,9 +76,7 @@ export default function NoticiasPage() {
           ))}
         </div>
       </main>
-      <footer style={{ borderTop: "1px solid var(--paper-dim)", padding: "28px 24px" }}>
-        <div style={{ maxWidth: 1040, margin: "0 auto", fontSize: 11, color: "var(--muted)" }}>© 2026 The Dental Review · Buenos Aires, Argentina</div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

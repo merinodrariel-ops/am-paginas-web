@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteFooter from "../components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Acerca de The Dental Review",
@@ -30,9 +31,7 @@ export default function AboutPage() {
           <p>Para proponer información, señalar una corrección o compartir documentación de interés periodístico, escribí a <a href="mailto:info@amesteticadental.com?subject=The%20Dental%20Review%20-%20Contacto%20editorial">info@amesteticadental.com</a> con el asunto &ldquo;The Dental Review&rdquo;.</p>
         </div>
       </main>
-      <footer style={{ borderTop: "1px solid var(--paper-dim)", padding: "28px 24px" }}>
-        <div style={{ maxWidth: 760, margin: "0 auto", fontSize: 11, color: "var(--muted)" }}>© 2026 The Dental Review · Buenos Aires, Argentina</div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
