@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { hreflangFor } from "@/lib/i18n-routes";
 import Contacto from "@/components/Contacto";
 
 const CANONICAL = "https://www.amesteticadental.com/en/blog/do-veneers-damage-your-teeth";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Do Veneers Damage Your Teeth? The Honest Answer | AM Estética Dental",
     description: "Veneers require minimal enamel preparation in most cases. Why blanket 'no-prep' promises are a half-truth, what is reversible and what genuinely damages teeth.",
-    alternates: { canonical: CANONICAL },
+    alternates: { canonical: CANONICAL, languages: hreflangFor("/blog/las-carillas-danan-los-dientes") },
     openGraph: {
         title: "Do veneers damage your teeth?",
         description: "The honest answer about enamel preparation, what 'no-prep' really means and the question to ask your dentist.",

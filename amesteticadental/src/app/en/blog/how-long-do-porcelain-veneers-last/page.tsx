@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { hreflangFor } from "@/lib/i18n-routes";
 import Contacto from "@/components/Contacto";
 
 const CANONICAL = "https://www.amesteticadental.com/en/blog/how-long-do-porcelain-veneers-last";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "How Long Do Porcelain Veneers Last? | AM Estética Dental",
     description: "Porcelain veneers last 10 to 20 years with the right care. What wears them down, how to protect them and when they need replacing. By Dr. Ariel Merino.",
-    alternates: { canonical: CANONICAL },
+    alternates: { canonical: CANONICAL, languages: hreflangFor("/blog/cuanto-duran-las-carillas-de-porcelana") },
     openGraph: {
         title: "How long do porcelain veneers last?",
         description: "10 to 20 years with the right care. Everything about durability, maintenance and the signs it is time to renew them.",

@@ -3,6 +3,7 @@ import { hreflangFor } from "@/lib/i18n-routes";
 import Navbar from "@/components/Navbar";
 import Testimonios from "@/components/Testimonios";
 import Link from "next/link";
+import { GOOGLE_REVIEWS } from "@/lib/reviews";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -38,9 +39,7 @@ const reviewsSchema = {
     },
     "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "120",
-        "bestRating": "5",
+        ...GOOGLE_REVIEWS,
         "worstRating": "1",
     },
     "review": [

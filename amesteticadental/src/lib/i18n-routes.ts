@@ -23,6 +23,12 @@ export const EN_BY_ES: Record<string, string> = {
   "/blog": "/en/blog",
   "/prensa": "/en/press",
   "/sonrisa": "/en/smile-simulator",
+  // Artículos del blog traducidos. Estaban fuera del mapa en los dos sentidos:
+  // sólo figuraba el listado /blog ↔ /en/blog, así que las notas quedaban
+  // huérfanas de hreflang y la banderita caía al home inglés.
+  "/blog/las-carillas-danan-los-dientes": "/en/blog/do-veneers-damage-your-teeth",
+  "/blog/cuanto-duran-las-carillas-de-porcelana": "/en/blog/how-long-do-porcelain-veneers-last",
+  "/blog/cuanto-cuestan-las-carillas-dentales-en-argentina": "/en/blog/veneers-cost-argentina",
 };
 
 export const ES_BY_EN: Record<string, string> = Object.fromEntries(

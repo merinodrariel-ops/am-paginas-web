@@ -22,18 +22,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const canonical = `https://www.amesteticadental.com/en/cases/${caso.slug}`;
     const spanish = `https://www.amesteticadental.com/casos/${caso.slug}`;
     const description = caso.seoDescription || caso.descripcion;
+
+    // Esta ruta renderiza para todos los slugs, pero los casos sin bloque `en`
+    // salen con el texto en español. Declarar hreflang ahí sería anunciar una
+    // traducción que no existe, y encima deja dos URLs con el mismo contenido
+    // castellano compitiendo. Mientras no esté traducido: canonical al español
+    // y fuera del índice.
+    const traducido = Boolean(caso.en);
+
     return {
         metadataBase: new URL("https://www.amesteticadental.com"),
         title: `${caso.seoTitle || caso.titulo} | AM Estética Dental`,
         description,
-        alternates: {
-            canonical,
-            languages: {
-                "es-AR": spanish,
-                "en-US": canonical,
-                "x-default": spanish,
-            },
-        },
+        alternates: traducido
+            ? {
+                canonical,
+                languages: {
+                    "es-AR": spanish,
+                    "en-US": canonical,
+                    "x-default": spanish,
+                },
+            }
+            : { canonical: spanish },
+        ...(traducido ? {} : { robots: { index: false, follow: true } }),
         openGraph: {
             title: caso.seoTitle || caso.titulo,
             description,

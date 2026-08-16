@@ -86,6 +86,13 @@ const nextConfig: NextConfig = {
         destination: "/casos/gingivectomia-laser-micro-diseno-sonrisa-resinas",
         permanent: true,
       },
+      // La variante con barra final la resolvía el mapa de src/proxy.ts, que ya
+      // no existe. Explícita acá para que siga siendo un solo salto.
+      {
+        source: "/casos/gingivectomia-laser-10-procedimiento-recorte-gingival/",
+        destination: "/casos/gingivectomia-laser-micro-diseno-sonrisa-resinas",
+        permanent: true,
+      },
       {
         source: "/carillas-dentales-buenos-aires",
         destination: "/precio-carillas-dentales-buenos-aires",

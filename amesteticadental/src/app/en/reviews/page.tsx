@@ -4,6 +4,7 @@ import Testimonios from "@/components/Testimonios";
 import Contacto from "@/components/Contacto";
 import Link from "next/link";
 import { hreflangFor } from "@/lib/i18n-routes";
+import { GOOGLE_REVIEWS } from "@/lib/reviews";
 
 const CANONICAL = "https://www.amesteticadental.com/en/reviews";
 
@@ -42,9 +43,7 @@ const reviewsSchema = {
     },
     aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "120",
-        bestRating: "5",
+        ...GOOGLE_REVIEWS,
         worstRating: "1",
     },
 };

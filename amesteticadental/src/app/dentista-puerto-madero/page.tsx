@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { GOOGLE_REVIEWS } from "@/lib/reviews";
 
 const CANONICAL = "https://www.amesteticadental.com/dentista-puerto-madero";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20agendar%20una%20consulta%20en%20AM%20Est%C3%A9tica%20Dental.";
@@ -92,7 +93,7 @@ const schema = {
                 addressCountry: "AR",
             },
             geo: { "@type": "GeoCoordinates", latitude: -34.620858, longitude: -58.3609047 },
-            aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "120", bestRating: "5" },
+            aggregateRating: { "@type": "AggregateRating", ...GOOGLE_REVIEWS },
         },
         {
             "@type": "FAQPage",

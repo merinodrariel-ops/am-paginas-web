@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { hreflangFor } from "@/lib/i18n-routes";
 
 const CANONICAL = "https://www.amesteticadental.com/blog/cuanto-cuestan-las-carillas-dentales-en-argentina";
 
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     description: "Cuánto cuesta ponerse carillas en Argentina en 2026: rangos por material y qué explica que una carilla cueste tres veces más que otra en la clínica de al lado.",
     alternates: {
         canonical: CANONICAL,
+        languages: hreflangFor("/blog/cuanto-cuestan-las-carillas-dentales-en-argentina"),
     },
     keywords: "cuánto cuestan las carillas dentales en Argentina, precio carillas Argentina 2026, cuánto cuesta ponerse carillas, carillas dentales precio, costo carillas porcelana Argentina",
     openGraph: {

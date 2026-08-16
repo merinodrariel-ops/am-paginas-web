@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Manrope, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
 import RootSchema from "@/components/seo/RootSchema";
+import RedAM from "@/components/RedAM";
+import { GOOGLE_REVIEWS } from "@/lib/reviews";
 import "./globals.css";
 
 const gtmId = (process.env.NEXT_PUBLIC_GTM_ID || "GTM-P9KCL5W7").trim();
@@ -61,15 +63,6 @@ export const metadata: Metadata = {
   },
 };
 
-const REVIEW_BASE = 116;
-const REVIEW_BASE_DATE = new Date("2026-08-01");
-const REVIEWS_PER_MONTH = 2;
-const reviewCount = Math.round(
-  REVIEW_BASE +
-    ((Date.now() - REVIEW_BASE_DATE.getTime()) / (30.44 * 24 * 60 * 60 * 1000)) *
-      REVIEWS_PER_MONTH
-);
-
 const schemaOrg = {
   "@context": "https://schema.org",
   "@type": ["Dentist", "LocalBusiness"],
@@ -103,9 +96,7 @@ const schemaOrg = {
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": String(reviewCount),
-    "bestRating": "5"
+    ...GOOGLE_REVIEWS,
   },
   "employee": {
     "@type": "Person",
@@ -229,6 +220,8 @@ fbq('track', 'PageView');`,
         </svg>
 
         {children}
+
+        <RedAM />
 
         {/* WhatsApp click tracking → dataLayer → GTM → Google Ads conversión */}
         <Script

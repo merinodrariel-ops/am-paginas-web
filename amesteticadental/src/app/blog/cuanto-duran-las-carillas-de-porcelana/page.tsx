@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { hreflangFor } from "@/lib/i18n-routes";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
     description: "Las carillas de porcelana duran entre 10 y 20 años con el cuidado correcto. Te explicamos qué las desgasta, cómo cuidarlas y cuándo hay que reemplazarlas.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog/cuanto-duran-las-carillas-de-porcelana",
+        languages: hreflangFor("/blog/cuanto-duran-las-carillas-de-porcelana"),
     },
     openGraph: {
         title: "¿Cuánto duran las carillas de porcelana?",

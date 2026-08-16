@@ -34,6 +34,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const seoTitle = caso.seoTitle ? `${caso.seoTitle} | AM Estética Dental` : `${caso.titulo} | AM Estética Dental`;
     const seoDescription = caso.seoDescription || caso.descripcion;
 
+    // El par ES↔EN tiene que estar declarado de los dos lados o Google ignora
+    // el cluster y deja las dos URLs compitiendo entre sí. La versión inglesa ya
+    // lo declaraba; esta no, así que el par no existía para Google.
+    //
+    // Sólo se declara si el caso está efectivamente traducido: /en/cases/[slug]
+    // renderiza para todos los slugs, pero los que no tienen bloque `en` salen
+    // con el texto en español, y ahí el par sería mentira.
+    const english = caso.en
+        ? `https://www.amesteticadental.com/en/cases/${caso.slug}`
+        : undefined;
+
     return {
         metadataBase: new URL("https://www.amesteticadental.com"),
         title: seoTitle,
@@ -41,6 +52,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         keywords,
         alternates: {
             canonical,
+            ...(english && {
+                languages: {
+                    "es-AR": canonical,
+                    "en-US": english,
+                    "x-default": canonical,
+                },
+            }),
         },
         openGraph: {
             title: caso.seoTitle || caso.titulo,

@@ -28,8 +28,6 @@ const COPY = {
         hrefPrices: "/precio-carillas-dentales-buenos-aires",
         hrefDoctor: "/dr-ariel-merino",
         hrefDentist: "/dentista-puerto-madero",
-        networkLabel: "AM en la región",
-        networkUy: "AM Uruguay · Montevideo",
     },
     en: {
         eyebrow: "Puerto Madero, Buenos Aires",
@@ -56,8 +54,6 @@ const COPY = {
         hrefPrices: "/en/porcelain-veneers-buenos-aires",
         hrefDoctor: "/dr-ariel-merino",
         hrefDentist: "/en/smile-design-buenos-aires",
-        networkLabel: "AM across the region",
-        networkUy: "AM Uruguay · Montevideo",
     },
 } as const;
 
@@ -242,38 +238,9 @@ export default function Contacto({ lang = "es" }: { lang?: "es" | "en" }) {
                     <a href={t.hrefDentist} className="hover:text-oro transition-colors">{t.navDentist}</a>
                 </div>
 
-                {/* Red AM: las otras propiedades de la marca. Sin esta fila, amesteticadental.uy
-                    no recibía ni un enlace desde el sitio principal. */}
-                <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[10px] font-manrope uppercase tracking-widest text-crema/25">
-                    <span className="text-crema/40">{t.networkLabel}</span>
-                    <a
-                        href="https://www.amesteticadental.uy"
-                        data-track="ar_to_uy_footer_click"
-                        target="_blank"
-                        rel="noopener"
-                        className="hover:text-oro transition-colors"
-                    >
-                        {t.networkUy}
-                    </a>
-                    <span className="text-oro/20 hidden sm:inline">|</span>
-                    <a
-                        href="https://www.thedentalreview.com"
-                        target="_blank"
-                        rel="noopener"
-                        className="hover:text-oro transition-colors"
-                    >
-                        The Dental Review
-                    </a>
-                    <span className="text-oro/20 hidden sm:inline">|</span>
-                    <a
-                        href="https://www.arielmerino.com"
-                        target="_blank"
-                        rel="noopener"
-                        className="hover:text-oro transition-colors"
-                    >
-                        arielmerino.com
-                    </a>
-                </div>
+                {/* La fila "Red AM" vivía acá. Se mudó a components/RedAM.tsx, colgada del
+                    layout raíz, para que salga en las 76 páginas y no sólo en las 21 que
+                    montan este componente. */}
             </div>
 
         </section>

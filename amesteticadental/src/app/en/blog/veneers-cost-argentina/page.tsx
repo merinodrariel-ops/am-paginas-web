@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { hreflangFor } from "@/lib/i18n-routes";
 import Contacto from "@/components/Contacto";
 
 const CANONICAL = "https://www.amesteticadental.com/en/blog/veneers-cost-argentina";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "How Much Do Veneers Cost in Argentina? 2026 Guide | AM Estética Dental",
     description: "Veneer investment in Argentina 2026: USD figures per unit, what changes the number, what should be included, and why international patients actually travel here.",
-    alternates: { canonical: CANONICAL },
+    alternates: { canonical: CANONICAL, languages: hreflangFor("/blog/cuanto-cuestan-las-carillas-dentales-en-argentina") },
     openGraph: {
         title: "How much do veneers cost in Argentina?",
         description: "USD figures, what changes the investment, and the honest reason patients travel to Buenos Aires — it is time, not price.",

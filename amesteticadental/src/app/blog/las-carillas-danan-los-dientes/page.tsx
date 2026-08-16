@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { hreflangFor } from "@/lib/i18n-routes";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     description: "Cuánto esmalte se prepara realmente: 0,4 mm frente a los 2,2 mm naturales. Respuesta clínica honesta y casos con más de 10 años de seguimiento.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog/las-carillas-danan-los-dientes",
+        languages: hreflangFor("/blog/las-carillas-danan-los-dientes"),
     },
     openGraph: {
         title: "¿Las carillas dañan los dientes? Mitos y realidades",
