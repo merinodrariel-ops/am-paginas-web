@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Dashboard AM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Dashboard AM</h1>
+        <div class="sub" id="sub">Cargando…</div>
+      </div>
+      <div class="controls">
+        <select id="sitio" aria-label="Propiedad de Search Console"></select>
+        <div class="segmented" role="group" aria-label="Rango de fechas">
+          <button data-dias="7">7 días</button>
+          <button data-dias="28" aria-pressed="true">28 días</button>
+          <button data-dias="90">90 días</button>
+        </div>
+        <button id="refrescar" title="Ignorar el cache y volver a pedir todo">Refrescar</button>
+        <button id="tema" title="Cambiar tema">◐</button>
+      </div>
+    </header>
+
+    <div id="avisos"></div>
+
+    <section id="sec-kpis">
+      <h2>Resumen del período</h2>
+      <div class="grid tiles" id="kpis"></div>
+    </section>
+
+    <section id="sec-diagnostico">
+      <h2>Qué mirar</h2>
+      <div class="card" id="diagnostico"></div>
+    </section>
+
+    <section>
+      <div class="grid two">
+        <div class="card">
+          <div class="chart-head"><span class="titulo">Del que busca al que escribe</span></div>
+          <div id="embudo"></div>
+        </div>
+        <div class="card">
+          <div class="chart-head">
+            <span class="titulo">Clicks por día</span>
+            <span class="sub" id="nota-clicks" style="font-size:11.5px;color:var(--ink-muted)"></span>
+            <span class="leyenda">
+              <span><i style="background:var(--s1)"></i>Pago</span>
+              <span><i style="background:var(--s2)"></i>Orgánico</span>
+            </span>
+          </div>
+          <div class="chart" id="chart-clicks"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="grid two">
+        <div class="card">
+          <div class="chart-head"><span class="titulo">Inversión diaria en Ads</span></div>
+          <div class="chart" id="chart-costo"></div>
+        </div>
+        <div class="card">
+          <div class="chart-head"><span class="titulo">Leads del formulario por día</span></div>
+          <div class="chart" id="chart-leads"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Campañas</h2>
+      <div class="card tabla-scroll" id="tabla-campanas"></div>
+    </section>
+
+    <section>
+      <div class="grid two">
+        <div class="card tabla-scroll">
+          <div class="chart-head"><span class="titulo">Búsquedas orgánicas</span></div>
+          <div id="tabla-queries"></div>
+        </div>
+        <div class="card tabla-scroll">
+          <div class="chart-head"><span class="titulo">Páginas que más traen</span></div>
+          <div id="tabla-paginas"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="grid two">
+        <div class="card">
+          <div class="chart-head"><span class="titulo">Velocidad real en celular</span></div>
+          <div id="vitals"></div>
+        </div>
+        <div class="card">
+          <div class="chart-head"><span class="titulo">Leads por tratamiento</span></div>
+          <div id="leads-tratamiento"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Últimos leads</h2>
+      <div class="card tabla-scroll" id="tabla-leads"></div>
+    </section>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

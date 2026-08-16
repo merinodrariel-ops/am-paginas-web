@@ -8,12 +8,6 @@ node_modules/
 /Casos/
 .env.ads
 .env.gsc
-get-token.mjs
-get-token-gsc.mjs
-ads.mjs
-gsc.mjs
-gsc-analisis.mjs
-fix-implantes.mjs
 /TEAM AM/
 /ADS KEYWORDS/
 /scripts/data/
@@ -37,5 +31,11 @@ amesteticadental-transfer-bundle/
 .env.gemini
 /JB BALAYAGE/
 /amesteticadental-transfer-bundle.zip
-renovar-token-google.mjs
 .env.ads.bak
+
+# Dashboard local
+dashboard/.env
+
+# Worktrees de agentes — son checkouts del propio repo, nunca se commitean
+# (y además ensucian el lint si ESLint las recorre)
+.worktrees/
