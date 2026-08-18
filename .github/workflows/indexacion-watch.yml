@@ -1,0 +1,64 @@
+name: Indexación — vigilancia diaria
+
+# Pregunta todos los días si Google REALMENTE indexó cada URL de la red, y repara
+# lo que se pueda. Si algo lleva días atascado, el job falla y GitHub manda el mail.
+#
+# Nació de un caso real: en agosto de 2026, 11 páginas de amesteticadental.uy
+# estuvieron "Descubierta: sin indexar" durante semanas. Nos enteramos por un email
+# de Google. El workflow que debía avisarle a Google terminaba en verde sin hacer
+# nada, porque los secretos nunca se habían cargado. Esto cierra las dos puntas:
+# verifica el resultado, y si no puede verificar, falla en vez de mentir en verde.
+
+on:
+  schedule:
+    - cron: "0 11 * * *" # 08:00 hora Argentina, todos los días
+  workflow_dispatch:
+    inputs:
+      sitio:
+        description: "Auditar un solo sitio (ej: amesteticadental.uy). Vacío = toda la red."
+        required: false
+        default: ""
+      solo_auditar:
+        description: "Sólo mirar, no reparar"
+        type: boolean
+        default: false
+
+concurrency:
+  group: indexacion-watch
+  cancel-in-progress: false
+
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # El estado guarda desde cuándo está atascada cada URL. Sin esto no se puede
+      # distinguir "recién publicada" de "lleva tres semanas" ni espaciar los avisos.
+      # Va en caché y no en el repo para no ensuciar el historial con un commit diario.
+      - name: Recuperar el estado de la corrida anterior
+        uses: actions/cache/restore@v4
+        with:
+          path: infra/estado-indexacion.json
+          key: indexacion-estado-${{ github.run_id }}
+          restore-keys: indexacion-estado-
+
+      - name: Auditar y reparar
+        env:
+          GOOGLE_SEARCH_CONSOLE_CLIENT_ID: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_ID }}
+          GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET }}
+          GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN }}
+        run: |
+          node scripts/auditar-indexacion.mjs \
+            ${{ inputs.solo_auditar && '--solo-auditar' || '' }} \
+            ${{ inputs.sitio }}
+
+      # `always()` a propósito: cuando el job falla es justo cuando más importa
+      # guardar desde cuándo viene atascada cada URL.
+      - name: Guardar el estado para la próxima corrida
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: infra/estado-indexacion.json
+          key: indexacion-estado-${{ github.run_id }}

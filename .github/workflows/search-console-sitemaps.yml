@@ -46,7 +46,19 @@ jobs:
           GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN }}
         run: node scripts/submit-google-sitemaps.mjs
 
-      - name: Avisar si faltan secretos
+      # Antes esto era un ::warning:: y el job terminaba en verde. Resultado: durante
+      # meses figuró "exitoso" sin haberle enviado un solo sitemap a Google, y las
+      # páginas de amesteticadental.uy se quedaron sin indexar sin que nadie lo viera.
+      # Un workflow que no puede hacer su trabajo tiene que fallar, no tranquilizar.
+      - name: Fallar si faltan secretos
         if: env.HAS_GSC_SECRETS != 'true'
         run: |
-          echo "::warning::Faltan secretos GOOGLE_SEARCH_CONSOLE_CLIENT_ID, GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET o GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN. No se enviaron sitemaps a Google."
+          echo "::error::No se enviaron los sitemaps a Google: faltan los secretos de Search Console."
+          echo ""
+          echo "Cargalos en Settings → Secrets and variables → Actions:"
+          echo "  GOOGLE_SEARCH_CONSOLE_CLIENT_ID"
+          echo "  GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET"
+          echo "  GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN"
+          echo ""
+          echo "Se generan con:  node get-token-gsc.mjs"
+          exit 1
