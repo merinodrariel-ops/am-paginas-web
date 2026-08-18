@@ -22,6 +22,32 @@ type Articulo = {
 
 const ARTICULOS: Articulo[] = [
   {
+    slug: "ia-diagnostico-odontologico",
+    href: "/noticias/ia-diagnostico-odontologico",
+    categoria: "Actualidad",
+    titulo: "Inteligencia Artificial en Diagnóstico Odontológico: Mayor Precisión en Detección",
+    subtitulo:
+      "Sistemas de IA asisten a clínicos en la detección de patología dental con un 37% más de precisión. Nuevas aplicaciones emergentes transforman el diagnóstico y la planificación del tratamiento.",
+    autor: "Redacción TDR",
+    fecha: "Agosto 2026",
+    portada:
+      "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/diseno-sonrisa-diastemas/fragmentos-ceramicos-lentes-contacto-dental-dedo-escala-carillas-am-dr-ariel-merino-am-estetica-dental",
+    portadaAlt: "Tecnología de diagnóstico asistido por inteligencia artificial en odontología",
+  },
+  {
+    slug: "implantes-ceramica-zirconio-2026",
+    href: "/noticias/implantes-ceramica-zirconio-2026",
+    categoria: "Actualidad",
+    titulo: "Implantes de Cerámica sin Metal: La Alternativa Biocompatible",
+    subtitulo:
+      "Óxido de zirconio consolidó su posición en 2026 como alternativa estética y biológicamente superior. Biocompatibilidad, menor placa bacteriana y excelente integración ósea.",
+    autor: "Redacción TDR",
+    fecha: "Agosto 2026",
+    portada:
+      "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires",
+    portadaAlt: "Implantes de cerámica sin metal — rehabilitación estética y biocompatible",
+  },
+  {
     slug: "carillas-ultrafinas-additive-dentistry-2026",
     href: "/noticias/carillas-ultrafinas-additive-dentistry-2026",
     categoria: "Actualidad",
