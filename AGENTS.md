@@ -236,26 +236,58 @@ lentes-precio, invisalign, alineadores-buenos-aires, bruxismo, trabaja-en-am, ig
 ## ⭐ FLUJO OBLIGATORIO — Publicar caso clínico o página nueva
 
 Cuando publiques un caso clínico nuevo (o cualquier página/URL nueva), NO termina en el push.
-Hay que indexarlo en Google **y** Bing. Ejecutá este flujo completo **sin esperar que te lo pidan**:
+Hay que indexarlo en Google **y** Bing automáticamente. Ejecutá este flujo completo **sin esperar que te lo pidan**:
 
-1. **Publicar**: agregar el caso a `amesteticadental/src/data/casos.ts` con `publicado: true`.
-   El sitemap (`src/app/sitemap.ts`) lo incluye automáticamente vía `...casos.map()`.
-2. **Verificar build**: `npm run build` en `amesteticadental/` (debe compilar sin errores).
+### Arquitectura de indexación automática (2026-08-18)
+
+**Google Search Console** (indexación vía sitemap dinámico):
+- Todos los sitios tienen sitemaps dinámicos en `src/app/sitemap.ts` o `app/sitemap.ts`
+- Verificados en GSC: `amesteticadental.com` (principal)
+- Google detecta nuevas URLs automáticamente vía sitemap; `gsc.mjs indexar` acelera el proceso
+
+**Bing/Yandex** (indexación vía IndexNow):
+- API key compartida (de cuenta Bing WT): `86346b5cfff04c3f9721f6b8f09977e0`
+- Cada dominio notifica con su propio `host` y archivo de verificación (`.txt`)
+- **GitHub Action `.github/workflows/indexnow.yml`**: dispara automáticamente en cada push a `main`
+  que toque páginas de cualquier sitio (amesteticadental, amesteticadental-uy, thedentalreview, arielmerino)
+
+### Pasos (la mayoría son automáticos):
+
+1. **Publicar**: agregar contenido (caso a `casos.ts`, página nueva, nota a TDR, etc.).
+   El sitemap (`sitemap.ts`) lo incluye automáticamente.
+2. **Verificar build**: `npm run build` en la carpeta del proyecto (debe compilar sin errores).
 3. **Commit + push a `main`** (regla de oro: nada queda en local).
-4. **Verificar que está en vivo**: `curl -s -o /dev/null -w "%{http_code}" https://www.amesteticadental.com/casos/<slug>` → debe dar `200`.
-5. **Indexar en Google**: `node gsc.mjs indexar` (o solicitar indexación manual en Search Console).
-6. **Indexar en Bing/Yandex** (IndexNow):
-   - **Automático**: el GitHub Action `.github/workflows/indexnow.yml` ya dispara IndexNow
-     en cada push que toque casos o páginas. No hace falta hacer nada.
-   - **Manual (si querés forzarlo ya)**: desde `amesteticadental/`:
-     - `npm run notify-index` → notifica TODAS las URLs del sitemap
-     - `node scripts/notify-indexnow.mjs /casos/<slug>` → notifica solo esa URL
-7. **The Dental Review**: evaluar si el caso amerita una nota periodística en thedentalreview.com
-   que enlace de vuelta al caso (ver sección backlinks abajo).
+4. **Vercel despliega**: automático, ~2 minutos.
+5. **GitHub Action IndexNow dispara**: automático, 150s después del push.
+   - Lee el sitemap en vivo del sitio
+   - Notifica TODAS las URLs a Bing/Yandex
+   - Log en GitHub Actions (Actions tab del repo)
+6. **Google**: indexación automática vía sitemap dinámico. Para acelerar:
+   - `node gsc.mjs indexar` (si está en amesteticadental/, que es donde está verificado GSC)
+7. **The Dental Review**: evaluar si el caso amerita una nota periodística que enlace de vuelta.
 
-**Datos IndexNow**: key `14c9604645864308b49cb8994e8d032c`, hosteada en
-`https://www.amesteticadental.com/14c9604645864308b49cb8994e8d032c.txt`.
-Google NO usa IndexNow — para Google es sitemap dinámico + `gsc.mjs indexar`.
+### Indexación manual (si necesitás forzar ahora sin esperar al workflow):
+
+Desde la carpeta del proyecto (ej: `amesteticadental/`, `thedentalreview/`):
+
+```bash
+# Notificar TODAS las URLs del sitemap a Bing
+node scripts/notify-indexnow.mjs
+
+# O solo URLs específicas
+node scripts/notify-indexnow.mjs /casos/mi-caso-nuevo /precio-carillas-dentales-buenos-aires
+```
+
+### Datos IndexNow (2026-08-18)
+
+| Sitio | Host | Key | Verificación |
+|---|---|---|---|
+| amesteticadental.com | www.amesteticadental.com | `14c9604645864308b49cb8994e8d032c` | amesteticadental/public/14c9604645864308b49cb8994e8d032c.txt |
+| amesteticadental.uy | www.amesteticadental.uy | `14c9604645864308b49cb8994e8d032c` | amesteticadental-uy/public/14c9604645864308b49cb8994e8d032c.txt |
+| thedentalreview.com | www.thedentalreview.com | `86346b5cfff04c3f9721f6b8f09977e0` | thedentalreview/public/86346b5cfff04c3f9721f6b8f09977e0.txt |
+| arielmerino.com | www.arielmerino.com | `14c9604645864308b49cb8994e8d032c` | arielmerino/public/14c9604645864308b49cb8994e8d032c.txt |
+
+**Nota**: Google NO usa IndexNow. Google indexa vía sitemap dinámico + Search Console API.
 
 ## The Dental Review — estrategia de backlinks
 
