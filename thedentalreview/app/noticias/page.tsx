@@ -9,9 +9,31 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.thedentalreview.com/noticias" },
 };
 
-// Todas las notas publicadas. Antes faltaban tres: quedaban huérfanas, sin
-// ningún enlace interno que las alcanzara desde el índice.
+// Todas las notas publicadas. El índice es el único enlace interno que alcanza
+// a cada nota: si una no figura acá, queda huérfana para el rastreador.
+// Al publicar una nota nueva hay que agregarla en este array Y en app/sitemap.ts.
 const NEWS = [
+  {
+    href: "/noticias/dyson-cepillo-dientes-camara-ia-2026",
+    title: "Dyson entra en la higiene bucal: un cepillo con cámara, IA e irrigador",
+    description: "Retroalimentación visual en tiempo real por unos US$ 500. Qué aporta de verdad y dónde termina la evidencia.",
+    image: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/noticias/imagen-1788675695725",
+    alt: "Cepillo de dientes eléctrico blanco sobre fondo neutro con un arco de gotas de agua",
+  },
+  {
+    href: "/noticias/ia-diagnostico-odontologico",
+    title: "Inteligencia artificial en diagnóstico: más patología detectada",
+    description: "Los sistemas asistidos por IA elevan la sensibilidad diagnóstica en radiografía y tomografía dental.",
+    image: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/expodent-2026/expodent-2026-dr-ariel-merino-charla-ia-odontologia-portada.jpg",
+    alt: "Presentación sobre inteligencia artificial aplicada a la odontología",
+  },
+  {
+    href: "/noticias/implantes-ceramica-zirconio-2026",
+    title: "Implantes de cerámica: el zirconio busca su lugar frente al titanio",
+    description: "Estética del margen gingival, biocompatibilidad y los límites que todavía tiene la evidencia a largo plazo.",
+    image: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/noticias/imagen-1788675731018",
+    alt: "Pilar cerámico de zirconio para implante dental sobre superficie neutra",
+  },
   {
     href: "/noticias/estetica-dental-uruguay-montevideo-carrasco-2026",
     title: "Montevideo entra al mapa de la estética dental premium",
