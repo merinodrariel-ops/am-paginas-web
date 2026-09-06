@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PERSON_ID, SITE, MATRICULA } from "../site-data";
+import { PERSON_ID, SITE, MATRICULA, ANIOS_TRAYECTORIA } from "../site-data";
 import { Nav, Hero, Seccion, Footer, CtaWhatsapp, Jsonld, breadcrumb, oro, crema, cremaDim, serif } from "../ui";
 
 export const metadata: Metadata = {
@@ -82,7 +82,7 @@ export default function CarillasPage() {
           eyebrow="Criterio clínico"
           titulo="Lo que se puede prometer con carillas, y lo que"
           destacado="no."
-          bajada="Hace más de quince años que trabajo casi exclusivamente con carillas y diseño de sonrisa, y una buena parte de ese tiempo la pasé enseñándoselo a otros odontólogos. Esta página no es un folleto: es el criterio con el que decido, incluidas las veces en que la respuesta correcta es no hacer carillas."
+          bajada={`Hace ${ANIOS_TRAYECTORIA} años que trabajo casi exclusivamente con carillas y diseño de sonrisa, y una buena parte de ese tiempo la pasé enseñándoselo a otros odontólogos. Esta página no es un folleto: es el criterio con el que decido, incluidas las veces en que la respuesta correcta es no hacer carillas.`}
         />
 
         <Seccion eyebrow="Seis criterios" titulo="Cómo decido un caso">

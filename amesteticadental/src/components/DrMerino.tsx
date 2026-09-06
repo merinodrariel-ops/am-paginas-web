@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ANIOS_TRAYECTORIA, ANIO_TITULO } from "@/lib/trayectoria";
 
 // Sección crítica: el Doctor es la marca.
 // La auditoría detectó que las páginas de Equipo y Nosotros retornan 404 —
@@ -15,7 +16,7 @@ const UI = {
     es: {
         eyebrow: "El especialista",
         role: "Odontólogo Estético · Puerto Madero, Buenos Aires",
-        p1a: "Más de ", p1b: "20 años en odontología", p1c: " — y más de ", p1d: "15 dedicados exclusivamente a la estética dental",
+        p1a: "", p1b: `${ANIOS_TRAYECTORIA} años de ejercicio`, p1c: ` desde su título de grado en ${ANIO_TITULO}, `, p1d: "dedicados casi exclusivamente a la estética dental",
         p1e: " de alta complejidad. No desde un consultorio genérico — desde Puerto Madero, donde el estándar internacional no es una aspiración sino una exigencia diaria.",
         p2a: "Nuestros pacientes son ", p2b: "profesionales, empresarios y figuras públicas",
         p2c: " que no aceptan resultados promedio porque sus sonrisas viven bajo escrutinio. Miss Universo confió en el equipo. Forbes reconoció a AM Estética Dental como la única clínica dental del país en sus páginas.",
@@ -24,8 +25,8 @@ const UI = {
         forbesTitle: "Forbes Argentina",
         forbesSub: "Única clínica dental reconocida",
         creds: [
-            { valor: "20+", texto: "años en odontología" },
-            { valor: "15+", texto: "años en estética dental" },
+            { valor: String(ANIOS_TRAYECTORIA), texto: "años en estética dental" },
+            { valor: "UCALP", texto: `título de grado, ${ANIO_TITULO}` },
             { valor: "Forbes", texto: "Reconocimiento editorial" },
             { valor: "4.9★", texto: "Google Rating" },
         ],
@@ -40,7 +41,7 @@ const UI = {
     en: {
         eyebrow: "The specialist",
         role: "Cosmetic Dentist · Puerto Madero, Buenos Aires",
-        p1a: "More than ", p1b: "20 years in dentistry", p1c: " — and more than ", p1d: "15 dedicated exclusively to high-complexity cosmetic dentistry",
+        p1a: "", p1b: `${ANIOS_TRAYECTORIA} years in dentistry`, p1c: ` since qualifying in ${ANIO_TITULO}, `, p1d: "dedicated almost exclusively to high-complexity cosmetic dentistry",
         p1e: ". Not from a generic practice — from Puerto Madero, where the international standard is not an aspiration but a daily requirement.",
         p2a: "Our patients are ", p2b: "professionals, entrepreneurs and public figures",
         p2c: " who do not accept average results because their smiles live under scrutiny. A Miss Universe trusted this team. Forbes featured AM Estética Dental as the only dental clinic in the country in its pages.",
@@ -49,8 +50,8 @@ const UI = {
         forbesTitle: "Forbes Argentina",
         forbesSub: "The only dental clinic featured",
         creds: [
-            { valor: "20+", texto: "years in dentistry" },
-            { valor: "15+", texto: "years in cosmetic dentistry" },
+            { valor: String(ANIOS_TRAYECTORIA), texto: "years in cosmetic dentistry" },
+            { valor: "UCALP", texto: `DDS, ${ANIO_TITULO}` },
             { valor: "Forbes", texto: "Editorial recognition" },
             { valor: "4.9★", texto: "Google Rating" },
         ],

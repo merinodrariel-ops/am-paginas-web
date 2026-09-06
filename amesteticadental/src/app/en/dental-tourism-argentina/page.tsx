@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import { hreflangFor } from "@/lib/i18n-routes";
+import { ANIOS_TRAYECTORIA, ANIOS_LABEL_EN } from "@/lib/trayectoria";
 
 const CANONICAL = "https://www.amesteticadental.com/en/dental-tourism-argentina";
 
@@ -319,7 +320,7 @@ export default function DentalTourismPage() {
                                 <span className="font-cormorant italic text-oro">Cosmetic Dentist</span>
                             </h2>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
-                                Over 15 years dedicated exclusively to cosmetic dentistry. The only dental clinic in Argentina featured by Forbes. He has treated patients from the United States, Spain, Mexico, Colombia and Chile.
+                                {ANIOS_TRAYECTORIA} years in dentistry, dedicated almost exclusively to cosmetic dentistry. The only dental clinic in Argentina featured by Forbes. He has treated patients from the United States, Spain, Mexico, Colombia and Chile.
                             </p>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed">
                                 Every case is assessed personally. Dr. Merino does not delegate the design or the placement to third parties — the international patient works directly with the specialist from start to finish.
@@ -329,7 +330,7 @@ export default function DentalTourismPage() {
                             {[
                                 { v: "4.9★", l: "120+ Google reviews" },
                                 { v: "Forbes", l: "Argentina" },
-                                { v: "15+ years", l: "cosmetic dentistry only" },
+                                { v: ANIOS_LABEL_EN, l: "cosmetic dentistry" },
                                 { v: "Puerto Madero", l: "Buenos Aires, Argentina" },
                             ].map((s) => (
                                 <div key={s.l} className="border border-oro/15 rounded-xl px-5 py-4 bg-carbon">

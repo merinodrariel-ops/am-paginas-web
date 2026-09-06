@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { FORMACION, DOCENCIA, MATRICULA, PERSON_ID, SITE } from "../site-data";
+import { FORMACION, DOCENCIA, MATRICULA, PERSON_ID, SITE, ANIOS_TRAYECTORIA } from "../site-data";
 import { Nav, Hero, Seccion, Footer, CtaWhatsapp, Jsonld, breadcrumb, oro, crema, cremaDim, serif } from "../ui";
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export default function TrayectoriaPage() {
       <main>
         <Hero
           eyebrow={`Perfil profesional · ${MATRICULA}`}
-          titulo="Quince años enseñando lo mismo que"
+          titulo={`${ANIOS_TRAYECTORIA} años enseñando lo mismo que`}
           destacado="practico todos los días."
           bajada="Me recibí de odontólogo en la Universidad Católica de La Plata en 2010 y desde entonces me dediqué de forma casi exclusiva a la estética dental. Fui docente de Operatoria Dental en la misma facultad donde estudié, hice el posgrado en Rehabilitación Oral y Estética en la Asociación Odontológica Argentina, y desde hace más de una década formo odontólogos en diseño de sonrisa y carillas en más de quince países."
         />

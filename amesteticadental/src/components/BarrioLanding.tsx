@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GOOGLE_REVIEWS } from "@/lib/reviews";
 import { BARRIOS, type Barrio } from "@/data/barrios";
+import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
 const SITE = "https://www.amesteticadental.com";
 const WA_BASE = "https://api.whatsapp.com/send?phone=5491170219298&text=";
@@ -284,7 +285,7 @@ export default function BarrioLanding({ barrio }: { barrio: Barrio }) {
                 Dr. Ariel <span className="font-cormorant italic text-oro">Merino.</span>
               </h2>
               <p className="text-crema/60 text-base font-light leading-relaxed mb-4">
-                Más de 20 años en odontología y 15 dedicados exclusivamente a la estética dental de alta complejidad.
+                {ANIOS_TRAYECTORIA} años de ejercicio dedicados casi exclusivamente a la estética dental de alta complejidad.
                 Fundador de AM Estética Dental, la única clínica dental argentina reconocida por Forbes, y disertante
                 internacional en más de 15 países.
               </p>

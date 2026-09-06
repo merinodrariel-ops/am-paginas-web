@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Contacto from "@/components/Contacto";
 import { hreflangFor } from "@/lib/i18n-routes";
+import { ANIOS_TRAYECTORIA, ANIO_TITULO } from "@/lib/trayectoria";
 
 const CANONICAL = "https://www.amesteticadental.com/en/press";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I'm%20a%20journalist%20and%20I'd%20like%20to%20request%20an%20interview.";
@@ -27,7 +28,7 @@ const FACTS = [
     { k: "Title", v: "Cosmetic Dentist · Licence No. 34.869" },
     { k: "Role", v: "Founder and Clinical Director, AM Estética Dental" },
     { k: "Location", v: "Camila O'Gorman 412, Office 101, Puerto Madero, Buenos Aires, Argentina" },
-    { k: "Experience", v: "20+ years in dentistry · 15+ exclusively in cosmetic dentistry" },
+    { k: "Experience", v: `${ANIOS_TRAYECTORIA} years in dentistry, almost exclusively cosmetic · DDS, UCALP ${ANIO_TITULO}` },
     { k: "Education", v: "UCALP · Postgraduate in Oral Rehabilitation and Aesthetics (AOA) · University of Pennsylvania School of Dental Medicine" },
     { k: "Recognition", v: "The only dental clinic in Argentina featured by Forbes Argentina" },
     { k: "Languages", v: "Spanish, English" },
@@ -80,7 +81,7 @@ export default function PressEnPage() {
                         <p className="text-crema/40 font-manrope text-xs mb-6">Short version — free to reproduce.</p>
                         <div className="border border-oro/15 rounded-2xl p-7 bg-carbon-soft">
                             <p className="text-crema/75 font-manrope text-base leading-relaxed">
-                                Dr. Ariel Merino is an Argentine cosmetic dentist with more than 20 years in dentistry, 15 of them dedicated exclusively to high-complexity cosmetic dentistry. He is the founder and clinical director of AM Estética Dental in Puerto Madero, Buenos Aires — the only dental clinic in Argentina featured by Forbes Argentina. He specialises in porcelain veneers, digital smile design and aesthetic rehabilitation, has taught on international veneer programmes at the University of Pennsylvania School of Dental Medicine, and was chosen to design the smile of a Miss Universe. He speaks at industry congresses on artificial intelligence and digital planning applied to cosmetic dentistry.
+                                Dr. Ariel Merino is an Argentine cosmetic dentist who qualified at the Universidad Católica de La Plata in {ANIO_TITULO} and has spent those {ANIOS_TRAYECTORIA} years almost exclusively on high-complexity cosmetic dentistry. He is the founder and clinical director of AM Estética Dental in Puerto Madero, Buenos Aires — the only dental clinic in Argentina featured by Forbes Argentina. He specialises in porcelain veneers, digital smile design and aesthetic rehabilitation, has taught on international veneer programmes at the University of Pennsylvania School of Dental Medicine, and was chosen to design the smile of a Miss Universe. He speaks at industry congresses on artificial intelligence and digital planning applied to cosmetic dentistry.
                             </p>
                         </div>
                     </div>

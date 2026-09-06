@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ANIOS_LABEL } from "@/lib/trayectoria";
 
 const CANONICAL = "https://www.amesteticadental.com/odontologia-estetica-buenos-aires";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20una%20consulta%20sobre%20odontolog%C3%ADa%20est%C3%A9tica.";
@@ -72,7 +73,7 @@ export default function OdontologiaEsteticaPage() {
 
                 <section className="px-6 py-16 border-t border-oro/8 max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                        {[["Forbes Argentina", "Reconocimiento editorial"], ["Puerto Madero", "Camila O'Gorman 412"], ["20+ años", "Experiencia clínica"]].map(([n, l]) => (
+                        {[["Forbes Argentina", "Reconocimiento editorial"], ["Puerto Madero", "Camila O'Gorman 412"], [ANIOS_LABEL, "Experiencia clínica"]].map(([n, l]) => (
                             <div key={n}>
                                 <p className="font-cormorant italic text-oro text-3xl mb-2">{n}</p>
                                 <p className="text-crema/40 text-xs uppercase tracking-widest">{l}</p>

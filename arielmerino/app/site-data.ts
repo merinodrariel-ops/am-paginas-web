@@ -19,6 +19,17 @@ export const WA = (mensaje: string) =>
 
 export const MATRICULA = "MN 34.869";
 
+/**
+ * Año del título de grado (Odontología, Universidad Católica de La Plata) y años
+ * de ejercicio derivados. Se calcula en vez de escribirse a mano: el sitio de la
+ * clínica venía mezclando "+20 años" y "+15 años" según la página justamente por
+ * tener el número hardcodeado en veinte lugares. Espejo de
+ * `amesteticadental/src/lib/trayectoria.ts` — son dos apps Next separadas y no
+ * comparten módulos, así que si cambia una hay que cambiar la otra.
+ */
+export const ANIO_TITULO = 2010;
+export const ANIOS_TRAYECTORIA = new Date().getFullYear() - ANIO_TITULO;
+
 export const NAV = [
   { href: "/", label: "Inicio" },
   { href: "/trayectoria", label: "Trayectoria" },
@@ -149,7 +160,7 @@ export const PERSON_SCHEMA = {
   familyName: "Merino",
   jobTitle: "Odontólogo Especialista en Estética Dental",
   description:
-    "Odontólogo argentino especializado en estética dental, carillas de porcelana y diseño de sonrisa digital. Fundador y director de AM Estética Dental, en Puerto Madero, Buenos Aires. Docente y disertante internacional en más de 15 países.",
+    `Odontólogo argentino recibido en ${ANIO_TITULO} por la Universidad Católica de La Plata, con ${ANIOS_TRAYECTORIA} años de ejercicio dedicados casi exclusivamente a la estética dental, las carillas de porcelana y el diseño de sonrisa digital. Fundador y director de AM Estética Dental, en Puerto Madero, Buenos Aires. Docente y disertante internacional en más de 15 países.`,
   url: SITE,
   image: [
     "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_1200,c_fill,g_face,q_auto,f_auto/equipo/dr-ariel-merino-director-clinico-am-estetica-dental-puerto-madero",

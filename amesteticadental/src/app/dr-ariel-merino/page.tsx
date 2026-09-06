@@ -5,12 +5,14 @@ import Navbar from "@/components/Navbar";
 import { hreflangFor } from "@/lib/i18n-routes";
 import Prensa from "@/components/Prensa";
 import EquipoAM from "@/components/EquipoAM";
+import { ANIOS_TRAYECTORIA, ANIOS_LABEL, ANIO_TITULO } from "@/lib/trayectoria";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Dr. Ariel Merino | Odontólogo Estético · +20 Años en Odontología",
+    // El título se mantiene por debajo de 60 caracteres: Bing lo trunca (ver commit 1872b6a).
+    title: `Dr. Ariel Merino | Odontólogo Estético · ${ANIOS_TRAYECTORIA} Años`,
     description:
-        "Dr. Ariel Merino: más de 20 años en odontología y 15 años de especialización en estética dental. Fundador de AM Estética Dental, Puerto Madero. Carillas y diseño de sonrisa.",
+        `Dr. Ariel Merino: ${ANIOS_TRAYECTORIA} años de ejercicio dedicados casi exclusivamente a la estética dental. Fundador de AM Estética Dental, Puerto Madero. Carillas y diseño de sonrisa.`,
     alternates: {
         canonical: "https://www.amesteticadental.com/dr-ariel-merino",
     languages: hreflangFor("/dr-ariel-merino"),
@@ -76,7 +78,7 @@ const personSchema = {
         "https://www.odontoespacio.net/autores/ariel-merino/",
         "https://cde.dental.upenn.edu/Course/38-Full-Veneers",
     ],
-    description: "Odontólogo con más de 20 años de trayectoria en odontología y más de 15 años de especialización exclusiva en estética dental. Fundador de AM Estética Dental, reconocida por Forbes Argentina como la única clínica dental del país en sus páginas.",
+    description: `Odontólogo recibido en ${ANIO_TITULO} por la Universidad Católica de La Plata, con ${ANIOS_TRAYECTORIA} años de ejercicio dedicados casi exclusivamente a la estética dental. Fundador de AM Estética Dental, reconocida por Forbes Argentina como la única clínica dental del país en sus páginas.`,
     knowsAbout: [
         "Carillas de porcelana",
         "Diseño de sonrisa digital",
@@ -129,7 +131,7 @@ export default function DrArielMerinoPage() {
                                 Odontólogo Estético · Fundador de AM Estética Dental
                             </p>
                             <p className="text-crema/70 font-manrope text-lg font-light leading-relaxed max-w-2xl mb-10">
-                                Más de 20 años en odontología — 15 de ellos dedicados exclusivamente a la estética dental de alta complejidad.
+                                {ANIOS_TRAYECTORIA} años de ejercicio desde su título de grado en {ANIO_TITULO}, dedicados casi exclusivamente a la estética dental de alta complejidad.
                                 Especialista en carillas de porcelana, diseño de sonrisa digital y rehabilitaciones estéticas. Atiende personalmente cada caso desde Puerto Madero con un enfoque de alta precisión clínica y resultado natural.
                             </p>
 
@@ -153,8 +155,8 @@ export default function DrArielMerinoPage() {
                             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 pt-8 border-t border-oro/10">
                                 {[
                                     { valor: "MN 34.869", etiqueta: "matrícula nacional" },
-                                    { valor: "+20 años", etiqueta: "en odontología" },
-                                    { valor: "+15 años", etiqueta: "en estética dental" },
+                                    { valor: ANIOS_LABEL, etiqueta: "de ejercicio en estética dental" },
+                                    { valor: "UCALP", etiqueta: `título de grado, ${ANIO_TITULO}` },
                                     { valor: "Forbes", etiqueta: "reconocimiento editorial" },
                                     { valor: "AOA", etiqueta: "posgrado rehabilitación oral y estética" },
                                 ].map((item) => (

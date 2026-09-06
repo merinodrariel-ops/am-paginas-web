@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
 const CANONICAL = "https://www.amesteticadental.com/diseno-de-sonrisa-precio-buenos-aires";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20saber%20la%20inversi%C3%B3n%20para%20un%20dise%C3%B1o%20de%20sonrisa.";
@@ -63,7 +64,7 @@ export default function DisenoDeSonrisaLanding() {
                                 Inversión clara, casos reales. Diseñamos tu sonrisa digitalmente antes de tocar ningún diente. Ves el resultado antes de empezar.
                             </p>
                             <p className="text-crema/45 text-sm leading-relaxed mb-8">
-                                Dr. Ariel Merino — reconocido por Forbes Argentina — lleva más de 20 años transformando sonrisas en Puerto Madero.
+                                Dr. Ariel Merino — reconocido por Forbes Argentina — lleva {ANIOS_TRAYECTORIA} años transformando sonrisas en Puerto Madero.
                             </p>
                             <a href={WA} target="_blank" rel="noopener noreferrer"
                                 className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">

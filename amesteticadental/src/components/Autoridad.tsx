@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
 const REVIEWS_EN = [
     { name: "Maria L.", text: "The result exceeded all my expectations and gave me back the confidence to smile." },
@@ -66,7 +67,7 @@ const UI = {
         forbesLead: "No es un premio de industria. Es reconocimiento editorial en el medio de negocios mas exigente del mundo por el impacto real que generamos en la vida de nuestros pacientes.",
         forbesCta: "Leer nota en Forbes →",
         stats: [
-            { number: "15+", label: "en estética dental", sub: "Dr. Ariel Merino" },
+            { number: String(ANIOS_TRAYECTORIA), label: "años en estética dental", sub: "Dr. Ariel Merino" },
             { number: "Miss Universo", label: "Sonrisa mas estudiada", sub: "del mundo" },
             { number: "100%", label: "Casos reales", sub: "Sin stock, sin filtros" },
         ],
@@ -79,7 +80,7 @@ const UI = {
         forbesLead: "This is not an industry award. It is editorial recognition from the most demanding business publication in the world, for the real impact we create in our patients' lives.",
         forbesCta: "Read the Forbes feature →",
         stats: [
-            { number: "15+", label: "years in cosmetic dentistry", sub: "Dr. Ariel Merino" },
+            { number: String(ANIOS_TRAYECTORIA), label: "years in cosmetic dentistry", sub: "Dr. Ariel Merino" },
             { number: "Miss Universe", label: "Most studied smile", sub: "in the world" },
             { number: "100%", label: "Real cases", sub: "No stock, no filters" },
         ],

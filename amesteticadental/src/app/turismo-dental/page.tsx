@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import { hreflangFor } from "@/lib/i18n-routes";
+import { ANIOS_TRAYECTORIA, ANIOS_LABEL } from "@/lib/trayectoria";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -317,7 +318,7 @@ export default function TurismoDentalPage() {
                                 <span className="font-cormorant italic text-oro">Odontólogo Estético</span>
                             </h2>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
-                                Más de 15 años dedicados exclusivamente a la estética dental. La única clínica odontológica de Argentina reconocida por Forbes. Ha recibido pacientes de México, Colombia, Chile, España y la comunidad latinoamericana de Estados Unidos.
+                                {ANIOS_TRAYECTORIA} años dedicados casi exclusivamente a la estética dental. La única clínica odontológica de Argentina reconocida por Forbes. Ha recibido pacientes de México, Colombia, Chile, España y la comunidad latinoamericana de Estados Unidos.
                             </p>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed">
                                 Cada caso es evaluado personalmente. El Dr. Merino no delega el diseño ni la colocación a terceros — el paciente del exterior trata directamente con el especialista de principio a fin.
@@ -327,7 +328,7 @@ export default function TurismoDentalPage() {
                             {[
                                 { v: "4.9★", l: "+120 reseñas en Google" },
                                 { v: "Forbes", l: "Argentina" },
-                                { v: "15+ años", l: "solo estética dental" },
+                                { v: ANIOS_LABEL, l: "solo estética dental" },
                                 { v: "Puerto Madero", l: "Buenos Aires, Argentina" },
                             ].map((s) => (
                                 <div key={s.l} className="border border-oro/15 rounded-xl px-5 py-4 bg-carbon">

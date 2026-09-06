@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { hreflangFor } from "@/lib/i18n-routes";
 import Navbar from "@/components/Navbar";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
+import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
@@ -73,7 +74,7 @@ export default function PrensaPage() {
               </h2>
               <div className="bg-carbon-soft p-6 border border-oro/10 rounded-xl relative group">
                 <p className="text-crema/70 leading-relaxed text-sm mb-4">
-                  Con más de 15 años de experiencia exclusiva en el campo de la odontología estética, el Dr. Ariel Merino se ha posicionado como uno de los referentes líderes en el diseño de sonrisas digitales en Sudamérica. Es el fundador y director clínico de AM Estética Dental, una clínica boutique ubicada en el exclusivo barrio de Puerto Madero, Buenos Aires.
+                  Con {ANIOS_TRAYECTORIA} años de experiencia dedicada casi exclusivamente a la odontología estética, el Dr. Ariel Merino se ha posicionado como uno de los referentes líderes en el diseño de sonrisas digitales en Sudamérica. Es el fundador y director clínico de AM Estética Dental, una clínica boutique ubicada en el exclusivo barrio de Puerto Madero, Buenos Aires.
                 </p>
                 <p className="text-crema/70 leading-relaxed text-sm">
                   Pionero en la adopción de protocolos 100% digitales y tecnología de escaneo 3D, su enfoque se centra en la naturalidad, la durabilidad y la preservación de la estructura dental mediante carillas de porcelana feldespática. Su visión de la odontología como un cruce entre salud y arte lo ha llevado a ser reconocido por publicaciones de prestigio como Forbes Argentina, y a recibir pacientes de todo el continente enfocados en el turismo dental de alta gama.

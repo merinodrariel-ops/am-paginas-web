@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Contacto from "@/components/Contacto";
 import { hreflangFor } from "@/lib/i18n-routes";
+import { ANIOS_TRAYECTORIA, ANIO_TITULO } from "@/lib/trayectoria";
 
 const CANONICAL = "https://www.amesteticadental.com/en/dr-ariel-merino";
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Dr. Ariel Merino — Cosmetic Dentist, Buenos Aires | AM",
   description:
-    "Dr. Ariel Merino: 20+ years in dentistry, 15 dedicated exclusively to high-complexity cosmetic dentistry. Founder of AM Estética Dental, the only dental clinic in Argentina featured by Forbes.",
+    `Dr. Ariel Merino: ${ANIOS_TRAYECTORIA} years in dentistry, dedicated almost exclusively to high-complexity cosmetic dentistry. Founder of AM Estética Dental, the only dental clinic in Argentina featured by Forbes.`,
   alternates: {
     canonical: CANONICAL,
     languages: hreflangFor("/dr-ariel-merino"),
@@ -35,7 +36,7 @@ const personSchema = {
   name: "Dr. Ariel Merino",
   jobTitle: "Cosmetic Dentist",
   description:
-    "Cosmetic dentist with over 20 years in dentistry and 15 dedicated exclusively to high-complexity cosmetic dentistry. Founder and clinical director of AM Estética Dental in Puerto Madero, Buenos Aires.",
+    `Cosmetic dentist who qualified at the Universidad Católica de La Plata in ${ANIO_TITULO}, with ${ANIOS_TRAYECTORIA} years dedicated almost exclusively to high-complexity cosmetic dentistry. Founder and clinical director of AM Estética Dental in Puerto Madero, Buenos Aires.`,
   url: CANONICAL,
   sameAs: [
     "https://www.wikidata.org/wiki/Q134287655",
@@ -114,7 +115,7 @@ export default function DrMerinoEnPage() {
                 Cosmetic Dentist · Founder of AM Estética Dental
               </p>
               <p className="text-crema/70 font-manrope text-base leading-relaxed mb-5">
-                More than 20 years in dentistry — 15 of them dedicated exclusively to high-complexity cosmetic dentistry.
+                {ANIOS_TRAYECTORIA} years in dentistry since qualifying in {ANIO_TITULO}, dedicated almost exclusively to high-complexity cosmetic dentistry.
               </p>
               <p className="text-crema/70 font-manrope text-base leading-relaxed mb-10">
                 Specialist in porcelain veneers, digital smile design and aesthetic rehabilitation. He personally handles every case from Puerto Madero, with an approach built on clinical precision and a natural result.
@@ -130,8 +131,8 @@ export default function DrMerinoEnPage() {
 
               <div className="flex flex-wrap items-center gap-8 mt-12 pt-8 border-t border-oro/10">
                 {[
-                  { v: "20+", l: "years in dentistry" },
-                  { v: "15+", l: "years in cosmetic dentistry" },
+                  { v: String(ANIOS_TRAYECTORIA), l: "years in cosmetic dentistry" },
+                  { v: "UCALP", l: `DDS, ${ANIO_TITULO}` },
                   { v: "Forbes", l: "Argentina" },
                   { v: "4.9★", l: "120+ Google reviews" },
                 ].map((s) => (

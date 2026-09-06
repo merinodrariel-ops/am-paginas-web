@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ANIOS_TRAYECTORIA, ANIOS_LABEL } from "@/lib/trayectoria";
 
 const CANONICAL = "https://www.amesteticadental.com/bruxismo-desgaste-dental-carillas-ceramicas";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20bruxismo%20y%20quisiera%20una%20evaluaci%C3%B3n.";
@@ -195,12 +196,12 @@ export default function BruxismoPage() {
                             <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-4">Tu especialista</span>
                             <h2 className="font-cormorant italic text-3xl text-crema mb-4">Dr. Ariel Merino</h2>
                             <p className="text-crema/55 text-sm leading-relaxed mb-6">
-                                Más de 20 años en estética dental de alta complejidad. Reconocido por Forbes Argentina. Director de AM Estética Dental, Puerto Madero. Especialista en rehabilitaciones cerámicas por bruxismo y diseño de sonrisa.
+                                {ANIOS_TRAYECTORIA} años en estética dental de alta complejidad. Reconocido por Forbes Argentina. Director de AM Estética Dental, Puerto Madero. Especialista en rehabilitaciones cerámicas por bruxismo y diseño de sonrisa.
                             </p>
                             <div className="flex flex-wrap gap-3">
                                 <span className="border border-oro/20 rounded-full px-4 py-1.5 text-[10px] uppercase tracking-widest text-oro">Forbes Argentina</span>
                                 <span className="border border-oro/20 rounded-full px-4 py-1.5 text-[10px] uppercase tracking-widest text-oro">Puerto Madero</span>
-                                <span className="border border-oro/20 rounded-full px-4 py-1.5 text-[10px] uppercase tracking-widest text-oro">20+ años</span>
+                                <span className="border border-oro/20 rounded-full px-4 py-1.5 text-[10px] uppercase tracking-widest text-oro">{ANIOS_LABEL}</span>
                             </div>
                         </div>
                         <div className="text-center">

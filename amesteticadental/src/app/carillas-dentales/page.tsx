@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import { hreflangFor } from "@/lib/i18n-routes";
+import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -136,7 +137,7 @@ export default function CarillasDentalesPage() {
                             {[
                                 { v: "4.9★", l: "Google Reviews" },
                                 { v: "Forbes", l: "Argentina" },
-                                { v: "15+", l: "en estética dental" },
+                                { v: String(ANIOS_TRAYECTORIA), l: "años en estética dental" },
                             ].map((s) => (
                                 <div key={s.l}>
                                     <div className="text-oro font-manrope font-semibold text-lg">{s.v}</div>
@@ -158,7 +159,7 @@ export default function CarillasDentalesPage() {
                             AM Estética Dental es una clínica de odontología estética ubicada en Camila O&apos;Gorman 412, Oficina 101, Puerto Madero, Ciudad Autónoma de Buenos Aires. Hacemos carillas de porcelana feldespática, disilicato de litio (IPS e.max) y lentes de contacto dental, siempre con técnicas mínimamente invasivas.
                         </p>
                         <p className="text-crema/75 font-manrope text-base md:text-lg leading-relaxed mb-10">
-                            Tenemos <strong className="text-crema font-medium">laboratorio propio dentro de la clínica</strong>: el ceramista trabaja en el mismo lugar donde te atendemos. Eso nos permite completar un diseño de sonrisa en 2 a 3 sesiones a lo largo de 2 a 4 semanas, y corregir un detalle de color o forma el mismo día en lugar de esperar semanas a un laboratorio externo. El equipo lo dirige el Dr. Ariel Merino, con más de 15 años dedicados exclusivamente a la estética dental.
+                            Tenemos <strong className="text-crema font-medium">laboratorio propio dentro de la clínica</strong>: el ceramista trabaja en el mismo lugar donde te atendemos. Eso nos permite completar un diseño de sonrisa en 2 a 3 sesiones a lo largo de 2 a 4 semanas, y corregir un detalle de color o forma el mismo día en lugar de esperar semanas a un laboratorio externo. El equipo lo dirige el Dr. Ariel Merino, con {ANIOS_TRAYECTORIA} años dedicados casi exclusivamente a la estética dental.
                         </p>
                         <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-5">
                             {[
@@ -167,7 +168,7 @@ export default function CarillasDentalesPage() {
                                 { k: "Laboratorio", v: "Propio, dentro de la clínica" },
                                 { k: "Sesiones", v: "2 a 3 sesiones, en 2 a 4 semanas" },
                                 { k: "Técnica", v: "Mínimamente invasiva, con diseño digital aprobado antes de tocar un diente" },
-                                { k: "Especialista", v: "Dr. Ariel Merino — 15+ años en estética dental" },
+                                { k: "Especialista", v: `Dr. Ariel Merino — ${ANIOS_TRAYECTORIA} años en estética dental` },
                             ].map((f) => (
                                 <div key={f.k} className="border-t border-oro/10 pt-4">
                                     <dt className="text-oro/70 font-manrope text-xs uppercase tracking-widest mb-1.5">{f.k}</dt>
@@ -301,7 +302,7 @@ export default function CarillasDentalesPage() {
                                 <span className="font-cormorant italic text-oro">Odontólogo Estético</span>
                             </h2>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
-                                Más de 15 años dedicados exclusivamente a la estética dental. La única clínica odontológica de Argentina reconocida por Forbes. El Dr. Merino fue elegido para diseñar la sonrisa de Miss Universo.
+                                {ANIOS_TRAYECTORIA} años dedicados casi exclusivamente a la estética dental. La única clínica odontológica de Argentina reconocida por Forbes. El Dr. Merino fue elegido para diseñar la sonrisa de Miss Universo.
                             </p>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed">
                                 Cada caso de carillas es evaluado personalmente, con criterio clínico y estético, para lograr un resultado natural que dure décadas.

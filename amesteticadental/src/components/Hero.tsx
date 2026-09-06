@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CometButton from "./CometButton";
+import { ANIOS_LABEL, ANIOS_LABEL_EN } from "@/lib/trayectoria";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,7 +48,7 @@ const COPY = {
     stats: [
       { v: "4.9★", l: "Google" },
       { v: "Forbes", l: "Argentina" },
-      { v: "+20 años", l: "transformando sonrisas" },
+      { v: ANIOS_LABEL, l: "transformando sonrisas" },
     ],
     scroll: "Descubrir",
   },
@@ -64,7 +65,7 @@ const COPY = {
     stats: [
       { v: "4.9★", l: "Google" },
       { v: "Forbes", l: "Argentina" },
-      { v: "20+ years", l: "transforming smiles" },
+      { v: ANIOS_LABEL_EN, l: "transforming smiles" },
     ],
     scroll: "Discover",
   },

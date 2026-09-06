@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GOOGLE_REVIEWS } from "@/lib/reviews";
 import { BARRIOS } from "@/data/barrios";
+import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
 const CANONICAL = "https://www.amesteticadental.com/dentista-puerto-madero";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20agendar%20una%20consulta%20en%20AM%20Est%C3%A9tica%20Dental.";
@@ -136,7 +137,7 @@ export default function DentistaPuertoMaderoPage() {
                             Tu dentista<br /><span className="font-cormorant italic text-oro">en Puerto Madero.</span>
                         </h1>
                         <p className="text-crema/70 text-xl font-light leading-relaxed mb-8 max-w-2xl">
-                            Una clínica dental boutique especializada en estética de alta complejidad, dirigida por el Dr. Ariel Merino — más de 20 años de experiencia y reconocido por Forbes Argentina.
+                            Una clínica dental boutique especializada en estética de alta complejidad, dirigida por el Dr. Ariel Merino — {ANIOS_TRAYECTORIA} años de ejercicio y reconocido por Forbes Argentina.
                         </p>
                         <div className="flex flex-wrap items-center gap-4 mb-10">
                             <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">Agendá tu consulta</a>
@@ -200,7 +201,7 @@ export default function DentistaPuertoMaderoPage() {
                             <span className="text-oro uppercase tracking-[0.4em] text-[10px] block mb-3">Tu odontólogo</span>
                             <h2 className="text-3xl font-light text-crema mb-6">Dr. Ariel <span className="font-cormorant italic text-oro">Merino.</span></h2>
                             <p className="text-crema/60 text-base font-light leading-relaxed mb-4">
-                                Especialista en estética dental con más de 20 años de experiencia clínica. Fundador de AM Estética Dental, la clínica dental argentina reconocida por Forbes, y disertante en congresos del sector como Expodent.
+                                Especialista en estética dental con {ANIOS_TRAYECTORIA} años de experiencia clínica. Fundador de AM Estética Dental, la clínica dental argentina reconocida por Forbes, y disertante en congresos del sector como Expodent.
                             </p>
                             <p className="text-crema/60 text-base font-light leading-relaxed mb-8">
                                 Su filosofía: sonrisas naturales, mínima invasión y que el paciente vea el resultado antes de empezar.

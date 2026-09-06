@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import { hreflangFor } from "@/lib/i18n-routes";
+import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
 const CANONICAL = "https://www.amesteticadental.com/en/porcelain-veneers-buenos-aires";
 
@@ -130,7 +131,7 @@ export default function PorcelainVeneersPage() {
                             {[
                                 { v: "4.9★", l: "Google Reviews" },
                                 { v: "Forbes", l: "Argentina" },
-                                { v: "15+", l: "years in cosmetic dentistry" },
+                                { v: String(ANIOS_TRAYECTORIA), l: "years in cosmetic dentistry" },
                             ].map((s) => (
                                 <div key={s.l}>
                                     <div className="text-oro font-manrope font-semibold text-lg">{s.v}</div>
@@ -257,7 +258,7 @@ export default function PorcelainVeneersPage() {
                                 <span className="font-cormorant italic text-oro">Cosmetic Dentist</span>
                             </h2>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
-                                Over 15 years dedicated exclusively to cosmetic dentistry. The only dental clinic in Argentina featured by Forbes. Dr. Merino was chosen to design the smile of a Miss Universe.
+                                {ANIOS_TRAYECTORIA} years in dentistry, dedicated almost exclusively to cosmetic dentistry. The only dental clinic in Argentina featured by Forbes. Dr. Merino was chosen to design the smile of a Miss Universe.
                             </p>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed">
                                 Every veneer case is assessed personally, with clinical and aesthetic judgment, to achieve a natural result that lasts decades.

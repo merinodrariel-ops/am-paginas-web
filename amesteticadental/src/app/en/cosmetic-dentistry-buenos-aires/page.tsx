@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import Contacto from "@/components/Contacto";
 import { hreflangFor } from "@/lib/i18n-routes";
+import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
 const CANONICAL = "https://www.amesteticadental.com/en/cosmetic-dentistry-buenos-aires";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I'd%20like%20to%20know%20which%20treatment%20fits%20my%20case.";
@@ -102,7 +103,7 @@ export default function CosmeticDentistryPage() {
               {[
                 { v: "4.9★", l: "Google Reviews" },
                 { v: "Forbes", l: "Argentina" },
-                { v: "15+", l: "years, cosmetic only" },
+                { v: String(ANIOS_TRAYECTORIA), l: "years, cosmetic only" },
               ].map((s) => (
                 <div key={s.l}>
                   <div className="text-oro font-manrope font-semibold text-lg">{s.v}</div>
@@ -141,7 +142,7 @@ export default function CosmeticDentistryPage() {
                 <span className="font-cormorant italic text-oro">Cosmetic Dentist</span>
               </h2>
               <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
-                A cosmetic dentist with more than 15 years of practice dedicated exclusively to cosmetic dentistry. Featured by Forbes Argentina. Chosen to design the smile of a Miss Universe.
+                A cosmetic dentist with {ANIOS_TRAYECTORIA} years of practice dedicated almost exclusively to cosmetic dentistry. Featured by Forbes Argentina. Chosen to design the smile of a Miss Universe.
               </p>
               <p className="text-crema/70 font-manrope text-base leading-relaxed">
                 Every patient is treated personally by Dr. Merino. We do not delegate cases. There are no residents. Every assessment, every design and every placement passes through his direct judgment.

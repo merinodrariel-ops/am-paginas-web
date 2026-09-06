@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { PERSON_SCHEMA, SITE } from "./site-data";
+import { PERSON_SCHEMA, SITE, ANIOS_TRAYECTORIA, ANIO_TITULO } from "./site-data";
 import { Nav, Footer, oro, cremaDim, serif } from "./ui";
 
 export const metadata: Metadata = {
@@ -73,7 +73,7 @@ export default function HomePage() {
               Director · AM Estética Dental
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.85, color: "var(--crema-dim, #A89F92)", marginBottom: 40, maxWidth: 440 }}>
-              Especialista en estética dental con más de 20 años de trayectoria. Fundador de AM Estética Dental en Puerto Madero. Reconocido internacionalmente por casos pioneros en diseño de sonrisa y rehabilitación oral compleja.
+              Especialista en estética dental. {ANIOS_TRAYECTORIA} años de ejercicio desde mi título de grado en {ANIO_TITULO}, dedicados casi exclusivamente a esto. Fundador de AM Estética Dental en Puerto Madero, reconocido internacionalmente por casos de diseño de sonrisa y rehabilitación oral compleja.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <a href={WA} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--oro, #C9A96E)", color: "#141414", padding: "14px 28px", borderRadius: 100, fontSize: 13, fontWeight: 600, textDecoration: "none", letterSpacing: "0.05em" }}>
@@ -90,7 +90,7 @@ export default function HomePage() {
         <section style={{ background: "var(--oro, #C9A96E)", padding: "24px 40px" }}>
           <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: 40, justifyContent: "center" }}>
             {[
-              ["20+", "Años de experiencia"],
+              [String(ANIOS_TRAYECTORIA), "Años de ejercicio"],
               ["Puerto Madero", "Buenos Aires, Argentina"],
               ["Carrasco", "Montevideo, Uruguay · próxima sede"],
               ["Internacional", "Casos reconocidos en todo el mundo"],
