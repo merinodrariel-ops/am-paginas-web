@@ -44,6 +44,13 @@ jobs:
           key: indexacion-estado-${{ github.run_id }}
           restore-keys: indexacion-estado-
 
+      # Va antes de la auditoría porque no necesita credenciales: si Search Console
+      # está bloqueado, esto igual corre. Detecta que los mapas de hreflang de los dos
+      # proyectos se desincronizaron, que es un fallo silencioso — el build pasa, el
+      # sitemap se publica, y Google descarta el cluster sin avisarle a nadie.
+      - name: Verificar la integridad de los clusters de hreflang
+        run: node scripts/verificar-hreflang.mjs
+
       - name: Auditar y reparar
         env:
           GOOGLE_SEARCH_CONSOLE_CLIENT_ID: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_ID }}

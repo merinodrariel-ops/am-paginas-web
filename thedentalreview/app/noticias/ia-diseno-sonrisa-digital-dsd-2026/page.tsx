@@ -5,7 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 const CANONICAL = "https://www.thedentalreview.com/noticias/ia-diseno-sonrisa-digital-dsd-2026";
 
 export const metadata: Metadata = {
-  title: "IA y Diseño Digital de Sonrisa: cuando la máquina elige mejor que el experto | The Dental Review",
+  title: "IA y Diseño Digital de Sonrisa: cuando la máquina elige mejor que el experto",
   description:
     "Estudios 2025-2026 demuestran que la inteligencia artificial supera a diseñadores expertos en predicción de estética. Análisis del impacto clínico del DSD asistido por IA.",
   alternates: { canonical: CANONICAL },

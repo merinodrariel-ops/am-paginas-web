@@ -121,10 +121,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.85,
     })),
-    ...casos.map((caso) => ({
-      url: `${SITE}/en/cases/${caso.slug}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.85,
-    })),
+    // Sólo los casos efectivamente traducidos. Los demás se sirven en /en/cases con
+    // noindex + canonical al español: anunciarlos en el sitemap era pedirle a Google
+    // que rastree páginas que la propia página le dice que no indexe.
+    ...casos
+      .filter((caso) => caso.tieneTraduccionEn)
+      .map((caso) => ({
+        url: `${SITE}/en/cases/${caso.slug}`,
+        changeFrequency: "monthly" as const,
+        priority: 0.85,
+      })),
   ];
 }

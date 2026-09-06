@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "El Dr. Ariel Merino incorporó un simulador de sonrisa con inteligencia artificial como herramienta orientativa previa a la consulta clínica.",
   alternates: { canonical: CANONICAL },
   openGraph: {
-    title: "IA para simular sonrisas antes del tratamiento | The Dental Review",
+    title: "IA para simular sonrisas antes del tratamiento",
     description:
       "Una herramienta de simulación visual permite explorar cambios estéticos antes de iniciar una evaluación odontológica.",
     type: "article",

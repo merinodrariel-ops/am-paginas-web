@@ -5,7 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 const CANONICAL = "https://www.thedentalreview.com/noticias/nobel-biocare-s-series-implantologia-2026";
 
 export const metadata: Metadata = {
-  title: "Nobel Biocare S Series: una nueva era en diseño de implantes | The Dental Review",
+  title: "Nobel Biocare S Series: una nueva era en diseño de implantes",
   description:
     "La plataforma S Series de Nobel Biocare unifica sistemas de implantes bajo una sola conexión protésica. Análisis de sus ventajas clínicas e impacto en la implantología 2026.",
   alternates: { canonical: CANONICAL },

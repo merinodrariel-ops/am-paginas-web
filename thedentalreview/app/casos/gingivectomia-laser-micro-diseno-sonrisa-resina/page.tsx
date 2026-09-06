@@ -7,7 +7,7 @@ const CANONICAL = "https://www.thedentalreview.com/casos/gingivectomia-laser-mic
 const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-resina-caries";
 
 export const metadata: Metadata = {
-  title: "El equilibrio invisible: cuando una sonrisa empieza en la encía | The Dental Review",
+  title: "El equilibrio invisible: cuando una sonrisa empieza en la encía",
   description:
     "Gingivectomía láser y micro diseño de sonrisa en resina: cómo una clínica de Puerto Madero combina la armonía de los márgenes gingivales con los bordes incisales en el 5% de pacientes con dientes impecables.",
   alternates: { canonical: CANONICAL },

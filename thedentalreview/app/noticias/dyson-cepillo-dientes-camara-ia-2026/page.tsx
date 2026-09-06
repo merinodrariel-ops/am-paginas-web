@@ -5,7 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 const CANONICAL = "https://www.thedentalreview.com/noticias/dyson-cepillo-dientes-camara-ia-2026";
 
 export const metadata: Metadata = {
-  title: "Dyson entra en la higiene bucal: un cepillo con cámara, IA e irrigador integrado | The Dental Review",
+  title: "Dyson entra en la higiene bucal: un cepillo con cámara, IA e irrigador integrado",
   description:
     "La marca británica presentó su primer cepillo de dientes: cámara intraoral, detección asistida por algoritmo, chorro de enjuague y un precio en torno a los US$ 500. Qué aporta de verdad y qué queda sin evidencia, según la lectura clínica.",
   alternates: { canonical: CANONICAL },

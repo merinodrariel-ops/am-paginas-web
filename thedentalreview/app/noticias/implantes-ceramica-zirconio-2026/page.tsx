@@ -5,7 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 const CANONICAL = "https://www.thedentalreview.com/noticias/implantes-ceramica-zirconio-2026";
 
 export const metadata: Metadata = {
-  title: "Implantes de Cerámica sin Metal: La Alternativa Biocompatible que Gana Tracción en 2026 | The Dental Review",
+  title: "Implantes de cerámica sin metal: qué cambia en 2026",
   description:
     "Implantes de óxido de zirconio (metal-free) ofrecen biocompatibilidad superior, menor acumulación de placa bacteriana y excelente estética. Una alternativa consolidada para pacientes premium en 2026.",
   alternates: { canonical: CANONICAL },

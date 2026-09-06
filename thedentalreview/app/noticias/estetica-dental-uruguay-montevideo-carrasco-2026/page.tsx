@@ -5,7 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 const CANONICAL = "https://www.thedentalreview.com/noticias/estetica-dental-uruguay-montevideo-carrasco-2026";
 
 export const metadata: Metadata = {
-  title: "Montevideo entra al mapa de la estética dental premium | The Dental Review",
+  title: "Montevideo entra al mapa de la estética dental premium",
   description:
     "El corredor odontológico rioplatense se reconfigura: pacientes uruguayos que cruzan a Buenos Aires y clínicas argentinas que abren sede en Montevideo. Qué hay detrás del movimiento.",
   alternates: { canonical: CANONICAL },

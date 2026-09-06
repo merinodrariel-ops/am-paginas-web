@@ -3,7 +3,7 @@ import Link from "next/link";
 import SiteFooter from "../components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "Acerca de The Dental Review",
+  title: "Acerca de",
   description: "Criterios editoriales, fuentes y política de correcciones de The Dental Review, publicación especializada en odontología estética y digital.",
   alternates: { canonical: "https://www.thedentalreview.com/acerca-de" },
 };

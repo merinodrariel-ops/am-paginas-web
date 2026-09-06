@@ -23,12 +23,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const spanish = `https://www.amesteticadental.com/casos/${caso.slug}`;
     const description = caso.seoDescription || caso.descripcion;
 
-    // Esta ruta renderiza para todos los slugs, pero los casos sin bloque `en`
+    // Esta ruta renderiza para todos los slugs, pero los casos sin traducción
     // salen con el texto en español. Declarar hreflang ahí sería anunciar una
     // traducción que no existe, y encima deja dos URLs con el mismo contenido
     // castellano compitiendo. Mientras no esté traducido: canonical al español
     // y fuera del índice.
-    const traducido = Boolean(caso.en);
+    //
+    // Se pregunta por `tieneTraduccionEn` y no por `caso.en`: los casos del panel
+    // traen la traducción en `translations.en` y el mapeo la aplana, así que nunca
+    // setean `en`. Con `caso.en` quedaban en noindex dos casos que sí estaban
+    // traducidos por completo al inglés.
+    const traducido = Boolean(caso.tieneTraduccionEn);
 
     return {
         metadataBase: new URL("https://www.amesteticadental.com"),

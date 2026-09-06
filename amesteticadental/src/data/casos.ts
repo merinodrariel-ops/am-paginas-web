@@ -47,11 +47,21 @@ export interface Caso {
     videoAspect?: "16/9" | "9/16"; // horizontal (16/9) o Short vertical (9/16)
     publicado: boolean;
     en?: CasoEn;
+    /**
+     * ¿Existe una traducción al inglés de este caso?
+     *
+     * No alcanza con mirar `en`: los casos que vienen del panel (Supabase) traen su
+     * traducción en `translations.en` y el mapeo la aplana sobre los campos de nivel
+     * superior, así que nunca setean `en`. Preguntar por `caso.en` daba falso para
+     * todos ellos y dejaba sus páginas /en/cases en noindex aunque estuvieran
+     * completamente traducidas. Esta bandera la setean las dos fuentes.
+     */
+    tieneTraduccionEn?: boolean;
 }
 
 /** Devuelve el caso con los campos en inglés aplicados, si existen. */
 export function localizeCaso(caso: Caso, lang: "es" | "en"): Caso {
-    if (lang !== "en" || !caso.en) return caso;
+    if (lang !== "en" || !caso.en) return { ...caso, tieneTraduccionEn: Boolean(caso.en) };
     const t = caso.en;
     const fotos = caso.fotos.map((foto, i) => {
         const tf = t.fotos?.[i];
@@ -59,6 +69,7 @@ export function localizeCaso(caso: Caso, lang: "es" | "en"): Caso {
     });
     return {
         ...caso,
+        tieneTraduccionEn: true,
         titulo: t.titulo,
         subtitulo: t.subtitulo,
         descripcion: t.descripcion,

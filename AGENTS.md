@@ -17,17 +17,33 @@ Es odontólogo, no programador. Explicar sin jerga técnica cuando se comunica c
 enlaces, schema o páginas nuevas, leer **`docs/PLAN-MAESTRO-RED-AM.md`**: explica
 cómo están conectadas las propiedades y qué NO hay que romper.
 
-### ⚠️ Cluster hreflang AR ↔ UY — se toca de a dos
+### ⚠️ Cluster hreflang — se toca de a CUATRO mapas
 
 `amesteticadental.com` y `amesteticadental.uy` son los dos en español. El cluster
 `es-AR` / `es-UY` es lo único que evita que Google los trate como duplicados en
-competencia. Vive en dos mapas que **tienen que moverse juntos**:
+competencia, y varias de esas páginas tienen además versión `en-US`.
 
-- `amesteticadental/src/lib/i18n-routes.ts` → `UY_BY_ES`
-- `amesteticadental-uy/app/site-data.ts` → `AR_BY_UY`
+Un cluster de hreflang es un **conjunto**: Google sólo lo respeta si *todos* sus
+miembros declaran el *mismo* conjunto. Vive en cuatro mapas que **tienen que moverse
+juntos**:
 
-Agregar una página a uno solo rompe la bidireccionalidad y Google ignora el cluster
-entero.
+- `amesteticadental/src/lib/i18n-routes.ts` → `UY_BY_ES` y `EN_BY_ES`
+- `amesteticadental-uy/app/site-data.ts` → `AR_BY_UY` y `EN_BY_AR`
+
+Agregar una página a unos y no a otros rompe el cluster entero, **sin que falle
+ningún build**. Pasó: hasta el 06-09-2026 el lado uruguayo declaraba sólo
+`es-AR` + `es-UY` mientras el argentino declaraba `es-AR` + `en-US` + `es-UY`, y los
+8 clusters compartidos —incluidos carillas, diseño de sonrisa e implantes— estaban
+rotos desde que se creó el cluster.
+
+Antes de commitear un cambio de rutas, correr:
+
+```bash
+node scripts/verificar-hreflang.mjs
+```
+
+Compara los dos sitemaps publicados y sale con código 1 si algún conjunto no coincide.
+Corre solo todos los días dentro de `indexacion-watch.yml`.
 
 ### Páginas nuevas en Uruguay
 

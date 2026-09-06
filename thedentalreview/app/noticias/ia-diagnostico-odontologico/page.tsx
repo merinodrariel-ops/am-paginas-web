@@ -5,7 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 const CANONICAL = "https://www.thedentalreview.com/noticias/ia-diagnostico-odontologico";
 
 export const metadata: Metadata = {
-  title: "Inteligencia Artificial en Diagnóstico Odontológico: Mayor Precisión en Detección de Patología | The Dental Review",
+  title: "IA en diagnóstico odontológico: más patología detectada",
   description:
     "Sistemas de IA asisten a clínicos en la detección de patología dental con un 37% más de precisión. Nuevas aplicaciones emergentes transforman el diagnóstico y la planificación del tratamiento en 2026.",
   alternates: { canonical: CANONICAL },

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "Ambos implantes de titanio pertenecen al mismo grupo suizo. Comparamos su predictibilidad clínica, tecnología de superficies y diferencia de inversión.",
   alternates: { canonical: CANONICAL },
   openGraph: {
-    title: "Straumann vs. Neodent: Diferencias en Implantología Premium | The Dental Review",
+    title: "Straumann vs. Neodent: Diferencias en Implantología Premium",
     description:
       "Analizamos los dos sistemas de titanio de referencia del Grupo Straumann: sus características de diseño, velocidad de curación y balance de costos.",
     type: "article",

@@ -116,6 +116,7 @@ function mapDynamicCase(
     copy: localized?.copy || localized?.description || row.copy,
     copyRedes: row.copy_social || undefined,
     publicado: row.status === "published",
+    tieneTraduccionEn: Boolean(row.translations?.en),
   };
 }
 

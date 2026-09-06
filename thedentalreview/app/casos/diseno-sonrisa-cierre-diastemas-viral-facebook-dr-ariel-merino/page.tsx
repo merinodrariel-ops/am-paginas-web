@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "Análisis clínico del caso de diseño de sonrisa con cierre de diastemas y dientes conoidos del Dr. Ariel Merino, que se viralizó en Facebook antes de Instagram y fue uno de los primeros en YouTube. 10 carillas AM lentes de contacto dental de 0.2mm.",
   alternates: { canonical: CANONICAL },
   openGraph: {
-    title: "El caso viral de diseño de sonrisa — Dr. Ariel Merino | The Dental Review",
+    title: "El caso viral de diseño de sonrisa — Dr. Ariel Merino",
     description: "Caso histórico de diastemas y dientes conoidos resuelto con 10 lentes de contacto dental de 0.2mm. Reconocido internacionalmente.",
     url: CANONICAL,
     type: "article",

@@ -895,14 +895,44 @@ export const AR_BY_UY: Record<string, string> = {
   "/prensa": "/prensa",
 };
 
+// Contraparte en inglés de cada página argentina que participa del cluster.
+//
+// Por qué vive acá y no sólo en el proyecto argentino: un cluster de hreflang es un
+// CONJUNTO, y Google sólo lo respeta si todos sus miembros declaran el mismo conjunto.
+// El sitemap argentino declara es-AR + en-US + es-UY; si el uruguayo declarara sólo
+// es-AR + es-UY, los conjuntos no coinciden y Google puede descartar el cluster entero
+// —justamente lo que este cluster existe para evitar—.
+//
+// Es el espejo de `EN_BY_ES` en `amesteticadental/src/lib/i18n-routes.ts`. Los dos
+// proyectos se despliegan por separado y no comparten código, así que el mapa está
+// duplicado a propósito. `scripts/verificar-hreflang.mjs` (raíz del repo) compara los
+// dos sitemaps en vivo y avisa si se desincronizan.
+//
+// La clave es la ruta ARGENTINA; el valor, su equivalente en inglés.
+const EN_BY_AR: Record<string, string> = {
+  "/": "/en",
+  "/carillas-dentales": "/en/porcelain-veneers-buenos-aires",
+  "/diseno-de-sonrisa": "/en/smile-design-buenos-aires",
+  "/estetica-dental": "/en/cosmetic-dentistry-buenos-aires",
+  "/implantes-dentales-buenos-aires": "/en/dental-implants-buenos-aires",
+  "/blanqueamiento-dental-precio-buenos-aires": "/en/teeth-whitening-buenos-aires",
+  "/alineadores-invisibles": "/en/invisible-aligners-buenos-aires",
+  "/lentes-de-contacto-dental": "/en/ultra-thin-veneers-buenos-aires",
+  "/casos-antes-y-despues": "/en/before-after",
+  "/dr-ariel-merino": "/en/dr-ariel-merino",
+  "/prensa": "/en/press",
+};
+
 /** Bloque `languages` de hreflang para una ruta uruguaya. */
 export function hreflangFor(uyPath: string): Record<string, string> {
   const arPath = AR_BY_UY[uyPath];
   if (!arPath) return {};
   const arUrl = `${ARGENTINA_URL}${arPath === "/" ? "" : arPath}`;
+  const enPath = EN_BY_AR[arPath];
   return {
     "es-UY": `${SITE_URL}${uyPath === "/" ? "" : uyPath}`,
     "es-AR": arUrl,
+    ...(enPath ? { "en-US": `${ARGENTINA_URL}${enPath}` } : {}),
     "x-default": arUrl,
   };
 }

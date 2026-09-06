@@ -8,7 +8,7 @@ const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/cas
 const OG_IMAGE = `${CDN}/fragmentos-ceramicos-lentes-contacto-dental-dedo-escala-carillas-am-dr-ariel-merino-am-estetica-dental`;
 
 export const metadata: Metadata = {
-  title: "Cada vez se lima menos: el auge de las carillas ultrafinas en 2026 | The Dental Review",
+  title: "Cada vez se lima menos: el auge de las carillas ultrafinas en 2026",
   description:
     "La odontología aditiva y la resina impresa en 3D empujan el límite de lo conservador: carillas de 0,1 a 0,2 mm que reducen el desgaste del esmalte al mínimo. Análisis de la tendencia estética 2026.",
   alternates: { canonical: CANONICAL },
