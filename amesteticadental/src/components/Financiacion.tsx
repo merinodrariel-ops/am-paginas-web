@@ -29,7 +29,7 @@ function calcularDeudaBaseMensual(monto: number, cuotas: number): number {
 }
 
 export default function Financiacion() {
-    const [montoInput, setMontoInput] = useState("20000");
+    const [montoInput, setMontoInput] = useState("30000");
     const [anticipoPorcentaje, setAnticipoPorcentaje] = useState(0.5);
 
     const monto = Math.max(parsearMontoInput(montoInput), 0);

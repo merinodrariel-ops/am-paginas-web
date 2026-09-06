@@ -38,11 +38,6 @@ export interface Caso {
     fotos: FotoCaso[];
     copy: string; // HTML o markdown — texto principal del caso
     copyRedes?: string;
-    precio?: {
-        total: string;         // "USD 20.000"
-        porPieza?: string;     // "USD 1.000 por pieza"
-        nota?: string;         // texto aclaratorio opcional
-    };
     videoUrl?: string;         // YouTube embed URL
     videoAspect?: "16/9" | "9/16"; // horizontal (16/9) o Short vertical (9/16)
     publicado: boolean;
@@ -151,10 +146,6 @@ Todo en menos de un mes. Es una paciente exigente, una profesional que expone en
 
 Hoy sonríe —y habla en público— con una confianza distinta.`,
         copyRedes: `Coronas, puentes, coronas sobre implantes y carillas cerámicas. Recambio completo + mejora de mordida, en menos de un mes. Una sonrisa más fresca, más joven y natural.`,
-        precio: {
-            total: "Desde USD 26.000",
-            nota: "Rehabilitación oral completa. Valor orientativo: el definitivo depende del diagnóstico, la cantidad de piezas y las restauraciones sobre implantes.",
-        },
         publicado: true,
         en: {
             titulo: "She renewed her entire smile in less than a month",
@@ -250,10 +241,6 @@ Realizamos un diseño de sonrisa y una rehabilitación cerámica en ambos maxila
 Hoy, más de 13 años después, el resultado sigue en boca.
 
 Una de nuestras primeras pacientes y una de las transformaciones más representativas de nuestra trayectoria.`,
-        precio: {
-            total: "USD 20.000–26.000",
-            nota: "Estimación orientativa al 15 de junio de 2026 para una rehabilitación comparable. El valor definitivo depende del diagnóstico, la cantidad de piezas, los materiales y la complejidad clínica.",
-        },
         publicado: true,
         en: {
             titulo: "A transformation that has been in place for more than 13 years.",
@@ -339,10 +326,6 @@ Los bordes de los incisivos no acompañaban la línea de la cara. El plano de la
 En una semana hicimos diseño de sonrisa con carillas cerámicas AM: forma, proporción, color y plano incisal.
 
 No era solo hacer dientes más blancos. Era reconstruir la arquitectura de la sonrisa.`,
-        precio: {
-            total: "USD a definir según diagnóstico",
-            nota: "Diseño de sonrisa completo con carillas cerámicas AM. El valor final depende de cantidad de piezas, planificación y complejidad clínica.",
-        },
         publicado: true,
         en: {
             titulo: "He flew in from Milan with a broken smile. We fixed it in a week.",
@@ -444,10 +427,6 @@ Este tipo de caso suele venir de un golpe de chico, tratamiento de conducto y a�
 Blanqueamiento, resinas de contexto, prueba de tres colores y una cerámica maquillada de forma artesanal para copiar el diente vecino.
 
 Cuando una carilla unitaria está bien hecha, no se ve la carilla. Se ve una sonrisa.`,
-        precio: {
-            total: "USD a definir según diagnóstico",
-            nota: "Carilla cerámica unitaria en incisivo central + planificación de color + cementado adhesivo. El valor final depende del contexto clínico, blanqueamiento y restauraciones complementarias.",
-        },
         publicado: true,
         en: {
             titulo: "A single tooth can change an entire smile.",
@@ -539,11 +518,6 @@ Le hicimos 20 carillas de porcelana, ampliamos su sonrisa y mejoramos el color u
 10 días. Sin cirugía. Sin brackets. Sin que nadie note que se hizo algo.
 
 Eso es lo que más nos gusta lograr.`,
-        precio: {
-            total: "USD 20.000",
-            porPieza: "USD 1.000 por pieza",
-            nota: "20 lentes de contacto dental · porcelana feldespática · técnica mínimamente invasiva",
-        },
         publicado: true,
         en: {
             titulo: "20 veneers in 10 days. No braces. No whitening. And nobody noticed.",
@@ -678,10 +652,6 @@ Eso es lo que más nos importa de este caso — no solo lo que cambió en la boc
 El resultado no fue solo una sonrisa nueva. Fue otra cara.
 
 Eso es lo que entendemos por transformación de vida.`,
-        precio: {
-            total: "USD 28.000 – 30.000",
-            nota: "Aprox. USD 4.000 ortodoncia invisible + USD 24.000 rehabilitación completa (implantes + 24 cerámicas + aumento de dimensión vertical)",
-        },
         videoUrl: "https://www.youtube.com/embed/oqcaGGGAs5Y",
         videoAspect: "9/16",
         publicado: true,
@@ -809,10 +779,6 @@ Subí este caso a YouTube y profesores de odontología de todo el mundo me escri
 10 carillas AM de 0.2mm. Sin desgaste. Cierre de diastemas completo. 10 días.
 
 El caso que definió mi carrera.`,
-        precio: {
-            total: "Consultar",
-            nota: "Caso histórico — referencia de carillas AM ultra delgadas tipo lente de contacto dental",
-        },
         videoUrl: "https://www.youtube.com/embed/RIUEvt7Zq3c",
         videoAspect: "16/9",
         publicado: true,
@@ -852,7 +818,7 @@ The result transformed not only his smile but the way I understood cosmetic dent
         slug: "carillas-resina-diseno-sonrisa-gingivectomia-laser",
         titulo: "Dientes sanos, sonrisa nueva. Por qué empezar con resina.",
         subtitulo: "10 carillas de resina + gingivectomía láser — diseño de sonrisa en paciente joven sin caries ni tratamientos previos",
-        descripcion: "Caso de diseño de sonrisa con 10 carillas de resina compuesta y gingivectomía láser en paciente joven con dientes sanos. Sin caries, sin coronas previas. USD 500 por pieza. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
+        descripcion: "Caso de diseño de sonrisa con 10 carillas de resina compuesta y gingivectomía láser en paciente joven con dientes sanos. Sin caries, sin coronas previas. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
         seoTitle: "Diseño de Sonrisa con Carillas de Resina",
         seoDescription: "Caso de diseño de sonrisa con 10 carillas de resina y gingivectomía láser en paciente joven con dientes sanos, sin desgaste por el Dr. Ariel Merino.",
         categorias: ["Carillas de porcelana", "Diseño de sonrisa", "Lentes de contacto dental"],
@@ -926,9 +892,9 @@ La resina es más frágil que la cerámica. No soporta la misma mordida extrema.
 
 Un control anual es indispensable. Se evalúa el desgaste, se hace un pulido y si hay alguna microchip se repara directamente en boca sin cambiar toda la carilla.
 
-¿Cuánto cuestan las carillas de resina vs cerámica?
+¿Conviene empezar con resina o ir directo a cerámica?
 
-Las de resina cuestan USD 500 por diente. Las cerámicas van de USD 1.000 a 1.500 por pieza. La diferencia de inversión es real, pero también lo es la diferencia en durabilidad.`,
+No son el mismo tratamiento a distinto valor: son tratamientos distintos. La resina se modela en el momento, es mínimamente invasiva y permite empezar hoy. La cerámica, hecha en nuestro laboratorio propio, dura más y no cambia de color. Cuál corresponde en tu caso se define en el diagnóstico, junto con el presupuesto.`,
         copyRedes: `Dientes sanos, paciente joven. La primera opción fue resina.
 
 10 carillas directas de resina + gingivectomía láser para nivelar la encía.
@@ -936,16 +902,11 @@ Las de resina cuestan USD 500 por diente. Las cerámicas van de USD 1.000 a 1.50
 5 días. Sin tocar el esmalte original.
 
 Cuando la base es buena, hay que cuidarla.`,
-        precio: {
-            total: "USD 5.000",
-            porPieza: "USD 500 por carilla",
-            nota: "10 carillas de resina compuesta directa + gingivectomía láser incluida",
-        },
         publicado: true,
         en: {
             titulo: "Healthy teeth, a new smile. Why start with composite.",
             subtitulo: "10 composite veneers + laser gingivectomy — smile design on a young patient with no cavities and no previous treatment",
-            descripcion: "A smile design case with 10 composite veneers and laser gingivectomy on a young patient with healthy teeth. No cavities, no previous crowns. USD 500 per unit. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
+            descripcion: "A smile design case with 10 composite veneers and laser gingivectomy on a young patient with healthy teeth. No cavities, no previous crowns. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
             seoTitle: "Smile Design with Composite Veneers",
             seoDescription: "A smile design case with 10 composite veneers and laser gingivectomy on a young patient with healthy teeth, minimally invasive, by Dr. Ariel Merino.",
             categorias: ["Composite veneers", "Smile design", "Gum contouring"],
@@ -978,9 +939,9 @@ What maintenance does composite require?
 
 An annual check-up is essential. We assess wear, polish the surface, and if there is any microchip it is repaired directly in the mouth without replacing the whole veneer.
 
-What is the investment for composite vs ceramic veneers?
+Should you start with composite or go straight to ceramic?
 
-Composite veneers are USD 500 per tooth. Ceramic veneers range from USD 1,000 to 1,500 per unit.`,
+They are not the same treatment at different prices: they are different treatments. Composite is layered chairside, is minimally invasive and lets you start today. Ceramic, made in our own in-house lab, lasts longer and does not change colour. Which one fits your case is decided at the diagnosis, together with the quote.`,
             fotos: [
                 { alt: "Smile design with composite veneers and laser gingivectomy, before and after — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Before and after — cover image" },
                 { alt: "Composite veneers — before — frontal face of a young patient — Dr. Ariel Merino, AM Estética Dental Buenos Aires", caption: "Before — frontal face" },
@@ -996,7 +957,7 @@ Composite veneers are USD 500 per tooth. Ceramic veneers range from USD 1,000 to
         slug: "gingivectomia-laser-micro-diseno-sonrisa-resinas",
         titulo: "Gingivectomía láser + micro diseño de sonrisa en resinas",
         subtitulo: "Gingivectomía en todos los márgenes gingivales + micro diseño de sonrisa con carillas mínimamente invasivas en resina",
-        descripcion: "Caso de gingivectomía láser completa en todos los márgenes gingivales seguida de micro diseño de sonrisa. Carillas de resina mínimamente invasivas para detalles finos en bordes incisales. Paciente joven que vive de su imagen — transformación natural y discreta. USD 5.000 total. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
+        descripcion: "Caso de gingivectomía láser completa en todos los márgenes gingivales seguida de micro diseño de sonrisa. Carillas de resina mínimamente invasivas para detalles finos en bordes incisales. Paciente joven que vive de su imagen — transformación natural y discreta. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
         seoTitle: "Gingivectomía Láser con Diseño de Sonrisa en Resina",
         seoDescription: "Gingivectomía láser completa y micro diseño de sonrisa con carillas de resina — caso premium de estética dental minimamente invasiva. Dr. Ariel Merino.",
         categorias: ["Gingivectomía láser", "Diseño de sonrisa", "Carillas de resina"],
@@ -1049,7 +1010,7 @@ Todo mínimamente invasivo. Casi sin tocar la estructura original de los dientes
 
 El resultado fue exacto a lo que buscaba: una sonrisa más pulida, más refinada, perfecta para alguien que vive bajo las luces. La paciente se fue súper contenta y feliz.
 
-USD 5.000 — gingivectomía láser completa + micro diseño de sonrisa en resina.`,
+Gingivectomía láser completa + micro diseño de sonrisa en resina.`,
         copyRedes: `Paciente joven que vive de su imagen.
 
 Gingivectomía láser en todos los márgenes + micro diseño de sonrisa en resina.
@@ -1058,17 +1019,12 @@ Antes de cualquier estética, hubo que resolver la salud.
 
 Remoción de caries. Gingivectomía láser. Carillas de resina nuevas.
 
-El resultado se viralizó en TikTok. USD 5.000 all-inclusive.`,
-        precio: {
-            total: "USD 5.000",
-            porPieza: "USD 5.000 all-inclusive",
-            nota: "Incluye: gingivectomía láser en todos los márgenes + micro diseño de sonrisa en resina (10 dientes sector anterior). Financiación: USD 1.500 anticipo + USD 309/mes en 12 meses (18% anual)",
-        },
+El resultado se viralizó en TikTok.`,
         publicado: true,
         en: {
             titulo: "Laser gingivectomy + micro smile design in composite",
             subtitulo: "Gingivectomy across all gum margins + micro smile design with minimally invasive composite veneers",
-            descripcion: "A clinical case combining laser gingivectomy across all gum margins with a micro smile design using minimally invasive composite veneers. USD 5,000. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
+            descripcion: "A clinical case combining laser gingivectomy across all gum margins with a micro smile design using minimally invasive composite veneers. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
             seoTitle: "Laser Gingivectomy + Micro Smile Design",
             seoDescription: "Laser gingivectomy across all gum margins plus a micro smile design with minimally invasive composite veneers. Dr. Ariel Merino, Puerto Madero.",
             categorias: ["Gum contouring", "Smile design", "Composite veneers"],
@@ -1085,7 +1041,7 @@ All minimally invasive. Barely touching the original structure of the teeth.
 
 The result was exactly what she was looking for: a more polished, more refined smile, perfect for someone who lives under the lights. She left extremely happy.
 
-USD 5,000 — complete laser gingivectomy + micro smile design in composite.`,
+Complete laser gingivectomy + micro smile design in composite.`,
             fotos: [
                 { alt: "Laser gingivectomy and micro smile design in composite, before and after — Dr. Ariel Merino, AM Estética Dental Puerto Madero", caption: "Before and after — cover image" },
                 { alt: "Before — cavities, old composites and overgrown gum tissue — AM Estética Dental Buenos Aires", caption: "Before — cavities, old composites and overgrown gum" },
@@ -1174,10 +1130,6 @@ Cuando llegó a la clínica tenía los dientes cortos, amarillos y una mordida c
 Carillas AM. Dimensión vertical restituida. 15 días.
 
 Diez años menos en la cara. Una boca que vuelve a funcionar.`,
-        precio: {
-            total: "USD 18.000",
-            nota: "Rehabilitación cerámica completa — carillas AM lentes de contacto dental — restauración de dimensión vertical",
-        },
         publicado: true,
         en: {
             titulo: "Teeth never lie about your age. Veneers do.",
@@ -1269,10 +1221,6 @@ Los resultados corresponden a este caso clínico particular. Cada tratamiento re
 Gingivectomía con láser en el maxilar inferior: remodelamos el tejido sin bisturí, sin puntos y con menos sangrado. Y limpieza con ultrasonido para eliminar la causa de la inflamación.
 
 Menos trauma, más precisión y una cicatrización más rápida.`,
-        precio: {
-            total: "Consultar",
-            nota: "Gingivectomía láser + limpieza periodontal por ultrasonido. El valor depende de la extensión del remodelado y del estado periodontal.",
-        },
         publicado: true,
         en: {
             titulo: "Laser gingivectomy: healthy gums without a scalpel, bleeding or stitches",

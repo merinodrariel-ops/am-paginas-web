@@ -78,6 +78,37 @@ function getSupabasePublic() {
   return createClient(url, anon, { auth: { persistSession: false } });
 }
 
+/**
+ * Los casos no publican presupuesto: cada paciente recibe uno personalizado
+ * después del diagnóstico. El bridge de Supabase trae `copy` escrito fuera del
+ * repo, así que las cifras se quitan acá — es el único punto por el que ese
+ * texto entra a las páginas públicas.
+ *
+ * Se descarta la oración que contiene el importe (no el párrafo entero) para
+ * no mutilar el relato clínico; si el párrafo queda vacío, desaparece.
+ */
+const MONEY_RE = /(?:USD|US\$|U\$S|\$)\s?\d[\d.,]*|\d[\d.,]*\s?(?:d[oó]lares|dollars|USD)/i;
+
+function stripPricing(text: string | undefined | null): string | undefined {
+  if (!text) return text ?? undefined;
+  if (!MONEY_RE.test(text)) return text;
+
+  const cleaned = text
+    .split(/\n{2,}/)
+    .map((parrafo) =>
+      parrafo
+        .split(/(?<=[.!?])\s+/)
+        .filter((oracion) => !MONEY_RE.test(oracion))
+        .join(" ")
+        .trim(),
+    )
+    .filter(Boolean)
+    .join("\n\n")
+    .trim();
+
+  return cleaned || undefined;
+}
+
 function mapAssetToFoto(asset: PublicClinicalCaseAssetRow, lang: "es" | "en"): FotoCaso {
   const localized = lang === "en" ? asset.translations?.en : undefined;
   return {
@@ -100,21 +131,25 @@ function mapDynamicCase(
   const fotoPortada = fotos[0];
   if (!fotoPortada) return null;
 
+  const descripcion = stripPricing(localized?.description || row.description) || row.title;
+  const copy = stripPricing(localized?.copy || localized?.description || row.copy) || descripcion;
+
   return {
     slug: row.slug,
     titulo: localized?.title || row.title,
-    subtitulo: localized?.subtitle || localized?.description || row.subtitle || row.description,
-    descripcion: localized?.description || row.description,
+    subtitulo:
+      stripPricing(localized?.subtitle || localized?.description || row.subtitle || row.description) || descripcion,
+    descripcion,
     seoTitle: localized?.seoTitle || row.seo_title || undefined,
-    seoDescription: localized?.seoDescription || row.seo_description || undefined,
+    seoDescription: stripPricing(localized?.seoDescription || row.seo_description),
     categorias: localized?.categories || row.categories || (lang === "en" ? ["Clinical case"] : ["Caso clínico"]),
     duracion: localized?.duration || row.duration || (lang === "en" ? "Clinical case" : "Caso clínico"),
     piezas: localized?.pieces || row.pieces || undefined,
     tecnica: localized?.technique || row.technique || undefined,
     fotoPortada,
     fotos,
-    copy: localized?.copy || localized?.description || row.copy,
-    copyRedes: row.copy_social || undefined,
+    copy,
+    copyRedes: stripPricing(row.copy_social),
     publicado: row.status === "published",
     tieneTraduccionEn: Boolean(row.translations?.en),
   };

@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import { hreflangFor } from "@/lib/i18n-routes";
 import SeoFaq from "@/components/seo/SeoFaq";
 import CalculadoraFinanciacion from "@/components/CalculadoraFinanciacion";
-import { getCasosPublicados } from "@/data/casos";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "¿Qué son y cuánto cuestan las Carillas Dentales? Precios 2026",
     description:
-      "Tabla de precios actualizada 2026. Porcelana vs Resina, financiación propia y casos reales con presupuestos. Evaluación en Puerto Madero.",
+      "Tabla de precios actualizada 2026. Porcelana vs Resina, financiación propia y qué define el valor de tu caso. Evaluación en Puerto Madero.",
     url: "https://www.amesteticadental.com/precio-carillas-dentales-buenos-aires",
     locale: "es_AR",
     type: "website",
@@ -105,7 +104,6 @@ const WA_LINK =
   "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20saber%20el%20precio%20de%20carillas%20dentales%20en%20mi%20caso.";
 
 export default function PrecioCarillasPage() {
-  const casosConPrecio = getCasosPublicados().filter((c) => c.precio);
   return (
     <>
       <BreadcrumbsSchema 
@@ -207,66 +205,6 @@ export default function PrecioCarillasPage() {
             </p>
           </div>
         </section>
-
-        {/* ── CASOS REALES CON PRECIO ── */}
-        {casosConPrecio.length > 0 && (
-          <section className="py-24 px-6 md:px-12">
-            <div className="max-w-4xl mx-auto">
-              <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6 text-center">
-                Casos reales · Precio incluido
-              </span>
-              <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-4 text-center">
-                ¿Cuánto cuesta un caso{" "}
-                <span className="font-cormorant italic text-oro">como el tuyo?</span>
-              </h2>
-              <p className="text-crema/55 font-manrope text-sm text-center max-w-2xl mx-auto mb-12">
-                No rangos genéricos. Casos reales atendidos en AM Estética Dental, con el precio exacto que pagó el paciente.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {casosConPrecio.map((caso) => (
-                  <Link
-                    key={caso.slug}
-                    href={`/casos/${caso.slug}`}
-                    className="group block border border-crema/5 rounded-2xl overflow-hidden hover:border-oro/20 transition-colors duration-300"
-                  >
-                    <div className="relative aspect-[4/3] overflow-hidden">
-                      <Image
-                        src={caso.fotoPortada.src}
-                        alt={caso.fotoPortada.alt}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-carbon/80 via-transparent to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <span className="inline-block bg-carbon/90 border border-oro/30 rounded-full px-4 py-1.5 font-manrope text-oro font-semibold text-sm">
-                          {caso.precio!.total}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <p className="font-manrope text-[9px] uppercase tracking-[0.3em] text-oro/60 mb-2">
-                        {caso.precio!.porPieza}
-                      </p>
-                      <h3 className="font-manrope font-light text-crema text-base leading-snug mb-2 group-hover:text-oro transition-colors">
-                        {caso.titulo}
-                      </h3>
-                      {caso.precio!.nota && (
-                        <p className="font-manrope text-crema/35 text-xs leading-relaxed">
-                          {caso.precio!.nota}
-                        </p>
-                      )}
-                      <p className="mt-4 font-manrope text-oro text-xs uppercase tracking-widest flex items-center gap-1">
-                        Ver caso completo
-                        <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-                      </p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* ── QUÉ INFLUYE EN EL PRECIO ── */}
         <section className="py-24 px-6 md:px-12">
