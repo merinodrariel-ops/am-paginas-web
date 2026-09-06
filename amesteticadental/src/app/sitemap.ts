@@ -11,6 +11,16 @@ function languagesForPath(path: string): Record<string, string> {
 
 const SITE = "https://www.amesteticadental.com";
 
+// Cluster de un caso clínico traducido. Los dos miembros declaran el mismo conjunto,
+// que es la condición para que Google respete el cluster.
+function casoLanguages(slug: string): Record<string, string> {
+  return {
+    "es-AR": `${SITE}/casos/${slug}`,
+    "en-US": `${SITE}/en/cases/${slug}`,
+    "x-default": `${SITE}/casos/${slug}`,
+  };
+}
+
 type SitemapEntry = {
   path: string;
   changeFrequency: "weekly" | "monthly";
@@ -120,6 +130,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${SITE}/casos/${caso.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.85,
+      // Los pares de caso ES↔EN no pasan por STATIC_ROUTES (los slugs son dinámicos),
+      // así que quedaban sin declarar hreflang en ningún lado: 13 pares de contenido
+      // equivalente compitiendo entre sí. El par se declara sólo si la traducción
+      // existe de verdad.
+      ...(caso.tieneTraduccionEn ? { alternates: { languages: casoLanguages(caso.slug) } } : {}),
     })),
     // Sólo los casos efectivamente traducidos. Los demás se sirven en /en/cases con
     // noindex + canonical al español: anunciarlos en el sitemap era pedirle a Google
@@ -130,6 +145,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: `${SITE}/en/cases/${caso.slug}`,
         changeFrequency: "monthly" as const,
         priority: 0.85,
+        alternates: { languages: casoLanguages(caso.slug) },
       })),
   ];
 }
