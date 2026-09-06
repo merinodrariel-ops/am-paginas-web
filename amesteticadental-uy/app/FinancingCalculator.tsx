@@ -21,7 +21,7 @@ function calculateInstallment(balance: number, installments: number) {
 }
 
 export default function FinancingCalculator() {
-  const [amountInput, setAmountInput] = useState("20000");
+  const [amountInput, setAmountInput] = useState("30000");
   const [downPaymentRate, setDownPaymentRate] = useState(0.5);
   const [brouSaleRate, setBrouSaleRate] = useState<number | null>(null);
   const [rateError, setRateError] = useState(false);
