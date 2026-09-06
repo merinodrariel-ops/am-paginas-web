@@ -98,6 +98,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/blog/cuanto-cuestan-las-carillas-dentales-en-argentina", changeFrequency: "monthly", priority: 0.8 },
   { path: "/blog/como-blanquear-los-dientes-sin-danar-el-esmalte", changeFrequency: "monthly", priority: 0.7 },
   { path: "/blog/sonrisa-natural-vs-hollywood", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/cepillo-electrico-dyson-opinion-odontologo", changeFrequency: "monthly", priority: 0.7 },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

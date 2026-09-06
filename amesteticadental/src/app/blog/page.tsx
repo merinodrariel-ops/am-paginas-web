@@ -22,6 +22,13 @@ export const metadata: Metadata = {
 
 const ARTICULOS = [
     {
+        slug: "cepillo-electrico-dyson-opinion-odontologo",
+        titulo: "Cepillo eléctrico Dyson de US$500: la opinión de un odontólogo",
+        descripcion: "Cámara intraoral, inteligencia artificial e irrigador en un mismo cepillo. Qué aporta de verdad, qué respalda la evidencia y si vale la pena a ese precio. Con video.",
+        categoria: "Higiene y tecnología",
+        lectura: "6 min",
+    },
+    {
         slug: "cuanto-cuesta-un-implante-dental-en-argentina",
         titulo: "¿Cuánto cuesta un implante dental en Argentina? Guía 2026",
         descripcion: "Qué incluye realmente el precio de un implante, por qué dos presupuestos pueden diferir tanto, la diferencia entre tornillo y corona, y cuándo hace falta injerto óseo.",
