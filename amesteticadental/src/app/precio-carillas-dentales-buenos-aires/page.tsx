@@ -7,6 +7,7 @@ import SeoFaq from "@/components/seo/SeoFaq";
 import CalculadoraFinanciacion from "@/components/CalculadoraFinanciacion";
 import { getCasosPublicados } from "@/data/casos";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
+import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
@@ -401,7 +402,7 @@ export default function PrecioCarillasPage() {
               {[
                 { titulo: "Diseño digital 3D", texto: "No improvisamos. Diseñamos tu sonrisa en pantalla antes de empezar. Ves el resultado, lo aprobás, y después lo ejecutamos." },
                 { titulo: "Laboratorio premium", texto: "Trabajamos con laboratorios especializados en estética dental de alta gama. No usamos carillas genéricas." },
-                { titulo: "Dr. Ariel Merino", texto: "Más de 15 años en estética dental, reconocido por Forbes Argentina. Cada caso lleva su firma clínica personal." },
+                { titulo: "Dr. Ariel Merino", texto: `${ANIOS_TRAYECTORIA} años en estética dental, reconocido por Forbes Argentina. Cada caso lleva su firma clínica personal.` },
               ].map((item) => (
                 <div key={item.titulo} className="border border-oro/15 rounded-2xl p-6 bg-carbon">
                   <h3 className="text-crema font-manrope font-medium text-base mb-3">{item.titulo}</h3>
