@@ -1,37 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { PERSON_SCHEMA, SITE } from "./site-data";
+import { Nav, Footer, oro, cremaDim, serif } from "./ui";
 
 export const metadata: Metadata = {
   title: "Dr. Ariel Merino — Odontólogo Estético | Puerto Madero, Buenos Aires",
   description: "Dr. Ariel Merino, referente en estética dental en Argentina. Director de AM Estética Dental. Especialista en carillas de porcelana, diseño de sonrisa y rehabilitación oral. Puerto Madero, Buenos Aires.",
-  alternates: { canonical: "https://www.arielmerino.com" },
-};
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://www.arielmerino.com/#person",
-  name: "Dr. Ariel Merino",
-  jobTitle: "Odontólogo Especialista en Estética Dental",
-  worksFor: { "@type": "Dentist", "@id": "https://www.amesteticadental.com/#clinic", name: "AM Estética Dental", url: "https://www.amesteticadental.com" },
-  // Este sitio es el ancla de la entidad Persona: los tres dominios de la marca
-  // reusan este mismo @id. Declarar acá las dos sedes cierra el grafo.
-  affiliation: [
-    { "@type": "Dentist", "@id": "https://www.amesteticadental.com/#clinic", name: "AM Estética Dental", url: "https://www.amesteticadental.com" },
-    { "@type": "Dentist", "@id": "https://www.amesteticadental.uy/#clinic", name: "AM Estética Dental Uruguay", url: "https://www.amesteticadental.uy" },
-  ],
-  address: { "@type": "PostalAddress", addressLocality: "Puerto Madero", addressRegion: "Buenos Aires", addressCountry: "AR" },
-  url: "https://www.arielmerino.com",
-  sameAs: [
-    "https://www.amesteticadental.com/dr-ariel-merino",
-    "https://www.amesteticadental.uy/dr-ariel-merino",
-    "https://www.thedentalreview.com",
-    "https://www.wikidata.org/wiki/Q134287655",
-    "https://www.instagram.com/drarielmerino",
-    "https://www.youtube.com/c/ArielMerino",
-    "https://www.linkedin.com/in/drarielmerino/",
-  ],
+  alternates: { canonical: SITE },
 };
 
 const CASOS = [
@@ -63,7 +39,9 @@ export default function HomePage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_SCHEMA).replace(/</g, "\\u003c") }} />
+
+      <Nav actual="/" />
 
       <main style={{ minHeight: "100vh" }}>
 
@@ -125,6 +103,44 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* En qué trabajo — la home es la página ancla de la entidad "Ariel Merino";
+            sin texto propio no hay nada que un motor pueda citar sobre la persona. */}
+        <section style={{ padding: "72px 40px", background: "var(--carbon, #141414)", borderTop: "1px solid rgba(201,169,110,0.1)" }}>
+          <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+            <span style={{ fontSize: 9, letterSpacing: "0.4em", textTransform: "uppercase", color: oro, display: "block", marginBottom: 12 }}>
+              En qué trabajo
+            </span>
+            <h2 style={{ fontFamily: serif, fontSize: "clamp(26px, 3vw, 38px)", fontWeight: 300, marginBottom: 20, maxWidth: 780, lineHeight: 1.2 }}>
+              Estética dental, con el laboratorio <em style={{ color: oro }}>adentro de la clínica.</em>
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 32, marginTop: 36 }}>
+              {[
+                [
+                  "Carillas de porcelana",
+                  "Es lo que más hago y lo que enseño desde hace más de una década. Trabajo con preparación mínima del esmalte: no prometo cero desgaste en cerámica porque casi nunca es cierto, y prefiero explicarte exactamente cuánto se toca en tu caso antes de empezar.",
+                ],
+                [
+                  "Diseño de sonrisa digital",
+                  "Diseñamos tu sonrisa en 3D sobre las proporciones de tu cara y la ajustamos en pantalla hasta que la apruebes. La decisión estética la tomás vos, con el resultado a la vista, y no yo por vos con el trabajo ya hecho.",
+                ],
+                [
+                  "Rehabilitación estética compleja",
+                  "Casos de agenesia, desgaste severo por bruxismo, recambio de trabajos viejos o rehabilitaciones completas sobre implantes. Son los casos donde tener el laboratorio adentro deja de ser una comodidad y pasa a ser la herramienta.",
+                ],
+                [
+                  "Formación de odontólogos",
+                  "Fui docente de Operatoria Dental en la Universidad Católica de La Plata y doy formaciones en diseño de sonrisa y estética mínimamente invasiva en más de quince países. Enseñar es lo que más me ordenó el criterio clínico.",
+                ],
+              ].map(([titulo, texto]) => (
+                <div key={titulo}>
+                  <h3 style={{ fontSize: 16, fontWeight: 600, color: "var(--crema, #F5F0E8)", marginBottom: 10 }}>{titulo}</h3>
+                  <p style={{ fontSize: 14, lineHeight: 1.8, color: cremaDim }}>{texto}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Casos */}
         <section style={{ padding: "80px 40px", background: "var(--carbon, #141414)" }}>
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -165,21 +181,33 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer style={{ borderTop: "1px solid rgba(201,169,110,0.1)", padding: "20px 40px" }}>
-          <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-            <span style={{ fontFamily: "var(--font-cormorant, Georgia, serif)", fontSize: 15 }}>Dr. Ariel Merino</span>
-            <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-              <Link href="https://www.amesteticadental.com" target="_blank" style={{ fontSize: 11, color: "var(--crema-dim, #A89F92)", textDecoration: "none" }}>AM Estética Dental</Link>
-              <Link href="https://www.amesteticadental.uy" target="_blank" style={{ fontSize: 11, color: "var(--crema-dim, #A89F92)", textDecoration: "none" }}>AM Uruguay</Link>
-              <Link href="https://www.thedentalreview.com" target="_blank" style={{ fontSize: 11, color: "var(--crema-dim, #A89F92)", textDecoration: "none" }}>The Dental Review</Link>
-              <Link href="https://www.instagram.com/drarielmerino" target="_blank" style={{ fontSize: 11, color: "var(--crema-dim, #A89F92)", textDecoration: "none" }}>Instagram</Link>
-              <Link href="https://www.youtube.com/c/ArielMerino" target="_blank" style={{ fontSize: 11, color: "var(--crema-dim, #A89F92)", textDecoration: "none" }}>YouTube</Link>
+        {/* Recorrido interno — el sitio dejó de ser una sola página; sin estos
+            enlaces las nuevas quedaban colgadas sólo del sitemap. */}
+        <section style={{ padding: "60px 40px", borderTop: "1px solid rgba(201,169,110,0.1)" }}>
+          <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+            <span style={{ fontSize: 9, letterSpacing: "0.4em", textTransform: "uppercase", color: oro, display: "block", marginBottom: 24 }}>
+              Seguir leyendo
+            </span>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20 }}>
+              {[
+                ["Trayectoria y formación", "Universidad, posgrado en la AOA, docencia y disertaciones en más de 15 países.", "/trayectoria"],
+                ["Carillas de porcelana", "El criterio clínico completo: qué se puede prometer y qué no.", "/carillas-de-porcelana"],
+                ["Prensa y publicaciones", "Forbes, La Nación, Ámbito, Infobae. Cada nota con su fuente.", "/prensa"],
+                ["Contacto", "Consultas de pacientes, de prensa y de formación.", "/contacto"],
+              ].map(([titulo, desc, href]) => (
+                <Link key={href} href={href} style={{ border: "1px solid rgba(201,169,110,0.14)", borderRadius: 16, padding: 22, textDecoration: "none", display: "block" }}>
+                  <h2 style={{ fontFamily: serif, fontSize: 19, fontWeight: 300, color: "var(--crema, #F5F0E8)", marginBottom: 8 }}>{titulo}</h2>
+                  <p style={{ fontSize: 13, lineHeight: 1.7, color: cremaDim, marginBottom: 12 }}>{desc}</p>
+                  <span style={{ fontSize: 10, letterSpacing: "0.25em", textTransform: "uppercase", color: oro }}>Ver →</span>
+                </Link>
+              ))}
             </div>
           </div>
-        </footer>
+        </section>
 
       </main>
+
+      <Footer />
     </>
   );
 }

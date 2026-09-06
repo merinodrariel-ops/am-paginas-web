@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { GOOGLE_REVIEWS } from "@/lib/reviews";
+import { BARRIOS } from "@/data/barrios";
 
 const CANONICAL = "https://www.amesteticadental.com/dentista-puerto-madero";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20agendar%20una%20consulta%20en%20AM%20Est%C3%A9tica%20Dental.";
@@ -81,7 +82,7 @@ const schema = {
             "@type": "Dentist",
             name: "AM Estética Dental",
             url: CANONICAL,
-            image: "https://www.amesteticadental.comhttps://res.cloudinary.com/drctvgyqd/image/upload/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg",
+            image: "https://res.cloudinary.com/drctvgyqd/image/upload/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg",
             telephone: "+54 9 11 7021-9298",
             priceRange: "USD 150 - USD 30000",
             address: {
@@ -277,6 +278,21 @@ export default function DentistaPuertoMaderoPage() {
                         <div className="mt-8 text-center">
                             <Link href="/casos-antes-y-despues" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro font-manrope text-sm transition-colors">Ver todos los casos clínicos →</Link>
                         </div>
+                    </div>
+                </section>
+
+                {/* Zonas que atendemos — enlaza las landings por barrio para que no
+                    dependan sólo del sitemap. Ver src/data/barrios.ts. */}
+                <section className="px-6 py-16 border-t border-oro/8 max-w-6xl mx-auto">
+                    <span className="text-oro uppercase tracking-[0.4em] text-[10px] block mb-3">Zonas</span>
+                    <h2 className="text-2xl font-light text-crema mb-4">Desde qué barrios <span className="font-cormorant italic text-oro">nos visitan.</span></h2>
+                    <p className="text-crema/45 text-sm mb-8 max-w-xl">La clínica es una sola, acá en Puerto Madero. Estas páginas cuentan cómo llegar y qué consultan los pacientes de cada zona.</p>
+                    <div className="flex flex-wrap gap-3">
+                        {BARRIOS.map((b) => (
+                            <Link key={b.slug} href={`/${b.slug}`} className="border border-oro/15 rounded-full px-5 py-2.5 text-sm text-crema/70 hover:border-oro/40 hover:text-oro transition-colors">
+                                Carillas dentales {b.preposicion} →
+                            </Link>
+                        ))}
                     </div>
                 </section>
 

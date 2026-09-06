@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.amesteticadental.comhttps://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
+        url: "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
         width: 1200,
         height: 1608,
         alt: "Equipo AM de AM Estética Dental en Puerto Madero",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     description:
       "Odontología estética, alineadores, laboratorio dental digital y atención a pacientes en AM Estética Dental.",
     images: [
-      "https://www.amesteticadental.comhttps://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
+      "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
     ],
   },
 };
@@ -53,7 +53,7 @@ const teamSchema = {
   "@type": "Dentist",
   name: "Equipo AM | AM Estética Dental",
   url: "https://www.amesteticadental.com/equipo-am",
-  image: "https://www.amesteticadental.comhttps://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
+  image: "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
   description:
     "Equipo multidisciplinario de AM Estética Dental en Puerto Madero, Buenos Aires.",
   address: {
@@ -74,13 +74,26 @@ const teamSchema = {
     name: miembro.nombre,
     jobTitle: miembro.rol,
     description: miembro.descripcion,
-    image: `https://www.amesteticadental.com${miembro.imagen}`,
+    // `imagen` ya es una URL absoluta de Cloudinary. Prefijarla con el dominio
+    // producía "https://www.amesteticadental.comhttps://res.cloudinary.com/…",
+    // una URL rota que Google no podía resolver.
+    image: miembro.imagen,
     worksFor: {
       "@type": "Dentist",
       name: "AM Estética Dental",
       url: "https://www.amesteticadental.com",
     },
     knowsAbout: miembro.keywords,
+    // La matrícula sólo viaja si está cargada y verificada (ver src/data/equipo.ts).
+    ...(miembro.matricula
+      ? {
+          identifier: {
+            "@type": "PropertyValue",
+            propertyID: "Matrícula Nacional",
+            value: miembro.matricula,
+          },
+        }
+      : {}),
   })),
 };
 
@@ -233,6 +246,9 @@ export default function EquipoAMPage() {
                       <p className="text-[10px] uppercase tracking-[0.26em] text-oro/75">{miembro.area}</p>
                       <h3 className="mt-2 text-2xl font-light text-crema">{miembro.nombre}</h3>
                       <p className="mt-1 text-sm font-medium text-oro">{miembro.rol}</p>
+                      {miembro.matricula ? (
+                        <p className="mt-1 text-[10px] uppercase tracking-[0.22em] text-crema/45">{miembro.matricula}</p>
+                      ) : null}
                     </div>
                   </div>
                   <p className="mt-4 text-sm leading-relaxed text-crema/62">{miembro.descripcion}</p>

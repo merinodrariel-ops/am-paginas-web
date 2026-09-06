@@ -12,6 +12,17 @@ export type EquipoMiembro = {
   altEn: string;
   schemaType: "Person" | "Dentist";
   keywords: string[];
+  /**
+   * Matrícula nacional (p. ej. "MN 34.869"). Se muestra en la ficha y viaja en el
+   * schema como `identifier`. Es una señal de E-E-A-T fuerte para contenido médico
+   * —la competencia mejor rankeada de CABA la publica en cada integrante— y además
+   * es verificable.
+   *
+   * SÓLO cargar matrículas confirmadas. Un número inventado o mal tipeado en un
+   * sitio de salud es un problema real, no un detalle de SEO: dejar el campo
+   * vacío es siempre preferible a completarlo "a ojo".
+   */
+  matricula?: string;
 };
 
 export const equipoAM: EquipoMiembro[] = [
@@ -32,6 +43,7 @@ export const equipoAM: EquipoMiembro[] = [
     altEn: "Dr. Ariel Merino, clinical director and cosmetic dentist at AM Estética Dental in Puerto Madero",
     schemaType: "Dentist",
     keywords: ["odontologo estetico", "director clinico", "carillas dentales", "diseno de sonrisa"],
+    matricula: "MN 34.869",
   },
   {
     slug: "dra-candela-cruz",

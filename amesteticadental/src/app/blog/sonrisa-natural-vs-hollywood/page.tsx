@@ -25,6 +25,10 @@ const articleSchema = {
     "image": "https://www.amesteticadental.com/og-image.jpg",
     "description": "No toda la estética dental busca lo mismo. La sonrisa natural se integra con tu rostro. La sonrisa Hollywood impacta visualmente. Cuál conviene según tu caso.",
     "author": {
+        // El @id es lo que une las 11 notas del blog, la clínica y arielmerino.com
+        // en UNA sola entidad. Sin él, cada artículo declaraba una "Dr. Ariel Merino"
+        // distinta y la autoridad del autor no se acumulaba en ningún lado.
+        "@id": "https://www.arielmerino.com/#person",
         "@type": "Person",
         "name": "Dr. Ariel Merino",
         "url": "https://www.wikidata.org/wiki/Q134287655",

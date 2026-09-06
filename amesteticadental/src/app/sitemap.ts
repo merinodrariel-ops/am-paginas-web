@@ -38,6 +38,11 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/carillas-de-porcelana-vs-resina", changeFrequency: "monthly", priority: 0.8 },
   { path: "/odontologia-estetica-buenos-aires", changeFrequency: "monthly", priority: 0.9 },
   { path: "/dentista-puerto-madero", changeFrequency: "monthly", priority: 0.9 },
+  // Landings por barrio de CABA (ver src/data/barrios.ts). La clínica sigue
+  // siendo una sola, en Puerto Madero: el barrio va en areaServed, no en address.
+  { path: "/carillas-dentales-recoleta", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/carillas-dentales-palermo", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/carillas-dentales-belgrano", changeFrequency: "monthly", priority: 0.85 },
   { path: "/implantes-dentales-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
   { path: "/periodoncia-precio-buenos-aires", changeFrequency: "monthly", priority: 0.8 },
   { path: "/alineadores-invisibles-buenos-aires", changeFrequency: "monthly", priority: 0.85 },

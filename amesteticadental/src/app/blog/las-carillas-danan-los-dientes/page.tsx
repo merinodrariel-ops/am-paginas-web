@@ -32,6 +32,10 @@ const articleSchema = {
     "image": "https://www.amesteticadental.com/og-image.jpg",
     "description": "Qué pasa realmente con el esmalte cuando se colocan carillas dentales. Análisis clínico de mitos frecuentes.",
     "author": {
+        // El @id es lo que une las 11 notas del blog, la clínica y arielmerino.com
+        // en UNA sola entidad. Sin él, cada artículo declaraba una "Dr. Ariel Merino"
+        // distinta y la autoridad del autor no se acumulaba en ningún lado.
+        "@id": "https://www.arielmerino.com/#person",
         "@type": "Person",
         "name": "Dr. Ariel Merino",
         "url": "https://www.wikidata.org/wiki/Q134287655",

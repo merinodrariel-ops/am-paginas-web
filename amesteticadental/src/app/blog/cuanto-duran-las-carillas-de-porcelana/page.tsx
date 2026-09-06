@@ -27,6 +27,10 @@ const articleSchema = {
     "image": "https://www.amesteticadental.com/og-image.jpg",
     "description": "Las carillas de porcelana duran entre 10 y 20 años con el cuidado correcto. Factores que afectan la durabilidad y cómo maximizar su vida útil.",
     "author": {
+        // El @id es lo que une las 11 notas del blog, la clínica y arielmerino.com
+        // en UNA sola entidad. Sin él, cada artículo declaraba una "Dr. Ariel Merino"
+        // distinta y la autoridad del autor no se acumulaba en ningún lado.
+        "@id": "https://www.arielmerino.com/#person",
         "@type": "Person",
         "name": "Dr. Ariel Merino",
         "url": "https://www.wikidata.org/wiki/Q134287655",

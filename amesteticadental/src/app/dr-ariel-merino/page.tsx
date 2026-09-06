@@ -37,10 +37,17 @@ const personSchema = {
     name: "Dr. Ariel Merino",
     url: "https://www.amesteticadental.com/dr-ariel-merino",
     image: [
-        "https://www.amesteticadental.comhttps://res.cloudinary.com/drctvgyqd/image/upload/v1784870282/dr-merino/dr-ariel-merino-traje-perfil.webp",
-        "https://www.amesteticadental.comhttps://res.cloudinary.com/drctvgyqd/image/upload/v1784870272/dr-merino/dr-ariel-merino-ambo-principal.webp",
+        "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870282/dr-merino/dr-ariel-merino-traje-perfil.webp",
+        "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870272/dr-merino/dr-ariel-merino-ambo-principal.webp",
     ],
     jobTitle: "Odontólogo Estético",
+    // Matrícula nacional, publicada también en su ficha de Expodent Buenos Aires.
+    // Es la señal de E-E-A-T más concreta que puede dar un perfil médico.
+    identifier: {
+        "@type": "PropertyValue",
+        propertyID: "Matrícula Nacional",
+        value: "MN 34.869",
+    },
     worksFor: {
         "@type": "Dentist",
         "@id": "https://www.amesteticadental.com/#clinic",
@@ -143,8 +150,9 @@ export default function DrArielMerinoPage() {
                                 </Link>
                             </div>
 
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-oro/10">
+                            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 pt-8 border-t border-oro/10">
                                 {[
+                                    { valor: "MN 34.869", etiqueta: "matrícula nacional" },
                                     { valor: "+20 años", etiqueta: "en odontología" },
                                     { valor: "+15 años", etiqueta: "en estética dental" },
                                     { valor: "Forbes", etiqueta: "reconocimiento editorial" },
