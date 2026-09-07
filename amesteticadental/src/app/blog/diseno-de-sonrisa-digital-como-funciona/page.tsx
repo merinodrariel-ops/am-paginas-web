@@ -286,6 +286,7 @@ export default function ArticuloDisenoSonrisaDigital() {
                                 {[
                                     { titulo: "¿Las carillas dañan los dientes?", href: "/blog/las-carillas-danan-los-dientes", desc: "Mitos y realidades sobre el desgaste de esmalte." },
                                     { titulo: "¿Cuánto duran las carillas de porcelana?", href: "/blog/cuanto-duran-las-carillas-de-porcelana", desc: "Vida útil, materiales y cómo cuidarlas." },
+                                    { titulo: "Sonrisa natural vs sonrisa Hollywood", href: "/blog/sonrisa-natural-vs-hollywood", desc: "La decisión estética que se toma en el diseño." },
                                 ].map((l) => (
                                     <Link key={l.href} href={l.href} className="border border-oro/12 rounded-xl p-5 bg-carbon-soft hover:border-oro/30 transition-colors group">
                                         <h4 className="text-crema font-manrope font-medium text-sm mb-1 group-hover:text-oro transition-colors">{l.titulo}</h4>

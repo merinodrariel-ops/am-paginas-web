@@ -291,6 +291,7 @@ export default function ArticuloSonrisaNatural() {
                                     { titulo: "Diseño de sonrisa digital: cómo funciona", href: "/blog/diseno-de-sonrisa-digital-como-funciona", desc: "El proceso paso a paso antes de tocar un diente." },
                                     { titulo: "Disilicato vs porcelana feldespática", href: "/blog/carillas-disilicato-vs-porcelana-feldespatica", desc: "Cuál es más estética y cuál dura más." },
                                     { titulo: "Carillas de porcelana: antes y después", href: "/blog/carillas-porcelana-antes-despues", desc: "Casos reales y qué situaciones resuelven." },
+                                    { titulo: "Cómo blanquear los dientes sin dañar el esmalte", href: "/blog/como-blanquear-los-dientes-sin-danar-el-esmalte", desc: "Cuando el color es lo único que hay que cambiar." },
                                 ].map((l) => (
                                     <Link key={l.href} href={l.href} className="border border-oro/12 rounded-xl p-5 bg-carbon-soft hover:border-oro/30 transition-colors group">
                                         <h4 className="text-crema font-manrope font-medium text-sm mb-1 group-hover:text-oro transition-colors">{l.titulo}</h4>

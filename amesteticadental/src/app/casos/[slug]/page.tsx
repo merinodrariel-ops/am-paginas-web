@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import CasoGaleria from "@/components/CasoGaleria";
+import CasosRelacionados from "@/components/CasosRelacionados";
 import { getCasosPublicadosMerged, getCasoBySlugMerged } from "@/lib/public-cases";
 
 export const revalidate = 60;
@@ -95,6 +96,8 @@ export default async function CasoPage({ params }: Props) {
     const { slug } = await params;
     const caso = await getCasoBySlugMerged(slug);
     if (!caso) notFound();
+
+    const todos = await getCasosPublicadosMerged();
 
     const canonical = `https://www.amesteticadental.com/casos/${caso.slug}`;
     const jsonLd = {
@@ -225,6 +228,8 @@ export default async function CasoPage({ params }: Props) {
                             <span>→</span>
                         </a>
                     </div>
+
+                    <CasosRelacionados casos={todos} actual={caso} lang="es" />
 
                     {/* Volver */}
                     <div className="mt-12">

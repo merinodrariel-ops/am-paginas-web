@@ -268,6 +268,9 @@ export default function ArticuloDuracionCarillas() {
                                 {[
                                     { titulo: "¿Las carillas dañan los dientes?", href: "/blog/las-carillas-danan-los-dientes", desc: "Mitos y realidades sobre el desgaste de esmalte." },
                                     { titulo: "Carillas de porcelana vs resina", href: "/carillas-de-porcelana-vs-resina", desc: "Cuál conviene según tu caso y presupuesto." },
+                                    { titulo: "Disilicato vs porcelana feldespática", href: "/blog/carillas-disilicato-vs-porcelana-feldespatica", desc: "El material es lo que define la duración." },
+                                    { titulo: "¿Cuántas sesiones se necesitan para las carillas?", href: "/blog/cuantas-sesiones-se-necesitan-para-las-carillas", desc: "El plan de citas, paso a paso." },
+                                    { titulo: "Cepillo eléctrico Dyson: la opinión de un odontólogo", href: "/blog/cepillo-electrico-dyson-opinion-odontologo", desc: "Cómo cuidar las carillas en el día a día." },
                                 ].map((l) => (
                                     <Link key={l.href} href={l.href} className="border border-oro/12 rounded-xl p-5 bg-carbon-soft hover:border-oro/30 transition-colors group">
                                         <h4 className="text-crema font-manrope font-medium text-sm mb-1 group-hover:text-oro transition-colors">{l.titulo}</h4>

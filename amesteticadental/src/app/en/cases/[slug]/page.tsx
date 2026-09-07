@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import CasoGaleria from "@/components/CasoGaleria";
+import CasosRelacionados from "@/components/CasosRelacionados";
 import { getCasoBySlugMerged, getCasosPublicadosMerged } from "@/lib/public-cases";
 
 export const revalidate = 60;
@@ -65,6 +66,8 @@ export default async function EnglishCasePage({ params }: Props) {
     const { slug } = await params;
     const caso = await getCasoBySlugMerged(slug, "en");
     if (!caso) notFound();
+
+    const todos = await getCasosPublicadosMerged("en");
 
     const canonical = `https://www.amesteticadental.com/en/cases/${caso.slug}`;
     const jsonLd = {
@@ -150,6 +153,8 @@ export default async function EnglishCasePage({ params }: Props) {
                             Book your consultation <span>→</span>
                         </a>
                     </div>
+
+                    <CasosRelacionados casos={todos} actual={caso} lang="en" />
 
                     <div className="mt-12">
                         <Link href="/en/before-after" className="font-manrope text-xs text-crema/30 hover:text-oro transition-colors uppercase tracking-widest">

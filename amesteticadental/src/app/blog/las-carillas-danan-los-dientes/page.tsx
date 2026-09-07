@@ -382,6 +382,8 @@ export default function ArticuloCarillasDananDientes() {
                                 {[
                                     { titulo: "¿Cuánto duran las carillas de porcelana?", href: "/blog/cuanto-duran-las-carillas-de-porcelana", desc: "Vida útil, materiales y cómo extender la duración." },
                                     { titulo: "Carillas sin desgaste de esmalte", href: "/carillas-sin-desgaste", desc: "Cuándo son posibles y cuándo no aplican." },
+                                    { titulo: "Preguntas que hacerle a tu odontólogo antes de las carillas", href: "/blog/preguntas-antes-de-hacerse-carillas", desc: "Las 5 preguntas que despejan la duda del desgaste." },
+                                    { titulo: "Disilicato vs porcelana feldespática", href: "/blog/carillas-disilicato-vs-porcelana-feldespatica", desc: "Cuánto esmalte pide cada material." },
                                 ].map((l) => (
                                     <Link key={l.href} href={l.href} className="border border-oro/12 rounded-xl p-5 bg-carbon-soft hover:border-oro/30 transition-colors group">
                                         <h4 className="text-crema font-manrope font-medium text-sm mb-1 group-hover:text-oro transition-colors">{l.titulo}</h4>

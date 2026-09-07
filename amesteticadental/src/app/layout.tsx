@@ -3,6 +3,7 @@ import { Manrope, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
 import RootSchema from "@/components/seo/RootSchema";
 import RedAM from "@/components/RedAM";
+import SiteFooter from "@/components/SiteFooter";
 import { GOOGLE_REVIEWS } from "@/lib/reviews";
 import "./globals.css";
 
@@ -220,6 +221,8 @@ fbq('track', 'PageView');`,
         </svg>
 
         {children}
+
+        <SiteFooter />
 
         <RedAM />
 

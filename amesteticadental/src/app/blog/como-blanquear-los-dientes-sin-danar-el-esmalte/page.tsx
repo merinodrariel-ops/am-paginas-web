@@ -307,6 +307,16 @@ export default function BlogBlanqueamientoEsmalte() {
                                         href: "/blog/sonrisa-natural-vs-hollywood",
                                         desc: "Qué resultado conviene buscar si querés estética sin exageración.",
                                     },
+                                    {
+                                        titulo: "Cepillo eléctrico Dyson: la opinión de un odontólogo",
+                                        href: "/blog/cepillo-electrico-dyson-opinion-odontologo",
+                                        desc: "Qué cambia de verdad en la higiene diaria y qué no.",
+                                    },
+                                    {
+                                        titulo: "Carillas de porcelana: antes y después",
+                                        href: "/blog/carillas-porcelana-antes-despues",
+                                        desc: "Cuándo el blanqueamiento alcanza y cuándo hacen falta carillas.",
+                                    },
                                 ].map((link) => (
                                     <Link key={link.href} href={link.href} className="border border-oro/12 rounded-xl p-5 bg-carbon-soft hover:border-oro/30 transition-colors group">
                                         <h4 className="text-crema font-manrope font-medium text-sm mb-1 group-hover:text-oro transition-colors">{link.titulo}</h4>

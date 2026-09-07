@@ -256,6 +256,7 @@ export default function ArticuloCarillasAntesDespues() {
                                 {[
                                     { titulo: "¿Las carillas dañan los dientes?", href: "/blog/las-carillas-danan-los-dientes", desc: "Mitos y realidades sobre el desgaste de esmalte." },
                                     { titulo: "Diseño de sonrisa digital: cómo funciona", href: "/blog/diseno-de-sonrisa-digital-como-funciona", desc: "El proceso completo antes de empezar." },
+                                    { titulo: "Sonrisa natural vs sonrisa Hollywood", href: "/blog/sonrisa-natural-vs-hollywood", desc: "Qué resultado buscar antes de mirar fotos." },
                                 ].map((l) => (
                                     <Link key={l.href} href={l.href} className="border border-oro/12 rounded-xl p-5 bg-carbon-soft hover:border-oro/30 transition-colors group">
                                         <h4 className="text-crema font-manrope font-medium text-sm mb-1 group-hover:text-oro transition-colors">{l.titulo}</h4>
