@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { GOOGLE_REVIEWS } from "@/lib/reviews";
 import { BARRIOS } from "@/data/barrios";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
@@ -79,23 +78,14 @@ const FAQS = [
 const schema = {
     "@context": "https://schema.org",
     "@graph": [
+        // Se referencia el @id del layout global en lugar de declarar un segundo
+        // Dentist: ese nodo ya trae nombre, dirección, geo, teléfono y
+        // aggregateRating en todas las páginas. Lo único que aporta esta página
+        // es la foto de la sede. Volver a declarar aggregateRating haría que
+        // Google viera dos puntuaciones para la misma clínica.
         {
-            "@type": "Dentist",
-            name: "AM Estética Dental",
-            url: CANONICAL,
+            "@id": "https://www.amesteticadental.com/#clinic",
             image: "https://res.cloudinary.com/drctvgyqd/image/upload/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg",
-            telephone: "+54 9 11 7021-9298",
-            priceRange: "USD 150 - USD 30000",
-            address: {
-                "@type": "PostalAddress",
-                streetAddress: "Camila O'Gorman 412, Oficina 101",
-                addressLocality: "Puerto Madero",
-                addressRegion: "Ciudad Autónoma de Buenos Aires",
-                postalCode: "C1107DED",
-                addressCountry: "AR",
-            },
-            geo: { "@type": "GeoCoordinates", latitude: -34.620858, longitude: -58.3609047 },
-            aggregateRating: { "@type": "AggregateRating", ...GOOGLE_REVIEWS },
         },
         {
             "@type": "FAQPage",

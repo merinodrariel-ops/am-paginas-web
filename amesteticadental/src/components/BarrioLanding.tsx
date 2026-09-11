@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { GOOGLE_REVIEWS } from "@/lib/reviews";
 import { BARRIOS, type Barrio } from "@/data/barrios";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
@@ -51,31 +50,22 @@ export function barrioSchema(barrio: Barrio) {
   return {
     "@context": "https://schema.org",
     "@graph": [
+      // El nodo #clinic ya lo emite el layout global (app/layout.tsx) en TODAS las
+      // páginas, con dirección, geo, teléfono y aggregateRating. Acá NO se vuelve a
+      // declarar nada de eso: se referencia el mismo @id y sólo se le agrega lo
+      // único específico del barrio, que es areaServed. Repetir aggregateRating
+      // sobre el mismo @id hace que Google fusione los dos nodos y vea dos
+      // puntuaciones en un mismo ítem → "La reseña tiene varias puntuaciones
+      // agregadas" en Search Console, y el rich snippet de estrellas deja de salir.
+      //
+      // La dirección es siempre la real. El barrio sólo aparece en areaServed:
+      // declarar una sede que no existe es motivo de suspensión del perfil.
       {
-        "@type": ["Dentist", "LocalBusiness"],
         "@id": `${SITE}/#clinic`,
-        name: "AM Estética Dental",
-        url: SITE,
-        image: HERO_IMG,
-        telephone: "+54 9 11 7021-9298",
-        priceRange: "USD 150 - USD 30000",
-        founder: { "@id": "https://www.arielmerino.com/#person" },
-        // La dirección es siempre la real. El barrio sólo aparece en areaServed:
-        // declarar una sede que no existe es motivo de suspensión del perfil.
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Camila O'Gorman 412, Oficina 101",
-          addressLocality: "Puerto Madero",
-          addressRegion: "Ciudad Autónoma de Buenos Aires",
-          postalCode: "C1107DED",
-          addressCountry: "AR",
-        },
-        geo: { "@type": "GeoCoordinates", latitude: -34.620858, longitude: -58.3609047 },
         areaServed: [
           { "@type": "Place", name: `${barrio.nombre}, Ciudad Autónoma de Buenos Aires` },
           { "@type": "City", name: "Ciudad Autónoma de Buenos Aires" },
         ],
-        aggregateRating: { "@type": "AggregateRating", ...GOOGLE_REVIEWS },
       },
       {
         "@type": ["Service", "MedicalProcedure"],

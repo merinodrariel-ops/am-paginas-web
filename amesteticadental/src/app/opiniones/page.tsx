@@ -3,7 +3,6 @@ import { hreflangFor } from "@/lib/i18n-routes";
 import Navbar from "@/components/Navbar";
 import Testimonios from "@/components/Testimonios";
 import Link from "next/link";
-import { GOOGLE_REVIEWS } from "@/lib/reviews";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -22,26 +21,14 @@ export const metadata: Metadata = {
     },
 };
 
+// Se referencia el @id de la clínica en vez de declarar un segundo Dentist: el
+// layout global ya emite ese nodo con nombre, dirección, teléfono y
+// aggregateRating en todas las páginas. Acá sólo se le cuelgan las reseñas
+// individuales. Repetir aggregateRating dispararía "La reseña tiene varias
+// puntuaciones agregadas" en Search Console.
 const reviewsSchema = {
     "@context": "https://schema.org",
-    "@type": "Dentist",
-    "name": "AM Estética Dental",
-    "url": "https://www.amesteticadental.com",
-    "image": "https://www.amesteticadental.com/og-image.jpg",
-    "priceRange": "$$$$",
-    "telephone": "+5491170219298",
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Camila O'Gorman 412, Oficina 101",
-        "addressLocality": "Puerto Madero",
-        "addressRegion": "Ciudad Autónoma de Buenos Aires",
-        "addressCountry": "AR",
-    },
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        ...GOOGLE_REVIEWS,
-        "worstRating": "1",
-    },
+    "@id": "https://www.amesteticadental.com/#clinic",
     "review": [
         {
             "@type": "Review",
