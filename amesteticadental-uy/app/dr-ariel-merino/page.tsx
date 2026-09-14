@@ -26,8 +26,10 @@ export default function DoctorPage() {
           <h1>Dr. Ariel<br /><em>Merino.</em></h1>
           <p>Odontólogo, director clínico de AM Estética Dental y referente de una odontología estética que busca resultados naturales, bien indicados y sostenidos en planificación.</p>
           <p>Su trabajo junto al equipo AM consolidó un sistema clínico que ahora se proyecta en la futura sede de Carrasco: diagnóstico primero, planificación digital conversada con el paciente y laboratorio propio para que la ejecución no se estire durante meses.</p>
+          <p>Es además instructor del curso &ldquo;Full Veneers&rdquo; en el programa de educación continua de Penn Dental Medicine, la escuela dental de la Universidad de Pensilvania: el mismo protocolo de carillas que se aplica en la clínica está acreditado para la recertificación de odontólogos en los Estados Unidos.</p>
           <p>Su voz aparece con regularidad en cobertura editorial sobre estética dental, inteligencia artificial aplicada al diseño de sonrisa y tecnología clínica.</p>
           <p className="doctor-links">
+            <Link href="/penn-dental-medicine" className="text-link">Docencia en Penn</Link>
             <a href={`${ARGENTINA_URL}/dr-ariel-merino`} target="_blank" rel="noreferrer" className="text-link">Trayectoria completa</a>
             <a href={PERSON_URL} data-track="uy_person_site_click" target="_blank" rel="noreferrer" className="text-link">arielmerino.com</a>
             <a href={REVIEW_URL} data-track="uy_tdr_click" target="_blank" rel="noreferrer" className="text-link">The Dental Review</a>

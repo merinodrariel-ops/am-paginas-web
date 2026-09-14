@@ -859,6 +859,10 @@ export const INDEXABLE_ROUTES: { path: string; priority: number; changeFrequency
   })),
   { path: "/financiacion", priority: 0.8, changeFrequency: "monthly" },
   { path: "/dr-ariel-merino", priority: 0.8, changeFrequency: "monthly" },
+  // Queda fuera del cluster hreflang a propósito: la página argentina equivalente
+  // es una nota de blog con otro enfoque, no la versión es-AR de esta. Emparejar
+  // páginas que no son equivalentes le pide a Google que reemplace una por otra.
+  { path: "/penn-dental-medicine", priority: 0.8, changeFrequency: "monthly" },
   // Vuelve al sitemap: dejó de ser un redirect externo y ahora es una página real
   // con el formulario de postulación.
   { path: "/trabaja-en-am", priority: 0.75, changeFrequency: "monthly" },
