@@ -86,12 +86,26 @@ prioridades. Resumen de lo que cambió en producción:
   títulos de 70-90 caracteres con la marca duplicada.
 
 ### Pendiente y bloqueado por el Dr.
-- [ ] 🚨 **Cargar los secretos de Search Console en GitHub.** El workflow
-      `search-console-sitemaps.yml` viene dando "success" en cada push pero es un
-      no-op: faltan `GOOGLE_SEARCH_CONSOLE_CLIENT_ID`, `_CLIENT_SECRET` y
-      `_REFRESH_TOKEN`, así que **nunca se envió un sitemap a Google desde el CI**,
-      ni de Argentina ni de Uruguay. Se arregla con `node get-token-gsc.mjs` +
-      cargar los tres valores en Settings → Secrets and variables → Actions.
+- [ ] 🚨 **Regenerar los secretos de Search Console.** Diagnóstico corregido el
+      2026-09-14: no es que falten. Los tres están cargados desde el 2026-08-18,
+      y el workflow tampoco da "success" —eso ya se arregló, ahora falla fuerte—.
+      El log real de `search-console-sitemaps.yml` dice:
+
+          Google OAuth failed (HTTP 401): {"error":"invalid_client",
+          "error_description":"The OAuth client was not found."}
+
+      O sea que el `CLIENT_ID` que está en GitHub no corresponde a ningún cliente
+      OAuth existente: se cargó mal en agosto. El par de `.env.ads` SÍ es válido
+      (probado contra Google con un refresh token inválido a propósito: responde
+      `invalid_grant`, no `invalid_client`). Falla en cada push desde entonces, así
+      que **nunca se envió un sitemap a Google desde el CI**.
+
+      Se arregla en dos pasos, los dos los corre el Dr. porque tocan credenciales:
+        1. `node get-token-gsc.mjs` — reusa el cliente válido de `.env.ads`, abre
+           el navegador y escribe los tres valores en `.env.gsc` (0600, ignorado).
+        2. `gh secret set -f .env.gsc` — sobrescribe los tres en GitHub.
+      Después: `gh run list --workflow=search-console-sitemaps.yml` para confirmar
+      que pasó a verde.
 - [ ] **Verificar `amesteticadental.uy` en Search Console** y enviar el sitemap.
 - [ ] Google Business Profile de la sede uruguaya (requiere dirección atendible).
 
