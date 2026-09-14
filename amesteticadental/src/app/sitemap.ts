@@ -97,6 +97,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/casos-antes-y-despues", changeFrequency: "weekly", priority: 0.95 },
   { path: "/clinica", changeFrequency: "monthly", priority: 0.9 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/blog/curso-carillas-universidad-de-pensilvania", changeFrequency: "monthly", priority: 0.8 },
   { path: "/blog/cuanto-duran-las-carillas-de-porcelana", changeFrequency: "monthly", priority: 0.7 },
   { path: "/blog/las-carillas-danan-los-dientes", changeFrequency: "monthly", priority: 0.7 },
   { path: "/blog/diseno-de-sonrisa-digital-como-funciona", changeFrequency: "monthly", priority: 0.7 },

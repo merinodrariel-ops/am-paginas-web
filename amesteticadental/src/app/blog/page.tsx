@@ -23,6 +23,13 @@ export const metadata: Metadata = {
 
 const ARTICULOS = [
     {
+        slug: "curso-carillas-universidad-de-pensilvania",
+        titulo: "Qué significa que tu odontólogo enseñe carillas en la Universidad de Pensilvania",
+        descripcion: "El Dr. Merino es instructor del curso \"Full Veneers\" en el programa de educación continua de Penn Dental Medicine. Por qué un curso acreditado no es lo mismo que una charla.",
+        categoria: "Formación",
+        lectura: "4 min",
+    },
+    {
         slug: "cepillo-electrico-dyson-opinion-odontologo",
         titulo: "Cepillo eléctrico Dyson de US$500: la opinión de un odontólogo",
         descripcion: "Cámara intraoral, inteligencia artificial e irrigador en un mismo cepillo. Qué aporta de verdad, qué respalda la evidencia y si vale la pena a ese precio. Con video.",

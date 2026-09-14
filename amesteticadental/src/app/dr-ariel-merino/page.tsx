@@ -108,6 +108,19 @@ const personSchema = {
         "@type": "CollegeOrUniversity",
         name: "UCALP",
     },
+    // Penn es afiliación, no `alumniOf`: no estudió ahí, es el instructor del curso
+    // "Full Veneers" de su programa de educación continua. Es la única entidad del
+    // perfil que no pertenece a la marca, y por eso es la señal externa más fuerte.
+    affiliation: {
+        "@type": "CollegeOrUniversity",
+        name: "University of Pennsylvania School of Dental Medicine",
+        url: "https://www.dental.upenn.edu/",
+        parentOrganization: {
+            "@type": "CollegeOrUniversity",
+            name: "University of Pennsylvania",
+            url: "https://www.upenn.edu/",
+        },
+    },
     sameAs: SAME_AS_DR,
     description: `Odontólogo recibido en ${ANIO_TITULO} por la Universidad Católica de La Plata, con ${ANIOS_TRAYECTORIA} años de ejercicio dedicados casi exclusivamente a la estética dental. Fundador de AM Estética Dental, reconocida por Forbes Argentina como la única clínica dental del país en sus páginas.`,
     subjectOf: { "@id": `https://www.youtube.com/watch?v=${EXPODENT_VIDEO.id}` },
@@ -259,6 +272,41 @@ export default function DrArielMerinoPage() {
                     </div>
                 </section>
 
+                <section className="py-24 px-6 md:px-12 bg-carbon-soft border-b border-oro/10">
+                    <div className="max-w-5xl mx-auto">
+                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
+                            Docencia internacional · Penn Dental Medicine
+                        </span>
+                        <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-6">
+                            Instructor del curso <span className="font-cormorant italic text-oro">&ldquo;Full Veneers&rdquo;</span> en la Universidad de Pensilvania
+                        </h2>
+                        <div className="space-y-5 text-crema/72 font-manrope leading-relaxed max-w-3xl">
+                            <p>
+                                La University of Pennsylvania School of Dental Medicine es una de las escuelas dentales fundacionales de los Estados Unidos. En el catálogo de su programa de <em>Continuing Dental Education</em>, el curso sobre carillas de porcelana <em>Full Veneers</em> figura a nombre de Ariel Merino, DDS.
+                            </p>
+                            <p>
+                                Se dicta en inglés y está acreditado con 1.5 créditos CE: los que un odontólogo estadounidense necesita para renovar su matrícula. A diferencia de una conferencia, un curso acreditado lo avala la escuela, que revisa quién enseña y qué enseña antes de otorgar los créditos.
+                            </p>
+                        </div>
+                        <div className="flex flex-wrap gap-3 mt-8">
+                            <Link
+                                href="/blog/curso-carillas-universidad-de-pensilvania"
+                                className="inline-flex items-center gap-3 border border-oro/30 text-oro px-6 py-3 rounded-full font-manrope font-semibold text-sm hover:bg-oro/10 transition-colors"
+                            >
+                                Qué significa esta credencial →
+                            </Link>
+                            <a
+                                href="https://cde.dental.upenn.edu/Course/38-Full-Veneers"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 border border-oro/15 text-crema/60 px-6 py-3 rounded-full font-manrope text-sm hover:text-crema hover:border-oro/35 transition-colors"
+                            >
+                                Ver el curso en el catálogo de Penn →
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
                 <section className="py-24 px-6 md:px-12 bg-carbon border-b border-oro/10">
                     <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
                         <div>
@@ -359,7 +407,7 @@ export default function DrArielMerinoPage() {
                         {[
                             {
                                 titulo: "Formación",
-                                detalle: "Odontólogo · UCALP (2010) · M.N. 34.869\nPosgrado en Rehabilitación Oral y Estética · AOA\nDocente invitado · Penn Dental Medicine · University of Pennsylvania",
+                                detalle: "Odontólogo · UCALP (2010) · M.N. 34.869\nPosgrado en Rehabilitación Oral y Estética · AOA\nInstructor del curso \"Full Veneers\" · Penn Dental Medicine · University of Pennsylvania",
                             },
                             {
                                 titulo: "Ubicación",
