@@ -33,6 +33,45 @@ const WA_LINK =
 const EXPODENT_VIDEO_URL = "https://youtu.be/4tH0A3Qoj4A";
 const EXPODENT_VIDEO_EMBED_URL = "https://www.youtube-nocookie.com/embed/4tH0A3Qoj4A";
 
+// La conferencia de Expodent es la credencial de autoridad más fuerte de esta
+// página —un congreso del sector, en La Rural— y hasta ahora existía sólo como
+// texto y un iframe: ni Google ni los motores de IA tenían de dónde agarrarla.
+// Declararla como VideoObject habilita la miniatura en resultados y le da al
+// grafo una prueba verificable de que el Dr. diserta en congresos.
+//
+// Los datos salen de la ficha real del video, no de la descripción de la página:
+// `name` es el título tal como está publicado en YouTube (el del iframe es más
+// descriptivo del contenido, pero el schema tiene que coincidir con el video).
+const EXPODENT_VIDEO = {
+    id: "4tH0A3Qoj4A",
+    titulo: "IA en Odontología: Cómo Transformar Sonrisas y Vidas en Minutos",
+    descripcion:
+        "Conferencia del Dr. Ariel Merino en Expodent Buenos Aires, en La Rural: inteligencia artificial, planificación digital y tecnología 3D aplicadas al diseño de sonrisa, y hasta dónde acompañan la decisión clínica sin reemplazar el diagnóstico.",
+    subida: "2026-06-15T16:19:49-07:00",
+    duracion: "PT1H26M8S",
+};
+
+const expodentVideoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: EXPODENT_VIDEO.titulo,
+    description: EXPODENT_VIDEO.descripcion,
+    thumbnailUrl: [
+        `https://i.ytimg.com/vi/${EXPODENT_VIDEO.id}/maxresdefault.jpg`,
+        `https://i.ytimg.com/vi/${EXPODENT_VIDEO.id}/hqdefault.jpg`,
+    ],
+    uploadDate: EXPODENT_VIDEO.subida,
+    duration: EXPODENT_VIDEO.duracion,
+    contentUrl: `https://www.youtube.com/watch?v=${EXPODENT_VIDEO.id}`,
+    embedUrl: `https://www.youtube.com/embed/${EXPODENT_VIDEO.id}`,
+    creator: { "@id": "https://www.arielmerino.com/#person" },
+    publisher: {
+        "@type": "Organization",
+        "@id": "https://www.amesteticadental.com/#clinic",
+        name: "AM Estética Dental",
+    },
+};
+
 const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -71,6 +110,7 @@ const personSchema = {
     },
     sameAs: SAME_AS_DR,
     description: `Odontólogo recibido en ${ANIO_TITULO} por la Universidad Católica de La Plata, con ${ANIOS_TRAYECTORIA} años de ejercicio dedicados casi exclusivamente a la estética dental. Fundador de AM Estética Dental, reconocida por Forbes Argentina como la única clínica dental del país en sus páginas.`,
+    subjectOf: { "@id": `https://www.youtube.com/watch?v=${EXPODENT_VIDEO.id}` },
     knowsAbout: [
         "Carillas de porcelana",
         "Diseño de sonrisa digital",
@@ -105,6 +145,7 @@ export default function DrArielMerinoPage() {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(expodentVideoSchema) }} />
 
             <Navbar />
 
