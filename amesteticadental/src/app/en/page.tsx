@@ -21,7 +21,7 @@ const CANONICAL = "https://www.amesteticadental.com/en";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Porcelain Veneers & Smile Design in Buenos Aires | AM Estética Dental",
+  title: "Porcelain Veneers & Smile Design in Buenos Aires | AM",
   description:
     "Cosmetic dentistry clinic in Puerto Madero, Buenos Aires. Porcelain veneers and digital smile design with an in-house lab — natural results in days, not months. Dr. Ariel Merino, featured by Forbes.",
   keywords:
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     languages: hreflangFor("/"),
   },
   openGraph: {
-    title: "Porcelain Veneers & Smile Design in Buenos Aires | AM Estética Dental",
+    title: "Porcelain Veneers & Smile Design in Buenos Aires | AM",
     description:
       "The cosmetic dentistry clinic in Puerto Madero featured by Forbes. Natural smile design with our own in-house laboratory — completed in a single trip.",
     url: CANONICAL,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Porcelain Veneers & Smile Design in Buenos Aires | AM Estética Dental",
+    title: "Porcelain Veneers & Smile Design in Buenos Aires | AM",
     description:
       "Natural smile design with an in-house laboratory in Puerto Madero, Buenos Aires. Dr. Ariel Merino.",
     images: ["https://www.amesteticadental.com/og-image.jpg"],

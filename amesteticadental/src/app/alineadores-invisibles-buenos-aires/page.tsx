@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ANIO } from "@/lib/anio";
 
 const CANONICAL = "https://www.amesteticadental.com/alineadores-invisibles-buenos-aires";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20alineadores%20invisibles.";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Alineadores Invisibles Buenos Aires 2026 | AM",
+    title: `Alineadores Invisibles Buenos Aires ${ANIO} | AM`,
     description: "Alineadores invisibles en Buenos Aires: precio, marcas y proceso. Ortodoncia sin brackets. Alineadores AM, Invisalign y más. Dr. Ariel Merino, Puerto Madero.",
     alternates: { canonical: CANONICAL },
     keywords: "alineadores invisibles Buenos Aires, alineadores dentales precio Buenos Aires, Invisalign Buenos Aires precio, ortodoncia invisible Buenos Aires, aparatos invisibles precio Argentina",

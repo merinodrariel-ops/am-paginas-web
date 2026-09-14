@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
+import { ANIO } from "@/lib/anio";
 
 const CANONICAL = "https://www.amesteticadental.com/diseno-de-sonrisa-precio-buenos-aires";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20saber%20la%20inversi%C3%B3n%20para%20un%20dise%C3%B1o%20de%20sonrisa.";
@@ -9,8 +10,8 @@ const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/cas
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Precio de Diseño de Sonrisa en Buenos Aires 2026 | AM",
-    description: "Inversión y precio del diseño de sonrisa en Buenos Aires 2026. Planificación digital, carillas y lentes de contacto con el Dr. Ariel Merino.",
+    title: `Precio de Diseño de Sonrisa en Buenos Aires ${ANIO} | AM`,
+    description: `Inversión y precio del diseño de sonrisa en Buenos Aires ${ANIO}. Planificación digital, carillas y lentes de contacto con el Dr. Ariel Merino.`,
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Diseño de Sonrisa Precio Buenos Aires | AM Estética Dental",
@@ -90,7 +91,7 @@ export default function DisenoDeSonrisaLanding() {
                 {/* Precios */}
                 <section className="px-6 py-16 border-y border-oro/8">
                     <div className="max-w-6xl mx-auto">
-                        <span className="text-oro uppercase tracking-[0.4em] text-xs block mb-4">Inversión 2026</span>
+                        <span className="text-oro uppercase tracking-[0.4em] text-xs block mb-4">Inversión {ANIO}</span>
                         <h2 className="text-3xl font-light text-crema mb-12">
                             ¿Cuál es la inversión para un diseño de <span className="font-cormorant italic text-oro">sonrisa en Buenos Aires?</span>
                         </h2>

@@ -12,7 +12,7 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I'd%20l
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Dental Implants in Buenos Aires | Cost and Process | AM Estética Dental",
+  title: "Dental Implants in Buenos Aires — Cost and Process | AM",
   description:
     "Dental implants in Buenos Aires from USD 2,400 total (two phases). Straumann and Neodent implants with digital planning by Dr. Ariel Merino, Puerto Madero.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/implantes-dentales-buenos-aires") },

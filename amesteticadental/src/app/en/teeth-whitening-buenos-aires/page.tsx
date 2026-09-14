@@ -4,13 +4,14 @@ import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import Contacto from "@/components/Contacto";
 import { hreflangFor } from "@/lib/i18n-routes";
+import { ANIO } from "@/lib/anio";
 
 const CANONICAL = "https://www.amesteticadental.com/en/teeth-whitening-buenos-aires";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I'd%20like%20information%20about%20teeth%20whitening.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Teeth Whitening in Buenos Aires (Cost 2026) | AM Estética Dental",
+  title: `Teeth Whitening in Buenos Aires — Cost ${ANIO} | AM`,
   description:
     "Professional teeth whitening in Puerto Madero, Buenos Aires. LED and laser protocols designed to minimise sensitivity, supervised by Dr. Ariel Merino. USD figures.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/blanqueamiento-dental-precio-buenos-aires") },

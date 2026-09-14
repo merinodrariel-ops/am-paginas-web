@@ -8,15 +8,15 @@ import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Carillas Dentales Buenos Aires 2026 (Precios USD) | AM Estética",
-    description: "Cambiá tu sonrisa en Puerto Madero. Carillas de porcelana premium en USD con financiación. Resultados naturales con el Dr. Ariel Merino.",
+    title: "Carillas Dentales: qué son, tipos y duración | AM Estética",
+    description: "Qué es una carilla dental, qué tipos hay (porcelana, resina, lentes de contacto), cuánto duran y cómo es el proceso. Laboratorio propio en Puerto Madero.",
     alternates: {
         canonical: "https://www.amesteticadental.com/carillas-dentales",
         languages: hreflangFor("/carillas-dentales"),
     },
     openGraph: {
-        title: "Carillas Dentales en Puerto Madero | Precios 2026",
-        description: "Carillas de porcelana mínimamente invasivas en Puerto Madero. Resultados definitivos en 2 a 3 sesiones. Valores transparentes.",
+        title: "Carillas Dentales: qué son, tipos y cuánto duran",
+        description: "Porcelana, resina y lentes de contacto dental: en qué se diferencian, cuánto duran y cómo se fabrican con laboratorio propio.",
         url: "https://www.amesteticadental.com/carillas-dentales",
         locale: "es_AR",
         type: "website",
@@ -111,10 +111,10 @@ export default function CarillasDentalesPage() {
                         </span>
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-manrope font-light text-crema leading-[1.0] mb-7">
                             Carillas Dentales<br />
-                            <span className="font-cormorant italic text-oro">en Puerto Madero</span>
+                            <span className="font-cormorant italic text-oro">qué son y cuál conviene</span>
                         </h1>
                         <p className="text-crema/68 font-manrope text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
-                            Porcelana, resina y lentes de contacto dental. Cambiamos el color, la forma y la simetría de tu sonrisa con técnicas mínimamente invasivas — sin comprometer la salud de tus dientes.
+                            Una carilla dental es una lámina fina de porcelana o resina que se adhiere a la cara visible del diente para corregir su color, forma o tamaño. Las de porcelana duran entre 10 y 20 años; las de resina, entre 5 y 7. En AM Estética Dental las fabricamos en nuestro laboratorio propio, dentro de la clínica de Puerto Madero: por eso un caso se completa en 2 a 3 sesiones y no en meses.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 items-start">
                             <a

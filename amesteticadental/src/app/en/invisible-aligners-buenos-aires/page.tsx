@@ -9,7 +9,7 @@ const CANONICAL = "https://www.amesteticadental.com/en/invisible-aligners-buenos
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Invisible Aligners in Buenos Aires (AM Aligners) | AM Estética Dental",
+  title: "Invisible Aligners in Buenos Aires (AM Aligners) | AM",
   description:
     "Orthodontics without brackets or wires with AM Aligners and full digital planning in Puerto Madero. You see the result before we start. Dr. Ariel Merino.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/alineadores-invisibles") },

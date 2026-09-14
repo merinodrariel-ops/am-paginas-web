@@ -9,7 +9,7 @@ const CANONICAL = "https://www.amesteticadental.com/en/ultra-thin-veneers-buenos
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Ultra-Thin (Contact Lens) Veneers in Buenos Aires | AM Estética Dental",
+  title: "Ultra-Thin Contact Lens Veneers in Buenos Aires | AM",
   description:
     "Ultra-thin contact lens veneers in Puerto Madero, Buenos Aires. Around 0.3 mm, with minimal enamel preparation, to refine color and shape. Natural results, assessed case by case.",
   alternates: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     languages: hreflangFor("/lentes-de-contacto-dental"),
   },
   openGraph: {
-    title: "Ultra-Thin (Contact Lens) Veneers in Buenos Aires | AM Estética Dental",
+    title: "Ultra-Thin Contact Lens Veneers in Buenos Aires | AM",
     description:
       "The most conservative option in aesthetic veneers: ultra-thin ceramic with minimal preparation, when your case allows it. Puerto Madero, Buenos Aires.",
     url: CANONICAL,

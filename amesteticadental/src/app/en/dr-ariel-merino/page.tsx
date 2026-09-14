@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Contacto from "@/components/Contacto";
 import { hreflangFor } from "@/lib/i18n-routes";
 import { ANIOS_TRAYECTORIA, ANIO_TITULO } from "@/lib/trayectoria";
+import { SAME_AS_DR } from "@/lib/entidad";
 
 const CANONICAL = "https://www.amesteticadental.com/en/dr-ariel-merino";
 
@@ -38,12 +39,7 @@ const personSchema = {
   description:
     `Cosmetic dentist who qualified at the Universidad Católica de La Plata in ${ANIO_TITULO}, with ${ANIOS_TRAYECTORIA} years dedicated almost exclusively to high-complexity cosmetic dentistry. Founder and clinical director of AM Estética Dental in Puerto Madero, Buenos Aires.`,
   url: CANONICAL,
-  sameAs: [
-    "https://www.wikidata.org/wiki/Q134287655",
-    "https://www.linkedin.com/in/drarielmerino/",
-    "https://www.instagram.com/drarielmerino",
-    "https://www.youtube.com/@ArielMerino",
-  ],
+  sameAs: SAME_AS_DR,
   knowsLanguage: ["es", "en"],
   medicalSpecialty: "Dentistry",
   knowsAbout: [

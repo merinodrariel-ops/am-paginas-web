@@ -2,21 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { hreflangFor } from "@/lib/i18n-routes";
+import { ANIO } from "@/lib/anio";
 
 const CANONICAL = "https://www.amesteticadental.com/blog/cuanto-cuestan-las-carillas-dentales-en-argentina";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "¿Cuánto cuestan las carillas en Argentina? Guía 2026 | AM",
+    title: `¿Cuánto cuestan las carillas en Argentina? Guía ${ANIO} | AM`,
     // 198 caracteres: Google la cortaba a la mitad. Recortada a 156.
-    description: "Cuánto cuesta ponerse carillas en Argentina en 2026: rangos por material y qué explica que una carilla cueste tres veces más que otra en la clínica de al lado.",
+    description: `Cuánto cuesta ponerse carillas en Argentina en ${ANIO}: rangos por material y qué explica que una carilla cueste tres veces más que otra en la clínica de al lado.`,
     alternates: {
         canonical: CANONICAL,
         languages: hreflangFor("/blog/cuanto-cuestan-las-carillas-dentales-en-argentina"),
     },
-    keywords: "cuánto cuestan las carillas dentales en Argentina, precio carillas Argentina 2026, cuánto cuesta ponerse carillas, carillas dentales precio, costo carillas porcelana Argentina",
+    keywords: `cuánto cuestan las carillas dentales en Argentina, precio carillas Argentina ${ANIO}, cuánto cuesta ponerse carillas, carillas dentales precio, costo carillas porcelana Argentina`,
     openGraph: {
-        title: "¿Cuánto cuestan las carillas en Argentina? Guía 2026",
+        title: `¿Cuánto cuestan las carillas en Argentina? Guía ${ANIO}`,
         description: "Rangos reales de mercado, por qué una carilla puede costar 3 veces más que otra, y las preguntas que revelan dónde está la diferencia.",
         url: CANONICAL,
         locale: "es_AR",
@@ -27,9 +28,9 @@ export const metadata: Metadata = {
 const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "¿Cuánto cuestan las carillas dentales en Argentina? Guía 2026",
+    "headline": `¿Cuánto cuestan las carillas dentales en Argentina? Guía ${ANIO}`,
     "image": "https://www.amesteticadental.com/og-image.jpg",
-    "description": "Cuánto cuesta ponerse carillas dentales en Argentina en 2026: rangos de mercado por material, por qué varían tanto los precios y qué explica la diferencia.",
+    "description": `Cuánto cuesta ponerse carillas dentales en Argentina en ${ANIO}: rangos de mercado por material, por qué varían tanto los precios y qué explica la diferencia.`,
     "author": {
         // El @id es lo que une las 11 notas del blog, la clínica y arielmerino.com
         // en UNA sola entidad. Sin él, cada artículo declaraba una "Dr. Ariel Merino"
@@ -56,7 +57,7 @@ const faqSchema = {
     "mainEntity": [
         {
             "@type": "Question",
-            "name": "¿Cuánto cuesta una carilla dental en Argentina en 2026?",
+            "name": `¿Cuánto cuesta una carilla dental en Argentina en ${ANIO}?`,
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Depende del material y del nivel de la clínica. Las carillas de resina compuesta van desde valores accesibles en consultorios generales hasta USD 500 por diente en clínicas especializadas en estética. Las carillas cerámicas de laboratorio (disilicato de litio o porcelana feldespática) se mueven en un rango amplio del mercado, y en clínicas premium de alta especialización cuestan entre USD 1.000 y 1.500 por pieza.",
@@ -165,7 +166,7 @@ export default function ArticuloPreciosCarillasArgentina() {
                             <span className="font-cormorant italic text-oro">en Argentina?</span>
                         </h1>
                         <p className="text-crema/65 font-manrope text-lg font-light leading-relaxed mb-8">
-                            Guía honesta 2026: los rangos reales del mercado, por qué una carilla puede costar el triple que otra, y cómo leer un presupuesto para saber qué estás comprando en realidad.
+                            Guía honesta {ANIO}: los rangos reales del mercado, por qué una carilla puede costar el triple que otra, y cómo leer un presupuesto para saber qué estás comprando en realidad.
                         </p>
                         <div className="flex items-center gap-6 text-crema/35 font-manrope text-xs">
                             <span>Dr. Ariel Merino</span>
@@ -191,7 +192,7 @@ export default function ArticuloPreciosCarillasArgentina() {
                         {/* Tabla de rangos */}
                         <section>
                             <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-6">
-                                Rangos de precio por material <span className="font-cormorant italic text-oro">(2026)</span>
+                                Rangos de precio por material <span className="font-cormorant italic text-oro">({ANIO})</span>
                             </h2>
                             <div className="space-y-4">
                                 {RANGOS.map((r) => (
@@ -273,7 +274,7 @@ export default function ArticuloPreciosCarillasArgentina() {
                             <span className="text-oro/50 font-manrope uppercase tracking-[0.3em] text-xs block mb-5">Seguir leyendo</span>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {[
-                                    { titulo: "Precio de carillas dentales en Buenos Aires", href: "/precio-carillas-dentales-buenos-aires", desc: "Tabla de precios AM 2026 con simulador de financiación." },
+                                    { titulo: "Precio de carillas dentales en Buenos Aires", href: "/precio-carillas-dentales-buenos-aires", desc: `Tabla de precios AM ${ANIO} con simulador de financiación.` },
                                     { titulo: "Carillas de porcelana vs resina", href: "/carillas-de-porcelana-vs-resina", desc: "Diferencias reales de material, estética y duración." },
                                     { titulo: "Caso real: carillas de resina y diseño de sonrisa", href: "/casos/carillas-resina-diseno-sonrisa-gingivectomia-laser", desc: "10 carillas de resina + gingivectomía láser en paciente joven." },
                                     { titulo: "¿Cuánto duran las carillas de porcelana?", href: "/blog/cuanto-duran-las-carillas-de-porcelana", desc: "10 a 20 años con el cuidado correcto." },

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ANIO } from "@/lib/anio";
 
 const CANONICAL = "https://www.amesteticadental.com/coronas-y-fundas-dentales";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20coronas%20y%20fundas%20dentales.";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Coronas y Fundas Dentales Buenos Aires 2026 | AM",
+    title: `Coronas y Fundas Dentales Buenos Aires ${ANIO} | AM`,
     description: "Coronas y fundas dentales de cerámica en Buenos Aires. Restauración completa del diente con cerámica de alta resistencia. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.",
     alternates: { canonical: CANONICAL },
     openGraph: {

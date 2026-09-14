@@ -7,7 +7,7 @@ import { hreflangFor } from "@/lib/i18n-routes";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Dónde Hacerte Carillas en Buenos Aires: 7 Criterios | AM Estética",
+    title: "Dónde Hacerte Carillas en Buenos Aires: 7 Criterios",
     description: "Guía para elegir clínica de carillas en CABA: material, laboratorio propio, prueba en boca, desgaste real y garantía. Qué preguntar antes de decidir.",
     alternates: {
         canonical: "https://www.amesteticadental.com/donde-hacerse-carillas-buenos-aires",

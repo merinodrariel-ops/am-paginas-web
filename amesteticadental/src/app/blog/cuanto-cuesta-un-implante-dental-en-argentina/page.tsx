@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { ANIO } from "@/lib/anio";
 
 const CANONICAL = "https://www.amesteticadental.com/blog/cuanto-cuesta-un-implante-dental-en-argentina";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "¿Cuánto cuesta un implante dental? Guía 2026 | AM",
-    description: "Cuánto cuesta un implante dental en Argentina en 2026: qué incluye el precio, por qué varía entre clínicas, la diferencia entre el tornillo y la corona, y cuándo hace falta injerto óseo.",
+    title: `¿Cuánto cuesta un implante dental? Guía ${ANIO} | AM`,
+    description: `Cuánto cuesta un implante dental en Argentina en ${ANIO}: qué incluye el precio, por qué varía entre clínicas, la diferencia entre el tornillo y la corona, y cuándo hace falta injerto óseo.`,
     alternates: {
         canonical: CANONICAL,
     },
-    keywords: "cuánto cuesta un implante dental en Argentina, precio implante dental Argentina 2026, costo implantes dentales, implante dental precio, cuánto sale un implante dental",
+    keywords: `cuánto cuesta un implante dental en Argentina, precio implante dental Argentina ${ANIO}, costo implantes dentales, implante dental precio, cuánto sale un implante dental`,
     openGraph: {
-        title: "¿Cuánto cuesta un implante dental en Argentina? Guía honesta 2026",
+        title: `¿Cuánto cuesta un implante dental en Argentina? Guía honesta ${ANIO}`,
         description: "Qué incluye realmente el precio de un implante, por qué dos presupuestos pueden diferir tanto, y las preguntas que te evitan sorpresas.",
         url: CANONICAL,
         locale: "es_AR",
@@ -24,9 +25,9 @@ export const metadata: Metadata = {
 const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "¿Cuánto cuesta un implante dental en Argentina? Guía 2026",
+    "headline": `¿Cuánto cuesta un implante dental en Argentina? Guía ${ANIO}`,
     "image": "https://www.amesteticadental.com/og-image.jpg",
-    "description": "Cuánto cuesta un implante dental en Argentina en 2026: qué incluye el precio, por qué varía entre clínicas y cuándo hace falta injerto óseo.",
+    "description": `Cuánto cuesta un implante dental en Argentina en ${ANIO}: qué incluye el precio, por qué varía entre clínicas y cuándo hace falta injerto óseo.`,
     "author": {
         // El @id es lo que une las 11 notas del blog, la clínica y arielmerino.com
         // en UNA sola entidad. Sin él, cada artículo declaraba una "Dr. Ariel Merino"
@@ -53,7 +54,7 @@ const faqSchema = {
     "mainEntity": [
         {
             "@type": "Question",
-            "name": "¿Cuánto cuesta un implante dental en Argentina en 2026?",
+            "name": `¿Cuánto cuesta un implante dental en Argentina en ${ANIO}?`,
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "En AM Estética Dental el tratamiento se divide en dos fases. La 1ª fase (implante + extracción + injerto de hueso + injerto de tejido) va de USD 1.200 a USD 1.500. La 2ª fase (corona definitiva) va de USD 1.200 a USD 1.500. El total terminado con corona queda entre USD 2.400 y USD 3.000. Trabajamos con implantes Straumann y Neodent del Grupo Straumann (Suiza).",
@@ -176,7 +177,7 @@ export default function ArticuloPreciosImplantesArgentina() {
                             <span className="font-cormorant italic text-oro">en Argentina?</span>
                         </h1>
                         <p className="text-crema/65 font-manrope text-lg font-light leading-relaxed mb-8">
-                            Guía honesta 2026: qué incluye realmente el precio de un implante, por qué dos presupuestos pueden diferir tanto, y cómo leer una cotización para no llevarte sorpresas.
+                            Guía honesta {ANIO}: qué incluye realmente el precio de un implante, por qué dos presupuestos pueden diferir tanto, y cómo leer una cotización para no llevarte sorpresas.
                         </p>
                         <div className="flex items-center gap-6 text-crema/35 font-manrope text-xs">
                             <span>Dr. Ariel Merino</span>
@@ -202,7 +203,7 @@ export default function ArticuloPreciosImplantesArgentina() {
                         {/* Tabla de rangos */}
                         <section>
                             <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-6">
-                                Precios de referencia <span className="font-cormorant italic text-oro">(2026)</span>
+                                Precios de referencia <span className="font-cormorant italic text-oro">({ANIO})</span>
                             </h2>
                             <div className="space-y-4">
                                 {RANGOS.map((r) => (
@@ -284,7 +285,7 @@ export default function ArticuloPreciosImplantesArgentina() {
                             <span className="text-oro/50 font-manrope uppercase tracking-[0.3em] text-xs block mb-5">Seguir leyendo</span>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {[
-                                    { titulo: "Precio de implantes dentales en Buenos Aires", href: "/precio-implantes-dentales-buenos-aires", desc: "Tabla de precios AM 2026 con calculadora de cuotas." },
+                                    { titulo: "Precio de implantes dentales en Buenos Aires", href: "/precio-implantes-dentales-buenos-aires", desc: `Tabla de precios AM ${ANIO} con calculadora de cuotas.` },
                                     { titulo: "Implantes dentales en Buenos Aires", href: "/implantes-dentales-buenos-aires", desc: "Cómo es el tratamiento paso a paso, materiales y planificación 3D." },
                                     { titulo: "¿Cuánto cuestan las carillas dentales en Argentina?", href: "/blog/cuanto-cuestan-las-carillas-dentales-en-argentina", desc: "La guía de precios de carillas, con la misma lógica." },
                                     { titulo: "Dentista en Puerto Madero", href: "/dentista-puerto-madero", desc: "Conocé la clínica, al Dr. Merino y cómo llegar." },

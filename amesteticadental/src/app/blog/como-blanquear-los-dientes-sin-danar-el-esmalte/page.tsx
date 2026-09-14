@@ -7,7 +7,7 @@ const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Cómo blanquear los dientes sin dañar el esmalte | AM Estética Dental",
+    title: "Cómo blanquear los dientes sin dañar el esmalte | AM",
     description: "Guía clara sobre blanqueamiento dental profesional: cómo funciona, cuándo da sensibilidad, qué no blanquea y qué cuidados seguir para proteger el esmalte.",
     alternates: {
         canonical: CANONICAL,

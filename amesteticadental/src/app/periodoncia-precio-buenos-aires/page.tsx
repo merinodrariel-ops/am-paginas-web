@@ -7,7 +7,7 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20qui
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Periodoncia Buenos Aires — Precio y Tratamiento | AM Estética Dental",
+    title: "Periodoncia en Buenos Aires — Precio y Tratamiento | AM",
     description: "Tratamiento periodontal en Buenos Aires. Periodontitis, gingivitis, gingivectomía láser. Precio y turno. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.",
     alternates: { canonical: CANONICAL },
     keywords: "periodoncia Buenos Aires, periodontitis tratamiento Buenos Aires, gingivectomia laser Buenos Aires, encías tratamiento precio Buenos Aires",

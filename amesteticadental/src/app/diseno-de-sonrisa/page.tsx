@@ -9,14 +9,14 @@ const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/por
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Diseño de Sonrisa Digital en Buenos Aires | AM Estética Dental",
+    title: "Diseño de Sonrisa Digital en Buenos Aires | AM Estética",
     description: "Diseño de sonrisa digital en Puerto Madero. Ves el resultado antes de empezar. Simulación 3D, carillas e implantes por el Dr. Ariel Merino.",
     alternates: {
         canonical: "https://www.amesteticadental.com/diseno-de-sonrisa",
         languages: hreflangFor("/diseno-de-sonrisa"),
     },
     openGraph: {
-        title: "Diseño de Sonrisa Digital en Buenos Aires | AM Estética Dental",
+        title: "Diseño de Sonrisa Digital en Buenos Aires | AM Estética",
         description: "Smile design digital: ves el resultado antes de empezar. Personalización total, criterio estético y precisión clínica en Puerto Madero.",
         url: "https://www.amesteticadental.com/diseno-de-sonrisa",
         locale: "es_AR",

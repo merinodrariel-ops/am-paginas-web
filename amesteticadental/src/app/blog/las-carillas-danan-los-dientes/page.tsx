@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     // ("Carillas de Mínima Preparación del Esmalte") no coincidía con ninguna query
     // real: la página acumulaba 17.093 impresiones con 0,4% de CTR en posición 5,9,
     // mientras el openGraph y el schema de esta misma página sí preguntaban bien.
-    title: "¿Las carillas dañan los dientes? Qué pasa con tu esmalte | AM",
+    title: "¿Las carillas dañan los dientes? La respuesta honesta",
     description: "Cuánto esmalte se prepara realmente: 0,4 mm frente a los 2,2 mm naturales. Respuesta clínica honesta y casos con más de 10 años de seguimiento.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog/las-carillas-danan-los-dientes",

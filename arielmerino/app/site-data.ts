@@ -226,6 +226,7 @@ export const PERSON_SCHEMA = {
     "https://expodentbuenosaires.com.ar/portfolio-item/dr-ariel-merino/",
     "https://www.odontoespacio.net/autores/ariel-merino/",
     "https://www.doctoraliar.com/perfil/ariel-merino",
+    "https://cde.dental.upenn.edu/Course/38-Full-Veneers",
   ],
   // Cada mención de prensa como `subjectOf`: le dice a Google que la entidad
   // fue cubierta por medios de referencia, con la URL para que lo compruebe.

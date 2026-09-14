@@ -7,7 +7,7 @@ const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/por
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Diseño de Sonrisa Digital: cómo funciona | AM Estética Dental",
+    title: "Diseño de Sonrisa Digital: cómo funciona | AM Estética",
     description: "El proceso completo del diseño de sonrisa digital: desde la primera foto hasta ver tu nueva sonrisa en pantalla antes de que se toque un solo diente. Dr. Ariel Merino, Puerto Madero.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog/diseno-de-sonrisa-digital-como-funciona",

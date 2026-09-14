@@ -10,7 +10,7 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20qui
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Implantes Dentales en Buenos Aires | Precio y Turno",
+    title: "Implantes Dentales en Buenos Aires — Straumann y Neodent",
     description: "Implantes dentales Straumann y Neodent en Buenos Aires desde USD 2.400 total. Dos fases, extracción e injertos incluidos. Dr. Ariel Merino, Puerto Madero.",
     alternates: { canonical: CANONICAL , languages: hreflangFor("/implantes-dentales-buenos-aires") },
     keywords: "implantes dentales Buenos Aires, implante dental precio Buenos Aires, implantes dentales precio Argentina, implante dental Puerto Madero",

@@ -7,18 +7,19 @@ import CalculadoraFinanciacion from "@/components/CalculadoraFinanciacion";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import ImplantHeroVideo from "@/components/ImplantHeroVideo";
 import ImplantRehabilitationCase from "@/components/ImplantRehabilitationCase";
+import { ANIO } from "@/lib/anio";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Precio Implantes Dentales Buenos Aires 2026 · AM Estética Dental",
+  title: `Implantes dentales desde USD 2.400 — Precios ${ANIO} | AM`,
   description:
-    "Implantes dentales desde USD 2.400 total (dos fases). Neodent y Straumann, grupo suizo #1 del mundo. Precios 2026, extracción e injertos incluidos, financiación propia. Dr. Merino, Puerto Madero.",
-  keywords: "precio implantes dentales Buenos Aires, costo implante dental Argentina, implantes dentales precio 2026, financiación implantes Puerto Madero, cuánto cuestan los implantes dentales",
+    `Implantes dentales desde USD 2.400 total (dos fases). Neodent y Straumann, grupo suizo #1 del mundo. Precios ${ANIO}, extracción e injertos incluidos, financiación propia. Dr. Merino, Puerto Madero.`,
+  keywords: `precio implantes dentales Buenos Aires, costo implante dental Argentina, implantes dentales precio ${ANIO}, financiación implantes Puerto Madero, cuánto cuestan los implantes dentales`,
   alternates: {
     canonical: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",
   },
   openGraph: {
-    title: "Precio de Implantes Dentales en Buenos Aires 2026 | AM Estética Dental",
+    title: `Precio de Implantes Dentales en Buenos Aires ${ANIO} | AM Estética Dental`,
     description:
       "Implantes dentales Straumann y Neodent desde USD 2.400 total (dos fases). Financiación propia. Evaluación inicial en Puerto Madero, Buenos Aires.",
     url: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",
@@ -117,7 +118,7 @@ export default function InversionImplantesPage() {
           <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div>
               <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">
-                AM Estética Dental · Puerto Madero · Buenos Aires · Guía 2026
+                AM Estética Dental · Puerto Madero · Buenos Aires · Guía {ANIO}
               </span>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-manrope font-light text-crema leading-[1.0] mb-7">
                 Inversión en Implantes
@@ -146,7 +147,7 @@ export default function InversionImplantesPage() {
         <section className="py-24 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
           <div className="max-w-4xl mx-auto">
             <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6 text-center">
-              Inversión por fase · Actualizado 2026
+              Inversión por fase · Actualizado {ANIO}
             </span>
             <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-4 text-center">
               Inversión para un{" "}

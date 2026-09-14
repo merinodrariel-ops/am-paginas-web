@@ -48,3 +48,18 @@ jobs:
           # Claves públicas dummy para que el build no falle sin Supabase real.
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co' }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder' }}
+
+  # Alarma anual: el año de precios está sellado en los títulos que ganan las
+  # queries de Copilot ("precio carillas dentales Argentina 2026"). Si queda
+  # atrás del año real, esto rompe el CI y obliga a revisar las tablas.
+  anio-precios:
+    runs-on: ubuntu-latest
+    name: año de precios al día
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verificar ANIO_PRECIOS
+        working-directory: amesteticadental
+        run: node scripts/check-anio.mjs

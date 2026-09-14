@@ -7,6 +7,7 @@ import SeoFaq from "@/components/seo/SeoFaq";
 import CalculadoraFinanciacion from "@/components/CalculadoraFinanciacion";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
+import { ANIO } from "@/lib/anio";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
@@ -16,18 +17,18 @@ export const metadata: Metadata = {
   // prometía "financiación sin interés" cuando la propia página informa tasa fija
   // del 18% anual. Ahora el título ancla en la cerámica (el producto premium, no
   // el más barato) y la descripción coincide con lo que el paciente encuentra.
-  title: "Carillas cerámicas desde USD 1.000 — Precios 2026 | AM",
+  title: `Carillas cerámicas desde USD 1.000 — Precios ${ANIO} | AM`,
   description:
     "Carillas cerámicas de USD 1.000 a 1.500 y resina USD 500 por pieza. Tabla de inversión, casos reales y financiación propia. Laboratorio propio en Puerto Madero.",
-  keywords: "precio carillas dentales Buenos Aires, costo carillas porcelana Argentina, carillas dentales precio 2026, financiación carillas Puerto Madero, cuánto cuestan las carillas dentales",
+  keywords: `precio carillas dentales Buenos Aires, costo carillas porcelana Argentina, carillas dentales precio ${ANIO}, financiación carillas Puerto Madero, cuánto cuestan las carillas dentales`,
   alternates: {
     canonical: "https://www.amesteticadental.com/precio-carillas-dentales-buenos-aires",
     languages: hreflangFor("/precio-carillas-dentales-buenos-aires"),
   },
   openGraph: {
-    title: "¿Qué son y cuánto cuestan las Carillas Dentales? Precios 2026",
+    title: `¿Qué son y cuánto cuestan las Carillas Dentales? Precios ${ANIO}`,
     description:
-      "Tabla de precios actualizada 2026. Porcelana vs Resina, financiación propia y qué define el valor de tu caso. Evaluación en Puerto Madero.",
+      `Tabla de precios actualizada ${ANIO}. Porcelana vs Resina, financiación propia y qué define el valor de tu caso. Evaluación en Puerto Madero.`,
     url: "https://www.amesteticadental.com/precio-carillas-dentales-buenos-aires",
     locale: "es_AR",
     type: "website",
@@ -123,7 +124,7 @@ export default function PrecioCarillasPage() {
           <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div>
               <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">
-                AM Estética Dental · Puerto Madero · Buenos Aires · Guía 2026
+                AM Estética Dental · Puerto Madero · Buenos Aires · Guía {ANIO}
               </span>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-manrope font-light text-crema leading-[1.0] mb-7">
                 Precio de Carillas Dentales
@@ -161,7 +162,7 @@ export default function PrecioCarillasPage() {
         <section className="py-24 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
           <div className="max-w-4xl mx-auto">
             <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6 text-center">
-              Valores estimados por pieza · Actualizado 2026
+              Valores estimados por pieza · Actualizado {ANIO}
             </span>
             <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-4 text-center">
               Tabla de precios de{" "}
@@ -364,7 +365,7 @@ export default function PrecioCarillasPage() {
                 Si estás buscando el <strong className="text-crema">precio de carillas dentales en Buenos Aires</strong>, probablemente ya hayas notado que los valores varían enormemente entre clínicas. En AM Estética Dental trabajamos con una referencia clara: resinas a USD 500 por diente y cerámicas entre USD 1.000 y 1.500 por pieza. ¿Qué explica esta diferencia? Y más importante: ¿vale la pena pagar más?
               </p>
 
-              <h3 className="text-crema font-manrope font-medium text-xl mt-10 mb-4">¿Cuánto cuestan las carillas de porcelana en Buenos Aires en 2026?</h3>
+              <h3 className="text-crema font-manrope font-medium text-xl mt-10 mb-4">¿Cuánto cuestan las carillas de porcelana en Buenos Aires en {ANIO}?</h3>
               <p>
                 En AM Estética Dental, las carillas cerámicas tienen un valor de <strong className="text-crema">USD 1.000 a 1.500 por pieza</strong>. Ese rango refleja el material indicado, el laboratorio, la tecnología de diseño digital, la planificación clínica y la experiencia del especialista.
               </p>

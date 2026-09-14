@@ -6,6 +6,7 @@ import { hreflangFor } from "@/lib/i18n-routes";
 import Prensa from "@/components/Prensa";
 import EquipoAM from "@/components/EquipoAM";
 import { ANIOS_TRAYECTORIA, ANIOS_LABEL, ANIO_TITULO } from "@/lib/trayectoria";
+import { SAME_AS_DR } from "@/lib/entidad";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -68,16 +69,7 @@ const personSchema = {
         "@type": "CollegeOrUniversity",
         name: "UCALP",
     },
-    sameAs: [
-        "https://www.arielmerino.com",
-        "https://www.wikidata.org/wiki/Q134287655",
-        "https://www.instagram.com/drarielmerino",
-        "https://www.tiktok.com/@drarielmerino",
-        "https://www.linkedin.com/in/drarielmerino/",
-        "https://www.youtube.com/@ArielMerino",
-        "https://www.odontoespacio.net/autores/ariel-merino/",
-        "https://cde.dental.upenn.edu/Course/38-Full-Veneers",
-    ],
+    sameAs: SAME_AS_DR,
     description: `Odontólogo recibido en ${ANIO_TITULO} por la Universidad Católica de La Plata, con ${ANIOS_TRAYECTORIA} años de ejercicio dedicados casi exclusivamente a la estética dental. Fundador de AM Estética Dental, reconocida por Forbes Argentina como la única clínica dental del país en sus páginas.`,
     knowsAbout: [
         "Carillas de porcelana",

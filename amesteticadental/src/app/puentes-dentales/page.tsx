@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ANIO } from "@/lib/anio";
 
 const CANONICAL = "https://www.amesteticadental.com/puentes-dentales";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20puentes%20dentales.";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Puentes Dentales Buenos Aires 2026 | AM Estética Dental Puerto Madero",
+    title: `Puentes Dentales en Buenos Aires — Precios ${ANIO} | AM`,
     description: "Puentes dentales fijos de cerámica en Buenos Aires. Reemplazá un diente perdido sin implante. Dr. Ariel Merino, AM Estética Dental, Puerto Madero. Precio y proceso.",
     alternates: { canonical: CANONICAL },
     openGraph: {

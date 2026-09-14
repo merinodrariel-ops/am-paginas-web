@@ -1,6 +1,65 @@
 # Working Context — AM Estética Dental
 
-Última actualización: 2026-08-12
+Última actualización: 2026-09-14
+
+---
+
+## Sesión del 14-09-2026 — lo que dijo Bing Webmaster Tools
+
+Diagnóstico sobre 91 días de datos (14-jun → 12-sep): **las impresiones se
+triplicaron y los clics bajaron**. Primeros 30 días: 352 impresiones, 22 clics
+(6,3% de CTR). Últimos 30: ~1.016 impresiones, ~18 clics (1,8%). El problema
+dejó de ser visibilidad y pasó a ser el snippet.
+
+La causa medida: **26 títulos de 60 a 80 caracteres**, todos con el sufijo
+`| AM Estética Dental` comiéndose 20 de los ~60 que Bing muestra. El único
+título corto del sitio (`/precio-carillas`, 57 chars, número concreto + año +
+`| AM`) es también el de mejor CTR: 8,4%. Se aplicó ese patrón a los 26.
+
+Lo que se hizo:
+
+- **`src/lib/anio.ts`** — fuente única del año de precios. Las queries que el
+  sitio gana en Copilot llevan el año adentro (`precio carillas dentales
+  Argentina 2026`, 49,7% de citation share); estaba escrito a mano en 57 lugares
+  de 18 archivos. A diferencia de `trayectoria.ts` NO se calcula solo, a
+  propósito: publicar "Precios 2027" sobre una tabla que nadie revisó sería
+  mentir. La alarma es `scripts/check-anio.mjs`, que **rompe el CI** apenas el
+  año queda atrás. El ritual de rollover está documentado en el propio archivo.
+- **26 títulos recortados a ≤56 caracteres**, priorizando las páginas con
+  impresiones y CTR malo: `/precio-implantes` (232 impresiones, 2,6% de CTR
+  contra 8,4% de carillas) y `/carillas-de-porcelana-vs-resina` (55
+  impresiones, 0 clics).
+- **`/carillas-dentales` reposicionada.** Tiene los 28 enlaces internos más del
+  sitio y sólo 2 impresiones en Bing: competía con `/precio-carillas` por la
+  intención de precio, que esa página ya gana. Ahora cubre la query cabeza
+  `carillas dentales` (1.6K/mes en Bing, intención informacional según Bing,
+  y sólo 12,35% de citation share nuestro). H1, título, descripción y párrafo
+  del hero pasan a definición extractable: qué es + material + duración +
+  laboratorio propio + dónde.
+- **`src/lib/entidad.ts`** — fuente única de `sameAs`. Había tres listas
+  distintas (`layout.tsx`, `/dr-ariel-merino`, `/en/dr-ariel-merino`) y una
+  declaraba una URL de Doctoralia que responde **301**. Unificadas, más
+  Uruguay (usaba la forma vieja `youtube.com/c/`) y `arielmerino.com` (le
+  faltaba UPenn).
+
+### Sobre los backlinks (recomendación #1 de Bing)
+Bing reporta **4 dominios referentes** y eso NO contradice que la clínica esté
+en Top Doctors, Doctoralia y las guías: esos directorios enlazan `nofollow`,
+por redirect, o directamente sin enlace. Perseguir ese contador es perseguir la
+métrica equivocada. Lo que sí mueve la aguja es consolidar la entidad vía
+`sameAs`, que funciona **aunque el enlace sea nofollow** — de ahí
+`entidad.ts`. Wikidata ya está creada a mano (`Q134287655` persona,
+`Q138862170` clínica) y declarada en los tres dominios.
+
+### Pendiente de esta sesión
+- [ ] **El Dr. tiene que pasar las URLs de Top Doctors** y de cualquier guía de
+      odontología donde tenga perfil. No están en ningún `sameAs`. Verificar
+      200 y que sea la URL definitiva antes de agregarlas a `entidad.ts`.
+- [ ] **`/carillas-sin-desgaste` contradice la regla de marca.** El manual dice
+      no usar "sin desgaste" / "cero desgaste" y usar "minimal prep". La página
+      tiene 0 impresiones y 0 clics, así que el costo de renombrarla es bajo,
+      pero implica redirect 301. Decisión del Dr.
+- [ ] Medir el efecto de los títulos en Bing y GSC a 3-4 semanas.
 
 ---
 

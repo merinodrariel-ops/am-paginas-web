@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ANIO } from "@/lib/anio";
 
 const CANONICAL = "https://www.amesteticadental.com/carillas-de-resina";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20carillas%20de%20resina.";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Carillas de Resina Buenos Aires 2026 | AM Estética Dental Puerto Madero",
+    title: `Carillas de Resina en Buenos Aires — Precios ${ANIO} | AM`,
     description: "Carillas de resina compuesta en Buenos Aires. Una alternativa más accesible a las carillas de porcelana. Comparativa honesta: cuándo conviene cada opción. Dr. Ariel Merino, Puerto Madero.",
     alternates: { canonical: CANONICAL },
     openGraph: {

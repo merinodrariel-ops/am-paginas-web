@@ -19,7 +19,7 @@ const VIDEO = {
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Cepillo eléctrico Dyson de US$500: opinión de un odontólogo | AM Estética Dental",
+    title: "Cepillo Dyson de US$500: opinión de un odontólogo | AM",
     description: "Cámara intraoral, inteligencia artificial e irrigador en un solo cepillo. Un odontólogo explica qué aporta realmente el cepillo Dyson, qué respalda la evidencia y si vale la pena a ese precio.",
     alternates: {
         canonical: CANONICAL,

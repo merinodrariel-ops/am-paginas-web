@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ANIO } from "@/lib/anio";
 
 const CANONICAL = "https://www.amesteticadental.com/lentes-de-contacto-dental-precio-buenos-aires";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20lentes%20de%20contacto%20dental.";
@@ -9,8 +10,8 @@ const CDN2 = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/ca
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Lentes de Contacto Dental Precio Buenos Aires 2026 | AM Estética Dental",
-    description: "Precio e inversión en lentes de contacto dental en Buenos Aires 2026. Carillas AM ultra delgadas de 0.2mm, mínimamente invasivas. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.",
+    title: `Lentes de Contacto Dental — Precios ${ANIO} | AM Estética`,
+    description: `Precio e inversión en lentes de contacto dental en Buenos Aires ${ANIO}. Carillas AM ultra delgadas de 0.2mm, mínimamente invasivas. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.`,
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Lentes de Contacto Dental Precio Buenos Aires | AM Estética Dental",

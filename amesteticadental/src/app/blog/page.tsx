@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { hreflangFor } from "@/lib/i18n-routes";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { ANIO } from "@/lib/anio";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Blog de Estética Dental | AM Estética Dental — Puerto Madero",
+    title: "Blog de Estética Dental | AM Estética Dental",
     description: "Artículos sobre carillas de porcelana, diseño de sonrisa, lentes de contacto dental y estética dental en Buenos Aires. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog",
@@ -30,14 +31,14 @@ const ARTICULOS = [
     },
     {
         slug: "cuanto-cuesta-un-implante-dental-en-argentina",
-        titulo: "¿Cuánto cuesta un implante dental en Argentina? Guía 2026",
+        titulo: `¿Cuánto cuesta un implante dental en Argentina? Guía ${ANIO}`,
         descripcion: "Qué incluye realmente el precio de un implante, por qué dos presupuestos pueden diferir tanto, la diferencia entre tornillo y corona, y cuándo hace falta injerto óseo.",
         categoria: "Precios",
         lectura: "7 min",
     },
     {
         slug: "cuanto-cuestan-las-carillas-dentales-en-argentina",
-        titulo: "¿Cuánto cuestan las carillas dentales en Argentina? Guía 2026",
+        titulo: `¿Cuánto cuestan las carillas dentales en Argentina? Guía ${ANIO}`,
         descripcion: "Rangos reales del mercado por material, por qué una carilla puede costar el triple que otra, y cómo leer un presupuesto para saber qué estás comprando.",
         categoria: "Precios",
         lectura: "7 min",

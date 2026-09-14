@@ -3,14 +3,15 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { hreflangFor } from "@/lib/i18n-routes";
 import Contacto from "@/components/Contacto";
+import { ANIO } from "@/lib/anio";
 
 const CANONICAL = "https://www.amesteticadental.com/en/blog/veneers-cost-argentina";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I%20read%20the%20article%20about%20veneer%20investment%20and%20I'd%20like%20a%20figure%20for%20my%20case.";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "How Much Do Veneers Cost in Argentina? 2026 Guide | AM Estética Dental",
-    description: "Veneer investment in Argentina 2026: USD figures per unit, what changes the number, what should be included, and why international patients actually travel here.",
+    title: `How Much Do Veneers Cost in Argentina? ${ANIO} Guide | AM`,
+    description: `Veneer investment in Argentina ${ANIO}: USD figures per unit, what changes the number, what should be included, and why international patients actually travel here.`,
     alternates: { canonical: CANONICAL, languages: hreflangFor("/blog/cuanto-cuestan-las-carillas-dentales-en-argentina") },
     openGraph: {
         title: "How much do veneers cost in Argentina?",
@@ -26,7 +27,7 @@ const articleSchema = {
     "@type": "Article",
     headline: "How much do veneers cost in Argentina?",
     "image": "https://www.amesteticadental.com/og-image.jpg",
-    description: "Veneer investment in Argentina 2026: USD figures per unit, what changes the number, what should be included, and why international patients actually travel here.",
+    description: `Veneer investment in Argentina ${ANIO}: USD figures per unit, what changes the number, what should be included, and why international patients actually travel here.`,
     inLanguage: "en",
     author: {
         "@type": "Person",
@@ -65,7 +66,7 @@ export default function VeneersCostArgentinaPage() {
                             How much do veneers cost in Argentina?
                         </h1>
                         <p className="text-crema/65 font-manrope text-lg font-light leading-relaxed">
-                            Real figures in USD for 2026, what actually moves the number, and an honest note on why patients fly here.
+                            Real figures in USD for {ANIO}, what actually moves the number, and an honest note on why patients fly here.
                         </p>
                         <p className="text-crema/30 font-manrope text-xs mt-8">
                             By Dr. Ariel Merino · AM Estética Dental, Puerto Madero, Buenos Aires

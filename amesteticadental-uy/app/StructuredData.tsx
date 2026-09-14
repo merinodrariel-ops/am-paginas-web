@@ -97,8 +97,11 @@ export const organizationSchema = {
         PERSON_URL,
         `${ARGENTINA_URL}/dr-ariel-merino`,
         "https://www.instagram.com/drarielmerino",
+        "https://www.tiktok.com/@drarielmerino",
         "https://www.linkedin.com/in/drarielmerino/",
-        "https://www.youtube.com/c/ArielMerino",
+        "https://www.youtube.com/@ArielMerino",
+        "https://www.facebook.com/MerinoAriel/",
+        "https://www.doctoraliar.com/perfil/ariel-merino",
       ],
     },
     {

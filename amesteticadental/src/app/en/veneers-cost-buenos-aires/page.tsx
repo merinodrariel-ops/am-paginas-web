@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import Contacto from "@/components/Contacto";
 import { hreflangFor } from "@/lib/i18n-routes";
+import { ANIO } from "@/lib/anio";
 
 const CANONICAL = "https://www.amesteticadental.com/en/veneers-cost-buenos-aires";
 
@@ -11,7 +12,7 @@ const CANONICAL = "https://www.amesteticadental.com/en/veneers-cost-buenos-aires
 // gente. En el cuerpo se habla de INVERSIÓN (investment), nunca de "precio".
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Veneers Cost in Buenos Aires (USD Prices 2026) | AM Estética Dental",
+  title: `Veneers Cost in Buenos Aires — USD Prices ${ANIO} | AM`,
   description:
     "What porcelain veneers cost in Buenos Aires: USD figures per unit, what changes the investment, financing and what is included. Dr. Ariel Merino, Puerto Madero.",
   alternates: {
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     languages: hreflangFor("/precio-carillas-dentales-buenos-aires"),
   },
   openGraph: {
-    title: "Veneers Cost in Buenos Aires (USD 2026) | AM Estética Dental",
+    title: `Veneers Cost in Buenos Aires (USD ${ANIO}) | AM Estética Dental`,
     description:
       "Transparent USD figures for porcelain and composite veneers in Puerto Madero, with in-house financing and an in-house laboratory.",
     url: CANONICAL,
@@ -147,7 +148,7 @@ export default function VeneersCostPage() {
             </div>
 
             <p className="text-crema/30 font-manrope text-xs mt-6">
-              * Reference figures in USD, per unit, updated 2026. The final investment is defined at the initial assessment based on the number of units and the complexity of the case. USD amounts are paid in pesos at the official Banco Nación exchange rate.
+              * Reference figures in USD, per unit, updated {ANIO}. The final investment is defined at the initial assessment based on the number of units and the complexity of the case. USD amounts are paid in pesos at the official Banco Nación exchange rate.
             </p>
           </div>
         </section>

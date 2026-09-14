@@ -6,6 +6,7 @@ import RedAM from "@/components/RedAM";
 import SiteFooter from "@/components/SiteFooter";
 import { GOOGLE_REVIEWS } from "@/lib/reviews";
 import "./globals.css";
+import { SAME_AS_DR, SAME_AS_CLINICA } from "@/lib/entidad";
 
 const gtmId = (process.env.NEXT_PUBLIC_GTM_ID || "GTM-P9KCL5W7").trim();
 const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID || "";
@@ -104,31 +105,14 @@ const schemaOrg = {
     "@id": "https://www.arielmerino.com/#person",
     "name": "Dr. Ariel Merino",
     "jobTitle": "Odontólogo Estético",
-    "sameAs": [
-      "https://www.wikidata.org/wiki/Q134287655",
-      "https://www.arielmerino.com",
-      "https://www.amesteticadental.com/dr-ariel-merino",
-      "https://www.instagram.com/drarielmerino",
-      "https://www.tiktok.com/@drarielmerino",
-      "https://www.linkedin.com/in/drarielmerino/",
-      "https://www.youtube.com/c/ArielMerino",
-      "https://www.odontoespacio.net/autores/ariel-merino/",
-      "https://www.doctoraliar.com/ariel-merino/odontologo/ciudad-autonoma-de-buenos-aires",
-      "https://cde.dental.upenn.edu/Course/38-Full-Veneers"
-    ]
+    "sameAs": SAME_AS_DR
   },
   "founder": {
     "@type": "Person",
     "@id": "https://www.arielmerino.com/#person",
     "name": "Dr. Ariel Merino"
   },
-  "sameAs": [
-    "https://www.wikidata.org/wiki/Q138862170",
-    "https://www.instagram.com/amesteticadental",
-    "https://ar.linkedin.com/company/am-est%C3%A9tica-dental",
-    "https://maps.app.goo.gl/5kWar9VL6qjhdEGM7",
-    "https://g.page/r/CQ3df5Xn-J6oEBM"
-  ]
+  "sameAs": SAME_AS_CLINICA
 };
 
 export default function RootLayout({

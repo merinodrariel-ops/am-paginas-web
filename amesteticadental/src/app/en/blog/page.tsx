@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Contacto from "@/components/Contacto";
 import { hreflangFor } from "@/lib/i18n-routes";
+import { ANIO } from "@/lib/anio";
 
 const CANONICAL = "https://www.amesteticadental.com/en/blog";
 
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 const POSTS = [
     {
         slug: "veneers-cost-argentina",
-        titulo: "How much do veneers cost in Argentina? 2026 guide",
+        titulo: `How much do veneers cost in Argentina? ${ANIO} guide`,
         resumen: "Real USD figures, what actually changes the investment, and the honest reason international patients fly here — it is time, not price.",
         categoria: "Investment",
     },

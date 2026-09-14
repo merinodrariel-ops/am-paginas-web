@@ -10,7 +10,7 @@ const CANONICAL = "https://www.amesteticadental.com/en/porcelain-veneers-buenos-
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Porcelain Veneers in Buenos Aires (USD Prices) | AM Estética Dental",
+    title: "Porcelain Veneers in Buenos Aires (USD Prices) | AM",
     description: "Premium porcelain veneers in Puerto Madero, Buenos Aires. Natural, minimally invasive smile design with Dr. Ariel Merino. USD pricing and financing.",
     alternates: {
         canonical: CANONICAL,
