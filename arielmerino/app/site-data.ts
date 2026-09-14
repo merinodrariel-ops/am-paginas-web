@@ -20,6 +20,34 @@ export const WA = (mensaje: string) =>
 export const MATRICULA = "MN 34.869";
 
 /**
+ * Curso de educación continua del que es instructor titular en Penn.
+ *
+ * Hasta 2026-09 esta credencial existía en el sitio sólo como una URL suelta
+ * dentro de `sameAs`: ningún visitante la veía y el schema no la declaraba como
+ * docencia. Es la credencial internacional más fuerte del perfil —una escuela
+ * dental de Estados Unidos pone su nombre como docente de un curso acreditado
+ * para la recertificación de sus propios odontólogos—, así que vive acá, con
+ * todos sus datos, y tiene página propia.
+ *
+ * Cada campo se corresponde literalmente con lo que publica el catálogo de Penn
+ * en `URL`. Si algo no figura ahí, no se escribe acá.
+ */
+export const PENN = {
+  curso: "Full Veneers",
+  instructorEnCatalogo: "Ariel Merino, DDS",
+  programa: "Continuing Dental Education",
+  escuela: "University of Pennsylvania School of Dental Medicine",
+  escuelaCorta: "Penn Dental Medicine",
+  escuelaUrl: "https://www.dental.upenn.edu/",
+  universidadUrl: "https://www.upenn.edu/",
+  creditos: "1.5",
+  idioma: "Inglés",
+  modalidad: "Online, a ritmo del cursante",
+  url: "https://cde.dental.upenn.edu/Course/38-Full-Veneers",
+  path: "/penn-dental-medicine",
+} as const;
+
+/**
  * Año del título de grado (Odontología, Universidad Católica de La Plata) y años
  * de ejercicio derivados. Se calcula en vez de escribirse a mano: el sitio de la
  * clínica venía mezclando "+20 años" y "+15 años" según la página justamente por
@@ -34,6 +62,7 @@ export const NAV = [
   { href: "/", label: "Inicio" },
   { href: "/trayectoria", label: "Trayectoria" },
   { href: "/carillas-de-porcelana", label: "Carillas" },
+  { href: PENN.path, label: "Penn Dental Medicine" },
   { href: "/prensa", label: "Prensa" },
   { href: "/contacto", label: "Contacto" },
 ];
@@ -61,7 +90,16 @@ export const FORMACION = [
   },
 ];
 
-export const DOCENCIA = [
+/** `href` es opcional: sólo las credenciales que tienen página propia lo llevan. */
+export type ItemDocencia = { titulo: string; institucion: string; detalle: string; href?: string };
+
+export const DOCENCIA: ItemDocencia[] = [
+  {
+    titulo: `Instructor del curso "${PENN.curso}"`,
+    institucion: `${PENN.escuelaCorta} · ${PENN.programa}`,
+    detalle: `Curso de educación continua sobre carillas de porcelana dictado en inglés para el programa de ${PENN.programa} de la ${PENN.escuela}, acreditado con ${PENN.creditos} créditos CE.`,
+    href: PENN.path,
+  },
   {
     titulo: "Ex docente de Operatoria Dental I y II",
     institucion: "Universidad Católica de La Plata",
@@ -160,7 +198,7 @@ export const PERSON_SCHEMA = {
   familyName: "Merino",
   jobTitle: "Odontólogo Especialista en Estética Dental",
   description:
-    `Odontólogo argentino recibido en ${ANIO_TITULO} por la Universidad Católica de La Plata, con ${ANIOS_TRAYECTORIA} años de ejercicio dedicados casi exclusivamente a la estética dental, las carillas de porcelana y el diseño de sonrisa digital. Fundador y director de AM Estética Dental, en Puerto Madero, Buenos Aires. Docente y disertante internacional en más de 15 países.`,
+    `Odontólogo argentino recibido en ${ANIO_TITULO} por la Universidad Católica de La Plata, con ${ANIOS_TRAYECTORIA} años de ejercicio dedicados casi exclusivamente a la estética dental, las carillas de porcelana y el diseño de sonrisa digital. Fundador y director de AM Estética Dental, en Puerto Madero, Buenos Aires. Instructor del curso "${PENN.curso}" en el programa de ${PENN.programa} de la ${PENN.escuela}. Docente y disertante internacional en más de 15 países.`,
   url: SITE,
   image: [
     "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_1200,c_fill,g_face,q_auto,f_auto/equipo/dr-ariel-merino-director-clinico-am-estetica-dental-puerto-madero",
@@ -182,6 +220,19 @@ export const PERSON_SCHEMA = {
     url: "https://www.amesteticadental.com",
   },
   affiliation: [
+    // Penn va primero y como afiliación, no como `alumniOf`: no estudió ahí, enseña
+    // ahí. Es la única entidad del perfil que no es propia de la marca, y por eso
+    // es la que más pesa como señal externa.
+    {
+      "@type": "CollegeOrUniversity",
+      name: PENN.escuela,
+      url: PENN.escuelaUrl,
+      parentOrganization: {
+        "@type": "CollegeOrUniversity",
+        name: "University of Pennsylvania",
+        url: PENN.universidadUrl,
+      },
+    },
     {
       "@type": "Dentist",
       "@id": "https://www.amesteticadental.com/#clinic",

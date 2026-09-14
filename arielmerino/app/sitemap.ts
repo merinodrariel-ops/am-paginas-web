@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SITE } from "./site-data";
+import { PENN, SITE } from "./site-data";
 
 // Hasta 2026-09 este sitemap tenía una sola URL, porque el sitio tenía una sola
 // página. Al agregar una entrada nueva acá, agregarla también al <Nav> de app/ui.tsx:
@@ -9,6 +9,7 @@ const RUTAS: { path: string; priority: number; changeFrequency: "weekly" | "mont
   { path: "", priority: 1, changeFrequency: "monthly" },
   { path: "/trayectoria", priority: 0.9, changeFrequency: "monthly" },
   { path: "/carillas-de-porcelana", priority: 0.9, changeFrequency: "monthly" },
+  { path: PENN.path, priority: 0.9, changeFrequency: "monthly" },
   { path: "/prensa", priority: 0.85, changeFrequency: "monthly" },
   { path: "/contacto", priority: 0.7, changeFrequency: "monthly" },
 ];

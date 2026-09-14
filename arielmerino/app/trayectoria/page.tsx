@@ -63,15 +63,30 @@ export default function TrayectoriaPage() {
             otro odontólogo por qué se hace de una manera y no de otra. Enseñar no deja lugar a la costumbre.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 28 }}>
-            {DOCENCIA.map((d) => (
-              <div key={d.titulo} style={{ border: "1px solid rgba(201,169,110,0.14)", borderRadius: 16, padding: 24 }}>
-                <h3 style={{ fontSize: 15, fontWeight: 600, color: crema, marginBottom: 4 }}>{d.titulo}</h3>
-                <p style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: oro, marginBottom: 12 }}>
-                  {d.institucion}
-                </p>
-                <p style={{ fontSize: 14, lineHeight: 1.75, color: cremaDim }}>{d.detalle}</p>
-              </div>
-            ))}
+            {DOCENCIA.map((d) => {
+              const cuerpo = (
+                <>
+                  <h3 style={{ fontSize: 15, fontWeight: 600, color: crema, marginBottom: 4 }}>{d.titulo}</h3>
+                  <p style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: oro, marginBottom: 12 }}>
+                    {d.institucion}
+                  </p>
+                  <p style={{ fontSize: 14, lineHeight: 1.75, color: cremaDim }}>{d.detalle}</p>
+                  {d.href ? (
+                    <p style={{ fontSize: 13, color: oro, marginTop: 14 }}>Ver la credencial →</p>
+                  ) : null}
+                </>
+              );
+              const caja = { border: "1px solid rgba(201,169,110,0.14)", borderRadius: 16, padding: 24, display: "block", textDecoration: "none" };
+              return d.href ? (
+                <Link key={d.titulo} href={d.href} style={caja}>
+                  {cuerpo}
+                </Link>
+              ) : (
+                <div key={d.titulo} style={caja}>
+                  {cuerpo}
+                </div>
+              );
+            })}
           </div>
         </Seccion>
 
@@ -116,6 +131,7 @@ export default function TrayectoriaPage() {
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             {[
               ["Carillas de porcelana", "/carillas-de-porcelana"],
+              ["Penn Dental Medicine", "/penn-dental-medicine"],
               ["Prensa y publicaciones", "/prensa"],
               ["Contacto", "/contacto"],
             ].map(([label, href]) => (
