@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Contacto from "@/components/Contacto";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import { equipoAM, equipoClinico } from "@/data/equipo";
+import FichaCurriculum, { ETIQUETAS_CV_EN } from "@/components/equipo/FichaCurriculum";
+import { empleadoSchema } from "@/lib/equipo-schema";
 import { hreflangFor } from "@/lib/i18n-routes";
 
 const CANONICAL = "https://www.amesteticadental.com/en/team";
@@ -40,18 +42,7 @@ const teamSchema = {
     postalCode: "C1107DED",
     addressCountry: "AR",
   },
-  employee: equipoAM.map((miembro) => ({
-    "@type": miembro.schemaType,
-    name: miembro.nombre,
-    jobTitle: miembro.rolEn,
-    description: miembro.descripcionEn,
-    image: miembro.imagen,
-    worksFor: {
-      "@type": "Dentist",
-      name: "AM Estética Dental",
-      url: "https://www.amesteticadental.com",
-    },
-  })),
+  employee: equipoAM.map((miembro) => empleadoSchema(miembro, "en")),
 };
 
 const PILLARS = [
@@ -165,7 +156,11 @@ export default function TeamPage() {
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {equipoClinico.map((miembro) => (
-                <article key={miembro.slug} className="group transition-all duration-300">
+                <article
+                  key={miembro.slug}
+                  id={miembro.slug}
+                  className="group scroll-mt-28 transition-all duration-300"
+                >
                   <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-oro/12 bg-carbon-soft/60 backdrop-blur-sm transition-all duration-300 group-hover:border-oro/30 group-hover:-translate-y-1 shadow-md group-hover:shadow-oro/5">
                     <Image
                       src={miembro.imagen}
@@ -179,9 +174,15 @@ export default function TeamPage() {
                       <p className="text-[10px] uppercase tracking-[0.26em] text-oro/75">{miembro.areaEn}</p>
                       <h3 className="mt-2 text-2xl font-light text-crema">{miembro.nombre}</h3>
                       <p className="mt-1 text-sm font-medium text-oro">{miembro.rolEn}</p>
+                      {miembro.matricula ? (
+                        <p className="mt-1 text-[10px] uppercase tracking-[0.22em] text-crema/45">{miembro.matricula}</p>
+                      ) : null}
                     </div>
                   </div>
                   <p className="mt-4 text-sm leading-relaxed text-crema/62">{miembro.descripcionEn}</p>
+                  {miembro.cvEn ? (
+                    <FichaCurriculum cv={miembro.cvEn} etiquetas={ETIQUETAS_CV_EN} />
+                  ) : null}
                 </article>
               ))}
             </div>

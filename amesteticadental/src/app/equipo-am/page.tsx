@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Contacto from "@/components/Contacto";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import { equipoAM, equipoClinico } from "@/data/equipo";
+import FichaCurriculum from "@/components/equipo/FichaCurriculum";
+import { empleadoSchema } from "@/lib/equipo-schema";
 import { hreflangFor } from "@/lib/i18n-routes";
 
 const TRABAJA_EN_AM_URL = "/trabaja-en-am";
@@ -69,32 +71,7 @@ const teamSchema = {
     latitude: -34.620858,
     longitude: -58.3609047,
   },
-  employee: equipoAM.map((miembro) => ({
-    "@type": miembro.schemaType,
-    name: miembro.nombre,
-    jobTitle: miembro.rol,
-    description: miembro.descripcion,
-    // `imagen` ya es una URL absoluta de Cloudinary. Prefijarla con el dominio
-    // producía "https://www.amesteticadental.comhttps://res.cloudinary.com/…",
-    // una URL rota que Google no podía resolver.
-    image: miembro.imagen,
-    worksFor: {
-      "@type": "Dentist",
-      name: "AM Estética Dental",
-      url: "https://www.amesteticadental.com",
-    },
-    knowsAbout: miembro.keywords,
-    // La matrícula sólo viaja si está cargada y verificada (ver src/data/equipo.ts).
-    ...(miembro.matricula
-      ? {
-          identifier: {
-            "@type": "PropertyValue",
-            propertyID: "Matrícula Nacional",
-            value: miembro.matricula,
-          },
-        }
-      : {}),
-  })),
+  employee: equipoAM.map((miembro) => empleadoSchema(miembro, "es")),
 };
 
 const breadcrumbSchema = {
@@ -232,7 +209,11 @@ export default function EquipoAMPage() {
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {equipoClinico.map((miembro) => (
-                <article key={miembro.slug} className="group transition-all duration-300">
+                <article
+                  key={miembro.slug}
+                  id={miembro.slug}
+                  className="group scroll-mt-28 transition-all duration-300"
+                >
                   <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-oro/12 bg-carbon-soft/60 backdrop-blur-sm transition-all duration-300 group-hover:border-oro/30 group-hover:-translate-y-1 shadow-md group-hover:shadow-oro/5">
                     <Image
                       src={miembro.imagen}
@@ -252,6 +233,7 @@ export default function EquipoAMPage() {
                     </div>
                   </div>
                   <p className="mt-4 text-sm leading-relaxed text-crema/62">{miembro.descripcion}</p>
+                  {miembro.cv ? <FichaCurriculum cv={miembro.cv} /> : null}
                   <div className="mt-3.5">
                     <a
                       href={`https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20gustar%C3%ADa%20coordinar%20una%20consulta%20inicial%20con%20el%20equipo%20de%20AM%20Est%C3%A9tica%20Dental%20para%20atenderme%20con%20${encodeURIComponent(miembro.nombre)}.`}
