@@ -36,7 +36,7 @@ Cualquier agente que opere en este espacio de trabajo debe asimilar y ejecutar e
 *   **Instinto:** Cada página debe estar diseñada no solo para indexadores de Google, sino para motores de respuesta de IA (AEO).
 *   **Acción:** Después de cada despliegue que involucre páginas nuevas o modificadas de forma relevante, el agente debe ejecutar de inmediato el indexador de Google Search Console mediante el comando CLI:
     ```bash
-    node gsc.mjs indexar
+    node gsc.mjs indexar /ruta-nueva
     ```
 *   **Estructura:** Asegurar una única etiqueta `<h1>` por página, jerarquía semántica estricta (H2, H3), meta-descripciones atractivas y velocidad de carga excepcional.
 

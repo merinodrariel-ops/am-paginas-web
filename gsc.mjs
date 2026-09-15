@@ -2,8 +2,18 @@
  * CLI Google Search Console — AM Estética Dental
  *
  * Comandos:
- *   node gsc.mjs indexar       → solicita indexación de todas las páginas del sitemap
- *   node gsc.mjs estado        → muestra el estado de notificación de cada URL
+ *   node gsc.mjs indexar <ruta...>  → indexa SOLO esas rutas (lo habitual)
+ *   node gsc.mjs indexar --todo     → indexa las ~107 páginas del sitemap
+ *   node gsc.mjs estado             → estado de notificación de cada URL
+ *
+ * Ejemplo:
+ *   node gsc.mjs indexar /blog/mi-nota /en/blog/my-post
+ *
+ * Por qué hace falta elegir rutas: la Indexing API tiene un tope de 200 publish
+ * por día. El sitemap ya tiene 107 URLs, así que "indexar todo" consume más de
+ * la mitad de la cuota diaria de una sola vez y dos corridas la agotan — que es
+ * exactamente lo que pasó el 15-sep-2026 al publicar una nota. Publicar una nota
+ * nueva debería costar 1 request, no 107.
  */
 
 import { readFileSync } from "fs";
@@ -47,8 +57,17 @@ async function getToken() {
   return d.access_token;
 }
 
-async function indexar() {
-  const urls = await getUrlsFromSitemap();
+async function indexar(rutas) {
+  let urls;
+  if (rutas.length > 0) {
+    // Se aceptan rutas ("/blog/x") o URLs completas.
+    urls = rutas.map(r => (r.startsWith("http") ? r : `${SITE}${r.startsWith("/") ? r : "/" + r}`));
+  } else {
+    urls = await getUrlsFromSitemap();
+    console.log(`\n⚠️  Sin rutas: se van a enviar las ${urls.length} URLs del sitemap.`);
+    console.log("   La cuota diaria es de 200. Para indexar sólo lo que publicaste:");
+    console.log("   node gsc.mjs indexar /blog/mi-nota\n");
+  }
   if (urls.length === 0) return;
 
   const token = await getToken();
@@ -99,9 +118,11 @@ async function estado() {
   console.log();
 }
 
-const [,, cmd] = process.argv;
+const [,, cmd, ...resto] = process.argv;
 if (cmd === "estado") {
   await estado();
 } else {
-  await indexar();
+  // `--todo` fuerza el sitemap completo; si no, se indexan las rutas pasadas.
+  const rutas = resto.filter(a => a !== "--todo");
+  await indexar(resto.includes("--todo") ? [] : rutas);
 }

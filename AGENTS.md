@@ -135,7 +135,8 @@ node generar-imagen.mjs "..." out.png --model gemini-3.1-flash-image   # otro mo
 ## Google Search Console CLI
 
 ```bash
-node gsc.mjs indexar    # solicita indexación de páginas nuevas
+node gsc.mjs indexar /blog/mi-nota   # indexa SÓLO esa ruta (1 request)
+node gsc.mjs indexar --todo          # las 107 del sitemap (más de media cuota diaria)
 node gsc.mjs estado     # muestra estado de indexación
 ```
 
@@ -151,7 +152,7 @@ node gsc.mjs estado     # muestra estado de indexación
 
 ## Deploy
 - Push a `main` → Vercel despliega automáticamente `amesteticadental/`
-- Después del deploy correr `node gsc.mjs indexar` para páginas nuevas
+- Después del deploy correr `node gsc.mjs indexar <ruta>` con las rutas nuevas. **Sin argumentos manda las 107 URLs del sitemap y la cuota de la Indexing API es de 200/día**: dos corridas la agotan.
 
 ## 🚨 ANTES DE TOCAR NADA: `git fetch` (leer esto SIEMPRE)
 
@@ -259,7 +260,7 @@ Hay que indexarlo en Google **y** Bing automáticamente. Ejecutá este flujo com
 **Google Search Console** (indexación vía sitemap dinámico):
 - Todos los sitios tienen sitemaps dinámicos en `src/app/sitemap.ts` o `app/sitemap.ts`
 - Verificados en GSC: `amesteticadental.com` (principal)
-- Google detecta nuevas URLs automáticamente vía sitemap; `gsc.mjs indexar` acelera el proceso
+- Google detecta nuevas URLs automáticamente vía sitemap; `gsc.mjs indexar <ruta>` acelera el proceso
 
 **Bing/Yandex** (indexación vía IndexNow):
 - API key compartida (de cuenta Bing WT): `86346b5cfff04c3f9721f6b8f09977e0`
@@ -279,7 +280,7 @@ Hay que indexarlo en Google **y** Bing automáticamente. Ejecutá este flujo com
    - Notifica TODAS las URLs a Bing/Yandex
    - Log en GitHub Actions (Actions tab del repo)
 6. **Google**: indexación automática vía sitemap dinámico. Para acelerar:
-   - `node gsc.mjs indexar` (si está en amesteticadental/, que es donde está verificado GSC)
+   - `node gsc.mjs indexar <ruta>` (si está en amesteticadental/, que es donde está verificado GSC)
 7. **The Dental Review**: evaluar si el caso amerita una nota periodística que enlace de vuelta.
 
 ### Indexación manual (si necesitás forzar ahora sin esperar al workflow):
