@@ -10,14 +10,14 @@ const CANONICAL = "https://www.amesteticadental.com/en/clinic";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Visit the Clinic in Puerto Madero · AM Estética Dental",
+  title: "Clínica AM in Puerto Madero · AM Estética Dental",
   description:
-    "Discover AM Estética Dental's boutique clinic in Puerto Madero, Buenos Aires. An oasis of comfort and digital dentistry led by Dr. Ariel Merino.",
+    "Visit Clínica AM, the boutique home of AM Estética Dental in Puerto Madero, Buenos Aires. An oasis of comfort and digital dentistry led by Dr. Ariel Merino.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/clinica") },
   openGraph: {
-    title: "Visit the Clinic in Puerto Madero · AM Estética Dental",
+    title: "Clínica AM in Puerto Madero · AM Estética Dental",
     description:
-      "An exclusive clinical environment in Puerto Madero designed for absolute comfort and the most advanced digital dentistry.",
+      "Clínica AM: an exclusive environment in Puerto Madero designed for absolute comfort and the most advanced digital dentistry.",
     url: CANONICAL,
     locale: "en_US",
   },
@@ -31,7 +31,7 @@ export default function ClinicPage() {
       <BreadcrumbsSchema
         items={[
           { name: "Home", item: "/" },
-          { name: "Clinic", item: "/en/clinic" },
+          { name: "Clínica AM", item: "/en/clinic" },
         ]}
       />
       <Navbar />
@@ -40,10 +40,10 @@ export default function ClinicPage() {
       <section className="relative min-h-[70vh] flex items-center justify-center pt-32 pb-20 px-6 border-b border-oro/10 bg-gradient-to-b from-carbon to-carbon-soft">
         <div className="max-w-5xl mx-auto text-center z-10">
           <span className="text-oro uppercase tracking-[0.4em] text-xs block mb-6 animate-fade-in">
-            AM Estética Dental · Puerto Madero
+            Clínica AM · Puerto Madero
           </span>
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-light text-crema leading-tight mb-8">
-            A clinical oasis in the<br />
+            Clínica AM, an oasis in the<br />
             <span className="font-cormorant italic text-oro">heart of Puerto Madero.</span>
           </h1>
           <p className="text-crema/60 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mb-10">
