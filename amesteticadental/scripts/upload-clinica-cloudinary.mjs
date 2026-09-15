@@ -35,10 +35,11 @@ cloudinary.config({
   secure: true
 });
 
-// 2. Ruta de origen de las fotos en el disco D
-const SOURCE_DIR = 'D:\\FOTOS\\consultorio-am-estetica-dental-puerto-madero-oficina-101';
+// 2. Origen: el espejo dentro del repo (public/images/clinica), que replica
+//    /Documents/Proyectos Antigravity/FOTOS/consultorio-am-estetica-dental-puerto-madero-oficina-101
+const SOURCE_DIR = path.resolve('public/images/clinica');
 
-// 3. Selección filtrada de las 8 mejores fotos (evitando duplicidad/similitud)
+// 3. Selección curada de fotos de la clínica (evitando duplicidad/similitud)
 const SELECTED_PHOTOS = [
   // --- EXTERIORES ---
   'entrada-clinica-cartel-iluminado-am-estetica-dental-puerto-madero.jpg',
@@ -50,7 +51,11 @@ const SELECTED_PHOTOS = [
   'decoracion-recepcion-boutique-crema-oro-am-estetica-dental.jpg',
   'sala-de-espera-exclusiva-boutique-puerto-madero.jpg',
   'sillon-relax-confort-sala-espera-clinica-dental.jpg',
-  'recepcion-experiencia-digital-pacientes-am-estetica-dental.jpg'
+  'recepcion-experiencia-digital-pacientes-am-estetica-dental.jpg',
+
+  // --- SALA DE REUNIONES / PLANIFICACIÓN DIGITAL ---
+  'sala-reuniones-diseno-sonrisa-digital-am-estetica-dental-puerto-madero.jpg',
+  'sala-reuniones-escaneo-intraoral-am-estetica-dental-puerto-madero.jpg'
 ];
 
 async function uploadPhotos() {

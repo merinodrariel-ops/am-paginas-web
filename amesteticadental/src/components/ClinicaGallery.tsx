@@ -52,6 +52,23 @@ const FOTOS_INTERIORES = [
   }
 ];
 
+const FOTOS_SALA_REUNIONES = [
+  {
+    src: getImgSrc("sala-reuniones-diseno-sonrisa-digital-am-estetica-dental-puerto-madero.jpg"),
+    alt: "Sala de reuniones de AM Estética Dental en Puerto Madero con pantallas de diseño de sonrisa digital y ventanal al barrio",
+    title: "Sala de Reuniones y Diseño Digital",
+    altEn: "AM Estética Dental meeting room in Puerto Madero with digital smile design screens and a window onto the neighbourhood",
+    titleEn: "Meeting Room & Digital Design",
+  },
+  {
+    src: getImgSrc("sala-reuniones-escaneo-intraoral-am-estetica-dental-puerto-madero.jpg"),
+    alt: "Mesa de planificación de la sala de reuniones con el escaneo intraoral del paciente en pantalla y vista al área técnica de la clínica",
+    title: "Planificación sobre el Escaneo Intraoral",
+    altEn: "Meeting room planning table with the patient's intraoral scan on screen and a view of the clinic's technical area",
+    titleEn: "Planning on the Intraoral Scan",
+  }
+];
+
 const FOTOS_EXTERIORES = [
   {
     src: getImgSrc("entrada-clinica-cartel-iluminado-am-estetica-dental-puerto-madero.jpg"),
@@ -76,18 +93,21 @@ const FOTOS_EXTERIORES = [
   }
 ];
 
-const ALL_PHOTOS = [...FOTOS_INTERIORES, ...FOTOS_EXTERIORES];
+const ALL_PHOTOS = [...FOTOS_INTERIORES, ...FOTOS_SALA_REUNIONES, ...FOTOS_EXTERIORES];
 
 const UI = {
   es: {
     interiorTitleA: "La Recepción y ",
     interiorTitleB: "Sala de Espera Boutique",
     interiorSub: "Atmósfera de confort crema & oro · 5 tomas de interior",
+    reunionesTitleA: "La Sala de Reuniones y ",
+    reunionesTitleB: "Planificación Digital",
+    reunionesSub: "Donde ves tu sonrisa antes de empezar · 2 tomas",
     exteriorTitleA: "El Acceso Exterior y ",
     exteriorTitleB: "Cartel Oficial de AM",
     exteriorSub: "Lo que encontrás al llegar · 3 tomas de exterior",
     viewDetail: "Ver en detalle",
-    lightboxEyebrow: "{t.lightboxEyebrow}",
+    lightboxEyebrow: "Galería de la Clínica · AM Estética Dental",
     close: "Cerrar",
     prev: "Foto anterior",
     next: "Siguiente foto",
@@ -96,6 +116,9 @@ const UI = {
     interiorTitleA: "The Reception & ",
     interiorTitleB: "Boutique Waiting Lounge",
     interiorSub: "Cream & gold comfort atmosphere · 5 interior shots",
+    reunionesTitleA: "The Meeting Room & ",
+    reunionesTitleB: "Digital Planning",
+    reunionesSub: "Where you see your smile before we start · 2 shots",
     exteriorTitleA: "The Entrance & ",
     exteriorTitleB: "Official AM Sign",
     exteriorSub: "What you'll find on arrival · 3 exterior shots",
@@ -110,6 +133,49 @@ const UI = {
 type Foto = (typeof ALL_PHOTOS)[number];
 const fotoText = (f: Foto, lang: "es" | "en") =>
   lang === "en" ? { alt: f.altEn, title: f.titleEn } : { alt: f.alt, title: f.title };
+
+function PhotoGrid({
+  fotos,
+  lang,
+  viewDetail,
+  onOpen,
+  className = "",
+}: {
+  fotos: readonly Foto[];
+  lang: "es" | "en";
+  viewDetail: string;
+  onOpen: (src: string) => void;
+  className?: string;
+}) {
+  return (
+    <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${className}`}>
+      {fotos.map((foto) => (
+        <div
+          key={foto.src}
+          onClick={() => onOpen(foto.src)}
+          className="relative h-80 rounded-2xl overflow-hidden border border-oro/10 group bg-carbon cursor-pointer"
+        >
+          <Image
+            src={foto.src}
+            alt={fotoText(foto, lang).alt}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-carbon/90 via-carbon/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <div>
+              <span className="text-oro font-cormorant italic text-sm block mb-1">AM Estética Dental</span>
+              <h4 className="text-crema font-medium text-base leading-tight mb-2">{fotoText(foto, lang).title}</h4>
+              <span className="inline-flex items-center gap-1.5 text-xs text-oro border-b border-oro/35 pb-0.5">
+                {viewDetail}
+              </span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function ClinicaGallery({ lang = "es" }: { lang?: "es" | "en" }) {
   const t = UI[lang];
@@ -168,32 +234,31 @@ export default function ClinicaGallery({ lang = "es" }: { lang?: "es" | "en" }) 
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-        {FOTOS_INTERIORES.map((foto) => (
-          <div
-            key={foto.src}
-            onClick={() => handleOpenLightbox(foto.src)}
-            className="relative h-80 rounded-2xl overflow-hidden border border-oro/10 group bg-carbon cursor-pointer"
-          >
-            <Image
-              src={foto.src}
-              alt={fotoText(foto, lang).alt}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-carbon/90 via-carbon/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-              <div>
-                <span className="text-oro font-cormorant italic text-sm block mb-1">AM Estética Dental</span>
-                <h4 className="text-crema font-medium text-base leading-tight mb-2">{fotoText(foto, lang).title}</h4>
-                <span className="inline-flex items-center gap-1.5 text-xs text-oro border-b border-oro/35 pb-0.5">
-                  {t.viewDetail}
-                </span>
-              </div>
-            </div>
-          </div>
-        ))}
+      <PhotoGrid
+        fotos={FOTOS_INTERIORES}
+        lang={lang}
+        viewDetail={t.viewDetail}
+        onOpen={handleOpenLightbox}
+        className="mb-20"
+      />
+
+      {/* ── SECCIÓN SALA DE REUNIONES ── */}
+      <div className="mb-8 border-b border-oro/10 pb-4">
+        <h3 className="text-2xl font-light text-crema">
+          {t.reunionesTitleA}<span className="font-cormorant italic text-oro">{t.reunionesTitleB}</span>
+        </h3>
+        <p className="text-crema/40 text-xs mt-1 uppercase tracking-widest">
+          {t.reunionesSub}
+        </p>
       </div>
+
+      <PhotoGrid
+        fotos={FOTOS_SALA_REUNIONES}
+        lang={lang}
+        viewDetail={t.viewDetail}
+        onOpen={handleOpenLightbox}
+        className="mb-20"
+      />
 
       {/* ── SECCIÓN EXTERIORES ── */}
       <div className="mb-8 border-b border-oro/10 pb-4">
@@ -205,32 +270,13 @@ export default function ClinicaGallery({ lang = "es" }: { lang?: "es" | "en" }) 
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {FOTOS_EXTERIORES.map((foto) => (
-          <div
-            key={foto.src}
-            onClick={() => handleOpenLightbox(foto.src)}
-            className="relative h-80 rounded-2xl overflow-hidden border border-oro/10 group bg-carbon cursor-pointer"
-          >
-            <Image
-              src={foto.src}
-              alt={fotoText(foto, lang).alt}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-carbon/90 via-carbon/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-              <div>
-                <span className="text-oro font-cormorant italic text-sm block mb-1">AM Estética Dental</span>
-                <h4 className="text-crema font-medium text-base leading-tight mb-2">{fotoText(foto, lang).title}</h4>
-                <span className="inline-flex items-center gap-1.5 text-xs text-oro border-b border-oro/35 pb-0.5">
-                  {t.viewDetail}
-                </span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <PhotoGrid
+        fotos={FOTOS_EXTERIORES}
+        lang={lang}
+        viewDetail={t.viewDetail}
+        onOpen={handleOpenLightbox}
+        className=""
+      />
 
       {/* ── LIGHTBOX ── */}
       {activeIdx !== null && (
