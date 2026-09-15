@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import { autorSchema } from "../../components/Firma";
 
 const CANONICAL = "https://www.thedentalreview.com/casos/gingivectomia-laser-micro-diseno-sonrisa-resina";
 const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-resina-caries";
@@ -27,7 +28,7 @@ const schema = {
   headline: "El equilibrio invisible: cuando una sonrisa empieza en la encía",
   description:
     "Análisis de la combinación de gingivectomía láser y micro diseño de sonrisa en resina como técnica de armonización estética de márgenes gingivales y bordes incisales.",
-  author: { "@type": "Organization", name: "Redacción The Dental Review", url: "https://www.thedentalreview.com" },
+  author: autorSchema,
   publisher: { "@type": "Organization", name: "The Dental Review", url: "https://www.thedentalreview.com" },
   about: { "@type": "MedicalProcedure", name: "Gingivectomía láser y micro diseño de sonrisa en resina" },
   inLanguage: "es-AR",
@@ -90,7 +91,7 @@ export default function ArticuloGingivectomia() {
           {/* Autoría */}
           <div style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", borderBottom: "1px solid var(--paper-dim, #e8e4da)", padding: "16px 0", marginBottom: 40, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
             <div>
-              <div style={{ fontSize: 12, color: "var(--ink, #0e0e0e)", fontWeight: 500 }}>Redacción TDR</div>
+              <div style={{ fontSize: 12, color: "var(--ink, #0e0e0e)", fontWeight: 500 }}>Dr. Ariel Merino · MN 34.869</div>
               <div style={{ fontSize: 11, color: "var(--muted, #6b6560)" }}>Caso clínico: Dr. Ariel Merino · AM Estética Dental</div>
             </div>
             <Link href="https://www.amesteticadental.com/casos/gingivectomia-laser-micro-diseno-sonrisa-resinas" target="_blank" style={{ fontSize: 11, color: "var(--gold, #b8954a)", textDecoration: "none", letterSpacing: "0.1em", border: "1px solid var(--gold, #b8954a)", padding: "6px 12px", borderRadius: 2 }}>

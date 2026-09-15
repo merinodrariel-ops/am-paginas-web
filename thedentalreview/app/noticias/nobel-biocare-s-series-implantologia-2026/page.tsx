@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import Firma, { autorSchema } from "../../components/Firma";
 
 const CANONICAL = "https://www.thedentalreview.com/noticias/nobel-biocare-s-series-implantologia-2026";
 
@@ -25,7 +26,7 @@ const schema = {
   headline: "Nobel Biocare S Series: una nueva era en diseño de implantes",
   description:
     "Análisis de la plataforma S Series de Nobel Biocare y su impacto en la implantología moderna de alto nivel.",
-  author: { "@type": "Organization", name: "Redacción The Dental Review", url: "https://www.thedentalreview.com" },
+  author: autorSchema,
   publisher: { "@type": "Organization", name: "The Dental Review", url: "https://www.thedentalreview.com" },
   datePublished: "2026-08-01",
   inLanguage: "es-AR",
@@ -79,12 +80,7 @@ export default function ArticuloNobelSeries() {
           </p>
 
           {/* Autoría */}
-          <div style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", borderBottom: "1px solid var(--paper-dim, #e8e4da)", padding: "16px 0", marginBottom: 40, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
-            <div>
-              <div style={{ fontSize: 12, color: "var(--ink, #0e0e0e)", fontWeight: 500 }}>Redacción TDR</div>
-              <div style={{ fontSize: 11, color: "var(--muted, #6b6560)" }}>Implantología · Innovación tecnológica</div>
-            </div>
-          </div>
+          <Firma seccion={"Implantología · Innovación tecnológica"} />
 
           {/* Cuerpo */}
           {p(<>En implantología moderna, la simplificación es estrategia. Cuantas menos variables tenga un sistema, menor margen existe para el error clínico y mayor previsibilidad alcanza el profesional en la planificación y ejecución. Bajo ese principio, Nobel Biocare lanzó en marzo de 2026 su plataforma S Series, un ecosistema de implantes unificado bajo una sola conexión protésica que busca revolucionar la manera en que se practican las rehabilitaciones implantológicas en clínicas de alto nivel.</>)}

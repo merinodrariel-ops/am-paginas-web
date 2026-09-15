@@ -28,7 +28,7 @@ const ARTICULOS: Articulo[] = [
     titulo: "Inteligencia Artificial en Diagnóstico Odontológico: Mayor Precisión en Detección",
     subtitulo:
       "Sistemas de IA asisten a clínicos en la detección de patología dental con un 37% más de precisión. Nuevas aplicaciones emergentes transforman el diagnóstico y la planificación del tratamiento.",
-    autor: "Redacción TDR",
+    autor: "Dr. Ariel Merino",
     fecha: "Agosto 2026",
     portada:
       "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/diseno-sonrisa-diastemas/fragmentos-ceramicos-lentes-contacto-dental-dedo-escala-carillas-am-dr-ariel-merino-am-estetica-dental",
@@ -41,7 +41,7 @@ const ARTICULOS: Articulo[] = [
     titulo: "Implantes de Cerámica sin Metal: La Alternativa Biocompatible",
     subtitulo:
       "Óxido de zirconio consolidó su posición en 2026 como alternativa estética y biológicamente superior. Biocompatibilidad, menor placa bacteriana y excelente integración ósea.",
-    autor: "Redacción TDR",
+    autor: "Dr. Ariel Merino",
     fecha: "Agosto 2026",
     portada:
       "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires",
@@ -54,7 +54,7 @@ const ARTICULOS: Articulo[] = [
     titulo: "Cada vez se lima menos: el auge de las carillas ultrafinas en 2026",
     subtitulo:
       "La odontología aditiva y la resina impresa en 3D empujan el límite de lo conservador. La pregunta ya no es cuánto se puede modificar un diente, sino cuán poco es necesario tocarlo.",
-    autor: "Redacción TDR",
+    autor: "Dr. Ariel Merino",
     fecha: "Julio 2026",
     portada:
       "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/diseno-sonrisa-diastemas/fragmentos-ceramicos-lentes-contacto-dental-dedo-escala-carillas-am-dr-ariel-merino-am-estetica-dental",
@@ -67,7 +67,7 @@ const ARTICULOS: Articulo[] = [
     titulo: "El implante dental se vuelve digital: un mercado rumbo a los US$ 12.600 millones",
     subtitulo:
       "Un informe proyecta el mercado global de implantes en US$ 12.600 millones hacia 2032. La odontología digital, la IA y la impresión 3D redefinen la planificación.",
-    autor: "Redacción TDR",
+    autor: "Dr. Ariel Merino",
     fecha: "Julio 2026",
     portada:
       "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires",
@@ -80,7 +80,7 @@ const ARTICULOS: Articulo[] = [
     titulo: "Nobel Biocare S Series: una nueva era en diseño de implantes",
     subtitulo:
       "La plataforma unificada de implantes lanzada en marzo de 2026 simplifica la implantología mediante una única conexión protésica que reduce complejidad operativa y mejora predictibilidad.",
-    autor: "Redacción TDR",
+    autor: "Dr. Ariel Merino",
     fecha: "Agosto 2026",
     portada:
       "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires",
@@ -93,7 +93,7 @@ const ARTICULOS: Articulo[] = [
     titulo: "IA y Diseño Digital de Sonrisa: cuando la máquina elige mejor que el experto",
     subtitulo:
       "Estudios 2025-2026 demuestran que inteligencia artificial supera a diseñadores expertos. Pacientes prefieren diseños generados por IA en 69,7% de los casos.",
-    autor: "Redacción TDR",
+    autor: "Dr. Ariel Merino",
     fecha: "Agosto 2026",
     portada:
       "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,g_face,q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires",
@@ -105,7 +105,7 @@ const ARTICULOS: Articulo[] = [
     titulo: "El equilibrio invisible: cuando una sonrisa empieza en la encía",
     subtitulo:
       "Gingivectomía láser y micro diseño de sonrisa en resina. La estética no se juega solo en los dientes, sino en la relación entre la encía y el borde incisal. Un caso documentado en Puerto Madero.",
-    autor: "Redacción TDR",
+    autor: "Dr. Ariel Merino",
     fecha: "Julio 2026",
     portada:
       "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,g_face,q_auto,f_auto/casos/carillas-resina-caries/transformacion-extrema-caries-carillas-resina-gingivectomia-laser-antes-despues-rostro-labios-portada-dr-ariel-merino-am-estetica-dental-buenos-aires",
@@ -117,7 +117,7 @@ const ARTICULOS: Articulo[] = [
     titulo: "Straumann vs. Neodent: ¿Cuáles son las diferencias reales entre los dos líderes en implantes dentales?",
     subtitulo:
       "Ambos sistemas pertenecen al mismo grupo suizo y representan la elite de la implantología digital de titanio. Analizamos qué los separa en términos de predictibilidad y costo.",
-    autor: "Redacción TDR",
+    autor: "Dr. Ariel Merino",
     fecha: "Julio 2026",
     portada:
       "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires",
@@ -130,7 +130,7 @@ const ARTICULOS: Articulo[] = [
     titulo: "Expodent 2026 en La Rural: el Dr. Ariel Merino y la inteligencia artificial aplicada al diseño de sonrisa",
     subtitulo:
       "La presentación del Dr. Ariel Merino combinó planificación digital, experiencia clínica y una lectura concreta del rol de la IA en odontología estética.",
-    autor: "Redacción TDR",
+    autor: "Dr. Ariel Merino",
     fecha: "Junio 2026",
     portada:
       "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/expodent-2026/expodent-2026-dr-ariel-merino-charla-ia-odontologia-portada.jpg",
@@ -141,7 +141,7 @@ const ARTICULOS: Articulo[] = [
     categoria: "Tecnología Clínicas",
     titulo: "Odontólogo argentino usa inteligencia artificial para simular una sonrisa antes del tratamiento",
     subtitulo: "La herramienta permite generar una referencia visual inicial. Su utilidad no está en prometer un resultado, sino en abrir una conversación más concreta antes de la evaluación clínica.",
-    autor: "Redacción TDR",
+    autor: "Dr. Ariel Merino",
     fecha: "Junio 2026",
     portada: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,g_face,q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires",
     portadaAlt: "Antes y después de un caso de diseño de sonrisa documentado",
@@ -151,7 +151,7 @@ const ARTICULOS: Articulo[] = [
     categoria: "Tecnología Clínica",
     titulo: "IA y diseño de sonrisa: qué cambió y qué sigue dependiendo del odontólogo",
     subtitulo: "Dos años después de la nota de Forbes sobre IA aplicada a carillas, revisamos qué aporta la tecnología, dónde falla y por qué el diagnóstico clínico no se automatiza.",
-    autor: "Redacción TDR",
+    autor: "Dr. Ariel Merino",
     fecha: "Junio 2026",
     portada: "/images/diseno-digital-sonrisa/analisis-facial-diseno-sonrisa-digital-am.jpeg",
     portadaAlt: "Análisis facial digital para diseño de sonrisa con líneas guía",
@@ -161,7 +161,7 @@ const ARTICULOS: Articulo[] = [
     categoria: "Caso Clínico",
     titulo: "El caso que se viralizó antes de que existiera Instagram",
     subtitulo: "Diseño de sonrisa con cierre de diastemas y dientes conoidos. Primero en YouTube. Reconocido por profesores de odontología de todo el mundo.",
-    autor: "Redacción TDR",
+    autor: "Dr. Ariel Merino",
     fecha: "Abril 2026",
     portada: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,g_face,q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires",
     portadaAlt: "Diseño de sonrisa con cierre de diastemas antes y después — Dr. Ariel Merino AM Estética Dental",

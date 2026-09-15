@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import { autorSchema } from "../../components/Firma";
 
 const CANONICAL = "https://www.thedentalreview.com/conferencias/expodent-2026-dr-ariel-merino-inteligencia-artificial-diseno-sonrisa";
 const COVER = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/expodent-2026/expodent-2026-dr-ariel-merino-charla-ia-odontologia-portada.jpg";
@@ -30,7 +31,7 @@ const articleSchema = {
   dateModified: "2026-07-17T12:00:00-03:00",
   image: [COVER],
   mainEntityOfPage: CANONICAL,
-  author: { "@type": "Organization", name: "Redacción TDR", url: "https://www.thedentalreview.com/acerca-de" },
+  author: autorSchema,
   publisher: { "@type": "Organization", "@id": "https://www.thedentalreview.com/#publisher", name: "The Dental Review" },
   about: { "@type": "Person", "@id": "https://www.arielmerino.com/#person", name: "Dr. Ariel Merino" },
 };
@@ -58,7 +59,7 @@ export default function ExpodentArticle() {
           <p style={{ color: "var(--muted)", fontSize: 19, lineHeight: 1.7, marginBottom: 24 }}>
             En Expodent 2026, el Dr. Ariel Merino presentó una lectura práctica de la IA aplicada a odontología estética: útil para visualizar y comunicar, insuficiente para reemplazar el diagnóstico.
           </p>
-          <p style={{ fontSize: 12, color: "var(--muted)", letterSpacing: "0.1em", marginBottom: 40 }}>Por Redacción TDR · 16 de junio de 2026 · Buenos Aires</p>
+          <p style={{ fontSize: 12, color: "var(--muted)", letterSpacing: "0.1em", marginBottom: 40 }}>Por Dr. Ariel Merino · MN 34.869 · 16 de junio de 2026 · Buenos Aires</p>
 
           <div style={{ position: "relative", aspectRatio: "3/2", margin: "0 0 48px", overflow: "hidden" }}>
             <Image src={COVER} alt="Dr. Ariel Merino durante su charla sobre inteligencia artificial aplicada a odontología en Expodent 2026" fill priority sizes="(max-width: 800px) 100vw, 760px" style={{ objectFit: "cover" }} />

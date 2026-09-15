@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import Firma, { autorSchema } from "../../components/Firma";
 
 const CANONICAL = "https://www.thedentalreview.com/noticias/carillas-ultrafinas-additive-dentistry-2026";
 const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-diastemas";
@@ -29,7 +30,7 @@ const schema = {
   description:
     "Análisis de la odontología aditiva y las carillas ultrafinas de 0,1 a 0,2 mm, incluida la resina impresa en 3D, como tendencia dominante de la estética dental en 2026.",
   image: [OG_IMAGE, `${CDN}/fragmentos-ceramicos-lentes-contacto-dental-02mm-carillas-am-dr-ariel-merino-am-estetica-dental-buenos-aires`],
-  author: { "@type": "Organization", name: "Redacción The Dental Review", url: "https://www.thedentalreview.com" },
+  author: autorSchema,
   publisher: { "@type": "Organization", name: "The Dental Review", url: "https://www.thedentalreview.com" },
   about: { "@type": "MedicalProcedure", name: "Carillas ultrafinas y odontología aditiva mínimamente invasiva" },
   inLanguage: "es-AR",
@@ -92,10 +93,8 @@ export default function NotaCarillasUltrafinas() {
             La odontología aditiva y la resina impresa en 3D empujan el límite de lo conservador. La pregunta ya no es cuánto se puede modificar un diente, sino cuán poco es necesario tocarlo.
           </p>
 
-          <div style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", borderBottom: "1px solid var(--paper-dim, #e8e4da)", padding: "16px 0", marginBottom: 40 }}>
-            <div style={{ fontSize: 12, color: "var(--ink, #0e0e0e)", fontWeight: 500 }}>Redacción TDR</div>
-            <div style={{ fontSize: 11, color: "var(--muted, #6b6560)" }}>Actualidad · Estética dental mínimamente invasiva</div>
-          </div>
+          {/* Autoría */}
+          <Firma seccion={"Actualidad · Estética dental mínimamente invasiva"} />
 
           <div style={{ position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 2, marginBottom: 12 }}>
             <Image src={FOTOS[0].src} alt={FOTOS[0].alt} fill sizes="(max-width: 768px) 100vw, 720px" style={{ objectFit: "cover" }} priority />

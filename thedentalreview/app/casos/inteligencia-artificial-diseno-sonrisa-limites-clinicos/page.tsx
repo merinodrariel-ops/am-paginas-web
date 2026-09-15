@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import { autorSchema } from "../../components/Firma";
 
 const CANONICAL = "https://www.thedentalreview.com/casos/inteligencia-artificial-diseno-sonrisa-limites-clinicos";
 const AM_URL = "https://www.amesteticadental.com/diseno-de-sonrisa";
@@ -50,7 +51,7 @@ const articleSchema = {
     "Revisión de los usos actuales y límites clínicos de la inteligencia artificial aplicada al diseño de sonrisa.",
   datePublished: "2026-06-07",
   dateModified: "2026-06-07",
-  author: { "@type": "Organization", name: "Redacción The Dental Review" },
+  author: autorSchema,
   reviewedBy: {
     "@type": "Person",
     name: "Dr. Ariel Merino",
@@ -143,8 +144,8 @@ export default function InteligenciaArtificialDisenoSonrisaPage() {
 
         <div style={{ borderBottom: "1px solid var(--paper-dim, #e8e4da)", borderTop: "1px solid var(--paper-dim, #e8e4da)", display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "space-between", marginBottom: 40, padding: "16px 0" }}>
           <div>
-            <div style={{ fontSize: 12, fontWeight: 500 }}>Redacción TDR</div>
-            <div style={{ color: "var(--muted, #6b6560)", fontSize: 11 }}>Revisión clínica: Dr. Ariel Merino</div>
+            <div style={{ fontSize: 12, fontWeight: 500 }}>Dr. Ariel Merino · MN 34.869</div>
+            <div style={{ color: "var(--muted, #6b6560)", fontSize: 11 }}>Caso clínico documentado en AM Estética Dental</div>
           </div>
           <Link href={FORBES_URL} target="_blank" rel="noopener noreferrer" style={{ color: "var(--gold, #b8954a)", fontSize: 11, textDecoration: "none" }}>
             Antecedente publicado por Forbes Argentina →

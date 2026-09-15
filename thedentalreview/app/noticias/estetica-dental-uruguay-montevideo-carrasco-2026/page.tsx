@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import Firma, { autorSchema } from "../../components/Firma";
 
 const CANONICAL = "https://www.thedentalreview.com/noticias/estetica-dental-uruguay-montevideo-carrasco-2026";
 
@@ -24,7 +25,7 @@ const schema = {
   headline: "Montevideo entra al mapa de la estética dental premium",
   description:
     "Análisis del corredor odontológico entre Uruguay y Argentina y de la llegada de clínicas de estética dental a la zona de Carrasco.",
-  author: { "@type": "Organization", name: "Redacción The Dental Review", url: "https://www.thedentalreview.com" },
+  author: autorSchema,
   publisher: { "@type": "Organization", name: "The Dental Review", url: "https://www.thedentalreview.com" },
   datePublished: "2026-08-12",
   inLanguage: "es",
@@ -76,12 +77,8 @@ export default function ArticuloUruguayCarrasco() {
             que parece y más sobre logística clínica.
           </p>
 
-          <div style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", borderBottom: "1px solid var(--paper-dim, #e8e4da)", padding: "16px 0", marginBottom: 40, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
-            <div>
-              <div style={{ fontSize: 12, color: "var(--ink, #0e0e0e)", fontWeight: 500 }}>Redacción TDR</div>
-              <div style={{ fontSize: 11, color: "var(--muted, #6b6560)" }}>Mercado · Región rioplatense</div>
-            </div>
-          </div>
+          {/* Autoría */}
+          <Firma seccion={"Mercado · Región rioplatense"} />
 
           {p(<>Montevideo y Buenos Aires están separadas por poco más de doscientos kilómetros de agua y menos de una hora de vuelo. Esa geografía convirtió al Río de la Plata, desde hace décadas, en un corredor natural para servicios profesionales de alta complejidad, y la odontología estética no fue la excepción. Lo que cambió en los últimos años no es el flujo, sino su explicación.</>)}
 

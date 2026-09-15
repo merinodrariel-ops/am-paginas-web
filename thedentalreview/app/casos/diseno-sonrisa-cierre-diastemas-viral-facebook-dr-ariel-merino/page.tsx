@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import { autorSchema } from "../../components/Firma";
 
 const CANONICAL = "https://www.thedentalreview.com/casos/diseno-sonrisa-cierre-diastemas-viral-facebook-dr-ariel-merino";
 const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-diastemas";
@@ -24,7 +25,7 @@ const schema = {
   "@type": "Article",
   headline: "El caso viral de diseño de sonrisa con cierre de diastemas — Dr. Ariel Merino",
   description: "Análisis del caso histórico de diastemas y dientes conoidos del Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
-  author: { "@type": "Person", name: "Dr. Ariel Merino", url: "https://www.arielmerino.com" },
+  author: autorSchema,
   publisher: { "@type": "Organization", name: "The Dental Review", url: "https://www.thedentalreview.com" },
   about: { "@type": "MedicalProcedure", name: "Diseño de sonrisa con carillas cerámicas y cierre de diastemas" },
   inLanguage: "es-AR",
@@ -86,8 +87,8 @@ export default function ArticuloDiastemas() {
           {/* Autoría */}
           <div style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", borderBottom: "1px solid var(--paper-dim, #e8e4da)", padding: "16px 0", marginBottom: 40, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
             <div>
-              <div style={{ fontSize: 12, color: "var(--ink, #0e0e0e)", fontWeight: 500 }}>Redacción TDR</div>
-              <div style={{ fontSize: 11, color: "var(--muted, #6b6560)" }}>Revisión clínica: Dr. Ariel Merino</div>
+              <div style={{ fontSize: 12, color: "var(--ink, #0e0e0e)", fontWeight: 500 }}>Dr. Ariel Merino · MN 34.869</div>
+              <div style={{ fontSize: 11, color: "var(--muted, #6b6560)" }}>Caso clínico documentado en AM Estética Dental</div>
             </div>
             <Link href="https://www.amesteticadental.com/casos/diseno-sonrisa-cierre-diastemas-dientes-conoidos" target="_blank" style={{ fontSize: 11, color: "var(--gold, #b8954a)", textDecoration: "none", letterSpacing: "0.1em", border: "1px solid var(--gold, #b8954a)", padding: "6px 12px", borderRadius: 2 }}>
               Ver caso completo →

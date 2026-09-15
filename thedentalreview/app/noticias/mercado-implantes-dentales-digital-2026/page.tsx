@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import Firma, { autorSchema } from "../../components/Firma";
 
 const CANONICAL = "https://www.thedentalreview.com/noticias/mercado-implantes-dentales-digital-2026";
 const OG_IMAGE = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires";
@@ -28,7 +29,7 @@ const schema = {
   description:
     "Análisis del crecimiento del mercado global de implantes dentales impulsado por la odontología digital, el diagnóstico con inteligencia artificial y la impresión 3D.",
   image: [OG_IMAGE],
-  author: { "@type": "Organization", name: "Redacción The Dental Review", url: "https://www.thedentalreview.com" },
+  author: autorSchema,
   publisher: { "@type": "Organization", name: "The Dental Review", url: "https://www.thedentalreview.com" },
   about: { "@type": "MedicalProcedure", name: "Implantología dental digital" },
   inLanguage: "es-AR",
@@ -78,10 +79,8 @@ export default function NotaMercadoImplantes() {
             La expansión del mercado global de implantes no responde solo a una mayor demanda, sino a un cambio profundo en cómo se planifican y ejecutan los tratamientos.
           </p>
 
-          <div style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", borderBottom: "1px solid var(--paper-dim, #e8e4da)", padding: "16px 0", marginBottom: 40 }}>
-            <div style={{ fontSize: 12, color: "var(--ink, #0e0e0e)", fontWeight: 500 }}>Redacción TDR</div>
-            <div style={{ fontSize: 11, color: "var(--muted, #6b6560)" }}>Actualidad · Implantología digital</div>
-          </div>
+          {/* Autoría */}
+          <Firma seccion={"Actualidad · Implantología digital"} />
 
           <div style={{ position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 2, marginBottom: 12 }}>
             <Image src={OG_IMAGE} alt="Rehabilitación completa con implantes dentales — vista intraoral, AM Estética Dental, Puerto Madero, Buenos Aires" fill sizes="(max-width: 768px) 100vw, 720px" style={{ objectFit: "cover" }} priority />

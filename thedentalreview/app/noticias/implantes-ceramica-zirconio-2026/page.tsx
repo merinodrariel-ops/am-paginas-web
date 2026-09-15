@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import Firma, { autorSchema } from "../../components/Firma";
 
 const CANONICAL = "https://www.thedentalreview.com/noticias/implantes-ceramica-zirconio-2026";
 
@@ -24,7 +25,7 @@ const schema = {
   headline: "Implantes de Cerámica sin Metal: La Alternativa Biocompatible que Gana Tracción en 2026",
   description:
     "Análisis de implantes de óxido de zirconio como alternativa estética y biocompatible a los implantes de titanio convencionales. Propiedades clínicas, ventajas y consideraciones para el paciente premium.",
-  author: { "@type": "Organization", name: "Redacción The Dental Review", url: "https://www.thedentalreview.com" },
+  author: autorSchema,
   publisher: { "@type": "Organization", name: "The Dental Review", url: "https://www.thedentalreview.com" },
   about: { "@type": "MedicalProcedure", name: "Implantes dentales de óxido de zirconio" },
   inLanguage: "es-AR",
@@ -80,12 +81,7 @@ export default function NoticiaImplantesZirconio() {
           </p>
 
           {/* Autoría */}
-          <div style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", borderBottom: "1px solid var(--paper-dim, #e8e4da)", padding: "16px 0", marginBottom: 40, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
-            <div>
-              <div style={{ fontSize: 12, color: "var(--ink, #0e0e0e)", fontWeight: 500 }}>Redacción TDR</div>
-              <div style={{ fontSize: 11, color: "var(--muted, #6b6560)" }}>Análisis de tendencias en implantología 2026</div>
-            </div>
-          </div>
+          <Firma seccion={"Análisis de tendencias en implantología 2026"} />
 
           {/* Contenido */}
           {p(

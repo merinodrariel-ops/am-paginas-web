@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import Firma, { autorSchema } from "../../components/Firma";
 
 const CANONICAL = "https://www.thedentalreview.com/noticias/ia-diagnostico-odontologico";
 
@@ -24,7 +25,7 @@ const schema = {
   headline: "Inteligencia Artificial en Diagnóstico Odontológico: Mayor Precisión en Detección de Patología",
   description:
     "Análisis de cómo la inteligencia artificial transforma el diagnóstico odontológico a través del análisis automatizado de radiografías, tomografías y escaneos, mejorando la detección de caries, pérdida ósea y otras patologías.",
-  author: { "@type": "Organization", name: "Redacción The Dental Review", url: "https://www.thedentalreview.com" },
+  author: autorSchema,
   publisher: { "@type": "Organization", name: "The Dental Review", url: "https://www.thedentalreview.com" },
   about: { "@type": "MedicalProcedure", name: "Diagnóstico asistido por inteligencia artificial en odontología" },
   inLanguage: "es-AR",
@@ -80,12 +81,7 @@ export default function NoticiaDiagnosticoIA() {
           </p>
 
           {/* Autoría */}
-          <div style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", borderBottom: "1px solid var(--paper-dim, #e8e4da)", padding: "16px 0", marginBottom: 40, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
-            <div>
-              <div style={{ fontSize: 12, color: "var(--ink, #0e0e0e)", fontWeight: 500 }}>Redacción TDR</div>
-              <div style={{ fontSize: 11, color: "var(--muted, #6b6560)" }}>Análisis de tendencias en tecnología dental 2026</div>
-            </div>
-          </div>
+          <Firma seccion={"Análisis de tendencias en tecnología dental 2026"} />
 
           {/* Contenido */}
           {p(

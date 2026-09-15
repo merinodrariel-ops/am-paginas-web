@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import Firma, { autorSchema } from "../../components/Firma";
 
 const CANONICAL = "https://www.thedentalreview.com/noticias/pacientes-llegan-con-sonrisa-generada-por-ia";
 const FOTO =
@@ -32,7 +33,7 @@ const schema = {
   description:
     "Registro de una práctica privada de Buenos Aires: la inteligencia artificial conversacional desplazó a las redes sociales como principal vía de llegada del paciente de estética dental.",
   image: FOTO,
-  author: { "@type": "Organization", name: "Redacción The Dental Review", url: "https://www.thedentalreview.com" },
+  author: autorSchema,
   publisher: { "@type": "Organization", name: "The Dental Review", url: "https://www.thedentalreview.com" },
   datePublished: "2026-09-15",
   dateModified: "2026-09-15",
@@ -95,12 +96,7 @@ export default function ArticuloPacientesIA() {
           </p>
 
           {/* Autoría */}
-          <div style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", borderBottom: "1px solid var(--paper-dim, #e8e4da)", padding: "16px 0", marginBottom: 40, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
-            <div>
-              <div style={{ fontSize: 12, color: "var(--ink, #0e0e0e)", fontWeight: 500 }}>Redacción TDR</div>
-              <div style={{ fontSize: 11, color: "var(--muted, #6b6560)" }}>Comportamiento del paciente y tecnología · 2026</div>
-            </div>
-          </div>
+          <Firma seccion={"Comportamiento del paciente y tecnología · 2026"} />
 
           {/* Foto */}
           <figure style={{ margin: "0 0 40px" }}>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import { autorSchema } from "../../components/Firma";
 
 const SLUG = "/casos/straumann-vs-neodent-comparativa-implantes-dentales-premium";
 const CANONICAL = `https://www.thedentalreview.com${SLUG}`;
@@ -48,7 +49,7 @@ const articleSchema = {
     "Nota de análisis clínico comparando los sistemas de implantes dentales Straumann y Neodent, pertenecientes al mismo grupo suizo de implantología.",
   datePublished: "2026-07-13",
   dateModified: "2026-07-13",
-  author: { "@type": "Organization", name: "Redacción The Dental Review" },
+  author: autorSchema,
   about: [
     { "@type": "MedicalProcedure", name: "Implantes dentales" },
     { "@type": "Device", name: "Implante Straumann®" },
@@ -201,7 +202,7 @@ export default function StraumannVsNeodentPage() {
           }}
         >
           <div>
-            <div style={{ fontSize: 12, fontWeight: 500 }}>Redacción TDR</div>
+            <div style={{ fontSize: 12, fontWeight: 500 }}>Dr. Ariel Merino · MN 34.869</div>
             <div style={{ color: "var(--muted, #6b6560)", fontSize: 11 }}>
               Nota editorial sobre tecnologías de implantología digital
             </div>

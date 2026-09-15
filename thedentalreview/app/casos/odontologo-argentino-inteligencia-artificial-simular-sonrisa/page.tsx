@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import { autorSchema } from "../../components/Firma";
 
 const SLUG = "/casos/odontologo-argentino-inteligencia-artificial-simular-sonrisa";
 const CANONICAL = `https://www.thedentalreview.com${SLUG}`;
@@ -54,7 +55,7 @@ const articleSchema = {
     "Nota editorial sobre el uso de inteligencia artificial como herramienta orientativa para simular cambios estéticos de sonrisa antes de una evaluación clínica.",
   datePublished: "2026-06-08",
   dateModified: "2026-06-08",
-  author: { "@type": "Organization", name: "Redacción The Dental Review" },
+  author: autorSchema,
   about: [
     { "@type": "MedicalProcedure", name: "Diseño de sonrisa" },
     { "@type": "SoftwareApplication", name: "Simulador de sonrisa con IA", url: SIMULADOR_URL },
@@ -210,7 +211,7 @@ export default function OdontologoArgentinoIaSimularSonrisaPage() {
           }}
         >
           <div>
-            <div style={{ fontSize: 12, fontWeight: 500 }}>Redacción TDR</div>
+            <div style={{ fontSize: 12, fontWeight: 500 }}>Dr. Ariel Merino · MN 34.869</div>
             <div style={{ color: "var(--muted, #6b6560)", fontSize: 11 }}>
               Nota editorial sobre IA aplicada a odontología estética
             </div>

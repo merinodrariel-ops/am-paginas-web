@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
+import Firma, { autorSchema } from "../../components/Firma";
 
 const CANONICAL = "https://www.thedentalreview.com/noticias/ia-diseno-sonrisa-digital-dsd-2026";
 
@@ -25,7 +26,7 @@ const schema = {
   headline: "IA y Diseño Digital de Sonrisa: cuando la máquina elige mejor que el experto",
   description:
     "Análisis de la integración de inteligencia artificial en diseño digital de sonrisa (DSD) y su impacto en resultados clínicos y satisfacción paciente.",
-  author: { "@type": "Organization", name: "Redacción The Dental Review", url: "https://www.thedentalreview.com" },
+  author: autorSchema,
   publisher: { "@type": "Organization", name: "The Dental Review", url: "https://www.thedentalreview.com" },
   datePublished: "2026-08-01",
   inLanguage: "es-AR",
@@ -79,12 +80,7 @@ export default function ArticuloDSDIA() {
           </p>
 
           {/* Autoría */}
-          <div style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", borderBottom: "1px solid var(--paper-dim, #e8e4da)", padding: "16px 0", marginBottom: 40, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
-            <div>
-              <div style={{ fontSize: 12, color: "var(--ink, #0e0e0e)", fontWeight: 500 }}>Redacción TDR</div>
-              <div style={{ fontSize: 11, color: "var(--muted, #6b6560)" }}>Estética dental · Investigación clínica</div>
-            </div>
-          </div>
+          <Firma seccion={"Estética dental · Investigación clínica"} />
 
           {/* Cuerpo */}
           {p(<>Hace una década, el diseño digital de sonrisa (DSD) era una herramienta de nicho, reservada a clínicas premium con profesionales especialmente entrenados. Hoy, en 2026, el DSD es estándar de facto en la odontología estética de alto nivel. Pero algo fundamental cambió en estos últimos años: ahora no es el dentista quien diseña la sonrisa, sino un algoritmo de inteligencia artificial entrenado en decenas de miles de casos documentados. Y los datos son inequívocos: la máquina gana.</>)}
