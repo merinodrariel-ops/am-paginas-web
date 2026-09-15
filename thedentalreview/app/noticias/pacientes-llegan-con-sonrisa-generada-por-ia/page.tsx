@@ -197,6 +197,9 @@ export default function ArticuloPacientesIA() {
             <p>
               <strong>Fuente:</strong> registro de primeras consultas de una práctica privada de odontología estética en Puerto Madero, Ciudad Autónoma de Buenos Aires, entre marzo y septiembre de 2026, publicado por el Dr. Ariel Merino (MN 34.869) en {a(FUENTE, "arielmerino.com")}. Se trata de una observación de consultorio sobre la respuesta declarada por el paciente: muestra única, sin aleatorización ni análisis estadístico inferencial. Las proporciones no son extrapolables a otras poblaciones ni regiones.
             </p>
+            <p style={{ marginTop: 16 }}>
+              <strong>Declaración de interés:</strong> The Dental Review es editada por el Dr. Ariel Merino, que es además la fuente del registro citado en esta nota. {a("/acerca-de", "Criterios editoriales")}.
+            </p>
           </div>
 
         </main>
