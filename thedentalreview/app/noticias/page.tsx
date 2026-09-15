@@ -71,7 +71,7 @@ const NEWS = [
   },
   {
     href: "/noticias/ia-diseno-sonrisa-digital-dsd-2026",
-    title: "IA y diseño digital de sonrisa: cuando la máquina elige mejor que el experto",
+    title: "IA y diseño digital de sonrisa: cuando el paciente prefiere el diseño de la máquina",
     description: "Hasta dónde llega el algoritmo en la planificación estética y dónde empieza el criterio clínico.",
     image: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/diseno-sonrisa-diastemas/diseno-sonrisa-cierre-diastemas-antes-despues-rostro-portada-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
     alt: "Diseño de sonrisa con cierre de diastemas, antes y después",

@@ -6,14 +6,14 @@ import Firma, { autorSchema } from "../../components/Firma";
 const CANONICAL = "https://www.thedentalreview.com/noticias/ia-diseno-sonrisa-digital-dsd-2026";
 
 export const metadata: Metadata = {
-  title: "IA y Diseño Digital de Sonrisa: cuando la máquina elige mejor que el experto",
+  title: "IA y diseño digital de sonrisa: cuando el paciente prefiere el diseño de la máquina",
   description:
-    "Estudios 2025-2026 demuestran que la inteligencia artificial supera a diseñadores expertos en predicción de estética. Análisis del impacto clínico del DSD asistido por IA.",
+    "Un estudio prospectivo publicado en Dentistry Journal encontró que los pacientes prefirieron el diseño generado por IA en el 69,7% de los casos. Qué dice la evidencia disponible sobre el DSD asistido por inteligencia artificial, y qué todavía no permite afirmar.",
   alternates: { canonical: CANONICAL },
   openGraph: {
-    title: "IA y Diseño Digital de Sonrisa: cuando la máquina elige mejor que el experto",
+    title: "IA y diseño digital de sonrisa: cuando el paciente prefiere el diseño de la máquina",
     description:
-      "Investigaciones recientes muestran que algoritmos de IA aplicados a diseño de sonrisa logran mayor satisfacción paciente que diseños convencionales.",
+      "Los pacientes prefirieron el diseño generado por IA en el 69,7% de los casos; los propios odontólogos eligieron el suyo en el 51,5%. Qué sostiene la evidencia y qué no.",
     url: CANONICAL,
     type: "article",
     images: [{ url: "https://www.thedentalreview.com/og-actualidad-ia-dsd.png" }],
@@ -23,12 +23,13 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "IA y Diseño Digital de Sonrisa: cuando la máquina elige mejor que el experto",
+  headline: "IA y diseño digital de sonrisa: cuando el paciente prefiere el diseño de la máquina",
   description:
     "Análisis de la integración de inteligencia artificial en diseño digital de sonrisa (DSD) y su impacto en resultados clínicos y satisfacción paciente.",
   author: autorSchema,
   publisher: { "@type": "Organization", name: "The Dental Review", url: "https://www.thedentalreview.com" },
   datePublished: "2026-08-01",
+  dateModified: "2026-09-15",
   inLanguage: "es-AR",
   mainEntityOfPage: CANONICAL,
 };
@@ -73,20 +74,22 @@ export default function ArticuloDSDIA() {
 
           {/* Título */}
           <h1 style={{ fontFamily: "var(--font-playfair, Georgia, serif)", fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 400, lineHeight: 1.15, marginBottom: 20 }}>
-            IA y Diseño Digital de Sonrisa: cuando la máquina elige mejor que el experto
+            IA y diseño digital de sonrisa: cuando el paciente prefiere el diseño de la máquina
           </h1>
           <p style={{ fontSize: 18, lineHeight: 1.6, color: "var(--muted, #6b6560)", marginBottom: 32 }}>
-            Estudios recientes demuestran que algoritmos de inteligencia artificial superan a diseñadores clínicos en predicción estética. Los pacientes prefieren el diseño generado por IA en casi 7 de cada 10 casos.
+            Un estudio prospectivo pareado publicado en Dentistry Journal encontró que los pacientes prefirieron el diseño generado por IA en el 69,7% de los casos. Los propios odontólogos eligieron el suyo apenas en el 51,5%.
           </p>
 
           {/* Autoría */}
           <Firma seccion={"Estética dental · Investigación clínica"} />
 
           {/* Cuerpo */}
-          {p(<>Hace una década, el diseño digital de sonrisa (DSD) era una herramienta de nicho, reservada a clínicas premium con profesionales especialmente entrenados. Hoy, en 2026, el DSD es estándar de facto en la odontología estética de alto nivel. Pero algo fundamental cambió en estos últimos años: ahora no es el dentista quien diseña la sonrisa, sino un algoritmo de inteligencia artificial entrenado en decenas de miles de casos documentados. Y los datos son inequívocos: la máquina gana.</>)}
+          {p(<>Hace una década, el diseño digital de sonrisa (DSD) era una herramienta de nicho, reservada a clínicas premium con profesionales especialmente entrenados. Hoy, en 2026, el DSD es estándar de facto en la odontología estética de alto nivel. Lo que cambió en estos últimos años es quién produce la primera propuesta: cada vez con más frecuencia, un algoritmo entrenado en decenas de miles de casos documentados. Y la evidencia disponible, todavía escasa, apunta en una dirección incómoda para el ego profesional: en satisfacción del paciente, esa propuesta compite de igual a igual con la de un experto.</>)}
+
+          {p(<>Una aclaración necesaria antes de seguir, porque se confunden todo el tiempo. Acá se habla de <strong>DSD asistido por IA</strong>: sistemas que parten de un escaneo facial e intraoral del paciente y trabajan sobre su anatomía real. No es lo mismo que pedirle a un asistente conversacional que retoque una selfie, que es {a("/noticias/pacientes-llegan-con-sonrisa-generada-por-ia", "lo que hoy llega al consultorio en el teléfono del paciente")} y no tiene ningún valor diagnóstico.</>)}
 
           {h3("Los números de la investigación")}
-          {p(<>Un estudio prospectivo comparativo realizado durante 2025-2026 puso frente a frente a diseñadores expertos en DSD convencional contra sistemas impulsados por IA. El resultado fue sorprendente: en evaluación de satisfacción del paciente, los diseños generados por IA alcanzaron puntuaciones medias de 97.0 ± 0.66 puntos, superando significativamente los 96.21 ± 1.02 de los diseños de expertos humanos. La diferencia parece marginal en números, pero en clínica se traduce en mayor confianza del paciente antes de comenzar el tratamiento.</>)}
+          {p(<>Un estudio prospectivo pareado publicado en {a("https://pmc.ncbi.nlm.nih.gov/articles/PMC13025993/", "Dentistry Journal")} en marzo de 2026 puso frente a frente a diseñadores expertos en DSD convencional contra sistemas impulsados por IA. En la evaluación de satisfacción del paciente, los diseños generados por IA alcanzaron puntuaciones medias de 97.0 ± 0.66 puntos, frente a 96.21 ± 1.02 de los diseños de expertos humanos. Conviene leer bien esa diferencia: es de menos de un punto sobre cien, con desvíos que se superponen. Lo relevante no es que la IA &ldquo;gane&rdquo;, sino que su propuesta llega a un nivel comparable al de un experto en una fracción del tiempo.</>)}
           {p(<>Aún más revelador: cuando se pidió a los propios odontólogos expertos que eligieran entre su propio diseño y el generado por IA, solo el 51.5% eligió su diseño. Pero cuando se preguntó a los pacientes, el 69.7% prefirió el algoritmo. Esa brecha de casi 18 puntos porcentuales entre lo que cree el profesional y lo que elige el paciente sugiere algo incómodo: el gusto estético humano del dentista no siempre alinea con el del paciente, y la IA parece capturar mejor esa preferencia.</>)}
 
           {h3("¿Cómo aprende la máquina a diseñar sonrisas?")}
@@ -99,19 +102,22 @@ export default function ArticuloDSDIA() {
 
           {h3("La cuestión del sesgo")}
           {p(<>Una objeción legítima es el sesgo: si el algoritmo fue entrenado mayormente en sonrisas de ciertos grupos demográficos, ¿captura la estética de otros? La investigación reciente comienza a abordar esto. Los mejores sistemas de DSD asistido por IA de 2026 están siendo reentrenados con datasets más diversos y geográficamente distribuidos para evitar que &ldquo;belleza estándar occidental&rdquo; sea la única métrica.</>)}
-          {p(<>Pero incluso con esa limitación, los datos actuales sugieren que la IA DSD sigue siendo superior en resultados de satisfacción comparada con diseño manual convencional, independientemente del contexto demográfico de los estudios disponibles.</>)}
+          {p(<>Esa limitación no es menor, y obliga a leer los resultados con cautela. La {a("https://doi.org/10.1177/20552076251388392", "revisión sistemática de Saini y colaboradores")} reúne todavía un número reducido de estudios, con muestras chicas y poblaciones poco diversas. Lo que puede afirmarse hoy es que el DSD asistido por IA alcanza resultados de satisfacción comparables al diseño manual convencional. Afirmar que es superior, o que lo es en cualquier contexto demográfico, excede lo que la evidencia disponible permite sostener.</>)}
 
           {h3("El futuro inmediato")}
           {p(<>Hacia 2027-2028, es probable que la IA DSD no sea una opción sino una expectativa en prácticas premium. El paciente que llega a una clínica de alto nivel anticipa ver una simulación digital predictiva. Negarle eso es quedar atrás de la estética de facto.</>)}
-          {p(<>Lo interesante es que esto no reemplaza la habilidad clínica del profesional, sino que la amplifica. Un cirujano dentista excelente con acceso a IA DSD es más letal —en el buen sentido— que uno excelente sin ella. La máquina no diseña; colabora. Y esa colaboración está diseñada para que gane el paciente.</>)}
+          {p(<>Lo interesante es que nada de esto reemplaza la habilidad clínica: la amplifica. El algoritmo produce una propuesta en segundos; decidir si esa propuesta es viable en una boca concreta —y llevarla a un ensayo que el paciente pueda probar antes de que se toque un diente— sigue siendo trabajo del profesional. La máquina no diseña sonrisas: acerca un punto de partida.</>)}
 
           {/* Fuente */}
           <div style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", padding: "24px 0", marginTop: 48 }}>
             <p style={{ fontSize: 13, color: "var(--muted, #6b6560)" }}>
               <strong>Fuentes:</strong><br />
-              {a("https://doi.org/10.1177/20552076251388392", "Saini et al. (2025) — Meta-análisis: IA en diseño digital de sonrisa")} · International Journal of Esthetic Dentistry<br />
-              {a("https://pmc.ncbi.nlm.nih.gov/articles/PMC13025993/", "Clinical and Patient Comparison of AI and Expert Digital Smile Design")} · PMC/NIH<br />
-              {a("https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12436661/", "Comparative analysis of facial aesthetics: AI vs. conventional DSD")} · PubMed Central
+              Saini R, Kaur R, Gurumurthy V, Binduhayyim RIH, et al. {a("https://doi.org/10.1177/20552076251388392", "Impact of artificial intelligence-based digital smile design on patient and clinician satisfaction and facial esthetic outcomes: a systematic review")} · <em>DIGITAL HEALTH</em> (SAGE), 2025.<br />
+              {a("https://pmc.ncbi.nlm.nih.gov/articles/PMC13025993/", "Clinical and Patient Comparison of AI and Expert Digital Smile Design: A Prospective Paired Study")} · <em>Dentistry Journal</em>, marzo de 2026.<br />
+              {a("https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12436661/", "Comparative analysis of facial aesthetics in AI generated versus conventionally crafted digital smile designs — a cross-sectional study")} · <em>BDJ Open</em>, septiembre de 2025.
+            </p>
+            <p style={{ fontSize: 12, color: "var(--muted, #6b6560)", marginTop: 20, lineHeight: 1.7 }}>
+              <strong>Actualización (15 de septiembre de 2026).</strong> Se corrigió la revista de la primera referencia, que figuraba como <em>International Journal of Esthetic Dentistry</em> y corresponde a <em>DIGITAL HEALTH</em>. Se atribuyeron los datos a los estudios concretos dentro del texto y se ajustó el titular y las conclusiones: la evidencia disponible sostiene que el DSD asistido por IA alcanza resultados comparables al diseño de un experto, no que sea superior. El cuerpo de estudios sigue siendo reducido.
             </p>
           </div>
 

@@ -8,7 +8,7 @@ const CANONICAL = "https://www.thedentalreview.com/noticias/ia-diagnostico-odont
 export const metadata: Metadata = {
   title: "IA en diagnóstico odontológico: más patología detectada",
   description:
-    "Sistemas de IA asisten a clínicos en la detección de patología dental con un 37% más de precisión. Nuevas aplicaciones emergentes transforman el diagnóstico y la planificación del tratamiento en 2026.",
+    "Los sistemas de diagnóstico asistido por IA elevan la sensibilidad en la detección de caries interproximales, pérdida ósea y lesiones periapicales. Qué resuelven hoy en la clínica, qué no, y dónde sigue mandando el criterio del profesional.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "Inteligencia Artificial en Diagnóstico Odontológico: Mayor Precisión en Detección",
@@ -31,7 +31,7 @@ const schema = {
   inLanguage: "es-AR",
   mainEntityOfPage: CANONICAL,
   datePublished: "2026-08-18",
-  dateModified: "2026-08-18",
+  dateModified: "2026-09-15",
 };
 
 const s = (obj: object) => JSON.stringify(obj);
@@ -85,7 +85,7 @@ export default function NoticiaDiagnosticoIA() {
 
           {/* Contenido */}
           {p(
-            "La integración de inteligencia artificial en la odontología ha dejado de ser un horizonte teórico para convertirse en una herramienta de diagnóstico tangible en clínicas de avanzada. La literatura científica reciente documenta un hallazgo relevante: clínicos asistidos por sistemas de IA detectan un 37% más de patología dental que aquellos que trabajan sin apoyo tecnológico. Este incremento en la sensibilidad diagnóstica representa un cambio de paradigma en cómo los profesionales abordan la identificación de patología, especialmente en fases tempranas cuando el tratamiento resulta menos invasivo y más predecible."
+            "La integración de inteligencia artificial en la odontología dejó de ser un horizonte teórico para convertirse en una herramienta de diagnóstico tangible en clínicas de avanzada. La literatura viene documentando de forma consistente que los clínicos asistidos por estos sistemas detectan más patología que trabajando sin apoyo tecnológico, sobre todo en caries interproximales y lesiones periapicales en estadios iniciales. La magnitud de esa mejora varía considerablemente según el estudio, el tipo de lesión y el sistema evaluado, de modo que conviene desconfiar de cualquier cifra única presentada como si valiera para todos los casos. Lo que sí es consistente es la dirección: más sensibilidad, y por lo tanto más posibilidad de intervenir temprano, cuando el tratamiento es menos invasivo."
           )}
 
           {h3("Capacidades de Detección Automatizada")}
@@ -122,7 +122,8 @@ export default function NoticiaDiagnosticoIA() {
 
           {/* Fuente */}
           <div style={{ marginTop: 60, paddingTop: 40, borderTop: "1px solid var(--paper-dim, #e8e4da)", fontSize: 13, color: "var(--muted, #6b6560)", lineHeight: 1.7 }}>
-            <p><strong>Fuente:</strong> Información basada en estudios de aplicaciones de IA en odontología clínica 2026; referencias incluyen aplicaciones de diagnóstico asistido por IA en plataformas Straumann 3Shape e instituciones de odontología digital de referencia.</p>
+            <p><strong>Fuente:</strong> panorama de aplicaciones de diagnóstico asistido por IA en odontología clínica al año 2026, incluidas plataformas de planificación implantológica como coDiagnostiX (Straumann) y 3Shape Implant Studio. Esta nota describe capacidades generales de la tecnología; no reporta los resultados de un estudio en particular.</p>
+            <p style={{ marginTop: 20, fontSize: 12 }}><strong>Actualización (15 de septiembre de 2026).</strong> Se retiró del titular y del cuerpo la cifra de &ldquo;37% más de patología detectada&rdquo;, que se atribuía genéricamente a &ldquo;la literatura científica reciente&rdquo; sin identificar el estudio del que provenía. En su lugar se describe la dirección del hallazgo, que sí es consistente, y se advierte que la magnitud varía según el estudio, la lesión y el sistema.</p>
           </div>
 
         </main>

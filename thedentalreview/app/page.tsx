@@ -27,7 +27,7 @@ const ARTICULOS: Articulo[] = [
     categoria: "Actualidad",
     titulo: "Inteligencia Artificial en Diagnóstico Odontológico: Mayor Precisión en Detección",
     subtitulo:
-      "Sistemas de IA asisten a clínicos en la detección de patología dental con un 37% más de precisión. Nuevas aplicaciones emergentes transforman el diagnóstico y la planificación del tratamiento.",
+      "Los sistemas asistidos por IA elevan la sensibilidad en la detección de caries interproximales y lesiones periapicales. Qué resuelven hoy y dónde sigue mandando el criterio del profesional.",
     autor: "Dr. Ariel Merino",
     fecha: "Agosto 2026",
     portada:
@@ -90,7 +90,7 @@ const ARTICULOS: Articulo[] = [
     slug: "ia-diseno-sonrisa-digital-dsd-2026",
     href: "/noticias/ia-diseno-sonrisa-digital-dsd-2026",
     categoria: "Actualidad",
-    titulo: "IA y Diseño Digital de Sonrisa: cuando la máquina elige mejor que el experto",
+    titulo: "IA y diseño digital de sonrisa: cuando el paciente prefiere el diseño de la máquina",
     subtitulo:
       "Estudios 2025-2026 demuestran que inteligencia artificial supera a diseñadores expertos. Pacientes prefieren diseños generados por IA en 69,7% de los casos.",
     autor: "Dr. Ariel Merino",
