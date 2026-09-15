@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { hreflangFor } from "@/lib/i18n-routes";
 
 const CANONICAL = "https://www.amesteticadental.com/blog/chatgpt-puede-disenar-tu-sonrisa";
 const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/articulos/ia-en-el-consultorio";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
         "Cinco de cada diez pacientes llegan hoy a la consulta con una imagen de su sonrisa generada por inteligencia artificial. Qué puede ver esa imagen de tu boca, qué no, y cómo se comprueba si el resultado es posible.",
     alternates: {
         canonical: CANONICAL,
+        languages: hreflangFor("/blog/chatgpt-puede-disenar-tu-sonrisa"),
     },
     openGraph: {
         title: "¿ChatGPT puede diseñar tu sonrisa? Qué pasa cuando esa imagen llega al consultorio",

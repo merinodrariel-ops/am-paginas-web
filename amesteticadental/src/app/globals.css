@@ -38,6 +38,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Los halos decorativos (`absolute … w-[400px] h-[400px] rounded-full blur-…`)
+ * se repiten en 48 páginas con ancho fijo en píxeles. En un viewport de 375px
+ * ese ancho desborda, y el sitio entero quedaba con scroll horizontal en móvil
+ * —que es donde lee la mayoría de los pacientes—.
+ *
+ * Se corrige acá y no en las 48 páginas: el halo es decorativo y recortarlo en
+ * el borde es el aspecto buscado igual. `clip` en vez de `hidden` porque no crea
+ * un contenedor de scroll (no rompería un `position: sticky` si algún día se usa
+ * uno); `hidden` queda de fallback para Safari anterior a la versión 16. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
 @layer utilities {
   .clip-pill {
     clip-path: inset(0 round 9999px);

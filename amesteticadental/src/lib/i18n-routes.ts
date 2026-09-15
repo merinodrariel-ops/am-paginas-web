@@ -29,6 +29,7 @@ export const EN_BY_ES: Record<string, string> = {
   "/blog/las-carillas-danan-los-dientes": "/en/blog/do-veneers-damage-your-teeth",
   "/blog/cuanto-duran-las-carillas-de-porcelana": "/en/blog/how-long-do-porcelain-veneers-last",
   "/blog/cuanto-cuestan-las-carillas-dentales-en-argentina": "/en/blog/veneers-cost-argentina",
+  "/blog/chatgpt-puede-disenar-tu-sonrisa": "/en/blog/can-chatgpt-design-your-smile",
 };
 
 export const ES_BY_EN: Record<string, string> = Object.fromEntries(

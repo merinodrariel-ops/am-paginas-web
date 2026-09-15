@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 
 const POSTS = [
     {
+        slug: "can-chatgpt-design-your-smile",
+        titulo: "Can ChatGPT design your smile?",
+        resumen: "Five in ten new patients now arrive with an AI-generated image of their own smile. What that image can see about your mouth, what it cannot, and how we check.",
+        categoria: "Technology",
+    },
+    {
         slug: "veneers-cost-argentina",
         titulo: `How much do veneers cost in Argentina? ${ANIO} guide`,
         resumen: "Real USD figures, what actually changes the investment, and the honest reason international patients fly here — it is time, not price.",
