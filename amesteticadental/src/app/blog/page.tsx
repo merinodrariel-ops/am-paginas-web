@@ -23,6 +23,13 @@ export const metadata: Metadata = {
 
 const ARTICULOS = [
     {
+        slug: "chatgpt-puede-disenar-tu-sonrisa",
+        titulo: "¿ChatGPT puede diseñar tu sonrisa? Qué pasa cuando esa imagen llega al consultorio",
+        descripcion: "Cinco de cada diez pacientes llegan hoy con una imagen de su sonrisa generada por IA. Qué puede ver esa imagen de tu boca, qué no, y cómo se comprueba si el resultado es posible.",
+        categoria: "Tecnología",
+        lectura: "6 min",
+    },
+    {
         slug: "curso-carillas-universidad-de-pensilvania",
         titulo: "Qué significa que tu odontólogo enseñe carillas en la Universidad de Pensilvania",
         descripcion: "El Dr. Merino es instructor del curso \"Full Veneers\" en el programa de educación continua de Penn Dental Medicine. Por qué un curso acreditado no es lo mismo que una charla.",
