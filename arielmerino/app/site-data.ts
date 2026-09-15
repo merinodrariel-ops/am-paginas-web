@@ -63,6 +63,7 @@ export const NAV = [
   { href: "/trayectoria", label: "Trayectoria" },
   { href: "/carillas-de-porcelana", label: "Carillas" },
   { href: PENN.path, label: "Penn Dental Medicine" },
+  { href: "/ia-en-la-consulta", label: "IA en la consulta" },
   { href: "/prensa", label: "Prensa" },
   { href: "/contacto", label: "Contacto" },
 ];

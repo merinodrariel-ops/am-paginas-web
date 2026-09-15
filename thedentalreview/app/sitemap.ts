@@ -23,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: `${SITE}/noticias/pacientes-llegan-con-sonrisa-generada-por-ia`,
+      lastModified: new Date("2026-09-15"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${SITE}/noticias/carillas-ultrafinas-additive-dentistry-2026`,
       lastModified: new Date("2026-07-14"),
       changeFrequency: "monthly",

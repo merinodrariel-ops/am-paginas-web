@@ -164,7 +164,10 @@ export default function ArticuloChatGptSonrisa() {
                                 ))}
                             </div>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed">
-                                Históricamente la proporción era de siete pacientes por redes sociales y tres por recomendación. La inteligencia artificial no se sumó al reparto: lo reordenó, y lo hizo en seis meses.
+                                Históricamente la proporción era de siete pacientes por redes sociales y tres por recomendación. La inteligencia artificial no se sumó al reparto: lo reordenó, y lo hizo en seis meses.{" "}
+                                <a href="https://www.arielmerino.com/ia-en-la-consulta" target="_blank" rel="noopener noreferrer" className="text-oro hover:underline">
+                                    El registro completo, con su nota metodológica →
+                                </a>
                             </p>
                         </section>
 

@@ -10,6 +10,7 @@ const RUTAS: { path: string; priority: number; changeFrequency: "weekly" | "mont
   { path: "/trayectoria", priority: 0.9, changeFrequency: "monthly" },
   { path: "/carillas-de-porcelana", priority: 0.9, changeFrequency: "monthly" },
   { path: PENN.path, priority: 0.9, changeFrequency: "monthly" },
+  { path: "/ia-en-la-consulta", priority: 0.85, changeFrequency: "monthly" },
   { path: "/prensa", priority: 0.85, changeFrequency: "monthly" },
   { path: "/contacto", priority: 0.7, changeFrequency: "monthly" },
 ];

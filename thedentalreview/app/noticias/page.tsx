@@ -14,6 +14,13 @@ export const metadata: Metadata = {
 // Al publicar una nota nueva hay que agregarla en este array Y en app/sitemap.ts.
 const NEWS = [
   {
+    href: "/noticias/pacientes-llegan-con-sonrisa-generada-por-ia",
+    title: "Los pacientes llegan con la sonrisa ya diseñada por IA",
+    description: "Cinco de cada diez primeras consultas de una clínica porteña se originan hoy en una conversación con un asistente de inteligencia artificial. Hace seis meses la categoría no existía.",
+    image: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,g_center,q_auto,f_auto/articulos/ia-en-el-consultorio/dr-ariel-merino-explica-diseno-de-sonrisa-sobre-imagen-de-ia.jpg",
+    alt: "Un odontólogo señala sobre la pantalla de un teléfono la imagen de sonrisa que el paciente generó con inteligencia artificial",
+  },
+  {
     href: "/noticias/dyson-cepillo-dientes-camara-ia-2026",
     title: "Dyson entra en la higiene bucal: un cepillo con cámara, IA e irrigador",
     description: "Retroalimentación visual en tiempo real por unos US$ 500. Qué aporta de verdad y dónde termina la evidencia.",
