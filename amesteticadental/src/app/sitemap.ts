@@ -61,6 +61,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/diseno-de-sonrisa-precio-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
   { path: "/lentes-de-contacto-dental-precio-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
   { path: "/precio-implantes-dentales-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/bruxismo-botox-placa-precio-buenos-aires", changeFrequency: "monthly", priority: 0.9 },
   { path: "/bruxismo-desgaste-dental-carillas-ceramicas", changeFrequency: "monthly", priority: 0.85 },
   { path: "/coronas-y-fundas-dentales", changeFrequency: "monthly", priority: 0.8 },
   { path: "/carillas-de-resina", changeFrequency: "monthly", priority: 0.8 },

@@ -79,7 +79,11 @@ const quickLinks = [
     { label: "Carillas: precio", tone: "Para quien busca: cuánto cuesta", href: "/precio-carillas-dentales-buenos-aires" },
     { label: "Carillas vs Alineadores", tone: "Para quien compara: qué me conviene", href: "/carillas-vs-alineadores" },
     { label: "Porcelana vs Resina", tone: "Para quien elige material", href: "/carillas-de-porcelana-vs-resina" },
-    { label: "Bruxismo + Desgaste", tone: "Para quien sufre daño dental", href: "/bruxismo-desgaste-dental-carillas-ceramicas" },
+    // Dos entradas de bruxismo a propósito, porque son dos momentos distintos del
+    // mismo problema: frenarlo antes de que rompa, o reconstruir lo ya roto. Quien
+    // busca "botox para bruxismo" no quiere carillas, y al revés.
+    { label: "Bruxismo: Botox + placa", tone: "Para quien quiere frenarlo", href: "/bruxismo-botox-placa-precio-buenos-aires" },
+    { label: "Bruxismo + Desgaste", tone: "Para quien ya tiene daño dental", href: "/bruxismo-desgaste-dental-carillas-ceramicas" },
     { label: "Implantes Buenos Aires", tone: "Para quien perdió dientes", href: "/implantes-dentales-buenos-aires" },
     { label: "Diseño de Sonrisa", tone: "Para quien quiere transformarse", href: "/diseno-de-sonrisa-precio-buenos-aires" },
 ];

@@ -628,6 +628,12 @@ export default function BlogBruxismo() {
                             <p className="text-crema/55 font-manrope text-sm mb-6 max-w-md mx-auto">
                                 Escribinos por WhatsApp. Vemos cuánto desgaste hay, cómo está tu articulación y qué combinación tiene sentido en tu caso: si alcanza con la placa o si conviene sumar toxina.
                             </p>
+                            <p className="text-crema/40 font-manrope text-xs mb-6">
+                                O mirá primero{" "}
+                                <Link href="/bruxismo-botox-placa-precio-buenos-aires" className="text-oro/70 hover:text-oro transition-colors">
+                                    qué incluye el tratamiento y cuánto es la inversión
+                                </Link>.
+                            </p>
                             <a
                                 href={WA_LINK}
                                 target="_blank"
