@@ -44,18 +44,27 @@ Console**, agregando esa dirección como usuaria de cada propiedad.
 
 ## Permisos en Search Console
 
-En cada propiedad → Configuración → Usuarios y permisos → Agregar usuario:
+Estado real al 2026-09-20, en Configuración → Usuarios y permisos de cada propiedad:
 
-| Propiedad | Permiso necesario |
-|---|---|
-| amesteticadental.com | Propietario |
-| amesteticadental.uy | Propietario |
-| thedentalreview.com | Propietario |
-| arielmerino.com | Propietario |
+| Propiedad | Permiso cargado | Sitemaps | Inspección de URL | Indexing API |
+|---|---|---|---|---|
+| amesteticadental.com | **Propietario** | ✅ | ✅ | ✅ |
+| amesteticadental.uy | Completo | ✅ | ✅ | ❌ |
+| thedentalreview.com | Completo | ✅ | ✅ | ❌ |
+| arielmerino.com | Completo | ✅ | ✅ | ❌ |
 
-**Por qué "Propietario" y no "Completo":** la Indexing API exige nivel de propietario.
-Los sitemaps se conformarían con "Completo", pero si se carga distinto en cada
-propiedad, después nadie se acuerda de cuál es cuál.
+**Por qué la diferencia.** La Indexing API es la única que exige nivel de propietario;
+los sitemaps y la inspección de URL se conforman con "Completo". `gsc.mjs` sólo toca
+`amesteticadental.com`, que sí quedó como Propietario, así que el flujo habitual de
+publicar una nota y pedir indexación funciona completo.
+
+El único que queda a medias es `scripts/indexar-red.mjs`, que usa la Indexing API sobre
+los cuatro sitios: en los otros tres va a responder 403 hasta que se suban a Propietario.
+
+**Para subirlos** (30 segundos cada uno, a mano): en la fila de la cuenta de servicio →
+menú de tres puntos → cambiar permiso a "Propietario". El desplegable de ese diálogo no
+acepta selección automatizada —se resiste a clicks y a teclado—, así que este paso es
+manual por necesidad, no por olvido.
 
 ## Dónde vive la clave
 
