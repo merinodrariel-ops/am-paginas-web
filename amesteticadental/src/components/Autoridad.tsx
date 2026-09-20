@@ -62,13 +62,13 @@ const UI = {
     es: {
         googleReviews: "Google Reviews",
         reviewsCount: "+120 reseñas verificadas",
-        forbesA: "La unica clinica odontologica de Argentina",
+        forbesA: "La única clínica odontológica de Argentina",
         forbesB: "reconocida por Forbes.",
-        forbesLead: "No es un premio de industria. Es reconocimiento editorial en el medio de negocios mas exigente del mundo por el impacto real que generamos en la vida de nuestros pacientes.",
+        forbesLead: "No es un premio de industria. Es reconocimiento editorial en el medio de negocios más exigente del mundo por el impacto real que generamos en la vida de nuestros pacientes.",
         forbesCta: "Leer nota en Forbes →",
         stats: [
             { number: String(ANIOS_TRAYECTORIA), label: "años en estética dental", sub: "Dr. Ariel Merino" },
-            { number: "Miss Universo", label: "Sonrisa mas estudiada", sub: "del mundo" },
+            { number: "Miss Universo", label: "Sonrisa más estudiada", sub: "del mundo" },
             { number: "100%", label: "Casos reales", sub: "Sin stock, sin filtros" },
         ],
     },

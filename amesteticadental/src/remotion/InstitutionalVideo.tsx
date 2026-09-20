@@ -26,11 +26,11 @@ type Scene = {
 
 const scenes: Scene[] = [
   {
-    kicker: "AM Estetica Dental",
+    kicker: "AM Estética Dental",
     title: "Diseno de sonrisa premium en Puerto Madero",
     subtitle:
       "Carillas de porcelana, lentes de contacto dental y planificacion digital para resultados naturales.",
-    bullets: ["Estetica de autor", "Precision clinica", "Resultados reales"],
+    bullets: ["Estética de autor", "Precision clinica", "Resultados reales"],
     image: staticFile("videos/generate-3d-veneer-poster.jpg"),
     video: staticFile("videos/generate-3d-veneer.mp4"),
     duration: 120,
@@ -40,7 +40,7 @@ const scenes: Scene[] = [
     title: "Un entorno pensado para decisiones importantes",
     subtitle:
       "Cada consulta ocurre en un espacio premium, privado y disenado para que puedas ver tu cambio con claridad.",
-    bullets: ["Atencion personalizada", "Ubicacion estrategica", "Experiencia boutique"],
+    bullets: ["Atención personalizada", "Ubicacion estrategica", "Experiencia boutique"],
     image: staticFile("images/clinica/consultorio-am-estetica-dental-puerto-madero-01.jpg"),
     duration: 180,
   },
@@ -58,7 +58,7 @@ const scenes: Scene[] = [
     title: "Transformaciones que se notan desde el primer dia",
     subtitle:
       "Mostramos casos reales para que compares punto de partida, planificacion y resultado final.",
-    bullets: ["Antes y despues reales", "Criterio estetico natural", "Cambio armonico con tu rostro"],
+    bullets: ["Antes y después reales", "Criterio estetico natural", "Cambio armonico con tu rostro"],
     image: staticFile(
       "images/casos/caso-diseno-sonrisa-carillas-ceramicas-antes-despues-am-estetica-dental.webp"
     ),
@@ -77,16 +77,16 @@ const scenes: Scene[] = [
     kicker: "Director Clinico",
     title: "Dr. Ariel Merino",
     subtitle:
-      "Mas de 15 anos en estetica dental de alta demanda, con enfoque conservador y vision artistica.",
-    bullets: ["Evaluacion honesta", "Plan segun tu caso", "Seguimiento de excelencia"],
+      "Más de 15 años en estética dental de alta demanda, con enfoque conservador y visión artística.",
+    bullets: ["Evaluación honesta", "Plan según tu caso", "Seguimiento de excelencia"],
     image: staticFile("images/dr-merino/dr-ariel-merino-ambo-principal.webp"),
     duration: 180,
   },
   {
     kicker: "Agenda",
-    title: "Solicita tu evaluacion inicial",
+    title: "Solicitá tu evaluación inicial",
     subtitle:
-      "AM Estetica Dental. Sonrisas naturales, tecnologia de precision y un proceso claro desde el primer contacto.",
+      "AM Estética Dental. Sonrisas naturales, tecnología de precisión y un proceso claro desde el primer contacto.",
     bullets: ["WhatsApp directo", "Agenda limitada", "Puerto Madero, Buenos Aires"],
     image: staticFile("images/clinica/consultorio-am-estetica-dental-puerto-madero-03.jpg"),
     duration: 150,
