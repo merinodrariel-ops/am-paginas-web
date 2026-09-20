@@ -123,6 +123,8 @@ export const equipoAM: EquipoMiembro[] = [
     alt: "Dr. Augusto Druck, cirujano e implantólogo (MN 31.471) de AM Estética Dental en Puerto Madero",
     rolEn: "Surgery & Implantology",
     areaEn: "Implants & Full Arch",
+    imagen:
+      "https://res.cloudinary.com/drctvgyqd/image/upload/v1789937765/equipo-am/dr-augusto-druck-cirugia-e-implantologia-am-estetica-dental-puerto-madero.jpg",
     descripcionEn:
       "Dentist specialized in Maxillofacial Prosthodontics (University of Buenos Aires). He handles implant surgery and full-arch rehabilitation: full arch, immediate loading and fixed implant-supported prosthetics, with digital planning and guided surgery.",
     altEn: "Dr. Augusto Druck, implant surgeon (license MN 31.471) at AM Estética Dental in Puerto Madero",
@@ -708,27 +710,28 @@ export const equipoAM: EquipoMiembro[] = [
   {
     slug: "claudia-hernandez",
     nombre: "Dra. Claudia Hernández",
-    rol: "Dirección de consultorio",
+    rol: "Odontóloga y dirección del consultorio",
     area: "Odontología y gestión",
     descripcion:
-      "Odontóloga con recorrido clínico en odontología general, endodoncia y asistencia en cirugía e implantología. En AM lleva la dirección del consultorio: coordinación operativa, organización de procesos y funcionamiento diario.",
+      "Odontóloga, y encargada del área administrativa de AM. Dirige la gestión del consultorio y asiste al equipo durante la atención: el título está en el sillón, no sólo en la agenda. Formación clínica en odontología general, endodoncia y asistencia en cirugía e implantología.",
     imagen:
       "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/claudia-hernandez-administracion-am-estetica-dental-puerto-madero.jpg",
-    alt: "Dra. Claudia Hernández, odontóloga y dirección de consultorio de AM Estética Dental en Puerto Madero",
-    rolEn: "Practice Direction",
+    alt: "Dra. Claudia Hernández, odontóloga y dirección del consultorio de AM Estética Dental en Puerto Madero",
+    rolEn: "Dentist & Practice Direction",
     areaEn: "Dentistry & Management",
     descripcionEn:
-      "Dentist with clinical background in general dentistry, endodontics and assistance in surgery and implantology. At AM she runs the practice: operational coordination, process organization and day-to-day management.",
+      "A dentist, and the head of AM's administrative area. She runs the practice and assists the team chairside: the degree is in the operatory, not only in the schedule. Clinical training in general dentistry, endodontics and assistance in surgery and implantology.",
     altEn: "Dr. Claudia Hernández, dentist and practice direction at AM Estética Dental in Puerto Madero",
     schemaType: "Dentist",
     keywords: ["odontóloga", "dirección de consultorio", "coordinación clínica", "gestión operativa", "AM Estética Dental"],
-    // Su CV lo dice explícito: hoy su rol en AM es de gestión, no de sillón.
+    // Es odontóloga y asiste al equipo en el sillón, pero no toma tratamientos a
+    // su cargo: por eso su ficha no ofrece el botón de "consultar caso".
     atiendePacientes: false,
     cv: {
       titulo: "Odontóloga",
       universidad: "Universidad José Antonio Páez — Valencia, Venezuela",
       perfil:
-        "Odontóloga con experiencia en atención general, restauración sobre implantes y asistencia en tratamientos de alta complejidad: cirugía maxilofacial, implantología, endodoncia y rehabilitación. Dentro de AM ese recorrido se aplica del otro lado del sillón —dirige y organiza el consultorio, coordina la gestión operativa y sostiene el funcionamiento cotidiano—, y ahí el oficio clínico se nota: quien armó cajas de implantes sabe qué necesita una agenda que gira alrededor de esos tratamientos.",
+        "Odontóloga con experiencia en atención general, restauración sobre implantes y asistencia en tratamientos de alta complejidad: cirugía maxilofacial, implantología, endodoncia y rehabilitación. Dentro de AM lleva el área administrativa y la dirección del consultorio, pero no se bajó del sillón: asiste al equipo durante la atención y resuelve los ajustes y las maniobras mínimas del día a día. Por eso la gestión funciona como funciona —quien armó cajas de implantes sabe qué necesita una agenda que gira alrededor de esos tratamientos.",
       formacion: [
         {
           titulo: "Odontóloga",
@@ -769,9 +772,10 @@ export const equipoAM: EquipoMiembro[] = [
         },
       ],
       areas: [
+        "Odontología general",
+        "Asistencia clínica al equipo",
         "Dirección y gestión de consultorio",
         "Coordinación operativa y organización de procesos",
-        "Odontología general",
         "Endodoncia",
         "Restauración sobre implantes",
         "Asistencia en cirugía e implantología",
@@ -782,7 +786,7 @@ export const equipoAM: EquipoMiembro[] = [
       titulo: "Odontóloga (dentist — Venezuelan dental degree)",
       universidad: "Universidad José Antonio Páez — Valencia, Venezuela",
       perfil:
-        "Dentist with experience in general care, implant-supported restoration and assistance in high-complexity treatments: maxillofacial surgery, implantology, endodontics and rehabilitation. At AM that background is applied from the other side of the chair —she runs and organizes the practice, coordinates operations and keeps the day to day running—, and the clinical craft shows: someone who has assembled implant kits knows what a schedule built around those treatments actually needs.",
+        "Dentist with experience in general care, implant-supported restoration and assistance in high-complexity treatments: maxillofacial surgery, implantology, endodontics and rehabilitation. At AM she leads the administrative area and runs the practice, but she never left the operatory: she assists the team chairside and handles the small adjustments of the day to day. That is why the management side works the way it does —someone who has assembled implant kits knows what a schedule built around those treatments actually needs.",
       formacion: [
         {
           titulo: "Odontóloga (dentist — Venezuelan dental degree)",
@@ -823,9 +827,10 @@ export const equipoAM: EquipoMiembro[] = [
         },
       ],
       areas: [
+        "General dentistry",
+        "Chairside assistance to the clinical team",
         "Practice direction and management",
         "Operational coordination and process organization",
-        "General dentistry",
         "Endodontics",
         "Implant-supported restoration",
         "Assistance in surgery and implantology",
