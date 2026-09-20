@@ -4,8 +4,11 @@ TEAM AM/
 Carillas dentales/
 portafolio-diseno-de-sonrisa-am-estetica-dental/
 
-# Ignorar otros proyectos en desarrollo para no sobrecargar el despliegue
-arielmerino/
+# NO agregar aquí ninguna carpeta que sea Root Directory de un proyecto de
+# Vercel (amesteticadental, amesteticadental-uy, arielmerino, thedentalreview).
+# Este archivo se aplica desde la raíz del repo a los CUATRO builds: si se
+# ignora la carpeta, Vercel borra el package.json antes de compilar y el build
+# muere con "No Next.js version detected". Aquí solo van assets pesados.
 
 # Ignorar dependencias y compilados locales (se compilan en los servidores de Vercel)
 node_modules/
