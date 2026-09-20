@@ -10,7 +10,10 @@ const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/bruxismo";
 const IMG = {
     header: `${CDN}/bruxismo-placa-nocturna-header-editorial-dr-ariel-merino-am-estetica-dental-buenos-aires.png`,
     placa: `${CDN}/placa-bruxismo-guiada-vista-producto-dr-ariel-merino-am-estetica-dental-buenos-aires.png`,
-    masetero: `${CDN}/masetero-toxina-botulinica-ilustracion-dr-ariel-merino-am-estetica-dental-buenos-aires.png`,
+    // Los dos elevadores que se infiltran, no sólo el masetero: el temporal es el
+    // otro músculo principal y dejarlo afuera daba una idea incompleta.
+    masetero: `${CDN}/masetero-temporal-toxina-botulinica-puntos-aplicacion-dr-ariel-merino-am-estetica-dental-buenos-aires.png`,
+    sueno: `${CDN}/sueno-reparador-bruxismo-descanso-dr-ariel-merino-am-estetica-dental-buenos-aires.png`,
     // Foto ya publicada del equipo: se reusa la misma de /equipo-am, no una copia nueva.
     cruz: "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870265/equipo-am/dra-candela-cruz-armonizacion-orofacial-estetica-dental-am-estetica-dental-puerto-madero.jpg",
 };
@@ -43,24 +46,29 @@ const articleSchema = {
     headline: "Cómo combatir el bruxismo: los dos tratamientos que de verdad funcionan",
     image: IMG.header,
     description: "Guía clínica sobre el tratamiento del bruxismo con placa de descarga con guías de desoclusión y toxina botulínica en el músculo masetero: mecanismo, duración, protocolo y límites.",
-    author: {
-        "@type": "Person",
-        name: "Dr. Ariel Merino",
-        url: "https://www.wikidata.org/wiki/Q134287655",
-        jobTitle: "Odontólogo Estético",
-    },
-    // La Dra. Cruz aporta la mirada clínica sobre los pacientes sintomáticos.
-    // Va como `contributor` y no como coautora: el texto es del Dr. Merino.
-    contributor: {
-        "@type": "Person",
-        name: "Dra. Candela Cruz",
-        jobTitle: "Odontóloga — Armonización orofacial",
-        // La matrícula va como `identifier`, igual que la del Dr. Merino: una
-        // afirmación clínica firmada por un matriculado se puede contrastar
-        // contra un registro público.
-        identifier: "MN 43.010",
-        worksFor: { "@type": "Organization", name: "AM Estética Dental" },
-    },
+    // Dos autores. La Dra. Cruz aporta contenido clínico propio —la observación
+    // sobre los pacientes sintomáticos— y no una revisión de lo ya escrito, así
+    // que figura como coautora y no como `contributor`. El orden refleja el peso:
+    // el cuerpo del texto y la voz en primera persona son del Dr. Merino.
+    //
+    // Las matrículas van como `identifier`: una afirmación clínica firmada por un
+    // matriculado se puede contrastar contra un registro público.
+    author: [
+        {
+            "@type": "Person",
+            name: "Dr. Ariel Merino",
+            url: "https://www.wikidata.org/wiki/Q134287655",
+            jobTitle: "Odontólogo Estético",
+            identifier: "MN 34.869",
+        },
+        {
+            "@type": "Person",
+            name: "Dra. Candela Cruz",
+            jobTitle: "Odontóloga — Armonización orofacial",
+            identifier: "MN 43.010",
+            worksFor: { "@type": "Organization", name: "AM Estética Dental" },
+        },
+    ],
     publisher: {
         "@type": "Organization",
         name: "AM Estética Dental",
@@ -183,9 +191,17 @@ export default function BlogBruxismo() {
                             A la noche se te apaga Windows, pero la mandíbula sigue trabajando. Te lo explico sin vueltas: qué le está pasando a tus dientes mientras dormís, y las dos herramientas que usamos en el consultorio para frenarlo. Una protege. La otra baja la fuerza. Juntas cambian el problema de raíz.
                         </p>
 
+                        {/* Dos firmas. La aclaración "con la" no es decorativa: el cuerpo del
+                            artículo está en primera persona del Dr. Merino, y sin ese matiz un
+                            lector podría atribuirle a la Dra. Cruz frases que no son suyas. */}
                         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-crema/35 font-manrope text-xs">
-                            <span>Dr. Ariel Merino</span>
+                            <span className="text-crema/55">Dr. Ariel Merino</span>
+                            <span>MN 34.869</span>
                             <span>·</span>
+                            <span>con la <span className="text-crema/55">Dra. Candela Cruz</span></span>
+                            <span>MN 43.010</span>
+                        </div>
+                        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-crema/35 font-manrope text-xs mt-2">
                             <span>AM Estética Dental, Puerto Madero</span>
                             <span>·</span>
                             <span>10 min de lectura</span>
@@ -322,20 +338,23 @@ export default function BlogBruxismo() {
                                 La toxina botulínica — bajarle el volumen al músculo
                             </h2>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
-                                Si la placa protege, la toxina botulínica ataca el otro lado del problema: la fuerza. Se aplica en el masetero, que es el músculo que tenés a los costados de la cara, entre el pómulo y el ángulo de la mandíbula. Es el que se marca cuando apretás los dientes, y es el motor de todo esto.
+                                Si la placa protege, la toxina botulínica ataca el otro lado del problema: la fuerza. Se aplica en los dos músculos que cierran la mandíbula. El <span className="text-crema">masetero</span>, que tenés a los costados de la cara entre el pómulo y el ángulo del maxilar: es el que se marca cuando apretás los dientes. Y el <span className="text-crema">temporal</span>, que es el abanico que va sobre la sien, por delante de la oreja, y que casi nadie asocia con la mordida.
+                            </p>
+                            <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
+                                El temporal importa más de lo que parece, y es el que más se ignora. Si te duele la cabeza en las sienes al despertarte, ahí tenés al responsable: es un músculo masticatorio tirando toda la noche de un lugar donde vos sentís dolor de cabeza, no dolor de mandíbula. Por eso el tratamiento rara vez se limita a un solo músculo.
                             </p>
 
                             <div className="relative w-full overflow-hidden rounded-2xl border border-oro/15 bg-carbon-soft mb-3" style={{ aspectRatio: "1 / 1" }}>
                                 <Image
                                     src={IMG.masetero}
-                                    alt="Ilustración del músculo masetero en perfil, entre el arco cigomático y el ángulo de la mandíbula, con los puntos de aplicación de toxina botulínica — AM Estética Dental"
+                                    alt="Ilustración de los dos músculos elevadores de la mandíbula en perfil: el temporal en abanico sobre la sien y el masetero entre el arco cigomático y el ángulo mandibular, con los puntos de aplicación de toxina botulínica — AM Estética Dental"
                                     fill
                                     sizes="(max-width: 768px) 100vw, 768px"
                                     className="object-cover"
                                 />
                             </div>
                             <p className="text-crema/35 font-manrope text-xs mb-8">
-                                El masetero, entre el pómulo y el ángulo de la mandíbula, con los puntos de aplicación. Ilustración esquemática.
+                                Los dos músculos que cierran la mandíbula: el temporal, en abanico sobre la sien, y el masetero, entre el pómulo y el ángulo del maxilar. Los puntos marcan dónde se aplica. Ilustración esquemática.
                             </p>
 
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mb-4">
@@ -518,6 +537,15 @@ export default function BlogBruxismo() {
                             <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-5">
                                 Lo que casi nadie te cuenta: el sueño
                             </h2>
+                            <div className="relative w-full overflow-hidden rounded-2xl border border-oro/15 bg-carbon-soft mb-6" style={{ aspectRatio: "16 / 9" }}>
+                                <Image
+                                    src={IMG.sueno}
+                                    alt="Persona durmiendo de costado en una habitación en penumbra, con una franja de luz cálida sobre la almohada — el descanso profundo que el bruxismo interrumpe"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 768px"
+                                    className="object-cover"
+                                />
+                            </div>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mb-4">
                                 Esta es la parte que a mí más me interesa, y la que menos se menciona cuando se habla de bruxismo.
                             </p>
