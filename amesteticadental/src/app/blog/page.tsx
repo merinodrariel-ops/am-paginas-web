@@ -27,7 +27,7 @@ const ARTICULOS = [
         titulo: "Cómo combatir el bruxismo: los dos tratamientos que de verdad funcionan",
         descripcion: "A la noche se te apaga Windows, pero la mandíbula sigue apretando. La placa que guía el movimiento y la toxina botulínica en el masetero: qué hace cada una, cuánto dura y por qué juntas rinden más.",
         categoria: "Bruxismo",
-        lectura: "8 min",
+        lectura: "10 min",
     },
     {
         slug: "chatgpt-puede-disenar-tu-sonrisa",

@@ -11,6 +11,8 @@ const IMG = {
     header: `${CDN}/bruxismo-placa-nocturna-header-editorial-dr-ariel-merino-am-estetica-dental-buenos-aires.png`,
     placa: `${CDN}/placa-bruxismo-guiada-vista-producto-dr-ariel-merino-am-estetica-dental-buenos-aires.png`,
     masetero: `${CDN}/masetero-toxina-botulinica-ilustracion-dr-ariel-merino-am-estetica-dental-buenos-aires.png`,
+    // Foto ya publicada del equipo: se reusa la misma de /equipo-am, no una copia nueva.
+    cruz: "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870265/equipo-am/dra-candela-cruz-armonizacion-orofacial-estetica-dental-am-estetica-dental-puerto-madero.jpg",
 };
 
 export const metadata: Metadata = {
@@ -39,6 +41,14 @@ const articleSchema = {
         name: "Dr. Ariel Merino",
         url: "https://www.wikidata.org/wiki/Q134287655",
         jobTitle: "Odontólogo Estético",
+    },
+    // La Dra. Cruz aporta la mirada clínica sobre los pacientes sintomáticos.
+    // Va como `contributor` y no como coautora: el texto es del Dr. Merino.
+    contributor: {
+        "@type": "Person",
+        name: "Dra. Candela Cruz",
+        jobTitle: "Odontóloga — Armonización orofacial",
+        worksFor: { "@type": "Organization", name: "AM Estética Dental" },
     },
     publisher: {
         "@type": "Organization",
@@ -90,6 +100,10 @@ const FAQ = [
     {
         q: "¿El Botox para el bruxismo es lo mismo que el estético?",
         a: "Es la misma molécula, pero el objetivo es distinto. En estética se trabaja sobre músculos de la expresión, superficiales y pequeños. Acá se aplica en el masetero, que es un músculo masticatorio, profundo y potente. Cambian el punto, la profundidad y la dosis. Por eso importa quién lo aplica: alguien que conozca la anatomía masticatoria, no solo la facial.",
+    },
+    {
+        q: "¿Quién debería aplicar la toxina para el bruxismo?",
+        a: "Un odontólogo. No es una cuestión de título sino de terreno: el masetero es un músculo masticatorio y el bruxismo se evalúa mirando cómo encajan los dientes, por dónde se mueve la mandíbula y cómo está la articulación. Bajarle la fuerza al músculo sin haber evaluado la mordida es medio diagnóstico. En AM la aplica la Dra. Candela Cruz, odontóloga del área de armonización orofacial.",
     },
     {
         q: "¿Voy a perder fuerza para masticar?",
@@ -163,7 +177,7 @@ export default function BlogBruxismo() {
                             <span>·</span>
                             <span>AM Estética Dental, Puerto Madero</span>
                             <span>·</span>
-                            <span>8 min de lectura</span>
+                            <span>10 min de lectura</span>
                         </div>
                     </div>
                 </section>
@@ -317,6 +331,63 @@ export default function BlogBruxismo() {
                                 </p>
                             </div>
 
+                            <h3 className="text-crema font-manrope font-medium text-base mb-4">
+                                No es el mismo tratamiento que el Botox estético
+                            </h3>
+                            <p className="text-crema/70 font-manrope text-base leading-relaxed mb-4">
+                                Esto conviene decirlo claro, porque se confunde todo el tiempo. Es la misma molécula, sí. Pero el músculo, el objetivo y la dosis son otros.
+                            </p>
+                            <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
+                                El Botox estético trabaja sobre los músculos de la expresión: superficiales, pequeños, y el objetivo es suavizar una arruga. El masetero es otra cosa por completo. Es un músculo <span className="text-crema">masticatorio</span>: profundo, potente, de los que más fuerza generan en todo el cuerpo en relación a su tamaño. Y acá el objetivo no es estético: es bajar la fuerza involuntaria sin comprometer tu capacidad de masticar.
+                            </p>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+                                <div className="border border-oro/12 rounded-2xl p-6 bg-carbon-soft">
+                                    <span className="text-oro/60 font-manrope uppercase tracking-[0.25em] text-[10px] block mb-4">Toxina estética</span>
+                                    <div className="space-y-2.5">
+                                        {[
+                                            "Músculos de la expresión",
+                                            "Superficiales y pequeños",
+                                            "Objetivo: suavizar una arruga",
+                                            "Territorio: la piel del rostro",
+                                        ].map((item) => (
+                                            <div key={item} className="flex items-start gap-3">
+                                                <span className="text-oro/35">—</span>
+                                                <p className="text-crema/60 font-manrope text-sm leading-relaxed">{item}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className="border border-oro/12 rounded-2xl p-6">
+                                    <span className="text-oro/60 font-manrope uppercase tracking-[0.25em] text-[10px] block mb-4">Toxina para bruxismo</span>
+                                    <div className="space-y-2.5">
+                                        {[
+                                            "Músculo masticatorio (masetero)",
+                                            "Profundo y muy potente",
+                                            "Objetivo: bajar la fuerza que rompe",
+                                            "Territorio: el sistema masticatorio",
+                                        ].map((item) => (
+                                            <div key={item} className="flex items-start gap-3">
+                                                <span className="text-oro/35">—</span>
+                                                <p className="text-crema/60 font-manrope text-sm leading-relaxed">{item}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p className="text-crema/70 font-manrope text-base leading-relaxed mb-4">
+                                Cambian los puntos de aplicación, cambia la profundidad y cambia la dosis. Una dosis pensada para una arruga no sirve acá; una dosis excesiva en un masetero te deja masticando con dificultad durante semanas.
+                            </p>
+                            <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
+                                Y hay algo más de fondo, que es lo que de verdad define quién debería hacerlo. El bruxismo no se resuelve mirando el músculo solo: hay que ver <span className="text-crema">cómo encajan tus dientes, por dónde se mueve tu mandíbula y cómo está la articulación</span>. Bajarle la fuerza al músculo sin haber evaluado la mordida es medio diagnóstico. Por eso en nuestro consultorio la placa y la toxina se deciden juntas, en la misma consulta y por la misma persona.
+                            </p>
+                            <div className="border border-oro/15 rounded-xl p-5 bg-carbon-soft mb-8">
+                                <p className="text-crema/65 font-manrope text-sm leading-relaxed">
+                                    <span className="text-oro font-medium">Sin criticar a nadie:</span> el bruxismo es un área donde el terreno es la boca, y el profesional formado en ese terreno es el odontólogo. No es una cuestión de título, es de anatomía masticatoria y de poder evaluar la oclusión en la misma silla.
+                                </p>
+                            </div>
+
                             <h3 className="text-crema font-manrope font-medium text-base mb-4">A los tres meses se cae el carruaje</h3>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mb-4">
                                 El efecto no es permanente, y esto hay que decirlo de entrada. Dura alrededor de tres meses, con variación según la persona. Es la parte del cuento que le llamo <span className="text-crema">el carruaje de la Cenicienta</span>: llega la medianoche, se acaba el hechizo y el músculo empieza a recuperar su fuerza.
@@ -381,6 +452,43 @@ export default function BlogBruxismo() {
                                 <p className="text-crema/70 font-manrope text-base leading-relaxed">
                                     No le prometo eso a nadie —las articulaciones son complejas y cada caso responde distinto—, pero conocer el tratamiento desde adentro cambia cómo se lo explicás a alguien. Sé lo que se siente los primeros días, sé cuándo empieza a notarse y sé qué se recupera.
                                 </p>
+                            </div>
+                        </section>
+
+                        {/* ── LA VOZ DE LA DRA. CRUZ ── */}
+                        <section>
+                            <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-5">
+                                Quién lo aplica en nuestro consultorio
+                            </h2>
+                            <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
+                                La toxina en AM la aplica la{" "}
+                                <Link href="/equipo-am" className="text-oro hover:text-oro-light transition-colors">Dra. Candela Cruz</Link>, que lleva el área de armonización orofacial y estética facial. Es <span className="text-crema">odontóloga</span>, y eso no es un detalle del currículum: es exactamente el punto del que venimos hablando.
+                            </p>
+
+                            <div className="border border-oro/15 rounded-2xl p-6 md:p-8 bg-carbon-soft">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="relative w-14 h-14 rounded-full overflow-hidden border border-oro/20 shrink-0">
+                                        <Image
+                                            src={IMG.cruz}
+                                            alt="Dra. Candela Cruz, odontóloga de armonización orofacial en AM Estética Dental, Puerto Madero"
+                                            fill
+                                            sizes="56px"
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <div>
+                                        <p className="text-crema font-manrope font-medium text-sm">Dra. Candela Cruz</p>
+                                        <p className="text-crema/45 font-manrope text-xs">Armonización orofacial · AM Estética Dental</p>
+                                    </div>
+                                </div>
+                                <div className="space-y-4 border-l-2 border-oro/30 pl-6">
+                                    <p className="text-crema/70 font-manrope text-base leading-relaxed">
+                                        &ldquo;Los pacientes más agradecidos son los sintomáticos. Los que llegan con dolor: dolor de cabeza al despertar, contractura en el cuello, la mandíbula cansada todas las mañanas. Muchos vienen arrastrando eso desde hace años y probaron de todo menos mirar la boca.&rdquo;
+                                    </p>
+                                    <p className="text-crema/70 font-manrope text-base leading-relaxed">
+                                        &ldquo;Cuando el músculo baja la intensidad, ese cuadro cede. Y ahí el cambio no es estético, es de calidad de vida. Duermen distinto, se levantan distinto. Es de las cosas más gratificantes que hacemos.&rdquo;
+                                    </p>
+                                </div>
                             </div>
                         </section>
 
