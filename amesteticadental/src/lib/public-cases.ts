@@ -89,6 +89,24 @@ function getSupabasePublic() {
  */
 const MONEY_RE = /(?:USD|US\$|U\$S|\$)\s?\d[\d.,]*|\d[\d.,]*\s?(?:d[oó]lares|dollars|USD)/i;
 
+/**
+ * El seoTitle llega de Supabase y las dos plantillas de caso —`/casos/[slug]` y
+ * `/en/cases/[slug]`— le pegan " | AM Estética Dental" al final. Cuando la fila
+ * ya trae la marca escrita a mano, el título sale con la marca dos veces: pasó
+ * con el caso de las 21 carillas en inglés, que publicó
+ * "… | AM Estética Dental | AM Estética Dental" (92 caracteres, truncado en la
+ * SERP y con la mitad del espacio gastado en repetir el nombre).
+ *
+ * Como la web usa la anon key y no puede escribir en la base, el arreglo tiene
+ * que vivir acá: se limpia al leer, y cualquier fila futura con el mismo vicio
+ * queda cubierta sin tocar la plantilla.
+ */
+function stripBrandSuffix(text: string | undefined | null): string | undefined {
+  if (!text) return undefined;
+  const limpio = text.replace(/(\s*[|·–-]\s*AM\s*Est[ée]tica\s*Dental\s*)+$/i, "").trim();
+  return limpio || undefined;
+}
+
 function stripPricing(text: string | undefined | null): string | undefined {
   if (!text) return text ?? undefined;
   if (!MONEY_RE.test(text)) return text;
@@ -140,7 +158,7 @@ function mapDynamicCase(
     subtitulo:
       stripPricing(localized?.subtitle || localized?.description || row.subtitle || row.description) || descripcion,
     descripcion,
-    seoTitle: localized?.seoTitle || row.seo_title || undefined,
+    seoTitle: stripBrandSuffix(localized?.seoTitle || row.seo_title),
     seoDescription: stripPricing(localized?.seoDescription || row.seo_description),
     categorias: localized?.categories || row.categories || (lang === "en" ? ["Clinical case"] : ["Caso clínico"]),
     duracion: localized?.duration || row.duration || (lang === "en" ? "Clinical case" : "Caso clínico"),
