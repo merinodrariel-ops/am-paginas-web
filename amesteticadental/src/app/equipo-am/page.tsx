@@ -229,17 +229,19 @@ export default function EquipoAMPage() {
                   </div>
                   <p className="mt-4 text-sm leading-relaxed text-crema/62">{miembro.descripcion}</p>
                   {miembro.cv ? <FichaCurriculum cv={miembro.cv} /> : null}
-                  <div className="mt-3.5">
-                    <a
-                      href={`https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20gustar%C3%ADa%20coordinar%20una%20consulta%20inicial%20con%20el%20equipo%20de%20AM%20Est%C3%A9tica%20Dental%20para%20atenderme%20con%20${encodeURIComponent(miembro.nombre)}.`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-oro hover:text-oro-light transition-colors group/btn"
-                    >
-                      Consultar caso con {miembro.nombre.split(' ').slice(1).join(' ') || miembro.nombre}
-                      <span className="transform group-hover/btn:translate-x-0.5 transition-transform">→</span>
-                    </a>
-                  </div>
+                  {miembro.atiendePacientes === false ? null : (
+                    <div className="mt-3.5">
+                      <a
+                        href={`https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20gustar%C3%ADa%20coordinar%20una%20consulta%20inicial%20con%20el%20equipo%20de%20AM%20Est%C3%A9tica%20Dental%20para%20atenderme%20con%20${encodeURIComponent(miembro.nombre)}.`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-oro hover:text-oro-light transition-colors group/btn"
+                      >
+                        Consultar caso con {miembro.nombre.split(' ').slice(1).join(' ') || miembro.nombre}
+                        <span className="transform group-hover/btn:translate-x-0.5 transition-transform">→</span>
+                      </a>
+                    </div>
+                  )}
                 </article>
               ))}
             </div>

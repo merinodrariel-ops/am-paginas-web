@@ -76,6 +76,15 @@ export type EquipoMiembro = {
    */
   matriculaProvincial?: string;
   /**
+   * Si el profesional toma pacientes. Por defecto sí; se pone en `false` para
+   * quien está en el área clínica por su título pero hoy no atiende —la
+   * dirección del consultorio, por ejemplo—. Sirve para no ofrecer un botón de
+   * "consultar caso" que abre un WhatsApp pidiendo turno con alguien que no da
+   * turnos: el paciente escribe, nadie puede atenderlo, y la primera impresión
+   * de la clínica es una respuesta que corrige.
+   */
+  atiendePacientes?: boolean;
+  /**
    * Currículum completo. Opcional a propósito: se va cargando integrante por
    * integrante a medida que cada uno entrega su CV. Sin `cv`, la ficha se
    * renderiza como siempre.
@@ -698,21 +707,131 @@ export const equipoAM: EquipoMiembro[] = [
   },
   {
     slug: "claudia-hernandez",
-    nombre: "Dra. Claudia Hernandez",
-    rol: "Odontóloga y Coordinación",
-    area: "Odontología y Gestión",
+    nombre: "Dra. Claudia Hernández",
+    rol: "Dirección de consultorio",
+    area: "Odontología y gestión",
     descripcion:
-      "Odontóloga encargada de la dirección del consultorio, administración y logística de AM Estética Dental.",
+      "Odontóloga con recorrido clínico en odontología general, endodoncia y asistencia en cirugía e implantología. En AM lleva la dirección del consultorio: coordinación operativa, organización de procesos y funcionamiento diario.",
     imagen:
       "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/claudia-hernandez-administracion-am-estetica-dental-puerto-madero.jpg",
-    alt: "Dra. Claudia Hernandez, odontóloga y coordinación de AM Estética Dental en Puerto Madero",
-    rolEn: "Dentist & Coordination",
+    alt: "Dra. Claudia Hernández, odontóloga y dirección de consultorio de AM Estética Dental en Puerto Madero",
+    rolEn: "Practice Direction",
     areaEn: "Dentistry & Management",
     descripcionEn:
-      "Dentist in charge of practice direction, administration and logistics at AM Estética Dental.",
-    altEn: "Dr. Claudia Hernandez, dentist and coordination at AM Estética Dental in Puerto Madero",
+      "Dentist with clinical background in general dentistry, endodontics and assistance in surgery and implantology. At AM she runs the practice: operational coordination, process organization and day-to-day management.",
+    altEn: "Dr. Claudia Hernández, dentist and practice direction at AM Estética Dental in Puerto Madero",
     schemaType: "Dentist",
-    keywords: ["odontóloga", "coordinación clínica", "gestión operativa", "AM Estética Dental"],
+    keywords: ["odontóloga", "dirección de consultorio", "coordinación clínica", "gestión operativa", "AM Estética Dental"],
+    // Su CV lo dice explícito: hoy su rol en AM es de gestión, no de sillón.
+    atiendePacientes: false,
+    cv: {
+      titulo: "Odontóloga",
+      universidad: "Universidad José Antonio Páez — Valencia, Venezuela",
+      perfil:
+        "Odontóloga con experiencia en atención general, restauración sobre implantes y asistencia en tratamientos de alta complejidad: cirugía maxilofacial, implantología, endodoncia y rehabilitación. Dentro de AM ese recorrido se aplica del otro lado del sillón —dirige y organiza el consultorio, coordina la gestión operativa y sostiene el funcionamiento cotidiano—, y ahí el oficio clínico se nota: quien armó cajas de implantes sabe qué necesita una agenda que gira alrededor de esos tratamientos.",
+      formacion: [
+        {
+          titulo: "Odontóloga",
+          institucion: "Universidad José Antonio Páez — Valencia, Venezuela",
+          periodo: "2012 - 2017",
+        },
+        {
+          titulo: "Diplomado en Cirugía Bucal — 150 horas académicas",
+          institucion: "Universidad José Antonio Páez — Valencia, Venezuela",
+          periodo: "2017 - 2018",
+        },
+      ],
+      trayectoria: [
+        {
+          titulo: "Dirección, gestión administrativa y coordinación operativa del consultorio",
+          institucion: "AM Estética Dental — Puerto Madero",
+          periodo: "actualidad",
+        },
+        {
+          titulo: "Asistente dental",
+          institucion: "Dental System — Buenos Aires",
+          periodo: "marzo 2024 - mayo 2025",
+        },
+        {
+          titulo: "Odontóloga general",
+          institucion: "Consultorio Dra. Margarita D'Urbano — Buenos Aires",
+          periodo: "2023",
+        },
+        {
+          titulo: "Asistente dental — asistencia en cirugía maxilofacial e implantología",
+          institucion: "Consultorio Doctores Klurfan — Buenos Aires",
+          periodo: "marzo 2019 - febrero 2024",
+        },
+        {
+          titulo: "Odontóloga general",
+          institucion: "Clínica Dental Brackets — Valencia, Venezuela",
+          periodo: "noviembre 2017 - mayo 2018",
+        },
+      ],
+      areas: [
+        "Dirección y gestión de consultorio",
+        "Coordinación operativa y organización de procesos",
+        "Odontología general",
+        "Endodoncia",
+        "Restauración sobre implantes",
+        "Asistencia en cirugía e implantología",
+        "Bioseguridad y esterilización de instrumental",
+      ],
+    },
+    cvEn: {
+      titulo: "Odontóloga (dentist — Venezuelan dental degree)",
+      universidad: "Universidad José Antonio Páez — Valencia, Venezuela",
+      perfil:
+        "Dentist with experience in general care, implant-supported restoration and assistance in high-complexity treatments: maxillofacial surgery, implantology, endodontics and rehabilitation. At AM that background is applied from the other side of the chair —she runs and organizes the practice, coordinates operations and keeps the day to day running—, and the clinical craft shows: someone who has assembled implant kits knows what a schedule built around those treatments actually needs.",
+      formacion: [
+        {
+          titulo: "Odontóloga (dentist — Venezuelan dental degree)",
+          institucion: "Universidad José Antonio Páez — Valencia, Venezuela",
+          periodo: "2012 - 2017",
+        },
+        {
+          titulo: "Diploma in Oral Surgery — 150 academic hours",
+          institucion: "Universidad José Antonio Páez — Valencia, Venezuela",
+          periodo: "2017 - 2018",
+        },
+      ],
+      trayectoria: [
+        {
+          titulo: "Practice direction, administration and operational coordination",
+          institucion: "AM Estética Dental — Puerto Madero",
+          periodo: "present",
+        },
+        {
+          titulo: "Dental assistant",
+          institucion: "Dental System — Buenos Aires",
+          periodo: "March 2024 - May 2025",
+        },
+        {
+          titulo: "General dentist",
+          institucion: "Dr. Margarita D'Urbano's practice — Buenos Aires",
+          periodo: "2023",
+        },
+        {
+          titulo: "Dental assistant — assisting in maxillofacial surgery and implantology",
+          institucion: "Doctores Klurfan practice — Buenos Aires",
+          periodo: "March 2019 - February 2024",
+        },
+        {
+          titulo: "General dentist",
+          institucion: "Clínica Dental Brackets — Valencia, Venezuela",
+          periodo: "November 2017 - May 2018",
+        },
+      ],
+      areas: [
+        "Practice direction and management",
+        "Operational coordination and process organization",
+        "General dentistry",
+        "Endodontics",
+        "Implant-supported restoration",
+        "Assistance in surgery and implantology",
+        "Biosafety and instrument sterilization",
+      ],
+    },
   },
   {
     slug: "romina-lima",
