@@ -42,7 +42,15 @@ export type EquipoMiembro = {
   rol: string;
   area: string;
   descripcion: string;
-  imagen: string;
+  /**
+   * Retrato en Cloudinary. Es opcional porque un profesional puede empezar a
+   * atender antes de que su foto esté producida: sin `imagen`, la ficha se
+   * dibuja con el monograma de `RetratoMiembro` en vez de una imagen rota, y el
+   * schema simplemente no declara `image`. Es preferible publicar el currículum
+   * verificable de alguien que ya está en el equipo a esconderlo esperando una
+   * sesión de fotos.
+   */
+  imagen?: string;
   alt: string;
   rolEn: string;
   areaEn: string;
@@ -61,6 +69,12 @@ export type EquipoMiembro = {
    * vacío es siempre preferible a completarlo "a ojo".
    */
   matricula?: string;
+  /**
+   * Matrícula provincial (p. ej. "MP 91.374"), cuando el profesional también
+   * está matriculado en una provincia además de la Nación. Misma regla que
+   * `matricula`: sólo si está confirmada.
+   */
+  matriculaProvincial?: string;
   /**
    * Currículum completo. Opcional a propósito: se va cargando integrante por
    * integrante a medida que cada uno entrega su CV. Sin `cv`, la ficha se
@@ -91,23 +105,293 @@ export const equipoAM: EquipoMiembro[] = [
     matricula: "MN 34.869",
   },
   {
+    slug: "dr-augusto-druck",
+    nombre: "Dr. Augusto Druck",
+    rol: "Cirugía e implantología",
+    area: "Implantes y arcos completos",
+    descripcion:
+      "Odontólogo especialista en Prótesis Dentobucomaxilar (UBA). Resuelve la cirugía de implantes y la rehabilitación de arcos completos: full arch, carga inmediata y prótesis fija sobre implantes, con planificación digital y cirugía guiada.",
+    alt: "Dr. Augusto Druck, cirujano e implantólogo (MN 31.471) de AM Estética Dental en Puerto Madero",
+    rolEn: "Surgery & Implantology",
+    areaEn: "Implants & Full Arch",
+    descripcionEn:
+      "Dentist specialized in Maxillofacial Prosthodontics (University of Buenos Aires). He handles implant surgery and full-arch rehabilitation: full arch, immediate loading and fixed implant-supported prosthetics, with digital planning and guided surgery.",
+    altEn: "Dr. Augusto Druck, implant surgeon (license MN 31.471) at AM Estética Dental in Puerto Madero",
+    schemaType: "Dentist",
+    keywords: [
+      "implantes dentales",
+      "full arch",
+      "all on x",
+      "cirugía de implantes",
+      "carga inmediata",
+      "rehabilitación oral",
+      "prótesis sobre implantes",
+    ],
+    matricula: "MN 31.471",
+    matriculaProvincial: "MP 91.374",
+    cv: {
+      titulo: "Odontólogo — Especialista en Prótesis Dentobucomaxilar",
+      universidad: "Universidad Nacional de La Plata — Facultad de Odontología (UNLP)",
+      perfil:
+        "Odontólogo especializado en Prótesis Dentobucomaxilar, implantología oral y rehabilitación de alta complejidad. Dentro de AM resuelve los casos de arcos completos sobre implantes: la parte del tratamiento donde la cirugía y la prótesis tienen que planificarse como una sola cosa, porque de la posición de cada implante depende la sonrisa que después se atornilla encima. Lleva más de 10 años formando odontólogos en implantología.",
+      formacion: [
+        {
+          titulo: "Odontólogo",
+          institucion: "Universidad Nacional de La Plata — Facultad de Odontología",
+          periodo: "egresado en 2006",
+        },
+        {
+          titulo: "Especialista en Prótesis Dentobucomaxilar",
+          institucion: "Universidad de Buenos Aires",
+        },
+        {
+          titulo:
+            "Carrera de Especialización en Rehabilitación Protética de Alta Complejidad, orientación en Prótesis Implanto-Asistida y Prótesis Fija",
+          institucion: "Universidad de Buenos Aires — Director: Prof. Héctor José Álvarez Cantoni",
+        },
+        {
+          titulo:
+            "Formación continua en implantología oral, cirugía implantológica, rehabilitación de arcos completos y odontología digital",
+        },
+      ],
+      docencia: [
+        {
+          titulo: "Dictante del Curso Anual de Implantología — niveles Iniciación y Avanzado",
+          institucion: "Asociación Odontológica Marplatense",
+          periodo: "actualidad",
+        },
+        {
+          titulo:
+            "Dictante de cursos de Full Arch y rehabilitación de arcos completos sobre implantes: planificación digital, workshops y cirugías demostrativas",
+        },
+        {
+          titulo: "Dictante de cursos de Implantología Oral",
+          periodo: "más de 10 años",
+        },
+      ],
+      trayectoria: [
+        {
+          titulo: "Cirugía de implantes y rehabilitación sobre implantes",
+          institucion: "AM Estética Dental — Puerto Madero",
+        },
+      ],
+      areas: [
+        "Full Arch / All-on-X",
+        "Carga inmediata",
+        "Implantología oral avanzada",
+        "Rehabilitación de maxilares edéntulos y atróficos",
+        "Prótesis fija sobre implantes",
+        "Planificación digital y cirugía guiada",
+        "Fotogrametría en rehabilitaciones sobre implantes",
+      ],
+    },
+    cvEn: {
+      titulo: "Odontólogo (dentist) — Specialist in Maxillofacial Prosthodontics",
+      universidad: "National University of La Plata — School of Dentistry (UNLP)",
+      perfil:
+        "Dentist specialized in Maxillofacial Prosthodontics, oral implantology and high-complexity rehabilitation. At AM he resolves full-arch implant cases: the part of treatment where surgery and prosthetics must be planned as one, because the smile that is later screwed into place depends on where each implant sits. He has been training dentists in implantology for over 10 years.",
+      formacion: [
+        {
+          titulo: "Odontólogo (dentist — Argentine dental degree)",
+          institucion: "National University of La Plata — School of Dentistry",
+          periodo: "graduated 2006",
+        },
+        {
+          titulo: "Specialist in Maxillofacial Prosthodontics",
+          institucion: "University of Buenos Aires",
+        },
+        {
+          titulo:
+            "Specialization in High-Complexity Prosthetic Rehabilitation, focused on implant-supported and fixed prosthetics",
+          institucion: "University of Buenos Aires — Director: Prof. Héctor José Álvarez Cantoni",
+        },
+        {
+          titulo:
+            "Continuing education in oral implantology, implant surgery, full-arch rehabilitation and digital dentistry",
+        },
+      ],
+      docencia: [
+        {
+          titulo: "Lecturer, Annual Implantology Course — Introductory and Advanced levels",
+          institucion: "Asociación Odontológica Marplatense",
+          periodo: "present",
+        },
+        {
+          titulo:
+            "Lecturer on Full Arch and full-arch implant rehabilitation: digital planning, workshops and live surgeries",
+        },
+        {
+          titulo: "Lecturer on Oral Implantology",
+          periodo: "over 10 years",
+        },
+      ],
+      trayectoria: [
+        {
+          titulo: "Implant surgery and implant-supported rehabilitation",
+          institucion: "AM Estética Dental — Puerto Madero",
+        },
+      ],
+      areas: [
+        "Full Arch / All-on-X",
+        "Immediate loading",
+        "Advanced oral implantology",
+        "Rehabilitation of edentulous and atrophic jaws",
+        "Fixed implant-supported prosthetics",
+        "Digital planning and guided surgery",
+        "Photogrammetry for implant rehabilitation",
+      ],
+    },
+  },
+  {
     slug: "dra-candela-cruz",
     nombre: "Dra. Candela Cruz",
     rol: "Armonización orofacial",
     area: "Estética facial y dental",
     descripcion:
-      "Odontóloga del area de estética facial, armonización orofacial y procedimientos complementarios de estética dental.",
+      "Odontóloga con más de 5 años de formación en estética facial. Lleva la armonización orofacial y los tratamientos inyectables, con un criterio de resultados naturales y equilibrados.",
     imagen:
       "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870265/equipo-am/dra-candela-cruz-armonizacion-orofacial-estetica-dental-am-estetica-dental-puerto-madero.jpg",
     alt: "Dra. Candela Cruz, odontóloga de armonización orofacial y estética dental en AM Estética Dental Puerto Madero",
     rolEn: "Orofacial Harmonization",
     areaEn: "Facial & Dental Aesthetics",
     descripcionEn:
-      "Dentist in the facial aesthetics area: orofacial harmonization and complementary cosmetic dentistry procedures.",
+      "Dentist with over 5 years of training in facial aesthetics. She leads orofacial harmonization and injectable treatments, with a focus on natural, balanced results.",
     altEn: "Dr. Candela Cruz, orofacial harmonization and cosmetic dentistry at AM Estética Dental Puerto Madero",
     schemaType: "Dentist",
     keywords: ["armonización orofacial", "estética facial", "odontóloga", "estética dental"],
     matricula: "MN 43.010",
+    cv: {
+      titulo: "Odontóloga",
+      universidad: "Universidad Argentina John F. Kennedy",
+      perfil:
+        "Odontóloga con más de 5 años de formación en estética facial, dedicada a los tratamientos inyectables. Dentro de AM trabaja el diseño de sonrisa junto a la armonización orofacial: la sonrisa se proyecta mirando la cara entera —labios, tercio medio, proporciones— y no un rasgo aislado. El criterio es el mismo en las dos áreas: que el resultado se vea natural y equilibrado.",
+      formacion: [
+        {
+          titulo: "Odontóloga",
+          institucion: "Universidad Argentina John F. Kennedy",
+        },
+        {
+          titulo: "Fillers y toxina botulínica",
+          institucion: "Dra. Ariana Pedreira",
+        },
+        {
+          titulo: "Full Face",
+          institucion: "Ateneo Argentino — Dra. Analía Rojktop",
+        },
+        {
+          titulo: "Armonización facial",
+          institucion: "Eugenia Garaventa",
+        },
+        {
+          titulo: "MD Codes",
+          institucion: "Natalia Ballestrini",
+        },
+        {
+          titulo: "Bioestimuladores",
+          institucion: "Diego Bujanda",
+        },
+        {
+          titulo: "Fillers",
+          institucion: "Celeste Nome — Allergan",
+        },
+        {
+          titulo: "Toxina botulínica",
+          institucion: "Fernanda Cohen",
+        },
+        {
+          titulo: "Bioestimulación facial",
+          institucion: "Andrea Rey",
+        },
+      ],
+      trayectoria: [
+        {
+          titulo: "Diseño de sonrisa y armonización orofacial",
+          institucion: "AM Estética Dental — Puerto Madero",
+        },
+        {
+          titulo: "Armonización facial",
+          institucion: "Clínica Dermatológica SP",
+        },
+        {
+          titulo: "Armonización facial",
+          institucion: "Clínica Costoya",
+        },
+      ],
+      areas: [
+        "Armonización orofacial",
+        "Toxina botulínica",
+        "Rellenos con ácido hialurónico",
+        "MD Codes",
+        "Bioestimuladores",
+        "Diseño de sonrisa digital",
+      ],
+    },
+    cvEn: {
+      titulo: "Odontóloga (dentist — Argentine dental degree)",
+      universidad: "Universidad Argentina John F. Kennedy",
+      perfil:
+        "Dentist with over 5 years of training in facial aesthetics, dedicated to injectable treatments. At AM she works on smile design alongside orofacial harmonization: the smile is planned by looking at the whole face —lips, midface, proportions— rather than a single feature. The criterion is the same in both areas: a result that looks natural and balanced.",
+      formacion: [
+        {
+          titulo: "Odontóloga (dentist — Argentine dental degree)",
+          institucion: "Universidad Argentina John F. Kennedy",
+        },
+        {
+          titulo: "Fillers and botulinum toxin",
+          institucion: "Dr. Ariana Pedreira",
+        },
+        {
+          titulo: "Full Face",
+          institucion: "Ateneo Argentino — Dr. Analía Rojktop",
+        },
+        {
+          titulo: "Facial harmonization",
+          institucion: "Eugenia Garaventa",
+        },
+        {
+          titulo: "MD Codes",
+          institucion: "Natalia Ballestrini",
+        },
+        {
+          titulo: "Biostimulators",
+          institucion: "Diego Bujanda",
+        },
+        {
+          titulo: "Fillers",
+          institucion: "Celeste Nome — Allergan",
+        },
+        {
+          titulo: "Botulinum toxin",
+          institucion: "Fernanda Cohen",
+        },
+        {
+          titulo: "Facial biostimulation",
+          institucion: "Andrea Rey",
+        },
+      ],
+      trayectoria: [
+        {
+          titulo: "Smile design and orofacial harmonization",
+          institucion: "AM Estética Dental — Puerto Madero",
+        },
+        {
+          titulo: "Facial harmonization",
+          institucion: "Clínica Dermatológica SP",
+        },
+        {
+          titulo: "Facial harmonization",
+          institucion: "Clínica Costoya",
+        },
+      ],
+      areas: [
+        "Orofacial harmonization",
+        "Botulinum toxin",
+        "Hyaluronic acid fillers",
+        "MD Codes",
+        "Biostimulators",
+        "Digital smile design",
+      ],
+    },
   },
   {
     slug: "dra-luz-ferron",

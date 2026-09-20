@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Contacto from "@/components/Contacto";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import { equipoAM, equipoClinico } from "@/data/equipo";
 import FichaCurriculum, { ETIQUETAS_CV_EN } from "@/components/equipo/FichaCurriculum";
+import RetratoMiembro from "@/components/equipo/RetratoMiembro";
 import { empleadoSchema } from "@/lib/equipo-schema";
 import { hreflangFor } from "@/lib/i18n-routes";
 
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Team AM | AM Estética Dental Puerto Madero",
   description:
-    "Meet Team AM at AM Estética Dental in Puerto Madero: cosmetic dentistry, invisible aligners, in-house digital dental laboratory, clinical assistance and patient care.",
+    "Meet Team AM at AM Estética Dental in Puerto Madero: cosmetic dentistry, implant surgery, invisible aligners, in-house digital dental laboratory and patient care.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/equipo-am") },
   openGraph: {
     title: "Team AM | AM Estética Dental Puerto Madero",
@@ -91,7 +91,8 @@ export default function TeamPage() {
               </h1>
               <p className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-crema/68 md:text-xl">
                 AM Estética Dental works as one integrated team: clinical direction, cosmetic dentistry,
-                invisible aligners, an in-house digital dental laboratory, clinical assistance, administration and patient follow-up.
+                implant surgery, invisible aligners, an in-house digital dental laboratory, clinical assistance,
+                administration and patient follow-up.
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -114,10 +115,9 @@ export default function TeamPage() {
 
             <div className="relative">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-oro/15 bg-carbon-soft">
-                <Image
-                  src={featured.imagen}
-                  alt={featured.altEn}
-                  fill
+                <RetratoMiembro
+                  miembro={featured}
+                  idioma="en"
                   priority
                   sizes="(max-width: 1024px) 100vw, 42vw"
                   className="object-cover object-top"
@@ -162,20 +162,16 @@ export default function TeamPage() {
                   className="group scroll-mt-28 transition-all duration-300"
                 >
                   <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-oro/12 bg-carbon-soft/60 backdrop-blur-sm transition-all duration-300 group-hover:border-oro/30 group-hover:-translate-y-1 shadow-md group-hover:shadow-oro/5">
-                    <Image
-                      src={miembro.imagen}
-                      alt={miembro.altEn}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.05]"
-                    />
+                    <RetratoMiembro miembro={miembro} idioma="en" sizes="(max-width: 768px) 100vw, 33vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-carbon/78 via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-5">
                       <p className="text-[10px] uppercase tracking-[0.26em] text-oro/75">{miembro.areaEn}</p>
                       <h3 className="mt-2 text-2xl font-light text-crema">{miembro.nombre}</h3>
                       <p className="mt-1 text-sm font-medium text-oro">{miembro.rolEn}</p>
                       {miembro.matricula ? (
-                        <p className="mt-1 text-[10px] uppercase tracking-[0.22em] text-crema/45">{miembro.matricula}</p>
+                        <p className="mt-1 text-[10px] uppercase tracking-[0.22em] text-crema/45">
+                          {[miembro.matricula, miembro.matriculaProvincial].filter(Boolean).join(" · ")}
+                        </p>
                       ) : null}
                     </div>
                   </div>
@@ -210,13 +206,7 @@ export default function TeamPage() {
               {supportTeam.map((miembro) => (
                 <article key={miembro.slug} className="group transition-all duration-300">
                   <div className="relative aspect-square overflow-hidden rounded-2xl border border-oro/12 bg-carbon/60 backdrop-blur-sm transition-all duration-300 group-hover:border-oro/30 group-hover:-translate-y-1 shadow-md group-hover:shadow-oro/5">
-                    <Image
-                      src={miembro.imagen}
-                      alt={miembro.altEn}
-                      fill
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.05]"
-                    />
+                    <RetratoMiembro miembro={miembro} idioma="en" sizes="(max-width: 768px) 50vw, 25vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-carbon/75 via-transparent to-transparent" />
                   </div>
                   <h3 className="mt-4 text-base font-light leading-snug text-crema">{miembro.nombre}</h3>

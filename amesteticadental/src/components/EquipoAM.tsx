@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import RetratoMiembro from "@/components/equipo/RetratoMiembro";
 import { equipoAM } from "@/data/equipo";
 
 export default function EquipoAM() {
@@ -28,12 +28,9 @@ export default function EquipoAM() {
                     {equipoAM.map((miembro) => (
                         <div key={miembro.nombre} className="group flex flex-col items-center text-center">
                             <div className="relative w-full aspect-square rounded-2xl overflow-hidden mb-4 border border-oro/10 group-hover:border-oro/30 transition-colors duration-300">
-                                <Image
-                                    src={miembro.imagen}
-                                    alt={miembro.alt}
-                                    fill
+                                <RetratoMiembro
+                                    miembro={miembro}
                                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                                    className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.05]"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-carbon/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
                             </div>

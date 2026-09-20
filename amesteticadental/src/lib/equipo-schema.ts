@@ -41,11 +41,11 @@ export const CONSULTORIO_PLACE = {
  * archivo lleva en IPTC (autor, crédito, copyright, dónde fue tomada) para que
  * Google Imágenes lo lea aunque un CDN intermedio borre los metadatos del binario.
  */
-function fotoSchema(miembro: EquipoMiembro, alt: string) {
+function fotoSchema(imagen: string, alt: string) {
   return {
     "@type": "ImageObject",
-    url: miembro.imagen,
-    contentUrl: miembro.imagen,
+    url: imagen,
+    contentUrl: imagen,
     caption: alt,
     representativeOfPage: false,
     creator: { "@type": "Organization", name: MARCA, url: SITIO },
@@ -76,6 +76,19 @@ export function empleadoSchema(miembro: EquipoMiembro, idioma: "es" | "en" = "es
           },
         ]
       : []),
+    // La provincial va sin `recognizedBy`: no inventamos qué colegio la emitió.
+    ...(miembro.matriculaProvincial
+      ? [
+          {
+            "@type": "EducationalOccupationalCredential",
+            credentialCategory: "license",
+            name:
+              idioma === "en"
+                ? `Provincial license ${miembro.matriculaProvincial}`
+                : `Matrícula provincial ${miembro.matriculaProvincial}`,
+          },
+        ]
+      : []),
     ...(cv
       ? [
           {
@@ -95,7 +108,9 @@ export function empleadoSchema(miembro: EquipoMiembro, idioma: "es" | "en" = "es
     name: miembro.nombre,
     jobTitle: idioma === "en" ? miembro.rolEn : miembro.rol,
     description: idioma === "en" ? miembro.descripcionEn : miembro.descripcion,
-    image: fotoSchema(miembro, alt),
+    // Sin retrato producido todavía, `image` no se declara: es preferible un
+    // schema más pobre a uno que apunte a una imagen que no existe.
+    ...(miembro.imagen ? { image: fotoSchema(miembro.imagen, alt) } : {}),
     url: `${SITIO}${idioma === "en" ? "/en/team" : "/equipo-am"}#${miembro.slug}`,
     worksFor: {
       "@type": "Dentist",
@@ -111,11 +126,22 @@ export function empleadoSchema(miembro: EquipoMiembro, idioma: "es" | "en" = "es
     // publicada la matrícula y hay agregadores que la leen de ahí.
     ...(miembro.matricula
       ? {
-          identifier: {
-            "@type": "PropertyValue",
-            propertyID: "Matrícula Nacional",
-            value: miembro.matricula,
-          },
+          identifier: [
+            {
+              "@type": "PropertyValue",
+              propertyID: "Matrícula Nacional",
+              value: miembro.matricula,
+            },
+            ...(miembro.matriculaProvincial
+              ? [
+                  {
+                    "@type": "PropertyValue",
+                    propertyID: "Matrícula Provincial",
+                    value: miembro.matriculaProvincial,
+                  },
+                ]
+              : []),
+          ],
         }
       : {}),
   };
