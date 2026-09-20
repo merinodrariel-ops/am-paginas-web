@@ -181,11 +181,16 @@ export const localFaqs = [
   },
 ];
 
-export const VIDEO_BASE = "https://res.cloudinary.com/drctvgyqd/video/upload/q_auto:eco,f_auto/implantes-dentales-am";
-export const VIDEO_POSTER_BASE = "https://res.cloudinary.com/drctvgyqd/video/upload/so_0,w_1000,q_auto,f_jpg/implantes-dentales-am";
+// La carpeta de Cloudinary NO va acá sino dentro de `TreatmentVideo.id`: los
+// videos de tratamiento viven en carpetas distintas (`implantes-dentales-am`,
+// `bruxismo`, …) y fijar una sola acá obligaba a duplicar el archivo para
+// reusarlo desde otra página.
+export const VIDEO_BASE = "https://res.cloudinary.com/drctvgyqd/video/upload/q_auto:eco,f_auto";
+export const VIDEO_POSTER_BASE = "https://res.cloudinary.com/drctvgyqd/video/upload/so_0,w_1000,q_auto,f_jpg";
 
 /** Video en loop del hero. Mismos assets que ya usa la sede argentina. */
 export type TreatmentVideo = {
+  /** Ruta en Cloudinary incluyendo carpeta, p. ej. `bruxismo/placa-...`. */
   id: string;
   badge: string;
   caption: string;
@@ -597,7 +602,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
       },
     ],
     video: {
-      id: "implante-dental-neodent-grupo-straumann-3d-wireframe-am-estetica-dental-buenos-aires",
+      id: "implantes-dentales-am/implante-dental-neodent-grupo-straumann-3d-wireframe-am-estetica-dental-buenos-aires",
       badge: "Grupo Straumann · Tecnología 3D",
       caption: "Geometría y superficie de un implante Neodent® del Grupo Straumann®.",
       alt: "Animación 3D de un implante dental Neodent del Grupo Straumann utilizado por AM Estética Dental",
@@ -623,6 +628,104 @@ export const treatmentPages: Record<string, TreatmentPage> = {
     whatsappContext: "implantes dentales",
   },
 
+  "bruxismo-botox-placa-montevideo": {
+    title: "Tratamiento del bruxismo en Montevideo",
+    metaTitle: "Bruxismo: placa y toxina botulínica en Montevideo | AM",
+    metaDescription:
+      "Tratamiento del bruxismo con placa de descarga y toxina botulínica en masetero y temporal, aplicada por odontólogos. Próxima sede de AM Estética Dental en Carrasco, Montevideo.",
+    eyebrow: "Próxima sede en zona Carrasco",
+    lead: "A la noche el sistema nervioso baja la persiana, pero la musculatura sigue trabajando contra tus propios dientes. El tratamiento tiene dos pilares, y ninguno reemplaza al otro.",
+    intro:
+      "Los dos pilares del tratamiento del bruxismo: la placa que protege y guía el movimiento mandibular, y la toxina que le baja la fuerza al músculo.",
+    sections: [
+      {
+        heading: "Por qué el bruxismo es un problema silencioso",
+        body: [
+          "El bruxismo no duele al principio, y ese es todo el problema. No hay un día en que uno se dé cuenta de que empezó: es un desgaste de décimas de milímetro por año que sólo se vuelve visible cuando ya cambió la forma de los dientes.",
+          "Y no se queda en el esmalte. La misma fuerza que lima los bordes carga la articulación de la mandíbula, tensiona los músculos del cuello y se traduce en dolores de cabeza que muchos pacientes arrastran durante años sin haberlos conectado nunca con la boca.",
+        ],
+      },
+      {
+        heading: "La placa, que no es la placa que todos conocen",
+        body: [
+          "Cuando se dice «placa», casi todo el mundo piensa en el plástico fino y transparente que dan al terminar la ortodoncia. Eso es un contenedor: sirve para que los dientes no se muevan de lugar. No tiene nada que ver con esto.",
+          "La placa de descarga es gruesa, rígida y está tallada para guiar por dónde se mueve la mandíbula. No es una barrera pasiva entre dos hileras de dientes: es una superficie diseñada para que, cuando el músculo empuje de noche, la mandíbula se deslice por donde corresponde. Se diseña sobre un escaneo 3D de la boca y se calibra en consultorio hasta que el contacto es parejo — el paso que más se saltea y el que define si el paciente va a poder dormir con ella.",
+        ],
+      },
+      {
+        heading: "La toxina botulínica, y por qué la aplica un odontólogo",
+        body: [
+          "Se aplica en los dos músculos que cierran la mandíbula: el masetero, entre el pómulo y el ángulo del maxilar, y el temporal, el abanico que va sobre la sien y que casi nadie asocia con la mordida. La toxina recorta los picos de fuerza involuntaria, que son los que rompen, sin comprometer la masticación.",
+          "No es el mismo tratamiento que la toxina estética. Es la misma molécula, pero ahí se trabaja sobre músculos de la expresión, superficiales y pequeños; acá sobre músculos masticatorios, profundos y potentes. Cambian el punto, la profundidad y la dosis.",
+          "Y hay algo de fondo que define quién debería hacerlo: el bruxismo no se resuelve mirando el músculo solo. Hay que ver cómo encajan los dientes, por dónde se mueve la mandíbula y cómo está la articulación. Bajarle la fuerza al músculo sin haber evaluado la oclusión es medio diagnóstico. Sin criticar a nadie: el terreno es la boca, y el profesional formado en ese terreno es el odontólogo.",
+        ],
+      },
+      {
+        heading: "Por qué los dos juntos y no uno solo",
+        body: [
+          "Porque atacan cosas distintas. La placa se ocupa del dónde: separa los dientes, absorbe el contacto y ordena por dónde se desliza la mandíbula, pero no reduce la fuerza que hace el músculo. La toxina se ocupa del cuánto: baja la intensidad, pero no separa los dientes ni corrige el movimiento.",
+          "Escudo y volumen. Es la combinación la que cambia el pronóstico, no cada pieza por separado.",
+        ],
+      },
+      {
+        heading: "Lo que casi nadie cuenta: el sueño",
+        body: [
+          "Apretar los dientes de noche no es un evento silencioso para el cuerpo. Cada episodio de contracción viene acompañado de una microactivación: el sueño se aligera un instante, aunque uno no llegue a despertarse ni se acuerde al otro día. Multiplicado por decenas de veces por noche, durante años, el resultado es gente que duerme ocho horas y se levanta como si hubiera dormido cinco.",
+          "No se puede afirmar que una placa o la toxina hagan vivir más años: eso no está demostrado. Lo que sí está bien establecido es que el descanso profundo es de lo más reparador que tiene el organismo, y que un bruxismo controlado interrumpe menos ese descanso.",
+        ],
+      },
+    ],
+    bullets: [
+      { label: "Placa", text: "Rígida, con guías de desoclusión, diseñada sobre escaneo 3D y calibrada en boca." },
+      { label: "Toxina", text: "En masetero y temporal. Efecto de unos tres meses; el esquema se planifica caso por caso." },
+      { label: "Quién la aplica", text: "Odontólogos matriculados, no personal sin formación en anatomía masticatoria." },
+      { label: "Límite", text: "Frena el daño que viene. El esmalte perdido no se regenera y se rehabilita aparte." },
+      { label: "Sede", text: "Zona Carrasco, Montevideo. Apertura a confirmar." },
+    ],
+    video: {
+      id: "bruxismo/placa-bruxismo-giro-360-dr-ariel-merino-am-estetica-dental-buenos-aires",
+      badge: "Placa de descarga · 360°",
+      caption: "Así se ve una placa de descarga real: arcada completa, cuerpo grueso y superficie de mordida tallada.",
+      alt: "Placa de descarga rígida para bruxismo girando 360 grados — AM Estética Dental",
+      duration: 10,
+    },
+    faqs: [
+      {
+        question: "¿Puedo usar sólo la placa, sin toxina?",
+        answer:
+          "Sí, y en muchos casos alcanza. La placa sola es un tratamiento completamente válido y es siempre el punto de partida. La toxina entra cuando el componente muscular es fuerte: mandíbula muy marcada, dolor, o desgaste que sigue avanzando a pesar de la placa.",
+      },
+      {
+        question: "¿Y sólo toxina, sin placa?",
+        answer:
+          "No es lo recomendable. La toxina baja la fuerza, pero no elimina el contacto entre los dientes ni corrige por dónde se mueve la mandíbula. La placa es la que protege físicamente el esmalte: sacarla porque uno se aplicó toxina es dejar el diente sin su escudo.",
+      },
+      {
+        question: "¿Voy a perder fuerza para masticar?",
+        answer:
+          "Con dosis bien calculadas, no. El objetivo es bajar los picos de fuerza involuntaria, que son los que rompen, no la fuerza que se usa para comer. Algunos pacientes notan los primeros días que morder algo muy duro cuesta un poco más, y se normaliza.",
+      },
+      {
+        question: "¿Cuánto dura el efecto?",
+        answer:
+          "Alrededor de tres meses, con variación de persona a persona. No es un tratamiento de una sola vez: se planifica. El esquema de aplicaciones se define según cómo responda el músculo de cada paciente.",
+      },
+      {
+        question: "¿El bruxismo se cura?",
+        answer:
+          "Se controla. Tiene un componente de sistema nervioso, de estrés y de patrón de sueño que no se resuelve en el consultorio. Lo que sí se puede es que deje de tener consecuencias: que no rompa los dientes, que no duela la cabeza y que no arruine el descanso.",
+      },
+      {
+        question: "¿Cuánto cuesta en Montevideo?",
+        answer:
+          "Los valores de la sede de Carrasco se publicarán cuando la sede abra. Mientras tanto, la consulta puede coordinarse por WhatsApp con el equipo de AM: la evaluación del caso es la que define qué combinación corresponde y qué inversión implica.",
+      },
+    ],
+    arCounterpart: "/bruxismo-botox-placa-precio-buenos-aires",
+    arLabel: "Ver la página completa del tratamiento de bruxismo de la sede argentina",
+    related: ["estetica-dental-montevideo", "carillas-dentales-montevideo", "clinica-dental-carrasco"],
+    whatsappContext: "el tratamiento de bruxismo",
+  },
   "blanqueamiento-dental-montevideo": {
     title: "Blanqueamiento dental en Montevideo",
     metaTitle: "Blanqueamiento dental en Montevideo | AM Uruguay",
@@ -885,7 +988,14 @@ export const INDEXABLE_ROUTES: { path: string; priority: number; changeFrequency
 // sirva a los uruguayos la versión .uy — sin autoridad y de una sede que todavía
 // no atiende. El enlace hacia la página argentina se mantiene; lo que no se hace
 // es pedirle a Google que la reemplace. Se suma cuando Carrasco abra.
-const PARES_EN_ESPERA = new Set(["/precio-carillas-dentales-montevideo"]);
+//
+// `/bruxismo-botox-placa-montevideo` queda afuera por el mismo mecanismo pero por
+// una razón más simple: la página argentina publica la inversión y convierte por
+// WhatsApp; la uruguaya no publica valores, porque todavía no están definidos.
+// Declarar el par le pediría a Google que a un uruguayo le muestre la versión sin
+// precio en lugar de la que puede resolverle la consulta hoy. Se suma cuando
+// Carrasco abra y tenga sus propios valores.
+const PARES_EN_ESPERA = new Set(["/precio-carillas-dentales-montevideo", "/bruxismo-botox-placa-montevideo"]);
 
 export const AR_BY_UY: Record<string, string> = {
   "/": "/",
