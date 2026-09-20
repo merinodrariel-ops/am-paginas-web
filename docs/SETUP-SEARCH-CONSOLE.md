@@ -44,27 +44,25 @@ Console**, agregando esa dirección como usuaria de cada propiedad.
 
 ## Permisos en Search Console
 
-Estado real al 2026-09-20, en Configuración → Usuarios y permisos de cada propiedad:
+La cuenta de servicio figura como **Propietario** en las cuatro propiedades, verificado
+en producción el 2026-09-20: las cuatro aceptan la Indexing API.
 
-| Propiedad | Permiso cargado | Sitemaps | Inspección de URL | Indexing API |
+| Propiedad | Permiso | Sitemaps | Inspección de URL | Indexing API |
 |---|---|---|---|---|
-| amesteticadental.com | **Propietario** | ✅ | ✅ | ✅ |
-| amesteticadental.uy | Completo | ✅ | ✅ | ❌ |
-| thedentalreview.com | Completo | ✅ | ✅ | ❌ |
-| arielmerino.com | Completo | ✅ | ✅ | ❌ |
+| amesteticadental.com | Propietario | ✅ | ✅ | ✅ |
+| amesteticadental.uy | Propietario | ✅ | ✅ | ✅ |
+| thedentalreview.com | Propietario | ✅ | ✅ | ✅ |
+| arielmerino.com | Propietario | ✅ | ✅ | ✅ |
 
-**Por qué la diferencia.** La Indexing API es la única que exige nivel de propietario;
-los sitemaps y la inspección de URL se conforman con "Completo". `gsc.mjs` sólo toca
-`amesteticadental.com`, que sí quedó como Propietario, así que el flujo habitual de
-publicar una nota y pedir indexación funciona completo.
+**Por qué Propietario y no Completo:** la Indexing API es la única de las tres que exige
+nivel de propietario. Con "Completo" andan los sitemaps y la inspección de URL, pero
+`gsc.mjs indexar` y `scripts/indexar-red.mjs` responden **403 Permission denied. Failed
+to verify the URL ownership** — que es el síntoma a reconocer si alguna vez baja el nivel.
 
-El único que queda a medias es `scripts/indexar-red.mjs`, que usa la Indexing API sobre
-los cuatro sitios: en los otros tres va a responder 403 hasta que se suban a Propietario.
-
-**Para subirlos** (30 segundos cada uno, a mano): en la fila de la cuenta de servicio →
-menú de tres puntos → cambiar permiso a "Propietario". El desplegable de ese diálogo no
-acepta selección automatizada —se resiste a clicks y a teclado—, así que este paso es
-manual por necesidad, no por olvido.
+⚠️ **Este paso se carga a mano.** El desplegable de permisos de Search Console no acepta
+selección automatizada: resiste el click sobre la opción, ArrowUp+Enter y el type-ahead,
+y el valor vuelve solo a "Completo". Si hay que rehacerlo: en la fila de la cuenta de
+servicio → menú de tres puntos → Propietario.
 
 ## Dónde vive la clave
 
@@ -104,7 +102,19 @@ node scripts/verificar-credenciales-google.mjs
 Dice qué credencial encontró, si autentica y qué propiedades ve. Si una propiedad no
 aparece, es que a la cuenta de servicio le falta el alta en Search Console.
 
-Después, la prueba de fuego:
+⚠️ **Ese chequeo no distingue Propietario de Completo**: con "Completo" las cuatro
+propiedades ya aparecen en la lista. La diferencia sólo se nota al pedir indexación, así
+que la prueba real es:
+
+```bash
+node scripts/indexar-red.mjs
+```
+
+Si los cuatro sitios responden OK en vez de 403, el nivel de permiso está bien. Consume
+cuota de la Indexing API (200 pedidos por día), así que es para verificar, no para correr
+a cada rato.
+
+Y la prueba del flujo de todos los días:
 
 ```bash
 node gsc.mjs indexar /blog/mi-nota
