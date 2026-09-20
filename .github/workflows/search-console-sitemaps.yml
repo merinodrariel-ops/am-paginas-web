@@ -29,7 +29,9 @@ jobs:
   submit:
     runs-on: ubuntu-latest
     env:
-      HAS_GSC_SECRETS: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_ID != '' && secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET != '' && secrets.GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN != '' }}
+      # Desde 2026-09-20 basta con la cuenta de servicio. Los tres secretos viejos
+      # se siguen aceptando mientras quede algún entorno sin migrar.
+      HAS_GSC_SECRETS: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON != '' || (secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_ID != '' && secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET != '' && secrets.GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN != '') }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,6 +43,7 @@ jobs:
       - name: Enviar sitemaps a Google Search Console
         if: env.HAS_GSC_SECRETS == 'true'
         env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           GOOGLE_SEARCH_CONSOLE_CLIENT_ID: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_ID }}
           GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET }}
           GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN }}
@@ -55,10 +58,9 @@ jobs:
         run: |
           echo "::error::No se enviaron los sitemaps a Google: faltan los secretos de Search Console."
           echo ""
-          echo "Cargalos en Settings → Secrets and variables → Actions:"
-          echo "  GOOGLE_SEARCH_CONSOLE_CLIENT_ID"
-          echo "  GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET"
-          echo "  GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN"
+          echo "Cargá en Settings → Secrets and variables → Actions:"
+          echo "  GOOGLE_SERVICE_ACCOUNT_JSON  (el JSON entero de la cuenta de servicio)"
           echo ""
-          echo "Se generan con:  node get-token-gsc.mjs"
+          echo "La cuenta es indexacion-red-am@am-ads-494903.iam.gserviceaccount.com"
+          echo "y tiene que figurar como usuaria de cada propiedad en Search Console."
           exit 1

@@ -17,15 +17,22 @@
  */
 
 import { readFileSync } from "fs";
+import { getAccessToken, SCOPES } from "./scripts/google-auth.mjs";
 
-const env = Object.fromEntries(
-  readFileSync(new URL("./.env.ads", import.meta.url), "utf8")
-    .split("\n").filter(l => l && !l.startsWith("#")).map(l => l.split("="))
-);
+// `.env.ads` sólo se usa como respaldo del método viejo (refresh token de usuario).
+// Desde la migración a cuenta de servicio puede no existir, y eso no es un error.
+function leerEnvAds() {
+  try {
+    return Object.fromEntries(
+      readFileSync(new URL("./.env.ads", import.meta.url), "utf8")
+        .split("\n").filter(l => l && !l.startsWith("#")).map(l => l.split("="))
+    );
+  } catch {
+    return {};
+  }
+}
 
-const CLIENT_ID = env.GOOGLE_ADS_CLIENT_ID;
-const CLIENT_SECRET = env.GOOGLE_ADS_CLIENT_SECRET;
-const REFRESH_TOKEN = env.GOOGLE_ADS_REFRESH_TOKEN;
+const env = leerEnvAds();
 const SITE = "https://www.amesteticadental.com";
 const SITEMAP_URL = `${SITE}/sitemap.xml`;
 
@@ -41,20 +48,12 @@ async function getUrlsFromSitemap() {
   }
 }
 
-async function getToken() {
-  const r = await fetch("https://oauth2.googleapis.com/token", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      client_id: CLIENT_ID,
-      client_secret: CLIENT_SECRET,
-      refresh_token: REFRESH_TOKEN,
-      grant_type: "refresh_token",
-    }),
+function getToken() {
+  return getAccessToken([SCOPES.indexing, SCOPES.webmasters], {
+    clientId: env.GOOGLE_ADS_CLIENT_ID,
+    clientSecret: env.GOOGLE_ADS_CLIENT_SECRET,
+    refreshToken: env.GOOGLE_ADS_REFRESH_TOKEN,
   });
-  const d = await r.json();
-  if (!d.access_token) throw new Error("No access token: " + JSON.stringify(d));
-  return d.access_token;
 }
 
 async function indexar(rutas) {

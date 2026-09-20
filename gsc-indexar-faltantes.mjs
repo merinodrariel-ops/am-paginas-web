@@ -15,6 +15,7 @@
  * no manda nada y lo dice.
  */
 import { readFileSync } from "fs";
+import { getAccessToken as auth, SCOPES } from "./scripts/google-auth.mjs";
 
 // Los cuatro dominios de la red, con su propiedad de Search Console. Las cuatro
 // están verificadas bajo la misma cuenta, así que un solo token las cubre.
@@ -39,30 +40,23 @@ const CONCURRENCIA = 5;
 // los que vale la pena empujar.
 const INDEXADA = /indexada|indexed/i;
 
-const env = Object.fromEntries(
-  readFileSync(new URL("./.env.ads", import.meta.url), "utf8")
-    .split("\n").filter((l) => l && !l.startsWith("#")).map((l) => l.split("="))
-);
-
-async function getToken() {
-  const r = await fetch("https://oauth2.googleapis.com/token", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      client_id: env.GOOGLE_ADS_CLIENT_ID,
-      client_secret: env.GOOGLE_ADS_CLIENT_SECRET,
-      refresh_token: env.GOOGLE_ADS_REFRESH_TOKEN,
-      grant_type: "refresh_token",
-    }),
-  });
-  const d = await r.json();
-  if (!d.access_token) {
-    console.error("\n❌ No se pudo renovar el token de Google:", JSON.stringify(d));
-    console.error("   Si dice 'invalid_grant', el refresh token venció. Correr:");
-    console.error("   node renovar-token-google.mjs\n");
-    process.exit(1);
+const env = (() => {
+  try {
+    return Object.fromEntries(
+      readFileSync(new URL("./.env.ads", import.meta.url), "utf8")
+        .split("\n").filter((l) => l && !l.startsWith("#")).map((l) => l.split("="))
+    );
+  } catch {
+    return {};   // con cuenta de servicio no hace falta .env.ads
   }
-  return d.access_token;
+})();
+
+function getToken() {
+  return auth([SCOPES.webmasters], {
+    clientId: env.GOOGLE_ADS_CLIENT_ID,
+    clientSecret: env.GOOGLE_ADS_CLIENT_SECRET,
+    refreshToken: env.GOOGLE_ADS_REFRESH_TOKEN,
+  });
 }
 
 async function inspeccionar(url, token, propiedad) {

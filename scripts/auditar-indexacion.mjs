@@ -46,6 +46,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import { getAccessToken as auth, SCOPES } from "./google-auth.mjs";
 
 const SITIOS = [
   { host: "www.amesteticadental.com", key: "14c9604645864308b49cb8994e8d032c" },
@@ -108,42 +109,10 @@ function cargarCredenciales() {
   return null;
 }
 
-async function pedirToken({ id, secret, refresh }) {
-  const r = await fetch("https://oauth2.googleapis.com/token", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({ client_id: id, client_secret: secret, refresh_token: refresh, grant_type: "refresh_token" }),
-  });
-  const d = await r.json().catch(() => ({}));
-  if (!d.access_token) {
-    // invalid_grant = el refresh token venció o fue revocado. Es el fallo más común
-    // y el mensaje de Google no lo explica, así que lo traducimos acá.
-    const pista =
-      d.error === "invalid_grant"
-        ? "\n   El refresh token venció o fue revocado. Regeneralo con: node get-token-gsc.mjs"
-        : "";
-    throw new Error(`No se pudo refrescar el token de Google (${d.error_description || d.error}).${pista}`);
-  }
-  return d.access_token;
+function pedirToken({ id, secret, refresh } = {}) {
+  return auth([SCOPES.webmasters], { clientId: id, clientSecret: secret, refreshToken: refresh });
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Search Console
-// ─────────────────────────────────────────────────────────────────────────────
-
-/**
- * El identificador de una propiedad NO se puede derivar del dominio: Search Console
- * distingue entre propiedad de prefijo (`https://www.x.com/`) y de dominio
- * (`sc-domain:x.com`). Hay que preguntarle cuáles existen.
- */
-async function propiedadesVerificadas(token) {
-  const r = await fetch("https://www.googleapis.com/webmasters/v3/sites", {
-    headers: { Authorization: `Bearer ${token}` },
-  });
-  const d = await r.json().catch(() => ({}));
-  if (!r.ok) throw new Error(`No se pudo leer las propiedades de Search Console (HTTP ${r.status}): ${JSON.stringify(d)}`);
-  return (d.siteEntry || []).map((e) => e.siteUrl);
-}
 
 function resolverPropiedad(host, verificadas) {
   const prefijo = `https://${host}/`;

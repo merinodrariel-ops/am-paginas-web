@@ -1,39 +1,28 @@
 import { readFileSync } from "fs";
+import { getAccessToken as auth, SCOPES } from "./scripts/google-auth.mjs";
 
-const env = Object.fromEntries(
-  readFileSync(new URL("./.env.ads", import.meta.url), "utf8")
-    .split("\n").filter(l => l && !l.startsWith("#")).map(l => l.split("="))
-);
+const env = (() => {
+  try {
+    return Object.fromEntries(
+      readFileSync(new URL("./.env.ads", import.meta.url), "utf8")
+        .split("\n").filter(l => l && !l.startsWith("#")).map(l => l.split("="))
+    );
+  } catch {
+    return {};   // con cuenta de servicio no hace falta .env.ads
+  }
+})();
 
 const CLIENT_ID = env.GOOGLE_ADS_CLIENT_ID;
 const CLIENT_SECRET = env.GOOGLE_ADS_CLIENT_SECRET;
 const REFRESH_TOKEN = env.GOOGLE_ADS_REFRESH_TOKEN;
 const SITE = "sc-domain:amesteticadental.com";
 
-async function getToken() {
-  const r = await fetch("https://oauth2.googleapis.com/token", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({ client_id: CLIENT_ID, client_secret: CLIENT_SECRET, refresh_token: REFRESH_TOKEN, grant_type: "refresh_token" }),
+function getToken() {
+  return auth([SCOPES.webmasters], {
+    clientId: CLIENT_ID,
+    clientSecret: CLIENT_SECRET,
+    refreshToken: REFRESH_TOKEN,
   });
-  const d = await r.json();
-  // Sin esto, un refresh token vencido devolvía `undefined`, cada consulta fallaba
-  // con 401 y el script imprimía todas las tablas vacías saliendo con código 0.
-  // Parecía "no hay datos" cuando en realidad era "no hay autenticación": el mismo
-  // error que ya había dejado los sitemaps sin enviar durante meses en verde.
-  if (!d.access_token) {
-    console.error("\n❌ No se pudo autenticar contra Google.");
-    console.error(`   ${d.error ?? "sin error"}: ${d.error_description ?? ""}`);
-    if (d.error === "invalid_grant") {
-      console.error("\n   El refresh token de .env.ads está vencido.");
-      console.error("   Los refresh tokens caducan a los 7 días mientras la app de OAuth");
-      console.error("   siga en estado \"Testing\" en Google Cloud Console. El arreglo");
-      console.error("   durable es publicarla (Testing → In production) y recién ahí");
-      console.error("   regenerar el token; si no, vuelve a morirse en una semana.");
-    }
-    process.exit(1);
-  }
-  return d.access_token;
 }
 
 async function gscFetch(token, path, body) {

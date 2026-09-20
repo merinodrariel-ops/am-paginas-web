@@ -7,6 +7,8 @@
  * BroadcastEvent pages.
  */
 
+import { getAccessToken as auth, SCOPES } from "./google-auth.mjs";
+
 const DEFAULT_SITEMAPS = [
   "https://www.amesteticadental.com/sitemap.xml",
   "https://www.amesteticadental.uy/sitemap.xml",
@@ -14,35 +16,12 @@ const DEFAULT_SITEMAPS = [
   "https://www.arielmerino.com/sitemap.xml",
 ];
 
-const CLIENT_ID = process.env.GOOGLE_SEARCH_CONSOLE_CLIENT_ID || process.env.GOOGLE_ADS_CLIENT_ID;
-const CLIENT_SECRET = process.env.GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET || process.env.GOOGLE_ADS_CLIENT_SECRET;
-const REFRESH_TOKEN = process.env.GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN || process.env.GOOGLE_ADS_REFRESH_TOKEN;
-
-function required(name, value) {
-  if (!value) {
-    throw new Error(`Missing required env var: ${name}`);
-  }
-  return value;
-}
-
-async function getAccessToken() {
-  const response = await fetch("https://oauth2.googleapis.com/token", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      client_id: required("GOOGLE_SEARCH_CONSOLE_CLIENT_ID", CLIENT_ID),
-      client_secret: required("GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET", CLIENT_SECRET),
-      refresh_token: required("GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN", REFRESH_TOKEN),
-      grant_type: "refresh_token",
-    }),
+function getAccessToken() {
+  return auth([SCOPES.webmasters], {
+    clientId: process.env.GOOGLE_SEARCH_CONSOLE_CLIENT_ID || process.env.GOOGLE_ADS_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET || process.env.GOOGLE_ADS_CLIENT_SECRET,
+    refreshToken: process.env.GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN || process.env.GOOGLE_ADS_REFRESH_TOKEN,
   });
-
-  const body = await response.json().catch(() => ({}));
-  if (!response.ok || !body.access_token) {
-    throw new Error(`Google OAuth failed (HTTP ${response.status}): ${JSON.stringify(body)}`);
-  }
-
-  return body.access_token;
 }
 
 /**

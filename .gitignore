@@ -8,6 +8,7 @@ node_modules/
 /Casos/
 .env.ads
 .env.gsc
+.gsc-service-account.json
 /TEAM AM/
 /ADS KEYWORDS/
 /scripts/data/

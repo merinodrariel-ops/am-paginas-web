@@ -27,6 +27,7 @@
  */
 import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
+import { getAccessToken as auth, SCOPES } from "./google-auth.mjs";
 
 const SITIOS = [
   { host: "www.amesteticadental.com", key: "14c9604645864308b49cb8994e8d032c" },
@@ -61,15 +62,8 @@ function cargarEnv() {
   return null;
 }
 
-async function getToken({ id, secret, refresh }) {
-  const r = await fetch("https://oauth2.googleapis.com/token", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({ client_id: id, client_secret: secret, refresh_token: refresh, grant_type: "refresh_token" }),
-  });
-  const d = await r.json();
-  if (!d.access_token) throw new Error(`No se pudo refrescar el token: ${d.error_description || d.error}`);
-  return d.access_token;
+function getToken({ id, secret, refresh } = {}) {
+  return auth([SCOPES.indexing, SCOPES.webmasters], { clientId: id, clientSecret: secret, refreshToken: refresh });
 }
 
 async function urlsDelSitemap(host) {
