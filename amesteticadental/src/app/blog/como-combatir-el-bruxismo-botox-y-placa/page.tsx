@@ -55,6 +55,10 @@ const articleSchema = {
         "@type": "Person",
         name: "Dra. Candela Cruz",
         jobTitle: "Odontóloga — Armonización orofacial",
+        // La matrícula va como `identifier`, igual que la del Dr. Merino: una
+        // afirmación clínica firmada por un matriculado se puede contrastar
+        // contra un registro público.
+        identifier: "MN 43.010",
         worksFor: { "@type": "Organization", name: "AM Estética Dental" },
     },
     publisher: {
@@ -495,6 +499,7 @@ export default function BlogBruxismo() {
                                     <div>
                                         <p className="text-crema font-manrope font-medium text-sm">Dra. Candela Cruz</p>
                                         <p className="text-crema/45 font-manrope text-xs">Armonización orofacial · AM Estética Dental</p>
+                                        <p className="text-crema/35 font-manrope text-[10px] uppercase tracking-[0.22em] mt-0.5">MN 43.010</p>
                                     </div>
                                 </div>
                                 <div className="space-y-4 border-l-2 border-oro/30 pl-6">

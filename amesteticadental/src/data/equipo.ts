@@ -107,6 +107,7 @@ export const equipoAM: EquipoMiembro[] = [
     altEn: "Dr. Candela Cruz, orofacial harmonization and cosmetic dentistry at AM Estética Dental Puerto Madero",
     schemaType: "Dentist",
     keywords: ["armonización orofacial", "estética facial", "odontóloga", "estética dental"],
+    matricula: "MN 43.010",
   },
   {
     slug: "dra-luz-ferron",
