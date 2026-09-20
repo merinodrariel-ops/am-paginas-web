@@ -81,7 +81,7 @@ const PARA_QUIEN = [
 const FAQ = [
     {
         q: "¿Cuánto cuesta el tratamiento de bruxismo en Buenos Aires?",
-        a: "La placa de descarga más la aplicación de toxina botulínica: USD 1.000 por los dos. Incluye el escaneo, el diseño y la calibración de la placa en boca, y la aplicación en masetero y temporal.",
+        a: "USD 1.000 por una placa de descarga más una aplicación de toxina botulínica. Incluye el escaneo 3D, el diseño y la calibración de la placa en boca, y la aplicación en masetero y temporal. Las aplicaciones siguientes, que forman parte del plan del primer año, se cotizan aparte.",
     },
     {
         q: "¿Puedo hacer sólo la placa, sin toxina?",
@@ -163,8 +163,11 @@ export default function BruxismoTratamientoPage() {
                             <div className="border border-oro/25 rounded-2xl p-8 min-w-[260px]">
                                 <span className="text-oro/60 uppercase tracking-[0.25em] text-[10px] block mb-3">La inversión</span>
                                 <p className="font-cormorant italic text-oro text-5xl leading-none mb-3">USD 1.000</p>
+                                {/* "Una" y "una", explícito: el plan del primer año son tres
+                                    aplicaciones, y sin esa precisión un paciente puede llegar
+                                    creyendo que las tres entran en este monto. */}
                                 <p className="text-crema/55 text-sm leading-relaxed mb-4">
-                                    Placa de descarga <span className="text-crema">+</span> aplicación de toxina botulínica.
+                                    <span className="text-crema">Una</span> placa de descarga <span className="text-crema">+ una</span> aplicación de toxina botulínica.
                                 </p>
                                 <p className="text-crema/40 text-xs leading-relaxed border-t border-oro/10 pt-4">
                                     Invertí en tu descanso. Son ocho horas por noche, todas las noches, durante el resto de tu vida.
