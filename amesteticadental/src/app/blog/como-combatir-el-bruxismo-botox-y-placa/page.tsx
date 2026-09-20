@@ -15,6 +15,13 @@ const IMG = {
     cruz: "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870265/equipo-am/dra-candela-cruz-armonizacion-orofacial-estetica-dental-am-estetica-dental-puerto-madero.jpg",
 };
 
+// El video no pasa por el loader de next/image (es otro tipo de recurso), así que
+// la URL de Cloudinary va completa y con `q_auto` puesto a mano.
+const VIDEO_PLACA = {
+    mp4: "https://res.cloudinary.com/drctvgyqd/video/upload/q_auto/v1789936220/bruxismo/placa-bruxismo-giro-360-dr-ariel-merino-am-estetica-dental-buenos-aires.mp4",
+    poster: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto,w_800/v1789936222/bruxismo/placa-bruxismo-giro-360-poster-dr-ariel-merino-am-estetica-dental-buenos-aires.jpg",
+};
+
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Cómo combatir el bruxismo: placa y toxina botulínica | AM",
@@ -243,17 +250,26 @@ export default function BlogBruxismo() {
                                 Acá hay una confusión que escucho todas las semanas, y vale la pena aclararla antes que nada. Cuando digo &ldquo;placa&rdquo;, casi todo el mundo piensa en el plástico fino y transparente que te dan al terminar la ortodoncia. Eso es un contenedor: sirve para que los dientes no se muevan de lugar. No tiene nada que ver con esto.
                             </p>
 
+                            {/* Giro 360 en bucle. Es un <video> y no un GIF a propósito: el GIF
+                                sólo maneja 256 colores y este plano es un degradé oscuro con
+                                reflejos dorados — saldría con bandas y pesaría 10 veces más.
+                                Sin controles, en silencio y con `playsInline` se comporta igual
+                                que un GIF para el visitante. El `poster` evita el hueco mientras carga. */}
                             <div className="relative w-full overflow-hidden rounded-2xl border border-oro/15 bg-carbon-soft mb-3" style={{ aspectRatio: "1 / 1" }}>
-                                <Image
-                                    src={IMG.placa}
-                                    alt="Placa de descarga rígida para bruxismo en forma de arcada completa, con superficie de mordida gruesa y guías talladas — AM Estética Dental"
-                                    fill
-                                    sizes="(max-width: 768px) 100vw, 768px"
-                                    className="object-cover"
+                                <video
+                                    src={VIDEO_PLACA.mp4}
+                                    poster={VIDEO_PLACA.poster}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    preload="metadata"
+                                    aria-label="Placa de descarga rígida para bruxismo girando 360 grados: arcada completa, cuerpo grueso y superficie de mordida tallada"
+                                    className="absolute inset-0 w-full h-full object-cover"
                                 />
                             </div>
                             <p className="text-crema/35 font-manrope text-xs mb-8">
-                                Así se ve una placa de descarga real: arcada completa, cuerpo grueso y rígido, superficie de mordida tallada. Ilustración de referencia.
+                                Así se ve una placa de descarga real, girando 360°: arcada completa, cuerpo grueso y rígido, superficie de mordida tallada. Ilustración de referencia.
                             </p>
 
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mb-8">
