@@ -54,9 +54,6 @@ jobs:
       - name: Auditar y reparar
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
-          GOOGLE_SEARCH_CONSOLE_CLIENT_ID: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_ID }}
-          GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET }}
-          GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN }}
         run: |
           node scripts/auditar-indexacion.mjs \
             ${{ inputs.solo_auditar && '--solo-auditar' || '' }} \

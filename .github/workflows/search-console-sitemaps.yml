@@ -29,9 +29,7 @@ jobs:
   submit:
     runs-on: ubuntu-latest
     env:
-      # Desde 2026-09-20 basta con la cuenta de servicio. Los tres secretos viejos
-      # se siguen aceptando mientras quede algún entorno sin migrar.
-      HAS_GSC_SECRETS: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON != '' || (secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_ID != '' && secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET != '' && secrets.GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN != '') }}
+      HAS_GSC_SECRETS: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON != '' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,9 +42,6 @@ jobs:
         if: env.HAS_GSC_SECRETS == 'true'
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
-          GOOGLE_SEARCH_CONSOLE_CLIENT_ID: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_ID }}
-          GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET: ${{ secrets.GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET }}
-          GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN }}
         run: node scripts/submit-google-sitemaps.mjs
 
       # Antes esto era un ::warning:: y el job terminaba en verde. Resultado: durante
