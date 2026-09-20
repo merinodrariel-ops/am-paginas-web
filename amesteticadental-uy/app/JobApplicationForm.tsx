@@ -140,7 +140,7 @@ export default function JobApplicationForm() {
   }
 
   return (
-    <form className="jobs-form" onSubmit={handleSubmit}>
+    <form data-clarity-mask="true" className="jobs-form" onSubmit={handleSubmit}>
       <input type="hidden" name="form_started_at" value={startedAt} />
       {/* Trampa para bots: un humano no ve este campo, así que no lo completa. */}
       <input className="jobs-honeypot" tabIndex={-1} autoComplete="off" name="company" aria-hidden="true" />

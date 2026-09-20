@@ -129,7 +129,7 @@ export default function LeadForm({ defaultTreatment, context, lang = "es" }: Pro
   const labelClass = "block text-crema/70 text-xs uppercase tracking-widest mb-2";
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-5">
+    <form data-clarity-mask="true" onSubmit={handleSubmit} noValidate className="space-y-5">
       {/* Honeypot */}
       <input
         type="text"

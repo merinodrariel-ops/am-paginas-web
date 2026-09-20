@@ -7,6 +7,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { GOOGLE_REVIEWS } from "@/lib/reviews";
 import "./globals.css";
 import { SAME_AS_DR, SAME_AS_CLINICA } from "@/lib/entidad";
+import Clarity from "@/components/Clarity";
 
 const gtmId = (process.env.NEXT_PUBLIC_GTM_ID || "GTM-P9KCL5W7").trim();
 const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID || "";
@@ -162,6 +163,7 @@ fbq('track', 'PageView');`,
             data-domain={plausibleDomain}
           />
         ) : null}
+        <Clarity />
         <RootSchema schema={schemaOrg} />
       </head>
       <body className="bg-carbon text-crema font-manrope relative min-h-screen">

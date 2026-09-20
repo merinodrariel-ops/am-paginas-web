@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import Clarity from "./Clarity";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src="https://plausible.io/js/script.js"
           data-domain="thedentalreview.com"
         />
+        <Clarity />
       </body>
     </html>
   );

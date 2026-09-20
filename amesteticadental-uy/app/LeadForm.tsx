@@ -42,7 +42,7 @@ export default function LeadForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 440, margin: "0 auto" }}>
+    <form data-clarity-mask="true" onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 440, margin: "0 auto" }}>
       <input
         type="text"
         placeholder="Tu nombre"

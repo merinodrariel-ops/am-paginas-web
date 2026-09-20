@@ -143,7 +143,7 @@ export default function JobApplicationForm() {
           </div>
         </header>
 
-        <form action={handleSubmit} className="grid gap-8">
+        <form data-clarity-mask="true" action={handleSubmit} className="grid gap-8">
           <input type="hidden" name="form_started_at" value={startedAt} />
           <input className="hidden" tabIndex={-1} autoComplete="off" name="company" />
 

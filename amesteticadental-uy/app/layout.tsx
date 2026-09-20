@@ -5,6 +5,7 @@ import { JsonLd, organizationSchema } from "./StructuredData";
 import Tracking from "./Tracking";
 import Script from "next/script";
 import { LOGO_APPLE_ICON_URL, LOGO_ICON_URL, LOGO_OG_URL } from "./site-data";
+import Clarity from "./Clarity";
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 
@@ -42,6 +43,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body style={{ background: "var(--carbon, #141414)", color: "var(--crema, #F5F0E8)", fontFamily: "var(--font-manrope, sans-serif)" }}>
         <JsonLd data={organizationSchema} />
         {gtmId ? <Script id="google-tag-manager" strategy="afterInteractive">{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtmId}');`}</Script> : null}
+        <Script
+          id="plausible-script"
+          strategy="afterInteractive"
+          src="https://plausible.io/js/script.js"
+          data-domain="amesteticadental.uy"
+        />
+        <Clarity />
         <Tracking />
         {children}
       </body>
