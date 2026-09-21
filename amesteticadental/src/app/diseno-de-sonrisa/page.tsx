@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import PrensaTema from "@/components/PrensaTema";
 import SeoFaq from "@/components/seo/SeoFaq";
 import { hreflangFor } from "@/lib/i18n-routes";
 
@@ -257,6 +258,18 @@ export default function DisenoSonrisaPage() {
                         >
                             Agendar consulta →
                         </a>
+                    </div>
+                </section>
+
+                {/* ── EN LOS MEDIOS ── */}
+                <section className="px-6 md:px-12 pb-16">
+                    <div className="mx-auto max-w-4xl">
+                        <PrensaTema
+                            tema="diseno-de-sonrisa"
+                            titulo="Lo que dijeron los medios sobre este trabajo"
+                            bajada="Forbes Argentina cubrió la incorporación de inteligencia artificial al diseño de sonrisa; Ámbito publicó la columna del Dr. Merino sobre por qué el país se volvió destino."
+                            limite={2}
+                        />
                     </div>
                 </section>
 

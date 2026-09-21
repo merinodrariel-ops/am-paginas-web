@@ -39,6 +39,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/lentes-de-contacto-dental", changeFrequency: "monthly", priority: 0.9 },
   { path: "/carillas-sin-desgaste", changeFrequency: "monthly", priority: 0.9 },
   { path: "/invisalign", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/salud-bucal-y-longevidad", changeFrequency: "monthly", priority: 0.8 },
   { path: "/dr-ariel-merino", changeFrequency: "monthly", priority: 0.8 },
   { path: "/equipo-am", changeFrequency: "monthly", priority: 0.8 },
   { path: "/trabaja-en-am", changeFrequency: "monthly", priority: 0.6 },

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import PrensaTema from "@/components/PrensaTema";
 import SeoFaq from "@/components/seo/SeoFaq";
 import { hreflangFor } from "@/lib/i18n-routes";
 import { ANIOS_TRAYECTORIA, ANIOS_LABEL } from "@/lib/trayectoria";
@@ -337,6 +338,22 @@ export default function TurismoDentalPage() {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                </section>
+
+                {/* ── EN LOS MEDIOS ── */}
+                {/* La columna de Ámbito se titula "¿Por qué la Argentina es una
+                    parada obligada a la hora de rediseñar la sonrisa?". Es el
+                    argumento de esta página entero, publicado por un diario
+                    nacional y firmado por el Dr. Estaba solo en la home. */}
+                <section className="px-6 md:px-12 pb-16">
+                    <div className="mx-auto max-w-4xl">
+                        <PrensaTema
+                            tema="turismo-dental"
+                            titulo="El argumento de esta página, publicado en un diario nacional"
+                            bajada="No hace falta que nos creas a nosotros: el Dr. Merino desarrolló por qué la Argentina se volvió destino de diseño de sonrisa en su columna para Ámbito."
+                            limite={2}
+                        />
                     </div>
                 </section>
 

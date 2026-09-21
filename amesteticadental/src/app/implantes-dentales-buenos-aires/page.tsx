@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { hreflangFor } from "@/lib/i18n-routes";
 import Image from "next/image";
 import Link from "next/link";
+import PrensaTema from "@/components/PrensaTema";
 import ImplantHeroVideo from "@/components/ImplantHeroVideo";
 import ImplantRehabilitationCase from "@/components/ImplantRehabilitationCase";
 
@@ -110,6 +111,22 @@ export default function ImplantesPage() {
                             <p className="text-crema/60 text-sm leading-relaxed mb-6">Cada corona se diseña para mimetizarse con el color y la translucidez de tus dientes naturales. El enfoque es siempre biomimético: que nadie note que tenés un implante.</p>
                             <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-oro text-sm hover:text-oro/80 transition-colors">Consultar inversión para mi caso →</a>
                         </div>
+                    </div>
+                </section>
+
+                {/* ── EN LOS MEDIOS ── */}
+                {/* La nota de La Nación sobre el fármaco japonés que regenera
+                    piezas es la pregunta que todo paciente de implantes hace
+                    antes de decidir: "¿no conviene esperar?". Acá está la
+                    respuesta del Dr., publicada, y no es una venta. */}
+                <section className="px-6 py-16 border-t border-oro/8">
+                    <div className="mx-auto max-w-4xl">
+                        <PrensaTema
+                            tema="implantes"
+                            titulo="¿Y si espero a que puedan hacerme crecer el diente?"
+                            bajada="Es una pregunta razonable y se la hicieron al Dr. Merino desde La Nación cuando se conoció el avance japonés. La respuesta, en la nota original."
+                            limite={2}
+                        />
                     </div>
                 </section>
 
