@@ -107,7 +107,7 @@ export default function ImplantesPage() {
                         <div>
                             <span className="text-oro uppercase tracking-[0.4em] text-xs block mb-4">Grupo Straumann · Suiza</span>
                             <h2 className="text-2xl font-light text-crema mb-4">Dos sistemas del <span className="font-cormorant italic text-oro">grupo #1 del mundo.</span></h2>
-                            <p className="text-crema/60 text-sm leading-relaxed mb-4">Trabajamos exclusivamente con implantes del Grupo Straumann: Neodent (gama alta) y Straumann (tope de gama, #1 del mundo). Straumann se fabrica en Suiza; Neodent es la línea del mismo grupo suizo, producida en Brasil bajo sus estándares. Los dos son de titanio y están entre los sistemas con mayor respaldo científico del sector.</p>
+                            <p className="text-crema/60 text-sm leading-relaxed mb-4">Trabajamos exclusivamente con implantes del Grupo Straumann: Neodent (gama alta) y Straumann (tope de gama, #1 del mundo). Straumann se fabrica en Suiza; Neodent es una marca brasileña que el grupo adquirió y hoy fabrica bajo sus estándares. Los dos son de titanio y están entre los sistemas con mayor respaldo científico del sector.</p>
                             <p className="text-crema/60 text-sm leading-relaxed mb-6">Cada corona se diseña para mimetizarse con el color y la translucidez de tus dientes naturales. El enfoque es siempre biomimético: que nadie note que tenés un implante.</p>
                             <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-oro text-sm hover:text-oro/80 transition-colors">Consultar inversión para mi caso →</a>
                         </div>

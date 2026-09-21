@@ -76,7 +76,7 @@ const faqItems = [
   {
     pregunta: "What is the difference between Neodent and Straumann?",
     respuesta:
-      "Both are premium systems and both belong to the same Swiss group: Neodent is part of the Straumann Group. Straumann is manufactured in Switzerland and is the most recognised implant brand in the world, with the longest track record and the strongest scientific backing — it is our reference choice for the most demanding aesthetic zones, and it starts at USD 2,000. Neodent is the same group's line, produced in Brazil to its standards, offers excellent value within the premium range, and starts at USD 1,500. We advise which one suits your case at the initial assessment.",
+      "Both are premium systems and both belong to the same Swiss group: Neodent is part of the Straumann Group. Straumann is manufactured in Switzerland and is the most recognised implant brand in the world, with the longest track record and the strongest scientific backing — it is our reference choice for the most demanding aesthetic zones, and it starts at USD 2,000. Neodent is a Brazilian brand the Straumann Group acquired and now manufactures to its own standards: the same backing, better value within the premium range, starting at USD 1,500. We advise which one suits your case at the initial assessment.",
   },
   {
     pregunta: "Can an implant be done in a single trip?",
@@ -214,7 +214,7 @@ export default function DentalImplantsCostPage() {
                 {
                   n: "03",
                   t: "The implant system",
-                  d: "We only use Straumann Group systems. Straumann is made in Switzerland and starts at USD 2,000; Neodent is the same group's line, produced in Brazil to its standards, and starts at USD 1,500. Both are premium.",
+                  d: "We only use Straumann Group systems. Straumann is made in Switzerland and starts at USD 2,000; Neodent is a Brazilian brand the group acquired, built to its standards, and starts at USD 1,500. Both are premium.",
                 },
                 {
                   n: "04",

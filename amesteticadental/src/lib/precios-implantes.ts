@@ -18,7 +18,7 @@
 export const IMPLANTES = {
   neodent: {
     marca: "Neodent®",
-    origen: "Grupo Straumann® · fabricado en Brasil bajo sus estándares",
+    origen: "Marca brasileña del Grupo Straumann® (Suiza)",
     /** Sólo la fase quirúrgica: el implante puesto. */
     implante: 1500,
     /** Terminado, con la corona definitiva encima. */
@@ -26,7 +26,7 @@ export const IMPLANTES = {
   },
   straumann: {
     marca: "Straumann®",
-    origen: "Fabricado en Suiza",
+    origen: "Del Grupo Straumann® · se fabrica en Suiza",
     implante: 2000,
     conCorona: 3500,
   },

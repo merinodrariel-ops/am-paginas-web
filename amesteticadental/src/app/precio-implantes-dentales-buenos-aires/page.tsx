@@ -54,7 +54,7 @@ const faqItems = [
   {
     pregunta: "¿Qué diferencia hay entre el implante Neodent y el Straumann?",
     respuesta:
-      "Los dos son sistemas tope de gama del mismo grupo suizo: Neodent forma parte del Grupo Straumann. Straumann se fabrica en Suiza, es la marca de implantes más reconocida del mundo y es nuestra opción de referencia para las zonas estéticas más exigentes; el implante arranca en USD 2.000. Neodent es la línea del mismo grupo producida en Brasil bajo sus estándares, con una relación calidad–precio excelente dentro de la gama premium, y arranca en USD 1.500. En la evaluación inicial te asesoramos sobre cuál conviene para tu caso.",
+      "Los dos son sistemas tope de gama del mismo grupo suizo: Neodent forma parte del Grupo Straumann. Straumann se fabrica en Suiza, es la marca de implantes más reconocida del mundo y es nuestra opción de referencia para las zonas estéticas más exigentes; el implante arranca en USD 2.000. Neodent es una marca brasileña que el Grupo Straumann adquirió y hoy fabrica bajo sus estándares: mismo respaldo, mejor relación calidad–precio dentro de la gama premium. Arranca en USD 1.500. En la evaluación inicial te asesoramos sobre cuál conviene para tu caso.",
   },
   {
     pregunta: "¿Se cobra por implante o por tratamiento completo?",
