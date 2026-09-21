@@ -61,12 +61,18 @@ const testimoniosEscritos = [
     },
 ];
 
+// `loop` es la base de dos archivos propios: `.mp4`, un recorte mudo de ocho
+// segundos del mismo testimonio, y `.jpg`, su primer fotograma. Hacen falta
+// porque YouTube no deja que un embed arranque solo ni aunque este muteado —
+// devuelve el poster con su boton rojo — y las tarjetas quedaban como cinco
+// caras congeladas. El clip propio si se reproduce; el click sigue abriendo el
+// testimonio entero, con sonido, desde YouTube.
 const videosTestimonios = [
-    { id: "video-1", youtubeId: "oqcaGGGAs5Y", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
-    { id: "video-2", youtubeId: "vlWiV96jQmY", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
-    { id: "video-3", youtubeId: "UxmkQbFERcw", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
-    { id: "video-4", youtubeId: "DdBeH4XaJUY", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
-    { id: "video-5", youtubeId: "bMwbSxNCZIA", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
+    { id: "video-1", youtubeId: "oqcaGGGAs5Y", loop: "/videos/testimonios/testimonio-1", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
+    { id: "video-2", youtubeId: "vlWiV96jQmY", loop: "/videos/testimonios/testimonio-2", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
+    { id: "video-3", youtubeId: "UxmkQbFERcw", loop: "/videos/testimonios/testimonio-3", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
+    { id: "video-4", youtubeId: "DdBeH4XaJUY", loop: "/videos/testimonios/testimonio-4", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
+    { id: "video-5", youtubeId: "bMwbSxNCZIA", loop: "/videos/testimonios/testimonio-5", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
 ];
 
 function Stars({ small = false }: { small?: boolean }) {
@@ -127,15 +133,29 @@ function ReviewCard({ review, featured = false }: { review: (typeof testimoniosE
 
 function VideoCard({
     video,
+    preview = false,
+    lang = "es",
     onPlay,
     onStop,
 }: {
     video: typeof videosTestimonios[0];
+    preview?: boolean;
+    lang?: "es" | "en";
     onPlay?: () => void;
     onStop?: () => void;
 }) {
+    const ui = UI[lang];
     const [playing, setPlaying] = useState(false);
+    // El loop mudo tarda un instante en dar imagen. Hasta que no esta
+    // corriendo de verdad se queda transparente y se ve el poster debajo, asi
+    // no hay un parpadeo negro entre uno y otro.
+    const [loopCorriendo, setLoopCorriendo] = useState(false);
     const marco = useRef<HTMLDivElement>(null);
+    const clip = useRef<HTMLVideoElement>(null);
+
+    // El loop corre cuando esta tarjeta es una de las que se ven y nadie abrio
+    // todavia el testimonio con sonido.
+    const mostrarLoop = preview && !playing;
 
     const detener = useCallback(() => {
         setPlaying(false);
@@ -161,6 +181,31 @@ function VideoCard({
         return () => obs.disconnect();
     }, [playing, detener]);
 
+    // Arranca el recorte cuando la tarjeta entra en turno. play() puede ser
+    // rechazado — una politica de autoplay mas estricta, el ahorro de datos —
+    // y en ese caso simplemente queda el poster, que es lo que habia antes.
+    //
+    // El reintento en `visibilitychange` no es decorativo: Chrome pausa el
+    // video mudo sin pista de audio cuando la pestana pasa a segundo plano
+    // (bien por la bateria) pero no lo vuelve a arrancar al volver. Sin esto,
+    // quien cambia de pestana y regresa se encuentra la tarjeta congelada, que
+    // es exactamente lo que veniamos a arreglar.
+    useEffect(() => {
+        if (!mostrarLoop) {
+            setLoopCorriendo(false);
+            return;
+        }
+        const v = clip.current;
+        if (!v) return;
+        const arrancar = () => {
+            if (document.hidden) return;
+            v.play().catch(() => setLoopCorriendo(false));
+        };
+        arrancar();
+        document.addEventListener("visibilitychange", arrancar);
+        return () => document.removeEventListener("visibilitychange", arrancar);
+    }, [mostrarLoop]);
+
     return (
         <div ref={marco} className="group relative aspect-[9/16] overflow-hidden rounded-[1.6rem] border border-oro/8 bg-carbon-soft">
             <div
@@ -179,13 +224,37 @@ function VideoCard({
             {!playing ? (
                 <>
                     <Image
-                        src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
-                        alt={video.nombre}
+                        src={`${video.loop}.jpg`}
+                        alt={ui.alt}
                         fill
-                        sizes="(max-width: 768px) 50vw, 25vw"
+                        sizes="(max-width: 768px) 92vw, 30vw"
                         className="absolute inset-[1.5px] h-[calc(100%-3px)] w-[calc(100%-3px)] rounded-[calc(1.6rem-1.5px)] object-cover brightness-[0.72]"
                         unoptimized
                     />
+                    {mostrarLoop && (
+                        <video
+                            ref={clip}
+                            src={`${video.loop}.mp4`}
+                            muted
+                            loop
+                            playsInline
+                            preload="none"
+                            aria-hidden="true"
+                            tabIndex={-1}
+                            onPlaying={() => setLoopCorriendo(true)}
+                            className={`absolute inset-[1.5px] h-[calc(100%-3px)] w-[calc(100%-3px)] rounded-[calc(1.6rem-1.5px)] object-cover brightness-[0.72] transition-opacity duration-700 ${loopCorriendo ? "opacity-100" : "opacity-0"}`}
+                        />
+                    )}
+                    {loopCorriendo && (
+                        <span className="pointer-events-none absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-full border border-white/12 bg-carbon/65 px-2.5 py-1 font-manrope text-[9px] uppercase tracking-[0.2em] text-crema/60 backdrop-blur-sm">
+                            <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                                <path d="M11 5 6 9H2v6h4l5 4V5z" />
+                                <path d="m23 9-6 6" />
+                                <path d="m17 9 6 6" />
+                            </svg>
+                            {ui.mudo}
+                        </span>
+                    )}
                     <div className="absolute inset-[1.5px] rounded-[calc(1.6rem-1.5px)] bg-gradient-to-b from-carbon/18 via-transparent to-carbon/76" />
                     <div className="absolute inset-0 flex items-center justify-center">
                         <button
@@ -194,7 +263,7 @@ function VideoCard({
                                 onPlay?.();
                             }}
                             className="relative flex h-16 w-16 items-center justify-center rounded-full transition-all duration-500 group-hover:scale-105"
-                            aria-label="Reproducir testimonio"
+                            aria-label={mostrarLoop ? ui.conSonido : ui.play}
                         >
                             <span className="absolute inset-0 rounded-full bg-[linear-gradient(120deg,#8f5b11_0%,#c88412_18%,#f0b10d_36%,#fff0b1_52%,#f4c646_68%,#8f5b11_100%)] shadow-[0_0_22px_rgba(242,185,13,0.26)]" />
                             <span className="absolute inset-[-6px] rounded-full border border-oro/30 animate-pulse opacity-70" />
@@ -214,7 +283,7 @@ function VideoCard({
                 <>
                     <button
                         onClick={detener}
-                        aria-label="Cerrar video"
+                        aria-label={ui.cerrar}
                         className="absolute right-3 top-3 z-20 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-carbon/80 text-crema/80 backdrop-blur-sm transition-colors hover:border-oro/50 hover:text-oro"
                     >
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -250,6 +319,10 @@ const UI = {
         h2ca: "Lo que dicen quienes ya",
         h2cb: "confiaron en nosotros",
         play: "Reproducir testimonio",
+        conSonido: "Ver este testimonio con sonido",
+        mudo: "Sin sonido",
+        cerrar: "Cerrar video",
+        alt: "Testimonio en video de un paciente de AM Estética Dental",
         prev: "Anterior",
         next: "Siguiente",
         note: "",
@@ -261,6 +334,10 @@ const UI = {
         h2ca: "What those who already",
         h2cb: "trusted us have to say",
         play: "Play testimonial",
+        conSonido: "Watch this testimonial with sound",
+        mudo: "Muted",
+        cerrar: "Close video",
+        alt: "Video testimonial from an AM Estética Dental patient",
         prev: "Previous",
         next: "Next",
         note: "Written testimonials translated from Spanish. Video testimonials are in Spanish.",
@@ -287,6 +364,33 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
     // hay nada peor que se te deslice el testimonio que estabas mirando.
     const [mirando, setMirando] = useState(false);
     const [menosMovimiento, setMenosMovimiento] = useState(false);
+    // Los dos tracks — el de una tarjeta y el de tres — estan siempre los dos
+    // en el DOM, y CSS decide cual se ve. Si no distinguimos cual es, se
+    // pondrian a cargar los videos del track escondido tambien. `null` hasta
+    // que el cliente lo mide, para no descargar nada en el primer render.
+    const [esEscritorio, setEsEscritorio] = useState<boolean | null>(null);
+    const [enVista, setEnVista] = useState(false);
+    const raiz = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const mq = window.matchMedia("(min-width: 768px)");
+        const sync = () => setEsEscritorio(mq.matches);
+        sync();
+        mq.addEventListener("change", sync);
+        return () => mq.removeEventListener("change", sync);
+    }, []);
+
+    // Nada se descarga hasta que el carrusel esta en pantalla: quien nunca
+    // baja hasta los testimonios no paga el peso de los cinco clips.
+    useEffect(() => {
+        const el = raiz.current;
+        if (!el) return;
+        const obs = new IntersectionObserver(([entrada]) => setEnVista(entrada.isIntersecting), {
+            threshold: 0.2,
+        });
+        obs.observe(el);
+        return () => obs.disconnect();
+    }, []);
 
     // Quien pidio en su sistema que se reduzcan las animaciones no recibe una
     // que se mueve sola: se queda con las flechas.
@@ -333,6 +437,16 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
     // que el primero) y recien ahi se retrocede un paso, con animacion.
     const prev = () => (idx > 0 ? setIdx(idx - 1) : saltar(total, total - 1));
 
+    // Los loops corren solo donde se ven de verdad: en el track que el ancho de
+    // pantalla esta mostrando, con la seccion en pantalla, sin nadie escuchando
+    // un testimonio con sonido y sin que el sistema haya pedido menos
+    // movimiento. En escritorio se mueven las tres tarjetas a la vista; en
+    // celular, solo la unica que hay.
+    const puedeCorrer = enVista && !mirando && !menosMovimiento;
+    const previewMovil = (i: number) => puedeCorrer && esEscritorio === false && i === idx;
+    const previewEscritorio = (i: number) =>
+        puedeCorrer && esEscritorio === true && i >= idx && i < idx + VISIBLE_DESKTOP;
+
     // offset as % of track width
     const offsetDesktop = `calc(${idx} * (100% / ${VISIBLE_DESKTOP}) * -1)`;
     const offsetMobile  = `calc(${idx} * -100%)`;
@@ -341,6 +455,7 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
 
     return (
         <div
+            ref={raiz}
             className="relative"
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
@@ -356,6 +471,8 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
                         <div key={`${video.id}-m${i}`} className="flex-shrink-0 w-full px-4">
                             <VideoCard
                                 video={video}
+                                lang={lang}
+                                preview={previewMovil(i)}
                                 onPlay={() => setMirando(true)}
                                 onStop={() => setMirando(false)}
                             />
@@ -376,6 +493,8 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
                         >
                             <VideoCard
                                 video={video}
+                                lang={lang}
+                                preview={previewEscritorio(i)}
                                 onPlay={() => setMirando(true)}
                                 onStop={() => setMirando(false)}
                             />
