@@ -271,7 +271,11 @@ Hay que indexarlo en Google **y** Bing automáticamente. Ejecutá este flujo com
 ### Pasos (la mayoría son automáticos):
 
 1. **Publicar**: agregar contenido (caso a `casos.ts`, página nueva, nota a TDR, etc.).
-   El sitemap (`sitemap.ts`) lo incluye automáticamente.
+   - Los **casos clínicos** sí entran solos al sitemap (se leen de `casos.ts`).
+   - ⚠️ Una **página nueva NO entra sola**: `src/app/sitemap.ts` tiene una lista
+     manual, `STATIC_ROUTES`, y hay que agregarla ahí a mano. Si no, la página
+     existe, responde 200 y no la descubre nadie. (Verificado el 2026-09-21 al
+     publicar `/salud-bucal-y-longevidad`.)
 2. **Verificar build**: `npm run build` en la carpeta del proyecto (debe compilar sin errores).
 3. **Commit + push a `main`** (regla de oro: nada queda en local).
 4. **Vercel despliega**: automático, ~2 minutos.
