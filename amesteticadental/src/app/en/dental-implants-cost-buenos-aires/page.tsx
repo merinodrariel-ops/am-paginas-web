@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: `Dental Implants Cost in Buenos Aires ${ANIO} | AM`,
   description:
-    "Implant + crown finished between USD 2,400 and 3,000, extraction and grafts included. Straumann and Neodent, two-phase treatment, in-house financing.",
+    "The implant from USD 1,500 (Neodent) or USD 2,000 (Straumann), surgery and grafts included. Finished with the crown, from USD 3,000. In-house financing.",
   alternates: {
     canonical: CANONICAL,
     languages: hreflangFor("/precio-implantes-dentales-buenos-aires"),
@@ -37,24 +37,23 @@ export const metadata: Metadata = {
   },
 };
 
-// Tres columnas y no cuatro como en carillas: en implantes lo que confunde no es la
-// duración, es qué entra en el precio. La fila del total existe para que la
-// comparación se haga contra un diente terminado y no contra un tornillo.
+// Dos sistemas, dos números: es toda la lista de precios. Lo que confunde en
+// implantes no es la duración, es qué entra en la cifra — de ahí la tercera columna.
 const TABLE = [
   {
-    etapa: "Phase 1 — Implant placement",
-    precio: "USD 1,200 – 1,500",
-    incluye: "The titanium implant, plus extraction, bone graft and tissue graft when the case needs them.",
+    etapa: "Neodent® implant",
+    precio: "from USD 1,500",
+    incluye: "The complete surgery: the implant, plus the extraction, the bone graft and the membrane when the site needs them.",
   },
   {
-    etapa: "Phase 2 — Final crown",
-    precio: "USD 1,200 – 1,500",
-    incluye: "The definitive crown, shaped and shaded to disappear among your own teeth.",
+    etapa: "Straumann® implant",
+    precio: "from USD 2,000",
+    incluye: "The same complete surgery, with the system made in Switzerland.",
   },
   {
-    etapa: "Complete implant, both phases",
-    precio: "USD 2,400 – 3,000",
-    incluye: "A finished tooth. This is the figure to compare against any other quote.",
+    etapa: "Finished, with the crown",
+    precio: "from USD 3,000",
+    incluye: "USD 3,500 with Straumann®. The crown goes on 2 to 3 months later, once the implant has integrated.",
   },
   {
     etapa: "Full-mouth rehabilitation",
@@ -67,22 +66,22 @@ const faqItems = [
   {
     pregunta: "How much does a dental implant cost in Buenos Aires?",
     respuesta:
-      "At AM Estética Dental the treatment is split into two phases. Phase one — placing the implant, including any extraction, bone graft and tissue graft — runs from USD 1,200 to 1,500. Phase two, the definitive crown, runs from USD 1,200 to 1,500. Finished, with the crown included, a complete implant comes to between USD 2,400 and USD 3,000. We work exclusively with Straumann Group systems: Neodent® and Straumann®. In-house financing is available at a fixed 18% annual rate.",
+      "There are two options and nothing else: the Neodent® implant from USD 1,500 and the Straumann® from USD 2,000. That figure is the complete surgery — it already covers the extraction if the tooth is still there, the bone graft the site needs and the membrane for the soft tissue when it is indicated. The definitive crown goes on 2 to 3 months later, once the implant has integrated with the bone, and the finished treatment comes to USD 3,000 with Neodent® or USD 3,500 with Straumann®. In-house financing is available at a fixed 18% annual rate.",
   },
   {
     pregunta: "Why do I see implants advertised for USD 800?",
     respuesta:
-      "Because that figure is almost always the screw on its own, without the crown that goes on top of it — and sometimes without the extraction or the graft the site needs first. It is a real number for one component, not for a finished tooth. The honest comparison is total against total: what you will pay to walk out chewing. Ours is USD 2,400 to 3,000, and it already includes the extraction and grafts when they are indicated.",
+      "Because that figure is almost always the component on its own — before the surgery, the extraction, the bone graft and the membrane, which are then added one by one. Quoted that way, a single implant can easily end up between USD 5,000 and 7,000, well above the number that got you through the door. Ours starts at USD 1,500 and that already is the complete surgery. The honest comparison is like for like: what you pay to walk out with the work done.",
   },
   {
     pregunta: "What is the difference between Neodent and Straumann?",
     respuesta:
-      "Both are premium systems and both belong to the same Swiss group: Neodent is part of the Straumann Group. Straumann is manufactured in Switzerland and is the most recognised implant brand in the world, with the longest track record and the strongest scientific backing — it is our reference choice for the most demanding aesthetic zones. Neodent is the same group's line, produced in Brazil to its standards, and offers excellent value within the premium range. Both fall within the USD 1,200 to 1,500 range per phase. We advise which one suits your case at the initial assessment.",
+      "Both are premium systems and both belong to the same Swiss group: Neodent is part of the Straumann Group. Straumann is manufactured in Switzerland and is the most recognised implant brand in the world, with the longest track record and the strongest scientific backing — it is our reference choice for the most demanding aesthetic zones, and it starts at USD 2,000. Neodent is the same group's line, produced in Brazil to its standards, offers excellent value within the premium range, and starts at USD 1,500. We advise which one suits your case at the initial assessment.",
   },
   {
     pregunta: "Can an implant be done in a single trip?",
     respuesta:
-      "Not usually, and we would rather say so before you book a flight. The implant needs time to integrate with the bone between phase one and phase two — several months in most cases. International patients normally plan two trips, or combine phase one with other treatment and return for the crown. Veneers and smile design, by contrast, are routinely completed in a single 10 to 14 day trip.",
+      "Not usually, and we would rather say so before you book a flight. The implant needs 2 to 3 months to integrate with the bone before the crown can go on. International patients normally plan two trips, or combine the surgery with other treatment and return for the crown. Veneers and smile design, by contrast, are routinely completed in a single 10 to 14 day trip.",
   },
   {
     pregunta: "Do you offer financing for implants?",
@@ -135,7 +134,7 @@ export default function DentalImplantsCostPage() {
               <span className="font-cormorant italic text-oro">in Buenos Aires</span>
             </h1>
             <p className="text-crema/68 font-manrope text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
-              Real figures in USD for a finished tooth — not for the screw on its own. Below you will find what each phase includes, which systems we use and how financing works.
+              Two systems, two numbers. Each one is the complete surgery — not the screw on its own — so the figure below is not the one that grows on you later.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 items-start">
               <a
@@ -161,8 +160,8 @@ export default function DentalImplantsCostPage() {
           <div className="max-w-4xl mx-auto">
             <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Reference figures</span>
             <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-12">
-              What you pay for{" "}
-              <span className="font-cormorant italic text-oro">at each stage</span>
+              Two systems,{" "}
+              <span className="font-cormorant italic text-oro">two numbers</span>
             </h2>
 
             <div className="overflow-x-auto">
@@ -187,7 +186,7 @@ export default function DentalImplantsCostPage() {
             </div>
 
             <p className="text-crema/30 font-manrope text-xs mt-6">
-              * Reference figures in USD, updated {ANIO}. The final investment is defined at the initial assessment based on the condition of the bone and the number of units. USD amounts are paid in pesos at the official Banco Nación exchange rate.
+              * Figures in USD, updated {ANIO}. They read &ldquo;from&rdquo; because they are all-in: if the case calls for an extra component it is not a surprise at the end. USD amounts are paid in pesos at the official Banco Nación exchange rate.
             </p>
           </div>
         </section>
@@ -205,17 +204,17 @@ export default function DentalImplantsCostPage() {
                 {
                   n: "01",
                   t: "What the quote actually covers",
-                  d: "A cheaper quote is often the screw alone, before the crown, the extraction or the graft. Compare finished teeth against finished teeth and most of the gap disappears.",
+                  d: "A cheaper quote is usually the component alone, before the surgery, the extraction and the graft. Quoted piece by piece, a single implant can reach USD 5,000 to 7,000. Compare like for like and most of the gap disappears.",
                 },
                 {
                   n: "02",
                   t: "The state of the bone",
-                  d: "If the tooth has been missing for a while the bone recedes, and the site may need grafting before it can hold an implant. That is decided at the assessment, not afterwards.",
+                  d: "If the tooth has been missing for a while the bone recedes, and the site needs grafting before it can hold an implant. That graft is already inside our figure — it is not added afterwards.",
                 },
                 {
                   n: "03",
                   t: "The implant system",
-                  d: "We only use Straumann Group systems. Straumann is made in Switzerland; Neodent is the same group's line, produced in Brazil to its standards. Both are premium, and both are in the same range per phase.",
+                  d: "We only use Straumann Group systems. Straumann is made in Switzerland and starts at USD 2,000; Neodent is the same group's line, produced in Brazil to its standards, and starts at USD 1,500. Both are premium.",
                 },
                 {
                   n: "04",
@@ -244,7 +243,7 @@ export default function DentalImplantsCostPage() {
               <span className="font-cormorant italic text-oro">in one trip</span>
             </h2>
             <p className="text-crema/65 font-manrope text-base leading-relaxed">
-              The implant needs months to integrate with the bone before the crown goes on, so international patients usually plan two trips or combine the first phase with other treatment. We would rather tell you that now than after you have booked a flight. Veneers and smile design are a different story — those are routinely finished in a single 10 to 14 day visit.
+              The implant needs 2 to 3 months to integrate with the bone before the crown goes on, so international patients usually plan two trips or combine the surgery with other treatment. We would rather tell you that now than after you have booked a flight. Veneers and smile design are a different story — those are routinely finished in a single 10 to 14 day visit.
             </p>
           </div>
         </section>

@@ -10,7 +10,7 @@ const CANONICAL = "https://www.amesteticadental.com/blog/cuanto-cuesta-un-implan
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: `¿Cuánto cuesta un implante dental? Guía ${ANIO} | AM`,
-    description: `Un implante con corona va de USD 2.400 a 3.000 en ${ANIO}. Qué incluye ese precio, por qué el barato suele ser sólo el tornillo y cuándo hace falta injerto.`,
+    description: `El implante a partir de USD 1.500 y terminado con corona desde USD 3.000 en ${ANIO}. Qué incluye, y por qué el presupuesto barato es sólo el tornillo.`,
     alternates: {
         canonical: CANONICAL,
         languages: hreflangFor("/blog/cuanto-cuesta-un-implante-dental-en-argentina"),
@@ -60,7 +60,7 @@ const faqSchema = {
             "name": `¿Cuánto cuesta un implante dental en Argentina en ${ANIO}?`,
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "En AM Estética Dental el tratamiento se divide en dos fases. La 1ª fase (implante + extracción + injerto de hueso + injerto de tejido) va de USD 1.200 a USD 1.500. La 2ª fase (corona definitiva) va de USD 1.200 a USD 1.500. El total terminado con corona queda entre USD 2.400 y USD 3.000. Trabajamos con implantes del Grupo Straumann: Straumann, fabricado en Suiza, y Neodent, la línea del mismo grupo producida en Brasil bajo sus estándares.",
+                "text": "En AM Estética Dental hay dos opciones y nada más: el implante Neodent® a partir de USD 1.500 y el Straumann® a partir de USD 2.000. Ese valor es la cirugía completa e incluye la extracción, el relleno de hueso y la membrana que el caso requiera. La corona definitiva se coloca 2 o 3 meses después, cuando el implante integró con el hueso, y el tratamiento terminado queda a partir de USD 3.000 con Neodent® o USD 3.500 con Straumann®.",
             },
         },
         {
@@ -68,7 +68,7 @@ const faqSchema = {
             "name": "¿El precio del implante incluye la corona?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "En AM Estética Dental sí, pero se divide en dos fases para mayor claridad. La 1ª fase (USD 1.200–1.500) incluye el implante, la posible extracción, el injerto de hueso y el de tejido. La 2ª fase (USD 1.200–1.500) incluye la corona definitiva. Al comparar presupuestos, es clave confirmar si te están cotizando solo el tornillo o el tratamiento completo.",
+                "text": "Se cotizan por separado, a propósito. El implante (a partir de USD 1.500) es la cirugía: incluye la extracción, el relleno de hueso y la membrana si hacen falta. La corona se suma después, cuando el implante integró, y el terminado queda a partir de USD 3.000. Al comparar presupuestos, lo importante es confirmar si te están cotizando sólo el tornillo o la cirugía completa.",
             },
         },
         {
@@ -111,19 +111,19 @@ const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20
 const RANGOS = [
     {
         tipo: "1ª Fase — Implante",
-        rango: "USD 1.200 – 1.500",
+        rango: "a partir de USD 1.500",
         duracion: "Tornillo: permanente",
-        nota: "All-inclusive: implante + posible extracción + injerto de hueso + injerto de tejido. Straumann o Neodent, ambos del Grupo Straumann.",
+        nota: "Neodent®. Cirugía completa: incluye extracción, relleno de hueso y membrana si el caso lo requiere.",
     },
     {
         tipo: "2ª Fase — Corona definitiva",
-        rango: "USD 1.200 – 1.500",
+        rango: "a partir de USD 1.500",
         duracion: "Corona: 15–20 años",
         nota: "Cerámica o zirconio biomimético. Se coloca tras la oseointegración (2-3 meses).",
     },
     {
         tipo: "Total terminado (implante + corona)",
-        rango: "USD 2.400 – 3.000",
+        rango: "a partir de USD 3.000",
         duracion: "Tornillo: permanente · Corona: 15–20 años",
         nota: "El implante completo con diente funcionando. El rango depende del tipo de implante y la corona elegida.",
     },
@@ -139,7 +139,7 @@ const FACTORES = [
     {
         n: "01",
         titulo: "Qué incluye el presupuesto (tornillo vs. corona)",
-        texto: "Es el punto donde más se confunden los precios. Un implante completo tiene tres partes: el tornillo de titanio que se integra al hueso, el pilar que lo conecta y la corona visible. Hay clínicas que publican solo el precio del tornillo — y la corona se suma aparte. En AM Estética Dental el tratamiento se divide en dos fases: la 1ª fase (implante + extracción + injertos) va de USD 1.200 a 1.500, y la 2ª fase (corona) de USD 1.200 a 1.500. Total terminado: entre USD 2.400 y 3.000.",
+        texto: "Es el punto donde más se confunden los precios. Un implante completo tiene tres partes: el tornillo de titanio que se integra al hueso, el pilar que lo conecta y la corona visible. Hay clínicas que publican sólo el componente — y después se suman la cirugía, la extracción y el relleno de hueso. En AM el implante arranca en USD 1.500 (Neodent®) o USD 2.000 (Straumann®) y ese valor ya es la cirugía completa; terminado con corona queda a partir de USD 3.000.",
     },
     {
         n: "02",

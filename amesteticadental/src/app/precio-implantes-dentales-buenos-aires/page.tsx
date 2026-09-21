@@ -8,24 +8,28 @@ import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import ImplantHeroVideo from "@/components/ImplantHeroVideo";
 import ImplantRehabilitationCase from "@/components/ImplantRehabilitationCase";
 import { ANIO } from "@/lib/anio";
+import { IMPLANTES, OSEOINTEGRACION, INCLUIDO, usdES } from "@/lib/precios-implantes";
 import { hreflangFor } from "@/lib/i18n-routes";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  // Cambio de CTR del 2026-09-21. Medir a 28 días en Search Console.
+  // Cambio de precios del 2026-09-21 (segunda revisión del día).
   //
-  // El título viejo abría con "desde USD 2.400". Es honesto, y ese es el
-  // problema: en posición 4,6 la persona barre resultados, ve la cifra más alta
-  // de la lista y se va con el que dice "desde USD 800" —que es el tornillo
-  // solo, sin corona—. La comparación es tramposa pero la gana el otro.
+  // A la mañana el título decía "con corona incluida", porque con el esquema viejo
+  // —dos fases de USD 1.200 a 1.500— el número comparable era el total, y abrir con
+  // "desde USD 2.400" perdía contra el que publica "desde USD 800" (que es el
+  // tornillo solo).
   //
-  // Lo que corrige eso no es bajar el número, es explicar de entrada qué compra
-  // ese número. "Con corona incluida" convierte un precio caro en un precio
-  // completo, y es exactamente el argumento del artículo de implantes que ya
-  // tenemos: el barato suele ser sólo el tornillo.
-  title: `Implantes dentales: precio ${ANIO} con corona incluida | AM`,
+  // El esquema nuevo lo resuelve mejor que cualquier título: ahora el implante tiene
+  // un precio propio y redondo —USD 1.500 Neodent, USD 2.000 Straumann— que SÍ es
+  // comparable contra lo que publica el resto, y que además es honesto porque incluye
+  // la cirugía entera. Así que el título vuelve a abrir con una cifra, pero esta vez
+  // con la que gana la comparación en vez de perderla.
+  //
+  // OJO: esto reinicia la medición a 28 días que arrancó a la mañana.
+  title: `Implantes dentales a partir de USD 1.500 — precios ${ANIO} | AM`,
   description:
-    `Implante + corona terminado de USD 2.400 a 3.000, con extracción e injertos incluidos. Straumann y Neodent. Precios ${ANIO} y financiación propia.`,
+    `El implante a partir de USD 1.500 (Neodent) o USD 2.000 (Straumann). Terminado con corona, desde USD 3.000. Cirugía, extracción e injertos incluidos.`,
   keywords: `precio implantes dentales Buenos Aires, costo implante dental Argentina, implantes dentales precio ${ANIO}, financiación implantes Puerto Madero, cuánto cuestan los implantes dentales`,
   alternates: {
     canonical: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",
@@ -34,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Precio de Implantes Dentales en Buenos Aires ${ANIO} | AM Estética Dental`,
     description:
-      "Implantes dentales Straumann y Neodent desde USD 2.400 total (dos fases). Financiación propia. Evaluación inicial en Puerto Madero, Buenos Aires.",
+      "Implantes Neodent a partir de USD 1.500 y Straumann desde USD 2.000, con la cirugía y los injertos incluidos. Financiación propia en Puerto Madero.",
     url: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",
     locale: "es_AR",
     type: "website",
@@ -45,12 +49,12 @@ const faqItems = [
   {
     pregunta: "¿Cuánto cuesta un implante dental en Buenos Aires?",
     respuesta:
-      "En AM Estética Dental el tratamiento se divide en dos fases. La primera fase (colocación del implante, que ya incluye la posible extracción, injerto de hueso e injerto de tejido) va de USD 1.200 a USD 1.500. La segunda fase (la corona definitiva) va de USD 1.200 a USD 1.500. El total terminado con corona incluida queda entre USD 2.400 y USD 3.000. Trabajamos exclusivamente con implantes del Grupo Straumann: Neodent® (gama alta) y Straumann® (tope de gama, #1 del mundo). Ofrecemos financiación propia con tasa fija del 18% anual.",
+      "Hay dos opciones, y nada más: el implante Neodent® a partir de USD 1.500 y el Straumann® a partir de USD 2.000. Ese valor es la cirugía completa — ya contempla la extracción si la pieza todavía está, el relleno de hueso que el sitio necesite y la membrana para el tejido blando si está indicada. La corona definitiva se coloca después, cuando el implante integró con el hueso, y el tratamiento terminado queda a partir de USD 3.000 con Neodent® o USD 3.500 con Straumann®. Ofrecemos financiación propia con tasa fija del 18% anual.",
   },
   {
     pregunta: "¿Qué diferencia hay entre el implante Neodent y el Straumann?",
     respuesta:
-      "Los dos son sistemas tope de gama y pertenecen al mismo grupo suizo: Neodent forma parte del Grupo Straumann. Straumann es la marca de implantes más reconocida del mundo, con la mayor trayectoria y respaldo científico, y es nuestra opción de referencia para las zonas estéticas más exigentes. Neodent ofrece una relación calidad–precio excelente dentro de la gama premium. Ambos están dentro del rango de USD 1.200 a USD 1.500 por fase. En la evaluación inicial te asesoramos sobre cuál conviene para tu caso.",
+      "Los dos son sistemas tope de gama del mismo grupo suizo: Neodent forma parte del Grupo Straumann. Straumann se fabrica en Suiza, es la marca de implantes más reconocida del mundo y es nuestra opción de referencia para las zonas estéticas más exigentes; el implante arranca en USD 2.000. Neodent es la línea del mismo grupo producida en Brasil bajo sus estándares, con una relación calidad–precio excelente dentro de la gama premium, y arranca en USD 1.500. En la evaluación inicial te asesoramos sobre cuál conviene para tu caso.",
   },
   {
     pregunta: "¿Se cobra por implante o por tratamiento completo?",
@@ -167,39 +171,72 @@ export default function InversionImplantesPage() {
               <span className="font-cormorant italic text-oro">implante individual</span>
             </h2>
             <p className="text-crema/55 font-manrope text-sm text-center max-w-2xl mx-auto mb-12">
-              El tratamiento se divide en dos fases. La primera fase ya incluye la posible extracción, el injerto de hueso y el injerto de tejido que el caso requiera. La inversión definitiva se establece después de la evaluación clínica y de los estudios que estén indicados, que se realizan por separado.
+              Dos sistemas, dos números. Nada de escalas ni de listas largas: elegís el implante y ya sabés en qué inversión estás. Los valores dicen <strong className="text-crema/80 font-medium">a partir de</strong> porque son integrales — ya contemplan la cirugía completa y lo que el sitio necesite.
             </p>
 
-            <div className="overflow-x-auto">
+            {/* Celular: una ficha por sistema. La tabla de abajo mide 585px y en un
+                teléfono la columna del total quedaba fuera de pantalla — justo la
+                cifra que la persona vino a buscar. */}
+            <div className="grid grid-cols-1 gap-4 md:hidden">
+              {[IMPLANTES.neodent, IMPLANTES.straumann].map((sistema) => (
+                <div key={sistema.marca} className="border border-oro/20 rounded-2xl p-6 bg-carbon">
+                  <h3 className="text-crema font-cormorant italic text-xl">{sistema.marca}</h3>
+                  <p className="text-crema/40 font-manrope text-[11px] mt-1 mb-5">{sistema.origen}</p>
+                  <div className="flex items-end justify-between gap-4 pb-4 border-b border-oro/10">
+                    <span className="text-crema/60 font-manrope text-sm">El implante</span>
+                    <span className="text-right">
+                      <span className="block text-crema/40 font-manrope text-[10px] leading-none mb-1">a partir de</span>
+                      <span className="text-oro font-manrope font-semibold text-lg whitespace-nowrap">{usdES(sistema.implante)}</span>
+                    </span>
+                  </div>
+                  <div className="flex items-end justify-between gap-4 pt-4">
+                    <span className="text-crema/60 font-manrope text-sm">Terminado, con corona</span>
+                    <span className="text-right">
+                      <span className="block text-crema/40 font-manrope text-[10px] leading-none mb-1">a partir de</span>
+                      <span className="text-oro font-manrope font-semibold text-lg whitespace-nowrap">{usdES(sistema.conCorona)}</span>
+                    </span>
+                  </div>
+                  <p className="text-crema/40 font-manrope text-[11px] mt-5 pt-4 border-t border-oro/10">
+                    Oseointegración: {OSEOINTEGRACION} entre la cirugía y la corona.
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="overflow-x-auto hidden md:block">
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="border-b border-oro/20">
-                    <th className="text-left py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Fase</th>
-                    <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Inversión USD</th>
-                    <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Qué incluye</th>
-                    <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Tiempo</th>
+                    <th className="text-left py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Sistema</th>
+                    <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">El implante</th>
+                    <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Terminado, con corona</th>
+                    <th className="text-center py-4 px-6 text-crema/50 font-manrope text-xs uppercase tracking-widest">Oseointegración</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {[
-                    { fase: "1ª Fase — Colocación del implante", precio: "USD 1.200 – 1.500", incluye: "Implante + extracción + injerto óseo + injerto de tejido", tiempo: "45 min cirugía" },
-                    { fase: "Oseointegración", precio: "—", incluye: "El implante se fusiona con el hueso", tiempo: "2 a 3 meses" },
-                    { fase: "2ª Fase — Corona definitiva", precio: "USD 1.200 – 1.500", incluye: "Corona de cerámica o zirconio biomimética", tiempo: "2 sesiones" },
-                    { fase: "Total terminado con corona", precio: "USD 2.400 – 3.000", incluye: "Implante Neodent® o Straumann® (Grupo Straumann)", tiempo: "3 a 4 meses" },
-                  ].map((row, i) => (
-                    <tr key={row.fase} className={`border-b border-oro/10 ${i >= 3 ? "bg-oro/5" : i % 2 === 0 ? "bg-carbon" : "bg-carbon-soft"}`}>
-                      <td className={`py-4 px-6 font-manrope text-sm font-medium ${i >= 3 ? "text-oro" : "text-crema"}`}>{row.fase}</td>
-                      <td className={`py-4 px-6 font-manrope text-sm font-semibold text-center ${i >= 3 ? "text-oro" : "text-oro/80"}`}>{row.precio}</td>
-                      <td className="py-4 px-6 text-crema/60 font-manrope text-sm text-center">{row.incluye}</td>
-                      <td className="py-4 px-6 text-crema/60 font-manrope text-sm text-center">{row.tiempo}</td>
+                  {[IMPLANTES.neodent, IMPLANTES.straumann].map((sistema, i) => (
+                    <tr key={sistema.marca} className={`border-b border-oro/10 ${i === 1 ? "bg-oro/5" : "bg-carbon"}`}>
+                      <td className="py-6 px-6 font-manrope text-sm font-medium text-crema">
+                        {sistema.marca}
+                        <span className="block text-crema/40 text-xs font-normal mt-1">{sistema.origen}</span>
+                      </td>
+                      <td className="py-6 px-6 font-manrope text-center">
+                        <span className="text-crema/45 text-xs block">a partir de</span>
+                        <span className="text-oro font-semibold text-lg whitespace-nowrap">{usdES(sistema.implante)}</span>
+                      </td>
+                      <td className="py-6 px-6 font-manrope text-center">
+                        <span className="text-crema/45 text-xs block">a partir de</span>
+                        <span className="text-oro font-semibold text-lg whitespace-nowrap">{usdES(sistema.conCorona)}</span>
+                      </td>
+                      <td className="py-6 px-6 text-crema/55 font-manrope text-sm text-center">{OSEOINTEGRACION}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
 
-            <p className="text-crema/40 font-manrope text-xs mt-6 text-center">
-              * Valores en USD. La 1ª fase es all-inclusive: ya contempla extracción, injerto de hueso e injerto de tejido si el caso lo requiere. Se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago.
+            <p className="text-crema/40 font-manrope text-xs mt-6 text-center max-w-2xl mx-auto">
+              * La corona definitiva se coloca una vez que el implante integró con el hueso, {OSEOINTEGRACION} después de la cirugía. Los valores en USD se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago.
             </p>
           </div>
         </section>
@@ -251,6 +288,68 @@ export default function InversionImplantesPage() {
                 esperando.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* ── POR QUÉ ES UNA INVERSIÓN INTEGRAL ── */}
+        {/* Va acá, despues del numero y de ver la pieza, porque es el momento
+            exacto en que aparece la objecion: "¿y que mas me van a sumar?". La
+            respuesta no es bajar la cifra, es mostrar que adentro ya esta lo que
+            en otro lado se cotiza aparte y aparece al final. */}
+        <section className="py-24 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-14">
+              <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Inversión integral</span>
+              <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-5">
+                El número de arriba ya incluye{" "}
+                <span className="font-cormorant italic text-oro">lo que otros suman después</span>
+              </h2>
+              <p className="text-crema/60 font-manrope text-base leading-relaxed max-w-2xl mx-auto">
+                Un implante no es una pieza que se enrosca: es una cirugía. Cuando cada parte de esa cirugía se cotiza por separado, el presupuesto inicial se ve barato y la cuenta final no tiene techo.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              <div className="border border-oro/30 rounded-2xl p-8 bg-carbon">
+                <span className="text-oro font-manrope uppercase tracking-[0.25em] text-[10px] block mb-5">Acá, adentro del valor</span>
+                <div className="space-y-4">
+                  {INCLUIDO.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <span className="text-oro flex-none mt-1 text-xs">◆</span>
+                      <p className="text-crema/75 font-manrope text-sm leading-relaxed">{item}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-crema/45 font-manrope text-xs mt-6 pt-6 border-t border-oro/10">
+                  Por eso los valores dicen <span className="text-crema/70">a partir de</span>: si el caso pide un componente más, no aparece como una sorpresa al final.
+                </p>
+              </div>
+
+              <div className="border border-crema/10 rounded-2xl p-8 bg-carbon/40">
+                <span className="text-crema/40 font-manrope uppercase tracking-[0.25em] text-[10px] block mb-5">Cotizado por partes</span>
+                <div className="space-y-4">
+                  {[
+                    "Se publica el componente, no la cirugía",
+                    "La extracción se factura aparte",
+                    "El relleno de hueso se descubre el día de la cirugía",
+                    "La membrana, si hace falta, es otro renglón",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <span className="text-crema/25 flex-none mt-1 text-xs">◇</span>
+                      <p className="text-crema/50 font-manrope text-sm leading-relaxed">{item}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-crema/45 font-manrope text-xs mt-6 pt-6 border-t border-crema/10">
+                  Sumado así, no es raro que un solo implante termine entre USD 5.000 y 7.000 — bastante arriba de lo que decía el presupuesto que lo hizo entrar.
+                </p>
+              </div>
+            </div>
+
+            <p className="text-crema/65 font-manrope text-base leading-relaxed max-w-3xl mx-auto text-center">
+              No es que acá se regale nada. Es que el trabajo quirúrgico que otros dejan fuera del presupuesto{" "}
+              <strong className="text-crema font-medium">se hace igual</strong>, y alguien lo termina pagando. Preferimos que sepas el número completo antes de empezar y no después.
+            </p>
           </div>
         </section>
 
@@ -366,13 +465,16 @@ export default function InversionImplantesPage() {
                   <h3 className="text-crema font-cormorant italic text-2xl">Neodent®</h3>
                   <span className="text-oro/60 font-manrope text-[10px] uppercase tracking-[0.2em]">Grupo Straumann®</span>
                 </div>
-                <p className="text-oro font-manrope font-semibold text-xl mb-6">Desde USD 1.200 / fase</p>
+                <div className="mb-6">
+                  <p className="text-oro font-manrope font-semibold text-2xl leading-none">a partir de {usdES(IMPLANTES.neodent.implante)}</p>
+                  <p className="text-crema/45 font-manrope text-xs mt-2">el implante · {usdES(IMPLANTES.neodent.conCorona)} terminado con corona</p>
+                </div>
                 <div className="space-y-3 flex-1">
                   {[
                     "Parte del Grupo Straumann® (Suiza) — el mismo grupo detrás de la marca de implantes #1 del mundo",
                     "La puerta de entrada premium al universo Straumann, con la mejor relación calidad–precio",
                     "Titanio de grado médico con el respaldo del grupo líder mundial en implantología",
-                    "1ª fase all-inclusive: extracción + injerto óseo + tejidos blandos",
+                    "Inversión integral: la cirugía, la extracción, el injerto de hueso y la membrana ya están adentro",
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-3">
                       <span className="text-oro/50 flex-none mt-1 text-xs">◆</span>
@@ -392,13 +494,16 @@ export default function InversionImplantesPage() {
                   <h3 className="text-crema font-cormorant italic text-2xl">Straumann®</h3>
                   <span className="text-crema/40 font-manrope text-[10px] uppercase tracking-[0.2em]">Suiza</span>
                 </div>
-                <p className="text-oro font-manrope font-semibold text-xl mb-6">Desde USD 1.500 / fase</p>
+                <div className="mb-6">
+                  <p className="text-oro font-manrope font-semibold text-2xl leading-none">a partir de {usdES(IMPLANTES.straumann.implante)}</p>
+                  <p className="text-crema/45 font-manrope text-xs mt-2">el implante · {usdES(IMPLANTES.straumann.conCorona)} terminado con corona</p>
+                </div>
                 <div className="space-y-3 flex-1">
                   {[
                     "La marca de implantes más reconocida del mundo",
                     "Ingeniería suiza y el mayor respaldo científico del sector",
                     "La opción de referencia para las zonas estéticas más exigentes",
-                    "1ª fase all-inclusive: extracción + injerto óseo + tejidos blandos",
+                    "Inversión integral: la cirugía, la extracción, el injerto de hueso y la membrana ya están adentro",
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-3">
                       <span className="text-oro flex-none mt-1 text-xs">◆</span>
@@ -431,7 +536,7 @@ export default function InversionImplantesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { titulo: "Hueso disponible", texto: "El factor más crítico. Si hay pérdida ósea, es necesario realizar un injerto de hueso previo a la colocación del implante." },
+                { titulo: "Hueso disponible", texto: "El factor más crítico: si hay pérdida ósea hace falta un relleno antes de colocar el implante. En AM ese relleno ya está dentro del valor, no se suma después." },
                 { titulo: "Material de la corona", texto: "La porción visible (corona) puede ser de cerámica estándar o de zirconio, siendo este último el material más estético y biocompatible." },
                 { titulo: "Complejidad quirúrgica", texto: "Extracciones complejas en el mismo momento de la implantación o zonas estéticas anteriores requieren mayor especialización." },
               ].map((item) => (
@@ -454,7 +559,7 @@ export default function InversionImplantesPage() {
               Calculá tu{" "}
               <span className="font-cormorant italic text-oro">plan de pago</span>
             </h2>
-            <CalculadoraFinanciacion defaultMonto={2400} />
+            <CalculadoraFinanciacion defaultMonto={3000} />
           </div>
         </section>
 

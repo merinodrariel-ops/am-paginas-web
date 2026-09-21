@@ -17,7 +17,7 @@ const WA =
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: `How Much Does a Dental Implant Cost in Argentina? ${ANIO} | AM`,
-    description: `A finished implant with its crown runs USD 2,400 to 3,000 in ${ANIO}. What that covers, why the cheap quote is only the screw, and when a graft is needed.`,
+    description: `The implant from USD 1,500, or USD 3,000 finished with its crown, in ${ANIO}. What that covers, and why the cheap quote is only the component.`,
     alternates: {
         canonical: CANONICAL,
         languages: hreflangFor("/blog/cuanto-cuesta-un-implante-dental-en-argentina"),
@@ -37,7 +37,7 @@ const articleSchema = {
     "@type": "Article",
     headline: "How much does a dental implant cost in Argentina?",
     image: "https://www.amesteticadental.com/og-image.jpg",
-    description: `A finished implant with its crown runs USD 2,400 to 3,000 in ${ANIO}. What that covers, why the cheap quote is only the screw, and when a graft is needed.`,
+    description: `The implant from USD 1,500, or USD 3,000 finished with its crown, in ${ANIO}. What that covers, and why the cheap quote is only the component.`,
     inLanguage: "en",
     author: {
         "@type": "Person",
@@ -64,7 +64,7 @@ const faqSchema = {
             name: `How much does a dental implant cost in Argentina in ${ANIO}?`,
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "At AM Estética Dental the treatment is split into two phases. Phase one — the implant, plus any extraction, bone graft and tissue graft — runs from USD 1,200 to 1,500. Phase two, the definitive crown, runs from USD 1,200 to 1,500. Finished, with the crown in place, a complete implant comes to between USD 2,400 and USD 3,000. We work with Straumann Group implants: Straumann, made in Switzerland, and Neodent, the same group's line produced in Brazil to its standards.",
+                text: "There are two options and nothing else: the Neodent® implant from USD 1,500 and the Straumann® from USD 2,000. That figure is the complete surgery and already covers the extraction, the bone graft and the membrane the site may need. The definitive crown goes on 2 to 3 months later, once the implant has integrated, and the finished treatment comes to USD 3,000 with Neodent® or USD 3,500 with Straumann®.",
             },
         },
         {
@@ -72,7 +72,7 @@ const faqSchema = {
             name: "Does the implant price include the crown?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "At AM Estética Dental it does, but it is billed in two phases for clarity. Phase one (USD 1,200–1,500) covers the implant, any extraction, the bone graft and the tissue graft. Phase two (USD 1,200–1,500) covers the definitive crown. When comparing quotes elsewhere, the key question is whether you are being quoted the screw alone or the finished tooth.",
+                text: "They are quoted separately, on purpose. The implant (from USD 1,500) is the surgery: it covers the extraction, the bone graft and the membrane when they are needed. The crown is added later, once the implant has integrated, and the finished treatment comes to USD 3,000 or more. When comparing quotes elsewhere, the key question is whether you are being quoted the component alone or the complete surgery.",
             },
         },
         {
@@ -144,21 +144,21 @@ export default function DentalImplantsCostArgentinaPage() {
                     <div className="max-w-3xl mx-auto space-y-12">
                         <section>
                             <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-5 leading-snug">The figures</h2>
-                            <p className="text-crema/72 font-manrope text-base leading-relaxed">At AM Estética Dental the treatment is split into two phases. Phase one — placing the implant, and with it any extraction, bone graft and tissue graft the site needs — runs from USD 1,200 to 1,500. Phase two, the definitive crown, runs from USD 1,200 to 1,500.</p>
-                            <p className="text-crema/72 font-manrope text-base leading-relaxed">A complete implant, finished and chewing, therefore lands between USD 2,400 and USD 3,000. USD amounts are paid in pesos at the official Banco Nación exchange rate on the day of payment, and in-house financing is available at a fixed 18% annual rate.</p>
+                            <p className="text-crema/72 font-manrope text-base leading-relaxed">There are two options and nothing else. The Neodent® implant starts at USD 1,500; the Straumann®, made in Switzerland, starts at USD 2,000. Either figure is the complete surgery — it already covers the extraction if the tooth is still there, the bone graft the site needs, and the membrane for the soft tissue when it is indicated.</p>
+                            <p className="text-crema/72 font-manrope text-base leading-relaxed">The crown goes on 2 to 3 months later, once the implant has integrated with the bone. Finished and chewing, the treatment comes to USD 3,000 with Neodent® or USD 3,500 with Straumann®. USD amounts are paid in pesos at the official Banco Nación rate, and in-house financing is available at a fixed 18% annual rate.</p>
                         </section>
 
                         <section>
-                            <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-5 leading-snug">Why one clinic says USD 800 and another says USD 2,400</h2>
+                            <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-5 leading-snug">Why one clinic says USD 800 and the bill ends at USD 6,000</h2>
                             <p className="text-crema/72 font-manrope text-base leading-relaxed">This is where implant pricing gets confusing, and it is worth being blunt about it. A complete implant has three parts: the titanium screw that integrates with the bone, the abutment that connects it, and the visible crown on top.</p>
-                            <p className="text-crema/72 font-manrope text-base leading-relaxed">Some clinics advertise the price of the screw alone. The crown is added later, and so is the extraction, and so is the graft. The number that got you in the door was real — it just was not the price of a tooth.</p>
+                            <p className="text-crema/72 font-manrope text-base leading-relaxed">Some clinics advertise the component alone. Then the surgery is added, and the extraction, and the bone graft discovered on the day, and the membrane. Quoted that way it is not unusual for a single implant to land between USD 5,000 and 7,000. The number that got you in the door was real — it just was not the price of the work.</p>
                             <p className="text-crema/72 font-manrope text-base leading-relaxed">So when you compare, compare finished against finished. Ask one question of every quote: does this leave me with a tooth in place and working, or is something still missing? Most of the apparent gap closes right there.</p>
                         </section>
 
                         <section>
                             <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-5 leading-snug">The bone decides more than you would think</h2>
                             <p className="text-crema/72 font-manrope text-base leading-relaxed">An implant needs enough bone to integrate with. If the tooth came out a long time ago, the bone in that site has usually receded, and it has to be rebuilt with a graft before anything can be placed.</p>
-                            <p className="text-crema/72 font-manrope text-base leading-relaxed">At AM that graft is already inside phase one rather than appearing later as a surprise line. The first visit is a clinical assessment — bring recent X-rays if you have them, though they are not a requirement. If a CBCT scan is needed to study the bone in three dimensions, it is prescribed separately at an imaging centre before surgical planning.</p>
+                            <p className="text-crema/72 font-manrope text-base leading-relaxed">At AM that graft is already inside the figure rather than appearing later as a surprise line. The first visit is a clinical assessment — bring recent X-rays if you have them, though they are not a requirement. If a CBCT scan is needed to study the bone in three dimensions, it is prescribed separately at an imaging centre before surgical planning.</p>
                         </section>
 
                         <section>
@@ -170,12 +170,12 @@ export default function DentalImplantsCostArgentinaPage() {
                         <section>
                             <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-5 leading-snug">Which implants we use</h2>
                             <p className="text-crema/72 font-manrope text-base leading-relaxed">We work exclusively with Straumann Group systems. Straumann is manufactured in Switzerland and is the most recognised implant brand in the world, with the longest track record and the strongest scientific backing. Neodent is the same group&rsquo;s line, produced in Brazil to its standards, and offers excellent value inside the premium range.</p>
-                            <p className="text-crema/72 font-manrope text-base leading-relaxed">Both sit in the same USD 1,200 to 1,500 band per phase. Which one suits your case is decided at the assessment, not in a price list.</p>
+                            <p className="text-crema/72 font-manrope text-base leading-relaxed">Straumann starts at USD 2,000 and Neodent at USD 1,500. Which one suits your case is decided at the assessment, not in a price list.</p>
                         </section>
 
                         <section>
                             <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-5 leading-snug">If you are travelling for this</h2>
-                            <p className="text-crema/72 font-manrope text-base leading-relaxed">One thing worth knowing before you book a flight: an implant rarely fits into a single trip. The screw needs months to integrate with the bone before the crown can go on, so international patients normally plan two visits, or combine the first phase with other treatment and come back for the crown.</p>
+                            <p className="text-crema/72 font-manrope text-base leading-relaxed">One thing worth knowing before you book a flight: an implant rarely fits into a single trip. The implant needs 2 to 3 months to integrate with the bone before the crown can go on, so international patients normally plan two visits, or combine the surgery with other treatment and come back for the crown.</p>
                             <p className="text-crema/72 font-manrope text-base leading-relaxed">Veneers and smile design are a different case entirely — with our own laboratory in-house, those are routinely completed in one 10 to 14 day trip. We would rather you know which of the two you are planning.</p>
                         </section>
                     </div>

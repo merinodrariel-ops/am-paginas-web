@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Dental Implants in Buenos Aires — Cost and Process | AM",
   description:
-    "Dental implants in Buenos Aires from USD 2,400 total (two phases). Straumann and Neodent implants with digital planning by Dr. Ariel Merino, Puerto Madero.",
+    "Neodent implants from USD 1,500 and Straumann from USD 2,000, surgery and grafts included. Finished with the crown, from USD 3,000. Dr. Ariel Merino.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/implantes-dentales-buenos-aires") },
   keywords: "dental implants Buenos Aires, dental implant cost Argentina, implants Puerto Madero, dental tourism implants",
   openGraph: {
     title: "Dental Implants in Buenos Aires | AM Estética Dental",
     description:
-      "Dental implants from USD 2,400 total. Straumann and Neodent, two-phase treatment with digital planning in Puerto Madero, Buenos Aires.",
+      "Neodent implants from USD 1,500 and Straumann from USD 2,000, with the full surgery included. Digital planning in Puerto Madero, Buenos Aires.",
     url: CANONICAL,
     locale: "en_US",
     type: "website",
@@ -56,7 +56,7 @@ const faqItems = [
   {
     pregunta: "What is the investment for a dental implant in Buenos Aires?",
     respuesta:
-      "At AM Estética Dental the treatment is split into two phases. Phase 1 (implant + extraction + bone graft + tissue graft) ranges from USD 1,200 to 1,500. Phase 2 (definitive crown) ranges from USD 1,200 to 1,500. The completed implant with crown totals USD 2,400 to 3,000. We use Straumann and Neodent implants (Straumann Group, Switzerland).",
+      "There are two options and nothing else: the Neodent® implant from USD 1,500 and the Straumann® from USD 2,000. That figure is the complete surgery — it already covers the extraction, the bone graft and the membrane the site may need. The definitive crown goes on 2 to 3 months later, once the implant has integrated, and the finished treatment comes to USD 3,000 with Neodent® or USD 3,500 with Straumann®.",
   },
   {
     pregunta: "Are implants included in a complete oral rehabilitation?",
@@ -90,9 +90,9 @@ const medicalSchema = {
 };
 
 const OPTIONS = [
-  { tipo: "Phase 1 — Implant", precio: "USD 1,200 – 1,500", nota: "All-inclusive: extraction + bone graft + tissue graft" },
-  { tipo: "Phase 2 — Crown", precio: "USD 1,200 – 1,500", nota: "Ceramic or biomimetic zirconia" },
-  { tipo: "Completed implant", precio: "USD 2,400 – 3,000", nota: "Straumann or Neodent (Straumann Group, Switzerland)" },
+  { tipo: "Neodent® implant", precio: "from USD 1,500", nota: "Full surgery: extraction + bone graft + membrane when needed" },
+  { tipo: "Straumann® implant", precio: "from USD 2,000", nota: "Full surgery: extraction + bone graft + membrane when needed" },
+  { tipo: "Finished with crown", precio: "from USD 3,000", nota: "USD 3,500 with Straumann®. The crown goes on 2 to 3 months later" },
   { tipo: "Comprehensive rehabilitation", precio: "USD 24,000 – 30,000", nota: "One to four implants are usually included" },
 ];
 

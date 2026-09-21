@@ -12,7 +12,7 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20qui
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Implantes Dentales en Buenos Aires — Straumann y Neodent",
-    description: "Implantes dentales Straumann y Neodent en Buenos Aires desde USD 2.400 total. Dos fases, extracción e injertos incluidos. Dr. Ariel Merino, Puerto Madero.",
+    description: "Implantes Neodent a partir de USD 1.500 y Straumann desde USD 2.000, con la cirugía y los injertos incluidos. Terminado con corona, desde USD 3.000.",
     alternates: { canonical: CANONICAL , languages: hreflangFor("/implantes-dentales-buenos-aires") },
     keywords: "implantes dentales Buenos Aires, implante dental precio Buenos Aires, implantes dentales precio Argentina, implante dental Puerto Madero",
 };
@@ -57,9 +57,9 @@ export default function ImplantesPage() {
                     <h2 className="text-2xl font-light text-crema mb-10">¿Cuál es la inversión en un implante dental <span className="font-cormorant italic text-oro">en Buenos Aires?</span></h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                         {[
-                            { tipo: "1ª Fase — Implante", precio: "USD 1.200 – 1.500", nota: "All-inclusive: extracción + injerto óseo + tejidos" },
-                            { tipo: "2ª Fase — Corona", precio: "USD 1.200 – 1.500", nota: "Cerámica o zirconio biomimético" },
-                            { tipo: "Total terminado", precio: "USD 2.400 – 3.000", nota: "Implante Straumann o Neodent (Grupo Straumann)" },
+                            { tipo: "Implante Neodent®", precio: "a partir de USD 1.500", nota: "Cirugía completa: extracción + relleno de hueso + membrana" },
+                            { tipo: "Implante Straumann®", precio: "a partir de USD 2.000", nota: "Cirugía completa: extracción + relleno de hueso + membrana" },
+                            { tipo: "Terminado con corona", precio: "desde USD 3.000", nota: "USD 3.500 con Straumann®. La corona va a los 2 o 3 meses" },
                         ].map((o) => (
                             <div key={o.tipo} className="border border-oro/15 rounded-2xl p-6">
                                 <p className="text-oro text-[9px] uppercase tracking-widest mb-2">{o.tipo}</p>
@@ -80,7 +80,7 @@ export default function ImplantesPage() {
                             { q: "¿Cuánto dura un implante dental?", a: "Con buena higiene, controles periódicos y hábitos saludables, un implante puede mantenerse durante muchos años. Su evolución depende de la salud general, el hueso, los tejidos y el mantenimiento. La corona sobre el implante también puede requerir recambio con el tiempo." },
                             { q: "¿Cualquiera puede ponerse implantes?", a: "Se necesita cantidad suficiente de hueso maxilar y una condición de salud compatible con el tratamiento. En la primera consulta hacemos una evaluación clínica. Si el caso requiere una tomografía CBCT para estudiar el hueso, se indica por separado en un centro de diagnóstico." },
                             { q: "¿Necesito llevar radiografías o una tomografía a la primera consulta?", a: "Si ya tenés radiografías o estudios recientes, te pedimos que los traigas porque pueden aportar información útil. No son un requisito excluyente: podés realizar igualmente la primera consulta. Si después de evaluarte hace falta una tomografía CBCT, se indica por separado y no está incluida en la consulta." },
-                            { q: "¿Cuál es la inversión en un implante dental en Buenos Aires?", a: "En AM Estética Dental, el tratamiento se divide en dos fases: la 1ª fase (implante + extracción + injertos) va de USD 1.200 a 1.500, y la 2ª fase (corona) de USD 1.200 a 1.500. El total terminado con corona queda entre USD 2.400 y 3.000. Trabajamos con implantes Straumann y Neodent, del grupo suizo #1 del mundo." },
+                            { q: "¿Cuál es la inversión en un implante dental en Buenos Aires?", a: "Hay dos opciones: el implante Neodent® a partir de USD 1.500 y el Straumann® a partir de USD 2.000. Ese valor es la cirugía completa — incluye la extracción, el relleno de hueso y la membrana que el caso necesite. La corona definitiva se coloca 2 o 3 meses después, cuando el implante integró, y el tratamiento terminado queda a partir de USD 3.000 con Neodent® o USD 3.500 con Straumann®." },
                             { q: "¿Los implantes están incluidos en una rehabilitación completa?", a: "En rehabilitaciones integrales con una inversión total de USD 24.000 a 30.000, entre uno y cuatro implantes suelen estar contemplados dentro del plan, junto con las restauraciones cerámicas. También pueden incluirse los rellenos o injertos de hueso y los injertos de tejido que el caso requiera. La cantidad y el alcance exactos se confirman después de la evaluación clínica y de los estudios que estén indicados." },
                         ].map(({ q, a }) => (
                             <details key={q} className="border border-oro/12 rounded-xl group">
