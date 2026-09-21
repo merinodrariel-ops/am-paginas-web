@@ -7,7 +7,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Opiniones de AM Estética Dental · 4.9★ · +120 Reseñas",
-    description: "Lee las opiniones reales de pacientes de AM Estética Dental en Buenos Aires. 4.9 sobre 5 con más de 120 reseñas verificadas en Google. Dr. Ariel Merino, Puerto Madero.",
+    description: "4.9 sobre 5 en reseñas verificadas de Google. Qué dicen los pacientes de AM Estética Dental, sin seleccionar ni filtrar.",
     alternates: {
         canonical: "https://www.amesteticadental.com/opiniones",
     languages: hreflangFor("/opiniones"),

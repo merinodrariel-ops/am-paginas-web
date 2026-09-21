@@ -9,8 +9,8 @@ import { ANIOS_TRAYECTORIA, ANIOS_LABEL } from "@/lib/trayectoria";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Turismo Dental en Buenos Aires | Carillas y Diseño de Sonrisa",
-    description: "Carillas de porcelana y diseño de sonrisa en Buenos Aires para pacientes del exterior. Laboratorio propio: resultados naturales en 10 a 14 días. Dr. Ariel Merino, Puerto Madero.",
+    title: "Turismo Dental en Buenos Aires | Carillas y Sonrisa",
+    description: "Carillas y diseño de sonrisa para pacientes del exterior. Laboratorio propio: resultados naturales en 10 a 14 días, en un solo viaje.",
     alternates: {
         canonical: "https://www.amesteticadental.com/turismo-dental",
         languages: hreflangFor("/turismo-dental"),

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Equipo AM | AM Estética Dental Puerto Madero",
   description:
-    "Conocé al Equipo AM de AM Estética Dental en Puerto Madero: odontología estética, cirugía e implantología, alineadores invisibles, laboratorio dental digital y atención a pacientes.",
+    "Quiénes trabajan en AM: odontología estética, cirugía e implantología, alineadores y laboratorio dental digital propio en Puerto Madero.",
   alternates: {
     canonical: "https://www.amesteticadental.com/equipo-am",
     languages: hreflangFor("/equipo-am"),

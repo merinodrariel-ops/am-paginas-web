@@ -9,7 +9,7 @@ const CANONICAL = "https://www.amesteticadental.com/blog/cuanto-cuesta-un-implan
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: `¿Cuánto cuesta un implante dental? Guía ${ANIO} | AM`,
-    description: `Cuánto cuesta un implante dental en Argentina en ${ANIO}: qué incluye el precio, por qué varía entre clínicas, la diferencia entre el tornillo y la corona, y cuándo hace falta injerto óseo.`,
+    description: `Un implante con corona va de USD 2.400 a 3.000 en ${ANIO}. Qué incluye ese precio, por qué el barato suele ser sólo el tornillo y cuándo hace falta injerto.`,
     alternates: {
         canonical: CANONICAL,
     },

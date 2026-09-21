@@ -9,7 +9,7 @@ const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/cas
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Carillas de Porcelana y Precio | AM Estética Dental",
-    description: "Dientes de porcelana en Buenos Aires: precio, tipos y diferencias. Carillas de porcelana y lentes de contacto dental. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.",
+    description: "Dientes de porcelana en Buenos Aires: precio por pieza, tipos y en qué se diferencian de los lentes de contacto dental.",
     alternates: { canonical: CANONICAL },
     keywords: "dientes de porcelana Buenos Aires, dientes de porcelana precio, fundas para dientes Buenos Aires, carillas porcelana precio Argentina, carillas dentales porcelana"
 };

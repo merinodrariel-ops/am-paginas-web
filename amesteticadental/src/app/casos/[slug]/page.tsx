@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "Buenos Aires",
     ];
 
-    const seoTitle = caso.seoTitle ? `${caso.seoTitle} | AM Estética Dental` : `${caso.titulo} | AM Estética Dental`;
+    const seoTitle = caso.seoTitle ? `${caso.seoTitle} | AM` : `${caso.titulo} | AM`;
     const seoDescription = caso.seoDescription || caso.descripcion;
 
     // El par ES↔EN tiene que estar declarado de los dos lados o Google ignora

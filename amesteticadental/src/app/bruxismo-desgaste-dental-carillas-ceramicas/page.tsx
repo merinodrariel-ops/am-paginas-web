@@ -10,7 +10,7 @@ const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/cas
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Bruxismo y Desgaste Dental: Carillas Cerámicas | AM",
-    description: "El bruxismo desgasta tus dientes sin que lo notes. Recuperá la función y la estética con carillas cerámicas AM, con mínima preparación. Puerto Madero, Buenos Aires. Dr. Ariel Merino.",
+    description: "El bruxismo desgasta los dientes sin que lo notes. Cómo se recuperan función y estética con carillas cerámicas de mínima preparación.",
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Bruxismo y Desgaste Dental — Carillas Cerámicas | AM Estética Dental",

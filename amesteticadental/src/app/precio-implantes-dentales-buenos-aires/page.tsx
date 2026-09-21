@@ -11,9 +11,20 @@ import { ANIO } from "@/lib/anio";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: `Implantes dentales desde USD 2.400 — Precios ${ANIO} | AM`,
+  // Cambio de CTR del 2026-09-21. Medir a 28 días en Search Console.
+  //
+  // El título viejo abría con "desde USD 2.400". Es honesto, y ese es el
+  // problema: en posición 4,6 la persona barre resultados, ve la cifra más alta
+  // de la lista y se va con el que dice "desde USD 800" —que es el tornillo
+  // solo, sin corona—. La comparación es tramposa pero la gana el otro.
+  //
+  // Lo que corrige eso no es bajar el número, es explicar de entrada qué compra
+  // ese número. "Con corona incluida" convierte un precio caro en un precio
+  // completo, y es exactamente el argumento del artículo de implantes que ya
+  // tenemos: el barato suele ser sólo el tornillo.
+  title: `Implantes dentales: precio ${ANIO} con corona incluida | AM`,
   description:
-    `Implantes dentales desde USD 2.400 total (dos fases). Neodent y Straumann, grupo suizo #1 del mundo. Precios ${ANIO}, extracción e injertos incluidos, financiación propia. Dr. Merino, Puerto Madero.`,
+    `Implante + corona terminado de USD 2.400 a 3.000, con extracción e injertos incluidos. Straumann y Neodent. Precios ${ANIO} y financiación propia.`,
   keywords: `precio implantes dentales Buenos Aires, costo implante dental Argentina, implantes dentales precio ${ANIO}, financiación implantes Puerto Madero, cuánto cuestan los implantes dentales`,
   alternates: {
     canonical: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",

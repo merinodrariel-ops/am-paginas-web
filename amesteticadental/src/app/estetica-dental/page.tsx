@@ -8,7 +8,7 @@ import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Estética Dental Buenos Aires · Carillas y Diseño de Sonrisa",
-    description: "Especialistas en estética dental de alta complejidad en Buenos Aires. Carillas de porcelana, diseño de sonrisa, implantes y alineadores. Dr. Ariel Merino · Puerto Madero · Forbes Argentina.",
+    description: "Carillas de porcelana, diseño de sonrisa, implantes y alineadores en Puerto Madero. Laboratorio propio y casos documentados con seguimiento a 10 años.",
     alternates: {
         canonical: "https://www.amesteticadental.com/estetica-dental",
     languages: hreflangFor("/estetica-dental"),

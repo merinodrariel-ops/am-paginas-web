@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "¿Cuántas sesiones se necesitan para las carillas? | AM",
-    description: "El cronograma real de un tratamiento de carillas: qué pasa en cada sesión, cuánto tiempo hay entre ellas y qué podés hacer en el medio. Dr. Ariel Merino, Puerto Madero.",
+    description: "El cronograma real: 2 a 3 sesiones. Qué pasa en cada una, cuánto tiempo hay entre ellas y con qué dientes salís del consultorio mientras tanto.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog/cuantas-sesiones-se-necesitan-para-las-carillas",
     },

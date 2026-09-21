@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     // El título se mantiene por debajo de 60 caracteres: Bing lo trunca (ver commit 1872b6a).
     title: `Dr. Ariel Merino | Odontólogo Estético · ${ANIOS_TRAYECTORIA} Años`,
     description:
-        `Dr. Ariel Merino: ${ANIOS_TRAYECTORIA} años de ejercicio dedicados casi exclusivamente a la estética dental. Fundador de AM Estética Dental, Puerto Madero. Carillas y diseño de sonrisa.`,
+        `${ANIOS_TRAYECTORIA} años dedicados casi exclusivamente a la estética dental. Fundador de AM Estética Dental: formación, criterio clínico y casos documentados.`,
     alternates: {
         canonical: "https://www.amesteticadental.com/dr-ariel-merino",
     languages: hreflangFor("/dr-ariel-merino"),

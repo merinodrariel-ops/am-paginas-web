@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: `¿Cuánto cuestan las carillas en Argentina? Guía ${ANIO} | AM`,
     // 198 caracteres: Google la cortaba a la mitad. Recortada a 156.
-    description: `Cuánto cuesta ponerse carillas en Argentina en ${ANIO}: rangos por material y qué explica que una carilla cueste tres veces más que otra en la clínica de al lado.`,
+    description: `Carillas en Argentina ${ANIO}: porcelana de USD 1.000 a 1.500 y resina desde USD 500. Qué explica que una cueste tres veces más que otra.`,
     alternates: {
         canonical: CANONICAL,
         languages: hreflangFor("/blog/cuanto-cuestan-las-carillas-dentales-en-argentina"),

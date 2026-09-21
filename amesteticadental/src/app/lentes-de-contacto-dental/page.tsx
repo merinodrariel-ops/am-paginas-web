@@ -6,9 +6,9 @@ import SeoFaq from "@/components/seo/SeoFaq";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Lentes de Contacto Dental en Buenos Aires | AM Estética Dental",
+  title: "Lentes de Contacto Dental en Buenos Aires | AM",
   description:
-    "Lentes de contacto dental en Puerto Madero, Buenos Aires. Carillas ultradelgadas para mejorar color y forma con mínima o nula intervención. Resultados naturales, caso por caso.",
+    "Carillas ultradelgadas para cambiar color y forma con mínima o nula preparación del diente. Cuándo se puede trabajar así y cuándo no.",
   alternates: {
     canonical: "https://www.amesteticadental.com/lentes-de-contacto-dental",
     languages: hreflangFor("/lentes-de-contacto-dental"),

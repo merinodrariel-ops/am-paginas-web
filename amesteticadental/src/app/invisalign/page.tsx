@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Invisalign en Buenos Aires | AM Estética Dental",
   description:
-    "Invisalign en Puerto Madero, Buenos Aires. Planificación digital, seguimiento clínico y criterio estético para casos de ortodoncia invisible que necesitan precisión y naturalidad.",
+    "Invisalign en Puerto Madero con planificación digital y seguimiento clínico. Cuándo alinear alcanza y cuándo conviene combinarlo con carillas.",
   alternates: {
     canonical: "https://www.amesteticadental.com/invisalign",
   },

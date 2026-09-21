@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Carillas sin Desgaste en Buenos Aires | AM Estética Dental",
   description:
-    "Carillas sin desgaste en Puerto Madero, Buenos Aires. Evaluamos cuándo realmente se puede trabajar sin preparar el diente y cuándo conviene otra alternativa más honesta y natural.",
+    "Cuándo se puede trabajar sin preparar el diente y cuándo no. La respuesta honesta, con los casos en que conviene otra alternativa.",
   alternates: {
     canonical: "https://www.amesteticadental.com/carillas-sin-desgaste",
   },

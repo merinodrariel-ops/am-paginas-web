@@ -9,7 +9,7 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20qui
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: `Coronas y Fundas Dentales Buenos Aires ${ANIO} | AM`,
-    description: "Coronas y fundas dentales de cerámica en Buenos Aires. Restauración completa del diente con cerámica de alta resistencia. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.",
+    description: "Cuándo el diente ya no se resuelve con una carilla y necesita cobertura total. Coronas y fundas de cerámica de alta resistencia.",
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Coronas y Fundas Dentales Buenos Aires | AM Estética Dental",

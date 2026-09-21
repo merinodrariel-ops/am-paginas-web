@@ -10,8 +10,8 @@ const MAPS = "https://maps.google.com/?q=Camila+O'Gorman+412+Puerto+Madero+Bueno
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Dentista en Puerto Madero | Clínica Dental AM Estética Dental",
-    description: "¿Buscás dentista en Puerto Madero? AM Estética Dental: carillas, diseño de sonrisa e implantes con el Dr. Ariel Merino. 4.9★ en Google. Camila O'Gorman 412.",
+    title: "Dentista en Puerto Madero | AM Estética Dental",
+    description: "Consultorio en Camila O'Gorman 412, Puerto Madero: carillas, diseño de sonrisa e implantes. 4.9★ en Google. Turnos con evaluación previa.",
     alternates: { canonical: CANONICAL },
     keywords: "dentista Puerto Madero, clínica dental Puerto Madero, odontólogo Puerto Madero, dentista Buenos Aires, clínica estética dental Buenos Aires",
     openGraph: {

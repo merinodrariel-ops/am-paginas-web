@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     return {
         metadataBase: new URL("https://www.amesteticadental.com"),
-        title: `${caso.seoTitle || caso.titulo} | AM Estética Dental`,
+        title: `${caso.seoTitle || caso.titulo} | AM`,
         description,
         alternates: traducido
             ? {

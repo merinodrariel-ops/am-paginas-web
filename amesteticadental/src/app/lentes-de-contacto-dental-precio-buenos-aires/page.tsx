@@ -11,7 +11,7 @@ const CDN2 = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/ca
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: `Lentes de Contacto Dental — Precios ${ANIO} | AM Estética`,
-    description: `Precio e inversión en lentes de contacto dental en Buenos Aires ${ANIO}. Carillas AM ultra delgadas de 0.2mm, mínimamente invasivas. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.`,
+    description: `Precio de los lentes de contacto dental en Buenos Aires ${ANIO}: carillas de 0,2 mm, mínimamente invasivas. Qué incluye y cuánto duran.`,
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Lentes de Contacto Dental Precio Buenos Aires | AM Estética Dental",

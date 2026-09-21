@@ -17,9 +17,25 @@ export const metadata: Metadata = {
   // prometía "financiación sin interés" cuando la propia página informa tasa fija
   // del 18% anual. Ahora el título ancla en la cerámica (el producto premium, no
   // el más barato) y la descripción coincide con lo que el paciente encuentra.
-  title: `Carillas cerámicas desde USD 1.000 — Precios ${ANIO} | AM`,
+  // Cambio de CTR del 2026-09-21. Medir a 28 días en Search Console.
+  //
+  // Dos problemas con el título anterior ("Carillas cerámicas desde USD 1.000"):
+  //
+  // 1. La consulta con más impresiones de todo el sitio es "carillas dentales"
+  //    —30.138 impresiones, CTR 1,0%, posición 5,1— y el título decía "carillas
+  //    CERÁMICAS". Google resalta en negrita los términos que coinciden con la
+  //    búsqueda: ahí no coincidía la frase. Estábamos apareciendo para una
+  //    consulta que el título no contestaba literalmente.
+  // 2. Abría con una cifra en dólares. En posición 5 la persona barre la lista;
+  //    un número alto adelante le da motivo para saltearte antes de leer el
+  //    resto. El precio tiene que estar —es una página de precios—, pero no
+  //    puede ser lo primero que filtre.
+  //
+  // El título nuevo usa la frase exacta y suma los dos materiales, que son las
+  // consultas secundarias ("carillas de porcelana precio", "carillas de resina").
+  title: `Carillas dentales: precios ${ANIO}, porcelana y resina | AM`,
   description:
-    "Carillas cerámicas de USD 1.000 a 1.500 y resina USD 500 por pieza. Tabla de inversión, casos reales y financiación propia. Laboratorio propio en Puerto Madero.",
+    `Cuánto cuesta cada carilla en ${ANIO}: porcelana de USD 1.000 a 1.500, resina USD 500. Qué incluye, cuánto dura y por qué dos presupuestos difieren tanto.`,
   keywords: `precio carillas dentales Buenos Aires, costo carillas porcelana Argentina, carillas dentales precio ${ANIO}, financiación carillas Puerto Madero, cuánto cuestan las carillas dentales`,
   alternates: {
     canonical: "https://www.amesteticadental.com/precio-carillas-dentales-buenos-aires",
