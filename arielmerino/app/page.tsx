@@ -5,8 +5,8 @@ import { PERSON_SCHEMA, SITE, ANIOS_TRAYECTORIA, ANIO_TITULO } from "./site-data
 import { Nav, Footer, oro, cremaDim, serif } from "./ui";
 
 export const metadata: Metadata = {
-  title: "Dr. Ariel Merino — Odontólogo Estético | Puerto Madero, Buenos Aires",
-  description: "Dr. Ariel Merino, referente en estética dental en Argentina. Director de AM Estética Dental. Especialista en carillas de porcelana, diseño de sonrisa y rehabilitación oral. Puerto Madero, Buenos Aires.",
+  title: "Odontología estética en Puerto Madero",
+  description: "Director de AM Estética Dental. Carillas de porcelana, diseño de sonrisa y rehabilitación oral en Puerto Madero, Buenos Aires.",
   alternates: { canonical: SITE },
 };
 

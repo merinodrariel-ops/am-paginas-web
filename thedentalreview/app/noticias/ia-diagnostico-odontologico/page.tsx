@@ -8,7 +8,7 @@ const CANONICAL = "https://www.thedentalreview.com/noticias/ia-diagnostico-odont
 export const metadata: Metadata = {
   title: "IA en diagnóstico odontológico: más patología detectada",
   description:
-    "Los sistemas de diagnóstico asistido por IA elevan la sensibilidad en la detección de caries interproximales, pérdida ósea y lesiones periapicales. Qué resuelven hoy en la clínica, qué no, y dónde sigue mandando el criterio del profesional.",
+    "Los sistemas asistidos por IA detectan más caries interproximales y pérdida ósea. Qué resuelven hoy, qué no, y dónde sigue mandando el criterio clínico.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "Inteligencia Artificial en Diagnóstico Odontológico: Mayor Precisión en Detección",

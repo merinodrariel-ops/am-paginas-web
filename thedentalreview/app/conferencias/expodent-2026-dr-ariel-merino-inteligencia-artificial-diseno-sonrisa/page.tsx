@@ -9,7 +9,7 @@ const COVER = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/c
 
 export const metadata: Metadata = {
   title: "Expodent 2026: Ariel Merino y la IA en diseño de sonrisa",
-  description: "La presentación del Dr. Ariel Merino en Expodent 2026 analizó cómo integrar inteligencia artificial, planificación digital y criterio clínico en diseño de sonrisa.",
+  description: "La presentación del Dr. Ariel Merino en Expodent 2026: cómo integrar inteligencia artificial, planificación digital y criterio clínico en diseño de sonrisa.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "Expodent 2026: Ariel Merino y la IA en diseño de sonrisa",

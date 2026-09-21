@@ -6,9 +6,9 @@ import Firma, { autorSchema } from "../../components/Firma";
 const CANONICAL = "https://www.thedentalreview.com/noticias/ia-diseno-sonrisa-digital-dsd-2026";
 
 export const metadata: Metadata = {
-  title: "IA y diseño digital de sonrisa: cuando el paciente prefiere el diseño de la máquina",
+  title: "Cuando el paciente prefiere el diseño de la máquina",
   description:
-    "Un estudio prospectivo publicado en Dentistry Journal encontró que los pacientes prefirieron el diseño generado por IA en el 69,7% de los casos. Qué dice la evidencia disponible sobre el DSD asistido por inteligencia artificial, y qué todavía no permite afirmar.",
+    "Un estudio en Dentistry Journal halló que los pacientes prefirieron el diseño hecho por IA en el 69,7% de los casos. Qué prueba eso y qué todavía no.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "IA y diseño digital de sonrisa: cuando el paciente prefiere el diseño de la máquina",

@@ -8,9 +8,9 @@ const CANONICAL = "https://www.thedentalreview.com/noticias/mercado-implantes-de
 const OG_IMAGE = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires";
 
 export const metadata: Metadata = {
-  title: "El implante dental se vuelve digital: un mercado rumbo a los US$ 12.600 millones",
+  title: "El implante digital: un mercado de US$ 12.600 millones",
   description:
-    "Un informe de Persistence Market Research proyecta el mercado global de implantes en US$ 12.600 millones hacia 2032. La odontología digital, la IA y la impresión 3D redefinen la planificación.",
+    "Persistence Market Research proyecta el mercado global de implantes en US$ 12.600 millones hacia 2032. Qué lo empuja: digital, IA e impresión 3D.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "El implante dental se vuelve digital: un mercado rumbo a los US$ 12.600 millones",

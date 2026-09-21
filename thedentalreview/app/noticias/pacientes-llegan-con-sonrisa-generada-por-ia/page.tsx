@@ -14,7 +14,7 @@ const FUENTE = "https://www.arielmerino.com/ia-en-la-consulta";
 export const metadata: Metadata = {
   title: "Los pacientes llegan con la sonrisa ya diseñada por IA",
   description:
-    "Cinco de cada diez primeras consultas de una clínica de estética dental de Buenos Aires se originan hoy en una conversación con un asistente de IA. Hace seis meses la categoría no existía.",
+    "Cinco de cada diez primeras consultas de una clínica porteña salen hoy de una charla con un asistente de IA. Hace seis meses la categoría no existía.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "Los pacientes llegan con la sonrisa ya diseñada por IA",

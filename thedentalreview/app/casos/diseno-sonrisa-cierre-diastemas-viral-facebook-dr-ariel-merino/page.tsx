@@ -8,8 +8,8 @@ const CANONICAL = "https://www.thedentalreview.com/casos/diseno-sonrisa-cierre-d
 const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-diastemas";
 
 export const metadata: Metadata = {
-  title: "El caso viral de diseño de sonrisa que recorrió el mundo | Dr. Ariel Merino",
-  description: "Análisis clínico del caso de diseño de sonrisa con cierre de diastemas y dientes conoidos del Dr. Ariel Merino, que se viralizó en Facebook antes de Instagram y fue uno de los primeros en YouTube. 10 carillas AM lentes de contacto dental de 0.2mm.",
+  title: "El caso de diseño de sonrisa que recorrió el mundo",
+  description: "El caso de cierre de diastemas y dientes conoidos que se viralizó en Facebook antes de que existiera Instagram. 10 carillas de 0,2 mm, analizadas.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "El caso viral de diseño de sonrisa — Dr. Ariel Merino",

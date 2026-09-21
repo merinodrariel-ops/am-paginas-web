@@ -8,7 +8,7 @@ const CANONICAL = "https://www.thedentalreview.com/noticias/estetica-dental-urug
 export const metadata: Metadata = {
   title: "Montevideo entra al mapa de la estética dental premium",
   description:
-    "El corredor odontológico rioplatense se reconfigura: pacientes uruguayos que cruzan a Buenos Aires y clínicas argentinas que abren sede en Montevideo. Qué hay detrás del movimiento.",
+    "Pacientes uruguayos que cruzan a Buenos Aires y clínicas argentinas que abren sede en Montevideo. Qué hay detrás del corredor rioplatense.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "Montevideo entra al mapa de la estética dental premium",

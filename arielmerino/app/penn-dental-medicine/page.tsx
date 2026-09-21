@@ -4,8 +4,8 @@ import { MATRICULA, PENN, PERSON_ID, SITE } from "../site-data";
 import { Nav, Hero, Seccion, Footer, CtaWhatsapp, Jsonld, breadcrumb, oro, crema, cremaDim, serif } from "../ui";
 
 export const metadata: Metadata = {
-  title: `Instructor del curso “${PENN.curso}” en ${PENN.escuelaCorta}`,
-  description: `El Dr. Ariel Merino dicta “${PENN.curso}”, curso de educación continua sobre carillas de porcelana del programa de ${PENN.programa} de la ${PENN.escuela}, en inglés y acreditado con ${PENN.creditos} créditos CE.`,
+  title: `Instructor en ${PENN.escuelaCorta}`,
+  description: `El Dr. Merino dicta “${PENN.curso}” en ${PENN.escuelaCorta}: educación continua sobre carillas de porcelana, en inglés, con ${PENN.creditos} créditos CE.`,
   alternates: { canonical: `${SITE}${PENN.path}` },
   openGraph: {
     title: `Un curso de carillas para la Universidad de Pensilvania`,

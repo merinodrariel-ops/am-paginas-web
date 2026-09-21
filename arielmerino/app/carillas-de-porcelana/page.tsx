@@ -6,7 +6,7 @@ import { Nav, Hero, Seccion, Footer, CtaWhatsapp, Jsonld, breadcrumb, oro, crema
 export const metadata: Metadata = {
   title: "Carillas de porcelana — criterio clínico",
   description:
-    "Cómo trabaja las carillas de porcelana el Dr. Ariel Merino: preparación mínima del esmalte, laboratorio propio y diseño 3D previo. Qué se puede prometer y qué no.",
+    "Preparación mínima del esmalte, laboratorio propio y diseño 3D previo. Qué se puede prometer con carillas de porcelana y qué no.",
   alternates: { canonical: `${SITE}/carillas-de-porcelana` },
 };
 

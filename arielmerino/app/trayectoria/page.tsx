@@ -7,7 +7,7 @@ import { Nav, Hero, Seccion, Footer, CtaWhatsapp, Jsonld, breadcrumb, oro, crema
 export const metadata: Metadata = {
   title: "Trayectoria y formación",
   description:
-    "Formación, docencia y trayectoria del Dr. Ariel Merino: Odontología por la UCALP, posgrado en Rehabilitación Oral y Estética de la AOA, ex docente de Operatoria Dental y disertante en más de 15 países.",
+    "Odontología por la UCALP, posgrado en Rehabilitación Oral y Estética de la AOA, ex docente de Operatoria Dental y disertante en más de 15 países.",
   alternates: { canonical: `${SITE}/trayectoria` },
 };
 

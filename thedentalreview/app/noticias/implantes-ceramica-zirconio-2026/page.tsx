@@ -8,7 +8,7 @@ const CANONICAL = "https://www.thedentalreview.com/noticias/implantes-ceramica-z
 export const metadata: Metadata = {
   title: "Implantes de cerámica sin metal: qué cambia en 2026",
   description:
-    "Implantes de óxido de zirconio (metal-free) ofrecen biocompatibilidad superior, menor acumulación de placa bacteriana y excelente estética. Una alternativa consolidada para pacientes premium en 2026.",
+    "Implantes de óxido de zirconio, sin metal: biocompatibilidad, menos placa y mejor estética. Qué los consolidó como alternativa y en qué casos conviene.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "Implantes de Cerámica sin Metal: La Alternativa Biocompatible",

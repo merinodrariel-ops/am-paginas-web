@@ -6,7 +6,7 @@ import { Nav, Hero, Seccion, Footer, Jsonld, breadcrumb, oro, crema, cremaDim, s
 export const metadata: Metadata = {
   title: "Prensa y publicaciones",
   description:
-    "El Dr. Ariel Merino en Forbes Argentina, La Nación, Ámbito, Infobae y Somos Ohlalá: columnas firmadas y participaciones como especialista consultado en estética dental.",
+    "En Forbes, La Nación, Ámbito e Infobae: columnas firmadas y participaciones como especialista consultado en estética dental.",
   alternates: { canonical: `${SITE}/prensa` },
 };
 

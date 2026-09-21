@@ -32,7 +32,7 @@ const CASE_IMAGES = [
 ];
 
 export const metadata: Metadata = {
-  title: "Odontólogo argentino usa IA para simular sonrisas antes del tratamiento",
+  title: "Un odontólogo argentino simula sonrisas con IA",
   description:
     "El Dr. Ariel Merino incorporó un simulador de sonrisa con inteligencia artificial como herramienta orientativa previa a la consulta clínica.",
   alternates: { canonical: CANONICAL },

@@ -19,9 +19,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.thedentalreview.com"),
+  // El sufijo de plantilla era " | The Dental Review": 22 caracteres pegados a cada
+  // titulo interno. Con eso, 16 de 18 paginas pasaban los ~60 que muestra Google y se
+  // cortaban a mitad de frase —y lo que se cortaba era el titulo, porque la marca iba
+  // al final—. Google ya muestra el dominio en la linea de arriba del resultado, asi
+  // que el sufijo pagaba dos veces por el mismo dato. Ahora cada titulo interno usa
+  // los 60 caracteres para decir algo; la portada conserva la marca en su "default".
   title: {
     default: "The Dental Review — Odontología Estética de Alto Nivel",
-    template: "%s | The Dental Review",
+    template: "%s",
   },
   description:
     "Publicación especializada en odontología estética: casos clínicos documentados, técnicas de vanguardia y referentes de la profesión en Argentina y el mundo.",

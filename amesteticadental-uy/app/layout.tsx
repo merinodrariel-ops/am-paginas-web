@@ -14,7 +14,7 @@ const cormorant = Cormorant_Garamond({ variable: "--font-cormorant", subsets: ["
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.uy"),
-  title: { default: "AM Estética Dental Uruguay — Carillas y Diseño de Sonrisa", template: "%s | AM Estética Dental Uruguay" },
+  title: { default: "AM Estética Dental Uruguay — Carillas y Diseño de Sonrisa", template: "%s | AM Estética Dental" },
   description: "AM Estética Dental prepara su nueva clínica dental en zona Carrasco, Montevideo, con tecnología, laboratorio propio y resultados no en meses, en días.",
   keywords: ["clínica dental Carrasco", "estética dental Montevideo", "carillas dentales Montevideo", "diseño de sonrisa Uruguay", "laboratorio dental propio"],
   robots: { index: true, follow: true },

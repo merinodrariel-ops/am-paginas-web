@@ -7,9 +7,9 @@ const PATH = "/ia-en-la-consulta";
 const CANONICAL = `${SITE}${PATH}`;
 
 export const metadata: Metadata = {
-  title: "Los pacientes ya llegan con la sonrisa hecha por IA",
+  title: "Llegan con la sonrisa ya hecha por IA",
   description:
-    "Cinco de cada diez primeras consultas de mi consultorio se originan hoy en una conversación con un asistente de inteligencia artificial. Antes eran cero. Lo que registré en seis meses y qué cambia en la consulta.",
+    "Cinco de cada diez primeras consultas salen hoy de una charla con un asistente de IA. Antes eran cero. Lo que registré en seis meses.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "Los pacientes ya llegan con la sonrisa hecha por IA",

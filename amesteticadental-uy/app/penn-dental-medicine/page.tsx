@@ -9,7 +9,7 @@ const PENN_URL = "https://cde.dental.upenn.edu/Course/38-Full-Veneers";
 const PATH = "/penn-dental-medicine";
 
 export const metadata: Metadata = {
-  title: "Docencia internacional · Penn Dental Medicine",
+  title: "Docencia en Penn Dental Medicine",
   description:
     "El Dr. Ariel Merino, director clínico de AM Estética Dental, es instructor del curso \"Full Veneers\" en el programa de educación continua de la University of Pennsylvania School of Dental Medicine. El criterio clínico que llega a Carrasco.",
   alternates: {

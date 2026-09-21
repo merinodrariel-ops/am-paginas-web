@@ -8,7 +8,7 @@ const CANONICAL = "https://www.thedentalreview.com/noticias/nobel-biocare-s-seri
 export const metadata: Metadata = {
   title: "Nobel Biocare S Series: una nueva era en diseño de implantes",
   description:
-    "La plataforma S Series de Nobel Biocare unifica sistemas de implantes bajo una sola conexión protésica. Análisis de sus ventajas clínicas e impacto en la implantología 2026.",
+    "La plataforma S Series unifica los sistemas de implantes de Nobel Biocare bajo una sola conexión protésica. Qué cambia en la clínica y qué no.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "Nobel Biocare S Series: una nueva era en diseño de implantes",
