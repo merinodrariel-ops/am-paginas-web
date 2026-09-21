@@ -40,3 +40,6 @@ dashboard/.env
 # Worktrees de agentes — son checkouts del propio repo, nunca se commitean
 # (y además ensucian el lint si ESLint las recorre)
 .worktrees/
+
+# TypeSafe (Jev) — key de la API de decisiones
+.env.typesafe
