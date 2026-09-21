@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState, useCallback } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 const testimoniosEscritosEn = [
     {
@@ -124,7 +124,7 @@ function ReviewCard({ review, featured = false }: { review: (typeof testimoniosE
     );
 }
 
-function VideoCard({ video }: { video: typeof videosTestimonios[0] }) {
+function VideoCard({ video, onPlay }: { video: typeof videosTestimonios[0]; onPlay?: () => void }) {
     const [playing, setPlaying] = useState(false);
 
     return (
@@ -155,7 +155,10 @@ function VideoCard({ video }: { video: typeof videosTestimonios[0] }) {
                     <div className="absolute inset-[1.5px] rounded-[calc(1.6rem-1.5px)] bg-gradient-to-b from-carbon/18 via-transparent to-carbon/76" />
                     <div className="absolute inset-0 flex items-center justify-center">
                         <button
-                            onClick={() => setPlaying(true)}
+                            onClick={() => {
+                                setPlaying(true);
+                                onPlay?.();
+                            }}
                             className="relative flex h-16 w-16 items-center justify-center rounded-full transition-all duration-500 group-hover:scale-105"
                             aria-label="Reproducir testimonio"
                         >
@@ -188,7 +191,11 @@ function VideoCard({ video }: { video: typeof videosTestimonios[0] }) {
 
 // Visible slides: 3 on desktop, 1 on mobile
 const VISIBLE_DESKTOP = 3;
-const VISIBLE_MOBILE  = 1;
+
+// Cada cuanto avanza solo el carrusel de videos.
+const AUTOPLAY_MS = 5200;
+// Tiene que coincidir con el duration-500 de la pista.
+const SLIDE_MS = 520;
 
 const UI = {
     es: {
@@ -217,35 +224,92 @@ const UI = {
 
 function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
     const ui = UI[lang];
-    const [idx, setIdx] = useState(0);
     const total = videosTestimonios.length;
 
-    const maxIdx = useCallback(
-        (visible: number) => Math.max(0, total - visible),
-        [total]
+    // La pista lleva los videos mas un clon de los primeros. Cuando el indice
+    // llega al final, lo que se ve en pantalla es identico al principio, asi
+    // que se puede volver a 0 sin animacion y el bucle no tiene costura: da la
+    // vuelta para siempre en vez de frenarse en el ultimo.
+    const pista = useMemo(
+        () => [...videosTestimonios, ...videosTestimonios.slice(0, VISIBLE_DESKTOP)],
+        []
     );
 
-    const prev = () => setIdx((i) => Math.max(0, i - 1));
-    const next = (visible: number) => setIdx((i) => Math.min(maxIdx(visible), i + 1));
+    const [idx, setIdx] = useState(0);
+    const [sinAnimacion, setSinAnimacion] = useState(false);
+    const [hover, setHover] = useState(false);
+    // Una vez que alguien abre un video, el carrusel deja de moverse solo. No
+    // hay nada peor que se te deslice el testimonio que estabas mirando.
+    const [mirando, setMirando] = useState(false);
+    const [menosMovimiento, setMenosMovimiento] = useState(false);
+
+    // Quien pidio en su sistema que se reduzcan las animaciones no recibe una
+    // que se mueve sola: se queda con las flechas.
+    useEffect(() => {
+        const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const sync = () => setMenosMovimiento(mq.matches);
+        sync();
+        mq.addEventListener("change", sync);
+        return () => mq.removeEventListener("change", sync);
+    }, []);
+
+    // Salta a `destino` sin transicion y, si se pide, arranca desde ahi hacia
+    // `luego` en el frame siguiente, para que ese movimiento si se vea.
+    const saltar = useCallback((destino: number, luego?: number) => {
+        setSinAnimacion(true);
+        setIdx(destino);
+        requestAnimationFrame(() =>
+            requestAnimationFrame(() => {
+                setSinAnimacion(false);
+                if (luego !== undefined) setIdx(luego);
+            })
+        );
+    }, []);
+
+    // Cierre del bucle hacia adelante: el salto invisible al principio.
+    useEffect(() => {
+        if (idx !== total) return;
+        const t = setTimeout(() => saltar(0), SLIDE_MS);
+        return () => clearTimeout(t);
+    }, [idx, total, saltar]);
+
+    // Avance automatico.
+    useEffect(() => {
+        if (hover || mirando || menosMovimiento || idx >= total) return;
+        const t = setTimeout(() => setIdx((i) => i + 1), AUTOPLAY_MS);
+        return () => clearTimeout(t);
+    }, [idx, hover, mirando, menosMovimiento, total]);
+
+    const next = () => {
+        if (idx >= total) return;
+        setIdx(idx + 1);
+    };
+    // Desde el primero hacia atras: se salta al clon del final (que se ve igual
+    // que el primero) y recien ahi se retrocede un paso, con animacion.
+    const prev = () => (idx > 0 ? setIdx(idx - 1) : saltar(total, total - 1));
 
     // offset as % of track width
     const offsetDesktop = `calc(${idx} * (100% / ${VISIBLE_DESKTOP}) * -1)`;
     const offsetMobile  = `calc(${idx} * -100%)`;
-
-    const canPrev = idx > 0;
+    const transicion = sinAnimacion ? "none" : undefined;
+    const activo = idx % total;
 
     return (
-        <div className="relative">
+        <div
+            className="relative"
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+        >
             {/* ── Carousel track ── */}
             <div className="overflow-hidden">
                 {/* Mobile: 1 visible */}
                 <div
                     className="flex md:hidden transition-transform duration-500 ease-out"
-                    style={{ transform: `translateX(${offsetMobile})` }}
+                    style={{ transform: `translateX(${offsetMobile})`, transition: transicion }}
                 >
-                    {videosTestimonios.map((video) => (
-                        <div key={video.id} className="flex-shrink-0 w-full px-4">
-                            <VideoCard video={video} />
+                    {pista.map((video, i) => (
+                        <div key={`${video.id}-m${i}`} className="flex-shrink-0 w-full px-4">
+                            <VideoCard video={video} onPlay={() => setMirando(true)} />
                         </div>
                     ))}
                 </div>
@@ -253,15 +317,15 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
                 {/* Desktop: 3 visible */}
                 <div
                     className="hidden md:flex transition-transform duration-500 ease-out"
-                    style={{ transform: `translateX(${offsetDesktop})` }}
+                    style={{ transform: `translateX(${offsetDesktop})`, transition: transicion }}
                 >
-                    {videosTestimonios.map((video) => (
+                    {pista.map((video, i) => (
                         <div
-                            key={video.id}
+                            key={`${video.id}-d${i}`}
                             className="flex-shrink-0 px-3"
                             style={{ width: `calc(100% / ${VISIBLE_DESKTOP})` }}
                         >
-                            <VideoCard video={video} />
+                            <VideoCard video={video} onPlay={() => setMirando(true)} />
                         </div>
                     ))}
                 </div>
@@ -271,26 +335,14 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
             <div className="mt-8 flex items-center justify-between px-4 md:px-2">
                 {/* Dots */}
                 <div className="flex gap-2">
-                    {/* Mobile dots: 4 */}
                     {videosTestimonios.map((_, i) => (
                         <button
                             key={i}
                             onClick={() => setIdx(i)}
-                            className={`md:hidden h-1.5 rounded-full transition-all duration-300 ${
-                                i === idx ? "w-6 bg-oro" : "w-1.5 bg-crema/20"
+                            className={`h-1.5 rounded-full transition-all duration-300 ${
+                                i === activo ? "w-6 bg-oro" : "w-1.5 bg-crema/20"
                             }`}
                             aria-label={`Ir al testimonio ${i + 1}`}
-                        />
-                    ))}
-                    {/* Desktop dots: 2 positions */}
-                    {Array.from({ length: maxIdx(VISIBLE_DESKTOP) + 1 }).map((_, i) => (
-                        <button
-                            key={i}
-                            onClick={() => setIdx(i)}
-                            className={`hidden md:block h-1.5 rounded-full transition-all duration-300 ${
-                                i === idx ? "w-6 bg-oro" : "w-1.5 bg-crema/20"
-                            }`}
-                            aria-label={`Ir a la posición ${i + 1}`}
                         />
                     ))}
                 </div>
@@ -299,19 +351,16 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
                 <div className="flex gap-3">
                     <button
                         onClick={prev}
-                        disabled={!canPrev}
-                        className="flex h-10 w-10 items-center justify-center rounded-full border border-oro/20 text-crema/60 transition-all hover:border-oro/50 hover:text-oro disabled:opacity-20 disabled:cursor-not-allowed"
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-oro/20 text-crema/60 transition-all hover:border-oro/50 hover:text-oro"
                         aria-label={ui.prev}
                     >
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
-                    {/* Mobile: max = total-1 | Desktop: max = total-3 */}
                     <button
-                        onClick={() => next(VISIBLE_MOBILE)}
-                        disabled={idx >= maxIdx(VISIBLE_MOBILE)}
-                        className="flex h-10 w-10 items-center justify-center rounded-full border border-oro/20 text-crema/60 transition-all hover:border-oro/50 hover:text-oro disabled:opacity-20 disabled:cursor-not-allowed"
+                        onClick={next}
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-oro/20 text-crema/60 transition-all hover:border-oro/50 hover:text-oro"
                         aria-label={ui.next}
                     >
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
