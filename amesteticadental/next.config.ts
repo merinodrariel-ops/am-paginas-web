@@ -70,6 +70,15 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // URL con typo —"implantedental" sin guion— que Google tiene indexada y le da
+      // 50 impresiones por mes contra un 404. No esta enlazada desde ningun lado del
+      // repo, asi que viene de afuera o de una version vieja; el 301 recupera esas
+      // visitas hacia la nota real. Detectado el 2026-09-21 por auditar-serp.mjs.
+      {
+        source: "/blog/cuanto-cuesta-un-implantedental-en-argentina",
+        destination: "/blog/cuanto-cuesta-un-implante-dental-en-argentina",
+        permanent: true,
+      },
       // Listado de casos renombrado: /casos → /casos-antes-y-despues
       // (los casos individuales siguen en /casos/:slug)
       { source: "/casos", destination: "/casos-antes-y-despues", permanent: true },
