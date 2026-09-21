@@ -3,6 +3,7 @@ import { hreflangFor } from "@/lib/i18n-routes";
 import Navbar from "@/components/Navbar";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
+import { NOTAS_POR_FECHA, TOTAL_NOTAS } from "@/lib/prensa";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
@@ -84,22 +85,68 @@ export default function PrensaPage() {
           </div>
         </section>
 
-        {/* ── ENLACES DE AUTORIDAD ── */}
-        <section className="py-16 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
+        {/* ── ARCHIVO DE PRENSA ── */}
+        {/*
+          Antes acá había tres tarjetas genéricas: "Forbes Argentina —
+          Reconocimiento a la excelencia en estética dental". Forbes no premió a
+          nadie: lo consultó como fuente. Un periodista que entra a verificar y
+          encuentra un reconocimiento que no existe deja de confiar en todo lo
+          demás de la página. El archivo real, con los enlaces, es más fuerte
+          que el adjetivo — y además se puede comprobar.
+        */}
+        <section className="py-20 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-manrope font-light text-crema mb-8 text-center">
-              Apariciones y <span className="font-cormorant italic text-oro">Reconocimientos</span>
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {[
-                { m: "Forbes Argentina", t: "Reconocimiento a la excelencia en estética dental." },
-                { m: "Google Maps", t: "Clínica calificada con 4.9/5 estrellas con más de 120 reseñas verificadas." },
-                { m: "Turismo Dental", t: "Referente en tratamientos estéticos para pacientes del exterior." }
-              ].map((item) => (
-                <div key={item.m} className="border border-crema/10 rounded-xl p-6 bg-carbon text-center">
-                  <div className="text-oro font-semibold text-lg mb-2">{item.m}</div>
-                  <div className="text-crema/60 text-sm">{item.t}</div>
-                </div>
+            <div className="mb-10">
+              <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-3">
+                Archivo de <span className="font-cormorant italic text-oro">apariciones</span>
+              </h2>
+              <p className="text-crema/50 text-sm leading-relaxed max-w-2xl">
+                {TOTAL_NOTAS} publicaciones en medios nacionales, entre columnas firmadas por el
+                Dr. Merino y notas donde fue consultado como fuente especializada. Cada una enlaza
+                a la nota original.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              {NOTAS_POR_FECHA.map((nota) => (
+                <a
+                  key={nota.id}
+                  href={nota.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col gap-2 rounded-xl border border-oro/12 bg-carbon p-5 transition-colors hover:border-oro/30 sm:flex-row sm:items-start sm:gap-5"
+                >
+                  <div className="flex-none sm:w-40">
+                    <span className="block font-manrope text-[11px] font-semibold text-oro/70">{nota.medio}</span>
+                    <span className="font-manrope text-[10px] text-crema/30">
+                      {new Date(nota.fecha + "T12:00:00").toLocaleDateString("es-AR", { month: "long", year: "numeric" })}
+                    </span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-manrope text-sm font-medium leading-snug text-crema/85 transition-colors group-hover:text-crema">
+                      {nota.titular}
+                    </h3>
+                    {nota.cita ? (
+                      <p className="mt-2 border-l-2 border-oro/25 pl-3 font-cormorant text-base italic leading-snug text-crema/60">
+                        &ldquo;{nota.cita}&rdquo;
+                      </p>
+                    ) : (
+                      <p className="mt-1 font-manrope text-xs leading-relaxed text-crema/40">{nota.extracto}</p>
+                    )}
+                    {nota.replicadaEn?.length ? (
+                      <p className="mt-2 font-manrope text-[10px] text-crema/25">
+                        Replicada en {nota.replicadaEn.map((r) => r.medio).join(", ")}
+                      </p>
+                    ) : null}
+                  </div>
+                  <span className={`flex-none self-start rounded-full px-2 py-0.5 font-manrope text-[9px] uppercase tracking-widest ${
+                    nota.rol === "autor"
+                      ? "border border-oro/20 bg-oro/12 text-oro/80"
+                      : "border border-oro/10 text-crema/30"
+                  }`}>
+                    {nota.rol === "autor" ? "Firmada por el Dr." : "Experto consultado"}
+                  </span>
+                </a>
               ))}
             </div>
           </div>

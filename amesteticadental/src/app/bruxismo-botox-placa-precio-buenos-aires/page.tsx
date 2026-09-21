@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import PrensaTema from "@/components/PrensaTema";
 
 const CANONICAL = "https://www.amesteticadental.com/bruxismo-botox-placa-precio-buenos-aires";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20tratamiento%20de%20bruxismo%20con%20placa%20y%20toxina.";
@@ -290,6 +291,20 @@ export default function BruxismoTratamientoPage() {
                         <Link href="/equipo-am" className="inline-flex items-center gap-2 text-oro/70 hover:text-oro text-sm transition-colors mt-6">
                             Conocer al equipo →
                         </Link>
+                    </div>
+                </section>
+
+                {/* ── EN LOS MEDIOS ── */}
+                {/* Va acá, después de "quién lo hace" y antes del FAQ: es el
+                    punto donde la persona ya entendió el tratamiento y el precio,
+                    y lo que le falta resolver es si puede confiar. */}
+                <section className="px-6 md:px-12 pb-16">
+                    <div className="mx-auto max-w-4xl">
+                        <PrensaTema
+                            tema="bruxismo"
+                            titulo="Cuando un medio necesita una voz sobre bruxismo, llama acá"
+                            bajada="No es algo que digamos nosotros. La Nación, Ámbito e Infobae buscaron al Dr. Merino para hablar de bruxismo, y una de esas notas la escribió él."
+                        />
                     </div>
                 </section>
 

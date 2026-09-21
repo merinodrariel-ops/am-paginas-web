@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import PrensaTema from "@/components/PrensaTema";
 
 const CANONICAL = "https://www.amesteticadental.com/blog/como-combatir-el-bruxismo-botox-y-placa";
 const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Le%C3%AD%20el%20art%C3%ADculo%20sobre%20bruxismo%20y%20quiero%20que%20evaluemos%20mi%20caso.";
@@ -564,6 +565,16 @@ export default function BlogBruxismo() {
                                 Dicho de forma simple: tratar el bruxismo no es solo cuidar el esmalte. Es devolverle calidad a las ocho horas en las que tu cuerpo se repara.
                             </p>
                         </section>
+
+                        {/* ── EN LOS MEDIOS ── */}
+                        {/* Justo después de la sección de sueño, porque la columna
+                            de Ámbito trata exactamente eso: el bruxismo como un
+                            problema de descanso, no de dientes. */}
+                        <PrensaTema
+                            tema="bruxismo"
+                            titulo="Esto no es una opinión de consultorio"
+                            bajada="El vínculo entre bruxismo y sueño que acabás de leer es el mismo que el Dr. Merino desarrolló en su columna de Ámbito, y el que le consultaron desde La Nación e Infobae."
+                        />
 
                         {/* ── LÍMITES ── */}
                         <section>
