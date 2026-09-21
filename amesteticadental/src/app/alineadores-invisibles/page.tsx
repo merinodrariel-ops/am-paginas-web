@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { hreflangFor } from "@/lib/i18n-routes";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
@@ -8,15 +9,15 @@ import { RESENAS } from "@/lib/reviews";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Alineadores Invisibles en Buenos Aires | AM Estética Dental",
-    description: "Ortodoncia sin brackets en Puerto Madero, CABA. Alineadores invisibles e Invisalign con planificación digital por el Dr. Ariel Merino.",
+    title: "Alineadores Invisibles con Láser en Buenos Aires | AM Estética Dental",
+    description: "Ortodoncia sin brackets en Puerto Madero, CABA. Alineadores invisibles combinados con fotobiomodulación láser: menos molestia en cada cambio y un plan más corto. Dr. Ariel Merino.",
     alternates: {
         canonical: "https://www.amesteticadental.com/alineadores-invisibles",
     languages: hreflangFor("/alineadores-invisibles"),
     },
     openGraph: {
-        title: "Alineadores Invisibles en Buenos Aires | AM Estética Dental",
-        description: "Ortodoncia invisible en Puerto Madero. Alineadores e Invisalign con planificación digital y seguimiento continuo. Sin brackets, sin alambre.",
+        title: "Alineadores Invisibles con Láser en Buenos Aires | AM Estética Dental",
+        description: "Ortodoncia invisible en Puerto Madero, combinada con láser de baja potencia: tratamiento más corto y cambios de alineador más cómodos. Sin brackets, sin alambre.",
         url: "https://www.amesteticadental.com/alineadores-invisibles",
         locale: "es_AR",
         type: "website",
@@ -24,6 +25,14 @@ export const metadata: Metadata = {
 };
 
 const faqItems = [
+    {
+        pregunta: "¿Por qué combinan los alineadores con láser?",
+        respuesta: "Aplicamos fotobiomodulación —láser de baja potencia— sobre la zona en cada control del tratamiento. Tiene dos efectos: estimula la respuesta del hueso que rodea al diente, que es lo que marca el ritmo al que se puede mover, y actúa como analgésico. En nuestros casos eso se traduce en un plan entre un 15 y un 20 % más corto y en cambios de alineador bastante menos molestos. No conocemos otra clínica de Buenos Aires que lo haga de forma sistemática en ortodoncia invisible.",
+    },
+    {
+        pregunta: "¿El láser suma sesiones o alarga las visitas?",
+        respuesta: "No. La aplicación se hace dentro del mismo control en el que retirás tus siguientes alineadores y toma pocos minutos. No agrega visitas al plan ni requiere anestesia, y no se siente: el láser de baja potencia no genera calor ni molestia.",
+    },
     {
         pregunta: "¿Los alineadores invisibles sirven para cualquier caso?",
         respuesta: "Los alineadores invisibles resuelven la mayoría de los casos de ortodoncia: apiñamiento, espacios, mordida cruzada, sobremordida y casos moderados-complejos. En la consulta evaluamos tu caso específico. Si los alineadores no son la mejor opción para tu situación, te lo decimos con honestidad.",
@@ -63,8 +72,8 @@ const faqSchema = {
 const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "MedicalProcedure",
-    "name": "Alineadores Invisibles",
-    "description": "Ortodoncia sin brackets con alineadores invisibles e Invisalign. Planificación digital y seguimiento continuo en Puerto Madero, Buenos Aires.",
+    "name": "Alineadores Invisibles con fotobiomodulación láser",
+    "description": "Ortodoncia sin brackets con alineadores invisibles, planificación digital y seguimiento continuo, combinada con fotobiomodulación láser de baja potencia en cada control para acortar el tratamiento y reducir la molestia en cada cambio de alineador. Puerto Madero, Buenos Aires.",
     "procedureType": "Therapeutic",
     "url": "https://www.amesteticadental.com/alineadores-invisibles",
     "provider": {
@@ -91,6 +100,25 @@ const ventajas = [
     { t: "Seguimiento continuo", d: "Controles periódicos para verificar que el tratamiento sigue el plan digital. Ajustamos en tiempo real si es necesario." },
 ];
 
+// Lo que distingue a esta pagina del resto del rubro. Iba sin mencionarse.
+const laser = [
+    {
+        v: "15–20 %",
+        t: "Más corto",
+        d: "El hueso que rodea al diente es lo que marca el ritmo al que se lo puede mover. El láser estimula esa respuesta, y en nuestros casos el plan completo se acorta entre un 15 y un 20 %.",
+    },
+    {
+        v: "Analgesia",
+        t: "Cada cambio, más llevadero",
+        d: "Es lo primero que nota el paciente. Los dos o tres días de presión que siguen a estrenar un alineador se acortan y se sienten mucho menos.",
+    },
+    {
+        v: "0",
+        t: "Visitas extra",
+        d: "Se aplica dentro del mismo control en el que retirás tus siguientes alineadores y toma pocos minutos. Sin anestesia y sin calor: no se siente.",
+    },
+];
+
 const pasos = [
     { n: "01", t: "Evaluación inicial", d: "Análisis clínico y radiografías. Determinamos si los alineadores son la mejor opción para tu caso." },
     { n: "02", t: "Escaneado 3D", d: "Tomamos un escaneo digital de tu dentición. Sin moldes de yeso, sin incomodidad." },
@@ -113,7 +141,8 @@ export default function AlineadoresInvisiblesPage() {
                 {/* ── HERO ── */}
                 <section className="relative min-h-[90dvh] flex items-center px-6 md:px-12 pt-32 pb-24">
                     <div className="absolute right-[-5%] top-[20%] w-[500px] h-[500px] rounded-full bg-oro/6 blur-[130px] pointer-events-none" />
-                    <div className="max-w-4xl mx-auto w-full">
+                    <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.66fr)] gap-14 lg:gap-16 items-center">
+                      <div>
                         <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">
                             AM Estética Dental · Puerto Madero · Buenos Aires
                         </span>
@@ -150,6 +179,73 @@ export default function AlineadoresInvisiblesPage() {
                                 <div key={s.l}>
                                     <div className="text-oro font-manrope font-semibold text-lg">{s.v}</div>
                                     <div className="text-crema-muted font-manrope text-xs">{s.l}</div>
+                                </div>
+                            ))}
+                        </div>
+                      </div>
+
+                      {/* El alineador girando. Es un render propio, no un caso
+                          clinico: la pagina no tenia una sola imagen y lo
+                          primero que hacia falta era algo que se moviera. */}
+                      <div className="relative mx-auto w-full max-w-[26rem] lg:max-w-none">
+                        <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-oro/15 bg-carbon-soft">
+                          <video
+                            className="h-full w-full object-cover"
+                            aria-hidden="true"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            preload="metadata"
+                            poster="/images/alineadores/alineador-invisible-am-aligners-puerto-madero.jpg"
+                          >
+                            <source src="/videos/alineadores/alineador-invisible-360-am-estetica-dental.mp4" type="video/mp4" />
+                          </video>
+                          <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-t from-carbon/50 via-transparent to-transparent" />
+                          <span className="absolute bottom-5 left-5 font-manrope text-[10px] uppercase tracking-[0.3em] text-crema/45">
+                            AM Aligners · render
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                </section>
+
+                {/* ── LASER: el diferencial, antes que cualquier generalidad ── */}
+                <section className="relative py-24 px-6 md:px-12 bg-carbon-soft border-y border-oro/10 overflow-hidden">
+                    <div className="absolute left-[-10%] top-[10%] h-[420px] w-[420px] rounded-full bg-oro/5 blur-[130px] pointer-events-none" />
+                    <div className="relative max-w-5xl mx-auto">
+                        <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Solo en AM</span>
+                        <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-8 max-w-3xl">
+                            Ortodoncia invisible{" "}
+                            <span className="font-cormorant italic text-oro">con láser</span>
+                        </h2>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-14">
+                            <div className="relative aspect-video overflow-hidden rounded-2xl border border-oro/15">
+                                <Image
+                                    src="/images/alineadores/alineadores-invisibles-laser-aceleracion-buenos-aires.webp"
+                                    alt="Haz de láser de baja potencia atravesando un alineador invisible — fotobiomodulación aplicada en el protocolo de AM Estética Dental"
+                                    fill
+                                    sizes="(max-width: 1024px) 92vw, 46vw"
+                                    className="object-cover"
+                                />
+                            </div>
+                            <div>
+                                <p className="text-crema/72 font-manrope text-base leading-relaxed mb-5">
+                                    Casi nadie combina ortodoncia invisible con láser. Nosotros lo hacemos en todo caso que lo admita, y no es un agregado de folleto: la <strong className="text-crema">fotobiomodulación</strong> —láser de baja potencia aplicado sobre la zona en cada control— tiene respaldo publicado en ortodoncia y un efecto que vemos caso a caso en el consultorio.
+                                </p>
+                                <p className="text-crema/60 font-manrope text-sm leading-relaxed">
+                                    No conocemos otra clínica en Buenos Aires que lo aplique de forma sistemática en tratamientos con alineadores. Es la razón por la que un plan acá suele terminar antes y molestar menos que el mismo plan en otro lado.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {laser.map((l) => (
+                                <div key={l.t} className="border border-oro/15 rounded-2xl p-7 bg-carbon">
+                                    <div className="text-oro font-manrope font-semibold text-2xl mb-1">{l.v}</div>
+                                    <h3 className="text-crema font-manrope font-medium text-sm mb-3">{l.t}</h3>
+                                    <p className="text-crema/60 font-manrope text-sm leading-relaxed">{l.d}</p>
                                 </div>
                             ))}
                         </div>
@@ -222,7 +318,7 @@ export default function AlineadoresInvisiblesPage() {
                 <section className="py-24 px-6 md:px-12">
                     <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
                         <div className="md:col-span-2">
-                            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">El especialista</span>
+                            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">El odontólogo</span>
                             <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-6">
                                 Dr. Ariel Merino
                             </h2>
