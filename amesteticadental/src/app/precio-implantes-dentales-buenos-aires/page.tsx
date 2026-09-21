@@ -8,6 +8,7 @@ import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import ImplantHeroVideo from "@/components/ImplantHeroVideo";
 import ImplantRehabilitationCase from "@/components/ImplantRehabilitationCase";
 import { ANIO } from "@/lib/anio";
+import { hreflangFor } from "@/lib/i18n-routes";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
   keywords: `precio implantes dentales Buenos Aires, costo implante dental Argentina, implantes dentales precio ${ANIO}, financiación implantes Puerto Madero, cuánto cuestan los implantes dentales`,
   alternates: {
     canonical: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",
+    languages: hreflangFor("/precio-implantes-dentales-buenos-aires"),
   },
   openGraph: {
     title: `Precio de Implantes Dentales en Buenos Aires ${ANIO} | AM Estética Dental`,

@@ -79,6 +79,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/en/before-after", changeFrequency: "weekly", priority: 0.9 },
   { path: "/en/ultra-thin-veneers-buenos-aires", changeFrequency: "monthly", priority: 0.85 },
   { path: "/en/veneers-cost-buenos-aires", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/en/dental-implants-cost-buenos-aires", changeFrequency: "monthly", priority: 0.9 },
   { path: "/en/dr-ariel-merino", changeFrequency: "monthly", priority: 0.85 },
   { path: "/en/contact", changeFrequency: "monthly", priority: 0.7 },
   { path: "/en/invisible-aligners-buenos-aires", changeFrequency: "monthly", priority: 0.85 },

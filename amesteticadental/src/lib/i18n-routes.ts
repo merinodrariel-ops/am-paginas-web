@@ -20,6 +20,7 @@ export const EN_BY_ES: Record<string, string> = {
   "/carillas-de-porcelana-vs-resina": "/en/porcelain-vs-composite-veneers",
   "/carillas-vs-alineadores": "/en/veneers-vs-aligners",
   "/opiniones": "/en/reviews",
+  "/precio-implantes-dentales-buenos-aires": "/en/dental-implants-cost-buenos-aires",
   "/blog": "/en/blog",
   "/prensa": "/en/press",
   "/sonrisa": "/en/smile-simulator",
