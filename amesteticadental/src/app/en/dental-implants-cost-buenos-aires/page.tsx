@@ -51,9 +51,14 @@ const TABLE = [
     incluye: "The same complete surgery, with the system made in Switzerland.",
   },
   {
-    etapa: "Finished, with the crown",
+    etapa: "The definitive crown",
+    precio: "USD 1,500",
+    incluye: "The same with either system: what changes is the screw, not what you see. It goes on 2 to 3 months later.",
+  },
+  {
+    etapa: "Total, finished",
     precio: "from USD 3,000",
-    incluye: "USD 3,500 with Straumann®. The crown goes on 2 to 3 months later, once the implant has integrated.",
+    incluye: "USD 3,500 if the implant is a Straumann®. This is the figure to compare against any other quote.",
   },
   {
     etapa: "Full-mouth rehabilitation",
@@ -66,7 +71,7 @@ const faqItems = [
   {
     pregunta: "How much does a dental implant cost in Buenos Aires?",
     respuesta:
-      "There are two options and nothing else: the Neodent® implant from USD 1,500 and the Straumann® from USD 2,000. That figure is the complete surgery — it already covers the extraction if the tooth is still there, the bone graft the site needs and the membrane for the soft tissue when it is indicated. The definitive crown goes on 2 to 3 months later, once the implant has integrated with the bone, and the finished treatment comes to USD 3,000 with Neodent® or USD 3,500 with Straumann®. In-house financing is available at a fixed 18% annual rate.",
+      "There are two options and nothing else: the Neodent® implant from USD 1,500 and the Straumann® from USD 2,000. That figure is the complete surgery — it already covers the extraction if the tooth is still there, the bone graft the site needs and the membrane for the soft tissue when it is indicated. The definitive crown costs USD 1,500 and is the same with either system — what changes is the screw, not what you see. It goes on 2 to 3 months later, once the implant has integrated with the bone, so the finished treatment comes to USD 3,000 with Neodent® or USD 3,500 with Straumann®. In-house financing is available at a fixed 18% annual rate.",
   },
   {
     pregunta: "Why do I see implants advertised for USD 800?",

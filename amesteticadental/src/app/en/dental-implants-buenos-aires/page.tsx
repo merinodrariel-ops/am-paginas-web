@@ -56,7 +56,7 @@ const faqItems = [
   {
     pregunta: "What is the investment for a dental implant in Buenos Aires?",
     respuesta:
-      "There are two options and nothing else: the Neodent® implant from USD 1,500 and the Straumann® from USD 2,000. That figure is the complete surgery — it already covers the extraction, the bone graft and the membrane the site may need. The definitive crown goes on 2 to 3 months later, once the implant has integrated, and the finished treatment comes to USD 3,000 with Neodent® or USD 3,500 with Straumann®.",
+      "There are two options and nothing else: the Neodent® implant from USD 1,500 and the Straumann® from USD 2,000. That figure is the complete surgery — it already covers the extraction, the bone graft and the membrane the site may need. The definitive crown costs USD 1,500 and is the same with either system — what changes is the screw, not what you see. It goes on 2 to 3 months later, once the implant has integrated, so the finished treatment comes to USD 3,000 with Neodent® or USD 3,500 with Straumann®.",
   },
   {
     pregunta: "Are implants included in a complete oral rehabilitation?",
@@ -92,7 +92,8 @@ const medicalSchema = {
 const OPTIONS = [
   { tipo: "Neodent® implant", precio: "from USD 1,500", nota: "Full surgery: extraction + bone graft + membrane when needed" },
   { tipo: "Straumann® implant", precio: "from USD 2,000", nota: "Full surgery: extraction + bone graft + membrane when needed" },
-  { tipo: "Finished with crown", precio: "from USD 3,000", nota: "USD 3,500 with Straumann®. The crown goes on 2 to 3 months later" },
+  { tipo: "The definitive crown", precio: "USD 1,500", nota: "The same with either system. It goes on 2 to 3 months later, once the implant has integrated" },
+  { tipo: "Total, finished", precio: "from USD 3,000", nota: "USD 3,500 if the implant is a Straumann®" },
   { tipo: "Comprehensive rehabilitation", precio: "USD 24,000 – 30,000", nota: "One to four implants are usually included" },
 ];
 

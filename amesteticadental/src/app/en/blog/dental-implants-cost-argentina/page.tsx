@@ -64,7 +64,7 @@ const faqSchema = {
             name: `How much does a dental implant cost in Argentina in ${ANIO}?`,
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "There are two options and nothing else: the Neodent® implant from USD 1,500 and the Straumann® from USD 2,000. That figure is the complete surgery and already covers the extraction, the bone graft and the membrane the site may need. The definitive crown goes on 2 to 3 months later, once the implant has integrated, and the finished treatment comes to USD 3,000 with Neodent® or USD 3,500 with Straumann®.",
+                text: "There are two options and nothing else: the Neodent® implant from USD 1,500 and the Straumann® from USD 2,000. That figure is the complete surgery and already covers the extraction, the bone graft and the membrane the site may need. The definitive crown costs USD 1,500 and is the same with either system — what changes is the screw, not what you see. It goes on 2 to 3 months later, once the implant has integrated, so the finished treatment comes to USD 3,000 with Neodent® or USD 3,500 with Straumann®.",
             },
         },
         {

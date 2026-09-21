@@ -19,9 +19,9 @@ export const IMPLANTES = {
   neodent: {
     marca: "Neodent®",
     origen: "Marca brasileña del Grupo Straumann® (Suiza)",
-    /** Sólo la fase quirúrgica: el implante puesto. */
+    /** Sólo el tornillo: la fase quirúrgica, con el implante puesto. */
     implante: 1500,
-    /** Terminado, con la corona definitiva encima. */
+    /** Terminado: implante + corona. */
     conCorona: 3000,
   },
   straumann: {
@@ -31,6 +31,13 @@ export const IMPLANTES = {
     conCorona: 3500,
   },
 } as const;
+
+/**
+ * La corona que va arriba del implante. Vale lo mismo para los dos sistemas: lo que
+ * cambia entre Neodent y Straumann es el tornillo, no lo que se ve.
+ * Por eso los totales son implante + 1.500 en los dos casos.
+ */
+export const CORONA = 1500;
 
 /** Lo que tarda el hueso en integrar el implante, entre una fase y la otra. */
 export const OSEOINTEGRACION = "2 a 3 meses";
@@ -49,9 +56,17 @@ export const FINANCIACION = { tasaAnual: "18%", tasaMensual: "1,5%" } as const;
 export const INCLUIDO = [
   "La cirugía completa, no sólo el componente",
   "La extracción de la pieza, si todavía está",
-  "El relleno de hueso cuando el sitio lo necesita",
-  "La membrana para el tejido blando, si está indicada",
+  "El relleno de hueso, si el hueso lo necesita",
+  "La membrana para el tejido blando, si el caso la pide",
 ] as const;
+
+/**
+ * El matiz importa y el Dr. lo pidió explícito: lo incluido no es una lista de
+ * cosas que se hacen siempre. Es una lista de cosas que, cuando el caso las pide,
+ * no aparecen como un renglón extra. Si no hacen falta, no se hacen.
+ */
+export const INCLUIDO_ACLARACION =
+  "Nada de esto se hace por costumbre. Si el hueso está bien, no se rellena; si el tejido no lo necesita, no se pone membrana. Lo que sí: cuando hacen falta, no son un renglón aparte.";
 
 // ── formato ────────────────────────────────────────────────────────────────
 // El separador de miles cambia de idioma: 1.500 en español, 1,500 en inglés.

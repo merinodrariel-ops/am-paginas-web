@@ -60,7 +60,7 @@ const faqSchema = {
             "name": `¿Cuánto cuesta un implante dental en Argentina en ${ANIO}?`,
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "En AM Estética Dental hay dos opciones y nada más: el implante Neodent® a partir de USD 1.500 y el Straumann® a partir de USD 2.000. Ese valor es la cirugía completa e incluye la extracción, el relleno de hueso y la membrana que el caso requiera. La corona definitiva se coloca 2 o 3 meses después, cuando el implante integró con el hueso, y el tratamiento terminado queda a partir de USD 3.000 con Neodent® o USD 3.500 con Straumann®.",
+                "text": "En AM Estética Dental hay dos opciones y nada más: el implante Neodent® a partir de USD 1.500 y el Straumann® a partir de USD 2.000. Ese valor es la cirugía completa e incluye la extracción, el relleno de hueso y la membrana que el caso requiera. La corona definitiva vale USD 1.500 y es la misma con los dos sistemas. Se coloca 2 o 3 meses después, cuando el implante integró con el hueso, así que el tratamiento terminado queda a partir de USD 3.000 con Neodent® o USD 3.500 con Straumann®.",
             },
         },
         {

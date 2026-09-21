@@ -8,7 +8,7 @@ import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import ImplantHeroVideo from "@/components/ImplantHeroVideo";
 import ImplantRehabilitationCase from "@/components/ImplantRehabilitationCase";
 import { ANIO } from "@/lib/anio";
-import { IMPLANTES, OSEOINTEGRACION, INCLUIDO, usdES } from "@/lib/precios-implantes";
+import { IMPLANTES, OSEOINTEGRACION, INCLUIDO, INCLUIDO_ACLARACION, CORONA, usdES } from "@/lib/precios-implantes";
 import { hreflangFor } from "@/lib/i18n-routes";
 
 export const metadata: Metadata = {
@@ -49,7 +49,7 @@ const faqItems = [
   {
     pregunta: "¿Cuánto cuesta un implante dental en Buenos Aires?",
     respuesta:
-      "Hay dos opciones, y nada más: el implante Neodent® a partir de USD 1.500 y el Straumann® a partir de USD 2.000. Ese valor es la cirugía completa — ya contempla la extracción si la pieza todavía está, el relleno de hueso que el sitio necesite y la membrana para el tejido blando si está indicada. La corona definitiva se coloca después, cuando el implante integró con el hueso, y el tratamiento terminado queda a partir de USD 3.000 con Neodent® o USD 3.500 con Straumann®. Ofrecemos financiación propia con tasa fija del 18% anual.",
+      "Hay dos opciones, y nada más: el implante Neodent® a partir de USD 1.500 y el Straumann® a partir de USD 2.000. Ese valor es la cirugía completa — ya contempla la extracción si la pieza todavía está, el relleno de hueso que el sitio necesite y la membrana para el tejido blando si está indicada. La corona definitiva vale USD 1.500 y es la misma con los dos sistemas: lo que cambia es el tornillo, no lo que se ve. Se coloca cuando el implante integró con el hueso, así que el tratamiento terminado queda a partir de USD 3.000 con Neodent® o USD 3.500 con Straumann®. Ofrecemos financiación propia con tasa fija del 18% anual.",
   },
   {
     pregunta: "¿Qué diferencia hay entre el implante Neodent y el Straumann?",
@@ -189,11 +189,15 @@ export default function InversionImplantesPage() {
                       <span className="text-oro font-manrope font-semibold text-lg whitespace-nowrap">{usdES(sistema.implante)}</span>
                     </span>
                   </div>
+                  <div className="flex items-end justify-between gap-4 py-4 border-b border-oro/10">
+                    <span className="text-crema/60 font-manrope text-sm">+ La corona</span>
+                    <span className="text-crema/70 font-manrope font-medium text-base whitespace-nowrap">{usdES(CORONA)}</span>
+                  </div>
                   <div className="flex items-end justify-between gap-4 pt-4">
-                    <span className="text-crema/60 font-manrope text-sm">Terminado, con corona</span>
+                    <span className="text-crema font-manrope text-sm font-medium">= Total terminado</span>
                     <span className="text-right">
                       <span className="block text-crema/40 font-manrope text-[10px] leading-none mb-1">a partir de</span>
-                      <span className="text-oro font-manrope font-semibold text-lg whitespace-nowrap">{usdES(sistema.conCorona)}</span>
+                      <span className="text-oro font-manrope font-semibold text-xl whitespace-nowrap">{usdES(sistema.conCorona)}</span>
                     </span>
                   </div>
                   <p className="text-crema/40 font-manrope text-[11px] mt-5 pt-4 border-t border-oro/10">
@@ -209,8 +213,8 @@ export default function InversionImplantesPage() {
                   <tr className="border-b border-oro/20">
                     <th className="text-left py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Sistema</th>
                     <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">El implante</th>
-                    <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">Terminado, con corona</th>
-                    <th className="text-center py-4 px-6 text-crema/50 font-manrope text-xs uppercase tracking-widest">Oseointegración</th>
+                    <th className="text-center py-4 px-4 text-crema/50 font-manrope text-xs uppercase tracking-widest">+ La corona</th>
+                    <th className="text-center py-4 px-6 text-oro font-manrope text-xs uppercase tracking-widest">= Total terminado</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -223,12 +227,17 @@ export default function InversionImplantesPage() {
                       <td className="py-6 px-6 font-manrope text-center">
                         <span className="text-crema/45 text-xs block">a partir de</span>
                         <span className="text-oro font-semibold text-lg whitespace-nowrap">{usdES(sistema.implante)}</span>
+                        <span className="block text-crema/35 text-[10px] mt-1">sólo el tornillo</span>
+                      </td>
+                      <td className="py-6 px-4 font-manrope text-center">
+                        <span className="text-crema/60 font-medium text-base whitespace-nowrap">{usdES(CORONA)}</span>
+                        <span className="block text-crema/35 text-[10px] mt-1">igual en los dos</span>
                       </td>
                       <td className="py-6 px-6 font-manrope text-center">
                         <span className="text-crema/45 text-xs block">a partir de</span>
-                        <span className="text-oro font-semibold text-lg whitespace-nowrap">{usdES(sistema.conCorona)}</span>
+                        <span className="text-oro font-semibold text-xl whitespace-nowrap">{usdES(sistema.conCorona)}</span>
+                        <span className="block text-crema/35 text-[10px] mt-1">el diente, terminado</span>
                       </td>
-                      <td className="py-6 px-6 text-crema/55 font-manrope text-sm text-center">{OSEOINTEGRACION}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -236,7 +245,7 @@ export default function InversionImplantesPage() {
             </div>
 
             <p className="text-crema/40 font-manrope text-xs mt-6 text-center max-w-2xl mx-auto">
-              * La corona definitiva se coloca una vez que el implante integró con el hueso, {OSEOINTEGRACION} después de la cirugía. Los valores en USD se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago.
+              * La corona vale lo mismo con los dos sistemas: lo que cambia es el tornillo, no lo que se ve. Se coloca una vez que el implante integró con el hueso, {OSEOINTEGRACION} después de la cirugía. Los valores en USD se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago.
             </p>
           </div>
         </section>
@@ -305,7 +314,7 @@ export default function InversionImplantesPage() {
                 <span className="font-cormorant italic text-oro">lo que otros suman después</span>
               </h2>
               <p className="text-crema/60 font-manrope text-base leading-relaxed max-w-2xl mx-auto">
-                Un implante no es una pieza que se enrosca: es una cirugía. Cuando cada parte de esa cirugía se cotiza por separado, el presupuesto inicial se ve barato y la cuenta final no tiene techo.
+                Un implante no es una pieza que se enrosca: es una cirugía. Es una inversión grande, y justamente por eso conviene saber qué entra. Cuando cada parte se cotiza por separado, el presupuesto inicial se ve barato y la cuenta final no tiene techo.
               </p>
             </div>
 
@@ -320,7 +329,10 @@ export default function InversionImplantesPage() {
                     </div>
                   ))}
                 </div>
-                <p className="text-crema/45 font-manrope text-xs mt-6 pt-6 border-t border-oro/10">
+                <p className="text-crema/60 font-manrope text-sm mt-6 pt-6 border-t border-oro/10 leading-relaxed">
+                  {INCLUIDO_ACLARACION}
+                </p>
+                <p className="text-crema/45 font-manrope text-xs mt-4">
                   Por eso los valores dicen <span className="text-crema/70">a partir de</span>: si el caso pide un componente más, no aparece como una sorpresa al final.
                 </p>
               </div>
@@ -364,7 +376,7 @@ export default function InversionImplantesPage() {
               <span className="font-cormorant italic text-oro">implante dental</span>?
             </h2>
             <p className="text-crema/55 font-manrope text-sm text-center max-w-2xl mx-auto mb-16">
-              Cada fase es una inversión en ingeniería biológica. La primera fase incluye el implante, la posible extracción y los injertos. La segunda fase es la corona biomimética que completa tu sonrisa.
+              Un implante son tres piezas, y entender cuál es cuál explica la diferencia entre un presupuesto y otro. El tornillo va en el hueso, el pilar lo conecta, y la corona es lo único que se ve. Los tres juntos —terminados— son {usdES(IMPLANTES.neodent.conCorona)} con Neodent® o {usdES(IMPLANTES.straumann.conCorona)} con Straumann®.
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -397,7 +409,7 @@ export default function InversionImplantesPage() {
                 {[
                   {
                     num: "01",
-                    titulo: "Corona Dental (Zirconio / Cerámica)",
+                    titulo: `Corona Dental (Zirconio / Cerámica) — ${usdES(CORONA)}`,
                     rol: "Componente Estético y Funcional",
                     desc: "Es el diente visible que se diseña a medida para igualar el color, la forma y la translucidez de tus dientes vecinos. Utilizamos zirconio estratificado o porcelana pura libre de metal, los materiales más estéticos y resistentes que existen.",
                     incluido: "Incluido en el presupuesto"
@@ -411,9 +423,9 @@ export default function InversionImplantesPage() {
                   },
                   {
                     num: "03",
-                    titulo: "Implante de Titanio (Tornillo)",
+                    titulo: `Implante de Titanio (Tornillo) — desde ${usdES(IMPLANTES.neodent.implante)}`,
                     rol: "Raíz Artificial Osteointegrada",
-                    desc: "El tornillo de titanio puro que se coloca quirúrgicamente en el hueso maxilar. Actúa como la nueva raíz del diente. Trabajamos con Straumann® y Neodent®, sistemas de referencia con amplio respaldo clínico y científico.",
+                    desc: `El tornillo de titanio puro que se coloca quirúrgicamente en el hueso maxilar. Actúa como la nueva raíz del diente. Es la única pieza cuyo valor cambia según el sistema: ${usdES(IMPLANTES.neodent.implante)} con Neodent® y ${usdES(IMPLANTES.straumann.implante)} con Straumann®, la referencia mundial en implantología.`,
                     incluido: "Incluido en el presupuesto"
                   }
                 ].map((item) => (
@@ -451,7 +463,7 @@ export default function InversionImplantesPage() {
                 Dos marcas <span className="font-cormorant italic text-oro">tope de gama.</span> Vos elegís.
               </h2>
               <p className="text-crema/60 font-manrope text-base leading-relaxed max-w-2xl mx-auto mb-4">
-                No trabajamos con implantes genéricos. Colocamos únicamente dos sistemas de primer nivel mundial — y los dos pertenecen al mismo grupo suizo. La diferencia de precio es de origen y trayectoria, no de calidad de atención: en ambos casos la planificación es digital y el protocolo es el mismo.
+                No trabajamos con implantes genéricos. Colocamos únicamente dos sistemas de primer nivel mundial — y los dos pertenecen al mismo grupo suizo. La diferencia de inversión es de origen y trayectoria, no de calidad de atención: en ambos casos la planificación es digital y el protocolo es el mismo.
               </p>
               <p className="text-oro/70 font-manrope text-xs uppercase tracking-[0.2em] mb-14">
                 Neodent® es parte del Grupo Straumann® (Suiza)
@@ -474,7 +486,7 @@ export default function InversionImplantesPage() {
                     "Parte del Grupo Straumann® (Suiza) — el mismo grupo detrás de la marca de implantes #1 del mundo",
                     "La puerta de entrada premium al universo Straumann, con la mejor relación calidad–precio",
                     "Titanio de grado médico con el respaldo del grupo líder mundial en implantología",
-                    "Inversión integral: la cirugía, la extracción, el injerto de hueso y la membrana ya están adentro",
+                    "Inversión integral: la cirugía, y la extracción, el injerto y la membrana que el caso necesite",
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-3">
                       <span className="text-oro/50 flex-none mt-1 text-xs">◆</span>
@@ -500,10 +512,10 @@ export default function InversionImplantesPage() {
                 </div>
                 <div className="space-y-3 flex-1">
                   {[
-                    "La marca de implantes más reconocida del mundo",
-                    "Ingeniería suiza y el mayor respaldo científico del sector",
+                    "La referencia mundial: el implante con el que se comparan todos los demás",
+                    "Ingeniería suiza y el mayor respaldo científico del sector — décadas de seguimiento publicado",
                     "La opción de referencia para las zonas estéticas más exigentes",
-                    "Inversión integral: la cirugía, la extracción, el injerto de hueso y la membrana ya están adentro",
+                    "Inversión integral: la cirugía, y la extracción, el injerto y la membrana que el caso necesite",
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-3">
                       <span className="text-oro flex-none mt-1 text-xs">◆</span>
