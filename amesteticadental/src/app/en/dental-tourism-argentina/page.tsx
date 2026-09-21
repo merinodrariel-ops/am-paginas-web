@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import { hreflangFor } from "@/lib/i18n-routes";
 import { ANIOS_TRAYECTORIA, ANIOS_LABEL_EN } from "@/lib/trayectoria";
+import { RESENAS } from "@/lib/reviews";
 
 const CANONICAL = "https://www.amesteticadental.com/en/dental-tourism-argentina";
 
@@ -328,7 +329,7 @@ export default function DentalTourismPage() {
                         </div>
                         <div className="flex flex-col gap-4">
                             {[
-                                { v: "4.9★", l: "120+ Google reviews" },
+                                { v: RESENAS.estrellas, l: RESENAS.en },
                                 { v: "Forbes", l: "Argentina" },
                                 { v: ANIOS_LABEL_EN, l: "cosmetic dentistry" },
                                 { v: "Puerto Madero", l: "Buenos Aires, Argentina" },

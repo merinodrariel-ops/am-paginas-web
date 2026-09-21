@@ -6,6 +6,7 @@ import Contacto from "@/components/Contacto";
 import { hreflangFor } from "@/lib/i18n-routes";
 import { ANIOS_TRAYECTORIA, ANIO_TITULO } from "@/lib/trayectoria";
 import { SAME_AS_DR } from "@/lib/entidad";
+import { RESENAS } from "@/lib/reviews";
 
 const CANONICAL = "https://www.amesteticadental.com/en/dr-ariel-merino";
 
@@ -130,7 +131,7 @@ export default function DrMerinoEnPage() {
                   { v: String(ANIOS_TRAYECTORIA), l: "years in cosmetic dentistry" },
                   { v: "UCALP", l: `DDS, ${ANIO_TITULO}` },
                   { v: "Forbes", l: "Argentina" },
-                  { v: "4.9★", l: "120+ Google reviews" },
+                  { v: RESENAS.estrellas, l: RESENAS.en },
                 ].map((s) => (
                   <div key={s.l}>
                     <div className="text-oro font-manrope font-semibold text-lg">{s.v}</div>

@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import { hreflangFor } from "@/lib/i18n-routes";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
+import { RESENAS } from "@/lib/reviews";
 
 const CANONICAL = "https://www.amesteticadental.com/en/porcelain-veneers-buenos-aires";
 
@@ -266,7 +267,7 @@ export default function PorcelainVeneersPage() {
                         </div>
                         <div className="flex flex-col gap-5">
                             {[
-                                { v: "4.9★", l: "120+ Google reviews" },
+                                { v: RESENAS.estrellas, l: RESENAS.en },
                                 { v: "Forbes", l: "Featured in Argentina" },
                                 { v: "Miss Universe", l: "Notable patient" },
                                 { v: "Puerto Madero", l: "Buenos Aires, Argentina" },

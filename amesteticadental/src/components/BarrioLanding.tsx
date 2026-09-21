@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BARRIOS, type Barrio } from "@/data/barrios";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
+import { RESENAS } from "@/lib/reviews";
 
 const SITE = "https://www.amesteticadental.com";
 const WA_BASE = "https://api.whatsapp.com/send?phone=5491170219298&text=";
@@ -167,7 +168,7 @@ export default function BarrioLanding({ barrio }: { barrio: Barrio }) {
             </div>
             <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
               <span className="text-oro">
-                ★★★★★ <span className="text-crema/60">4.9 en Google · +120 reseñas</span>
+                ★★★★★ <span className="text-crema/60">{RESENAS.esLinea}</span>
               </span>
               <span className="text-crema/60">
                 Reconocidos por <span className="text-crema">Forbes Argentina</span>

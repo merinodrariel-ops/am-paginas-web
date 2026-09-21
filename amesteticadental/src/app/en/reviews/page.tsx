@@ -4,20 +4,20 @@ import Testimonios from "@/components/Testimonios";
 import Contacto from "@/components/Contacto";
 import Link from "next/link";
 import { hreflangFor } from "@/lib/i18n-routes";
-import { GOOGLE_REVIEWS } from "@/lib/reviews";
+import { GOOGLE_REVIEWS, RESENAS } from "@/lib/reviews";
 
 const CANONICAL = "https://www.amesteticadental.com/en/reviews";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "AM Estética Dental Reviews · 4.9★ on Google · 120+ Reviews",
+    title: `AM Estética Dental Reviews · ${RESENAS.estrellas} on Google · ${GOOGLE_REVIEWS.reviewCount} Reviews`,
     description:
-        "Read real patient reviews of AM Estética Dental in Buenos Aires. 4.9 out of 5 with more than 120 verified Google reviews. Dr. Ariel Merino, Puerto Madero.",
+        `Read real patient reviews of AM Estética Dental in Buenos Aires. ${GOOGLE_REVIEWS.ratingValue} out of ${GOOGLE_REVIEWS.bestRating} with ${RESENAS.enVerified} on Google.`,
     alternates: { canonical: CANONICAL, languages: hreflangFor("/opiniones") },
     openGraph: {
         title: "AM Estética Dental Reviews · 4.9★ on Google",
         description:
-            "More than 120 real patients share their experience at AM Estética Dental, the veneers and smile design clinic of Dr. Ariel Merino in Puerto Madero.",
+            `${GOOGLE_REVIEWS.reviewCount} real patients share their experience at AM Estética Dental, the veneers and smile design clinic of Dr. Ariel Merino in Puerto Madero.`,
         url: CANONICAL,
         locale: "en_US",
         type: "website",
@@ -72,7 +72,7 @@ export default function ReviewsPage() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 border border-oro/25 text-oro px-6 py-3 rounded-full font-manrope text-sm hover:border-oro/50 transition-colors"
                     >
-                        ★ 4.9 out of 5 on Google · 120+ reviews →
+                        ★ {RESENAS.enLinea} →
                     </a>
                     <p className="text-crema/30 font-manrope text-xs mt-6 max-w-xl mx-auto">
                         Reviews were originally written in Spanish and are shown here translated. The originals can be read on our Google profile.

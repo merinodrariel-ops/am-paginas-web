@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { RESENAS } from "@/lib/reviews";
 
 const testimoniosEscritosEn = [
     {
@@ -472,7 +473,7 @@ export default function Testimonios({ lang = "es" }: { lang?: "es" | "en" }) {
                                 <div className="space-y-2 pb-2">
                                     <Stars />
                                     <p className="font-manrope text-sm font-medium text-crema">
-                                        +120 reseñas verificadas
+                                        {RESENAS.esVerificadas}
                                     </p>
                                     <p className="font-manrope text-[11px] uppercase tracking-[0.28em] text-crema/40">
                                         Google Maps · Puerto Madero · ver todas →

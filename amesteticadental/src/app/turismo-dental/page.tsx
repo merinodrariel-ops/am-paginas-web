@@ -6,6 +6,7 @@ import PrensaTema from "@/components/PrensaTema";
 import SeoFaq from "@/components/seo/SeoFaq";
 import { hreflangFor } from "@/lib/i18n-routes";
 import { ANIOS_TRAYECTORIA, ANIOS_LABEL } from "@/lib/trayectoria";
+import { RESENAS } from "@/lib/reviews";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -327,7 +328,7 @@ export default function TurismoDentalPage() {
                         </div>
                         <div className="flex flex-col gap-4">
                             {[
-                                { v: "4.9★", l: "+120 reseñas en Google" },
+                                { v: RESENAS.estrellas, l: `${RESENAS.es} en Google` },
                                 { v: "Forbes", l: "Argentina" },
                                 { v: ANIOS_LABEL, l: "solo estética dental" },
                                 { v: "Puerto Madero", l: "Buenos Aires, Argentina" },

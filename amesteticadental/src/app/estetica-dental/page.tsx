@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
+import { RESENAS } from "@/lib/reviews";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -108,7 +109,7 @@ export default function EsteticaDentalPage() {
                         </div>
                         <div className="flex flex-wrap items-center gap-6 mt-14 pt-8 border-t border-oro/10">
                             {[
-                                { v: "4.9★", l: "+120 reseñas Google" },
+                                { v: RESENAS.estrellas, l: `${RESENAS.es} Google` },
                                 { v: "Forbes", l: "Argentina" },
                                 { v: String(ANIOS_TRAYECTORIA), l: "años en estética dental" },
                                 { v: "Puerto Madero", l: "CABA" },

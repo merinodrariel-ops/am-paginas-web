@@ -3,10 +3,11 @@ import { hreflangFor } from "@/lib/i18n-routes";
 import Navbar from "@/components/Navbar";
 import Testimonios from "@/components/Testimonios";
 import Link from "next/link";
+import { GOOGLE_REVIEWS, RESENAS } from "@/lib/reviews";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Opiniones de AM Estética Dental · 4.9★ · +120 Reseñas",
+    title: `Opiniones de AM Estética Dental · ${RESENAS.estrellas} · ${RESENAS.es}`,
     description: "4.9 sobre 5 en reseñas verificadas de Google. Qué dicen los pacientes de AM Estética Dental, sin seleccionar ni filtrar.",
     alternates: {
         canonical: "https://www.amesteticadental.com/opiniones",
@@ -105,7 +106,7 @@ export default function OpinionesPage() {
                     </nav>
 
                     <span className="mb-5 inline-flex rounded-full border border-oro/20 bg-oro/8 px-4 py-1.5 font-manrope text-[10px] uppercase tracking-[0.38em] text-oro">
-                        +120 reseñas verificadas
+                        {RESENAS.esVerificadas}
                     </span>
 
                     <h1 className="mt-4 font-manrope text-4xl font-light leading-tight text-crema md:text-5xl lg:text-6xl">
@@ -116,7 +117,7 @@ export default function OpinionesPage() {
                     <p className="mt-6 font-manrope text-base leading-relaxed text-crema/55 md:text-lg">
                         Pacientes reales sobre su experiencia con el Dr. Ariel Merino en Puerto Madero, Buenos Aires.
                         <br />
-                        <strong className="text-crema/75 font-medium">4.9 sobre 5 en Google</strong> con más de 120 reseñas verificadas.
+                        <strong className="text-crema/75 font-medium">{GOOGLE_REVIEWS.ratingValue} sobre {GOOGLE_REVIEWS.bestRating} en Google</strong> con {RESENAS.esVerificadas}.
                     </p>
 
                     <div className="mt-8 flex items-center justify-center gap-1.5">

@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import { hreflangFor } from "@/lib/i18n-routes";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
+import { RESENAS } from "@/lib/reviews";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -310,7 +311,7 @@ export default function CarillasDentalesPage() {
                         </div>
                         <div className="flex flex-col gap-5">
                             {[
-                                { v: "4.9★", l: "+120 reseñas en Google" },
+                                { v: RESENAS.estrellas, l: `${RESENAS.es} en Google` },
                                 { v: "Forbes", l: "Reconocimiento Argentina" },
                                 { v: "Miss Universo", l: "Paciente destacada" },
                                 { v: "Puerto Madero", l: "CABA, Argentina" },

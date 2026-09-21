@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BARRIOS } from "@/data/barrios";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
+import { GOOGLE_REVIEWS, RESENAS } from "@/lib/reviews";
 
 const CANONICAL = "https://www.amesteticadental.com/dentista-puerto-madero";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20agendar%20una%20consulta%20en%20AM%20Est%C3%A9tica%20Dental.";
@@ -134,7 +135,7 @@ export default function DentistaPuertoMaderoPage() {
                             <Link href="/casos-antes-y-despues" className="inline-flex items-center gap-2 border border-oro/25 text-oro px-6 py-4 rounded-full text-sm hover:border-oro/50 transition-colors">Ver casos reales →</Link>
                         </div>
                         <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
-                            <span className="text-oro">★★★★★ <span className="text-crema/60">4.9 en Google · +120 reseñas</span></span>
+                            <span className="text-oro">★★★★★ <span className="text-crema/60">{RESENAS.esLinea}</span></span>
                             <span className="text-crema/60">Reconocidos por <span className="text-crema">Forbes Argentina</span></span>
                         </div>
                     </div>
@@ -229,7 +230,7 @@ export default function DentistaPuertoMaderoPage() {
                 <section className="px-6 py-20 max-w-6xl mx-auto">
                     <div className="text-center mb-12">
                         <span className="text-oro text-2xl block mb-3">★★★★★</span>
-                        <h2 className="text-3xl font-light text-crema">4.9 en Google, <span className="font-cormorant italic text-oro">+120 reseñas reales.</span></h2>
+                        <h2 className="text-3xl font-light text-crema">{GOOGLE_REVIEWS.ratingValue} en Google, <span className="font-cormorant italic text-oro">{RESENAS.es} reales.</span></h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {OPINIONES.map((o) => (

@@ -5,6 +5,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
+import { RESENAS } from "@/lib/reviews";
 
 const REVIEWS_EN = [
     { name: "Maria L.", text: "The result exceeded all my expectations and gave me back the confidence to smile." },
@@ -61,7 +62,7 @@ function LaurelBranch({ flip = false }: { flip?: boolean }) {
 const UI = {
     es: {
         googleReviews: "Google Reviews",
-        reviewsCount: "+120 reseñas verificadas",
+        reviewsCount: RESENAS.esVerificadas,
         forbesA: "La única clínica odontológica de Argentina",
         forbesB: "reconocida por Forbes.",
         forbesLead: "No es un premio de industria. Es reconocimiento editorial en el medio de negocios más exigente del mundo por el impacto real que generamos en la vida de nuestros pacientes.",
@@ -74,7 +75,7 @@ const UI = {
     },
     en: {
         googleReviews: "Google Reviews",
-        reviewsCount: "120+ verified reviews",
+        reviewsCount: RESENAS.enVerified,
         forbesA: "The only dental clinic in Argentina",
         forbesB: "featured by Forbes.",
         forbesLead: "This is not an industry award. It is editorial recognition from the most demanding business publication in the world, for the real impact we create in our patients' lives.",
