@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 const testimoniosEscritosEn = [
     {
@@ -124,11 +124,44 @@ function ReviewCard({ review, featured = false }: { review: (typeof testimoniosE
     );
 }
 
-function VideoCard({ video, onPlay }: { video: typeof videosTestimonios[0]; onPlay?: () => void }) {
+function VideoCard({
+    video,
+    onPlay,
+    onStop,
+}: {
+    video: typeof videosTestimonios[0];
+    onPlay?: () => void;
+    onStop?: () => void;
+}) {
     const [playing, setPlaying] = useState(false);
+    const marco = useRef<HTMLDivElement>(null);
+
+    const detener = useCallback(() => {
+        setPlaying(false);
+        onStop?.();
+    }, [onStop]);
+
+    // Un video que deja de verse tiene que dejar de sonar. Si el carrusel lo
+    // corre de lugar, o la persona sigue scrolleando la pagina, el iframe queda
+    // fuera de pantalla y sigue con audio: se escucha una voz hablando y no hay
+    // forma de saber de donde sale ni como callarla. Al salir de vista se
+    // desmonta el iframe y vuelve la portada.
+    useEffect(() => {
+        if (!playing) return;
+        const el = marco.current;
+        if (!el) return;
+        const obs = new IntersectionObserver(
+            ([entrada]) => {
+                if (!entrada.isIntersecting) detener();
+            },
+            { threshold: 0.35 }
+        );
+        obs.observe(el);
+        return () => obs.disconnect();
+    }, [playing, detener]);
 
     return (
-        <div className="group relative aspect-[9/16] overflow-hidden rounded-[1.6rem] border border-oro/8 bg-carbon-soft">
+        <div ref={marco} className="group relative aspect-[9/16] overflow-hidden rounded-[1.6rem] border border-oro/8 bg-carbon-soft">
             <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 rounded-[1.6rem] p-px opacity-55 transition-opacity duration-500 group-hover:opacity-100"
@@ -177,13 +210,24 @@ function VideoCard({ video, onPlay }: { video: typeof videosTestimonios[0]; onPl
                     </div>
                 </>
             ) : (
-                <iframe
-                    className="absolute inset-[1.5px] h-[calc(100%-3px)] w-[calc(100%-3px)] rounded-[calc(1.6rem-1.5px)]"
-                    src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?autoplay=1&rel=0&modestbranding=1&controls=1`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    title={video.nombre}
-                />
+                <>
+                    <button
+                        onClick={detener}
+                        aria-label="Cerrar video"
+                        className="absolute right-3 top-3 z-20 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-carbon/80 text-crema/80 backdrop-blur-sm transition-colors hover:border-oro/50 hover:text-oro"
+                    >
+                        <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <iframe
+                        className="absolute inset-[1.5px] h-[calc(100%-3px)] w-[calc(100%-3px)] rounded-[calc(1.6rem-1.5px)]"
+                        src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?autoplay=1&rel=0&modestbranding=1&controls=1`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        title={video.nombre}
+                    />
+                </>
             )}
         </div>
     );
@@ -309,7 +353,11 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
                 >
                     {pista.map((video, i) => (
                         <div key={`${video.id}-m${i}`} className="flex-shrink-0 w-full px-4">
-                            <VideoCard video={video} onPlay={() => setMirando(true)} />
+                            <VideoCard
+                                video={video}
+                                onPlay={() => setMirando(true)}
+                                onStop={() => setMirando(false)}
+                            />
                         </div>
                     ))}
                 </div>
@@ -325,7 +373,11 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
                             className="flex-shrink-0 px-3"
                             style={{ width: `calc(100% / ${VISIBLE_DESKTOP})` }}
                         >
-                            <VideoCard video={video} onPlay={() => setMirando(true)} />
+                            <VideoCard
+                                video={video}
+                                onPlay={() => setMirando(true)}
+                                onStop={() => setMirando(false)}
+                            />
                         </div>
                     ))}
                 </div>
