@@ -202,6 +202,56 @@ export default function InversionImplantesPage() {
           </div>
         </section>
 
+        {/* ── EL IMPLANTE, GIRANDO ── */}
+        {/* Va entre la tabla de precios y el despiece a proposito: la persona
+            acaba de leer una cifra de cuatro digitos y todavia no vio la cosa.
+            Un objeto que gira retiene la mirada donde un parrafo la pierde.
+
+            Es un <video> y no un GIF: el GIF maneja 256 colores y este plano es
+            negro con reflejos dorados — saldria con bandas y pesaria diez veces
+            mas. Sin controles, mudo y con playsInline se comporta como un GIF
+            para el visitante. El poster evita el hueco mientras carga.
+
+            (El giro salio bien acá y no salio con la placa de bruxismo por un
+            motivo concreto: el titanio es opaco. El acrilico transparente de la
+            placa refracta, y ahi la IA no puede inferir la geometria.) */}
+        <section className="py-24 px-6 md:px-12 bg-carbon border-b border-oro/10">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative w-full overflow-hidden rounded-3xl border border-oro/15 bg-carbon-soft" style={{ aspectRatio: "1 / 1" }}>
+              <video
+                src="https://res.cloudinary.com/drctvgyqd/video/upload/q_auto/v1789965489/implantes-dentales-am/implante-giro-360-corona-pilar-tornillo.mp4"
+                poster="https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto,w_800/v1789965491/implantes-dentales-am/implante-giro-360-poster.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Implante dental completo girando 360 grados: tornillo de titanio, pilar y corona de cerámica"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-5">
+                Esto es lo que te queda puesto
+              </span>
+              <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-5">
+                Tres piezas,{" "}
+                <span className="font-cormorant italic text-oro">un solo diente</span>
+              </h2>
+              <p className="text-crema/65 font-manrope text-base leading-relaxed mb-4">
+                El tornillo de titanio va en el hueso y hace de raíz. El pilar lo atraviesa la
+                encía y sostiene. La corona es la única parte que vas a ver, y la única que se
+                diseña para que nadie note que está.
+              </p>
+              <p className="text-crema/65 font-manrope text-base leading-relaxed">
+                Cuando compares dos presupuestos, la pregunta es cuántas de estas tres piezas
+                entran en el número. Un implante sin corona no es un diente: es una pieza
+                esperando.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* ── ESTRUCTURA DE UN IMPLANTE (ESQUEMA VISUAL) ── */}
         <section className="py-24 px-6 md:px-12 bg-carbon border-b border-oro/10">
           <div className="max-w-5xl mx-auto">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { hreflangFor } from "@/lib/i18n-routes";
 import { ANIO } from "@/lib/anio";
@@ -210,6 +211,28 @@ export default function ArticuloPreciosCarillasArgentina() {
                                 * Los rangos de mercado varían según la zona y el nivel de especialización de cada clínica. Los valores de referencia de AM Estética Dental están publicados en nuestra <Link href="/precio-carillas-dentales-buenos-aires" className="text-oro/70 hover:text-oro underline underline-offset-2">página de precios</Link> y se abonan en pesos al tipo de cambio oficial del Banco Nación del día del pago.
                             </p>
                         </section>
+
+                        {/* Diagrama: por que dos presupuestos difieren tanto.
+                            Va justo despues de la tabla de rangos, donde la
+                            persona acaba de ver dos numeros muy distintos y
+                            todavia no sabe que esta comparando dos materiales
+                            distintos. */}
+                        <figure className="my-2">
+                            <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-oro/12 bg-carbon">
+                                <Image
+                                    src="https://res.cloudinary.com/drctvgyqd/image/upload/v1789965349/blog/carillas/carilla-resina-vs-porcelana-corte-comparativo.png"
+                                    alt="Corte comparativo de dos incisivos: a la izquierda una carilla de resina, más gruesa y opaca; a la derecha una carilla de porcelana, más fina y translúcida"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 700px"
+                                    className="object-contain"
+                                />
+                            </div>
+                            <figcaption className="mt-3 font-manrope text-xs leading-relaxed text-crema/35">
+                                La diferencia de precio empieza en el material. La resina es más gruesa y opaca; la
+                                porcelana es más fina y deja pasar la luz, que es lo que hace que no se note.
+                                Ilustración.
+                            </figcaption>
+                        </figure>
 
                         {/* Factores */}
                         <section className="space-y-10">
