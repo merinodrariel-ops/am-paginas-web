@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { ANIO } from "@/lib/anio";
 
@@ -189,6 +190,25 @@ export default function ArticuloPreciosImplantesArgentina() {
                     </div>
                 </section>
 
+                {/* ── FOTO DE APERTURA ── */}
+                <section className="px-6 md:px-12 pb-14">
+                    <figure className="max-w-3xl mx-auto">
+                        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-oro/12">
+                            <Image
+                                src="https://res.cloudinary.com/drctvgyqd/image/upload/v1789955609/blog/implantes/implante-tres-partes-piezas.png"
+                                alt="Las tres piezas que componen un implante dental sobre una superficie oscura: el tornillo de titanio, el pilar y la corona de cerámica"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 768px"
+                                className="object-cover"
+                                priority
+                            />
+                        </div>
+                        <figcaption className="mt-3 font-manrope text-xs leading-relaxed text-crema/35">
+                            Un implante terminado son tres piezas, no una. Cuando un presupuesto parece la mitad que otro, casi siempre falta alguna. Imagen ilustrativa.
+                        </figcaption>
+                    </figure>
+                </section>
+
                 {/* ── CONTENIDO ── */}
                 <article className="px-6 md:px-12 pb-24">
                     <div className="max-w-3xl mx-auto space-y-12">
@@ -246,6 +266,21 @@ export default function ArticuloPreciosImplantesArgentina() {
                             <p className="text-crema/65 font-manrope text-base leading-relaxed mb-4">
                                 Ves un implante a un precio y otro que parece la mitad. Antes de decidir, preguntá qué incluye cada uno: es muy común que el más barato sea solo el tornillo, y que al sumar el pilar y la corona termine costando lo mismo o más. Un implante que no incluye la corona no es un implante terminado: es una pieza sin diente.
                             </p>
+                            <figure className="my-8">
+                                <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-oro/12 bg-carbon">
+                                    <Image
+                                        src="https://res.cloudinary.com/drctvgyqd/image/upload/v1789955605/blog/implantes/implante-tres-partes-diagrama.png"
+                                        alt="Diagrama despiezado de un implante dental: la corona de cerámica arriba, el pilar en el medio y el tornillo de titanio insertado en el hueso maxilar"
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 700px"
+                                        className="object-contain"
+                                    />
+                                </div>
+                                <figcaption className="mt-3 font-manrope text-xs leading-relaxed text-crema/35">
+                                    Corona, pilar e implante. El tornillo solo no es un diente: sin el pilar y la corona, no hay nada con qué masticar. Ilustración.
+                                </figcaption>
+                            </figure>
+
                             <p className="text-crema/65 font-manrope text-base leading-relaxed">
                                 La pregunta que aclara todo es simple: <span className="text-crema">&ldquo;¿este precio me deja el diente puesto y funcionando, o falta algo?&rdquo;</span>
                             </p>
