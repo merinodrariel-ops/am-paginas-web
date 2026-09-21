@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import CasoGaleria from "@/components/CasoGaleria";
 import CasosRelacionados from "@/components/CasosRelacionados";
 import { getCasoBySlugMerged, getCasosPublicadosMerged } from "@/lib/public-cases";
+import { metaDeCaso, tituloDeCaso } from "@/lib/serp";
 
 export const revalidate = 60;
 
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!caso) return {};
     const canonical = `https://www.amesteticadental.com/en/cases/${caso.slug}`;
     const spanish = `https://www.amesteticadental.com/casos/${caso.slug}`;
-    const description = caso.seoDescription || caso.descripcion;
+    const description = metaDeCaso(caso.seoDescription || caso.descripcion);
 
     // Esta ruta renderiza para todos los slugs, pero los casos sin traducción
     // salen con el texto en español. Declarar hreflang ahí sería anunciar una
@@ -38,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     return {
         metadataBase: new URL("https://www.amesteticadental.com"),
-        title: `${caso.seoTitle || caso.titulo} | AM`,
+        title: tituloDeCaso(caso.seoTitle || caso.titulo),
         description,
         alternates: traducido
             ? {

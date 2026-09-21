@@ -12,7 +12,7 @@ const CANONICAL = "https://www.amesteticadental.com/en/dental-tourism-argentina"
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Dental Tourism in Buenos Aires — Veneers, Own Lab",
-    description: "Porcelain veneers and smile design in Buenos Aires for international patients. Our in-house lab delivers natural results in days — for people who value their time. Dr. Ariel Merino, Puerto Madero.",
+    description: "Porcelain veneers and smile design for international patients. Our in-house lab delivers natural results in 10 to 14 days, in a single trip.",
     alternates: {
         canonical: CANONICAL,
         languages: hreflangFor("/turismo-dental"),

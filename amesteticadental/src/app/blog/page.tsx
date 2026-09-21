@@ -7,7 +7,7 @@ import { ANIO } from "@/lib/anio";
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Blog de Estética Dental | AM Estética Dental",
-    description: "Artículos sobre carillas de porcelana, diseño de sonrisa, lentes de contacto dental y estética dental en Buenos Aires. Dr. Ariel Merino, AM Estética Dental, Puerto Madero.",
+    description: "Artículos sobre carillas de porcelana, diseño de sonrisa, lentes de contacto dental y estética dental en Buenos Aires.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog",
     languages: hreflangFor("/blog"),

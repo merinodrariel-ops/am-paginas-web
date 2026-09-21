@@ -8,7 +8,7 @@ import { NOTAS_POR_FECHA, TOTAL_NOTAS } from "@/lib/prensa";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Media Kit y Prensa | Dr. Ariel Merino | AM Estética Dental",
-  description: "Recursos oficiales, biografías, logos y fotografías de alta calidad para periodistas y medios de comunicación. Dr. Ariel Merino, especialista en carillas en Buenos Aires.",
+  description: "Recursos oficiales, biografías, logos y fotografías en alta calidad para periodistas y medios. Dr. Ariel Merino, Buenos Aires.",
   alternates: {
     canonical: "https://www.amesteticadental.com/prensa",
     languages: hreflangFor("/prensa"),

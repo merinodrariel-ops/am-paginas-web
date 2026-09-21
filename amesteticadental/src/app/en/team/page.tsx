@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Team AM | AM Estética Dental Puerto Madero",
   description:
-    "Meet Team AM at AM Estética Dental in Puerto Madero: cosmetic dentistry, implant surgery, invisible aligners, in-house digital dental laboratory and patient care.",
+    "Meet Team AM in Puerto Madero: cosmetic dentistry, implant surgery, invisible aligners, in-house digital lab and patient care.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/equipo-am") },
   openGraph: {
     title: "Team AM | AM Estética Dental Puerto Madero",

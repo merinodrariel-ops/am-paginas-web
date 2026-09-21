@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Ultra-Thin Contact Lens Veneers in Buenos Aires | AM",
   description:
-    "Ultra-thin contact lens veneers in Puerto Madero, Buenos Aires. Around 0.3 mm, with minimal enamel preparation, to refine color and shape. Natural results, assessed case by case.",
+    "Contact lens veneers of around 0.3 mm, with minimal enamel preparation, to refine colour and shape. Assessed case by case.",
   alternates: {
     canonical: CANONICAL,
     languages: hreflangFor("/lentes-de-contacto-dental"),

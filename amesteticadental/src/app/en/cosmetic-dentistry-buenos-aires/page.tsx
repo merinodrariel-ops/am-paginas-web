@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Cosmetic Dentistry in Buenos Aires | AM Estética Dental",
   description:
-    "The best-known cosmetic dentistry clinic in Argentina. Porcelain veneers, digital smile design, invisible aligners and implants in Puerto Madero. Featured by Forbes. Dr. Ariel Merino.",
+    "Porcelain veneers, digital smile design, invisible aligners and implants in Puerto Madero. In-house lab, and featured by Forbes.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/estetica-dental") },
   openGraph: {
     title: "Cosmetic Dentistry in Buenos Aires | AM Estética Dental",

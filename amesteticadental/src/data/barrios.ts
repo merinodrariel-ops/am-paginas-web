@@ -46,7 +46,7 @@ export const BARRIOS: Barrio[] = [
     preposicion: "en Recoleta",
     title: "Carillas Dentales en Recoleta | Dr. Ariel Merino · AM",
     description:
-      "Carillas de porcelana y resina para pacientes de Recoleta. Laboratorio propio, diseño 3D previo y precios publicados. Dr. Ariel Merino, a 15 minutos en Puerto Madero.",
+      "Carillas de porcelana y resina para pacientes de Recoleta. Laboratorio propio, diseño 3D previo y precios publicados, a 15 minutos.",
     keywords:
       "carillas dentales Recoleta, carillas de porcelana Recoleta, odontólogo estético Recoleta, diseño de sonrisa Recoleta, dentista Recoleta CABA",
     h1: ["Carillas dentales para", "pacientes de Recoleta."],
@@ -89,7 +89,7 @@ export const BARRIOS: Barrio[] = [
     preposicion: "en Palermo",
     title: "Carillas Dentales en Palermo | Dr. Ariel Merino · AM",
     description:
-      "Carillas de porcelana y diseño de sonrisa para pacientes de Palermo. Laboratorio propio, resultado en días y precios publicados. Dr. Ariel Merino, Puerto Madero.",
+      "Carillas de porcelana y diseño de sonrisa para pacientes de Palermo. Laboratorio propio, resultado en días y precios publicados.",
     keywords:
       "carillas dentales Palermo, carillas de porcelana Palermo, diseño de sonrisa Palermo, odontólogo estético Palermo, dentista Palermo CABA",
     h1: ["Carillas dentales para", "pacientes de Palermo."],
@@ -132,7 +132,7 @@ export const BARRIOS: Barrio[] = [
     preposicion: "en Belgrano",
     title: "Carillas Dentales en Belgrano | Dr. Ariel Merino · AM",
     description:
-      "Carillas de porcelana y rehabilitación estética para pacientes de Belgrano y Núñez. Laboratorio propio y precios publicados. Dr. Ariel Merino, Puerto Madero.",
+      "Carillas de porcelana y rehabilitación estética para pacientes de Belgrano y Núñez. Laboratorio propio y precios publicados.",
     keywords:
       "carillas dentales Belgrano, carillas de porcelana Belgrano, dentista Belgrano, odontólogo estético Belgrano, diseño de sonrisa Núñez",
     h1: ["Carillas dentales para", "pacientes de Belgrano."],

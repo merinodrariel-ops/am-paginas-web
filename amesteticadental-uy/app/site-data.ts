@@ -632,7 +632,7 @@ export const treatmentPages: Record<string, TreatmentPage> = {
     title: "Tratamiento del bruxismo en Montevideo",
     metaTitle: "Bruxismo: placa y toxina botulínica en Montevideo | AM",
     metaDescription:
-      "Tratamiento del bruxismo con placa de descarga y toxina botulínica en masetero y temporal, aplicada por odontólogos. Próxima sede de AM Estética Dental en Carrasco, Montevideo.",
+      "Bruxismo tratado con placa de descarga y toxina botulínica en masetero y temporal, aplicada por odontólogos. Próxima sede en Carrasco.",
     eyebrow: "Próxima sede en zona Carrasco",
     lead: "A la noche el sistema nervioso baja la persiana, pero la musculatura sigue trabajando contra tus propios dientes. El tratamiento tiene dos pilares, y ninguno reemplaza al otro.",
     intro:

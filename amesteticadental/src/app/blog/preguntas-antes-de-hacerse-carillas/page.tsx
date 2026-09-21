@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Qué preguntarle a tu odontólogo antes de las carillas | AM",
-    description: "Antes de hacerte carillas dentales, hay 5 preguntas clave que todo especialista serio debe poder responder. Mockup, desgaste, material, laboratorio y estética natural.",
+    description: "Cinco preguntas que todo especialista serio debe poder responder: mockup, desgaste, material, laboratorio y estética natural.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog/preguntas-antes-de-hacerse-carillas",
     },
@@ -23,7 +23,7 @@ const articleSchema = {
     "@type": "Article",
     "headline": "Preguntas que hacerle a tu odontólogo antes de hacerte carillas dentales",
     "image": "https://www.amesteticadental.com/og-image.jpg",
-    "description": "Antes de hacerte carillas dentales, hay 5 preguntas clave que todo especialista serio debe poder responder. Mockup, desgaste, material, laboratorio y estética natural.",
+    "description": "Cinco preguntas que todo especialista serio debe poder responder: mockup, desgaste, material, laboratorio y estética natural.",
     "author": {
         // El @id es lo que une las 11 notas del blog, la clínica y arielmerino.com
         // en UNA sola entidad. Sin él, cada artículo declaraba una "Dr. Ariel Merino"

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Contact · AM Estética Dental, Buenos Aires",
   description:
-    "Get in touch by email or WhatsApp. AM Estética Dental, Camila O'Gorman 412, Puerto Madero, Buenos Aires. English-speaking coordination for international patients.",
+    "Email or WhatsApp us. Camila O'Gorman 412, Puerto Madero. English-speaking coordination for international patients.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/contacto") },
   openGraph: {
     title: "Contact · AM Estética Dental",

@@ -10,7 +10,7 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I%20rea
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Do Veneers Damage Your Teeth? The Honest Answer | AM",
-    description: "Veneers require minimal enamel preparation in most cases. Why blanket 'no-prep' promises are a half-truth, what is reversible and what genuinely damages teeth.",
+    description: "Veneers need minimal enamel preparation in most cases. Why blanket 'no-prep' promises are a half-truth, and what genuinely damages teeth.",
     alternates: { canonical: CANONICAL, languages: hreflangFor("/blog/las-carillas-danan-los-dientes") },
     openGraph: {
         title: "Do veneers damage your teeth?",
@@ -26,7 +26,7 @@ const articleSchema = {
     "@type": "Article",
     headline: "Do veneers damage your teeth?",
     "image": "https://www.amesteticadental.com/og-image.jpg",
-    description: "Veneers require minimal enamel preparation in most cases. Why blanket 'no-prep' promises are a half-truth, what is reversible and what genuinely damages teeth.",
+    description: "Veneers need minimal enamel preparation in most cases. Why blanket 'no-prep' promises are a half-truth, and what genuinely damages teeth.",
     inLanguage: "en",
     author: {
         "@type": "Person",

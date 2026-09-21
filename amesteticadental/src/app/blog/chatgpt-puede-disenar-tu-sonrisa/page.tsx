@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "¿ChatGPT puede diseñar tu sonrisa? | AM Estética Dental",
     description:
-        "Cinco de cada diez pacientes llegan hoy a la consulta con una imagen de su sonrisa generada por inteligencia artificial. Qué puede ver esa imagen de tu boca, qué no, y cómo se comprueba si el resultado es posible.",
+        "Cinco de cada diez pacientes llegan con una imagen de su sonrisa hecha por IA. Qué puede ver esa imagen de tu boca, qué no, y cómo se comprueba.",
     alternates: {
         canonical: CANONICAL,
         languages: hreflangFor("/blog/chatgpt-puede-disenar-tu-sonrisa"),

@@ -11,7 +11,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Real Before & After — Clinical Cases | AM Estética Dental",
-    description: "Real before & after results documented as clinical cases: diagnosis, technique, photos, timeline and follow-up of treatments by Dr. Ariel Merino in Puerto Madero, Buenos Aires.",
+    description: "Real before & after documented as clinical cases: diagnosis, technique, photos, timeline and follow-up. Nothing retouched.",
     alternates: {
         canonical: CANONICAL,
         languages: hreflangFor("/casos-antes-y-despues"),

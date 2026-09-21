@@ -11,7 +11,7 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I%20rea
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: `How Much Do Veneers Cost in Argentina? ${ANIO} Guide | AM`,
-    description: `Veneer investment in Argentina ${ANIO}: USD figures per unit, what changes the number, what should be included, and why international patients actually travel here.`,
+    description: `Veneer investment in Argentina ${ANIO}: USD figures per unit, what changes the number, and why international patients actually travel here.`,
     alternates: { canonical: CANONICAL, languages: hreflangFor("/blog/cuanto-cuestan-las-carillas-dentales-en-argentina") },
     openGraph: {
         title: "How much do veneers cost in Argentina?",
@@ -27,7 +27,7 @@ const articleSchema = {
     "@type": "Article",
     headline: "How much do veneers cost in Argentina?",
     "image": "https://www.amesteticadental.com/og-image.jpg",
-    description: `Veneer investment in Argentina ${ANIO}: USD figures per unit, what changes the number, what should be included, and why international patients actually travel here.`,
+    description: `Veneer investment in Argentina ${ANIO}: USD figures per unit, what changes the number, and why international patients actually travel here.`,
     inLanguage: "en",
     author: {
         "@type": "Person",

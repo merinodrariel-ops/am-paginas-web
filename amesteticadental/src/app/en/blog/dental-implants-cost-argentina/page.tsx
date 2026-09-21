@@ -17,7 +17,7 @@ const WA =
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: `How Much Does a Dental Implant Cost in Argentina? ${ANIO} | AM`,
-    description: `A finished implant with its crown runs USD 2,400 to 3,000 in Argentina in ${ANIO}. What the price covers, why the cheap quote is only the screw, and when a graft is needed.`,
+    description: `A finished implant with its crown runs USD 2,400 to 3,000 in ${ANIO}. What that covers, why the cheap quote is only the screw, and when a graft is needed.`,
     alternates: {
         canonical: CANONICAL,
         languages: hreflangFor("/blog/cuanto-cuesta-un-implante-dental-en-argentina"),
@@ -37,7 +37,7 @@ const articleSchema = {
     "@type": "Article",
     headline: "How much does a dental implant cost in Argentina?",
     image: "https://www.amesteticadental.com/og-image.jpg",
-    description: `A finished implant with its crown runs USD 2,400 to 3,000 in Argentina in ${ANIO}. What the price covers, why the cheap quote is only the screw, and when a graft is needed.`,
+    description: `A finished implant with its crown runs USD 2,400 to 3,000 in ${ANIO}. What that covers, why the cheap quote is only the screw, and when a graft is needed.`,
     inLanguage: "en",
     author: {
         "@type": "Person",

@@ -49,6 +49,14 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co' }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder' }}
 
+      # El 21-09-2026 había 24 metas y 8 títulos que Google cortaba a mitad de frase.
+      # La causa casi nunca fue escribir de más: fueron sufijos de plantilla del layout
+      # que se le pegaban a TODAS las páginas del sitio y que no se ven al editar una
+      # sola. Esto lee el HTML ya construido —lo mismo que lee Google, con las
+      # plantillas y constantes ya resueltas— y rompe el CI el día que reaparezca.
+      - name: Títulos y metas dentro de lo que muestra la SERP
+        run: node scripts/verificar-metadatos.mjs ${{ matrix.site }}
+
   # Alarma anual: el año de precios está sellado en los títulos que ganan las
   # queries de Copilot ("precio carillas dentales Argentina 2026"). Si queda
   # atrás del año real, esto rompe el CI y obliga a revisar las tablas.

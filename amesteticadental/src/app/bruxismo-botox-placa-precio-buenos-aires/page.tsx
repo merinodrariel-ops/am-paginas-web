@@ -21,7 +21,7 @@ const VIDEO_PLACA = {
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Botox para Bruxismo y Placa — Precio Buenos Aires | AM",
-    description: "Tratamiento de bruxismo con placa de descarga y toxina botulínica en masetero y temporal. USD 1.000 los dos juntos. Aplicado por odontólogas matriculadas. Puerto Madero, Buenos Aires.",
+    description: "Placa de descarga y toxina botulínica en masetero y temporal: USD 1.000 los dos juntos, aplicados por odontólogas matriculadas.",
     alternates: { canonical: CANONICAL },
     keywords: "botox para bruxismo precio, tratamiento bruxismo Buenos Aires, placa de bruxismo precio, toxina botulinica masetero Buenos Aires, bruxismo Puerto Madero",
     openGraph: {

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: `Teeth Whitening in Buenos Aires — Cost ${ANIO} | AM`,
   description:
-    "Professional teeth whitening in Puerto Madero, Buenos Aires. LED and laser protocols designed to minimise sensitivity, supervised by Dr. Ariel Merino. USD figures.",
+    "Professional teeth whitening in Puerto Madero. LED and laser protocols designed to minimise sensitivity, with USD figures.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/blanqueamiento-dental-precio-buenos-aires") },
   openGraph: {
     title: "Teeth Whitening in Buenos Aires | AM Estética Dental",

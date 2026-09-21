@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Press & Media Kit | Dr. Ariel Merino | AM Estética Dental",
     description:
-        "Official press resources for journalists and media: approved biography, credentials and media appearances of Dr. Ariel Merino, AM Estética Dental, Buenos Aires.",
+        "Press resources for journalists: approved biography, credentials and media appearances of Dr. Ariel Merino.",
     alternates: { canonical: CANONICAL, languages: hreflangFor("/prensa") },
     openGraph: {
         title: "Press & Media Kit | Dr. Ariel Merino",

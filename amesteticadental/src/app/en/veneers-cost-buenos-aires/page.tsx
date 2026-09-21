@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: `Veneers Cost in Buenos Aires — USD Prices ${ANIO} | AM`,
   description:
-    "What porcelain veneers cost in Buenos Aires: USD figures per unit, what changes the investment, financing and what is included. Dr. Ariel Merino, Puerto Madero.",
+    "What porcelain veneers cost in Buenos Aires: USD figures per unit, what changes the investment, and what is included.",
   alternates: {
     canonical: CANONICAL,
     languages: hreflangFor("/precio-carillas-dentales-buenos-aires"),

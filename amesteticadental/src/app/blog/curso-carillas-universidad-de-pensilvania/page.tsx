@@ -7,9 +7,9 @@ const CANONICAL = "https://www.amesteticadental.com/blog/curso-carillas-universi
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "El curso de carillas del Dr. Merino en Penn Dental Medicine | AM",
+    title: "El Dr. Merino, instructor de carillas en Penn Dental",
     description:
-        "El director clínico de AM Estética Dental es instructor del curso \"Full Veneers\" en el programa de educación continua de la University of Pennsylvania School of Dental Medicine. Qué significa esa credencial para un paciente.",
+        "El director clínico de AM es instructor del curso \"Full Veneers\" en Penn Dental Medicine. Qué significa esa credencial para un paciente.",
     alternates: {
         canonical: CANONICAL,
     },

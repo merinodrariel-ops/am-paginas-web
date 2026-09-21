@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import CasoGaleria from "@/components/CasoGaleria";
 import CasosRelacionados from "@/components/CasosRelacionados";
 import { getCasosPublicadosMerged, getCasoBySlugMerged } from "@/lib/public-cases";
+import { metaDeCaso, tituloDeCaso } from "@/lib/serp";
 
 export const revalidate = 60;
 
@@ -32,8 +33,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "Buenos Aires",
     ];
 
-    const seoTitle = caso.seoTitle ? `${caso.seoTitle} | AM` : `${caso.titulo} | AM`;
-    const seoDescription = caso.seoDescription || caso.descripcion;
+    const seoTitle = tituloDeCaso(caso.seoTitle || caso.titulo);
+    const seoDescription = metaDeCaso(caso.seoDescription || caso.descripcion);
 
     // El par ES↔EN tiene que estar declarado de los dos lados o Google ignora
     // el cluster y deja las dos URLs compitiendo entre sí. La versión inglesa ya

@@ -11,7 +11,7 @@ const PATH = "/penn-dental-medicine";
 export const metadata: Metadata = {
   title: "Docencia en Penn Dental Medicine",
   description:
-    "El Dr. Ariel Merino, director clínico de AM Estética Dental, es instructor del curso \"Full Veneers\" en el programa de educación continua de la University of Pennsylvania School of Dental Medicine. El criterio clínico que llega a Carrasco.",
+    "El Dr. Merino es instructor del curso \"Full Veneers\" en Penn Dental Medicine, en su programa de educación continua. El criterio clínico que llega a Carrasco.",
   alternates: {
     canonical: `${SITE_URL}${PATH}`,
     languages: hreflangFor(PATH),
