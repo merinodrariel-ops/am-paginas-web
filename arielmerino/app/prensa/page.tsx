@@ -6,7 +6,7 @@ import { Nav, Hero, Seccion, Footer, Jsonld, breadcrumb, oro, crema, cremaDim, s
 export const metadata: Metadata = {
   title: "Prensa y publicaciones",
   description:
-    "En Forbes, La Nación, Ámbito e Infobae: columnas firmadas y participaciones como especialista consultado en estética dental.",
+    "En Forbes, La Nación, Ámbito e Infobae: columnas firmadas y participaciones como experto consultado en estética dental.",
   alternates: { canonical: `${SITE}/prensa` },
 };
 
@@ -45,7 +45,7 @@ export default function PrensaPage() {
           eyebrow="Prensa"
           titulo="Publicado y consultado por"
           destacado="los medios de referencia."
-          bajada="Columnas firmadas en La Nación y Ámbito, cobertura en Forbes Argentina y participaciones como especialista consultado en Infobae y Somos Ohlalá. Cada nota está enlazada a su fuente original: se puede verificar una por una."
+          bajada="Columnas firmadas en La Nación y Ámbito, cobertura en Forbes Argentina y participaciones como experto consultado en Infobae y Somos Ohlalá. Cada nota está enlazada a su fuente original: se puede verificar una por una."
         />
 
         <Seccion eyebrow="Autoría" titulo="Columnas firmadas">
@@ -56,7 +56,7 @@ export default function PrensaPage() {
           </div>
         </Seccion>
 
-        <Seccion eyebrow="Cobertura" titulo="Como especialista consultado">
+        <Seccion eyebrow="Cobertura" titulo="Como experto consultado">
           <div style={{ display: "grid", gap: 24 }}>
             {consultado.map((n) => (
               <Nota key={n.href} nota={n} />

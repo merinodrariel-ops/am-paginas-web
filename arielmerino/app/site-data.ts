@@ -164,7 +164,7 @@ export const PRENSA: Nota[] = [
     medio: "La Nación",
     rol: "Experto consultado",
     titular: "Contra el bruxismo: cinco ejercicios sencillos para calmar este mecanismo inconsciente",
-    extracto: "Especialista de referencia consultado por La Nación para el abordaje clínico del bruxismo.",
+    extracto: "Experto de referencia consultado por La Nación para el abordaje clínico del bruxismo.",
     href: "https://www.lanacion.com.ar/salud/contra-el-bruxismo-cinco-ejercicios-sencillos-para-calmar-este-mecanismo-inconsciente-nid30092025/",
     año: "2025",
   },
@@ -197,7 +197,7 @@ export const PERSON_SCHEMA = {
   name: "Dr. Ariel Merino",
   givenName: "Ariel",
   familyName: "Merino",
-  jobTitle: "Odontólogo Especialista en Estética Dental",
+  jobTitle: "Odontólogo experto en estética dental",
   description:
     `Odontólogo argentino recibido en ${ANIO_TITULO} por la Universidad Católica de La Plata, con ${ANIOS_TRAYECTORIA} años de ejercicio dedicados casi exclusivamente a la estética dental, las carillas de porcelana y el diseño de sonrisa digital. Fundador y director de AM Estética Dental, en Puerto Madero, Buenos Aires. Instructor del curso "${PENN.curso}" en el programa de ${PENN.programa} de la ${PENN.escuela}. Docente y disertante internacional en más de 15 países.`,
   url: SITE,

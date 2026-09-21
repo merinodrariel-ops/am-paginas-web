@@ -73,7 +73,7 @@ export default function HomePage() {
               Director · AM Estética Dental
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.85, color: "var(--crema-dim, #A89F92)", marginBottom: 40, maxWidth: 440 }}>
-              Especialista en estética dental. {ANIOS_TRAYECTORIA} años de ejercicio desde mi título de grado en {ANIO_TITULO}, dedicados casi exclusivamente a esto. Fundador de AM Estética Dental en Puerto Madero, reconocido internacionalmente por casos de diseño de sonrisa y rehabilitación oral compleja.
+              Experto en estética dental. {ANIOS_TRAYECTORIA} años de ejercicio desde mi título de grado en {ANIO_TITULO}, dedicados casi exclusivamente a esto. Fundador de AM Estética Dental en Puerto Madero, reconocido internacionalmente por casos de diseño de sonrisa y rehabilitación oral compleja.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <a href={WA} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--oro, #C9A96E)", color: "#141414", padding: "14px 28px", borderRadius: 100, fontSize: 13, fontWeight: 600, textDecoration: "none", letterSpacing: "0.05em" }}>

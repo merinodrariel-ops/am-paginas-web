@@ -10,7 +10,7 @@ const cormorant = Cormorant_Garamond({ variable: "--font-cormorant", subsets: ["
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.arielmerino.com"),
   title: { default: "Dr. Ariel Merino — Odontólogo Estético", template: "%s | Dr. Ariel Merino" },
-  description: "Dr. Ariel Merino, odontólogo especialista en estética dental. Director de AM Estética Dental, Puerto Madero, Buenos Aires. Carillas de porcelana, diseño de sonrisa y rehabilitación oral.",
+  description: "Dr. Ariel Merino, odontólogo experto en estética dental. Director de AM Estética Dental, Puerto Madero, Buenos Aires. Carillas de porcelana, diseño de sonrisa y rehabilitación oral.",
   robots: { index: true, follow: true },
   openGraph: {
     siteName: "Dr. Ariel Merino",
