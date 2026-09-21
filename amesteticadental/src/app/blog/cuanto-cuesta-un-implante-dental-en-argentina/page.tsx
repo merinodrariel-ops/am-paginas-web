@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { ANIO } from "@/lib/anio";
+import { hreflangFor } from "@/lib/i18n-routes";
 
 const CANONICAL = "https://www.amesteticadental.com/blog/cuanto-cuesta-un-implante-dental-en-argentina";
 
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
     description: `Un implante con corona va de USD 2.400 a 3.000 en ${ANIO}. Qué incluye ese precio, por qué el barato suele ser sólo el tornillo y cuándo hace falta injerto.`,
     alternates: {
         canonical: CANONICAL,
+        languages: hreflangFor("/blog/cuanto-cuesta-un-implante-dental-en-argentina"),
     },
     keywords: `cuánto cuesta un implante dental en Argentina, precio implante dental Argentina ${ANIO}, costo implantes dentales, implante dental precio, cuánto sale un implante dental`,
     openGraph: {
@@ -58,7 +60,7 @@ const faqSchema = {
             "name": `¿Cuánto cuesta un implante dental en Argentina en ${ANIO}?`,
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "En AM Estética Dental el tratamiento se divide en dos fases. La 1ª fase (implante + extracción + injerto de hueso + injerto de tejido) va de USD 1.200 a USD 1.500. La 2ª fase (corona definitiva) va de USD 1.200 a USD 1.500. El total terminado con corona queda entre USD 2.400 y USD 3.000. Trabajamos con implantes Straumann y Neodent del Grupo Straumann (Suiza).",
+                "text": "En AM Estética Dental el tratamiento se divide en dos fases. La 1ª fase (implante + extracción + injerto de hueso + injerto de tejido) va de USD 1.200 a USD 1.500. La 2ª fase (corona definitiva) va de USD 1.200 a USD 1.500. El total terminado con corona queda entre USD 2.400 y USD 3.000. Trabajamos con implantes del Grupo Straumann: Straumann, fabricado en Suiza, y Neodent, la línea del mismo grupo producida en Brasil bajo sus estándares.",
             },
         },
         {
@@ -111,7 +113,7 @@ const RANGOS = [
         tipo: "1ª Fase — Implante",
         rango: "USD 1.200 – 1.500",
         duracion: "Tornillo: permanente",
-        nota: "All-inclusive: implante + posible extracción + injerto de hueso + injerto de tejido. Straumann o Neodent (Grupo Straumann, Suiza).",
+        nota: "All-inclusive: implante + posible extracción + injerto de hueso + injerto de tejido. Straumann o Neodent, ambos del Grupo Straumann.",
     },
     {
         tipo: "2ª Fase — Corona definitiva",
