@@ -29,7 +29,7 @@ const VIDEO_PLACA = {
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Cómo combatir el bruxismo: placa y toxina botulínica | AM",
-    description: "Los dos tratamientos que de verdad frenan el bruxismo: la placa que guía la mandíbula y la toxina botulínica en el masetero. Por qué se potencian.",
+    description: "Los dos tratamientos que de verdad frenan el bruxismo, por el Dr. Merino: la placa que guía la mandíbula y la toxina botulínica en el masetero.",
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Cómo combatir el bruxismo: los dos tratamientos que funcionan",

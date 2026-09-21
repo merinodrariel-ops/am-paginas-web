@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "El Dr. Merino, instructor de carillas en Penn Dental",
     description:
-        "El director clínico de AM es instructor del curso \"Full Veneers\" en Penn Dental Medicine. Qué significa esa credencial para un paciente.",
+        "El Dr. Ariel Merino es instructor del curso \"Full Veneers\" en Penn Dental Medicine. Qué significa esa credencial para un paciente.",
     alternates: {
         canonical: CANONICAL,
     },

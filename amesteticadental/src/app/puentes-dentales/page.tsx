@@ -9,7 +9,7 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20qui
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: `Puentes Dentales en Buenos Aires — Precios ${ANIO} | AM`,
-    description: "Puentes fijos de cerámica para reemplazar un diente perdido sin implante: cuándo conviene, cuánto dura y qué precio tiene.",
+    description: "Puentes fijos de cerámica para reemplazar un diente perdido sin implante: cuándo conviene, cuánto dura y qué precio tiene. Dr. Ariel Merino.",
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Puentes Dentales Buenos Aires | AM Estética Dental",

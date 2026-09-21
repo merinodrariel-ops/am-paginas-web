@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Lentes de Contacto Dental en Buenos Aires | AM",
   description:
-    "Carillas ultradelgadas para cambiar color y forma con mínima o nula preparación del diente. Cuándo se puede trabajar así y cuándo no.",
+    "Carillas ultradelgadas para cambiar color y forma con mínima o nula preparación. Cuándo se puede trabajar así, según el Dr. Merino.",
   alternates: {
     canonical: "https://www.amesteticadental.com/lentes-de-contacto-dental",
     languages: hreflangFor("/lentes-de-contacto-dental"),

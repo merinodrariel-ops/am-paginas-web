@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Carillas de Porcelana vs Resina: duración y precio real",
   description:
-    "Qué cambia entre carillas de porcelana y carillas de resina: duración, naturalidad, costo, mantenimiento y en qué casos conviene cada una.",
+    "Qué cambia entre porcelana y resina: duración, naturalidad, costo y en qué casos conviene cada una, según el Dr. Ariel Merino.",
   alternates: { canonical: "https://www.amesteticadental.com/carillas-de-porcelana-vs-resina" , languages: hreflangFor("/carillas-de-porcelana-vs-resina") },
   openGraph: {
     title: "Carillas de Porcelana vs Resina: duración y precio real",

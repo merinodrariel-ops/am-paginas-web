@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Carillas sin Desgaste en Buenos Aires | AM Estética Dental",
   description:
-    "Cuándo se puede trabajar sin preparar el diente y cuándo no. La respuesta honesta, con los casos en que conviene otra alternativa.",
+    "Cuándo se puede trabajar sin preparar el diente y cuándo no. La respuesta honesta del Dr. Ariel Merino, con las alternativas.",
   alternates: {
     canonical: "https://www.amesteticadental.com/carillas-sin-desgaste",
   },

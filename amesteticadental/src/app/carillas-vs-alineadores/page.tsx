@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Carillas vs Alineadores Invisibles | AM Estética Dental",
   description:
-    "El alineador mueve el diente; la carilla cambia forma y color. Cuál resuelve tu caso, cuánto tarda cada uno y cuándo conviene combinarlos.",
+    "El alineador mueve el diente; la carilla cambia forma y color. Cuál resuelve tu caso y cuándo conviene combinarlos, por el Dr. Merino.",
   alternates: { canonical: "https://www.amesteticadental.com/carillas-vs-alineadores" , languages: hreflangFor("/carillas-vs-alineadores") },
   openGraph: {
     title: "Carillas vs Alineadores Invisibles | AM Estética Dental",

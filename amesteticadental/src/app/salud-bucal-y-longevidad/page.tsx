@@ -33,7 +33,7 @@ const IMG_HERO = `${CDN}/v1789964570/salud-longevidad/boca-torrente-sanguineo-co
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: `Salud bucal y longevidad: qué dice la evidencia | AM`,
-    description: `Las encías inflamadas no se quedan en la boca. Qué relación encontró la ciencia entre salud bucal, alimentación, sueño y envejecimiento.`,
+    description: `Las encías inflamadas no se quedan en la boca. Qué relación encontró la ciencia entre salud bucal, sueño y envejecimiento, por el Dr. Merino.`,
     alternates: { canonical: CANONICAL, languages: hreflangFor("/salud-bucal-y-longevidad") },
     openGraph: {
         title: "Salud bucal y longevidad: qué dice la evidencia",

@@ -20,7 +20,7 @@ const VIDEO = {
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Cepillo Dyson de US$500: opinión de un odontólogo | AM",
-    description: "Cámara intraoral, IA e irrigador en un cepillo de US$500. Qué aporta de verdad, qué respalda la evidencia y si vale la pena a ese precio.",
+    description: "Cámara intraoral, IA e irrigador en un cepillo de US$500. Qué aporta de verdad y si vale la pena, según el Dr. Ariel Merino.",
     alternates: {
         canonical: CANONICAL,
     },
