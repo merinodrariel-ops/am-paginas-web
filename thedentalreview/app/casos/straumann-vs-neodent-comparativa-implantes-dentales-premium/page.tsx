@@ -26,7 +26,7 @@ const CASE_IMAGES = [
 ];
 
 export const metadata: Metadata = {
-  title: "Straumann vs. Neodent: Diferencias entre los dos gigantes de implantes",
+  title: "Straumann vs Neodent: cuál conviene",
   description:
     "Ambos implantes de titanio pertenecen al mismo grupo suizo. Comparamos su predictibilidad clínica, tecnología de superficies y diferencia de inversión.",
   alternates: { canonical: CANONICAL },

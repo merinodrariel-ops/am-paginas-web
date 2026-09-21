@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Porcelain Veneers & Smile Design in Buenos Aires | AM",
   description:
-    "Porcelain veneers and digital smile design in Puerto Madero, Buenos Aires. In-house lab: natural results in 10 to 14 days, not months.",
+    "Porcelain veneers and digital smile design in Puerto Madero, Buenos Aires. In-house lab: natural results in 10 to 14 days. Featured by Forbes.",
   keywords:
     "porcelain veneers Buenos Aires, smile design Argentina, cosmetic dentist Buenos Aires, dental tourism Argentina, Dr. Ariel Merino",
   alternates: {
