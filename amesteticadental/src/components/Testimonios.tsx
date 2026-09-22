@@ -153,8 +153,10 @@ function VideoCard({
     const marco = useRef<HTMLDivElement>(null);
     const clip = useRef<HTMLVideoElement>(null);
 
-    // El loop corre cuando esta tarjeta es una de las que se ven y nadie abrio
-    // todavia el testimonio con sonido.
+    // El loop corre cuando la cinta puso a esta tarjeta en la ventana visible
+    // y nadie abrio todavia el testimonio con sonido. Quien esta a la vista lo
+    // decide el carrusel con la posicion de la cinta, no un observer: es una
+    // cuenta y no una promesa del navegador.
     const mostrarLoop = preview && !playing;
 
     const detener = useCallback(() => {
@@ -191,10 +193,7 @@ function VideoCard({
     // quien cambia de pestana y regresa se encuentra la tarjeta congelada, que
     // es exactamente lo que veniamos a arreglar.
     useEffect(() => {
-        if (!mostrarLoop) {
-            setLoopCorriendo(false);
-            return;
-        }
+        if (!mostrarLoop) return;
         const v = clip.current;
         if (!v) return;
         const arrancar = () => {
@@ -203,7 +202,14 @@ function VideoCard({
         };
         arrancar();
         document.addEventListener("visibilitychange", arrancar);
-        return () => document.removeEventListener("visibilitychange", arrancar);
+        // El reset va en la limpieza y no en el cuerpo: cuando la tarjeta sale
+        // de cuadro el <video> se desmonta, y si quedara marcado como
+        // corriendo, al volver a entrar apareceria opaco de una sobre un
+        // cuadro todavia negro, sin el fundido.
+        return () => {
+            document.removeEventListener("visibilitychange", arrancar);
+            setLoopCorriendo(false);
+        };
     }, [mostrarLoop]);
 
     return (
@@ -303,13 +309,20 @@ function VideoCard({
     );
 }
 
-// Visible slides: 3 on desktop, 1 on mobile
+// Cuantas tarjetas entran a la vez en escritorio. En celular, una.
 const VISIBLE_DESKTOP = 3;
 
-// Cada cuanto avanza solo el carrusel de videos.
-const AUTOPLAY_MS = 5200;
-// Tiene que coincidir con el duration-500 de la pista.
-const SLIDE_MS = 520;
+// Lo que tarda la cinta en correr una tarjeta. Es a la vez cada cuanto avanza
+// y cuanto dura la transicion, y esa igualdad es todo el truco: si la
+// transicion dura exactamente lo que el intervalo, no hay un instante en que
+// la cinta este detenida. Tres tarjetas que se quedan quietas cinco segundos
+// se leen como "tengo tres testimonios"; una cinta que nunca frena se lee como
+// una lista que no termina, que es lo que hay.
+const PASO_MS = 4600;
+
+// Cuando el movimiento lo pide una persona con las flechas, la cinta corre esa
+// tarjeta rapido en vez de hacerla esperar una vuelta entera.
+const PASO_MANUAL_MS = 620;
 
 const UI = {
     es: {
@@ -357,43 +370,23 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
         []
     );
 
-    const [idx, setIdx] = useState(0);
-    const [sinAnimacion, setSinAnimacion] = useState(false);
-    const [hover, setHover] = useState(false);
-    // Una vez que alguien abre un video, el carrusel deja de moverse solo. No
-    // hay nada peor que se te deslice el testimonio que estabas mirando.
-    const [mirando, setMirando] = useState(false);
-    const [menosMovimiento, setMenosMovimiento] = useState(false);
-    // Los dos tracks — el de una tarjeta y el de tres — estan siempre los dos
-    // en el DOM, y CSS decide cual se ve. Si no distinguimos cual es, se
-    // pondrian a cargar los videos del track escondido tambien. `null` hasta
-    // que el cliente lo mide, para no descargar nada en el primer render.
-    const [esEscritorio, setEsEscritorio] = useState<boolean | null>(null);
-    const [enVista, setEnVista] = useState(false);
     const raiz = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const mq = window.matchMedia("(min-width: 768px)");
-        const sync = () => setEsEscritorio(mq.matches);
-        sync();
-        mq.addEventListener("change", sync);
-        return () => mq.removeEventListener("change", sync);
-    }, []);
-
-    // Nada se descarga hasta que el carrusel esta en pantalla: quien nunca
-    // baja hasta los testimonios no paga el peso de los cinco clips.
-    useEffect(() => {
-        const el = raiz.current;
-        if (!el) return;
-        const obs = new IntersectionObserver(([entrada]) => setEnVista(entrada.isIntersecting), {
-            threshold: 0.2,
-        });
-        obs.observe(el);
-        return () => obs.disconnect();
-    }, []);
+    const [idx, setIdx] = useState(0);
+    const [sinAnimacion, setSinAnimacion] = useState(false);
+    // Cuanto dura la transicion en curso. Normalmente es PASO_MS, que es lo que
+    // mantiene la cinta en movimiento continuo; baja solo cuando alguien toca
+    // una flecha.
+    const [duracion, setDuracion] = useState(PASO_MS);
+    const [enVista, setEnVista] = useState(true);
+    const [esEscritorio, setEsEscritorio] = useState<boolean | null>(null);
+    // Una vez que alguien abre un video, la cinta deja de moverse. No hay nada
+    // peor que se te deslice el testimonio que estabas mirando.
+    const [mirando, setMirando] = useState(false);
+    const [menosMovimiento, setMenosMovimiento] = useState(false);
 
     // Quien pidio en su sistema que se reduzcan las animaciones no recibe una
-    // que se mueve sola: se queda con las flechas.
+    // cinta que se mueve sola ni videos en loop: se queda con las flechas.
     useEffect(() => {
         const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
         const sync = () => setMenosMovimiento(mq.matches);
@@ -402,87 +395,129 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
         return () => mq.removeEventListener("change", sync);
     }, []);
 
+    // Los dos tracks estan siempre los dos en el DOM y CSS decide cual se ve.
+    // Sin esto se pondrian a descargar tambien los videos del que esta oculto.
+    useEffect(() => {
+        const mq = window.matchMedia("(min-width: 768px)");
+        const sync = () => setEsEscritorio(mq.matches);
+        sync();
+        mq.addEventListener("change", sync);
+        return () => mq.removeEventListener("change", sync);
+    }, []);
+
+    // Si la seccion esta en pantalla se resuelve con un intervalo y una lectura
+    // de layout, y no con un IntersectionObserver: de esto depende que la cinta
+    // se mueva, y un observer que no contesta deja la cinta quieta, que es
+    // justo el sintoma que venimos a matar. Cinco lecturas por segundo de un
+    // solo rectangulo no le pesan a nadie.
+    useEffect(() => {
+        const mirar = () => {
+            const r = raiz.current?.getBoundingClientRect();
+            setEnVista(!!r && r.bottom > 0 && r.top < window.innerHeight);
+        };
+        const id = setInterval(mirar, 200);
+        return () => clearInterval(id);
+    }, []);
+
     // Salta a `destino` sin transicion y, si se pide, arranca desde ahi hacia
-    // `luego` en el frame siguiente, para que ese movimiento si se vea.
+    // `luego` en cuanto el salto ya esta pintado, para que ese movimiento si se
+    // vea. Son temporizadores y no requestAnimationFrame porque el salto tiene
+    // que ocurrir aunque el navegador no este dibujando cuadros.
     const saltar = useCallback((destino: number, luego?: number) => {
         setSinAnimacion(true);
         setIdx(destino);
-        requestAnimationFrame(() =>
-            requestAnimationFrame(() => {
-                setSinAnimacion(false);
-                if (luego !== undefined) setIdx(luego);
-            })
-        );
+        setTimeout(() => {
+            setSinAnimacion(false);
+            if (luego !== undefined) setIdx(luego);
+        }, 30);
     }, []);
 
-    // Cierre del bucle hacia adelante: el salto invisible al principio.
+    const quieto = mirando || menosMovimiento || !enVista;
+
+    // Cierre del bucle: el salto invisible al principio. Encadena con `luego`
+    // para que la cinta siga de largo en vez de quedarse un paso entero quieta
+    // sobre la costura.
     useEffect(() => {
         if (idx !== total) return;
-        const t = setTimeout(() => saltar(0), SLIDE_MS);
+        const t = setTimeout(() => saltar(0, 1), duracion);
         return () => clearTimeout(t);
-    }, [idx, total, saltar]);
+    }, [idx, total, duracion, saltar]);
 
-    // Avance automatico.
+    // Avance automatico. El intervalo es la duracion de la transicion en curso:
+    // en cuanto una tarjeta termino de correr, ya arranco la siguiente.
     useEffect(() => {
-        if (hover || mirando || menosMovimiento || idx >= total) return;
-        const t = setTimeout(() => setIdx((i) => i + 1), AUTOPLAY_MS);
+        if (quieto || idx >= total) return;
+        const t = setTimeout(() => {
+            setDuracion(PASO_MS);
+            setIdx((i) => i + 1);
+        }, duracion);
         return () => clearTimeout(t);
-    }, [idx, hover, mirando, menosMovimiento, total]);
+    }, [idx, quieto, total, duracion]);
 
     const next = () => {
         if (idx >= total) return;
+        setDuracion(PASO_MANUAL_MS);
         setIdx(idx + 1);
     };
     // Desde el primero hacia atras: se salta al clon del final (que se ve igual
     // que el primero) y recien ahi se retrocede un paso, con animacion.
-    const prev = () => (idx > 0 ? setIdx(idx - 1) : saltar(total, total - 1));
+    const prev = () => {
+        setDuracion(PASO_MANUAL_MS);
+        if (idx > 0) setIdx(idx - 1);
+        else saltar(total, total - 1);
+    };
 
-    // Los loops corren solo donde se ven de verdad: en el track que el ancho de
-    // pantalla esta mostrando, con la seccion en pantalla, sin nadie escuchando
-    // un testimonio con sonido y sin que el sistema haya pedido menos
-    // movimiento. En escritorio se mueven las tres tarjetas a la vista; en
-    // celular, solo la unica que hay.
-    const puedeCorrer = enVista && !mirando && !menosMovimiento;
-    const previewMovil = (i: number) => puedeCorrer && esEscritorio === false && i === idx;
-    const previewEscritorio = (i: number) =>
-        puedeCorrer && esEscritorio === true && i >= idx && i < idx + VISIBLE_DESKTOP;
+    const irA = (i: number) => {
+        setDuracion(PASO_MANUAL_MS);
+        setIdx(i);
+    };
 
     // offset as % of track width
     const offsetDesktop = `calc(${idx} * (100% / ${VISIBLE_DESKTOP}) * -1)`;
-    const offsetMobile  = `calc(${idx} * -100%)`;
-    const transicion = sinAnimacion ? "none" : undefined;
+    const offsetMobile = `calc(${idx} * -100%)`;
+    // Lineal y del largo del intervalo: la cinta va siempre al mismo ritmo, sin
+    // acelerar ni frenar en cada tarjeta.
+    const transicion = sinAnimacion ? "none" : `transform ${duracion}ms linear`;
     const activo = idx % total;
 
+    // La cinta esta casi siempre a mitad de camino entre dos tarjetas, asi que
+    // la ventana visible arranca una tarjeta antes del indice: la que todavia
+    // esta saliendo por el borde tiene que seguir reproduciendo.
+    const puedeCorrer = enVista && !mirando && !menosMovimiento;
+    const previewMovil = (i: number) =>
+        puedeCorrer && esEscritorio === false && i >= idx - 1 && i <= idx;
+    const previewEscritorio = (i: number) =>
+        puedeCorrer && esEscritorio === true && i >= idx - 1 && i <= idx + VISIBLE_DESKTOP - 1;
+
+    const tarjeta = (video: (typeof pista)[number], corre: boolean) => (
+        <VideoCard
+            video={video}
+            lang={lang}
+            preview={corre}
+            onPlay={() => setMirando(true)}
+            onStop={() => setMirando(false)}
+        />
+    );
+
     return (
-        <div
-            ref={raiz}
-            className="relative"
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-        >
+        <div ref={raiz} className="relative">
             {/* ── Carousel track ── */}
             <div className="overflow-hidden">
                 {/* Mobile: 1 visible */}
                 <div
-                    className="flex md:hidden transition-transform duration-500 ease-out"
+                    className="flex md:hidden will-change-transform"
                     style={{ transform: `translateX(${offsetMobile})`, transition: transicion }}
                 >
                     {pista.map((video, i) => (
                         <div key={`${video.id}-m${i}`} className="flex-shrink-0 w-full px-4">
-                            <VideoCard
-                                video={video}
-                                lang={lang}
-                                preview={previewMovil(i)}
-                                onPlay={() => setMirando(true)}
-                                onStop={() => setMirando(false)}
-                            />
+                            {tarjeta(video, previewMovil(i))}
                         </div>
                     ))}
                 </div>
 
                 {/* Desktop: 3 visible */}
                 <div
-                    className="hidden md:flex transition-transform duration-500 ease-out"
+                    className="hidden md:flex will-change-transform"
                     style={{ transform: `translateX(${offsetDesktop})`, transition: transicion }}
                 >
                     {pista.map((video, i) => (
@@ -491,13 +526,7 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
                             className="flex-shrink-0 px-3"
                             style={{ width: `calc(100% / ${VISIBLE_DESKTOP})` }}
                         >
-                            <VideoCard
-                                video={video}
-                                lang={lang}
-                                preview={previewEscritorio(i)}
-                                onPlay={() => setMirando(true)}
-                                onStop={() => setMirando(false)}
-                            />
+                            {tarjeta(video, previewEscritorio(i))}
                         </div>
                     ))}
                 </div>
@@ -510,7 +539,7 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
                     {videosTestimonios.map((_, i) => (
                         <button
                             key={i}
-                            onClick={() => setIdx(i)}
+                            onClick={() => irA(i)}
                             className={`h-1.5 rounded-full transition-all duration-300 ${
                                 i === activo ? "w-6 bg-oro" : "w-1.5 bg-crema/20"
                             }`}
