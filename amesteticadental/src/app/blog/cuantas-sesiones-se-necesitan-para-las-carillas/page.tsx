@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import CasosBanda from "@/components/CasosBanda";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -226,6 +227,13 @@ export default function ArticuloSesionesCarillas() {
                                 El tratamiento de carillas de porcelana en AM Estética Dental es de 2 a 3 sesiones en 10 a 14 días. No hay período largo de recuperación, no hay dolor entre sesiones y el resultado final está completo al terminar la última sesión. Lo que determina el tiempo es el laboratorio — no el tratamiento en sí.
                             </p>
                         </section>
+
+                        <CasosBanda
+                            tratamientos={["Carillas"]}
+                            cantidad={3}
+                            titulo="Casos de carillas de la clínica"
+                            bajada="En cada ficha figura la duración real del tratamiento, no un promedio."
+                        />
 
                         <section className="border border-oro/20 rounded-2xl p-8 bg-carbon-soft text-center">
                             <span className="text-oro font-manrope uppercase tracking-[0.3em] text-xs block mb-4">¿Listo para empezar?</span>

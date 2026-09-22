@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import CasosBanda from "@/components/CasosBanda";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -231,6 +232,14 @@ export default function ArticuloCarillasAntesDespues() {
                                 Las carillas de porcelana son la solución más versátil para cambios estéticos definitivos. Manchas, forma, tamaño, pequeñas posiciones — todo eso lo resuelven con resultado de 10 a 20 años. Lo que no reemplazan es la ortodoncia para problemas de posición severos ni el tratamiento de patologías activas. La evaluación inicial sirve exactamente para determinar en qué categoría está tu caso.
                             </p>
                         </section>
+
+                        <CasosBanda
+                            tratamientos={["Carillas"]}
+                            cantidad={6}
+                            eyebrow="Casos documentados"
+                            titulo="Antes y después reales, de esta clínica"
+                            bajada="Fotografías de casos propios. Cada uno tiene su ficha con diagnóstico, técnica y seguimiento."
+                        />
 
                         <section className="border border-oro/20 rounded-2xl p-8 bg-carbon-soft text-center">
                             <span className="text-oro font-manrope uppercase tracking-[0.3em] text-xs block mb-4">¿Tu caso entra en la lista?</span>

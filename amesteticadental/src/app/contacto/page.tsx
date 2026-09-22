@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import LeadForm from "@/components/LeadForm";
 import { hreflangFor } from "@/lib/i18n-routes";
 
@@ -57,6 +58,21 @@ export default function ContactoPage() {
                 <p className="text-crema/40 text-xs uppercase tracking-widest mb-2">Dirección</p>
                 <p className="text-crema/80">Camila O&apos;Gorman 412, of. 101</p>
                 <p className="text-crema/60 text-sm">Puerto Madero, Buenos Aires</p>
+                {/* Un mapa dice dónde queda; esto dice qué buscar al llegar. */}
+                <figure className="mt-4">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-oro/15">
+                    <Image
+                      src="https://res.cloudinary.com/drctvgyqd/image/upload/v1782405022/clinica/entrada-clinica-cartel-iluminado-am-estetica-dental-puerto-madero.jpg"
+                      alt="Entrada de AM Estética Dental en Camila O'Gorman 412, Puerto Madero, con el cartel iluminado sobre la puerta"
+                      fill
+                      sizes="(max-width: 1024px) 92vw, 340px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="mt-2 text-crema/40 text-xs">
+                    Así se ve la entrada. El cartel está sobre la puerta, a la izquierda del ingreso.
+                  </figcaption>
+                </figure>
               </div>
               <div>
                 <p className="text-crema/40 text-xs uppercase tracking-widest mb-2">WhatsApp</p>

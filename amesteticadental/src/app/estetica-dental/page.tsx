@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { hreflangFor } from "@/lib/i18n-routes";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import CasosBanda from "@/components/CasosBanda";
 import SeoFaq from "@/components/seo/SeoFaq";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 import { RESENAS } from "@/lib/reviews";
@@ -251,6 +252,18 @@ export default function EsteticaDentalPage() {
                                 </Link>
                             ))}
                         </div>
+                    </div>
+                </section>
+
+                {/* ── CASOS REALES ── */}
+                <section className="py-16 px-6 md:px-12">
+                    <div className="max-w-4xl mx-auto">
+                        <CasosBanda
+                            cantidad={6}
+                            eyebrow="Casos documentados"
+                            titulo="Lo que hacemos, en pacientes reales"
+                            bajada="Cada caso tiene su ficha con diagnóstico, material y seguimiento. Sin fotos de banco."
+                        />
                     </div>
                 </section>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import JobApplicationForm from "@/components/job-applications/JobApplicationForm";
@@ -61,6 +62,25 @@ export default function TrabajaEnAmPage() {
       <BreadcrumbsSchema items={[{ name: "Inicio", item: "/" }, { name: "Trabajá con nosotros", item: "/trabaja-en-am" }]} />
       <Navbar />
       <main className="bg-carbon font-manrope text-crema">
+        {/* Quien se postula quiere ver dónde trabajaría. Era un formulario a secas. */}
+        <section className="px-6 md:px-12 pt-28 pb-4">
+          <figure className="max-w-4xl mx-auto">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-oro/15">
+              <Image
+                src="https://res.cloudinary.com/drctvgyqd/image/upload/v1784870241/clinica/consultorio-am-estetica-dental-puerto-madero-01.jpg"
+                alt="Consultorio de AM Estética Dental en Puerto Madero, Buenos Aires"
+                fill
+                sizes="(max-width: 1024px) 92vw, 896px"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <figcaption className="mt-3 text-center text-xs text-crema/40">
+              AM Estética Dental · Camila O&apos;Gorman 412, Puerto Madero
+            </figcaption>
+          </figure>
+        </section>
+
         <JobApplicationForm />
       </main>
     </>

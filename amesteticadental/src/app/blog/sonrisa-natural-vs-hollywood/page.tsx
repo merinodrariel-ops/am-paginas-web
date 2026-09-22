@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import CasosBanda from "@/components/CasosBanda";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -264,6 +265,13 @@ export default function ArticuloSonrisaNatural() {
                         </section>
 
                         {/* CTA */}
+                        <CasosBanda
+                            tratamientos={["Diseño de Sonrisa"]}
+                            cantidad={3}
+                            titulo="Resultados naturales, de la clínica"
+                            bajada="Ninguno de estos casos busca el blanco uniforme: buscan una sonrisa que le quede bien a esa cara."
+                        />
+
                         <section className="border border-oro/20 rounded-2xl p-8 bg-carbon-soft text-center">
                             <span className="text-oro font-manrope uppercase tracking-[0.3em] text-xs block mb-4">¿Querés ver qué te queda bien?</span>
                             <h3 className="text-crema font-manrope font-light text-xl mb-4">

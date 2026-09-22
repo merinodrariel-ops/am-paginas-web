@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { hreflangFor } from "@/lib/i18n-routes";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
@@ -36,7 +37,8 @@ export default function PrensaPage() {
         {/* ── HERO ── */}
         <section className="relative pt-32 pb-16 px-6 md:px-12 border-b border-oro/10">
           <div className="absolute right-0 top-0 w-[400px] h-[400px] rounded-full bg-oro/5 blur-[100px] pointer-events-none" />
-          <div className="max-w-4xl mx-auto relative">
+          <div className="max-w-4xl mx-auto relative grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-10 lg:gap-14 items-center">
+            <div>
             <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Sala de Prensa</span>
             <h1 className="text-4xl md:text-5xl font-manrope font-light text-crema leading-tight mb-6">
               Media Kit Oficial <span className="font-cormorant italic text-oro">Dr. Ariel Merino</span>
@@ -48,6 +50,24 @@ export default function PrensaPage() {
             <a href={WA_PRENSA} target="_blank" rel="noopener noreferrer" className="inline-block border border-oro/30 text-oro px-6 py-3 rounded-full text-sm hover:bg-oro/10 transition-colors">
               Contacto directo para entrevistas →
             </a>
+            </div>
+
+            {/* Un media kit sin una foto del entrevistado obliga al periodista a
+                salir a buscarla. Esta es la oficial, en alta. */}
+            <figure className="w-full max-w-[16rem] mx-auto lg:mx-0">
+              <div className="relative aspect-square overflow-hidden rounded-2xl border border-oro/20">
+                <Image
+                  src="https://res.cloudinary.com/drctvgyqd/image/upload/v1784870282/dr-merino/dr-ariel-merino-traje-perfil.webp"
+                  alt="Retrato oficial del Dr. Ariel Merino, director de AM Estética Dental, Puerto Madero"
+                  fill
+                  sizes="256px"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 font-manrope text-[11px] leading-relaxed text-crema/40">
+                Retrato oficial · uso libre para prensa con crédito a AM Estética Dental.
+              </figcaption>
+            </figure>
           </div>
         </section>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 
 const PENN_URL = "https://cde.dental.upenn.edu/Course/38-Full-Veneers";
@@ -111,6 +112,23 @@ export default function ArticuloPennFullVeneers() {
                         </div>
                     </div>
                 </section>
+
+                <figure className="px-6 md:px-12 pb-16">
+                    <div className="max-w-3xl mx-auto">
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-oro/15">
+                            <Image
+                                src="https://res.cloudinary.com/drctvgyqd/image/upload/v1784870272/dr-merino/dr-ariel-merino-ambo-principal.webp"
+                                alt="Dr. Ariel Merino, instructor del curso Full Veneers en Penn Dental Medicine, en su clínica de Puerto Madero"
+                                fill
+                                sizes="(max-width: 768px) 92vw, 768px"
+                                className="object-cover object-[center_20%]"
+                            />
+                        </div>
+                        <figcaption className="mt-3 font-manrope text-xs text-crema/40">
+                            Dr. Ariel Merino en la clínica de Puerto Madero. Dicta el curso <em>Full Veneers</em> en el programa de educación continua de Penn Dental Medicine.
+                        </figcaption>
+                    </div>
+                </figure>
 
                 <article className="px-6 md:px-12 pb-24">
                     <div className="max-w-3xl mx-auto space-y-12">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import LeadForm from "@/components/LeadForm";
 import Navbar from "@/components/Navbar";
 import { hreflangFor } from "@/lib/i18n-routes";
@@ -53,6 +54,21 @@ export default function ContactEnPage() {
                   <p className="text-crema/40 text-xs uppercase tracking-widest mb-2">Address</p>
                   <p className="text-crema/80">Camila O&apos;Gorman 412, Office 101</p>
                   <p className="text-crema/60 text-sm">Puerto Madero, Buenos Aires, Argentina</p>
+                  {/* A map says where it is; this says what to look for. */}
+                  <figure className="mt-4">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-oro/15">
+                      <Image
+                        src="https://res.cloudinary.com/drctvgyqd/image/upload/v1782405022/clinica/entrada-clinica-cartel-iluminado-am-estetica-dental-puerto-madero.jpg"
+                        alt="Entrance to AM Estética Dental at Camila O'Gorman 412, Puerto Madero, with the lit sign above the door"
+                        fill
+                        sizes="(max-width: 1024px) 92vw, 340px"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-2 text-crema/40 text-xs">
+                      This is the entrance. The lit sign sits above the door, to the left of the lobby.
+                    </figcaption>
+                  </figure>
                 </div>
                 <div>
                   <p className="text-crema/40 text-xs uppercase tracking-widest mb-2">WhatsApp</p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import CasosBanda from "@/components/CasosBanda";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -288,6 +289,13 @@ export default function ArticuloDisilicato() {
                         </section>
 
                         {/* CTA */}
+                        <CasosBanda
+                            tratamientos={["Carillas Cerámicas"]}
+                            cantidad={3}
+                            titulo="Los dos materiales, en casos reales"
+                            bajada="Cada ficha indica qué cerámica se usó y por qué se eligió para ese caso."
+                        />
+
                         <section className="border border-oro/20 rounded-2xl p-8 bg-carbon-soft text-center">
                             <span className="text-oro font-manrope uppercase tracking-[0.3em] text-xs block mb-4">¿Querés saber qué material conviene para tu caso?</span>
                             <h3 className="text-crema font-manrope font-light text-xl mb-4">

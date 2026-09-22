@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import CasosBanda from "@/components/CasosBanda";
 import { hreflangFor } from "@/lib/i18n-routes";
 
 export const metadata: Metadata = {
@@ -243,6 +244,13 @@ export default function ArticuloDuracionCarillas() {
                         </section>
 
                         {/* CTA */}
+                        <CasosBanda
+                            tratamientos={["Carillas Cerámicas", "Carillas de Porcelana"]}
+                            cantidad={3}
+                            titulo="Casos de carillas cerámicas de la clínica"
+                            bajada="Cada ficha detalla el material usado y la técnica, que es de lo que depende la duración."
+                        />
+
                         <section className="border border-oro/20 rounded-2xl p-8 bg-carbon-soft text-center">
                             <span className="text-oro font-manrope uppercase tracking-[0.3em] text-xs block mb-4">¿Tenés dudas sobre tu caso?</span>
                             <h3 className="text-crema font-manrope font-light text-xl mb-4">

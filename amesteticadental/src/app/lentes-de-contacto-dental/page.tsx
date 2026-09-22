@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import CasosBanda from "@/components/CasosBanda";
 import { hreflangFor } from "@/lib/i18n-routes";
 import SeoFaq from "@/components/seo/SeoFaq";
 
@@ -226,6 +227,17 @@ export default function LentesContactoDentalPage() {
               <span className="font-cormorant italic text-oro">lentes de contacto dental</span>
             </h2>
             <SeoFaq items={faqItems} />
+          </div>
+        </section>
+
+        <section className="py-16 px-6 md:px-12">
+          <div className="max-w-4xl mx-auto">
+            <CasosBanda
+              tratamientos={["Carilla Unitaria", "Carillas Cerámicas"]}
+              cantidad={3}
+              titulo="Cerámica fina en casos reales"
+              bajada="La ficha de cada caso indica el espesor y la técnica: es lo que separa un lente de contacto dental de una carilla convencional."
+            />
           </div>
         </section>
 

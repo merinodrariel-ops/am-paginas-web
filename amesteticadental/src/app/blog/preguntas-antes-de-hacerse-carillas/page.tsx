@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import CasosBanda from "@/components/CasosBanda";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -227,6 +228,13 @@ export default function ArticuloPreguntas() {
                         </section>
 
                         {/* CTA */}
+                        <CasosBanda
+                            tratamientos={["Carillas"]}
+                            cantidad={3}
+                            titulo="Casos de carillas de la clínica"
+                            bajada="La mejor forma de evaluar a un profesional es mirar casos completos, no fotos sueltas."
+                        />
+
                         <section className="border border-oro/20 rounded-2xl p-8 bg-carbon-soft text-center">
                             <span className="text-oro font-manrope uppercase tracking-[0.3em] text-xs block mb-4">¿Querés hacer esas preguntas en persona?</span>
                             <h3 className="text-crema font-manrope font-light text-xl mb-4">
