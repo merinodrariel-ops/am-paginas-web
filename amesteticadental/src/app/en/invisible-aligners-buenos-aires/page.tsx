@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import Contacto from "@/components/Contacto";
@@ -9,14 +10,14 @@ const CANONICAL = "https://www.amesteticadental.com/en/invisible-aligners-buenos
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Invisible Aligners in Buenos Aires (AM Aligners) | AM",
+  title: "Invisible Aligners with Laser in Buenos Aires | AM Estética Dental",
   description:
-    "Orthodontics without brackets or wires with AM Aligners and full digital planning in Puerto Madero. You see the result before we start. Dr. Ariel Merino.",
+    "Clear aligners in Puerto Madero combined with low-level laser therapy: a shorter plan and far less soreness at every tray change. Full digital planning. Dr. Ariel Merino.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/alineadores-invisibles") },
   openGraph: {
-    title: "Invisible Aligners in Buenos Aires | AM Estética Dental",
+    title: "Invisible Aligners with Laser in Buenos Aires | AM Estética Dental",
     description:
-      "AM Aligners: clear aligners with complete digital planning in Puerto Madero, Buenos Aires.",
+      "AM Aligners: clear aligners combined with photobiomodulation laser in Puerto Madero, Buenos Aires. Shorter treatment, easier tray changes.",
     url: CANONICAL,
     locale: "en_US",
     type: "website",
@@ -24,6 +25,16 @@ export const metadata: Metadata = {
 };
 
 const faqItems = [
+  {
+    pregunta: "Why do you combine aligners with a laser?",
+    respuesta:
+      "We apply photobiomodulation — low-level laser — over the area at every check-up. It does two things: it stimulates the response of the bone surrounding the tooth, which is what sets the pace at which a tooth can be moved, and it works as an analgesic. In our cases that means a plan that runs 15 to 20 % shorter and tray changes that are considerably less uncomfortable. We do not know of another practice in Buenos Aires that applies it systematically in clear aligner treatment.",
+  },
+  {
+    pregunta: "Does the laser add appointments or make visits longer?",
+    respuesta:
+      "No. It is done within the same check-up where you collect your next set of trays and takes a few minutes. It adds no visits to the plan, needs no anaesthetic, and you feel nothing: low-level laser produces neither heat nor discomfort.",
+  },
   {
     pregunta: "Do invisible aligners work for any case?",
     respuesta:
@@ -124,7 +135,8 @@ export default function InvisibleAlignersPage() {
         {/* HERO */}
         <section className="relative min-h-[80dvh] flex items-center px-6 md:px-12 pt-32 pb-24">
           <div className="absolute right-[-5%] top-[20%] w-[500px] h-[500px] rounded-full bg-oro/6 blur-[130px] pointer-events-none" />
-          <div className="max-w-4xl mx-auto w-full">
+          <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.66fr)] gap-14 lg:gap-16 items-center">
+            <div>
             <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8">
               AM Estética Dental · Puerto Madero · Buenos Aires
             </span>
@@ -160,6 +172,75 @@ export default function InvisibleAlignersPage() {
                 <div key={s.l}>
                   <div className="text-oro font-manrope font-semibold text-lg">{s.v}</div>
                   <div className="text-crema-muted font-manrope text-xs">{s.l}</div>
+                </div>
+              ))}
+            </div>
+            </div>
+
+            {/* Our own render, not a clinical case. */}
+            <div className="relative mx-auto w-full max-w-[26rem] lg:max-w-none">
+              <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-oro/15 bg-carbon-soft">
+                <video
+                  className="h-full w-full object-cover"
+                  aria-hidden="true"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="/images/alineadores/alineador-invisible-am-aligners-puerto-madero.jpg"
+                >
+                  <source src="/videos/alineadores/alineador-invisible-360-am-estetica-dental.mp4" type="video/mp4" />
+                </video>
+                <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-t from-carbon/50 via-transparent to-transparent" />
+                <span className="absolute bottom-5 left-5 font-manrope text-[10px] uppercase tracking-[0.3em] text-crema/45">
+                  AM Aligners · render
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── LASER: the one thing the competition does not have ── */}
+        <section className="relative py-24 px-6 md:px-12 bg-carbon-soft border-y border-oro/10 overflow-hidden">
+          <div className="absolute left-[-10%] top-[10%] h-[420px] w-[420px] rounded-full bg-oro/5 blur-[130px] pointer-events-none" />
+          <div className="relative max-w-5xl mx-auto">
+            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">Only at AM</span>
+            <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema leading-tight mb-8 max-w-3xl">
+              Clear aligners{" "}
+              <span className="font-cormorant italic text-oro">with laser</span>
+            </h2>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-14">
+              <div className="relative aspect-video overflow-hidden rounded-2xl border border-oro/15">
+                <Image
+                  src="/images/alineadores/alineadores-invisibles-laser-aceleracion-buenos-aires.webp"
+                  alt="Low-level laser beam passing through a clear aligner — photobiomodulation as applied in the AM Estética Dental protocol"
+                  fill
+                  sizes="(max-width: 1024px) 92vw, 46vw"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <p className="text-crema/72 font-manrope text-base leading-relaxed mb-5">
+                  Almost nobody combines clear aligners with laser. We do it in every case that allows for it, and it is not a brochure add-on: <strong className="text-crema">photobiomodulation</strong> — low-level laser applied over the area at each check-up — has published backing in orthodontics and an effect we see case after case at the practice.
+                </p>
+                <p className="text-crema/60 font-manrope text-sm leading-relaxed">
+                  We do not know of another practice in Buenos Aires applying it systematically in aligner treatment. It is why a plan here tends to finish sooner, and hurt less, than the same plan elsewhere.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { v: "15–20 %", t: "Shorter", d: "The bone around the tooth is what sets the pace at which it can move. The laser stimulates that response, and in our cases the full plan runs 15 to 20 % shorter." },
+                { v: "Analgesia", t: "Every change, easier", d: "This is the first thing patients notice. The two or three days of pressure that follow a new tray get shorter and feel far milder." },
+                { v: "0", t: "Extra visits", d: "It is done within the same check-up where you collect your next trays, and takes a few minutes. No anaesthetic and no heat: you feel nothing." },
+              ].map((l) => (
+                <div key={l.t} className="border border-oro/15 rounded-2xl p-7 bg-carbon">
+                  <div className="text-oro font-manrope font-semibold text-2xl mb-1">{l.v}</div>
+                  <h3 className="text-crema font-manrope font-medium text-sm mb-3">{l.t}</h3>
+                  <p className="text-crema/60 font-manrope text-sm leading-relaxed">{l.d}</p>
                 </div>
               ))}
             </div>

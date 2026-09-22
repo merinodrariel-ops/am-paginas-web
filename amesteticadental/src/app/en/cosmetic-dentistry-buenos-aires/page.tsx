@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import Contacto from "@/components/Contacto";
+import CasosBanda from "@/components/CasosBanda";
 import { hreflangFor } from "@/lib/i18n-routes";
 import { ANIOS_TRAYECTORIA } from "@/lib/trayectoria";
 
@@ -169,6 +170,17 @@ export default function CosmeticDentistryPage() {
               <span className="font-cormorant italic text-oro">cosmetic dentistry</span>
             </h2>
             <SeoFaq items={faqItems} />
+          </div>
+        </section>
+
+        <section className="py-16 px-6 md:px-12">
+          <div className="max-w-4xl mx-auto">
+            <CasosBanda
+              lang="en"
+              cantidad={6}
+              titulo="What we do, on real patients"
+              bajada="Every case has its own file with diagnosis, material and follow-up. No stock photography."
+            />
           </div>
         </section>
 

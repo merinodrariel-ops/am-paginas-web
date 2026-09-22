@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { hreflangFor } from "@/lib/i18n-routes";
 import Contacto from "@/components/Contacto";
+import CasosBanda from "@/components/CasosBanda";
 
 const CANONICAL = "https://www.amesteticadental.com/en/blog/how-long-do-porcelain-veneers-last";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I%20read%20the%20article%20on%20veneer%20durability%20and%20I'd%20like%20to%20ask%20about%20my%20case.";
@@ -137,6 +138,18 @@ export default function HowLongVeneersLastPage() {
                             ))}
                         </div>
                     </div>
+                </section>
+
+                <section className="py-16 px-6 md:px-12">
+                  <div className="max-w-4xl mx-auto">
+                    <CasosBanda
+                      lang="en"
+                      tratamientos={["Ceramic Veneers"]}
+                      cantidad={3}
+                      titulo="Ceramic veneer cases from the practice"
+                      bajada="Each file lists the material and the technique, which is what longevity depends on."
+                    />
+                  </div>
                 </section>
 
                 <Contacto lang="en" />

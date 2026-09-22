@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import Contacto from "@/components/Contacto";
+import CasosBanda from "@/components/CasosBanda";
 import { hreflangFor } from "@/lib/i18n-routes";
 
 const CANONICAL = "https://www.amesteticadental.com/en/porcelain-vs-composite-veneers";
@@ -144,6 +145,18 @@ export default function PorcelainVsCompositePage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 px-6 md:px-12">
+          <div className="max-w-4xl mx-auto">
+            <CasosBanda
+              lang="en"
+              tratamientos={["Ceramic Veneers"]}
+              cantidad={3}
+              titulo="Ceramic, in real cases"
+              bajada="Each case file states which ceramic was used and why it was chosen for that mouth."
+            />
           </div>
         </section>
 

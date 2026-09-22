@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import Contacto from "@/components/Contacto";
+import CasosBanda from "@/components/CasosBanda";
 import { hreflangFor } from "@/lib/i18n-routes";
 import { ANIO } from "@/lib/anio";
 
@@ -227,6 +228,18 @@ export default function VeneersCostPage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 px-6 md:px-12">
+          <div className="max-w-4xl mx-auto">
+            <CasosBanda
+              lang="en"
+              tratamientos={["Veneers"]}
+              cantidad={6}
+              titulo="What that price actually buys"
+              bajada="Real cases from the practice. Each one lists the ceramic used and the technique — which is where the difference in price sits."
+            />
           </div>
         </section>
 

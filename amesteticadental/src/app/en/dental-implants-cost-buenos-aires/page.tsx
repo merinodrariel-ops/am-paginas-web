@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
+import Image from "next/image";
 import Contacto from "@/components/Contacto";
 import { hreflangFor } from "@/lib/i18n-routes";
 import { ANIO } from "@/lib/anio";
@@ -285,6 +286,39 @@ export default function DentalImplantsCostPage() {
                   <span className="text-oro/40 group-hover:text-oro transition-colors text-sm mt-3 block">→</span>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Un precio de implante se entiende cuando se ve que son tres piezas
+            distintas, no una. */}
+        <section className="py-16 px-6 md:px-12">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center rounded-2xl border border-oro/15 bg-carbon-soft p-6 md:p-10">
+            <div className="flex justify-center">
+              <Image
+                src="https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/implantes-dentales-am/implante-dental-straumann-despiece-corona-pilar-tornillo-fondo-blanco-am-estetica-dental-buenos-aires"
+                alt="Dental implant exploded view: ceramic crown, connecting abutment and titanium screw — AM Estética Dental, Puerto Madero"
+                width={400}
+                height={400}
+                className="w-full max-w-[280px] h-auto"
+              />
+            </div>
+            <div>
+              <span className="mb-2 block font-manrope text-[10px] uppercase tracking-[0.34em] text-oro">What you are paying for</span>
+              <h2 className="mb-3 font-manrope text-xl font-light text-crema md:text-2xl">Three separate parts, three separate costs</h2>
+              <p className="mb-5 font-manrope text-sm leading-relaxed text-crema/60">
+                The titanium screw, the abutment that connects it, and the ceramic crown on top. Two quotes can differ wildly simply because one of them prices only the screw.
+              </p>
+              <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-crema/5">
+                <Image
+                  src="https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-intraoral-implantes-dentales-24-ceramicas-rehabilitacion-completa-dr-ariel-merino-am-estetica-dental-buenos-aires"
+                  alt="Before and after of a full rehabilitation with dental implants and 24 ceramic restorations — Dr. Ariel Merino, AM Estética Dental"
+                  fill
+                  sizes="(max-width: 768px) 92vw, 420px"
+                  className="object-cover"
+                />
+              </div>
+              <p className="mt-2 font-manrope text-[11px] text-crema/35">Real case: implants plus 24 ceramic restorations.</p>
             </div>
           </div>
         </section>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Image from "next/image";
 import Contacto from "@/components/Contacto";
 import { hreflangFor } from "@/lib/i18n-routes";
 import { ANIOS_TRAYECTORIA, ANIO_TITULO } from "@/lib/trayectoria";
@@ -100,6 +101,25 @@ export default function PressEnPage() {
                             <Link href="/en/contact" className="text-oro hover:underline">here</Link>.
                         </p>
                     </div>
+                </section>
+
+                {/* A media kit with no portrait sends the journalist off to find one. */}
+                <section className="py-16 px-6 md:px-12">
+                  <figure className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-8 rounded-2xl border border-oro/15 bg-carbon-soft p-6 md:p-8">
+                    <div className="relative w-full max-w-[14rem] aspect-square flex-none overflow-hidden rounded-2xl border border-oro/20">
+                      <Image
+                        src="https://res.cloudinary.com/drctvgyqd/image/upload/v1784870282/dr-merino/dr-ariel-merino-traje-perfil.webp"
+                        alt="Official portrait of Dr. Ariel Merino, founder of AM Estética Dental, Puerto Madero, Buenos Aires"
+                        fill
+                        sizes="224px"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption className="font-manrope text-sm leading-relaxed text-crema/60">
+                      <span className="mb-2 block font-manrope text-[10px] uppercase tracking-[0.34em] text-oro">Press assets</span>
+                      Official portrait of Dr. Ariel Merino, free to use for press with credit to AM Estética Dental. Write to us for high-resolution files, approved biographies or logos.
+                    </figcaption>
+                  </figure>
                 </section>
 
                 <Contacto lang="en" />

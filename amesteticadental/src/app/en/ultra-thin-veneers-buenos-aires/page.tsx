@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import Contacto from "@/components/Contacto";
+import CasosBanda from "@/components/CasosBanda";
 import { hreflangFor } from "@/lib/i18n-routes";
 
 const CANONICAL = "https://www.amesteticadental.com/en/ultra-thin-veneers-buenos-aires";
@@ -232,6 +233,18 @@ export default function UltraThinVeneersPage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 px-6 md:px-12">
+          <div className="max-w-4xl mx-auto">
+            <CasosBanda
+              lang="en"
+              tratamientos={["Single Veneer", "Ceramic Veneers"]}
+              cantidad={3}
+              titulo="Thin ceramics in real cases"
+              bajada="Each case file states the thickness and the technique: that is what separates an ultra-thin veneer from a conventional one."
+            />
           </div>
         </section>
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import Contacto from "@/components/Contacto";
+import CasosBanda from "@/components/CasosBanda";
 import { hreflangFor } from "@/lib/i18n-routes";
 
 const CANONICAL = "https://www.amesteticadental.com/en/veneers-vs-aligners";
@@ -144,6 +145,18 @@ export default function VeneersVsAlignersPage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 px-6 md:px-12">
+          <div className="max-w-4xl mx-auto">
+            <CasosBanda
+              lang="en"
+              tratamientos={["Veneers"]}
+              cantidad={3}
+              titulo="Veneer cases from the practice"
+              bajada="Aligners move teeth; veneers change their shape and colour. These cases show what the second one does."
+            />
           </div>
         </section>
 

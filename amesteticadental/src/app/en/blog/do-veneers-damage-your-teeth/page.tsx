@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { hreflangFor } from "@/lib/i18n-routes";
 import Contacto from "@/components/Contacto";
+import CasosBanda from "@/components/CasosBanda";
 
 const CANONICAL = "https://www.amesteticadental.com/en/blog/do-veneers-damage-your-teeth";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I%20read%20the%20article%20about%20veneers%20and%20enamel%20and%20I'd%20like%20to%20ask%20about%20my%20case.";
@@ -136,6 +137,18 @@ export default function DoVeneersDamageTeethPage() {
                             ))}
                         </div>
                     </div>
+                </section>
+
+                <section className="py-16 px-6 md:px-12">
+                  <div className="max-w-4xl mx-auto">
+                    <CasosBanda
+                      lang="en"
+                      tratamientos={["Dental Erosion", "Ceramic Veneers"]}
+                      cantidad={3}
+                      titulo="Real cases, including worn enamel"
+                      bajada="Some of these arrived with enamel already lost. The case file states how much tooth was prepared."
+                    />
+                  </div>
                 </section>
 
                 <Contacto lang="en" />

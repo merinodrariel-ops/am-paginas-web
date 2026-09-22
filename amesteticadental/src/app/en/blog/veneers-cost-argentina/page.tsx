@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { hreflangFor } from "@/lib/i18n-routes";
 import Contacto from "@/components/Contacto";
+import CasosBanda from "@/components/CasosBanda";
 import { ANIO } from "@/lib/anio";
 
 const CANONICAL = "https://www.amesteticadental.com/en/blog/veneers-cost-argentina";
@@ -138,6 +139,18 @@ export default function VeneersCostArgentinaPage() {
                             ))}
                         </div>
                     </div>
+                </section>
+
+                <section className="py-16 px-6 md:px-12">
+                  <div className="max-w-4xl mx-auto">
+                    <CasosBanda
+                      lang="en"
+                      tratamientos={["Veneers"]}
+                      cantidad={3}
+                      titulo="Real cases from the practice"
+                      bajada="What a quote buys is easier to judge against finished work."
+                    />
+                  </div>
                 </section>
 
                 <Contacto lang="en" />

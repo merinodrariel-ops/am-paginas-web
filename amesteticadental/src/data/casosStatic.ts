@@ -157,3 +157,33 @@ export const CASOS_STATIC: Caso[] = [
     aspect: "aspect-[4/5]",
   },
 ];
+
+/**
+ * Los mismos casos, en inglés.
+ *
+ * El paciente internacional llega por /en y hasta ahora veía alt en español —
+ * que para un lector de pantalla en inglés, y para Google Imágenes en inglés, es
+ * lo mismo que no tener alt. `AM Estética Dental` se deja tal cual: es el nombre
+ * propio de la clínica, no una frase a traducir.
+ */
+export type CasoEn = { alt: string; tratamiento: string; descripcion: string };
+
+export const CASOS_STATIC_EN: Record<string, CasoEn> = {
+  "featured-01": { alt: "Extreme transformation with porcelain veneers — Dr. Ariel Merino — AM Estética Dental, Puerto Madero", tratamiento: "Porcelain Veneers", descripcion: "Extreme transformation" },
+  "caso-01": { alt: "Before ceramic veneers — AM Estética Dental", tratamiento: "Ceramic Veneers", descripcion: "Before" },
+  "caso-02": { alt: "After ceramic veneers — AM Estética Dental", tratamiento: "Ceramic Veneers", descripcion: "After" },
+  "caso-03": { alt: "Smile design with ceramic veneers, before and after — AM Estética Dental", tratamiento: "Smile Design", descripcion: "Before / After" },
+  "caso-04": { alt: "Eli's case — transformation with ceramic veneers, before and after — AM Estética Dental", tratamiento: "Ceramic Veneers", descripcion: "Eli's case — Before / After" },
+  "caso-05": { alt: "Bruxism treated with veneers and cross-bite correction — AM Estética Dental", tratamiento: "Bruxism", descripcion: "Cross bite" },
+  "caso-06": { alt: "Dental erosion rebuilt with ceramic veneers — AM Estética Dental", tratamiento: "Dental Erosion", descripcion: "Full rehabilitation" },
+  "caso-07": { alt: "Ceramic smile design in a case with decay — AM Estética Dental", tratamiento: "Smile Design", descripcion: "Ceramic rehabilitation" },
+  "caso-08": { alt: "Advanced ceramic veneer case, before and after — AM Estética Dental", tratamiento: "Ceramic Veneers", descripcion: "Advanced case" },
+  "caso-09": { alt: "Veneer on a tooth darkened after root canal treatment — AM Estética Dental", tratamiento: "Single Veneer", descripcion: "After root canal" },
+  "caso-10": { alt: "Extreme smile design case with ceramic veneers — Dr. Ariel Merino", tratamiento: "Ceramic Veneers", descripcion: "Extreme case" },
+  "caso-11": { alt: "Italian patient — ceramic veneers at AM Estética Dental", tratamiento: "Ceramic Veneers", descripcion: "International case" },
+  "caso-12": { alt: "Ceramic veneer result, international patient — AM Estética Dental", tratamiento: "Ceramic Veneers", descripcion: "Final result" },
+  "caso-13": { alt: "Patricia's case — smile design with ceramic veneers — Dr. Ariel Merino", tratamiento: "Smile Design", descripcion: "Natural transformation" },
+  "caso-14": { alt: "Extreme transformation with veneers, before and after — Dr. Ariel Merino", tratamiento: "Porcelain Veneers", descripcion: "Extreme case — Before / After" },
+  "caso-15": { alt: "Eli's case — before ceramic veneer treatment — AM Estética Dental", tratamiento: "Ceramic Veneers", descripcion: "Eli's case — Before" },
+  "caso-16": { alt: "Eli's case — after ceramic veneer treatment — AM Estética Dental", tratamiento: "Ceramic Veneers", descripcion: "Eli's case — After" },
+};

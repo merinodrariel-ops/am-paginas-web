@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SeoFaq from "@/components/seo/SeoFaq";
 import Contacto from "@/components/Contacto";
+import CasosBanda from "@/components/CasosBanda";
 import { hreflangFor } from "@/lib/i18n-routes";
 import { ANIO } from "@/lib/anio";
 
@@ -141,6 +142,19 @@ export default function TeethWhiteningPage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 px-6 md:px-12">
+          <div className="max-w-4xl mx-auto">
+            <CasosBanda
+              lang="en"
+              tratamientos={["Single Veneer", "Ceramic Veneers"]}
+              cantidad={3}
+              eyebrow="When whitening is not enough"
+              titulo="Cases whitening cannot solve"
+              bajada="Internal staining, teeth darkened by a root canal, enamel erosion: here colour is not corrected by bleaching."
+            />
           </div>
         </section>
 

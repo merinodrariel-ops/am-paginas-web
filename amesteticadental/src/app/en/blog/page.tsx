@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Contacto from "@/components/Contacto";
 import { hreflangFor } from "@/lib/i18n-routes";
@@ -25,24 +26,32 @@ export const metadata: Metadata = {
 const POSTS = [
     {
         slug: "can-chatgpt-design-your-smile",
+        imagen: "/videos/generate-3d-veneer-poster.jpg",
+        alt: "3D render of a ceramic veneer used in digital planning at AM Estética Dental",
         titulo: "Can ChatGPT design your smile?",
         resumen: "Five in ten new patients now arrive with an AI-generated image of their own smile. What that image can see about your mouth, what it cannot, and how we check.",
         categoria: "Technology",
     },
     {
         slug: "veneers-cost-argentina",
+        imagen: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/galeria/caso-carillas-ceramicas-antes-despues-01-am-estetica-dental",
+        alt: "Ceramic veneer result — AM Estética Dental, Puerto Madero",
         titulo: `How much do veneers cost in Argentina? ${ANIO} guide`,
         resumen: "Real USD figures, what actually changes the investment, and the honest reason international patients fly here — it is time, not price.",
         categoria: "Investment",
     },
     {
         slug: "do-veneers-damage-your-teeth",
+        imagen: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/galeria/caso-erosion-dentaria-carillas-ceramicas-am-estetica-dental",
+        alt: "Dental erosion rebuilt with ceramic veneers — AM Estética Dental",
         titulo: "Do veneers damage your teeth?",
         resumen: "The honest answer about enamel preparation, why blanket 'no-prep' promises are a half-truth, and the question to ask your dentist.",
         categoria: "Guide",
     },
     {
         slug: "how-long-do-porcelain-veneers-last",
+        imagen: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/galeria/caso-italiano-carillas-ceramicas-02-am-estetica-dental",
+        alt: "Final result of ceramic veneers on an international patient — AM Estética Dental",
         titulo: "How long do porcelain veneers last?",
         resumen: "Ten to twenty years with the right care. What wears them down, what does not, and when it is time to replace them.",
         categoria: "Veneers",
@@ -74,14 +83,26 @@ export default function BlogEnPage() {
                             <Link
                                 key={post.slug}
                                 href={`/en/blog/${post.slug}`}
-                                className="border border-oro/15 rounded-2xl p-7 bg-carbon-soft hover:border-oro/35 transition-colors group flex flex-col"
+                                className="overflow-hidden border border-oro/15 rounded-2xl bg-carbon-soft hover:border-oro/35 transition-colors group flex flex-col"
                             >
+                                <div className="relative aspect-[16/9] overflow-hidden">
+                                    <Image
+                                        src={post.imagen}
+                                        alt={post.alt}
+                                        fill
+                                        sizes="(max-width: 768px) 92vw, 420px"
+                                        className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-carbon-soft via-carbon/10 to-transparent" />
+                                </div>
+                                <div className="p-7 flex flex-col flex-1">
                                 <span className="text-oro/60 font-manrope text-[9px] uppercase tracking-[0.3em] mb-4">{post.categoria}</span>
                                 <h2 className="text-crema font-manrope font-medium text-lg leading-snug mb-3 group-hover:text-oro transition-colors">
                                     {post.titulo}
                                 </h2>
                                 <p className="text-crema/55 font-manrope text-sm leading-relaxed flex-1">{post.resumen}</p>
                                 <span className="text-oro/40 group-hover:text-oro transition-colors text-sm mt-5 block">Read the article →</span>
+                                </div>
                             </Link>
                         ))}
                     </div>
