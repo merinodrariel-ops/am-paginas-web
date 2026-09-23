@@ -324,6 +324,14 @@ const PASO_MS = 4600;
 // tarjeta rapido en vez de hacerla esperar una vuelta entera.
 const PASO_MANUAL_MS = 620;
 
+// Lo que espera la cinta antes de su PRIMER movimiento. Tiene que ser apenas
+// mas que un suspiro: lo unico que necesita es que el navegador haya pintado la
+// posicion inicial, o no habria transicion que animar. Si aca se esperaba un
+// intervalo entero, la seccion se quedaba casi cinco segundos congelada —
+// justo los cinco segundos en los que alguien decide si hay tres testimonios o
+// hay muchos.
+const ARRANQUE_MS = 90;
+
 const UI = {
     es: {
         eyebrow: "Testimonios",
@@ -371,6 +379,8 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
     );
 
     const raiz = useRef<HTMLDivElement>(null);
+    // Si la cinta ya dio su primer paso. Ver ARRANQUE_MS.
+    const arrancada = useRef(false);
 
     const [idx, setIdx] = useState(0);
     const [sinAnimacion, setSinAnimacion] = useState(false);
@@ -432,7 +442,13 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
         }, 30);
     }, []);
 
-    const quieto = mirando || menosMovimiento || !enVista;
+    // La cinta se detiene solo si alguien esta escuchando un testimonio o si el
+    // sistema pidio menos movimiento. Ya no espera a que la seccion entre en
+    // pantalla: si esperara, el visitante llegaria justo a tiempo para verla
+    // arrancar desde cero, que es exactamente la sensacion contraria a la de
+    // una lista que ya venia corriendo. `enVista` sigue existiendo, pero solo
+    // para decidir que videos vale la pena descargar.
+    const quieto = mirando || menosMovimiento;
 
     // Cierre del bucle: el salto invisible al principio. Encadena con `luego`
     // para que la cinta siga de largo en vez de quedarse un paso entero quieta
@@ -444,13 +460,22 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
     }, [idx, total, duracion, saltar]);
 
     // Avance automatico. El intervalo es la duracion de la transicion en curso:
-    // en cuanto una tarjeta termino de correr, ya arranco la siguiente.
+    // en cuanto una tarjeta termino de correr, ya arranco la siguiente. El
+    // primer movimiento es la excepcion y sale enseguida, porque si no la cinta
+    // se pasaria su primer intervalo entero quieta.
     useEffect(() => {
-        if (quieto || idx >= total) return;
+        if (quieto || idx >= total) {
+            // Al frenar se olvida de que ya habia arrancado: cuando alguien
+            // cierra el testimonio que estaba mirando, la cinta retoma en el
+            // acto en vez de regalar otros cuatro segundos y medio de quietud.
+            if (quieto) arrancada.current = false;
+            return;
+        }
         const t = setTimeout(() => {
+            arrancada.current = true;
             setDuracion(PASO_MS);
             setIdx((i) => i + 1);
-        }, duracion);
+        }, arrancada.current ? duracion : ARRANQUE_MS);
         return () => clearTimeout(t);
     }, [idx, quieto, total, duracion]);
 
