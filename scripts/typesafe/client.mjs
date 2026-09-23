@@ -27,6 +27,16 @@ import { dirname, resolve } from "node:path";
 const ENDPOINT = "https://api.typesafe.ai/v1/systemone";
 const RAIZ = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 
+/** ¿Hay key configurada? Para que un script pueda degradar en vez de morirse. */
+export function hayKey() {
+  try {
+    leerKey();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 /** Lee la key del entorno o de .env.typesafe (que está gitignoreado). */
 function leerKey() {
   if (process.env.TYPESAFE_API_KEY) return process.env.TYPESAFE_API_KEY;

@@ -34,7 +34,7 @@
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { getAccessToken, SCOPES } from "../google-auth.mjs";
-import { preguntar, enTandas } from "./client.mjs";
+import { preguntar, enTandas, hayKey } from "./client.mjs";
 
 const SITIOS = [
   "sc-domain:amesteticadental.com",
@@ -177,6 +177,10 @@ async function snippetEnVivo(url) {
   try {
     const res = await fetch(url, { headers: { "User-Agent": "AM-serp-audit/1.0" }, redirect: "follow" });
     if (!res.ok) return { error: `HTTP ${res.status}` };
+    // Adónde terminó después de los redirects. Search Console sigue reportando
+    // URLs viejas que hoy redirigen, y sin esto las dos entradas traen el mismo
+    // título y se denuncian entre ellas como duplicadas.
+    const urlFinal = res.url || url;
     const html = await res.text();
     const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1];
     const meta =
@@ -184,6 +188,8 @@ async function snippetEnVivo(url) {
       html.match(/<meta[^>]+content=["']([\s\S]*?)["'][^>]+name=["']description["']/i)?.[1];
     const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1]?.replace(/<[^>]+>/g, " ");
     return {
+      urlFinal,
+      redirigida: new URL(urlFinal).pathname !== new URL(url).pathname,
       title: title ? entidades(title) : null,
       meta: meta ? entidades(meta) : null,
       h1: h1 ? entidades(h1) : null,
@@ -246,20 +252,42 @@ const snippets = await enTandas(paginas, 10, (p) => snippetEnVivo(p.url));
 process.stderr.write("listo\n");
 
 // Los duplicados sólo se ven mirando la red entera, así que se calculan acá.
+// Se indexa por la URL de destino y no por la de origen: dos entradas de Search
+// Console que terminan en la misma página —porque una redirige a la otra— no son
+// un título duplicado, son la misma página contada dos veces. Antes eso salía
+// como "duplicado consigo mismo" y mandaba a arreglar algo que ya estaba bien.
 const vistos = new Map();
 const duplicados = new Map();
 snippets.forEach((s, i) => {
-  if (!s.title) return;
+  if (!s.title || s.redirigida) return;
+  const destino = s.urlFinal ?? paginas[i].url;
   const k = s.title.toLowerCase();
-  if (vistos.has(k)) duplicados.set(k, vistos.get(k));
-  else vistos.set(k, new URL(paginas[i].url).pathname);
+  if (vistos.has(k) && vistos.get(k) !== new URL(destino).pathname) duplicados.set(k, vistos.get(k));
+  else if (!vistos.has(k)) vistos.set(k, new URL(destino).pathname);
 });
 
-process.stderr.write(`Preguntándole a Jev por ${paginas.length} snippets… `);
+// Sin key de Jev el script no se muere: corre igual las dos terceras partes que
+// no la necesitan —el ranking de Search Console y los chequeos verificables— y
+// avisa que falta la capa de criterio. Sirve para que la auditoria se pueda
+// correr en una computadora recien configurada, que es cuando mas hace falta.
+const conJev = hayKey();
+if (!conJev) {
+  process.stderr.write(
+    "⚠️  Sin TYPESAFE_API_KEY: va el ranking de GSC y los chequeos duros,\n" +
+      "    pero no el criterio de Jev (¿promete algo? ¿suena a plantilla?).\n" +
+      "    La key se saca de https://console.typesafe.ai/keys\n",
+  );
+}
+
+process.stderr.write(conJev ? `Preguntándole a Jev por ${paginas.length} snippets… ` : "Evaluando lo verificable… ");
 const t0 = Date.now();
 const evaluadas = await enTandas(paginas, 8, async (p, i) => {
   const s = snippets[i];
   if (s.error || !s.title) return { ...p, ...s, fallas: [s.error ?? "sin título"], puntos: [], answers: null };
+
+  if (!conJev) {
+    return { ...p, ...s, answers: null, fallas: chequeosDuros(s, duplicados), puntos: [] };
+  }
 
   const state =
     `Así se ve este resultado en Google:\n` +
@@ -284,7 +312,12 @@ process.stderr.write(`${segundosJev}s\n`);
 // Prioridad: clics que se dejan sobre la mesa, pero sólo si hay algo que arreglar.
 for (const p of evaluadas) {
   const brecha = Math.max(0, ctrEsperado(p.posicion) - p.ctr);
-  p.clicsPerdidos = p.fallas.length || p.puntos.length ? p.impresiones * brecha : 0;
+  // Con Jev, solo cuenta la brecha de las paginas donde hay algo concreto que
+  // arreglar. Sin Jev no hay diagnostico de criterio, asi que se ordena por
+  // brecha pura: peor senal, pero es la que hay, y sigue priorizando bien.
+  p.clicsPerdidos = conJev
+    ? (p.fallas.length || p.puntos.length ? p.impresiones * brecha : 0)
+    : p.impresiones * brecha;
 }
 evaluadas.sort((a, b) => b.clicsPerdidos - a.clicsPerdidos);
 
