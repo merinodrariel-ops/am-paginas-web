@@ -1,6 +1,6 @@
 import "server-only";
 
-import { supabase } from "@/lib/supabase-client";
+import { getSupabaseClient } from "@/lib/supabase-client";
 import {
   getCasoBySlug as getStaticCasoBySlug,
   getCasosPublicados as getStaticCasosPublicados,
@@ -71,6 +71,9 @@ function mapPublishedCase(row: PublicCaseRow, assets: PublicAssetRow[]): Caso | 
 }
 
 async function getDatabaseCases(): Promise<Caso[]> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return [];
+
   const [{ data: rows, error: casesError }, { data: assets, error: assetsError }] = await Promise.all([
     supabase
       .from("public_clinical_cases")

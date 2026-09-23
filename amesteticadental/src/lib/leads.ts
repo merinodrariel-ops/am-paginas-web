@@ -1,4 +1,4 @@
-import { supabase } from "./supabase-client";
+import { getSupabaseClient } from "./supabase-client";
 
 export const TRATAMIENTOS = [
   { value: "carillas", label: "Carillas estéticas", labelEn: "Veneers" },
@@ -53,6 +53,12 @@ export async function submitLead(input: LeadInput): Promise<LeadResult> {
   const message = input.message?.trim() || null;
   if (message && message.length > 2000) {
     return { success: false, error: "Mensaje demasiado largo" };
+  }
+
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    console.error("submitLead error: missing Supabase public environment variables");
+    return { success: false, error: "No pudimos enviar el formulario. Escribinos por WhatsApp." };
   }
 
   const { error } = await supabase.from("marketing_leads").insert({
