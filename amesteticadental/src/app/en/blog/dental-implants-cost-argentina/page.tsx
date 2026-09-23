@@ -170,7 +170,7 @@ export default function DentalImplantsCostArgentinaPage() {
 
                         <section>
                             <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-5 leading-snug">Which implants we use</h2>
-                            <p className="text-crema/72 font-manrope text-base leading-relaxed">We work exclusively with Straumann Group systems. Straumann is manufactured in Switzerland and is the most recognised implant brand in the world, with the longest track record and the strongest scientific backing. Neodent is a Brazilian brand the group acquired and now builds to its own standards, and it offers excellent value inside the premium range.</p>
+                            <p className="text-crema/72 font-manrope text-base leading-relaxed">We work with Straumann Group systems. Straumann is manufactured in Switzerland and is the most recognised implant brand in the world, with the longest track record and the strongest scientific backing. Neodent is a Brazilian brand the group acquired and now builds to its own standards, and it offers excellent value inside the premium range. In the occasional case where the exact size is not in stock, an equivalent-tier national implant is used — always discussed with you beforehand.</p>
                             <p className="text-crema/72 font-manrope text-base leading-relaxed">Straumann starts at USD 2,000 and Neodent at USD 1,500. Which one suits your case is decided at the assessment, not in a price list.</p>
                         </section>
 

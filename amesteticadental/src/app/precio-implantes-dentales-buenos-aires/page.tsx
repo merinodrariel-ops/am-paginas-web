@@ -463,7 +463,7 @@ export default function InversionImplantesPage() {
                 Dos marcas <span className="font-cormorant italic text-oro">tope de gama.</span> Vos elegís.
               </h2>
               <p className="text-crema/60 font-manrope text-base leading-relaxed max-w-2xl mx-auto mb-4">
-                No trabajamos con implantes genéricos. Colocamos únicamente dos sistemas de primer nivel mundial — y los dos pertenecen al mismo grupo suizo. La diferencia de inversión es de origen y trayectoria, no de calidad de atención: en ambos casos la planificación es digital y el protocolo es el mismo.
+                No trabajamos con implantes genéricos. Los dos sistemas que colocamos son de primer nivel y pertenecen al mismo grupo suizo. La diferencia de inversión es de origen y trayectoria, no de calidad de atención: la planificación es digital y el protocolo es el mismo en los dos. Y si en algún caso puntual no hubiera disponible la medida exacta que el tuyo necesita, se resuelve con un implante nacional de gama equivalente — siempre conversado con vos antes, nunca por defecto.
               </p>
               <p className="text-oro/70 font-manrope text-xs uppercase tracking-[0.2em] mb-14">
                 Neodent® es parte del Grupo Straumann® (Suiza)

@@ -14,7 +14,15 @@
 // TODOS los valores llevan "a partir de": si el caso necesita un componente
 // adicional, el número no queda desmentido.
 
-/** Sistemas que se colocan. No hay genéricos: son estos dos y nada más. */
+/**
+ * Sistemas que se colocan. Son estos dos, y no hay genéricos.
+ *
+ * El escalón de USD 1.500 es Neodent® o, cuando Neodent no tiene disponible la
+ * medida que el caso necesita, un implante nacional de gama equivalente —así está
+ * cargado en el tarifario de caja-recepción, como "Implante Neodent® o nacional"—.
+ * La web nombra a Neodent, que es lo que se usa casi siempre, y menciona la
+ * alternativa en prosa: el paciente tiene que enterarse acá, no en el sillón.
+ */
 export const IMPLANTES = {
   neodent: {
     marca: "Neodent®",

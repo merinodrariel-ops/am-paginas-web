@@ -220,7 +220,7 @@ export default function DentalImplantsCostPage() {
                 {
                   n: "03",
                   t: "The implant system",
-                  d: "We only use Straumann Group systems. Straumann is made in Switzerland and starts at USD 2,000; Neodent is a Brazilian brand the group acquired, built to its standards, and starts at USD 1,500. Both are premium.",
+                  d: "We work with Straumann Group systems. Straumann is made in Switzerland and starts at USD 2,000; Neodent is a Brazilian brand the group acquired, built to its standards, and starts at USD 1,500. If the exact size a case needs is not in stock, an equivalent-tier national implant is used — always discussed with you first, never by default.",
                 },
                 {
                   n: "04",
