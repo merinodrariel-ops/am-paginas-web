@@ -18,6 +18,7 @@ const NAV_LINKS = [
     { label: "Tecnología",    href: "/#tecnologia" },
     { label: "Testimonios",   href: "/#testimonios" },
     { label: "Antes y después", href: "/casos-antes-y-despues" },
+    { label: "Blog",          href: "/blog" },
     { label: "Equipo",        href: "/equipo-am" },
     { label: "FAQ",           href: "/#faq" },
 ];

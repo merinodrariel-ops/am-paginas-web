@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import TratamientosChips from "./TratamientosChips";
 
 const tratamientos = [
     {
@@ -287,13 +288,17 @@ export default function Tratamientos({ lang = "es" }: { lang?: "es" | "en" }) {
                     </p>
                 </div>
 
+                {/* Pestañas de acceso rápido — ver los 8 tratamientos de un vistazo y saltar a cualquiera */}
+                <TratamientosChips items={items.map((item) => ({ id: item.id, nombre: item.nombre }))} />
+
                 {/* Tratamientos - Acordeones expandibles (todo visible en HTML para Google) */}
                 <div className="space-y-2">
                     {items.map((item, i) => (
                         <details
                             key={item.id}
+                            id={`trat-${item.id}`}
                             open={i === 0}
-                            className="group border border-oro/10 rounded-2xl overflow-hidden bg-carbon hover:border-oro/20 transition-colors"
+                            className="group border border-oro/10 rounded-2xl overflow-hidden bg-carbon hover:border-oro/20 transition-colors scroll-mt-28"
                         >
                             <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 select-none hover:bg-carbon-soft transition-colors">
                                 <div className="flex items-center gap-4 min-w-0">
