@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 // Sección de tecnología — reemplaza los widgets del template base
@@ -69,6 +70,8 @@ const UI = {
         wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20conocer%20m%C3%A1s%20sobre%20la%20tecnolog%C3%ADa%20de%20AM%20Est%C3%A9tica%20Dental.",
         secondary: "Ver Clínica y Tecnología",
         secondaryHref: "/clinica",
+        visualCaption: "Diseñando tu sonrisa en 3D",
+        visualAlt: "Diseño de sonrisa digital en 3D con escaneo de precisión — AM Estética Dental, Puerto Madero, Buenos Aires",
     },
     en: {
         eyebrow: "Clinical technology",
@@ -79,6 +82,8 @@ const UI = {
         wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I'd%20like%20to%20know%20more%20about%20the%20technology%20at%20AM%20Est%C3%A9tica%20Dental.",
         secondary: "See the Clinic & Technology",
         secondaryHref: "/en/clinic",
+        visualCaption: "Designing your smile in 3D",
+        visualAlt: "Digital 3D smile design with precision scanning — AM Estética Dental, Puerto Madero, Buenos Aires",
     },
 } as const;
 
@@ -111,31 +116,57 @@ export default function Features({ lang = "es" }: { lang?: "es" | "en" }) {
                     </p>
                 </div>
 
-                {/* Grid de tecnologías */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-oro/10 border border-oro/10 rounded-2xl overflow-hidden">
-                    {items.map((t) => (
-                        <div
-                            key={t.numero}
-                            className="bg-carbon p-10 hover:bg-carbon-soft transition-colors group"
-                        >
-                            <div className="flex items-start gap-6">
-                                <span className="text-oro/30 font-manrope font-light text-4xl leading-none flex-none group-hover:text-oro/50 transition-colors">
-                                    {t.numero}
+                {/* Visual + lista de tecnologías */}
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
+
+                    {/* Visual — el escaneo 3D "diseñándose" en vivo */}
+                    <div className="lg:col-span-2 lg:sticky lg:top-28">
+                        <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-oro/15">
+                            <Image
+                                src="https://res.cloudinary.com/drctvgyqd/image/upload/v1790182047/tecnologia/diseno-de-sonrisa-3d-escaneo-digital-am-estetica-dental-puerto-madero.png"
+                                alt={ui.visualAlt}
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 40vw"
+                                className="object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-carbon/70 via-transparent to-transparent" />
+                            {/* Línea de escaneo animada */}
+                            <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-transparent via-oro/30 to-transparent scan-sweep pointer-events-none" />
+                            <div className="absolute inset-x-0 bottom-0 p-5">
+                                <span className="inline-flex items-center gap-2 rounded-full border border-oro/25 bg-carbon/70 backdrop-blur-sm px-4 py-2 text-[10px] font-manrope uppercase tracking-[0.25em] text-oro">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-oro animate-pulse" />
+                                    {ui.visualCaption}
                                 </span>
-                                <div>
-                                    <h3 className="text-crema font-manrope font-medium text-lg mb-3 leading-snug">
-                                        {t.titulo}
-                                    </h3>
-                                    <p className="text-crema/70 font-manrope text-sm leading-relaxed mb-4">
-                                        {t.descripcion}
-                                    </p>
-                                    <p className="text-oro/60 font-manrope text-xs leading-relaxed italic border-l border-oro/20 pl-3">
-                                        {t.detalle}
-                                    </p>
-                                </div>
                             </div>
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Lista de tecnologías */}
+                    <div className="lg:col-span-3 border border-oro/10 rounded-2xl overflow-hidden divide-y divide-oro/10">
+                        {items.map((t) => (
+                            <div
+                                key={t.numero}
+                                className="bg-carbon p-8 hover:bg-carbon-soft transition-colors group"
+                            >
+                                <div className="flex items-start gap-6">
+                                    <span className="text-oro/30 font-manrope font-light text-3xl leading-none flex-none group-hover:text-oro/50 transition-colors">
+                                        {t.numero}
+                                    </span>
+                                    <div>
+                                        <h3 className="text-crema font-manrope font-medium text-lg mb-3 leading-snug">
+                                            {t.titulo}
+                                        </h3>
+                                        <p className="text-crema/70 font-manrope text-sm leading-relaxed mb-4">
+                                            {t.descripcion}
+                                        </p>
+                                        <p className="text-oro/60 font-manrope text-xs leading-relaxed italic border-l border-oro/20 pl-3">
+                                            {t.detalle}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* CTA */}

@@ -118,3 +118,14 @@ body {
 .prensa-marquee-track {
   animation: reviews-marquee 45s linear infinite;
 }
+
+@keyframes scan-sweep {
+  0%   { transform: translateY(-110%); opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { transform: translateY(110%); opacity: 0; }
+}
+
+.scan-sweep {
+  animation: scan-sweep 3.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}

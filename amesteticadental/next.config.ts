@@ -207,12 +207,10 @@ const nextConfig: NextConfig = {
       { source: "/author/:path*", destination: "/", permanent: true },
       { source: "/inicio", destination: "/", permanent: true },
       { source: "/inicio/", destination: "/", permanent: true },
-      { source: "/financiacion", destination: "/#financiacion", permanent: true },
-      { source: "/financiacion/", destination: "/#financiacion", permanent: true },
       { source: "/carillas-dentales-buenos-aires/", destination: "/precio-carillas-dentales-buenos-aires", permanent: true },
       { source: "/clinica-estetica-dental-buenos-aires/", destination: "/estetica-dental", permanent: true },
       { source: "/contacto-clinica-dental-buenos-aires/", destination: "/contacto", permanent: true },
-      { source: "/financiacion-estetica-dental-buenos-aires/", destination: "/#financiacion", permanent: true },
+      { source: "/financiacion-estetica-dental-buenos-aires/", destination: "/financiacion", permanent: true },
       { source: "/tratamientos-estetica-dental-buenos-aires/", destination: "/estetica-dental", permanent: true },
     ];
   },

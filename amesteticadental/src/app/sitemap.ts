@@ -101,6 +101,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/prensa", changeFrequency: "monthly", priority: 0.8 },
   { path: "/casos-antes-y-despues", changeFrequency: "weekly", priority: 0.95 },
   { path: "/clinica", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/financiacion", changeFrequency: "monthly", priority: 0.85 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.8 },
   { path: "/blog/como-combatir-el-bruxismo-botox-y-placa", changeFrequency: "monthly", priority: 0.8 },
   { path: "/blog/chatgpt-puede-disenar-tu-sonrisa", changeFrequency: "monthly", priority: 0.8 },

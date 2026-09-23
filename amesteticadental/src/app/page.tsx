@@ -11,7 +11,7 @@ import PorQueAM from "@/components/PorQueAM";
 import Prensa from "@/components/Prensa";
 import Internacional from "@/components/Internacional";
 import ClientesVIP from "@/components/ClientesVIP";
-import Financiacion from "@/components/Financiacion";
+import FinanciacionTeaser from "@/components/FinanciacionTeaser";
 import FAQ from "@/components/FAQ";
 import Contacto from "@/components/Contacto";
 import BreadcrumbsSchema from "@/components/seo/BreadcrumbsSchema";
@@ -76,8 +76,8 @@ export default function Home() {
       {/* 11. CLIENTES VIP — prueba aspiracional. */}
       <ClientesVIP />
 
-      {/* 12. FINANCIACIÓN — cierre racional cuando el deseo ya está construido. */}
-      <Financiacion />
+      {/* 12. FINANCIACIÓN — eslogan + invitación; la calculadora vive en /financiacion. */}
+      <FinanciacionTeaser />
 
       {/* 13. FAQ — objeciones y búsquedas de alta intención. */}
       <FAQ />

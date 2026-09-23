@@ -50,10 +50,10 @@ export default function Financiacion() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-6">
-                        Financiación
+                        Simulador
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-manrope font-light text-crema mb-6">
-                        Calculá tu inversión{" "}
+                    <h2 className="text-3xl md:text-4xl font-manrope font-light text-crema mb-6">
+                        Calculá tu plan{" "}
                         <span className="font-cormorant italic text-oro">ahora mismo</span>
                     </h2>
                     <p className="text-crema-muted font-manrope text-lg font-light max-w-xl mx-auto">
