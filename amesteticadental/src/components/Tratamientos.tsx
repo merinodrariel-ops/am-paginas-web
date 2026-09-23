@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const tratamientos = [
@@ -9,6 +10,10 @@ const tratamientos = [
         impacto: "El tratamiento más transformador que existe. Una sola consulta puede cambiar cómo te ves al espejo para siempre.",
         href: "/diseno-de-sonrisa",
         destacado: true,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147362/tratamientos/diseno-de-sonrisa-digital-am-estetica-dental-puerto-madero.png",
+            alt: "Diseño de sonrisa digital en 3D — AM Estética Dental, Puerto Madero, Buenos Aires",
+        },
     },
     {
         id: "02",
@@ -18,6 +23,10 @@ const tratamientos = [
         impacto: "El 80% de nuestros pacientes eligen carillas. El 100% dice que cambió su vida.",
         href: "/carillas-dentales",
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147364/tratamientos/carillas-dentales-porcelana-am-estetica-dental-puerto-madero.png",
+            alt: "Carillas dentales de porcelana de ultra definición — AM Estética Dental, Puerto Madero",
+        },
     },
     {
         id: "03",
@@ -27,6 +36,10 @@ const tratamientos = [
         impacto: "Resultados visibles en la primera sesión. Sin sensibilidad innecesaria.",
         href: "/blanqueamiento-dental-precio-buenos-aires",
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147367/tratamientos/blanqueamiento-dental-profesional-am-estetica-dental-puerto-madero.png",
+            alt: "Blanqueamiento dental profesional con luz LED — AM Estética Dental, Puerto Madero",
+        },
     },
     {
         id: "04",
@@ -36,6 +49,10 @@ const tratamientos = [
         impacto: "Efectivos para todas las edades. Nadie va a saber que los llevás.",
         href: "/alineadores-invisibles",
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147368/tratamientos/am-aligners-alineadores-invisibles-puerto-madero-buenos-aires.png",
+            alt: "AM Aligners, alineadores invisibles — AM Estética Dental, Puerto Madero, Buenos Aires",
+        },
     },
     {
         id: "05",
@@ -45,6 +62,10 @@ const tratamientos = [
         impacto: "Solución permanente. Máxima estabilidad. Sin comprometer los dientes vecinos.",
         href: "/implantes-dentales-buenos-aires",
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147370/tratamientos/implantes-dentales-am-estetica-dental-puerto-madero.png",
+            alt: "Implante dental de titanio con corona de porcelana — AM Estética Dental, Puerto Madero",
+        },
     },
     {
         id: "06",
@@ -54,6 +75,10 @@ const tratamientos = [
         impacto: "Complementa cualquier tratamiento dental con una dimensión estética que transforma la percepción total del rostro.",
         href: null,
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147371/tratamientos/armonizacion-orofacial-am-estetica-dental-puerto-madero.png",
+            alt: "Armonización orofacial, contorno de labios y rostro — AM Estética Dental, Puerto Madero",
+        },
     },
     {
         id: "07",
@@ -63,6 +88,10 @@ const tratamientos = [
         impacto: "Cambia la proporción completa de tu sonrisa. Pocas personas saben que esto existe.",
         href: null,
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147372/tratamientos/estetica-gingival-am-estetica-dental-puerto-madero.png",
+            alt: "Estética gingival, contorno de encías — AM Estética Dental, Puerto Madero",
+        },
     },
     {
         id: "08",
@@ -72,6 +101,10 @@ const tratamientos = [
         impacto: "Para casos complejos que merecen una solución a la altura.",
         href: "/coronas-y-fundas-dentales",
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147374/tratamientos/protesis-esteticas-coronas-fundas-am-estetica-dental-puerto-madero.png",
+            alt: "Prótesis estéticas, coronas y puentes dentales — AM Estética Dental, Puerto Madero",
+        },
     },
 ];
 
@@ -98,6 +131,10 @@ const tratamientosEn = [
         impacto: "The most transformative treatment there is. A single consultation can change how you see yourself in the mirror, for good.",
         href: "/en/smile-design-buenos-aires",
         destacado: true,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147362/tratamientos/diseno-de-sonrisa-digital-am-estetica-dental-puerto-madero.png",
+            alt: "Digital 3D smile design — AM Estética Dental, Puerto Madero, Buenos Aires",
+        },
     },
     {
         id: "02",
@@ -107,6 +144,10 @@ const tratamientosEn = [
         impacto: "80% of our patients choose veneers. 100% say it changed their life.",
         href: "/en/porcelain-veneers-buenos-aires",
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147364/tratamientos/carillas-dentales-porcelana-am-estetica-dental-puerto-madero.png",
+            alt: "Ultra-definition porcelain veneers — AM Estética Dental, Puerto Madero",
+        },
     },
     {
         id: "03",
@@ -116,6 +157,10 @@ const tratamientosEn = [
         impacto: "Visible results in the first session. Without unnecessary sensitivity.",
         href: "/en/teeth-whitening-buenos-aires",
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147367/tratamientos/blanqueamiento-dental-profesional-am-estetica-dental-puerto-madero.png",
+            alt: "Professional LED teeth whitening — AM Estética Dental, Puerto Madero",
+        },
     },
     {
         id: "04",
@@ -125,6 +170,10 @@ const tratamientosEn = [
         impacto: "Effective at any age. Nobody will know you are wearing them.",
         href: "/en/invisible-aligners-buenos-aires",
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147368/tratamientos/am-aligners-alineadores-invisibles-puerto-madero-buenos-aires.png",
+            alt: "AM Aligners, invisible aligners — AM Estética Dental, Puerto Madero, Buenos Aires",
+        },
     },
     {
         id: "05",
@@ -134,6 +183,10 @@ const tratamientosEn = [
         impacto: "A permanent solution. Maximum stability. Without compromising neighbouring teeth.",
         href: "/en/dental-implants-buenos-aires",
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147370/tratamientos/implantes-dentales-am-estetica-dental-puerto-madero.png",
+            alt: "Titanium dental implant with porcelain crown — AM Estética Dental, Puerto Madero",
+        },
     },
     {
         id: "06",
@@ -143,6 +196,10 @@ const tratamientosEn = [
         impacto: "Complements any dental treatment with an aesthetic dimension that transforms how the whole face is perceived.",
         href: null,
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147371/tratamientos/armonizacion-orofacial-am-estetica-dental-puerto-madero.png",
+            alt: "Orofacial harmonization, lip and facial contour — AM Estética Dental, Puerto Madero",
+        },
     },
     {
         id: "07",
@@ -152,6 +209,10 @@ const tratamientosEn = [
         impacto: "It changes the entire proportion of your smile. Few people know this exists.",
         href: null,
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147372/tratamientos/estetica-gingival-am-estetica-dental-puerto-madero.png",
+            alt: "Gum contouring aesthetics — AM Estética Dental, Puerto Madero",
+        },
     },
     {
         id: "08",
@@ -161,6 +222,10 @@ const tratamientosEn = [
         impacto: "For complex cases that deserve a solution to match.",
         href: null,
         destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147374/tratamientos/protesis-esteticas-coronas-fundas-am-estetica-dental-puerto-madero.png",
+            alt: "Aesthetic prosthetics, crowns and bridges — AM Estética Dental, Puerto Madero",
+        },
     },
 ];
 
@@ -230,58 +295,84 @@ export default function Tratamientos({ lang = "es" }: { lang?: "es" | "en" }) {
                             open={i === 0}
                             className="group border border-oro/10 rounded-2xl overflow-hidden bg-carbon hover:border-oro/20 transition-colors"
                         >
-                            <summary className="cursor-pointer px-6 py-5 flex items-center justify-between select-none hover:bg-carbon-soft transition-colors">
-                                <div>
-                                    <span className="font-manrope text-xs font-medium uppercase tracking-widest block mb-1 text-oro group-open:text-oro text-crema-muted">
-                                        {item.id}
-                                    </span>
-                                    <span className="font-manrope font-medium text-sm text-crema">
-                                        {item.nombre}
-                                    </span>
+                            <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 select-none hover:bg-carbon-soft transition-colors">
+                                <div className="flex items-center gap-4 min-w-0">
+                                    <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden border border-oro/15 flex-shrink-0">
+                                        <Image
+                                            src={item.imagen.src}
+                                            alt=""
+                                            fill
+                                            sizes="56px"
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <div className="min-w-0">
+                                        <span className="font-manrope text-xs font-medium uppercase tracking-widest block mb-1 text-oro group-open:text-oro text-crema-muted">
+                                            {item.id}
+                                        </span>
+                                        <span className="font-manrope font-medium text-sm text-crema">
+                                            {item.nombre}
+                                        </span>
+                                    </div>
                                 </div>
-                                <span className="text-lg transition-transform text-oro group-open:translate-x-1">
+                                <span className="text-lg transition-transform text-oro group-open:translate-x-1 flex-shrink-0">
                                     →
                                 </span>
                             </summary>
 
                             {/* Contenido expandible - TODO visible en DOM para Google */}
                             <div className="px-6 pb-6 border-t border-oro/10 pt-6 bg-carbon/40">
-                                <span className="text-oro/60 font-manrope uppercase tracking-[0.3em] text-xs block mb-4">
-                                    {item.tagline}
-                                </span>
-                                <h3 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-4 leading-tight">
-                                    {item.nombre}
-                                </h3>
-                                <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
-                                    {item.descripcion}
-                                </p>
+                                <div className={`grid md:grid-cols-2 gap-8 items-center ${i % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""}`}>
+                                    <div className="relative aspect-[4/5] md:aspect-[3/4] overflow-hidden rounded-2xl border border-oro/10 group/img">
+                                        <Image
+                                            src={item.imagen.src}
+                                            alt={item.imagen.alt}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                            className="object-cover transition-transform duration-700 group-hover/img:scale-105"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-carbon/50 via-transparent to-transparent" />
+                                    </div>
 
-                                {/* Impact line */}
-                                <div className="border-l-2 border-oro pl-4 mb-6">
-                                    <p className="text-crema font-manrope text-sm italic leading-relaxed">
-                                        {item.impacto}
-                                    </p>
-                                </div>
+                                    <div>
+                                        <span className="text-oro/60 font-manrope uppercase tracking-[0.3em] text-xs block mb-4">
+                                            {item.tagline}
+                                        </span>
+                                        <h3 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-4 leading-tight">
+                                            {item.nombre}
+                                        </h3>
+                                        <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
+                                            {item.descripcion}
+                                        </p>
 
-                                {/* CTA */}
-                                <div className="flex flex-wrap gap-3">
-                                    <a
-                                        href={`${t.waPrefix}${encodeURIComponent(item.nombre)}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-3 bg-oro text-carbon px-6 py-3 rounded-full font-manrope font-semibold text-sm hover:bg-oro/90 transition-colors"
-                                    >
-                                        {t.consult}
-                                        <span>→</span>
-                                    </a>
-                                    {item.href && (
-                                        <Link
-                                            href={item.href}
-                                            className="inline-flex items-center gap-2 border border-oro/25 text-crema/70 px-6 py-3 rounded-full font-manrope text-sm hover:border-oro/50 hover:text-crema transition-colors"
-                                        >
-                                            {t.more}
-                                        </Link>
-                                    )}
+                                        {/* Impact line */}
+                                        <div className="border-l-2 border-oro pl-4 mb-6">
+                                            <p className="text-crema font-manrope text-sm italic leading-relaxed">
+                                                {item.impacto}
+                                            </p>
+                                        </div>
+
+                                        {/* CTA */}
+                                        <div className="flex flex-wrap gap-3">
+                                            <a
+                                                href={`${t.waPrefix}${encodeURIComponent(item.nombre)}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-3 bg-oro text-carbon px-6 py-3 rounded-full font-manrope font-semibold text-sm hover:bg-oro/90 transition-colors"
+                                            >
+                                                {t.consult}
+                                                <span>→</span>
+                                            </a>
+                                            {item.href && (
+                                                <Link
+                                                    href={item.href}
+                                                    className="inline-flex items-center gap-2 border border-oro/25 text-crema/70 px-6 py-3 rounded-full font-manrope text-sm hover:border-oro/50 hover:text-crema transition-colors"
+                                                >
+                                                    {t.more}
+                                                </Link>
+                                            )}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </details>
