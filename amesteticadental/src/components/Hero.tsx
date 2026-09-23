@@ -39,7 +39,7 @@ const COPY = {
     eyebrow: "AM Estética Dental · Puerto Madero",
     h1a: "Carillas, Diseño de Sonrisa",
     h1b: "y Estética Dental Natural.",
-    lead: "Carillas de porcelana, lentes de contacto dental y diseño de sonrisa digital para lograr resultados naturales en Puerto Madero. AM Aligners cuando el caso pide movimiento, no artificio.",
+    lead: "Carillas de porcelana, lentes de contacto dental y diseño de sonrisa digital para lograr resultados naturales en Puerto Madero. Laboratorio propio, planificación 3D y un estándar pensado para pacientes que valoran precisión, tiempo y discreción.",
     cta: "Solicitar evaluación inicial",
     wa: "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Quiero%20solicitar%20una%20evaluaci%C3%B3n%20inicial.",
     secondary: "Ver tratamientos principales",
@@ -48,7 +48,7 @@ const COPY = {
     stats: [
       { v: "4.9★", l: "Google" },
       { v: "Forbes", l: "Argentina" },
-      { v: ANIOS_LABEL, l: "transformando sonrisas" },
+      { v: ANIOS_LABEL, l: "trayectoria" },
     ],
     scroll: "Descubrir",
   },
@@ -65,7 +65,7 @@ const COPY = {
     stats: [
       { v: "4.9★", l: "Google" },
       { v: "Forbes", l: "Argentina" },
-      { v: ANIOS_LABEL_EN, l: "transforming smiles" },
+      { v: ANIOS_LABEL_EN, l: "track record" },
     ],
     scroll: "Discover",
   },
@@ -86,23 +86,20 @@ export default function Hero({ lang = "es" }: { lang?: "es" | "en" }) {
     const tl = gsap.timeline({ delay: 0.2 });
 
     tl.from(headlineRef.current, {
-      y: 70,
-      opacity: 0,
-      duration: 1.1,
+      y: 46,
+      duration: 0.75,
       ease: "power3.out",
     })
     .from(subRef.current, {
-      y: 35,
-      opacity: 0,
-      duration: 0.85,
+      y: 18,
+      duration: 0.55,
       ease: "power3.out",
-    }, "-=0.55")
+    }, "-=0.38")
     .from(ctaRef.current, {
-      y: 20,
-      opacity: 0,
-      duration: 0.65,
+      y: 12,
+      duration: 0.45,
       ease: "power3.out",
-    }, "-=0.45");
+    }, "-=0.32");
 
     // ── Animación de entrada: media wrapper
     tl.from(mediaWrapRef.current, {
@@ -230,10 +227,19 @@ export default function Hero({ lang = "es" }: { lang?: "es" | "en" }) {
 
           <p
             ref={subRef}
-            className="text-crema/68 font-manrope text-lg md:text-[1.12rem] font-light leading-relaxed max-w-sm mb-9"
+            className="text-crema/78 font-manrope text-lg md:text-[1.12rem] font-light leading-relaxed max-w-sm mb-7"
           >
             {t.lead}
           </p>
+
+          <div className="mb-8 grid max-w-xl grid-cols-3 overflow-hidden rounded-2xl border border-oro/15 bg-carbon/55 backdrop-blur-sm">
+            {t.stats.map((s) => (
+              <div key={s.l} className="border-r border-oro/10 px-3 py-3 last:border-r-0">
+                <div className="text-oro font-manrope text-base font-semibold leading-none">{s.v}</div>
+                <div className="mt-1 text-[10px] uppercase tracking-[0.16em] text-crema/68">{s.l}</div>
+              </div>
+            ))}
+          </div>
 
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <CometButton
@@ -261,19 +267,10 @@ export default function Hero({ lang = "es" }: { lang?: "es" | "en" }) {
             </span>
           </div>
 
-          {/* Stats */}
-          <div className="flex items-center gap-8 mt-12 pt-7 border-t border-oro/10">
-            {t.stats.map((s) => (
-              <div key={s.l}>
-                <div className="text-oro font-manrope font-semibold text-lg">{s.v}</div>
-                <div className="text-crema-muted font-manrope text-xs">{s.l}</div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* ── Columna derecha: video hero mobile / spatial anchor desktop */}
-        <div className="relative flex justify-center lg:justify-end order-first lg:order-last min-h-[18rem] lg:min-h-0">
+        <div className="relative flex justify-center lg:justify-end min-h-[12rem] lg:min-h-0">
 
           {/* Partículas flotantes */}
           <div
@@ -330,7 +327,7 @@ export default function Hero({ lang = "es" }: { lang?: "es" | "en" }) {
       </div>
 
       {/* ── Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-40">
+      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center opacity-40 lg:flex">
         <span className="text-crema text-xs tracking-widest uppercase font-manrope mb-2">{t.scroll}</span>
         <div className="w-px h-10 bg-crema/30 relative overflow-hidden">
           <div className="w-full h-full bg-crema absolute top-0 animate-[scrollDown_2s_ease-in-out_infinite]" />

@@ -8,6 +8,7 @@ import { GOOGLE_REVIEWS } from "@/lib/reviews";
 import "./globals.css";
 import { SAME_AS_DR, SAME_AS_CLINICA } from "@/lib/entidad";
 import Clarity from "@/components/Clarity";
+import StickyMobileCta from "@/components/StickyMobileCta";
 
 const gtmId = (process.env.NEXT_PUBLIC_GTM_ID || "GTM-P9KCL5W7").trim();
 const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID || "";
@@ -30,8 +31,9 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Carillas Dentales en Buenos Aires | Diseño de Sonrisa",
-  description: "Clínica de carillas y diseño de sonrisa en Puerto Madero. Laboratorio propio: cerámicas en 10 a 14 días. Reconocidos por Forbes.",
+  manifest: "/manifest.webmanifest",
+  title: "Carillas y Diseño de Sonrisa | AM Puerto Madero",
+  description: "Clínica premium de carillas y diseño de sonrisa en Puerto Madero. Laboratorio propio, resultados naturales en días y reconocimiento editorial de Forbes.",
   keywords: "carillas dentales buenos aires, carillas de porcelana puerto madero, diseño de sonrisa, estética dental CABA, Dr. Ariel Merino",
   alternates: {
     canonical: "https://www.amesteticadental.com",
@@ -127,7 +129,7 @@ export default function RootLayout({
         {gtmId ? (
           <Script
             id="gtm-script"
-            strategy="beforeInteractive"
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -140,7 +142,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {metaPixelId ? (
           <Script
             id="meta-pixel-script"
-            strategy="beforeInteractive"
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -166,7 +168,7 @@ fbq('track', 'PageView');`,
         <Clarity />
         <RootSchema schema={schemaOrg} />
       </head>
-      <body className="bg-carbon text-crema font-manrope relative min-h-screen">
+      <body className="bg-carbon text-crema font-manrope relative min-h-screen pb-24 lg:pb-0">
         {gtmId ? (
           <noscript>
             <iframe
@@ -211,6 +213,7 @@ fbq('track', 'PageView');`,
         <SiteFooter />
 
         <RedAM />
+        <StickyMobileCta />
 
         {/* WhatsApp click tracking → dataLayer → GTM → Google Ads conversión */}
         <Script

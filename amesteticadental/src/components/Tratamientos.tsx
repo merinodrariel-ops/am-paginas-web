@@ -178,7 +178,7 @@ const UI = {
         eyebrow: "Especialidades",
         h2a: "Cada tratamiento",
         h2b: "tiene su propio resultado",
-        lead: "No hay dos sonrisas iguales. Por eso cada tratamiento está personalizado a tu caso, tu presupuesto y tus objetivos.",
+        lead: "No hay dos sonrisas iguales. Por eso cada tratamiento se diseña alrededor de tu caso, tu inversión y el resultado clínico-estético que buscás.",
         consult: "Consultar",
         more: "Ver más →",
         waPrefix: "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20",

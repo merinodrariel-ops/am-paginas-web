@@ -9,14 +9,14 @@ import { RESENAS } from "@/lib/reviews";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Alineadores Invisibles con Láser en Buenos Aires | AM Estética Dental",
-    description: "Ortodoncia sin brackets en Puerto Madero, CABA. Alineadores invisibles combinados con fotobiomodulación láser: menos molestia en cada cambio y un plan más corto. Dr. Ariel Merino.",
+    title: "Alineadores Invisibles con Láser | AM Puerto Madero",
+    description: "Ortodoncia sin brackets en Puerto Madero. Alineadores invisibles con fotobiomodulación láser: cambios más cómodos y un plan clínico más eficiente.",
     alternates: {
         canonical: "https://www.amesteticadental.com/alineadores-invisibles",
     languages: hreflangFor("/alineadores-invisibles"),
     },
     openGraph: {
-        title: "Alineadores Invisibles con Láser en Buenos Aires | AM Estética Dental",
+        title: "Alineadores Invisibles con Láser | AM Puerto Madero",
         description: "Ortodoncia invisible en Puerto Madero, combinada con láser de baja potencia: tratamiento más corto y cambios de alineador más cómodos. Sin brackets, sin alambre.",
         url: "https://www.amesteticadental.com/alineadores-invisibles",
         locale: "es_AR",

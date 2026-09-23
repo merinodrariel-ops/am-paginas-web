@@ -10,12 +10,12 @@ const CANONICAL = "https://www.amesteticadental.com/en/invisible-aligners-buenos
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
-  title: "Invisible Aligners with Laser in Buenos Aires | AM Estética Dental",
+  title: "Laser Clear Aligners in Buenos Aires | AM",
   description:
-    "Clear aligners in Puerto Madero combined with low-level laser therapy: a shorter plan and far less soreness at every tray change. Full digital planning. Dr. Ariel Merino.",
+    "Clear aligners in Puerto Madero combined with low-level laser therapy: digital planning, more comfortable tray changes and efficient clinical control.",
   alternates: { canonical: CANONICAL, languages: hreflangFor("/alineadores-invisibles") },
   openGraph: {
-    title: "Invisible Aligners with Laser in Buenos Aires | AM Estética Dental",
+    title: "Laser Clear Aligners in Buenos Aires | AM",
     description:
       "AM Aligners: clear aligners combined with photobiomodulation laser in Puerto Madero, Buenos Aires. Shorter treatment, easier tray changes.",
     url: CANONICAL,
