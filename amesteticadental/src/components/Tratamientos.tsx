@@ -25,7 +25,7 @@ const tratamientos = [
         tagline: "Técnica controlada, resultados desde la primera sesión",
         descripcion: "No es el blanqueamiento de una farmacia. Es un protocolo clínico con tecnología de luz activa, calibrado para tu tipo de esmalte y el resultado específico que buscás.",
         impacto: "Resultados visibles en la primera sesión. Sin sensibilidad innecesaria.",
-        href: null,
+        href: "/blanqueamiento-dental-precio-buenos-aires",
         destacado: false,
     },
     {
@@ -43,7 +43,7 @@ const tratamientos = [
         tagline: "El diente que no sabés que es artificial",
         descripcion: "Reemplazamos dientes perdidos con implantes que se integran a tu hueso. El resultado es indistinguible de un diente natural — en función y en estética.",
         impacto: "Solución permanente. Máxima estabilidad. Sin comprometer los dientes vecinos.",
-        href: null,
+        href: "/implantes-dentales-buenos-aires",
         destacado: false,
     },
     {
@@ -70,7 +70,7 @@ const tratamientos = [
         tagline: "Rehabilitación de alta gama",
         descripcion: "Coronas y prótesis diseñadas a medida con materiales de última generación. Restauramos la función y la belleza de forma simultánea, sin comprometer ninguna de las dos.",
         impacto: "Para casos complejos que merecen una solución a la altura.",
-        href: null,
+        href: "/coronas-y-fundas-dentales",
         destacado: false,
     },
 ];
@@ -114,7 +114,7 @@ const tratamientosEn = [
         tagline: "Controlled technique, results from session one",
         descripcion: "This is not a drugstore whitening kit. It is a clinical protocol with active-light technology, calibrated to your enamel type and the specific result you are after.",
         impacto: "Visible results in the first session. Without unnecessary sensitivity.",
-        href: null,
+        href: "/en/teeth-whitening-buenos-aires",
         destacado: false,
     },
     {
@@ -123,7 +123,7 @@ const tratamientosEn = [
         tagline: "Orthodontics without brackets, without hassle",
         descripcion: "Invisible aligners with 100% digital planning. You wear the clear aligners at your own pace, and every stage is calculated to move your teeth with fraction-of-a-millimetre precision.",
         impacto: "Effective at any age. Nobody will know you are wearing them.",
-        href: null,
+        href: "/en/invisible-aligners-buenos-aires",
         destacado: false,
     },
     {
@@ -132,7 +132,7 @@ const tratamientosEn = [
         tagline: "The tooth you would never guess is artificial",
         descripcion: "We replace missing teeth with implants that integrate into your bone. The result is indistinguishable from a natural tooth — in function and in aesthetics.",
         impacto: "A permanent solution. Maximum stability. Without compromising neighbouring teeth.",
-        href: null,
+        href: "/en/dental-implants-buenos-aires",
         destacado: false,
     },
     {
@@ -207,7 +207,7 @@ export default function Tratamientos({ lang = "es" }: { lang?: "es" | "en" }) {
     const items = lang === "en" ? tratamientosEn : tratamientos;
     const links = lang === "en" ? quickLinksEn : quickLinks;
     return (
-        <section className="px-6 py-24 max-w-7xl mx-auto">
+        <section id="tratamientos" className="px-6 py-24 max-w-7xl mx-auto scroll-mt-28">
             <div className="space-y-10">
                 {/* Encabezado */}
                 <div className="mb-12">
