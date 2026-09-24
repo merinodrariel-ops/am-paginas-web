@@ -67,12 +67,14 @@ const testimoniosEscritos = [
 // devuelve el poster con su boton rojo — y las tarjetas quedaban como cinco
 // caras congeladas. El clip propio si se reproduce; el click sigue abriendo el
 // testimonio entero, con sonido, desde YouTube.
+const CLOUDINARY_TESTIMONIALS = "https://res.cloudinary.com/drctvgyqd";
+
 const videosTestimonios = [
-    { id: "video-1", youtubeId: "oqcaGGGAs5Y", loop: "/videos/testimonios/testimonio-1", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
-    { id: "video-2", youtubeId: "vlWiV96jQmY", loop: "/videos/testimonios/testimonio-2", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
-    { id: "video-3", youtubeId: "UxmkQbFERcw", loop: "/videos/testimonios/testimonio-3", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
-    { id: "video-4", youtubeId: "DdBeH4XaJUY", loop: "/videos/testimonios/testimonio-4", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
-    { id: "video-5", youtubeId: "bMwbSxNCZIA", loop: "/videos/testimonios/testimonio-5", nombre: "Caso real", tratamiento: "Testimonio de paciente" },
+    { id: "video-1", youtubeId: "oqcaGGGAs5Y", poster: `${CLOUDINARY_TESTIMONIALS}/image/upload/q_auto,f_auto/testimonios/testimonio-1.jpg`, loop: `${CLOUDINARY_TESTIMONIALS}/video/upload/q_auto,f_auto/testimonios/testimonio-1.mp4`, nombre: "Caso real", tratamiento: "Testimonio de paciente" },
+    { id: "video-2", youtubeId: "vlWiV96jQmY", poster: `${CLOUDINARY_TESTIMONIALS}/image/upload/q_auto,f_auto/testimonios/testimonio-2.jpg`, loop: `${CLOUDINARY_TESTIMONIALS}/video/upload/q_auto,f_auto/testimonios/testimonio-2.mp4`, nombre: "Caso real", tratamiento: "Testimonio de paciente" },
+    { id: "video-3", youtubeId: "UxmkQbFERcw", poster: `${CLOUDINARY_TESTIMONIALS}/image/upload/q_auto,f_auto/testimonios/testimonio-3.jpg`, loop: `${CLOUDINARY_TESTIMONIALS}/video/upload/q_auto,f_auto/testimonios/testimonio-3.mp4`, nombre: "Caso real", tratamiento: "Testimonio de paciente" },
+    { id: "video-4", youtubeId: "DdBeH4XaJUY", poster: `${CLOUDINARY_TESTIMONIALS}/image/upload/q_auto,f_auto/testimonios/testimonio-4.jpg`, loop: `${CLOUDINARY_TESTIMONIALS}/video/upload/q_auto,f_auto/testimonios/testimonio-4.mp4`, nombre: "Caso real", tratamiento: "Testimonio de paciente" },
+    { id: "video-5", youtubeId: "bMwbSxNCZIA", poster: `${CLOUDINARY_TESTIMONIALS}/image/upload/q_auto,f_auto/testimonios/testimonio-5.jpg`, loop: `${CLOUDINARY_TESTIMONIALS}/video/upload/q_auto,f_auto/testimonios/testimonio-5.mp4`, nombre: "Caso real", tratamiento: "Testimonio de paciente" },
 ];
 
 function Stars({ small = false }: { small?: boolean }) {
@@ -230,12 +232,11 @@ function VideoCard({
             {!playing ? (
                 <>
                     <Image
-                        src={`${video.loop}.jpg`}
+                        src={video.poster}
                         alt={ui.alt}
                         fill
                         sizes="(max-width: 768px) 92vw, 30vw"
                         className="absolute inset-[1.5px] h-[calc(100%-3px)] w-[calc(100%-3px)] rounded-[calc(1.6rem-1.5px)] object-cover brightness-[0.72]"
-                        unoptimized
                     />
                     {mostrarLoop && (
                         <video

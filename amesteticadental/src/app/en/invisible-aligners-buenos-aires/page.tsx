@@ -6,6 +6,11 @@ import SeoFaq from "@/components/seo/SeoFaq";
 import Contacto from "@/components/Contacto";
 import { hreflangFor } from "@/lib/i18n-routes";
 
+const ALINEADORES_CLOUDINARY = "https://res.cloudinary.com/drctvgyqd";
+const ALINEADOR_RENDER_POSTER = `${ALINEADORES_CLOUDINARY}/image/upload/q_auto,f_auto/alineadores/alineador-invisible-am-aligners-puerto-madero.jpg`;
+const ALINEADOR_LASER_RENDER = `${ALINEADORES_CLOUDINARY}/image/upload/q_auto,f_auto/alineadores/alineadores-invisibles-laser-aceleracion-buenos-aires.webp`;
+const ALINEADOR_RENDER_VIDEO = `${ALINEADORES_CLOUDINARY}/video/upload/q_auto,f_auto/alineadores/alineador-invisible-360-am-estetica-dental.mp4`;
+
 const CANONICAL = "https://www.amesteticadental.com/en/invisible-aligners-buenos-aires";
 
 export const metadata: Metadata = {
@@ -188,9 +193,9 @@ export default function InvisibleAlignersPage() {
                   loop
                   playsInline
                   preload="metadata"
-                  poster="/images/alineadores/alineador-invisible-am-aligners-puerto-madero.jpg"
+                  poster={ALINEADOR_RENDER_POSTER}
                 >
-                  <source src="/videos/alineadores/alineador-invisible-360-am-estetica-dental.mp4" type="video/mp4" />
+                  <source src={ALINEADOR_RENDER_VIDEO} type="video/mp4" />
                 </video>
                 <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-t from-carbon/50 via-transparent to-transparent" />
                 <span className="absolute bottom-5 left-5 font-manrope text-[10px] uppercase tracking-[0.3em] text-crema/45">
@@ -214,7 +219,7 @@ export default function InvisibleAlignersPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-14">
               <div className="relative aspect-video overflow-hidden rounded-2xl border border-oro/15">
                 <Image
-                  src="/images/alineadores/alineadores-invisibles-laser-aceleracion-buenos-aires.webp"
+                  src={ALINEADOR_LASER_RENDER}
                   alt="Low-level laser beam passing through a clear aligner — photobiomodulation as applied in the AM Estética Dental protocol"
                   fill
                   sizes="(max-width: 1024px) 92vw, 46vw"
