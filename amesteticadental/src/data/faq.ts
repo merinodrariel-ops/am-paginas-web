@@ -13,7 +13,7 @@ export const faqData = [
     },
     {
         pregunta: "¿El blanqueamiento duele o afecta el esmalte?",
-        respuesta: "El blanqueamiento profesional en AM Estética Dental es un protocolo clínico controlado. No afecta el esmalte cuando se realiza correctamente. La sensibilidad post-sesión, si ocurre, es transitoria y se maneja con protocolo específico.",
+        respuesta: "En AM Estética Dental hacemos blanqueamiento ambulatorio: cubetas a medida y gel de baja concentración (peróxido de carbamida 10–16%) que aplicás vos mismo durante 7 a 10 días, la mayoría de las veces mientras dormís. Al no usar concentraciones altas de consultorio, el riesgo de sensibilidad o daño al esmalte es mucho menor.",
     },
     {
         pregunta: "¿Puedo ver cómo va a quedar mi sonrisa antes de empezar?",

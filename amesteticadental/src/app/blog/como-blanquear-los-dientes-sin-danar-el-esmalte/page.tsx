@@ -9,13 +9,13 @@ const WA_LINK = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Cómo blanquear los dientes sin dañar el esmalte | AM",
-    description: "Guía clara sobre blanqueamiento dental profesional: cómo funciona, cuándo da sensibilidad, qué no blanquea y qué cuidados seguir para proteger el esmalte.",
+    description: "Guía clara sobre blanqueamiento dental ambulatorio: cómo funciona, por qué no recomendamos el de consultorio, y qué cuidados seguir para proteger el esmalte.",
     alternates: {
         canonical: CANONICAL,
     },
     openGraph: {
         title: "Cómo blanquear los dientes sin dañar el esmalte",
-        description: "Lo que un paciente debería saber antes de hacerse un blanqueamiento dental: tipos, sensibilidad, dieta blanca y límites reales del tratamiento.",
+        description: "Lo que un paciente debería saber antes de hacerse un blanqueamiento dental: tipos, sensibilidad, y límites reales del tratamiento ambulatorio.",
         url: CANONICAL,
         locale: "es_AR",
         type: "article",
@@ -27,7 +27,7 @@ const articleSchema = {
     "@type": "Article",
     headline: "Cómo blanquear los dientes sin dañar el esmalte",
     "image": "https://www.amesteticadental.com/og-image.jpg",
-    description: "Guía clínica para entender cómo funciona el blanqueamiento dental profesional, qué cuidados requiere y cómo evitar errores comunes.",
+    description: "Guía clínica para entender cómo funciona el blanqueamiento dental ambulatorio, qué cuidados requiere y cómo evitar errores comunes.",
     author: {
         // El @id es lo que une las 11 notas del blog, la clínica y arielmerino.com
         // en UNA sola entidad. Sin él, cada artículo declaraba una "Dr. Ariel Merino"
@@ -50,41 +50,20 @@ const articleSchema = {
 
 const TIPOS = [
     {
-        titulo: "En clínica",
-        descripcion: "Se realiza con geles de mayor concentración activados bajo protocolo profesional. Suele dar un cambio visible en una sola sesión.",
-        detalle: "Ideal cuando el paciente quiere un resultado rápido antes de un evento o parte de una rutina de estética dental supervisada.",
+        titulo: "Ambulatorio con cubetas a medida",
+        descripcion: "Es el que usamos en AM. Cubetas superior e inferior hechas a medida, con gel de baja concentración (peróxido de carbamida 10–16%) que aplicás vos mismo en casa durante 7 a 10 días, la mayoría de las veces mientras dormís.",
+        detalle: "El cambio es progresivo y acumulativo. Sin dieta blanca y con mucho menos riesgo de sensibilidad que una sesión de consultorio.",
     },
     {
-        titulo: "Domiciliario con férulas",
-        descripcion: "Usa geles de menor concentración en férulas hechas a medida. El cambio es más progresivo y se desarrolla a lo largo de varios días o semanas.",
-        detalle: "Suele ser cómodo para mantenimiento o para pacientes que prefieren un proceso más gradual.",
-    },
-    {
-        titulo: "Combinado",
-        descripcion: "Une una sesión en clínica con continuidad en casa. Es una de las formas más completas de lograr un resultado parejo y más duradero.",
-        detalle: "Suele ser la mejor indicación cuando se busca maximizar resultado y estabilidad en el tiempo.",
+        titulo: "En clínica (por qué no lo hacemos)",
+        descripcion: "Usa geles de alta concentración activados en una sola sesión de consultorio para un cambio rápido. En AM no lo ofrecemos: la concentración alta eleva el riesgo de sensibilidad, irritación de encías y daño al esmalte.",
+        detalle: "El resultado final no es superior al ambulatorio bien indicado; el riesgo, sí.",
     },
     {
         titulo: "Interno",
         descripcion: "Se reserva para dientes con endodoncia que se oscurecieron desde adentro. No aplica a dientes vitales normales.",
         detalle: "Requiere diagnóstico específico y planificación distinta al blanqueamiento convencional.",
     },
-];
-
-const PROHIBIDOS = [
-    "Café, té, mate y vino tinto",
-    "Salsas rojas, kétchup y mostaza",
-    "Chocolate, remolacha, frutillas y alimentos con mucho pigmento",
-    "Tabaco durante el tratamiento y las 48-72 horas posteriores",
-    "Kits de internet o remedios caseros sin control profesional",
-];
-
-const SI_PERMITE = [
-    "Agua",
-    "Pollo, pescado, arroz y papas",
-    "Lácteos claros y salsas blancas",
-    "Higiene oral rigurosa y controles profesionales",
-    "Retoques de mantenimiento cuando el caso lo pide",
 ];
 
 export default function BlogBlanqueamientoEsmalte() {
@@ -143,14 +122,14 @@ export default function BlogBlanqueamientoEsmalte() {
 
                         <section>
                             <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-5">
-                                Cómo funciona el blanqueamiento dental profesional
+                                Cómo funciona el blanqueamiento dental
                             </h2>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mb-4">
                                 El blanqueamiento no &quot;lija&quot; el esmalte ni cambia la forma del diente. Funciona a través de una reacción química controlada con peróxido de hidrógeno o peróxido de carbamida. Estos agentes penetran esmalte y dentina, oxidan las moléculas pigmentadas y las vuelven más claras.
                             </p>
                             <div className="border border-oro/15 rounded-xl p-5 bg-carbon-soft">
                                 <p className="text-crema/65 font-manrope text-sm leading-relaxed">
-                                    <span className="text-oro font-medium">La clave:</span> cuando el procedimiento está bien indicado y supervisado, el objetivo es aclarar pigmentos, no desgastar estructura. El problema no suele ser el blanqueamiento profesional. El problema es improvisar con concentraciones, productos o diagnósticos incorrectos.
+                                    <span className="text-oro font-medium">La clave:</span> el objetivo es aclarar pigmentos, no desgastar estructura, y eso se logra mejor con concentraciones bajas sostenidas en el tiempo que con una concentración alta de una sola vez. Por eso en AM trabajamos con el método ambulatorio: gel de peróxido de carbamida al 10–16% en cubetas a medida, durante 7 a 10 días.
                                 </p>
                             </div>
                         </section>
@@ -169,7 +148,7 @@ export default function BlogBlanqueamientoEsmalte() {
                                 ))}
                             </div>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mt-6">
-                                Si querés ver valores orientativos y diferencias de enfoque entre LED, láser y combinado, lo desarrollamos aparte en nuestra guía de <Link href="/blanqueamiento-dental-precio-buenos-aires" className="text-oro hover:text-oro-light transition-colors">precio de blanqueamiento dental en Buenos Aires</Link>.
+                                Si querés ver cómo es el proceso completo y valores orientativos, lo desarrollamos aparte en nuestra guía de <Link href="/blanqueamiento-dental-precio-buenos-aires" className="text-oro hover:text-oro-light transition-colors">blanqueamiento dental ambulatorio en Buenos Aires</Link>.
                             </p>
                         </section>
 
@@ -181,16 +160,16 @@ export default function BlogBlanqueamientoEsmalte() {
                                 La sensibilidad postoperatoria es el efecto secundario más frecuente. Suele sentirse como un pinchazo transitorio, sobre todo con frío, durante las primeras horas o el primer par de días. Esto ocurre porque el peróxido puede estimular los túbulos dentinarios y, a través de ellos, activar la respuesta nerviosa del diente.
                             </p>
                             <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
-                                Eso no significa que el diente se haya dañado. Significa que hubo una respuesta esperable del tejido dental. En protocolos serios, esa molestia se previene o se reduce con agentes desensibilizantes como nitrato de potasio, flúor o compuestos que ayudan a sellar los túbulos expuestos.
+                                Eso no significa que el diente se haya dañado. Significa que hubo una respuesta esperable del tejido dental. Con el método ambulatorio que usamos en AM —gel de baja concentración, 10 a 16%— esa respuesta es mucho menos frecuente e intensa que con un blanqueamiento de consultorio. Un detalle que ayuda: secar un poco los dientes antes de colocar la cubeta con el gel.
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div className="border border-oro/15 rounded-xl p-5">
                                     <h3 className="text-crema font-manrope font-medium text-sm mb-2">Lo esperable</h3>
-                                    <p className="text-crema/60 font-manrope text-xs leading-relaxed">Sensibilidad reversible, controlada y de corta duración.</p>
+                                    <p className="text-crema/60 font-manrope text-xs leading-relaxed">Sensibilidad reversible, controlada y de corta duración, si es que aparece.</p>
                                 </div>
                                 <div className="border border-oro/15 rounded-xl p-5">
                                     <h3 className="text-crema font-manrope font-medium text-sm mb-2">Lo que hay que evitar</h3>
-                                    <p className="text-crema/60 font-manrope text-xs leading-relaxed">Usar productos de alta concentración sin evaluación previa ni protección gingival.</p>
+                                    <p className="text-crema/60 font-manrope text-xs leading-relaxed">Usar productos de alta concentración o kits genéricos sin evaluación previa ni cubetas ajustadas a tu boca.</p>
                                 </div>
                             </div>
                         </section>
@@ -211,35 +190,19 @@ export default function BlogBlanqueamientoEsmalte() {
 
                         <section>
                             <h2 className="text-2xl md:text-3xl font-manrope font-light text-crema mb-8">
-                                La dieta blanca no es un capricho
+                                ¿Hace falta dieta blanca? Con el método ambulatorio, no
                             </h2>
-                            <p className="text-crema/70 font-manrope text-base leading-relaxed mb-6">
-                                Durante el tratamiento y al menos las 48 a 72 horas posteriores, el diente queda más susceptible a volver a captar pigmentos. Por eso se recomienda la llamada dieta blanca: bajar al mínimo alimentos y bebidas con color intenso mientras el tono se estabiliza.
+                            <p className="text-crema/70 font-manrope text-base leading-relaxed mb-4">
+                                La dieta blanca —bajar al mínimo el café, el vino y todo alimento con color intenso mientras el tono se estabiliza— es una recomendación pensada para un blanqueamiento de alta concentración hecho en una sola sesión, donde el diente queda temporalmente más poroso y susceptible a repigmentarse.
                             </p>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                <div className="border border-oro/12 rounded-2xl p-6">
-                                    <span className="text-oro/60 font-manrope uppercase tracking-[0.25em] text-[10px] block mb-4">Evitar</span>
-                                    <div className="space-y-3">
-                                        {PROHIBIDOS.map((item) => (
-                                            <div key={item} className="flex items-start gap-3">
-                                                <span className="text-oro/35">—</span>
-                                                <p className="text-crema/60 font-manrope text-sm leading-relaxed">{item}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                                <div className="border border-oro/12 rounded-2xl p-6 bg-carbon-soft">
-                                    <span className="text-oro/60 font-manrope uppercase tracking-[0.25em] text-[10px] block mb-4">Sí conviene</span>
-                                    <div className="space-y-3">
-                                        {SI_PERMITE.map((item) => (
-                                            <div key={item} className="flex items-start gap-3">
-                                                <span className="text-oro/35">—</span>
-                                                <p className="text-crema/60 font-manrope text-sm leading-relaxed">{item}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                            <div className="border border-oro/15 rounded-xl p-5 bg-carbon-soft mb-6">
+                                <p className="text-crema/65 font-manrope text-sm leading-relaxed">
+                                    <span className="text-oro font-medium">La diferencia con el ambulatorio:</span> al ser una concentración baja aplicada de forma progresiva durante 7 a 10 días, no genera esa porosidad temporal marcada. Podés seguir tu dieta normal durante el tratamiento, sin restricciones.
+                                </p>
                             </div>
+                            <p className="text-crema/70 font-manrope text-base leading-relaxed">
+                                Igual, el sentido común ayuda: mientras tengas puesta la cubeta con el gel, el diente está en contacto directo con el peróxido, así que no se come ni se bebe con la cubeta colocada. Fuera de eso, no hay alimentos prohibidos.
+                            </p>
                         </section>
 
                         <section>

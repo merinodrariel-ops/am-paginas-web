@@ -292,9 +292,9 @@ export default function TurismoDentalPage() {
                                     tiempo: "Incluido",
                                 },
                                 {
-                                    nombre: "Blanqueamiento Profesional",
-                                    desc: "Sesión de blanqueamiento en consultorio de alta concentración. Se puede combinar con carillas de resina o como tratamiento independiente.",
-                                    tiempo: "1 día",
+                                    nombre: "Blanqueamiento Ambulatorio",
+                                    desc: "Cubetas a medida y gel de baja concentración para usar 7 a 10 días. Te llevás el kit y lo terminás en tu país, sin dieta blanca.",
+                                    tiempo: "1 visita + 7-10 días en casa",
                                 },
                             ].map((t) => (
                                 <div key={t.nombre} className="border border-oro/15 rounded-2xl p-7 bg-carbon-soft hover:border-oro/30 transition-colors">

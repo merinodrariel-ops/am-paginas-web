@@ -293,9 +293,9 @@ export default function DentalTourismPage() {
                                     tiempo: "Included",
                                 },
                                 {
-                                    nombre: "Professional Whitening",
-                                    desc: "High-concentration in-office whitening session. Can be combined with composite veneers or done as a standalone treatment.",
-                                    tiempo: "1 day",
+                                    nombre: "At-Home Whitening",
+                                    desc: "Custom trays and low-concentration gel to use over 7 to 10 days. You take the kit with you and finish it back home, no white-food diet.",
+                                    tiempo: "1 visit + 7-10 days at home",
                                 },
                             ].map((t) => (
                                 <div key={t.nombre} className="border border-oro/15 rounded-2xl p-7 bg-carbon-soft hover:border-oro/30 transition-colors">

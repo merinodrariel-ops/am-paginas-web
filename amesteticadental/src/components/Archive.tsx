@@ -29,7 +29,7 @@ const casos = [
     },
     {
         id: "03",
-        tratamiento: "Blanqueamiento Profesional",
+        tratamiento: "Blanqueamiento Ambulatorio",
         antes: "https://images.unsplash.com/photo-1619983081563-430f63602796?q=80&w=800&auto=format&fit=crop",
         despues: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop",
         paciente: "Caso A.C.",

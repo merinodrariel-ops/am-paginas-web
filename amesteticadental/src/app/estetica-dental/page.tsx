@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const faqItems = [
     {
         pregunta: "¿Qué es la estética dental?",
-        respuesta: "La estética dental es la rama de la odontología dedicada a mejorar la apariencia de los dientes, las encías y la sonrisa en general. Incluye tratamientos como carillas dentales, diseño de sonrisa digital, blanqueamiento profesional, alineadores invisibles, contorno gingival e implantes estéticos. A diferencia de la odontología general, el foco está en el resultado visual y su integración con el rostro completo.",
+        respuesta: "La estética dental es la rama de la odontología dedicada a mejorar la apariencia de los dientes, las encías y la sonrisa en general. Incluye tratamientos como carillas dentales, diseño de sonrisa digital, blanqueamiento ambulatorio, alineadores invisibles, contorno gingival e implantes estéticos. A diferencia de la odontología general, el foco está en el resultado visual y su integración con el rostro completo.",
     },
     {
         pregunta: "¿Cuál es la diferencia entre estética dental y odontología general?",
@@ -66,7 +66,7 @@ const tratamientos = [
     { nombre: "Diseño de Sonrisa Digital", desc: "Ves el resultado antes de empezar. Planificación 3D completa.", href: "/diseno-de-sonrisa" },
     { nombre: "Alineadores Invisibles", desc: "Ortodoncia sin brackets. Planificación digital y seguimiento continuo.", href: "/alineadores-invisibles" },
     { nombre: "AM Aligners", desc: "Nuestro sistema de alineadores invisibles, integrado a criterio clínico y diseño de sonrisa.", href: "/alineadores-invisibles" },
-    { nombre: "Blanqueamiento Profesional", desc: "Protocolo clínico calibrado para tu tipo de esmalte.", href: "/#tratamientos" },
+    { nombre: "Blanqueamiento Ambulatorio", desc: "Cubetas a medida y gel de baja concentración, 7 a 10 días, sin dieta blanca.", href: "/#tratamientos" },
 ];
 
 export default function EsteticaDentalPage() {

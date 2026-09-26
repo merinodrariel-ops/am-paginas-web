@@ -31,15 +31,15 @@ const tratamientos = [
     },
     {
         id: "03",
-        nombre: "Blanqueamiento Profesional",
-        tagline: "Técnica controlada, resultados desde la primera sesión",
-        descripcion: "No es el blanqueamiento de una farmacia. Es un protocolo clínico con tecnología de luz activa, calibrado para tu tipo de esmalte y el resultado específico que buscás.",
-        impacto: "Resultados visibles en la primera sesión. Sin sensibilidad innecesaria.",
+        nombre: "Blanqueamiento Ambulatorio",
+        tagline: "Cubetas a medida, resultado parejo en 7 a 10 días",
+        descripcion: "Nada de luces ni sesiones exprés en el sillón. Diseñamos cubetas a medida para tu maxilar superior e inferior; vos aplicás el gel en casa, la mayoría de las veces mientras dormís, durante 7 a 10 días. Sin dieta blanca, con mucho menos riesgo de sensibilidad.",
+        impacto: "Es como tener a alguien limpiando tu casa 24/7 durante una semana, en vez de una limpieza de 20 minutos. El resultado se nota.",
         href: "/blanqueamiento-dental-precio-buenos-aires",
         destacado: false,
         imagen: {
             src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147367/tratamientos/blanqueamiento-dental-profesional-am-estetica-dental-puerto-madero.png",
-            alt: "Blanqueamiento dental profesional con luz LED — AM Estética Dental, Puerto Madero",
+            alt: "Cubetas de blanqueamiento dental ambulatorio a medida — AM Estética Dental, Puerto Madero",
         },
     },
     {
@@ -152,15 +152,15 @@ const tratamientosEn = [
     },
     {
         id: "03",
-        nombre: "Professional Whitening",
-        tagline: "Controlled technique, results from session one",
-        descripcion: "This is not a drugstore whitening kit. It is a clinical protocol with active-light technology, calibrated to your enamel type and the specific result you are after.",
-        impacto: "Visible results in the first session. Without unnecessary sensitivity.",
+        nombre: "At-Home Whitening",
+        tagline: "Custom trays, even results in 7 to 10 days",
+        descripcion: "No lights, no rushed chairside session. We design custom trays for your upper and lower arch; you apply the gel at home, most patients simply overnight, for 7 to 10 days. No white-food diet, far less sensitivity risk.",
+        impacto: "Like having someone clean your house 24/7 for a week, instead of a 20-minute clean. The result shows.",
         href: "/en/teeth-whitening-buenos-aires",
         destacado: false,
         imagen: {
             src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147367/tratamientos/blanqueamiento-dental-profesional-am-estetica-dental-puerto-madero.png",
-            alt: "Professional LED teeth whitening — AM Estética Dental, Puerto Madero",
+            alt: "Custom at-home dental whitening trays — AM Estética Dental, Puerto Madero",
         },
     },
     {

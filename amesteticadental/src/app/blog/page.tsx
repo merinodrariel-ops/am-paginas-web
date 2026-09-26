@@ -82,7 +82,7 @@ const ARTICULOS = [
         imagen: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/galeria/caso-carilla-diente-oscurecido-tratamiento-conducto-am-estetica-dental",
         alt: "Diente oscurecido tras una endodoncia, resuelto con una carilla — AM Estética Dental",
         titulo: "Cómo blanquear los dientes sin dañar el esmalte",
-        descripcion: "Cómo funciona el blanqueamiento profesional, cuándo da sensibilidad, qué no blanquea y qué cuidados seguir para proteger el esmalte.",
+        descripcion: "Cómo funciona el blanqueamiento ambulatorio con cubetas a medida, por qué no recomendamos el de consultorio, y qué cuidados seguir para proteger el esmalte.",
         categoria: "Blanqueamiento",
         lectura: "5 min",
     },
