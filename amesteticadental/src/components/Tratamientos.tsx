@@ -273,7 +273,7 @@ export default function Tratamientos({ lang = "es" }: { lang?: "es" | "en" }) {
     const items = lang === "en" ? tratamientosEn : tratamientos;
     const links = lang === "en" ? quickLinksEn : quickLinks;
     return (
-        <section id="tratamientos" className="px-6 py-24 max-w-7xl mx-auto scroll-mt-28">
+        <section id="tratamientos" className="w-full px-6 py-24 max-w-7xl mx-auto scroll-mt-28 min-w-0">
             <div className="space-y-10">
                 {/* Encabezado */}
                 <div className="mb-12">
