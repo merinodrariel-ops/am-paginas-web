@@ -25,8 +25,8 @@ export const metadata: Metadata = {
 const ARTICULOS = [
     {
         slug: "como-combatir-el-bruxismo-botox-y-placa",
-        imagen: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/galeria/caso-bruxismo-carillas-mordida-cruzada-am-estetica-dental",
-        alt: "Caso de bruxismo con mordida cruzada resuelto con carillas cerámicas — AM Estética Dental",
+        imagen: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/bruxismo/bruxismo-nocturno-mano-mandibula-portada-editorial-dr-ariel-merino-am-estetica-dental-buenos-aires",
+        alt: "Persona durmiendo de noche con la mano apoyada junto a la mandíbula, en penumbra con luz cálida — bruxismo nocturno, AM Estética Dental",
         titulo: "Cómo combatir el bruxismo: los dos tratamientos que de verdad funcionan",
         descripcion: "A la noche se te apaga Windows, pero la mandíbula sigue apretando. La placa que guía el movimiento y la toxina botulínica en el masetero: qué hace cada una, cuánto dura y por qué juntas rinden más.",
         categoria: "Bruxismo",
