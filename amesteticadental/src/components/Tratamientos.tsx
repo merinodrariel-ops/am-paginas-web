@@ -38,8 +38,8 @@ const tratamientos = [
         href: "/blanqueamiento-dental-precio-buenos-aires",
         destacado: false,
         imagen: {
-            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147367/tratamientos/blanqueamiento-dental-profesional-am-estetica-dental-puerto-madero.png",
-            alt: "Cubetas de blanqueamiento dental ambulatorio a medida — AM Estética Dental, Puerto Madero",
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790470756/tratamientos/cubetas-superior-inferior-jeringas-blanqueamiento-ambulatorio-editorial-dr-ariel-merino-am-estetica-dental-buenos-aires.jpg",
+            alt: "Cubetas de blanqueamiento ambulatorio a medida, superior e inferior, y jeringas de gel — AM Estética Dental, Puerto Madero",
         },
     },
     {
@@ -159,8 +159,8 @@ const tratamientosEn = [
         href: "/en/teeth-whitening-buenos-aires",
         destacado: false,
         imagen: {
-            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147367/tratamientos/blanqueamiento-dental-profesional-am-estetica-dental-puerto-madero.png",
-            alt: "Custom at-home dental whitening trays — AM Estética Dental, Puerto Madero",
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790470756/tratamientos/cubetas-superior-inferior-jeringas-blanqueamiento-ambulatorio-editorial-dr-ariel-merino-am-estetica-dental-buenos-aires.jpg",
+            alt: "Custom upper and lower at-home whitening trays and gel syringes — AM Estética Dental, Puerto Madero",
         },
     },
     {
