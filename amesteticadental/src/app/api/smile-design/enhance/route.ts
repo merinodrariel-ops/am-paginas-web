@@ -1,8 +1,22 @@
 import { GoogleGenAI } from "@google/genai";
 import { NextRequest, NextResponse } from "next/server";
+import {
+  dentroDelLimite,
+  esOrigenPropio,
+  ipDe,
+  leerCuerpoConTope,
+  verificarTurnstile,
+} from "@/lib/api-guard";
 
 const MAX_REQUEST_BYTES = 7 * 1024 * 1024;
 const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
+// Cada generación cuesta plata (Gemini 2.5 Flash Image). Un visitante real prueba
+// una o dos fotos; esto deja margen para reintentos sin habilitar abuso.
+const LIMITES_POR_IP = [
+  { limite: 3, segundos: 60 },
+  { limite: 10, segundos: 60 * 60 },
+  { limite: 30, segundos: 24 * 60 * 60 },
+];
 const ALLOWED_IMAGE_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
 
 function getAI() {
@@ -13,12 +27,35 @@ function getAI() {
 
 export async function POST(req: NextRequest) {
   try {
-    const contentLength = Number(req.headers.get("content-length") || 0);
-    if (contentLength > MAX_REQUEST_BYTES) {
+    if (!esOrigenPropio(req)) {
+      return NextResponse.json({ error: "Origen no permitido." }, { status: 403 });
+    }
+
+    const ip = ipDe(req);
+    if (!(await dentroDelLimite("smile-enhance", ip, LIMITES_POR_IP))) {
+      return NextResponse.json(
+        { error: "Alcanzaste el límite de simulaciones por ahora. Probá de nuevo más tarde." },
+        { status: 429, headers: { "Retry-After": "3600" } },
+      );
+    }
+
+    const raw = await leerCuerpoConTope(req, MAX_REQUEST_BYTES);
+    if (raw === null) {
       return NextResponse.json({ error: "La imagen supera el tamaño permitido." }, { status: 413 });
     }
 
-    const { imageBase64, mimeType } = await req.json();
+    let body: { imageBase64?: unknown; mimeType?: unknown; turnstileToken?: unknown };
+    try {
+      body = JSON.parse(raw);
+    } catch {
+      return NextResponse.json({ error: "No pudimos leer la imagen." }, { status: 400 });
+    }
+    const { imageBase64, mimeType, turnstileToken } = body;
+
+    // Sólo se exige si TURNSTILE_SECRET_KEY está cargada (ver src/lib/api-guard.ts).
+    if (!(await verificarTurnstile(turnstileToken, ip))) {
+      return NextResponse.json({ error: "No pudimos verificar que seas una persona. Recargá la página." }, { status: 403 });
+    }
 
     if (typeof imageBase64 !== "string" || typeof mimeType !== "string") {
       return NextResponse.json({ error: "imageBase64 and mimeType required" }, { status: 400 });
