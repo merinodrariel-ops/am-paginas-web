@@ -1,6 +1,11 @@
 import type { MetadataRoute } from "next";
 import { getCasosPublicadosMerged } from "@/lib/public-cases";
 import { ES_BY_EN, hreflangFor } from "@/lib/i18n-routes";
+import lastmod from "./lastmod.json";
+
+// Fecha real del último commit que tocó cada ruta (scripts/generar-lastmod.mjs,
+// corre en `prebuild`). Las rutas sin fecha se publican sin `lastmod`.
+const FECHAS: Record<string, string> = lastmod;
 
 // Una página /en pertenece al mismo cluster que su par español: se resuelve el par
 // y se reusa el mismo bloque de idiomas.
@@ -27,8 +32,9 @@ type SitemapEntry = {
   priority: number;
 };
 
-// Solo URLs canónicas que responden 200. `lastModified` se omite a propósito:
-// una fecha inventada en cada build perjudica la confianza en la señal de frescura.
+// Solo URLs canónicas que responden 200. `lastModified` sale de git (FECHAS), nunca
+// de la hora de build: una fecha inventada en cada deploy perjudica la confianza
+// en la señal de frescura.
 const STATIC_ROUTES: SitemapEntry[] = [
   { path: "", changeFrequency: "weekly", priority: 1 },
   { path: "/estetica-dental", changeFrequency: "monthly", priority: 0.9 },
@@ -129,8 +135,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // recíproco. Así queda bidireccional sin tocar las 50 páginas una por una.
     ...STATIC_ROUTES.map(({ path, ...entry }) => {
       const languages = languagesForPath(path);
+      const fecha = FECHAS[path];
       return {
         url: `${SITE}${path}`,
+        ...(fecha ? { lastModified: new Date(fecha) } : {}),
         ...entry,
         ...(Object.keys(languages).length > 0 ? { alternates: { languages } } : {}),
       };
