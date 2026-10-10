@@ -52,7 +52,9 @@ const env = (() => {
 })();
 
 function getToken() {
-  return auth([SCOPES.webmasters], {
+  // La Indexing API pide su propio permiso: con cuenta de servicio, un token
+  // pedido sólo con `webmasters` inspecciona pero no puede mandar a indexar.
+  return auth([SCOPES.webmasters, SCOPES.indexing], {
     clientId: env.GOOGLE_ADS_CLIENT_ID,
     clientSecret: env.GOOGLE_ADS_CLIENT_SECRET,
     refreshToken: env.GOOGLE_ADS_REFRESH_TOKEN,

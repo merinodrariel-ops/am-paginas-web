@@ -1,0 +1,42 @@
+name: Indexar en Google lo que falte (semanal)
+
+# Revisa los cuatro dominios de la red y manda a la Indexing API SÓLO las páginas
+# que Google todavía no indexó. Es idempotente: si está todo indexado no manda nada.
+#
+# Antes esto era una tarea programada en la Mac del consultorio: si la compu estaba
+# apagada el lunes, no corría. Acá corre en GitHub, con la cuenta de servicio
+# (no caduca), sin depender de ninguna máquina ni gastar créditos de IA.
+#
+# Complementa a indexacion-watch.yml: ese vigila todos los días y reenvía sitemaps;
+# este empuja las URLs una por una, una vez por semana para no gastar la cuota
+# diaria de la Indexing API (200/día).
+
+on:
+  schedule:
+    - cron: "0 12 * * 1" # lunes 09:00 hora Argentina
+  workflow_dispatch:
+    inputs:
+      solo_mirar:
+        description: "Sólo mirar (--dry-run), no mandar nada"
+        type: boolean
+        default: false
+
+concurrency:
+  group: indexar-faltantes
+  cancel-in-progress: false
+
+jobs:
+  indexar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Indexar páginas faltantes
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          set -o pipefail
+          node gsc-indexar-faltantes.mjs ${{ inputs.solo_mirar && '--dry-run' || '' }} | tee salida.txt
+          { echo '```'; tr '\r' '\n' < salida.txt | grep -v '^ *[0-9]*/[0-9]*$'; echo '```'; } >> "$GITHUB_STEP_SUMMARY"

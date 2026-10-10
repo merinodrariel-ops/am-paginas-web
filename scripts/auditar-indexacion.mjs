@@ -46,7 +46,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import { getAccessToken as auth, SCOPES } from "./google-auth.mjs";
+import { getAccessToken as auth, leerCuentaDeServicio, SCOPES } from "./google-auth.mjs";
 
 const SITIOS = [
   { host: "www.amesteticadental.com", key: "14c9604645864308b49cb8994e8d032c" },
@@ -78,6 +78,12 @@ const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
  * puede gastar en Google Ads, por eso va segundo).
  */
 function cargarCredenciales() {
+  // Primero la cuenta de servicio (el secreto GOOGLE_SERVICE_ACCOUNT_JSON en el CI):
+  // no caduca. Sin este chequeo el workflow ignoraba el secreto cargado y fallaba
+  // todos los días pidiendo los refresh tokens viejos.
+  const cuenta = leerCuentaDeServicio();
+  if (cuenta) return { origen: `cuenta de servicio (${cuenta.client_email})` };
+
   const deEntorno = {
     id: process.env.GOOGLE_SEARCH_CONSOLE_CLIENT_ID,
     secret: process.env.GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET,
@@ -262,7 +268,7 @@ async function main() {
     // Antes esto pasaba en verde y por eso nadie se enteraba de nada. Ahora rompe.
     throw new Error(
       "Faltan las credenciales de Search Console.\n" +
-        "   En el CI: cargá los secretos GOOGLE_SEARCH_CONSOLE_CLIENT_ID / _SECRET / _REFRESH_TOKEN.\n" +
+        "   En el CI: cargá el secreto GOOGLE_SERVICE_ACCOUNT_JSON.\n" +
         "   En una máquina: generá .env.gsc con  node get-token-gsc.mjs"
     );
   }
