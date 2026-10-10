@@ -37,6 +37,14 @@ jobs:
           cache: npm
           cache-dependency-path: ${{ matrix.site }}/package-lock.json
 
+      # Corre antes de instalar: no usa dependencias y falla en segundos.
+      # Cubre lo que el build no ve (teléfono de los CTAs, links muertos,
+      # assets faltantes, fotos locales pesadas en next/image).
+      - name: Smoke test estático
+        if: matrix.site == 'amesteticadental'
+        working-directory: ${{ matrix.site }}
+        run: npm run smoke
+
       - name: Install
         working-directory: ${{ matrix.site }}
         run: npm ci
