@@ -1,5 +1,3 @@
-import { getSupabaseClient } from "./supabase-client";
-
 export const TRATAMIENTOS = [
   { value: "carillas", label: "Carillas estéticas", labelEn: "Veneers" },
   { value: "diseno_sonrisa", label: "Diseño de sonrisa", labelEn: "Smile design" },
@@ -34,58 +32,37 @@ export interface LeadResult {
   error?: string;
 }
 
-export async function submitLead(input: LeadInput): Promise<LeadResult> {
-  const fullName = input.fullName?.trim();
-  if (!fullName || fullName.length < 2) {
-    return { success: false, error: "Por favor ingresá tu nombre completo" };
+/**
+ * Envía la consulta al servidor (`/api/consultas`).
+ *
+ * Antes esto insertaba directo en Supabase desde el navegador y nadie recibía
+ * aviso. Ahora el route handler guarda el lead y avisa al equipo por Resend.
+ * `website` es el honeypot: si un bot lo completa, el servidor descarta el envío.
+ */
+export async function submitLead(
+  input: LeadInput & { website?: string; lang?: "es" | "en" },
+): Promise<LeadResult> {
+  try {
+    const response = await fetch("/api/consultas", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(input),
+    });
+    const data = (await response.json().catch(() => ({}))) as LeadResult;
+    if (!response.ok || !data.success) {
+      return { success: false, error: data.error || "No pudimos enviar el formulario. Intentá de nuevo." };
+    }
+    return { success: true, alreadyExists: data.alreadyExists };
+  } catch {
+    return { success: false, error: "No pudimos enviar el formulario. Revisá tu conexión o escribinos por WhatsApp." };
   }
-  if (fullName.length > 200) {
-    return { success: false, error: "Nombre demasiado largo" };
-  }
-  const email = input.email?.trim().toLowerCase() || null;
-  const whatsapp = input.whatsapp?.trim() || null;
-  if (!email && !whatsapp) {
-    return { success: false, error: "Necesitamos email o WhatsApp para contactarte" };
-  }
-  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return { success: false, error: "Email inválido" };
-  }
-  const message = input.message?.trim() || null;
-  if (message && message.length > 2000) {
-    return { success: false, error: "Mensaje demasiado largo" };
-  }
-
-  const supabase = getSupabaseClient();
-  if (!supabase) {
-    console.error("submitLead error: missing Supabase public environment variables");
-    return { success: false, error: "No pudimos enviar el formulario. Escribinos por WhatsApp." };
-  }
-
-  const { error } = await supabase.from("marketing_leads").insert({
-    full_name: fullName,
-    email,
-    whatsapp,
-    neighborhood: input.neighborhood?.trim() || null,
-    interest_tags: input.interestTags ?? [],
-    notes: message,
-    metadata: input.metadata ?? {},
-    origin: input.origin || "web_form_amesteticadental",
-  });
-
-  if (error) {
-    if (error.code === "23505") return { success: true, alreadyExists: true };
-    console.error("submitLead error:", error);
-    return { success: false, error: "No pudimos enviar el formulario. Intentá de nuevo." };
-  }
-
-  return { success: true };
 }
 
 export function getUTMs(): Record<string, string> {
   if (typeof window === "undefined") return {};
   const params = new URLSearchParams(window.location.search);
   const utms: Record<string, string> = {};
-  for (const key of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"]) {
+  for (const key of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid", "fbclid"]) {
     const val = params.get(key);
     if (val) utms[key] = val;
   }

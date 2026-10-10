@@ -5,6 +5,8 @@ export default function LeadForm() {
   const [email, setEmail] = useState("");
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
+  // Honeypot: invisible para personas; si un bot lo completa, el servidor descarta el envío.
+  const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "ok" | "error">("idle");
   const [error, setError] = useState("");
 
@@ -14,7 +16,7 @@ export default function LeadForm() {
     const res = await fetch("/api/subscribe", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, nombre, apellido }),
+      body: JSON.stringify({ email, nombre, apellido, website }),
     });
     const data = await res.json().catch(() => ({}));
     if (res.ok) {
@@ -43,6 +45,16 @@ export default function LeadForm() {
 
   return (
     <form data-clarity-mask="true" onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 440, margin: "0 auto" }}>
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        value={website}
+        onChange={e => setWebsite(e.target.value)}
+        style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }}
+      />
       <input
         type="text"
         placeholder="Tu nombre"
