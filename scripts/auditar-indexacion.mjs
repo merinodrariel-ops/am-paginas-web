@@ -119,6 +119,17 @@ function pedirToken({ id, secret, refresh } = {}) {
   return auth([SCOPES.webmasters], { clientId: id, clientSecret: secret, refreshToken: refresh });
 }
 
+// Las propiedades que la credencial ve en Search Console. Se borró por error al
+// migrar a google-auth.mjs (357c127) y el workflow moría con ReferenceError.
+async function propiedadesVerificadas(token) {
+  const r = await fetch("https://www.googleapis.com/webmasters/v3/sites", {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(`No se pudo leer la lista de propiedades (HTTP ${r.status}): ${JSON.stringify(d)}`);
+  return (d.siteEntry || []).map((e) => e.siteUrl);
+}
+
 
 function resolverPropiedad(host, verificadas) {
   const prefijo = `https://${host}/`;
