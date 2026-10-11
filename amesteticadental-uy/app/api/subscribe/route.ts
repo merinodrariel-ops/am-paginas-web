@@ -21,13 +21,37 @@ export const maxDuration = 30;
 
 const LEADS_ENDPOINT = `${ARGENTINA_URL}/api/leads`;
 
-export async function POST(req: NextRequest) {
-  const { nombre, apellido, email } = await req
-    .json()
-    .catch(() => ({}) as { nombre?: string; apellido?: string; email?: string });
+// Rate limit simple en memoria (por instancia): corta ráfagas de un mismo IP.
+const VENTANA_MS = 10 * 60 * 1000;
+const MAX_POR_VENTANA = 5;
+const intentos = new Map<string, number[]>();
 
-  const nombreLimpio = String(nombre || "").trim();
-  const apellidoLimpio = String(apellido || "").trim();
+function superaRateLimit(ip: string): boolean {
+  const ahora = Date.now();
+  const recientes = (intentos.get(ip) ?? []).filter((t) => ahora - t < VENTANA_MS);
+  recientes.push(ahora);
+  intentos.set(ip, recientes);
+  if (intentos.size > 5000) intentos.clear();
+  return recientes.length > MAX_POR_VENTANA;
+}
+
+export async function POST(req: NextRequest) {
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "desconocida";
+  if (superaRateLimit(ip)) {
+    return NextResponse.json({ error: "Demasiados envíos seguidos. Probá en unos minutos." }, { status: 429 });
+  }
+
+  const { nombre, apellido, email, website } = await req
+    .json()
+    .catch(() => ({}) as { nombre?: string; apellido?: string; email?: string; website?: string });
+
+  // Honeypot: al bot se le responde OK y no se guarda ni se manda nada.
+  if (typeof website === "string" && website.trim()) {
+    return NextResponse.json({ ok: true });
+  }
+
+  const nombreLimpio = String(nombre || "").trim().slice(0, 100);
+  const apellidoLimpio = String(apellido || "").trim().slice(0, 100);
   const emailLimpio = String(email || "").trim().toLowerCase();
 
   if (!nombreLimpio || !apellidoLimpio) {
@@ -40,6 +64,8 @@ export async function POST(req: NextRequest) {
 
   // 1. Guardar el lead. Si esto falla, se corta: no tiene sentido mandar una
   //    confirmación linda a alguien que no quedó registrado en ningún lado.
+  //    El endpoint argentino además avisa al equipo por Resend
+  //    (NEW_LEAD_NOTIFY_TO, default drarielmerino@gmail.com).
   try {
     const guardado = await fetch(LEADS_ENDPOINT, {
       method: "POST",

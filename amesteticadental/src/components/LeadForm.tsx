@@ -69,6 +69,8 @@ export default function LeadForm({ defaultTreatment, context, lang = "es" }: Pro
       whatsapp,
       interestTags: tags,
       message,
+      website: honeypot,
+      lang,
       metadata: {
         ...getUTMs(),
         page: typeof window !== "undefined" ? window.location.pathname : null,

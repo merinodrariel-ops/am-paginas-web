@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test": "node --test scripts/test-aviso-consulta.mjs",
     "notify-index": "node scripts/notify-indexnow.mjs",
     "check:anio": "node scripts/check-anio.mjs",
     "video:dev": "remotion studio src/remotion/index.ts --config config/remotion.config.ts --port 3105 --host 0.0.0.0",

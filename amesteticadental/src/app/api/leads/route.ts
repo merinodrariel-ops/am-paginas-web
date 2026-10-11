@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { submitLead } from "@/lib/leads";
+import { avisarNuevaConsulta, guardarLead, ipDelPedido, superaRateLimit, validarLead } from "@/lib/leads-server";
 
 /**
  * Recibe leads de las otras sedes de la red AM.
@@ -45,24 +45,43 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Origen no permitido." }, { status: 403 });
   }
 
-  let body: { fullName?: string; email?: string; interestTags?: string[]; metadata?: Record<string, unknown> };
+  if (superaRateLimit(ipDelPedido(request))) {
+    return NextResponse.json({ error: "Demasiados envíos seguidos. Probá en unos minutos." }, { status: 429, headers });
+  }
+
+  let body: { fullName?: string; email?: string; whatsapp?: string; message?: string; interestTags?: string[]; metadata?: Record<string, unknown>; website?: string };
   try {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "No pudimos leer los datos." }, { status: 400, headers });
   }
 
-  const result = await submitLead({
+  // Honeypot opcional (los forms de la red pueden mandarlo como `website`).
+  if (typeof body.website === "string" && body.website.trim()) {
+    return NextResponse.json({ success: true, alreadyExists: false }, { headers });
+  }
+
+  const validado = validarLead({
     fullName: String(body.fullName || ""),
-    email: String(body.email || ""),
+    email: body.email,
+    whatsapp: body.whatsapp,
+    message: body.message,
     interestTags: body.interestTags ?? ["apertura_carrasco"],
-    metadata: body.metadata ?? {},
-    origin: ALLOWED_ORIGINS[origin],
+    metadata: { ...(body.metadata ?? {}), site: new URL(origin).hostname },
   });
+  if (!validado.ok) {
+    return NextResponse.json({ error: validado.error }, { status: 400, headers });
+  }
+
+  const lead = { ...validado.lead, origin: ALLOWED_ORIGINS[origin] };
+  const result = await guardarLead(lead);
 
   if (!result.success) {
     return NextResponse.json({ error: result.error }, { status: 400, headers });
   }
+
+  // Aviso interno por Resend (NEW_LEAD_NOTIFY_TO). El acuse al visitante lo manda el sitio de origen.
+  await avisarNuevaConsulta(lead, { alreadyExists: result.alreadyExists });
 
   return NextResponse.json({ success: true, alreadyExists: result.alreadyExists ?? false }, { headers });
 }

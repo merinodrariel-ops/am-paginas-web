@@ -99,18 +99,23 @@ export async function enviarMail({
   asunto,
   html,
   nombre,
+  replyTo,
 }: {
-  para: string;
+  /** Uno o varios destinatarios (avisos internos al equipo usan lista). */
+  para: string | string[];
   asunto: string;
   html: string;
   nombre?: string;
+  /** Para que "Responder" en el aviso interno le escriba directo al paciente. */
+  replyTo?: string;
 }): Promise<{ ok: boolean }> {
   if (!RESEND_KEY) {
     console.error(`[email] Falta RESEND_API_KEY. El mail a ${para} NO se envió.`);
     return { ok: false };
   }
 
-  if (!para) return { ok: false };
+  const destinos = (Array.isArray(para) ? para : [para]).filter(Boolean);
+  if (!destinos.length) return { ok: false };
 
   try {
     const response = await fetch("https://api.resend.com/emails", {
@@ -118,9 +123,10 @@ export async function enviarMail({
       headers: { Authorization: `Bearer ${RESEND_KEY}`, "Content-Type": "application/json" },
       body: JSON.stringify({
         from: REMITENTE,
-        to: [nombre ? `${nombre} <${para}>` : para],
+        to: destinos.length === 1 && nombre ? [`${nombre} <${destinos[0]}>`] : destinos,
         subject: asunto,
         html,
+        ...(replyTo ? { reply_to: replyTo } : {}),
       }),
     });
 
