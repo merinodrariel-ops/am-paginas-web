@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Financiación propia | AM Estética Dental",
     description:
-        "Sonreí hoy, pagá después. Financiación propia con tasa fija del 18% anual para que tu tratamiento empiece cuando vos lo decidís, no cuando termines de ahorrar.",
+        "Sonreí hoy, pagá después. Financiación propia con tasa fija del 18% anual: tu tratamiento empieza cuando vos lo decidís, no cuando termines de ahorrar.",
     alternates: { canonical: CANONICAL, languages: hreflangFor("/financiacion") },
     openGraph: {
         title: "Financiación propia | AM Estética Dental",

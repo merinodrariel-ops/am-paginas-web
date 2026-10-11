@@ -29,9 +29,9 @@ jobs:
         site: [amesteticadental, amesteticadental-uy, thedentalreview, arielmerino]
     name: build ${{ matrix.site }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -64,8 +64,8 @@ jobs:
     runs-on: ubuntu-latest
     name: año de precios al día
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
       - name: Verificar ANIO_PRECIOS

@@ -22,7 +22,7 @@ const VIDEO_JERINGAS = {
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: `Precio de Blanqueamiento Dental Ambulatorio en Buenos Aires ${ANIO}`,
+    title: `Precio Blanqueamiento Dental Ambulatorio Buenos Aires ${ANIO}`,
     description: `Precio del blanqueamiento dental ambulatorio en Buenos Aires ${ANIO}. Cubetas a medida + gel, 7 a 10 días, sin dieta blanca. Dr. Ariel Merino, Puerto Madero.`,
     alternates: { canonical: CANONICAL , languages: hreflangFor("/blanqueamiento-dental-precio-buenos-aires") },
     openGraph: {

@@ -32,13 +32,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # El estado guarda desde cuándo está atascada cada URL. Sin esto no se puede
       # distinguir "recién publicada" de "lleva tres semanas" ni espaciar los avisos.
       # Va en caché y no en el repo para no ensuciar el historial con un commit diario.
       - name: Recuperar el estado de la corrida anterior
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: infra/estado-indexacion.json
           key: indexacion-estado-${{ github.run_id }}
@@ -63,7 +63,7 @@ jobs:
       # guardar desde cuándo viene atascada cada URL.
       - name: Guardar el estado para la próxima corrida
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: infra/estado-indexacion.json
           key: indexacion-estado-${{ github.run_id }}

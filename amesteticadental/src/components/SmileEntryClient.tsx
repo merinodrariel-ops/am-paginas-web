@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, DragEvent, PointerEvent, useRef, useState, useMemo } from "react";
+import { ChangeEvent, DragEvent, PointerEvent, useEffect, useRef, useState, useMemo } from "react";
 import Link from "next/link";
 import {
   AlertCircle,
@@ -15,6 +15,76 @@ import {
   UploadCloud,
 } from "lucide-react";
 import { getUTMs, submitLead } from "@/lib/leads";
+
+// Cloudflare Turnstile: opcional. Si la site key no está cargada, el widget no se
+// muestra y el endpoint tampoco lo exige (siempre que TURNSTILE_SECRET_KEY tampoco
+// esté). Cargar SIEMPRE las dos juntas en Vercel.
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+type TurnstileApi = {
+  render: (el: HTMLElement, opts: Record<string, unknown>) => string;
+  reset: (id?: string) => void;
+  remove: (id?: string) => void;
+};
+
+function useTurnstile(lang: "es" | "en") {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const widgetId = useRef<string | null>(null);
+  const [token, setToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY || !containerRef.current) return;
+    const el = containerRef.current;
+    const w = window as unknown as { turnstile?: TurnstileApi };
+    let cancelled = false;
+
+    const render = () => {
+      if (cancelled || !w.turnstile || widgetId.current) return;
+      widgetId.current = w.turnstile.render(el, {
+        sitekey: TURNSTILE_SITE_KEY,
+        language: lang,
+        theme: "dark",
+        // Managed + interaction-only: a casi todos los pacientes no les muestra nada;
+        // el desafío aparece sólo si Cloudflare sospecha de un bot.
+        appearance: "interaction-only",
+        size: "flexible",
+        callback: (t: string) => setToken(t),
+        "expired-callback": () => setToken(null),
+        "error-callback": () => setToken(null),
+      });
+    };
+
+    if (w.turnstile) {
+      render();
+    } else {
+      const SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      let script = document.querySelector<HTMLScriptElement>(`script[src="${SRC}"]`);
+      if (!script) {
+        script = document.createElement("script");
+        script.src = SRC;
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+      }
+      script.addEventListener("load", render);
+    }
+
+    return () => {
+      cancelled = true;
+      if (widgetId.current && w.turnstile) w.turnstile.remove(widgetId.current);
+      widgetId.current = null;
+    };
+  }, [lang]);
+
+  // Los tokens de Turnstile son de un solo uso: se pide uno nuevo tras cada intento.
+  const reset = () => {
+    const w = window as unknown as { turnstile?: TurnstileApi };
+    setToken(null);
+    if (widgetId.current && w.turnstile) w.turnstile.reset(widgetId.current);
+  };
+
+  return { enabled: Boolean(TURNSTILE_SITE_KEY), containerRef, token, reset };
+}
 
 const ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 const MAX_FILE_MB = 10;
@@ -328,6 +398,7 @@ export default function SmileEntryClient({ lang = "es", market = "ar" }: { lang?
   const [error, setError] = useState<string | null>(null);
   const [processing, setProcessing] = useState(false);
   const [result, setResult] = useState<SmileResult | null>(null);
+  const turnstile = useTurnstile(lang);
 
   const whatsappUrl = useMemo(() => buildWhatsappUrl(fullName.trim(), email.trim(), whatsapp.trim(), t, marketConfig.whatsappNumber), [fullName, email, whatsapp, t, marketConfig]);
   const emailUrl = useMemo(() => buildEmailUrl(fullName.trim(), email.trim(), whatsapp.trim(), t, marketConfig.email), [fullName, email, whatsapp, t, marketConfig]);
@@ -359,6 +430,10 @@ export default function SmileEntryClient({ lang = "es", market = "ar" }: { lang?
     if (!accepted) { setError(t.errConsent); return; }
     if (fullName.trim().length < 2) { setError(t.errName); return; }
     if (!email.trim() && !whatsapp.trim()) { setError("Dejanos un email o WhatsApp para contactarte si querés avanzar."); return; }
+    if (turnstile.enabled && !turnstile.token) {
+      setError(lang === "en" ? "One second: we are verifying your browser. Try again." : "Un segundo: estamos verificando tu navegador. Probá de nuevo.");
+      return;
+    }
 
     setProcessing(true);
     try {
@@ -392,7 +467,11 @@ export default function SmileEntryClient({ lang = "es", market = "ar" }: { lang?
       const response = await fetch("/api/smile-design/enhance", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ imageBase64: compressed.base64, mimeType: compressed.mimeType }),
+        body: JSON.stringify({
+          imageBase64: compressed.base64,
+          mimeType: compressed.mimeType,
+          ...(turnstile.token ? { turnstileToken: turnstile.token } : {}),
+        }),
       });
       const data = await response.json();
       if (!response.ok || data.error) throw new Error(data.error || t.errGenerate);
@@ -402,6 +481,7 @@ export default function SmileEntryClient({ lang = "es", market = "ar" }: { lang?
       setError(err instanceof Error ? err.message : "Error al procesar la imagen.");
     } finally {
       setProcessing(false);
+      if (turnstile.enabled) turnstile.reset();
     }
   }
 
@@ -583,6 +663,8 @@ export default function SmileEntryClient({ lang = "es", market = "ar" }: { lang?
                   {t.consent}
                 </span>
               </label>
+
+              {turnstile.enabled ? <div ref={turnstile.containerRef} className="mt-4" /> : null}
 
               {error ? (
                 <div className="mt-4 flex items-start gap-2 rounded-xl border border-red-400/30 bg-red-500/10 px-3 py-2 text-sm text-red-200">
