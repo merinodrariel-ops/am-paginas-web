@@ -33,7 +33,7 @@ const tratamientos = [
         id: "03",
         nombre: "Carillas de Resina Impresas 3D",
         tagline: "Lo más nuevo: ultrafinas, de 0,1 a 0,2 mm",
-        descripcion: "Resina de alta performance impresa en 3D a partir de tu diseño digital de sonrisa. Al ser tan finas, el tratamiento es hasta un 60% más conservador con el esmalte, se ven más naturales y son más resistentes que la resina hecha a mano. Dos sesiones, con una semana entre una y otra.",
+        descripcion: "Resina de alta performance impresa en 3D a partir de tu diseño digital de sonrisa. Al ser tan finas, el tratamiento es hasta un 60% más conservador con el esmalte, se ven más naturales y son más resistentes que la resina hecha a mano. Ultra rápido: porque tu tiempo vale, tu nueva sonrisa está lista en solo una semana.",
         impacto: "Más de 30 casos y más de dos años trabajando con resina impresa: la técnica que elige quien quiere lo más nuevo.",
         href: "/carillas-de-resina-impresas-3d",
         destacado: false,
