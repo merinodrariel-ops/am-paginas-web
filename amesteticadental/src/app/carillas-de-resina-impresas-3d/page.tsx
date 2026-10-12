@@ -166,8 +166,12 @@ export default function CarillasResinaImpresas3DPage() {
                             </a>
                         </div>
                     </div>
-                    {/* Placeholder: pasar videoSrc con la animación de Magnific cuando esté en Cloudinary. */}
-                    <CarillaWireframe />
+                    {/* Animación de impresión 3D. Sin videoSrc vuelve al incisivo en SVG. */}
+                    <CarillaWireframe
+                        videoSrc="https://res.cloudinary.com/drctvgyqd/video/upload/q_auto,vc_auto/tratamientos/carillas-resina-impresas-3d-impresion-am-estetica-dental.mp4"
+                        poster="https://res.cloudinary.com/drctvgyqd/image/upload/v1791845553/tratamientos/carillas-resina-impresas-3d-am-estetica-dental-puerto-madero.jpg"
+                        label="Carillas de resina impresas en 3D: la impresora construye el arco capa por capa, de la malla digital a la resina terminada"
+                    />
                 </section>
 
                 {/* Autoridad */}

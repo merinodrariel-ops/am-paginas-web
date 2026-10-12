@@ -37,10 +37,11 @@ const tratamientos = [
         impacto: "Más de 30 casos y más de dos años trabajando con resina impresa: la técnica que elige quien quiere lo más nuevo.",
         href: "/carillas-de-resina-impresas-3d",
         destacado: false,
+        // Animación de impresión 3D (Magnific + barrido propio) en el detalle; la
+        // imagen es el cuadro final y sirve de miniatura y de póster del video.
+        video: "https://res.cloudinary.com/drctvgyqd/video/upload/q_auto,vc_auto/tratamientos/carillas-resina-impresas-3d-impresion-am-estetica-dental.mp4",
         imagen: {
-            // TODO: reemplazar por la animación wireframe (CarillaWireframe / video de
-            // Magnific en Cloudinary). Por ahora reutiliza la imagen de carillas.
-            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147364/tratamientos/carillas-dentales-porcelana-am-estetica-dental-puerto-madero.png",
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1791845553/tratamientos/carillas-resina-impresas-3d-am-estetica-dental-puerto-madero.jpg",
             alt: "Carillas de resina impresas en 3D, ultrafinas — AM Estética Dental, Puerto Madero",
         },
     },
@@ -345,13 +346,27 @@ export default function Tratamientos({ lang = "es" }: { lang?: "es" | "en" }) {
                             <div className="px-6 pb-6 border-t border-oro/10 pt-6 bg-carbon/40">
                                 <div className={`grid md:grid-cols-2 gap-8 items-center ${i % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""}`}>
                                     <div className="relative aspect-[4/5] md:aspect-[3/4] overflow-hidden rounded-2xl border border-oro/10 group/img">
-                                        <Image
-                                            src={item.imagen.src}
-                                            alt={item.imagen.alt}
-                                            fill
-                                            sizes="(max-width: 768px) 100vw, 50vw"
-                                            className="object-cover transition-transform duration-700 group-hover/img:scale-105"
-                                        />
+                                        {"video" in item && typeof item.video === "string" ? (
+                                            <video
+                                                src={item.video}
+                                                poster={item.imagen.src}
+                                                autoPlay
+                                                muted
+                                                loop
+                                                playsInline
+                                                preload="none"
+                                                aria-label={item.imagen.alt}
+                                                className="absolute inset-0 h-full w-full object-cover"
+                                            />
+                                        ) : (
+                                            <Image
+                                                src={item.imagen.src}
+                                                alt={item.imagen.alt}
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, 50vw"
+                                                className="object-cover transition-transform duration-700 group-hover/img:scale-105"
+                                            />
+                                        )}
                                         <div className="absolute inset-0 bg-gradient-to-t from-carbon/50 via-transparent to-transparent" />
                                     </div>
 
