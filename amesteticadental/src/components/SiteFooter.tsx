@@ -31,6 +31,7 @@ const COLUMNAS_ES: Columna[] = [
         enlaces: [
             { href: "/carillas-dentales", label: "Carillas dentales" },
             { href: "/carillas-de-resina", label: "Carillas de resina" },
+            { href: "/carillas-de-resina-impresas-3d", label: "Carillas impresas en 3D" },
             { href: "/lentes-de-contacto-dental", label: "Lentes de contacto dental" },
             // La marca no dice "cero desgaste" ni "no-prep": el desgaste es mínimo,
             // no inexistente. La URL conserva el término por el que se busca.

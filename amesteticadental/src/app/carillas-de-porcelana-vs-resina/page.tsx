@@ -104,6 +104,7 @@ export default function PorcelanaVsResinaPage() {
               { nombre: "Carillas Dentales", href: "/carillas-dentales" },
               { nombre: "Precio de Carillas", href: "/precio-carillas-dentales-buenos-aires" },
               { nombre: "Lentes de Contacto Dental", href: "/lentes-de-contacto-dental" },
+              { nombre: "Carillas de Resina Impresas en 3D", href: "/carillas-de-resina-impresas-3d" },
               { nombre: "Caso: carillas de resina", href: "/casos/carillas-resina-diseno-sonrisa-gingivectomia-laser" },
             ].map((item) => (
               <Link key={item.nombre} href={item.href} className="border border-oro/15 rounded-2xl p-6 bg-carbon hover:border-oro/35 transition-colors group">

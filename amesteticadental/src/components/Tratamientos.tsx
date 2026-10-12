@@ -31,6 +31,21 @@ const tratamientos = [
     },
     {
         id: "03",
+        nombre: "Carillas de Resina Impresas 3D",
+        tagline: "Lo más nuevo: ultrafinas, de 0,1 a 0,2 mm",
+        descripcion: "Resina de alta performance impresa en 3D a partir de tu diseño digital de sonrisa. Al ser tan finas, el tratamiento es hasta un 60% más conservador con el esmalte, se ven más naturales y son más resistentes que la resina hecha a mano. Dos sesiones, con una semana entre una y otra.",
+        impacto: "Más de 30 casos y más de dos años trabajando con resina impresa: la técnica que elige quien quiere lo más nuevo.",
+        href: "/carillas-de-resina-impresas-3d",
+        destacado: false,
+        imagen: {
+            // TODO: reemplazar por la animación wireframe (CarillaWireframe / video de
+            // Magnific en Cloudinary). Por ahora reutiliza la imagen de carillas.
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147364/tratamientos/carillas-dentales-porcelana-am-estetica-dental-puerto-madero.png",
+            alt: "Carillas de resina impresas en 3D, ultrafinas — AM Estética Dental, Puerto Madero",
+        },
+    },
+    {
+        id: "04",
         nombre: "Blanqueamiento Ambulatorio",
         tagline: "Cubetas a medida, resultado parejo en 7 a 10 días",
         descripcion: "Nada de luces ni sesiones exprés en el sillón. Diseñamos cubetas a medida para tu maxilar superior e inferior; vos aplicás el gel en casa, la mayoría de las veces mientras dormís, durante 7 a 10 días. Sin dieta blanca, con mucho menos riesgo de sensibilidad.",
@@ -43,7 +58,7 @@ const tratamientos = [
         },
     },
     {
-        id: "04",
+        id: "05",
         nombre: "AM Aligners",
         tagline: "Ortodoncia sin brackets, sin molestias",
         descripcion: "Alineadores invisibles con planificación digital 100%. Usás los alineadores transparentes a tu ritmo, y cada etapa está calculada para mover tus dientes con precisión de fracción de milímetro.",
@@ -56,7 +71,7 @@ const tratamientos = [
         },
     },
     {
-        id: "05",
+        id: "06",
         nombre: "Implantes Dentales",
         tagline: "El diente que no sabés que es artificial",
         descripcion: "Reemplazamos dientes perdidos con implantes que se integran a tu hueso. El resultado es indistinguible de un diente natural — en función y en estética.",
@@ -69,7 +84,7 @@ const tratamientos = [
         },
     },
     {
-        id: "06",
+        id: "07",
         nombre: "Armonización Orofacial",
         tagline: "Más allá de los dientes",
         descripcion: "Trabajamos el contorno de los labios y el marco facial para que tu sonrisa y tu cara cuenten la misma historia. No invasivo. Resultados que sorprenden.",
@@ -82,7 +97,7 @@ const tratamientos = [
         },
     },
     {
-        id: "07",
+        id: "08",
         nombre: "Estética Gingival",
         tagline: "La sonrisa gingival tiene solución",
         descripcion: "Si tu encía tapa demasiado tu diente o está despareja, existe un procedimiento de contorno gingival que equilibra las proporciones en una sola sesión.",
@@ -95,7 +110,7 @@ const tratamientos = [
         },
     },
     {
-        id: "08",
+        id: "09",
         nombre: "Prótesis Estéticas",
         tagline: "Rehabilitación de alta gama",
         descripcion: "Coronas y prótesis diseñadas a medida con materiales de última generación. Restauramos la función y la belleza de forma simultánea, sin comprometer ninguna de las dos.",
@@ -113,6 +128,7 @@ const quickLinks = [
     { label: "Carillas: precio", tone: "Para quien busca: cuánto cuesta", href: "/precio-carillas-dentales-buenos-aires" },
     { label: "Carillas vs Alineadores", tone: "Para quien compara: qué me conviene", href: "/carillas-vs-alineadores" },
     { label: "Porcelana vs Resina", tone: "Para quien elige material", href: "/carillas-de-porcelana-vs-resina" },
+    { label: "Carillas impresas 3D", tone: "Para quien quiere lo más nuevo", href: "/carillas-de-resina-impresas-3d" },
     // Dos entradas de bruxismo a propósito, porque son dos momentos distintos del
     // mismo problema: frenarlo antes de que rompa, o reconstruir lo ya roto. Quien
     // busca "botox para bruxismo" no quiere carillas, y al revés.
@@ -288,7 +304,7 @@ export default function Tratamientos({ lang = "es" }: { lang?: "es" | "en" }) {
                     </p>
                 </div>
 
-                {/* Pestañas de acceso rápido — ver los 8 tratamientos de un vistazo y saltar a cualquiera */}
+                {/* Pestañas de acceso rápido — ver todos los tratamientos de un vistazo y saltar a cualquiera */}
                 <TratamientosChips items={items.map((item) => ({ id: item.id, nombre: item.nombre }))} />
 
                 {/* Tratamientos - Acordeones expandibles (todo visible en HTML para Google) */}
