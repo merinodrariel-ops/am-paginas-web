@@ -115,6 +115,18 @@ export default function CarillasResinaPage() {
                     </a>
                 </section>
 
+                {/* Aviso: técnica nueva */}
+                <section className="px-6 pb-4 max-w-4xl mx-auto">
+                    <Link href="/carillas-de-resina-impresas-3d"
+                        className="flex flex-col md:flex-row items-center justify-between gap-3 border border-oro/40 bg-oro/5 hover:bg-oro/10 rounded-2xl px-6 py-5 transition-colors group">
+                        <p className="text-crema/80 text-sm text-center md:text-left">
+                            <span className="text-oro font-semibold uppercase tracking-widest text-xs mr-2">Lo más nuevo</span>
+                            Carillas de resina impresas en 3D — 0,1 a 0,2 mm, más resistentes y más naturales.
+                        </p>
+                        <span className="text-oro text-sm whitespace-nowrap group-hover:translate-x-1 transition-transform">Conocelas →</span>
+                    </Link>
+                </section>
+
                 {/* Comparativa */}
                 <section className="px-6 py-16 max-w-4xl mx-auto">
                     <h2 className="text-2xl font-light text-crema mb-10 text-center">
@@ -225,6 +237,7 @@ export default function CarillasResinaPage() {
                     <div className="flex flex-wrap gap-3 justify-center">
                         {[
                             { href: "/precio-carillas-dentales-buenos-aires", label: "Precio carillas dentales" },
+                            { href: "/carillas-de-resina-impresas-3d", label: "Carillas de resina impresas en 3D" },
                             { href: "/carillas-de-porcelana-vs-resina", label: "Comparativa detallada porcelana vs resina" },
                             { href: "/carillas-sin-desgaste", label: "Carillas sin desgaste" },
                             { href: "/lentes-de-contacto-dental-precio-buenos-aires", label: "Lentes de contacto dental" },

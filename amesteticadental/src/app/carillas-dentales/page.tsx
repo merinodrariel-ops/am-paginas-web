@@ -347,6 +347,7 @@ export default function CarillasDentalesPage() {
                                 { nombre: "Carillas sin Desgaste", desc: "Cuándo realmente se puede trabajar sin preparar el diente.", href: "/carillas-sin-desgaste" },
                                 { nombre: "Precio de Carillas", desc: "Qué cambia el valor según material, piezas y complejidad del caso.", href: "/precio-carillas-dentales-buenos-aires" },
                                 { nombre: "Porcelana vs Resina", desc: "Compará duración, naturalidad, costo y mantenimiento.", href: "/carillas-de-porcelana-vs-resina" },
+                                { nombre: "Carillas de Resina Impresas en 3D", desc: "Lo más nuevo: ultrafinas, de 0,1 a 0,2 mm, listas en una semana.", href: "/carillas-de-resina-impresas-3d" },
                                 { nombre: "Carillas vs Alineadores", desc: "Descubrí cuándo conviene cambiar forma y cuándo conviene mover dientes.", href: "/carillas-vs-alineadores" },
                             ].map((t) => (
                                 <Link
