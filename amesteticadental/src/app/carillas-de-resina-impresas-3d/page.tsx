@@ -14,7 +14,7 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20qui
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: `Carillas de Resina Impresas en 3D en Buenos Aires ${ANIO} | AM`,
-    description: "Carillas de resina impresas en 3D de 0,1 a 0,2 mm: más finas, naturales y resistentes que la resina directa. Dos sesiones, en una semana. Puerto Madero.",
+    description: "Carillas de resina impresas en 3D de 0,1 a 0,2 mm: ultrafinas, naturales y más resistentes que la resina directa. Listas en solo una semana.",
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Carillas de Resina Impresas en 3D | AM Estética Dental",
@@ -82,7 +82,7 @@ const DIFERENCIALES = [
     { dato: "0,1–0,2 mm", titulo: "Ultrafinas", texto: "Se imprimen con un espesor de 0,1 a 0,2 mm, tanto o más finas que una lente de contacto dental." },
     { dato: "Hasta 60%", titulo: "Más conservadoras", texto: "Hasta un 60% menos de desgaste del esmalte que con técnicas convencionales. Cada caso se evalúa de forma individual." },
     { dato: "+ resistentes", titulo: "Que la resina directa", texto: "Material homogéneo, polimerizado de forma industrial: sin las capas ni las microburbujas del modelado a mano." },
-    { dato: "~7 días", titulo: "Una semana", texto: "Dos sesiones con aproximadamente una semana entre el diseño y la colocación. Hiper rápido." },
+    { dato: "1 semana", titulo: "Ultra rápido", texto: "Sabemos que lo más valioso que tenés es tu tiempo. Por eso, del diseño a tu nueva sonrisa en solo una semana." },
 ];
 
 type Fila = { aspecto: string; directa: string; impresa: string; porcelana: string };
@@ -93,7 +93,7 @@ const COMPARATIVA: Fila[] = [
     { aspecto: "Resistencia", directa: "Buena", impresa: "Mayor que la resina directa", porcelana: "Muy alta" },
     { aspecto: "Naturalidad", directa: "Muy buena", impresa: "Excelente, por su finura", porcelana: "Excelente" },
     { aspecto: "Sesiones", directa: "1", impresa: "2", porcelana: "2" },
-    { aspecto: "Tiempo total", directa: "1 día", impresa: "~7 días", porcelana: "10–15 días" },
+    { aspecto: "Tiempo total", directa: "1 día", impresa: "Solo 1 semana", porcelana: "10–15 días" },
     { aspecto: "Precisión", directa: "Manual", impresa: "Digital", porcelana: "Digital + artesanal" },
 ];
 
@@ -148,8 +148,12 @@ export default function CarillasResinaImpresas3DPage() {
                         <p className="text-crema/65 text-lg font-light leading-relaxed mb-4">
                             La técnica más nueva para hacer carillas: resina de alta performance impresa en 3D a partir de tu diseño digital de sonrisa.
                         </p>
-                        <p className="text-crema/55 font-light leading-relaxed mb-10">
-                            Ultrafinas —de 0,1 a 0,2 mm—, más naturales y más resistentes que la resina hecha a mano. Listas en una semana.
+                        <p className="text-crema/55 font-light leading-relaxed mb-6">
+                            Ultrafinas —de 0,1 a 0,2 mm—, más naturales y más resistentes que la resina hecha a mano.
+                        </p>
+                        <p className="border-l-2 border-oro pl-4 text-crema/85 font-light leading-relaxed mb-10 text-left">
+                            Sabemos que lo más valioso que tenés es tu tiempo.{" "}
+                            <span className="font-cormorant italic text-oro text-xl">Por eso, tu nueva sonrisa en solo una semana.</span>
                         </p>
                         <div className="flex flex-wrap gap-3 justify-center md:justify-start">
                             <a href={WA} target="_blank" rel="noopener noreferrer"
@@ -243,7 +247,7 @@ export default function CarillasResinaImpresas3DPage() {
                         Cómo es <span className="font-cormorant italic text-oro">el proceso</span>
                     </h2>
                     <p className="text-crema/55 text-center max-w-2xl mx-auto mb-12">
-                        Dos sesiones, con aproximadamente una semana entre una y otra.
+                        Tratamiento ultra rápido: de tu diseño a tu nueva sonrisa en solo una semana.
                     </p>
                     <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {PASOS.map(({ n, titulo, texto }) => (
@@ -350,8 +354,8 @@ export default function CarillasResinaImpresas3DPage() {
                 {/* Footer CTA */}
                 <section className="px-6 py-20 max-w-4xl mx-auto text-center">
                     <h2 className="text-3xl font-light text-crema mb-4">
-                        Carillas ultrafinas,<br />
-                        <span className="font-cormorant italic text-oro">en una semana.</span>
+                        Tu nueva sonrisa,<br />
+                        <span className="font-cormorant italic text-oro">en solo una semana.</span>
                     </h2>
                     <p className="text-crema/55 mb-8 max-w-xl mx-auto">Dr. Ariel Merino · AM Estética Dental · Camila O&apos;Gorman 412, Puerto Madero, Buenos Aires.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"

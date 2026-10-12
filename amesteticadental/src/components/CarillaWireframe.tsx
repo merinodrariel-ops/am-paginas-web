@@ -1,9 +1,11 @@
-// Visual del hero de /carillas-de-resina-impresas-3d.
+// Visual del hero de /carillas-de-resina-impresas-3d (opción A elegida por el Dr.).
 //
-// Hoy es un placeholder: un incisivo central en malla de triángulos (estilo
-// wireframe de software de diseño) con una carilla ultrafina que se "traza" sola.
-// Es SVG + CSS puro, sin JavaScript en el cliente: se renderiza en el servidor y
-// respeta `prefers-reduced-motion`.
+// Incisivo central superior visto desde vestibular, en malla dorada: el contorno
+// se traza, una línea de escaneo sube desde el borde incisal hasta el cuello y la
+// carilla se "imprime" capa por capa detrás de ella.
+//
+// SVG + CSS puro, sin JavaScript en el cliente: se renderiza en el servidor y
+// respeta `prefers-reduced-motion` (queda el diente terminado, sin animación).
 //
 // Cuando esté lista la animación de Magnific, pasar `videoSrc` con la URL mp4 de
 // Cloudinary (res.cloudinary.com/drctvgyqd/video/upload/...) y opcionalmente
@@ -20,81 +22,44 @@ type Props = {
 };
 
 // ── Geometría ────────────────────────────────────────────────────────────────
-// Corona de un incisivo central superior vista de frente: cuello arriba,
-// borde incisal abajo. Se arma una grilla de puntos dentro del contorno y se
-// triangula fila contra fila. Se calcula una sola vez, al cargar el módulo.
-
-const CX = 120;
-const Y_CUELLO = 40;
-const Y_INCISAL = 250;
-const FILAS = 9;
-const COLUMNAS = 6;
-
-function medioAncho(y: number): number {
-    const t = (y - Y_CUELLO) / (Y_INCISAL - Y_CUELLO); // 0 cuello → 1 incisal
-    // Se ensancha rápido desde el cuello y se redondea apenas cerca del borde.
-    const base = 34 + 34 * Math.sin(Math.min(t * 1.25, 1) * (Math.PI / 2));
-    const redondeo = t > 0.9 ? (t - 0.9) * 60 : 0;
-    return base - redondeo;
-}
-
-type Punto = [number, number];
-
-const PUNTOS: Punto[][] = Array.from({ length: FILAS + 1 }, (_, i) => {
-    const y = Y_CUELLO + ((Y_INCISAL - Y_CUELLO) * i) / FILAS;
-    const w = medioAncho(y);
-    return Array.from({ length: COLUMNAS + 1 }, (_, j) => {
-        const u = -1 + (2 * j) / COLUMNAS;
-        // Leve curvatura vestibular: los puntos centrales bajan un poco.
-        const curva = (1 - u * u) * 4;
-        return [CX + u * w, y + curva] as Punto;
-    });
-});
+// Silueta de la cara vestibular en una caja de 100×125: cuello arriba, borde
+// incisal abajo, mesial a la izquierda (ángulo mesioincisal vivo, distal más
+// redondeado y con el contacto más alto).
+const SILUETA =
+    "M30,10 Q50,0 72,10 C84,20 94,44 97,70 C99,92 97,110 92,120 Q88,125 80,125 L10,124 Q3,123 3,114 C2,92 4,64 8,44 C12,26 20,14 30,10 Z";
 
 const r = (n: number) => Math.round(n * 10) / 10;
 
-const TRIANGULOS: string[] = [];
-for (let i = 0; i < FILAS; i++) {
-    for (let j = 0; j < COLUMNAS; j++) {
-        const a = PUNTOS[i][j];
-        const b = PUNTOS[i][j + 1];
-        const c = PUNTOS[i + 1][j];
-        const d = PUNTOS[i + 1][j + 1];
-        const diagonal = (i + j) % 2 === 0;
-        const [t1, t2] = diagonal ? [[a, b, d], [a, d, c]] : [[a, b, c], [b, d, c]];
-        TRIANGULOS.push(t1.map((p) => `${r(p[0])},${r(p[1])}`).join(" "));
-        TRIANGULOS.push(t2.map((p) => `${r(p[0])},${r(p[1])}`).join(" "));
-    }
-}
+// Malla: paralelos que siguen la convexidad vestibular y meridianos que se abren
+// hacia los bordes, más diagonales suaves para el efecto de triangulación.
+const MALLA: string[] = [
+    ...Array.from({ length: 8 }, (_, k) => {
+        const y = (125 * (k + 1)) / 9;
+        return `M-5,${r(y - 3)} Q50,${r(y + 6)} 105,${r(y - 3)}`;
+    }),
+    ...Array.from({ length: 7 }, (_, k) => {
+        const x = (100 * (k + 1)) / 8;
+        const b = (x - 50) * 0.18;
+        return `M${r(x - b)},0 Q${r(x + b)},62 ${r(x - b * 0.4)},128`;
+    }),
+];
+const DIAGONALES: string[] = Array.from({ length: 12 }, (_, k) => {
+    const x = (k - 4) * 16;
+    return `M${x},0 L${x + 40},128`;
+});
 
-// Contorno exterior de la corona (para el trazo de la carilla).
-const IZQ = PUNTOS.map((fila) => fila[0]);
-const DER = PUNTOS.map((fila) => fila[COLUMNAS]).reverse();
-const contorno = (dx: number, dy: number, escala: number) =>
-    [...IZQ, ...PUNTOS[FILAS].slice(1, -1), ...DER, ...PUNTOS[0].slice(1, -1).reverse()]
-        .map(([x, y], k) => `${k === 0 ? "M" : "L"}${r(CX + (x - CX) * escala + dx)},${r(y + dy)}`)
-        .join(" ") + " Z";
-
-const CONTORNO_DIENTE = contorno(0, 0, 1);
-// La carilla: una cáscara apenas por fuera del diente (0,1–0,2 mm a escala).
-const CONTORNO_CARILLA = contorno(0, 3, 1.05);
-
-// Raíz insinuada, en línea punteada.
-const RAIZ = `M${CX - 30},${Y_CUELLO + 2} C${CX - 26},${Y_CUELLO - 20} ${CX - 12},${Y_CUELLO - 34} ${CX},${Y_CUELLO - 38} C${CX + 12},${Y_CUELLO - 34} ${CX + 26},${Y_CUELLO - 20} ${CX + 30},${Y_CUELLO + 2}`;
-
-// La rotación va sobre el <svg> entero y no sobre un <g>: Safari no aplica bien
-// transformaciones 3D a elementos internos de un SVG.
 const CSS = `
-.cw-root { transform-origin: 50% 50%; animation: cw-flotar 9s ease-in-out infinite; }
-.cw-malla polygon { opacity: .55; }
-.cw-carilla { stroke-dasharray: 900; stroke-dashoffset: 900; animation: cw-trazo 6s cubic-bezier(.45,0,.55,1) infinite; }
-.cw-scan { animation: cw-scan 6s cubic-bezier(.45,0,.55,1) infinite; }
-@keyframes cw-flotar { 0%,100% { transform: perspective(600px) rotateY(-14deg) translateY(0); } 50% { transform: perspective(600px) rotateY(14deg) translateY(-6px); } }
-@keyframes cw-trazo { 0% { stroke-dashoffset: 900; opacity: .2; } 55% { stroke-dashoffset: 0; opacity: 1; } 85% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0; } }
-@keyframes cw-scan { 0% { transform: translateY(0); opacity: 0; } 10% { opacity: .9; } 55% { transform: translateY(220px); opacity: .9; } 65%,100% { transform: translateY(220px); opacity: 0; } }
+.cw-mesh path { fill: none; stroke: currentColor; stroke-width: .5; opacity: .55; }
+.cw-mesh .cw-diag { opacity: .25; }
+.cw-outline { fill: none; stroke: currentColor; stroke-width: 1.2; stroke-dasharray: 600; animation: cw-trazo 8s ease-in-out infinite; }
+.cw-solid { animation: cw-imprimir 8s ease-in-out infinite; }
+.cw-scan { animation: cw-scan 8s ease-in-out infinite; }
+@keyframes cw-trazo { 0% { stroke-dashoffset: 600; } 22%, 100% { stroke-dashoffset: 0; } }
+@keyframes cw-imprimir { 0%, 22% { transform: translateY(128px); } 62%, 92% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(0); opacity: 0; } }
+@keyframes cw-scan { 0%, 20% { transform: translateY(126px); opacity: 0; } 24% { opacity: 1; } 62% { transform: translateY(0); opacity: 1; } 66%, 100% { transform: translateY(0); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
-  .cw-root, .cw-carilla, .cw-scan { animation: none; }
-  .cw-carilla { stroke-dashoffset: 0; }
+  .cw-outline, .cw-solid, .cw-scan { animation: none; }
+  .cw-outline { stroke-dashoffset: 0; }
   .cw-scan { opacity: 0; }
 }
 `;
@@ -103,7 +68,7 @@ export default function CarillaWireframe({
     videoSrc,
     poster,
     className = "",
-    label = "Carilla de resina impresa en 3D sobre un incisivo, en malla digital",
+    label = "Incisivo central superior en malla digital: la carilla de resina se imprime en 3D capa por capa",
 }: Props) {
     if (videoSrc) {
         return (
@@ -123,25 +88,56 @@ export default function CarillaWireframe({
     }
 
     return (
-        <div className={`relative aspect-square w-full max-w-md mx-auto text-oro ${className}`}>
+        <div className={`relative w-full max-w-md mx-auto text-oro ${className}`}>
             <style>{CSS}</style>
-            {/* Halo suave detrás del diente */}
-            <div className="absolute inset-[12%] rounded-full bg-oro/5 blur-3xl" aria-hidden="true" />
-            <svg viewBox="0 0 240 280" role="img" aria-label={label} className="cw-root relative h-full w-full">
-                <g fill="none" stroke="currentColor" strokeLinejoin="round">
-                    <path d={RAIZ} strokeWidth={0.6} strokeDasharray="2 4" opacity={0.45} />
-                    <g className="cw-malla" strokeWidth={0.45}>
-                        {TRIANGULOS.map((pts) => (
-                            <polygon key={pts} points={pts} />
-                        ))}
+            <svg viewBox="0 0 300 240" role="img" aria-label={label} className="relative h-auto w-full">
+                <defs>
+                    <clipPath id="cw-clip">
+                        <path d={SILUETA} />
+                    </clipPath>
+                    <linearGradient id="cw-esmalte" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stopColor="#e3d3b2" />
+                        <stop offset=".5" stopColor="#f6f0e3" />
+                        <stop offset=".85" stopColor="#f1ede4" />
+                        <stop offset="1" stopColor="#a9b8c4" />
+                    </linearGradient>
+                </defs>
+
+                {/* Halo */}
+                <circle cx={150} cy={112} r={100} fill="currentColor" opacity={0.05} />
+
+                {/* Diente: caja 100×125 escalada a 118×168 */}
+                <g transform="translate(92,24) scale(1.18,1.344)">
+                    <g clipPath="url(#cw-clip)">
+                        <g className="cw-mesh">
+                            {MALLA.map((d) => (
+                                <path key={d} d={d} vectorEffect="non-scaling-stroke" />
+                            ))}
+                            {DIAGONALES.map((d) => (
+                                <path key={d} d={d} className="cw-diag" vectorEffect="non-scaling-stroke" />
+                            ))}
+                        </g>
+                        {/* Capa impresa: sube desde el borde incisal */}
+                        <g className="cw-solid">
+                            <rect x={-5} y={0} width={110} height={130} fill="url(#cw-esmalte)" />
+                            {/* Surcos de los lóbulos de desarrollo */}
+                            <path d="M32,42 Q31,88 32,122" fill="none" stroke="#bfa57a" strokeWidth={0.9} opacity={0.5} vectorEffect="non-scaling-stroke" />
+                            <path d="M68,42 Q67,88 68,122" fill="none" stroke="#bfa57a" strokeWidth={0.9} opacity={0.5} vectorEffect="non-scaling-stroke" />
+                            {/* Brillo vestibular */}
+                            <ellipse cx={44} cy={52} rx={9} ry={26} fill="#fff" opacity={0.28} />
+                        </g>
+                        {/* Línea de escaneo / frente de impresión */}
+                        <rect className="cw-scan" x={-5} y={0} width={110} height={1.8} fill="#ffd889" />
                     </g>
-                    <path d={CONTORNO_DIENTE} strokeWidth={0.9} opacity={0.8} />
-                    <path className="cw-carilla" d={CONTORNO_CARILLA} strokeWidth={1.4} />
-                    <line className="cw-scan" x1={40} y1={35} x2={200} y2={35} strokeWidth={0.8} opacity={0} />
+                    <path className="cw-outline" d={SILUETA} vectorEffect="non-scaling-stroke" />
                 </g>
-                {/* Cota de espesor */}
-                <g fill="currentColor" opacity={0.7} fontFamily="var(--font-manrope), sans-serif" fontSize={8} letterSpacing={1.5}>
-                    <text x={120} y={274} textAnchor="middle">0,1 – 0,2 MM</text>
+
+                {/* Rótulos */}
+                <line x1={206} y1={140} x2={244} y2={132} stroke="currentColor" strokeWidth={0.6} />
+                <g fill="currentColor" fontFamily="var(--font-manrope), sans-serif" fontSize={9} fontWeight={600} letterSpacing={1.4}>
+                    <text x={246} y={128}>CARILLA</text>
+                    <text x={246} y={140}>3D</text>
+                    <text x={150} y={226} textAnchor="middle">ESPESOR 0,1 – 0,2 mm</text>
                 </g>
             </svg>
         </div>
