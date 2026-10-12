@@ -72,7 +72,7 @@ export default function CarillaWireframe({
 }: Props) {
     if (videoSrc) {
         return (
-            <div className={`relative aspect-square w-full max-w-md mx-auto ${className}`}>
+            <div className={`relative aspect-[4/3] w-full max-w-xl mx-auto overflow-hidden rounded-2xl border border-oro/15 ${className}`}>
                 <video
                     src={videoSrc}
                     poster={poster}
@@ -80,8 +80,9 @@ export default function CarillaWireframe({
                     muted
                     loop
                     playsInline
+                    preload="metadata"
                     aria-label={label}
-                    className="h-full w-full object-contain"
+                    className="h-full w-full object-cover"
                 />
             </div>
         );
