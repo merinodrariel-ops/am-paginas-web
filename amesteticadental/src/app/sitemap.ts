@@ -73,6 +73,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/coronas-y-fundas-dentales", changeFrequency: "monthly", priority: 0.8 },
   { path: "/carillas-de-resina", changeFrequency: "monthly", priority: 0.8 },
   { path: "/carillas-de-resina-impresas-3d", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/alineadores-invisibles-impresos-3d", changeFrequency: "monthly", priority: 0.9 },
   { path: "/puentes-dentales", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contacto", changeFrequency: "monthly", priority: 0.7 },
   { path: "/turismo-dental", changeFrequency: "monthly", priority: 0.9 },

@@ -215,6 +215,15 @@ export default function AlineadoresInvisiblesPage() {
                     </div>
                 </section>
 
+                {/* Banda: tecnología nueva */}
+                <section className="px-6 md:px-12 py-5 border-y border-oro/15 bg-oro/5">
+                    <Link href="/alineadores-invisibles-impresos-3d" className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center group">
+                        <span className="text-[10px] uppercase tracking-widest bg-oro text-carbon rounded-full px-2.5 py-0.5 font-semibold">Lo más nuevo</span>
+                        <span className="text-crema/85 text-sm">Alineadores impresos en 3D, prácticamente sin ataches</span>
+                        <span className="text-oro text-sm group-hover:translate-x-1 transition-transform">Conocelos →</span>
+                    </Link>
+                </section>
+
                 {/* ── LASER: el diferencial, antes que cualquier generalidad ── */}
                 <section className="relative py-24 px-6 md:px-12 bg-carbon-soft border-y border-oro/10 overflow-hidden">
                     <div className="absolute left-[-10%] top-[10%] h-[420px] w-[420px] rounded-full bg-oro/5 blur-[130px] pointer-events-none" />

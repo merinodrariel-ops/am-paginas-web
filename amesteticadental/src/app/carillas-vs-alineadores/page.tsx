@@ -108,11 +108,12 @@ export default function CarillasVsAlineadoresPage() {
         </section>
 
         <section className="py-16 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               { nombre: "Carillas Dentales", href: "/carillas-dentales" },
               { nombre: "Alineadores Invisibles", href: "/alineadores-invisibles" },
               { nombre: "AM Aligners", href: "/alineadores-invisibles" },
+              { nombre: "Alineadores impresos en 3D", href: "/alineadores-invisibles-impresos-3d" },
             ].map((item) => (
               <Link key={item.nombre} href={item.href} className="border border-oro/15 rounded-2xl p-6 bg-carbon hover:border-oro/35 transition-colors group">
                 <h3 className="text-crema font-manrope font-medium text-sm group-hover:text-oro transition-colors">{item.nombre}</h3>
