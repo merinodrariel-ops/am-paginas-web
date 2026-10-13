@@ -73,6 +73,19 @@ const tratamientos = [
     },
     {
         id: "06",
+        nombre: "Alineadores Impresos en 3D",
+        tagline: "Lo más nuevo: prácticamente sin ataches",
+        descripcion: "Alineadores invisibles impresos directamente en 3D con resina de memoria de forma: vuelven a su forma programada y siguen empujando de manera constante, así que en la gran mayoría de los casos casi no hacen falta ataches. Combinados con láser en cada control, el tratamiento puede durar hasta un 30–40% menos. Sabemos que lo más valioso que tenés es tu tiempo.",
+        impacto: "Probablemente el protocolo de alineadores más rápido de Argentina. Somos de las primeras clínicas del país en incorporarlo.",
+        href: "/alineadores-invisibles-impresos-3d",
+        destacado: false,
+        imagen: {
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147368/tratamientos/am-aligners-alineadores-invisibles-puerto-madero-buenos-aires.png",
+            alt: "Alineadores invisibles impresos en 3D con memoria de forma — AM Estética Dental, Puerto Madero",
+        },
+    },
+    {
+        id: "07",
         nombre: "Implantes Dentales",
         tagline: "El diente que no sabés que es artificial",
         descripcion: "Reemplazamos dientes perdidos con implantes que se integran a tu hueso. El resultado es indistinguible de un diente natural — en función y en estética.",
@@ -85,7 +98,7 @@ const tratamientos = [
         },
     },
     {
-        id: "07",
+        id: "08",
         nombre: "Armonización Orofacial",
         tagline: "Más allá de los dientes",
         descripcion: "Trabajamos el contorno de los labios y el marco facial para que tu sonrisa y tu cara cuenten la misma historia. No invasivo. Resultados que sorprenden.",
@@ -98,7 +111,7 @@ const tratamientos = [
         },
     },
     {
-        id: "08",
+        id: "09",
         nombre: "Estética Gingival",
         tagline: "La sonrisa gingival tiene solución",
         descripcion: "Si tu encía tapa demasiado tu diente o está despareja, existe un procedimiento de contorno gingival que equilibra las proporciones en una sola sesión.",
@@ -111,7 +124,7 @@ const tratamientos = [
         },
     },
     {
-        id: "09",
+        id: "10",
         nombre: "Prótesis Estéticas",
         tagline: "Rehabilitación de alta gama",
         descripcion: "Coronas y prótesis diseñadas a medida con materiales de última generación. Restauramos la función y la belleza de forma simultánea, sin comprometer ninguna de las dos.",
@@ -130,6 +143,7 @@ const quickLinks = [
     { label: "Carillas vs Alineadores", tone: "Para quien compara: qué me conviene", href: "/carillas-vs-alineadores" },
     { label: "Porcelana vs Resina", tone: "Para quien elige material", href: "/carillas-de-porcelana-vs-resina" },
     { label: "Carillas impresas 3D", tone: "Para quien quiere lo más nuevo", href: "/carillas-de-resina-impresas-3d" },
+    { label: "Alineadores 3D sin ataches", tone: "Para quien quiere el tratamiento más rápido", href: "/alineadores-invisibles-impresos-3d" },
     // Dos entradas de bruxismo a propósito, porque son dos momentos distintos del
     // mismo problema: frenarlo antes de que rompa, o reconstruir lo ya roto. Quien
     // busca "botox para bruxismo" no quiere carillas, y al revés.

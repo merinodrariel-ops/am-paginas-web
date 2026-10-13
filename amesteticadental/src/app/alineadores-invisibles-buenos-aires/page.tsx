@@ -46,6 +46,15 @@ export default function AlineadoresBAPage() {
                     </div>
                 </section>
 
+                {/* Banda: tecnología nueva */}
+                <section className="px-6 md:px-12 py-5 border-y border-oro/15 bg-oro/5">
+                    <Link href="/alineadores-invisibles-impresos-3d" className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center group">
+                        <span className="text-[10px] uppercase tracking-widest bg-oro text-carbon rounded-full px-2.5 py-0.5 font-semibold">Lo más nuevo</span>
+                        <span className="text-crema/85 text-sm">Alineadores impresos en 3D, prácticamente sin ataches</span>
+                        <span className="text-oro text-sm group-hover:translate-x-1 transition-transform">Conocelos →</span>
+                    </Link>
+                </section>
+
                 <section className="px-6 py-16 border-y border-oro/8 max-w-6xl mx-auto">
                     <h2 className="text-2xl font-light text-crema mb-10">¿Cuánto cuestan los alineadores invisibles <span className="font-cormorant italic text-oro">en Buenos Aires?</span></h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

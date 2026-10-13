@@ -215,11 +215,12 @@ export default function InvisalignPage() {
         <section className="py-16 px-6 md:px-12">
           <div className="max-w-4xl mx-auto">
             <span className="text-oro font-manrope uppercase tracking-[0.4em] text-xs block mb-8 text-center">También puede interesarte</span>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
                 { nombre: "Alineadores Invisibles", desc: "Panorama general de ortodoncia invisible y planificación digital.", href: "/alineadores-invisibles" },
                 { nombre: "Diseño de Sonrisa", desc: "Cómo se integra AM Aligners a una transformación estética completa.", href: "/diseno-de-sonrisa" },
                 { nombre: "Carillas Dentales", desc: "Para casos que requieren refinamiento final de forma y color.", href: "/carillas-dentales" },
+                { nombre: "Alineadores Impresos en 3D", desc: "Lo más nuevo: memoria de forma, prácticamente sin ataches y con láser en cada control.", href: "/alineadores-invisibles-impresos-3d" },
               ].map((t) => (
                 <Link
                   key={t.nombre}

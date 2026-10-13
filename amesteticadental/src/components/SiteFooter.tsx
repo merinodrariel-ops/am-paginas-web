@@ -38,6 +38,7 @@ const COLUMNAS_ES: Columna[] = [
             { href: "/carillas-sin-desgaste", label: "Carillas de mínimo desgaste" },
             { href: "/diseno-de-sonrisa", label: "Diseño de sonrisa" },
             { href: "/alineadores-invisibles", label: "Alineadores invisibles" },
+            { href: "/alineadores-invisibles-impresos-3d", label: "Alineadores impresos en 3D" },
             { href: "/invisalign", label: "Invisalign" },
             { href: "/implantes-dentales-buenos-aires", label: "Implantes dentales" },
             { href: "/coronas-y-fundas-dentales", label: "Coronas y fundas" },
