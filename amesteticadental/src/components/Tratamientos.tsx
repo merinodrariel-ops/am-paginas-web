@@ -79,8 +79,9 @@ const tratamientos = [
         impacto: "Probablemente el protocolo de alineadores más rápido de Argentina. Somos de las primeras clínicas del país en incorporarlo.",
         href: "/alineadores-invisibles-impresos-3d",
         destacado: false,
+        video: "https://res.cloudinary.com/drctvgyqd/video/upload/q_auto,vc_auto/alineadores/alineadores-invisibles-impresos-3d-impresion-am.mp4",
         imagen: {
-            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1790147368/tratamientos/am-aligners-alineadores-invisibles-puerto-madero-buenos-aires.png",
+            src: "https://res.cloudinary.com/drctvgyqd/image/upload/v1791888812/alineadores/alineadores-invisibles-impresos-3d-am-estetica-dental.jpg",
             alt: "Alineadores invisibles impresos en 3D con memoria de forma — AM Estética Dental, Puerto Madero",
         },
     },

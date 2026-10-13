@@ -17,10 +17,15 @@ import { ANIO } from "@/lib/anio";
 //   3. GALERIA: fotos/renders adicionales `{ src, alt }`. Con el array vacío la
 //      sección no se muestra.
 const CLOUDINARY = "https://res.cloudinary.com/drctvgyqd";
-const HERO_VIDEO = "";
-const HERO_POSTER = `${CLOUDINARY}/image/upload/q_auto,f_auto/alineadores/alineadores-invisibles-laser-aceleracion-buenos-aires.webp`;
+const HERO_VIDEO = `${CLOUDINARY}/video/upload/q_auto,vc_auto/alineadores/alineadores-invisibles-impresos-3d-impresion-am.mp4`;
+const HERO_POSTER = `${CLOUDINARY}/image/upload/v1791888812/alineadores/alineadores-invisibles-impresos-3d-am-estetica-dental.jpg`;
+const ROTACION_VIDEO = `${CLOUDINARY}/video/upload/q_auto,vc_auto/alineadores/alineador-impreso-3d-sin-ataches-360-am.mp4`;
+const ROTACION_POSTER = `${CLOUDINARY}/image/upload/v1791888815/alineadores/alineador-impreso-3d-memoria-de-forma-am.jpg`;
 type Visual = { src: string; alt: string };
-const GALERIA: Visual[] = [];
+const GALERIA: Visual[] = [
+    { src: `${CLOUDINARY}/image/upload/q_auto,f_auto/alineadores/alineador-impreso-3d-malla-digital-am`, alt: "Alineador invisible impreso en 3D: mitad malla digital, mitad resina terminada — AM Estética Dental, Puerto Madero" },
+    { src: `${CLOUDINARY}/image/upload/q_auto,f_auto/alineadores/alineador-impreso-3d-memoria-de-forma-am`, alt: "Alineador invisible impreso en 3D con memoria de forma, prácticamente sin ataches — AM Estética Dental" },
+];
 
 const CANONICAL = "https://www.amesteticadental.com/alineadores-invisibles-impresos-3d";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20alineadores%20invisibles%20impresos%20en%203D.";
@@ -36,6 +41,7 @@ export const metadata: Metadata = {
         url: CANONICAL,
         locale: "es_AR",
         type: "website",
+        images: [{ url: HERO_POSTER, alt: "Alineadores invisibles impresos en 3D — AM Estética Dental, Puerto Madero" }],
     },
     keywords: "alineadores impresos en 3D, alineadores sin ataches, ortodoncia invisible rápida, alineadores con memoria de forma, alineadores invisibles Buenos Aires, alineadores más rápidos Argentina",
 };
@@ -245,6 +251,35 @@ export default function AlineadoresImpresos3DPage() {
                                 <p className="text-crema/60 text-sm leading-relaxed">{texto}</p>
                             </div>
                         ))}
+                    </div>
+                </section>
+
+                {/* Memoria de forma: alineador rotando */}
+                <section className="px-6 py-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-oro/15">
+                        <video
+                            src={ROTACION_VIDEO}
+                            poster={ROTACION_POSTER}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            preload="none"
+                            aria-label="Alineador invisible impreso en 3D girando: superficie lisa, prácticamente sin ataches"
+                            className="h-full w-full object-cover"
+                        />
+                    </div>
+                    <div>
+                        <span className="text-oro uppercase tracking-[0.35em] text-xs block mb-4">Memoria de forma</span>
+                        <h2 className="text-2xl md:text-3xl font-light text-crema mb-5 leading-tight">
+                            Liso, transparente <span className="font-cormorant italic text-oro">y sin botones.</span>
+                        </h2>
+                        <p className="text-crema/65 leading-relaxed mb-4">
+                            La resina con memoria de forma vuelve a la forma programada y sigue empujando de manera constante. Por eso, en la gran mayoría de los casos, el alineador trabaja prácticamente sin ataches: nada pegado sobre tus dientes, más estética y menos tiempo en el sillón.
+                        </p>
+                        <p className="text-crema/50 text-sm leading-relaxed">
+                            Cada alineador sale de la impresora con el espesor exacto que necesita cada zona del diente.
+                        </p>
                     </div>
                 </section>
 
