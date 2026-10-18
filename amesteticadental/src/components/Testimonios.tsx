@@ -138,84 +138,53 @@ function VideoCard({
     preview = false,
     lang = "es",
     onPlay,
-    onStop,
 }: {
     video: typeof videosTestimonios[0];
     preview?: boolean;
     lang?: "es" | "en";
     onPlay?: () => void;
-    onStop?: () => void;
 }) {
     const ui = UI[lang];
-    const [playing, setPlaying] = useState(false);
-    // El loop mudo tarda un instante en dar imagen. Hasta que no esta
-    // corriendo de verdad se queda transparente y se ve el poster debajo, asi
-    // no hay un parpadeo negro entre uno y otro.
     const [loopCorriendo, setLoopCorriendo] = useState(false);
-    const marco = useRef<HTMLDivElement>(null);
     const clip = useRef<HTMLVideoElement>(null);
 
-    // El loop corre cuando la cinta puso a esta tarjeta en la ventana visible
-    // y nadie abrio todavia el testimonio con sonido. Quien esta a la vista lo
-    // decide el carrusel con la posicion de la cinta, no un observer: es una
-    // cuenta y no una promesa del navegador.
-    const mostrarLoop = preview && !playing;
-
-    const detener = useCallback(() => {
-        setPlaying(false);
-        onStop?.();
-    }, [onStop]);
-
-    // Un video que deja de verse tiene que dejar de sonar. Si el carrusel lo
-    // corre de lugar, o la persona sigue scrolleando la pagina, el iframe queda
-    // fuera de pantalla y sigue con audio: se escucha una voz hablando y no hay
-    // forma de saber de donde sale ni como callarla. Al salir de vista se
-    // desmonta el iframe y vuelve la portada.
+    // Si la tarjeta está dentro del rango visible, reproducir en bucle continuo y mudo.
+    // Si sale de pantalla, pausar para ahorrar batería y procesamiento del dispositivo.
     useEffect(() => {
-        if (!playing) return;
-        const el = marco.current;
-        if (!el) return;
-        const obs = new IntersectionObserver(
-            ([entrada]) => {
-                if (!entrada.isIntersecting) detener();
-            },
-            { threshold: 0.35 }
-        );
-        obs.observe(el);
-        return () => obs.disconnect();
-    }, [playing, detener]);
-
-    // Arranca el recorte cuando la tarjeta entra en turno. play() puede ser
-    // rechazado — una politica de autoplay mas estricta, el ahorro de datos —
-    // y en ese caso simplemente queda el poster, que es lo que habia antes.
-    //
-    // El reintento en `visibilitychange` no es decorativo: Chrome pausa el
-    // video mudo sin pista de audio cuando la pestana pasa a segundo plano
-    // (bien por la bateria) pero no lo vuelve a arrancar al volver. Sin esto,
-    // quien cambia de pestana y regresa se encuentra la tarjeta congelada, que
-    // es exactamente lo que veniamos a arreglar.
-    useEffect(() => {
-        if (!mostrarLoop) return;
         const v = clip.current;
         if (!v) return;
+        if (preview) {
+            const prom = v.play();
+            if (prom !== undefined) {
+                prom.then(() => setLoopCorriendo(true)).catch(() => setLoopCorriendo(false));
+            }
+        } else {
+            v.pause();
+        }
+    }, [preview]);
+
+    // Al regresar a la pestaña activa, asegurar que el video vuelva a correr si está visible
+    useEffect(() => {
         const arrancar = () => {
             if (document.hidden) return;
-            v.play().catch(() => setLoopCorriendo(false));
+            if (preview && clip.current) {
+                const prom = clip.current.play();
+                if (prom !== undefined) {
+                    prom.then(() => setLoopCorriendo(true)).catch(() => setLoopCorriendo(false));
+                }
+            }
         };
-        arrancar();
         document.addEventListener("visibilitychange", arrancar);
-        // El reset va en la limpieza y no en el cuerpo: cuando la tarjeta sale
-        // de cuadro el <video> se desmonta, y si quedara marcado como
-        // corriendo, al volver a entrar apareceria opaco de una sobre un
-        // cuadro todavia negro, sin el fundido.
         return () => {
             document.removeEventListener("visibilitychange", arrancar);
-            setLoopCorriendo(false);
         };
-    }, [mostrarLoop]);
+    }, [preview]);
 
     return (
-        <div ref={marco} className="group relative aspect-[9/16] overflow-hidden rounded-[1.6rem] border border-oro/8 bg-carbon-soft">
+        <div
+            onClick={onPlay}
+            className="group relative aspect-[9/16] overflow-hidden rounded-[1.6rem] border border-oro/8 bg-carbon-soft cursor-pointer select-none"
+        >
             <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 rounded-[1.6rem] p-px opacity-55 transition-opacity duration-500 group-hover:opacity-100"
@@ -229,83 +198,59 @@ function VideoCard({
                 }}
             />
             <div className="pointer-events-none absolute inset-[1.5px] rounded-[calc(1.6rem-1.5px)] bg-carbon-soft/70 backdrop-blur-[1px]" />
-            {!playing ? (
-                <>
-                    <Image
-                        src={video.poster}
-                        alt={ui.alt}
-                        fill
-                        sizes="(max-width: 768px) 92vw, 30vw"
-                        className="absolute inset-[1.5px] h-[calc(100%-3px)] w-[calc(100%-3px)] rounded-[calc(1.6rem-1.5px)] object-cover brightness-[0.72]"
-                    />
-                    {mostrarLoop && (
-                        <video
-                            ref={clip}
-                            src={`${video.loop}.mp4`}
-                            muted
-                            loop
-                            playsInline
-                            preload="none"
-                            aria-hidden="true"
-                            tabIndex={-1}
-                            onPlaying={() => setLoopCorriendo(true)}
-                            className={`absolute inset-[1.5px] h-[calc(100%-3px)] w-[calc(100%-3px)] rounded-[calc(1.6rem-1.5px)] object-cover brightness-[0.72] transition-opacity duration-700 ${loopCorriendo ? "opacity-100" : "opacity-0"}`}
-                        />
-                    )}
-                    {loopCorriendo && (
-                        <span className="pointer-events-none absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-full border border-white/12 bg-carbon/65 px-2.5 py-1 font-manrope text-[9px] uppercase tracking-[0.2em] text-crema/60 backdrop-blur-sm">
-                            <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                <path d="M11 5 6 9H2v6h4l5 4V5z" />
-                                <path d="m23 9-6 6" />
-                                <path d="m17 9 6 6" />
-                            </svg>
-                            {ui.mudo}
-                        </span>
-                    )}
-                    <div className="absolute inset-[1.5px] rounded-[calc(1.6rem-1.5px)] bg-gradient-to-b from-carbon/18 via-transparent to-carbon/76" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <button
-                            onClick={() => {
-                                setPlaying(true);
-                                onPlay?.();
-                            }}
-                            className="relative flex h-16 w-16 items-center justify-center rounded-full transition-all duration-500 group-hover:scale-105"
-                            aria-label={mostrarLoop ? ui.conSonido : ui.play}
-                        >
-                            <span className="absolute inset-0 rounded-full bg-[linear-gradient(120deg,#8f5b11_0%,#c88412_18%,#f0b10d_36%,#fff0b1_52%,#f4c646_68%,#8f5b11_100%)] shadow-[0_0_22px_rgba(242,185,13,0.26)]" />
-                            <span className="absolute inset-[-6px] rounded-full border border-oro/30 animate-pulse opacity-70" />
-                            <svg className="relative z-10 ml-1 h-6 w-6 text-carbon" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div className="absolute right-0 bottom-0 left-0 p-5">
-                        <span className="mb-1 block font-manrope text-xs uppercase tracking-widest text-oro/70">
-                            {video.tratamiento}
-                        </span>
-                        <span className="font-manrope text-sm font-medium text-crema">{video.nombre}</span>
-                    </div>
-                </>
-            ) : (
-                <>
-                    <button
-                        onClick={detener}
-                        aria-label={ui.cerrar}
-                        className="absolute right-3 top-3 z-20 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-carbon/80 text-crema/80 backdrop-blur-sm transition-colors hover:border-oro/50 hover:text-oro"
-                    >
-                        <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                    <iframe
-                        className="absolute inset-[1.5px] h-[calc(100%-3px)] w-[calc(100%-3px)] rounded-[calc(1.6rem-1.5px)]"
-                        src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?autoplay=1&rel=0&modestbranding=1&controls=1`}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        title={video.nombre}
-                    />
-                </>
+            <Image
+                src={video.poster}
+                alt={ui.alt}
+                fill
+                sizes="(max-width: 768px) 92vw, 30vw"
+                className="absolute inset-[1.5px] h-[calc(100%-3px)] w-[calc(100%-3px)] rounded-[calc(1.6rem-1.5px)] object-cover brightness-[0.72]"
+            />
+            <video
+                ref={clip}
+                src={video.loop}
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-hidden="true"
+                tabIndex={-1}
+                onPlaying={() => setLoopCorriendo(true)}
+                className={`absolute inset-[1.5px] h-[calc(100%-3px)] w-[calc(100%-3px)] rounded-[calc(1.6rem-1.5px)] object-cover brightness-[0.72] transition-opacity duration-700 ${loopCorriendo ? "opacity-100" : "opacity-0"}`}
+            />
+            {loopCorriendo && (
+                <span className="pointer-events-none absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-full border border-white/12 bg-carbon/65 px-2.5 py-1 font-manrope text-[9px] uppercase tracking-[0.2em] text-crema/60 backdrop-blur-sm">
+                    <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M11 5 6 9H2v6h4l5 4V5z" />
+                        <path d="m23 9-6 6" />
+                        <path d="m17 9 6 6" />
+                    </svg>
+                    {ui.mudo}
+                </span>
             )}
+            <div className="pointer-events-none absolute inset-[1.5px] rounded-[calc(1.6rem-1.5px)] bg-gradient-to-b from-carbon/18 via-transparent to-carbon/76" />
+            <div className="absolute inset-0 flex items-center justify-center">
+                <button
+                    type="button"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onPlay?.();
+                    }}
+                    className="relative flex h-16 w-16 items-center justify-center rounded-full transition-all duration-500 group-hover:scale-110"
+                    aria-label={ui.conSonido}
+                >
+                    <span className="absolute inset-0 rounded-full bg-[linear-gradient(120deg,#8f5b11_0%,#c88412_18%,#f0b10d_36%,#fff0b1_52%,#f4c646_68%,#8f5b11_100%)] shadow-[0_0_22px_rgba(242,185,13,0.26)]" />
+                    <span className="absolute inset-[-6px] rounded-full border border-oro/30 animate-pulse opacity-70" />
+                    <svg className="relative z-10 ml-1 h-6 w-6 text-carbon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </button>
+            </div>
+            <div className="pointer-events-none absolute right-0 bottom-0 left-0 p-5">
+                <span className="mb-1 block font-manrope text-xs uppercase tracking-widest text-oro/70">
+                    {video.tratamiento}
+                </span>
+                <span className="font-manrope text-sm font-medium text-crema">{video.nombre}</span>
+            </div>
         </div>
     );
 }
@@ -391,10 +336,29 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
     const [duracion, setDuracion] = useState(PASO_MS);
     const [enVista, setEnVista] = useState(true);
     const [esEscritorio, setEsEscritorio] = useState<boolean | null>(null);
-    // Una vez que alguien abre un video, la cinta deja de moverse. No hay nada
-    // peor que se te deslice el testimonio que estabas mirando.
-    const [mirando, setMirando] = useState(false);
+    // Una vez que alguien abre un video con sonido, la cinta deja de moverse
+    // y se despliega el visor inmersivo.
+    const [videoActivo, setVideoActivo] = useState<(typeof videosTestimonios)[0] | null>(null);
     const [menosMovimiento, setMenosMovimiento] = useState(false);
+
+    const cerrarModal = useCallback(() => {
+        setVideoActivo(null);
+    }, []);
+
+    // Cerrar con Escape y bloquear scroll del fondo mientras se reproduce el testimonio
+    useEffect(() => {
+        if (!videoActivo) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") cerrarModal();
+        };
+        window.addEventListener("keydown", onKey);
+        const prevOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        return () => {
+            window.removeEventListener("keydown", onKey);
+            document.body.style.overflow = prevOverflow;
+        };
+    }, [videoActivo, cerrarModal]);
 
     // Quien pidio en su sistema que se reduzcan las animaciones no recibe una
     // cinta que se mueve sola ni videos en loop: se queda con las flechas.
@@ -449,7 +413,7 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
     // arrancar desde cero, que es exactamente la sensacion contraria a la de
     // una lista que ya venia corriendo. `enVista` sigue existiendo, pero solo
     // para decidir que videos vale la pena descargar.
-    const quieto = mirando || menosMovimiento;
+    const quieto = !!videoActivo || menosMovimiento;
 
     // Cierre del bucle: el salto invisible al principio. Encadena con `luego`
     // para que la cinta siga de largo en vez de quedarse un paso entero quieta
@@ -506,22 +470,19 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
     const transicion = sinAnimacion ? "none" : `transform ${duracion}ms linear`;
     const activo = idx % total;
 
-    // La cinta esta casi siempre a mitad de camino entre dos tarjetas, asi que
-    // la ventana visible arranca una tarjeta antes del indice: la que todavia
-    // esta saliendo por el borde tiene que seguir reproduciendo.
-    const puedeCorrer = enVista && !mirando && !menosMovimiento;
+    // La cinta reproduce todos los videos mudos que estén dentro del viewport o entrando a él.
+    const puedeCorrer = enVista && !videoActivo && !menosMovimiento;
     const previewMovil = (i: number) =>
-        puedeCorrer && esEscritorio === false && i >= idx - 1 && i <= idx;
+        puedeCorrer && esEscritorio === false && i >= idx - 1 && i <= idx + 1;
     const previewEscritorio = (i: number) =>
-        puedeCorrer && esEscritorio === true && i >= idx - 1 && i <= idx + VISIBLE_DESKTOP - 1;
+        puedeCorrer && esEscritorio === true && i >= idx - 1 && i <= idx + VISIBLE_DESKTOP;
 
     const tarjeta = (video: (typeof pista)[number], corre: boolean) => (
         <VideoCard
             video={video}
             lang={lang}
             preview={corre}
-            onPlay={() => setMirando(true)}
-            onStop={() => setMirando(false)}
+            onPlay={() => setVideoActivo(video)}
         />
     );
 
@@ -596,6 +557,49 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
                     </button>
                 </div>
             </div>
+
+            {/* ── Modal Inmersivo de Testimonio (Reel con sonido) ── */}
+            {videoActivo && (
+                <div
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label={videoActivo.nombre}
+                    className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-carbon/95 backdrop-blur-md p-4 md:p-6 animate-fade-in"
+                    onClick={(e) => {
+                        if (e.target === e.currentTarget) cerrarModal();
+                    }}
+                >
+                    <div className="flex items-center justify-between w-full max-w-sm md:max-w-md mb-3 px-2">
+                        <div>
+                            <span className="text-oro uppercase tracking-[0.25em] text-[10px] block mb-0.5">
+                                {videoActivo.tratamiento}
+                            </span>
+                            <p className="text-crema text-base font-medium leading-tight">
+                                {videoActivo.nombre}
+                            </p>
+                        </div>
+                        <button
+                            onClick={cerrarModal}
+                            className="p-2.5 text-crema/70 hover:text-oro transition-colors rounded-full border border-crema/15 hover:border-oro/40 bg-carbon-soft/80 backdrop-blur-sm shadow-md"
+                            aria-label={ui.cerrar}
+                        >
+                            <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div className="relative w-full max-w-sm md:max-w-md h-[72vh] max-h-[640px] aspect-[9/16] overflow-hidden rounded-2xl md:rounded-[2rem] border border-oro/30 bg-carbon shadow-[0_20px_70px_rgba(0,0,0,0.85)]">
+                        <iframe
+                            className="h-full w-full"
+                            src={`https://www.youtube-nocookie.com/embed/${videoActivo.youtubeId}?autoplay=1&rel=0&modestbranding=1&controls=1`}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            title={videoActivo.nombre}
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
