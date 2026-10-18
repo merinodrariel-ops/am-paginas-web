@@ -97,10 +97,8 @@ const COMPARATIVA = [
         indicadoPara: "Dientes sanos y bien alineados que han perdido brillo o presentan pigmentaciones. Es el procedimiento más noble y conservador para iluminar la sonrisa natural.",
         ventajas: "Cero desgaste dental, máxima seguridad sin sensibilidad extrema. Se realiza cómodamente en casa durante 7 a 10 noches.",
         limite: "No modifica la forma anatómica, bordes astillados ni el tamaño de los dientes.",
-        img: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/blanqueamiento-ambulatorio/cubeta-blanqueamiento-dental-ambulatoria-a-medida-editorial-dr-ariel-merino-am-estetica-dental-buenos-aires",
-        imgAlt: "Cubeta de blanqueamiento ambulatorio a medida — AM Estética Dental",
-        videoUrl: "https://res.cloudinary.com/drctvgyqd/video/upload/q_auto/blanqueamiento-ambulatorio/cubeta-blanqueamiento-giro-360-dr-ariel-merino-am-estetica-dental-buenos-aires.mp4",
-        isVideo: true,
+        img: "/images/opalescence-10-jeringas-cubetas-am-estetica-dental.png",
+        imgAlt: "Kit de blanqueamiento dental ambulatorio Opalescence 10% — AM Estética Dental",
     },
     {
         tratamiento: "Restauraciones en Resina",
@@ -109,9 +107,8 @@ const COMPARATIVA = [
         indicadoPara: "Pequeñas fracturas de bordes incisales, cierre de espacios puntuales (diastemas) o reconstrucción de lesiones de esmalte en una sola sesión.",
         ventajas: "Solución rápida y conservadora para resolver detalles aislados sin pasar por laboratorio.",
         limite: "Material poroso que con los años pierde brillo y puede requerir repulidos.",
-        img: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carilla-unitaria-incisivo-central-oscurecido/carilla-unitaria-incisivo-central-comparativa-labios-sonrisa-resinas-blanqueamiento-am-estetica-dental",
-        imgAlt: "Armonización con resinas compuestas de alta estética — AM Estética Dental",
-        isVideo: false,
+        img: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-resina/diseno-sonrisa-carillas-resina-gingivectomia-laser-antes-despues-rostro-labios-portada-dr-ariel-merino-am-estetica-dental-buenos-aires",
+        imgAlt: "Diseño de sonrisa con carillas de resina directa antes y después — AM Estética Dental",
     },
     {
         tratamiento: "Carillas de Porcelana Pura",
@@ -120,9 +117,8 @@ const COMPARATIVA = [
         indicadoPara: "Desgaste por bruxismo, bordes quebrados, asimetrías de sonrisa, dientes cortos o pigmentaciones profundas refractarias al blanqueamiento.",
         ventajas: "Brillo y textura idénticos al esmalte biológico para toda la vida. No se manchan ni pierden translucidez.",
         limite: "Requiere planificación digital 3D y mínima preparación guiada del esmalte.",
-        img: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/carillas-coronas-arcada-superior-antes-despues-intraoral-rehabilitacion-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
-        imgAlt: "Carillas de porcelana estratificada de alta estética — AM Estética Dental",
-        isVideo: false,
+        img: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/carillas-sin-ortodoncia/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental",
+        imgAlt: "Resultado estético de carillas de porcelana de alta gama — AM Estética Dental",
     },
 ];
 
@@ -238,28 +234,13 @@ export default function GuiaDecisionSonrisaPage() {
                         {COMPARATIVA.map((c) => (
                             <div key={c.tratamiento} className="border border-oro/15 rounded-2xl overflow-hidden hover:border-oro/40 transition-all bg-carbon/40 flex flex-col justify-between group">
                                 <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-oro/10 bg-carbon-soft">
-                                    {c.isVideo ? (
-                                        <video
-                                            autoPlay
-                                            muted
-                                            loop
-                                            playsInline
-                                            preload="metadata"
-                                            poster={c.img}
-                                            aria-label={c.imgAlt}
-                                            className="absolute inset-0 h-full w-full object-cover"
-                                        >
-                                            <source src={c.videoUrl} type="video/mp4" />
-                                        </video>
-                                    ) : (
-                                        <Image
-                                            src={c.img}
-                                            alt={c.imgAlt}
-                                            fill
-                                            sizes="(max-width: 768px) 100vw, 33vw"
-                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                        />
-                                    )}
+                                    <Image
+                                        src={c.img}
+                                        alt={c.imgAlt}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                    />
                                 </div>
                                 <div className="p-7 flex-1 flex flex-col justify-between">
                                     <div>
