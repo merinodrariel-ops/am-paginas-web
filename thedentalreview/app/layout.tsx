@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Clarity from "./Clarity";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -86,6 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           data-domain="thedentalreview.com"
         />
         <Clarity />
+        <GoogleAnalytics />
       </body>
     </html>
   );

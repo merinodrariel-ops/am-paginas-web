@@ -6,6 +6,7 @@ import Tracking from "./Tracking";
 import Script from "next/script";
 import { LOGO_APPLE_ICON_URL, LOGO_ICON_URL, LOGO_OG_URL } from "./site-data";
 import Clarity from "./Clarity";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           data-domain="amesteticadental.uy"
         />
         <Clarity />
+        <GoogleAnalytics />
         <Tracking />
         {children}
       </body>

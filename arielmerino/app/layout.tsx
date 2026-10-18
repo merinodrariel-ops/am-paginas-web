@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Manrope, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Clarity from "./Clarity";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], weight: ["300","400","500","600","700"] });
 const cormorant = Cormorant_Garamond({ variable: "--font-cormorant", subsets: ["latin"], weight: ["300","400"], style: ["normal","italic"] });
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           data-domain="arielmerino.com"
         />
         <Clarity />
+        <GoogleAnalytics />
       </body>
     </html>
   );
