@@ -62,7 +62,7 @@ const schema = {
         jobTitle: "Especialista en Estética Dental y Rehabilitación Oral de Alta Complejidad",
         identifier: "MN 34.869",
         alumniOf: "Universidad Católica de La Plata, Asociación Odontológica Argentina",
-        description: "Docente de cursos de estética y rehabilitación oral a nivel nacional e internacional (docente invitado University of Pennsylvania). Fundador y Director de AM Estética Dental.",
+        description: "Docente de cursos de estética y rehabilitación oral a nivel nacional e internacional (docente invitado University of Pennsylvania). Fundador y Director de AM Estética Dental en Puerto Madero y Uruguay.",
     },
     provider: {
         "@type": "Dentist",
@@ -97,18 +97,24 @@ const PILARES = [
         titulo: "Soporte posterior y oclusión",
         desc: "Restablecemos la altura facial (dimensión vertical) y la estabilidad masticatoria mediante implantes guiados por tomografía y coronas de zirconio de alta resistencia estructural.",
         beneficio: "Alivia la sobrecarga articular y protege los dientes anteriores.",
+        img: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/carillas-coronas-arcada-inferior-antes-despues-intraoral-rehabilitacion-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+        imgAlt: "Soporte posterior oclusal en rehabilitación oral — AM Estética Dental",
     },
     {
         numero: "02",
         titulo: "Armonía estética anterior",
         desc: "Diseñamos la sonrisa con carillas de porcelana feldespática o disilicato de litio adaptadas a tu fisonomía, devolviendo la longitud, luminosidad y textura biológica perdida.",
         beneficio: "Aspecto 100% natural, sin dientes sobrecontorneados ni blancos artificiales.",
+        img: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/carillas-coronas-arcada-superior-antes-despues-intraoral-rehabilitacion-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+        imgAlt: "Armonía estética anterior con carillas cerámicas — AM Estética Dental",
     },
     {
         numero: "03",
         titulo: "Preservación biológica y neuromuscular",
         desc: "Cada restauración respeta los tejidos vivos remanentes con técnicas mínimamente invasivas y protege el sistema neuromuscular frente al bruxismo crónico.",
         beneficio: "Longevidad clínica a largo plazo sin dolor mandibular ni fracturas.",
+        img: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/rehabilitacion-oral-perfil-lateral-antes-despues-mordida-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+        imgAlt: "Ajuste oclusal y neuromuscular de perfil — AM Estética Dental",
     },
 ];
 
@@ -138,63 +144,103 @@ export default function RehabilitacionOralPage() {
 
             <main className="bg-carbon text-crema font-manrope min-h-screen">
 
-                {/* ── HERO ── */}
+                {/* ── HERO CON VIDEO & FOTO DE IMPACTO ── */}
                 <section className="relative px-6 md:px-12 pt-36 pb-20 max-w-6xl mx-auto">
                     <div className="absolute right-[-5%] top-[10%] w-[450px] h-[450px] rounded-full bg-oro/6 blur-[120px] pointer-events-none" />
-                    <div className="max-w-4xl">
-                        <span className="text-oro uppercase tracking-[0.35em] text-xs font-semibold block mb-6">
-                            AM Estética Dental · Puerto Madero & Uruguay
-                        </span>
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-crema leading-[1.05] mb-8">
-                            Rehabilitación oral de<br />
-                            <span className="font-cormorant italic text-oro">alta complejidad.</span>
-                        </h1>
-                        <p className="text-crema/70 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
-                            Cuando el desgaste por bruxismo, el colapso de la mordida o la pérdida de piezas comprometen la función y la estética, tratamos la boca como un sistema integral: implantes, coronas y carillas en perfecta armonía biológica.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 items-start">
-                            <a
-                                href={WA}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-lg shadow-oro/10"
-                            >
-                                Solicitar evaluación inicial por WhatsApp →
-                            </a>
-                            <Link
-                                href="#pilares"
-                                className="inline-flex items-center gap-2 border border-oro/30 text-crema px-7 py-4 rounded-full font-medium text-sm hover:border-oro transition-all"
-                            >
-                                Cómo se combina el tratamiento
-                            </Link>
+                    
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div className="lg:col-span-7">
+                            <span className="text-oro uppercase tracking-[0.35em] text-xs font-semibold block mb-6">
+                                AM Estética Dental · Puerto Madero & Uruguay
+                            </span>
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-light text-crema leading-[1.05] mb-8">
+                                Rehabilitación oral de<br />
+                                <span className="font-cormorant italic text-oro">alta complejidad.</span>
+                            </h1>
+                            <p className="text-crema/70 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10">
+                                Cuando el desgaste por bruxismo, el colapso de la mordida o la pérdida de piezas comprometen la función y la estética, tratamos la boca como un sistema integral: implantes, coronas y carillas en perfecta armonía biológica.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 items-start">
+                                <a
+                                    href={WA}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-lg shadow-oro/10"
+                                >
+                                    Solicitar evaluación inicial por WhatsApp →
+                                </a>
+                                <Link
+                                    href="#pilares"
+                                    className="inline-flex items-center gap-2 border border-oro/30 text-crema px-7 py-4 rounded-full font-medium text-sm hover:border-oro transition-all"
+                                >
+                                    Cómo se combina el tratamiento
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Video animado de impresión/restauración de alta tecnología */}
+                        <div className="lg:col-span-5">
+                            <figure className="relative aspect-[4/5] w-full max-w-[480px] mx-auto overflow-hidden rounded-[24px] border border-oro/25 bg-carbon-soft shadow-[0_20px_70px_rgba(0,0,0,0.5)]">
+                                <video
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    preload="metadata"
+                                    poster="https://res.cloudinary.com/drctvgyqd/image/upload/v1791845553/tratamientos/carillas-resina-impresas-3d-am-estetica-dental-puerto-madero.jpg"
+                                    aria-label="Animación digital 3D de restauración cerámica de alta precisión — AM Estética Dental"
+                                    className="absolute inset-0 h-full w-full object-cover"
+                                >
+                                    <source src="https://res.cloudinary.com/drctvgyqd/video/upload/q_auto,vc_auto/tratamientos/carillas-resina-impresas-3d-impresion-am-estetica-dental.mp4" type="video/mp4" />
+                                </video>
+                                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-carbon via-transparent to-carbon/10" />
+                                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 md:p-6">
+                                    <span className="mb-2 inline-flex rounded-full border border-oro/30 bg-carbon/80 px-3 py-1 text-[9px] uppercase tracking-[0.28em] text-oro backdrop-blur-sm">
+                                        Flujo Digital 3D · Laboratorio Propio
+                                    </span>
+                                    <figcaption className="text-xs leading-relaxed text-crema/70">
+                                        Planificación milimétrica y fabricación digital de restauraciones cerámicas.
+                                    </figcaption>
+                                </div>
+                            </figure>
                         </div>
                     </div>
                 </section>
 
-                {/* ── AUTORIDAD MÉDICA ── */}
+                {/* ── AUTORIDAD MÉDICA CON FOTO EDITORIAL DEL DR. MERINO ── */}
                 <section className="px-6 md:px-12 py-12 border-y border-oro/10 bg-carbon/50">
-                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
-                        <div>
-                            <span className="text-oro/70 uppercase tracking-widest text-[11px] block mb-2">Director Clínico</span>
-                            <h2 className="text-2xl font-light text-crema">Dr. Ariel Merino <span className="text-xs text-oro/80 font-normal">MN 34.869</span></h2>
-                            <p className="text-crema/60 text-sm mt-1 max-w-xl">
-                                Especialista en Estética Dental y Rehabilitación Oral de Alta Complejidad. Docente de cursos a nivel nacional e internacional (docente invitado University of Pennsylvania). Fundador y Director de AM Estética Dental en Puerto Madero y Uruguay.
-                            </p>
+                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center justify-between">
+                        <div className="flex items-center gap-6">
+                            <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-oro/30 shrink-0">
+                                <Image
+                                    src="https://res.cloudinary.com/drctvgyqd/image/upload/w_400,h_400,c_fill,g_face,q_auto,f_auto/equipo/dr-ariel-merino-director-clinico-am-estetica-dental-puerto-madero"
+                                    alt="Dr. Ariel Merino — Especialista en Estética y Rehabilitación Oral"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            <div>
+                                <span className="text-oro/70 uppercase tracking-widest text-[11px] block mb-1">Director Clínico</span>
+                                <h2 className="text-2xl font-light text-crema">Dr. Ariel Merino <span className="text-xs text-oro/80 font-normal">MN 34.869</span></h2>
+                                <p className="text-crema/60 text-xs sm:text-sm mt-1 max-w-xl">
+                                    Especialista en Estética Dental y Rehabilitación Oral de Alta Complejidad. Docente de cursos a nivel nacional e internacional (docente invitado University of Pennsylvania). Fundador y Director de AM Estética Dental en Puerto Madero y Uruguay.
+                                </p>
+                            </div>
                         </div>
-                        <div className="flex items-center gap-6 shrink-0 border-l border-oro/15 pl-6">
+                        <div className="flex items-center gap-6 shrink-0 border-t md:border-t-0 md:border-l border-oro/15 pt-4 md:pt-0 md:pl-6 w-full md:w-auto justify-around md:justify-start">
                             <div>
                                 <span className="block text-2xl font-cormorant italic text-oro">+15</span>
-                                <span className="text-xs text-crema/50 uppercase tracking-wider">Años dedicación exclusiva</span>
+                                <span className="text-xs text-crema/50 uppercase tracking-wider">Años de dedicación</span>
                             </div>
                             <div>
                                 <span className="block text-2xl font-cormorant italic text-oro">Forbes</span>
-                                <span className="text-xs text-crema/50 uppercase tracking-wider">Reconocimiento editorial</span>
+                                <span className="text-xs text-crema/50 uppercase tracking-wider">Reconocimiento</span>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* ── PILARES CLÍNICOS ── */}
+                {/* ── PILARES CLÍNICOS CON FOTOS EN CADA TARJETA ── */}
                 <section id="pilares" className="px-6 md:px-12 py-20 max-w-6xl mx-auto">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <span className="text-oro uppercase tracking-[0.3em] text-xs block mb-3">Enfoque Integral</span>
@@ -208,14 +254,27 @@ export default function RehabilitacionOralPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {PILARES.map((p) => (
-                            <div key={p.numero} className="border border-oro/15 rounded-2xl p-8 hover:border-oro/40 transition-all bg-carbon/40 flex flex-col justify-between">
-                                <div>
-                                    <span className="text-oro/40 font-cormorant italic text-3xl block mb-4">{p.numero}</span>
-                                    <h3 className="text-crema font-semibold text-lg mb-3">{p.titulo}</h3>
-                                    <p className="text-crema/70 text-sm leading-relaxed mb-6">{p.desc}</p>
+                            <div key={p.numero} className="border border-oro/15 rounded-2xl overflow-hidden hover:border-oro/40 transition-all bg-carbon/40 flex flex-col justify-between group">
+                                <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-oro/10">
+                                    <Image
+                                        src={p.img}
+                                        alt={p.imgAlt}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                    <div className="absolute top-3 left-3 bg-carbon/80 backdrop-blur-md px-3 py-1 rounded-full border border-oro/20 text-oro text-xs font-cormorant italic">
+                                        Pilar {p.numero}
+                                    </div>
                                 </div>
-                                <div className="border-t border-oro/10 pt-4">
-                                    <p className="text-oro/80 text-xs font-medium">Clave: {p.beneficio}</p>
+                                <div className="p-7 flex-1 flex flex-col justify-between">
+                                    <div>
+                                        <h3 className="text-crema font-semibold text-lg mb-3">{p.titulo}</h3>
+                                        <p className="text-crema/70 text-sm leading-relaxed mb-6">{p.desc}</p>
+                                    </div>
+                                    <div className="border-t border-oro/10 pt-4">
+                                        <p className="text-oro/80 text-xs font-medium">Clave: {p.beneficio}</p>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -261,7 +320,7 @@ export default function RehabilitacionOralPage() {
                             </p>
                         </div>
                         <Link
-                            href="/casos/bruxismo-desgaste-dental-rehabilitacion-carillas-ceramicas"
+                            href="/casos/rehabilitacion-oral-completa-carillas-coronas-implantes"
                             className="inline-flex items-center gap-2 text-oro hover:text-oro-light text-sm font-semibold transition-colors"
                         >
                             Ver caso completo documentado →
@@ -271,9 +330,9 @@ export default function RehabilitacionOralPage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {[
                             {
-                                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/bruxismo-carillas-ceramicas/bruxismo-desgaste-dental-antes-despues-carillas-ceramicas-labios-portada-dr-ariel-merino-am-estetica-dental-buenos-aires",
-                                alt: "Antes y después rehabilitación cerámica por desgaste dental — Dr. Ariel Merino AM Estética Dental",
-                                epígrafe: "Restablecimiento de proporción dental y arco de sonrisa",
+                                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/rehabilitacion-completa-sonrisa/rehabilitacion-oral-completa-antes-despues-rostro-labios-portada-carillas-coronas-implantes-dr-ariel-merino-am-estetica-dental-puerto-madero-buenos-aires.png",
+                                alt: "Antes y después rehabilitación oral completa — Dr. Ariel Merino AM Estética Dental",
+                                epígrafe: "Transformación completa con carillas, coronas e implantes",
                             },
                             {
                                 src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/bruxismo-carillas-ceramicas/bruxismo-desgaste-intraoral-antes-despues-carillas-ceramicas-rehabilitacion-dr-ariel-merino-am-estetica-dental",
@@ -281,9 +340,9 @@ export default function RehabilitacionOralPage() {
                                 epígrafe: "Integración oclusal y biológica en sector anterior y posterior",
                             },
                             {
-                                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/bruxismo-carillas-ceramicas/bruxismo-rehabilitacion-ceramica-carillas-despues-rostro-frontal-dr-ariel-merino-am-estetica-dental-buenos-aires",
+                                src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-rostro-portada-mega-transformacion-rehabilitacion-oral-dr-ariel-merino-am-estetica-dental",
                                 alt: "Resultado final estético y natural en rostro completo — Dr. Ariel Merino",
-                                epígrafe: "Armonía facial completa y naturalidad imperceptible",
+                                epígrafe: "Rehabilitación de agenesia dental con implantes y cerámica",
                             },
                         ].map((img) => (
                             <div key={img.src} className="border border-oro/15 rounded-2xl overflow-hidden bg-carbon/60 group">
