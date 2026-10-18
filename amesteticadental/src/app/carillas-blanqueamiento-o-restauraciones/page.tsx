@@ -305,24 +305,24 @@ export default function GuiaDecisionSonrisaPage() {
                             </div>
                         </div>
 
-                        {/* Video de jeringas de gel rotando 360 */}
+                        {/* Video de jeringas de gel rotando 360 con Opalescence 10% real */}
                         <div className="md:col-span-6">
-                            <div className="relative aspect-square w-full rounded-2xl overflow-hidden border border-oro/20 bg-carbon-soft">
+                            <div className="relative aspect-square w-full rounded-2xl overflow-hidden border border-oro/20 bg-carbon-soft shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                                 <video
                                     autoPlay
                                     muted
                                     loop
                                     playsInline
                                     preload="metadata"
-                                    poster="https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/blanqueamiento-ambulatorio/jeringas-gel-blanqueamiento-dental-ambulatorio-editorial-dr-ariel-merino-am-estetica-dental-buenos-aires"
-                                    aria-label="Jeringas de gel para blanqueamiento dental ambulatorio girando 360 grados — AM Estética Dental"
+                                    poster="/images/opalescence-10-jeringas-cubetas-am-estetica-dental.png"
+                                    aria-label="Jeringas auténticas Opalescence 10% de Ultradent y cubeta personalizada — AM Estética Dental"
                                     className="absolute inset-0 w-full h-full object-cover"
                                 >
-                                    <source src="https://res.cloudinary.com/drctvgyqd/video/upload/q_auto/blanqueamiento-ambulatorio/jeringas-blanqueamiento-giro-360-dr-ariel-merino-am-estetica-dental-buenos-aires.mp4" type="video/mp4" />
+                                    <source src="/videos/opalescence-10-jeringas-animacion-am.mp4" type="video/mp4" />
                                 </video>
                                 <div className="absolute bottom-4 left-4 right-4">
                                     <span className="inline-flex items-center border border-oro/30 bg-carbon/85 backdrop-blur-sm rounded-full px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-oro">
-                                        Gel de Peróxido de Carbamida 10% · Opalescence®
+                                        Opalescence® PF 10% · Ultradent® (USA)
                                     </span>
                                 </div>
                             </div>
