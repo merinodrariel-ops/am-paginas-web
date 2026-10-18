@@ -8,7 +8,7 @@ import { SITE_URL } from "../site-data";
 export const metadata: Metadata = {
   title: { absolute: "Sé parte del staff de AM Uruguay — Carrasco, Montevideo" },
   description:
-    "Sumate al equipo que abre la primera clínica internacional de estética dental en Uruguay. Odontología, laboratorio, asistencia y operaciones en Carrasco.",
+    "Sumate al equipo que abre en Carrasco la segunda sede de AM, después de Buenos Aires. Odontología, laboratorio, asistencia y operaciones.",
   alternates: { canonical: `${SITE_URL}/trabaja-en-am` },
   openGraph: {
     title: "Sé parte del staff de AM Estética Dental Uruguay",

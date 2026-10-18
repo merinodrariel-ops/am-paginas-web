@@ -180,7 +180,7 @@ export default function HomePage() {
       <section className="jobs-section">
         <div className="shell jobs-grid">
           <div><p className="eyebrow">SÉ PARTE DEL STAFF DE AM URUGUAY</p><h2>Los primeros nombres<br /><em>todavía no están escritos.</em></h2></div>
-          <div><p>Buscamos a las personas que van a inaugurar la primera clínica internacional de estética dental en Uruguay. Odontólogos, asistentes, laboratorio dental, recepción, marketing y perfiles operativos.</p><p>No es sumarse a un equipo que ya funciona: es estar desde el primer día, con laboratorio propio, tecnología de punta y un método que ya demostró resultados.</p><Link href="/trabaja-en-am" data-track="uy_jobs_click" className="button button-gold">Quiero ser parte</Link></div>
+          <div><p>Buscamos a las personas que van a inaugurar la sede de AM en Montevideo: la misma clínica de Buenos Aires, ahora en dos países. Odontólogos, asistentes, laboratorio dental, recepción, marketing y perfiles operativos.</p><p>No es sumarse a un equipo que ya funciona: es estar desde el primer día, con laboratorio propio, tecnología de punta y un método que ya demostró resultados.</p><Link href="/trabaja-en-am" data-track="uy_jobs_click" className="button button-gold">Quiero ser parte</Link></div>
         </div>
       </section>
 

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Lentes de Contacto Dental en Buenos Aires | AM",
   description:
-    "Carillas ultradelgadas para cambiar color y forma con mínima o nula preparación. Cuándo se puede trabajar así, según el Dr. Merino.",
+    "Carillas ultradelgadas para cambiar color y forma con mínima preparación del esmalte. Cuándo se puede trabajar así, según el Dr. Merino.",
   alternates: {
     canonical: "https://www.amesteticadental.com/lentes-de-contacto-dental",
     languages: hreflangFor("/lentes-de-contacto-dental"),
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lentes de Contacto Dental en Buenos Aires | AM Estética Dental",
     description:
-      "Carillas ultradelgadas para quienes buscan una sonrisa natural sin desgaste visible cuando el caso lo permite. Puerto Madero, Buenos Aires.",
+      "Carillas ultradelgadas para una sonrisa natural, con mínima preparación del esmalte cuando el caso lo permite. Puerto Madero, Buenos Aires.",
     url: "https://www.amesteticadental.com/lentes-de-contacto-dental",
     locale: "es_AR",
     type: "website",

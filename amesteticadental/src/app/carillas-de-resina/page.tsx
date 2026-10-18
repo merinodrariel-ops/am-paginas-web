@@ -9,7 +9,7 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20qui
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: `Carillas de Resina en Buenos Aires — Precios ${ANIO} | AM`,
-    description: "Carillas de resina compuesta: la alternativa accesible a la porcelana. Comparativa honesta del Dr. Ariel Merino.",
+    description: "Carillas de resina compuesta: cuándo están indicadas y en qué se diferencian de la porcelana. Comparativa honesta del Dr. Ariel Merino.",
     alternates: { canonical: CANONICAL },
     openGraph: {
         title: "Carillas de Resina vs Porcelana Buenos Aires | AM Estética Dental",

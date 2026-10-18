@@ -163,7 +163,7 @@ export default function ArticuloCarillasDananDientes() {
                                     <p className="text-crema/40 font-manrope text-xs">Porcelana feldespática · IPS e.max</p>
                                 </div>
                                 <div className="border border-oro/15 rounded-xl p-6 bg-carbon-soft">
-                                    <h3 className="text-crema font-manrope font-medium text-sm mb-3">Carillas sin preparación (lentes de contacto dental)</h3>
+                                    <h3 className="text-crema font-manrope font-medium text-sm mb-3">Carillas de mínima preparación (lentes de contacto dental)</h3>
                                     <p className="text-crema/60 font-manrope text-xs leading-relaxed mb-3">
                                         Se adhieren al esmalte con una preparación mínima. Solo aplican para casos específicos donde el diente tiene el tamaño y posición correctos.
                                     </p>
