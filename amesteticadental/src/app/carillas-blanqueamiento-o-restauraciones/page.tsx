@@ -93,12 +93,12 @@ const COMPARATIVA = [
     {
         tratamiento: "Blanqueamiento Ambulatorio",
         subtitulo: "Protocolo de preferencia AM con cubetas a medida",
-        enfoque: "Cubetas personalizadas + gel Opalescence 10% (mínimamente invasivo)",
+        enfoque: "Cubetas personalizadas + gel AM 10% (mínimamente invasivo)",
         indicadoPara: "Dientes sanos y bien alineados que han perdido brillo o presentan pigmentaciones. Es el procedimiento más noble y conservador para iluminar la sonrisa natural.",
         ventajas: "Cero desgaste dental, máxima seguridad sin sensibilidad extrema. Se realiza cómodamente en casa durante 7 a 10 noches.",
         limite: "No modifica la forma anatómica, bordes astillados ni el tamaño de los dientes.",
-        img: "/images/opalescence-10-jeringas-cubetas-am-estetica-dental.png",
-        imgAlt: "Kit de blanqueamiento dental ambulatorio Opalescence 10% — AM Estética Dental",
+        img: "/images/jeringas-blanqueamiento-am-estetica-dental.png",
+        imgAlt: "Kit de blanqueamiento dental ambulatorio personalizado AM Estética Dental Puerto Madero",
     },
     {
         tratamiento: "Restauraciones en Resina",
@@ -268,11 +268,11 @@ export default function GuiaDecisionSonrisaPage() {
                     </div>
                 </section>
 
-                {/* ── SECCIÓN DESTACADA: POR QUÉ AMBULATORIO OPALESCENCE 10% ── */}
+                {/* ── SECCIÓN DESTACADA: POR QUÉ AMBULATORIO GEL AM 10% ── */}
                 <section className="px-6 md:px-12 py-20 bg-carbon/70 border-t border-oro/10">
                     <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                         <div className="md:col-span-6">
-                            <span className="text-oro uppercase tracking-[0.3em] text-xs block mb-3">Protocolo de Oro AM</span>
+                            <span className="text-oro uppercase tracking-[0.3em] text-xs block mb-3">Protocolo Exclusivo AM</span>
                             <h2 className="text-3xl md:text-4xl font-light text-crema mb-6 leading-tight">
                                 Por qué elegimos <span className="font-cormorant italic text-oro">blanqueamiento ambulatorio.</span>
                             </h2>
@@ -281,12 +281,12 @@ export default function GuiaDecisionSonrisaPage() {
                                     En AM Estética Dental no realizamos blanqueamientos rápidos en el sillón con luces LED o láser. Esos métodos utilizan concentraciones excesivamente altas de químicos para lograr un golpe visual en 30 minutos, provocando deshidratación del esmalte y sensibilidad aguda.
                                 </p>
                                 <p>
-                                    Nuestro protocolo de preferencia es el <strong className="text-crema font-medium">blanqueamiento ambulatorio con cubetas a medida y gel al 10% (Opalescence®)</strong>. Es una de las mejores cosas y de las más nobles que un paciente puede hacerse: el gel actúa de forma gradual durante 7 a 10 noches mientras dormís, logrando un blanco profundo, duradero y sin dolor.
+                                    Nuestro protocolo de preferencia es el <strong className="text-crema font-medium">blanqueamiento ambulatorio con cubetas a medida y gel de Peróxido de Carbamida al 10% exclusivo de AM Estética Dental</strong>. Es una de las mejores cosas y de las más nobles que un paciente puede hacerse: el gel actúa de forma gradual durante 7 a 10 noches mientras dormís, logrando un blanco profundo, duradero y sin dolor.
                                 </p>
                             </div>
                         </div>
 
-                        {/* Video de jeringas de gel rotando 360 con Opalescence 10% real */}
+                        {/* Video de jeringas de gel rotando 360 con marca AM ESTÉTICA DENTAL */}
                         <div className="md:col-span-6">
                             <div className="relative aspect-square w-full rounded-2xl overflow-hidden border border-oro/20 bg-carbon-soft shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                                 <video
@@ -295,15 +295,15 @@ export default function GuiaDecisionSonrisaPage() {
                                     loop
                                     playsInline
                                     preload="metadata"
-                                    poster="/images/opalescence-10-jeringas-cubetas-am-estetica-dental.png"
-                                    aria-label="Jeringas auténticas Opalescence 10% de Ultradent y cubeta personalizada — AM Estética Dental"
+                                    poster="/images/jeringas-blanqueamiento-am-estetica-dental.png"
+                                    aria-label="Jeringas exclusivas de blanqueamiento dental AM Estética Dental con peróxido de carbamida al 10% y cubeta personalizada"
                                     className="absolute inset-0 w-full h-full object-cover"
                                 >
-                                    <source src="/videos/opalescence-10-jeringas-animacion-am.mp4" type="video/mp4" />
+                                    <source src="/videos/jeringas-blanqueamiento-am-animacion.mp4" type="video/mp4" />
                                 </video>
                                 <div className="absolute bottom-4 left-4 right-4">
                                     <span className="inline-flex items-center border border-oro/30 bg-carbon/85 backdrop-blur-sm rounded-full px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-oro">
-                                        Opalescence® PF 10% · Ultradent® (USA)
+                                        AM Estética Dental · Peróxido de Carbamida 10%
                                     </span>
                                 </div>
                             </div>
