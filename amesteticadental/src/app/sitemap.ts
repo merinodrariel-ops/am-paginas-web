@@ -75,6 +75,9 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/carillas-de-resina-impresas-3d", changeFrequency: "monthly", priority: 0.85 },
   { path: "/alineadores-invisibles-impresos-3d", changeFrequency: "monthly", priority: 0.9 },
   { path: "/puentes-dentales", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/rehabilitacion-oral", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/carillas-blanqueamiento-o-restauraciones", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/placas-neuromiorrelajantes-bruxismo", changeFrequency: "monthly", priority: 0.9 },
   { path: "/contacto", changeFrequency: "monthly", priority: 0.7 },
   { path: "/turismo-dental", changeFrequency: "monthly", priority: 0.9 },
   // Sitio en inglés (/en) — se agrega cada página a medida que se traduce.
