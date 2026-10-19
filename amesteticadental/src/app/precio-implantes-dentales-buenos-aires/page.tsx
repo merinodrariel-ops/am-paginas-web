@@ -1,3 +1,4 @@
+import { CLINICA_REF } from "@/lib/equipo-schema";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -99,11 +100,7 @@ const serviceSchema = {
   name: "Implantes Dentales",
   description: "Implantes dentales de titanio y coronas de zirconio en Puerto Madero, Buenos Aires. Planificación 3D, materiales premium y financiación propia.",
   serviceType: "Implantes dentales y rehabilitación oral",
-  provider: {
-    "@type": "Dentist",
-    name: "AM Estética Dental",
-    url: "https://www.amesteticadental.com",
-  },
+  provider: CLINICA_REF,
   areaServed: {
     "@type": "Place",
     name: "Buenos Aires, Argentina",

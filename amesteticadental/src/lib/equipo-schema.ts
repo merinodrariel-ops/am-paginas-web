@@ -37,6 +37,21 @@ export const CONSULTORIO_PLACE = {
 } as const;
 
 /**
+ * La clínica tal como la nombran las demás entidades (empleador, proveedor,
+ * editor). Es la misma entidad que declara el layout (`/#clinic`): el `@id` la
+ * une. Lleva la dirección porque `Dentist` es un `LocalBusiness` y, sin ella,
+ * los validadores marcan cada mención como un negocio local inválido (Semrush
+ * contó 47 el 01-08-2026, uno por integrante del equipo).
+ */
+export const CLINICA_REF = {
+  "@type": "Dentist",
+  "@id": `${SITIO}/#clinic`,
+  name: MARCA,
+  url: SITIO,
+  address: CONSULTORIO_PLACE.address,
+} as const;
+
+/**
  * La foto como `ImageObject` en vez de una URL suelta. Repite en schema lo que el
  * archivo lleva en IPTC (autor, crédito, copyright, dónde fue tomada) para que
  * Google Imágenes lo lea aunque un CDN intermedio borre los metadatos del binario.
@@ -102,7 +117,11 @@ export function empleadoSchema(miembro: EquipoMiembro, idioma: "es" | "en" = "es
   ];
 
   return {
-    "@type": miembro.schemaType,
+    // Siempre `Person`. `Dentist` en schema.org no es la profesión sino un tipo de
+    // negocio (subtipo de `LocalBusiness`): declarar a un odontólogo como
+    // `Dentist` lo convertía en un consultorio sin dirección, y `jobTitle` y
+    // `worksFor` dejaban de ser válidos. La profesión va en `hasOccupation`.
+    "@type": "Person",
     // Mismo `@id` en español y en inglés: una persona, una entidad.
     "@id": `${SITIO}/equipo-am#${miembro.slug}`,
     name: miembro.nombre,
@@ -112,11 +131,16 @@ export function empleadoSchema(miembro: EquipoMiembro, idioma: "es" | "en" = "es
     // schema más pobre a uno que apunte a una imagen que no existe.
     ...(miembro.imagen ? { image: fotoSchema(miembro.imagen, alt) } : {}),
     url: `${SITIO}${idioma === "en" ? "/en/team" : "/equipo-am"}#${miembro.slug}`,
-    worksFor: {
-      "@type": "Dentist",
-      name: MARCA,
-      url: SITIO,
-    },
+    ...(miembro.schemaType === "Dentist"
+      ? {
+          hasOccupation: {
+            "@type": "Occupation",
+            name: idioma === "en" ? "Dentist" : "Odontólogo",
+            occupationalCategory: "2261",
+          },
+        }
+      : {}),
+    worksFor: CLINICA_REF,
     workLocation: CONSULTORIO_PLACE,
     knowsAbout: cv?.areas?.length ? [...miembro.keywords, ...cv.areas] : miembro.keywords,
     ...(cv ? { alumniOf: { "@type": "CollegeOrUniversity", name: cv.universidad } } : {}),

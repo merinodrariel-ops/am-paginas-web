@@ -53,7 +53,9 @@ export const metadata: Metadata = {
 const teamSchema = {
   "@context": "https://schema.org",
   "@type": "Dentist",
-  name: "Equipo AM | AM Estética Dental",
+  // Mismo `@id` que el layout: es la clínica, no un segundo negocio llamado "Equipo AM".
+  "@id": "https://www.amesteticadental.com/#clinic",
+  name: "AM Estética Dental",
   url: "https://www.amesteticadental.com/equipo-am",
   image: "https://res.cloudinary.com/drctvgyqd/image/upload/v1784870264/equipo-am/dr-ariel-merino-director-clinico-odontologo-estetico-am-estetica-dental-puerto-madero.jpg",
   description:

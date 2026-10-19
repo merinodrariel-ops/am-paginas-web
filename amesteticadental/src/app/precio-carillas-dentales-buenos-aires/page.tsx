@@ -1,3 +1,4 @@
+import { CLINICA_REF } from "@/lib/equipo-schema";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -105,11 +106,7 @@ const serviceSchema = {
   name: "Carillas Dentales de Porcelana",
   description: "Carillas dentales de porcelana de alta estética en Puerto Madero, Buenos Aires. Diseño de sonrisa digital, materiales premium y financiación propia.",
   serviceType: "Carillas dentales y diseño de sonrisa",
-  provider: {
-    "@type": "Dentist",
-    name: "AM Estética Dental",
-    url: "https://www.amesteticadental.com",
-  },
+  provider: CLINICA_REF,
   areaServed: {
     "@type": "Place",
     name: "Buenos Aires, Argentina",

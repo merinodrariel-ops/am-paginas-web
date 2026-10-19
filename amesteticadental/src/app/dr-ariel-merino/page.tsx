@@ -1,3 +1,4 @@
+import { CLINICA_REF } from "@/lib/equipo-schema";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -90,12 +91,7 @@ const personSchema = {
         propertyID: "Matrícula Nacional",
         value: "MN 34.869",
     },
-    worksFor: {
-        "@type": "Dentist",
-        "@id": "https://www.amesteticadental.com/#clinic",
-        name: "AM Estética Dental",
-        url: "https://www.amesteticadental.com",
-    },
+    worksFor: CLINICA_REF,
     address: {
         "@type": "PostalAddress",
         streetAddress: "Camila O'Gorman 412, Oficina 101",

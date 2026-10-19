@@ -1,3 +1,4 @@
+import { CLINICA_REF } from "@/lib/equipo-schema";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
@@ -48,11 +49,7 @@ const jobPostingSchema = {
   url: "https://www.amesteticadental.com/trabaja-en-am",
   description:
     "Formulario de postulación para profesionales y perfiles operativos interesados en sumarse a AM Estética Dental.",
-  publisher: {
-    "@type": "Dentist",
-    name: "AM Estética Dental",
-    url: "https://www.amesteticadental.com",
-  },
+  publisher: CLINICA_REF,
 };
 
 export default function TrabajaEnAmPage() {

@@ -31,7 +31,9 @@ export const metadata: Metadata = {
 const teamSchema = {
   "@context": "https://schema.org",
   "@type": "Dentist",
-  name: "Team AM | AM Estética Dental",
+  // Mismo `@id` que el layout: es la clínica, no un segundo negocio llamado "Equipo AM".
+  "@id": "https://www.amesteticadental.com/#clinic",
+  name: "AM Estética Dental",
   url: CANONICAL,
   description: "Multidisciplinary team of AM Estética Dental in Puerto Madero, Buenos Aires.",
   address: {
