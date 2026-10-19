@@ -820,7 +820,7 @@ The result transformed not only his smile but the way I understood cosmetic dent
         subtitulo: "10 carillas de resina + gingivectomía láser — diseño de sonrisa en paciente joven sin caries ni tratamientos previos",
         descripcion: "Caso de diseño de sonrisa con 10 carillas de resina compuesta y gingivectomía láser en paciente joven con dientes sanos. Sin caries, sin coronas previas. Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires.",
         seoTitle: "Diseño de Sonrisa con Carillas de Resina",
-        seoDescription: "Caso de diseño de sonrisa con 10 carillas de resina y gingivectomía láser en paciente joven con dientes sanos, sin desgaste por el Dr. Ariel Merino.",
+        seoDescription: "Caso de diseño de sonrisa con 10 carillas de resina y gingivectomía láser en paciente joven con dientes sanos, mínimamente invasivo. Dr. Ariel Merino.",
         categorias: ["Carillas de porcelana", "Diseño de sonrisa", "Lentes de contacto dental"],
         duracion: "5 días",
         piezas: "10 carillas de resina compuesta — sector anterior superior e inferior",

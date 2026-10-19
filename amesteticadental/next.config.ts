@@ -82,6 +82,13 @@ const nextConfig: NextConfig = {
       // Listado de casos renombrado: /casos → /casos-antes-y-despues
       // (los casos individuales siguen en /casos/:slug)
       { source: "/casos", destination: "/casos-antes-y-despues", permanent: true },
+      // Slug original del caso, renombrado el 13-07-2026 (af74d1f). Google lo
+      // seguía rastreando y recibía 404 (Search Console, octubre 2026).
+      {
+        source: "/casos/carillas-resina-caries-transformacion-extrema-gingivectomia",
+        destination: "/casos/gingivectomia-laser-micro-diseno-sonrisa-resinas",
+        permanent: true,
+      },
       // Duplicados sin curar de gingivectomía, consolidados por maxilar:
       // -09 (maxilar inferior) → caso curado de periodoncia; -10 (maxilar
       // superior) → caso de gingivectomía + micro diseño en resinas.
