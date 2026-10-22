@@ -90,6 +90,7 @@ const COLUMNAS_ES: Columna[] = [
             { href: "/clinica", label: "La clínica" },
             { href: "/dr-ariel-merino", label: "Dr. Ariel Merino" },
             { href: "/equipo-am", label: "Equipo AM" },
+            { href: "/franquicias", label: "Franquicias AM" },
             { href: "/contacto", label: "Contacto" },
             { href: "/trabaja-en-am", label: "Trabajá en AM" },
             { href: "/en", label: "English site" },
