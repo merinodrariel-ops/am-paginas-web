@@ -47,15 +47,12 @@ export default function PaginaSonrisaError() {
       <Jsonld data={breadcrumb([{ name: "Inicio", path: "/" }, { name: "Criterio Clínico", path: PATH }])} />
       <Jsonld data={articuloSchema} />
 
-      <Nav />
+      <Nav actual={PATH} />
 
       <Hero
-        kicker="Criterio Clínico · Filosofía de Diseño"
-        h1={
-          <>
-            Por qué la sonrisa perfecta <span style={{ color: oro }}>es un error</span>
-          </>
-        }
+        eyebrow={`Criterio Clínico · Filosofía de Diseño · ${MATRICULA}`}
+        titulo="Por qué la sonrisa perfecta"
+        destacado="es un error."
         bajada="Trabajando más de quince años en estética dental de alta complejidad terminás aprendiendo una verdad incómoda: lo más difícil no es cambiar una sonrisa. Lo verdaderamente complejo es cambiarla y que nadie note que está cambiada."
       />
 
@@ -99,7 +96,10 @@ export default function PaginaSonrisaError() {
             <p style={{ color: cremaDim, fontSize: "1rem", marginBottom: "1.2rem" }}>
               Analizamos la anatomía de tu rostro en 3D antes de tocar un solo diente. Criterio mínimamente invasivo para pacientes que priorizan la naturalidad.
             </p>
-            <CtaWhatsapp texto="Coordinar evaluación clínica" />
+            <CtaWhatsapp
+              texto="Coordinar evaluación clínica"
+              mensaje="Hola Dr. Ariel, leí la nota sobre sonrisas naturales y me gustaría coordinar una evaluación"
+            />
           </div>
 
         </div>
