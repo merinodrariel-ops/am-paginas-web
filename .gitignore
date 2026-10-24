@@ -46,3 +46,4 @@ dashboard/.env
 
 # Places API — clave para sincronizar el número de reseñas
 .env.places
+.env*

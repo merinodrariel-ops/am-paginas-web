@@ -16,6 +16,7 @@ export const metadata: Metadata = {
         url: "https://www.amesteticadental.com/blog/la-sonrisa-perfecta-es-un-error",
         locale: "es_AR",
         type: "article",
+        images: [{ url: "https://www.amesteticadental.com/blog/carillas-translucidas-naturales.webp", width: 1200, height: 675 }],
     },
 };
 
@@ -23,7 +24,7 @@ const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Por qué la sonrisa perfecta es un error en estética dental",
-    "image": "https://www.amesteticadental.com/og-image.jpg",
+    "image": "https://www.amesteticadental.com/blog/carillas-translucidas-naturales.webp",
     "description": "Lo más difícil en estética dental no es cambiar una sonrisa: es cambiarla y que no parezca cambiada. Criterio clínico por el Dr. Ariel Merino.",
     "author": {
         "@id": "https://www.arielmerino.com/#person",
@@ -52,7 +53,7 @@ export default function PaginaSonrisaErrorAM() {
             <Navbar />
 
             {/* Hero Section */}
-            <header className="relative pt-36 pb-20 px-6 sm:px-8 max-w-4xl mx-auto border-b border-[#222]">
+            <header className="relative pt-36 pb-16 px-6 sm:px-8 max-w-4xl mx-auto border-b border-[#222]">
                 <div className="flex items-center gap-3 text-xs tracking-widest text-[#F2B90D] uppercase font-semibold mb-6">
                     <Link href="/blog" className="hover:underline">Blog</Link>
                     <span>/</span>
@@ -73,7 +74,25 @@ export default function PaginaSonrisaErrorAM() {
             </header>
 
             {/* Contenido del Artículo */}
-            <article className="py-16 px-6 sm:px-8 max-w-3xl mx-auto text-lg leading-relaxed text-[#ccc] space-y-8 font-light">
+            <article className="py-14 px-6 sm:px-8 max-w-3xl mx-auto text-lg leading-relaxed text-[#ccc] space-y-8 font-light">
+                
+                {/* Embed YouTube Short */}
+                <div className="mb-12 rounded-2xl overflow-hidden border border-[#F2B90D]/30 bg-black shadow-2xl">
+                    <div className="relative w-full pb-[177.77%]">
+                        <iframe
+                            src="https://www.youtube.com/embed/MezEK4Hrd8g?rel=0&modestbranding=1"
+                            title="¿Por qué la sonrisa perfecta es un error? Dr. Ariel Merino"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                            className="absolute inset-0 w-full h-full border-0"
+                        />
+                    </div>
+                    <div className="p-4 bg-[#141414] text-xs sm:text-sm text-[#888] flex justify-between items-center">
+                        <span>▶ Ver explicación en video (YouTube Short)</span>
+                        <span className="text-[#F2B90D] font-medium">AM Estética Dental</span>
+                    </div>
+                </div>
+
                 <p className="text-xl text-white font-normal leading-relaxed border-l-2 border-[#F2B90D] pl-6 italic">
                     «Dientes demasiado blancos y matemáticamente simétricos llaman la atención. Pero no por las razones que el paciente cree.»
                 </p>
@@ -90,6 +109,18 @@ export default function PaginaSonrisaErrorAM() {
                     Si lo primero que resalta de un rostro es un bloque blanco monocromático que no coincide con las facciones, el trabajo falló estéticamente: rompió la armonía facial.
                 </p>
 
+                {/* Imagen Conceptual 1 de Magnific */}
+                <div className="my-10 rounded-2xl overflow-hidden border border-[#222]">
+                    <img
+                        src="/blog/carillas-translucidas-naturales.webp"
+                        alt="Detalle macro de porcelana translúcida y textura anatómica natural"
+                        className="w-full h-auto block"
+                    />
+                    <p className="p-3 text-xs sm:text-sm text-[#888] bg-[#111] m-0">
+                        Textura superficial y micro-translucidez en borde incisal: elementos clave para que la porcelana responda a la luz como esmalte real.
+                    </p>
+                </div>
+
                 <h2 className="text-2xl sm:text-3xl font-normal text-white pt-6">
                     El valor de la asimetría controlada
                 </h2>
@@ -101,6 +132,18 @@ export default function PaginaSonrisaErrorAM() {
                 <p>
                     Buscamos simetría visual y balance, nunca dos mitades clones idénticas. Si logramos un resultado donde el entorno dice <em>«te ves increíble, descansado, rejuvenecido»</em> pero nadie identifica que hay carillas o porcelana, el trabajo alcanzó su máxima cota.
                 </p>
+
+                {/* Imagen Conceptual 2 de Magnific */}
+                <div className="my-10 rounded-2xl overflow-hidden border border-[#222]">
+                    <img
+                        src="/blog/armonia-dental-sofisticacion.webp"
+                        alt="Armonía y sofisticación en estética dental de alta complejidad"
+                        className="w-full h-auto block"
+                    />
+                    <p className="p-3 text-xs sm:text-sm text-[#888] bg-[#111] m-0">
+                        La integración armónica entre la anatomía gingival, el volumen labial y la curva de la sonrisa.
+                    </p>
+                </div>
 
                 <div className="bg-[#111] border border-[#222] p-8 rounded-2xl my-10 space-y-4">
                     <h3 className="text-xl text-[#F2B90D] font-normal">La verdadera sofisticación</h3>
