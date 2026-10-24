@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: CANONICAL,
     locale: "es_AR",
     type: "article",
-    images: [{ url: `${SITE}/carillas-translucidas-naturales.webp`, width: 1200, height: 675 }],
+    images: [{ url: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/casos/carillas-sin-ortodoncia/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental", width: 1200, height: 630 }],
   },
 };
 
@@ -101,16 +101,21 @@ export default function PaginaSonrisaError() {
             Si lo primero que resalta de tu rostro es un bloque blanco monocromático, el trabajo fracasó estéticamente. Rompió la armonía facial.
           </p>
 
-          {/* Imagen Conceptual 1 de Magnific */}
-          <div style={{ margin: "2.5rem 0", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
+          {/* Caso Clínico Real 1: Lentes de contacto ultra finos en la yema del dedo */}
+          <div style={{ margin: "3rem 0", borderRadius: "16px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)", background: "#111" }}>
             <img
-              src="/carillas-translucidas-naturales.webp"
-              alt="Detalle macro de porcelana translúcida y textura anatómica natural"
+              src="https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/diseno-sonrisa-diastemas/fragmentos-ceramicos-lentes-contacto-dental-dedo-escala-carillas-am-dr-ariel-merino-am-estetica-dental"
+              alt="Caso clínico real: fragmento cerámico ultrafino tipo lente de contacto dental en la yema del dedo mostrando escala real — Dr. Ariel Merino"
               style={{ width: "100%", height: "auto", display: "block" }}
             />
-            <p style={{ padding: "0.75rem 1rem", fontSize: "0.85rem", color: cremaDim, background: "#111", margin: 0 }}>
-              Textura superficial y micro-translucidez en borde incisal: elementos clave para que la porcelana responda a la luz como esmalte real.
-            </p>
+            <div style={{ padding: "1rem 1.25rem", background: "rgba(18,18,18,0.95)" }}>
+              <span style={{ color: oro, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 600, display: "block", marginBottom: "0.25rem" }}>
+                Evidencia de laboratorio clínico · AM Estética Dental
+              </span>
+              <p style={{ fontSize: "0.95rem", color: cremaDim, margin: 0, lineHeight: "1.5" }}>
+                <strong>Escala y espesor real:</strong> lentes de contacto cerámicos de 0.2 a 0.3 mm. No colocamos bloques opacos gruesos; trabajamos con láminas ultrafinas de micro-translucidez que preservan el esmalte natural y copian la reflexión viva de la luz.
+              </p>
+            </div>
           </div>
 
           <h2 style={{ fontSize: "1.8rem", color: crema, marginTop: "2.5rem", marginBottom: "1rem", fontFamily: serif }}>
@@ -125,16 +130,21 @@ export default function PaginaSonrisaError() {
             Buscamos simetría visual y balance, nunca clones idénticos de un lado al otro. Si logramos un resultado donde el entorno dice <em>«te ves increíble, descansado, renovado»</em> pero nadie identifica que hay carillas o porcelana colocada, el trabajo es perfecto.
           </p>
 
-          {/* Imagen Conceptual 2 de Magnific */}
-          <div style={{ margin: "2.5rem 0", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
+          {/* Caso Clínico Real 2: Caso real antes y después con resultado natural */}
+          <div style={{ margin: "3rem 0", borderRadius: "16px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)", background: "#111" }}>
             <img
-              src="/armonia-dental-sofisticacion.webp"
-              alt="Armonía y sofisticación en estética dental de alta complejidad"
+              src="https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_700,c_fill,q_auto,f_auto/casos/carillas-sin-ortodoncia/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental"
+              alt="Caso clínico antes y después: 20 carillas de porcelana con resultado completamente natural — Dr. Ariel Merino"
               style={{ width: "100%", height: "auto", display: "block" }}
             />
-            <p style={{ padding: "0.75rem 1rem", fontSize: "0.85rem", color: cremaDim, background: "#111", margin: 0 }}>
-              La integración armónica entre la anatomía gingival, el volumen labial y la curva de la sonrisa.
-            </p>
+            <div style={{ padding: "1rem 1.25rem", background: "rgba(18,18,18,0.95)" }}>
+              <span style={{ color: oro, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 600, display: "block", marginBottom: "0.25rem" }}>
+                Caso Clínico Real · 20 Carillas Cerámicas
+              </span>
+              <p style={{ fontSize: "0.95rem", color: cremaDim, margin: 0, lineHeight: "1.5" }}>
+                <strong>Antes y Después:</strong> resolución de apiñamiento y desgaste dental respetando la curvatura labial y el tono de piel del paciente. Ningún amigo notó que se había realizado un tratamiento; solo notaron una sonrisa rejuvenecida y armónica.
+              </p>
+            </div>
           </div>
 
           <div style={{ borderLeft: `3px solid ${oro}`, paddingLeft: "1.5rem", margin: "3rem 0", fontStyle: "italic", color: crema, fontSize: "1.2rem" }}>

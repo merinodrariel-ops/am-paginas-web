@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         url: "https://www.amesteticadental.com/blog/la-sonrisa-perfecta-es-un-error",
         locale: "es_AR",
         type: "article",
-        images: [{ url: "https://www.amesteticadental.com/blog/carillas-translucidas-naturales.webp", width: 1200, height: 675 }],
+        images: [{ url: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/casos/carillas-sin-ortodoncia/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental", width: 1200, height: 630 }],
     },
 };
 
@@ -24,7 +24,7 @@ const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Por qué la sonrisa perfecta es un error en estética dental",
-    "image": "https://www.amesteticadental.com/blog/carillas-translucidas-naturales.webp",
+    "image": "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/casos/carillas-sin-ortodoncia/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental",
     "description": "Lo más difícil en estética dental no es cambiar una sonrisa: es cambiarla y que no parezca cambiada. Criterio clínico por el Dr. Ariel Merino.",
     "author": {
         "@id": "https://www.arielmerino.com/#person",
@@ -109,16 +109,21 @@ export default function PaginaSonrisaErrorAM() {
                     Si lo primero que resalta de un rostro es un bloque blanco monocromático que no coincide con las facciones, el trabajo falló estéticamente: rompió la armonía facial.
                 </p>
 
-                {/* Imagen Conceptual 1 de Magnific */}
-                <div className="my-10 rounded-2xl overflow-hidden border border-[#222]">
+                {/* Caso Clínico Real 1: Lentes de contacto ultrafinos en la yema del dedo */}
+                <div className="my-10 rounded-2xl overflow-hidden border border-[#222] bg-[#111]">
                     <img
-                        src="/blog/carillas-translucidas-naturales.webp"
-                        alt="Detalle macro de porcelana translúcida y textura anatómica natural"
+                        src="https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/casos/diseno-sonrisa-diastemas/fragmentos-ceramicos-lentes-contacto-dental-dedo-escala-carillas-am-dr-ariel-merino-am-estetica-dental"
+                        alt="Caso clínico real: fragmento cerámico ultrafino tipo lente de contacto dental en la yema del dedo mostrando escala real — Dr. Ariel Merino"
                         className="w-full h-auto block"
                     />
-                    <p className="p-3 text-xs sm:text-sm text-[#888] bg-[#111] m-0">
-                        Textura superficial y micro-translucidez en borde incisal: elementos clave para que la porcelana responda a la luz como esmalte real.
-                    </p>
+                    <div className="p-4 bg-[#161616] border-t border-[#222]">
+                        <span className="text-xs tracking-wider text-[#F2B90D] uppercase font-semibold block mb-1">
+                            Evidencia de laboratorio clínico · AM Estética Dental
+                        </span>
+                        <p className="text-sm text-[#999] m-0 leading-relaxed font-light">
+                            <strong>Escala y espesor real:</strong> lentes de contacto cerámicos de 0.2 a 0.3 mm. No colocamos bloques opacos gruesos; trabajamos con láminas ultrafinas de micro-translucidez que preservan el esmalte natural y copian la reflexión viva de la luz.
+                        </p>
+                    </div>
                 </div>
 
                 <h2 className="text-2xl sm:text-3xl font-normal text-white pt-6">
@@ -133,16 +138,21 @@ export default function PaginaSonrisaErrorAM() {
                     Buscamos simetría visual y balance, nunca dos mitades clones idénticas. Si logramos un resultado donde el entorno dice <em>«te ves increíble, descansado, rejuvenecido»</em> pero nadie identifica que hay carillas o porcelana, el trabajo alcanzó su máxima cota.
                 </p>
 
-                {/* Imagen Conceptual 2 de Magnific */}
-                <div className="my-10 rounded-2xl overflow-hidden border border-[#222]">
+                {/* Caso Clínico Real 2: Caso real antes y después con resultado natural */}
+                <div className="my-10 rounded-2xl overflow-hidden border border-[#222] bg-[#111]">
                     <img
-                        src="/blog/armonia-dental-sofisticacion.webp"
-                        alt="Armonía y sofisticación en estética dental de alta complejidad"
+                        src="https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_700,c_fill,q_auto,f_auto/casos/carillas-sin-ortodoncia/diseno-sonrisa-carillas-labios-frontal-antes-despues-am-estetica-dental"
+                        alt="Caso clínico antes y después: 20 carillas de porcelana con resultado completamente natural — Dr. Ariel Merino"
                         className="w-full h-auto block"
                     />
-                    <p className="p-3 text-xs sm:text-sm text-[#888] bg-[#111] m-0">
-                        La integración armónica entre la anatomía gingival, el volumen labial y la curva de la sonrisa.
-                    </p>
+                    <div className="p-4 bg-[#161616] border-t border-[#222]">
+                        <span className="text-xs tracking-wider text-[#F2B90D] uppercase font-semibold block mb-1">
+                            Caso Clínico Real · 20 Carillas Cerámicas
+                        </span>
+                        <p className="text-sm text-[#999] m-0 leading-relaxed font-light">
+                            <strong>Antes y Después:</strong> resolución de apiñamiento y desgaste dental respetando la curvatura labial y el tono de piel del paciente. Ningún amigo notó que se había realizado un tratamiento; solo notaron una sonrisa rejuvenecida y armónica.
+                        </p>
+                    </div>
                 </div>
 
                 <div className="bg-[#111] border border-[#222] p-8 rounded-2xl my-10 space-y-4">
