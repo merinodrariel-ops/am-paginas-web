@@ -5,7 +5,7 @@ import CasosBanda from "@/components/CasosBanda";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
-    title: "Por qué la sonrisa perfecta es un error en estética dental | AM",
+    title: "Por qué la sonrisa perfecta es un error en estética | AM",
     description: "Lo más difícil no es cambiar una sonrisa, es cambiarla y que no parezca cambiada. Por qué la simetría absoluta atenta contra la belleza natural.",
     alternates: {
         canonical: "https://www.amesteticadental.com/blog/la-sonrisa-perfecta-es-un-error",
