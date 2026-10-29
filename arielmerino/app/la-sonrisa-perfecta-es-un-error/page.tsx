@@ -8,9 +8,9 @@ const PATH = "/la-sonrisa-perfecta-es-un-error";
 const CANONICAL = `${SITE}${PATH}`;
 
 export const metadata: Metadata = {
-  title: "Por qué la sonrisa perfecta es un error en estética dental",
+  title: "La sonrisa perfecta es un error",
   description:
-    "Lo más difícil en estética dental no es cambiar una sonrisa: es cambiarla y que no parezca cambiada. Por qué la simetría absoluta atenta contra la belleza natural.",
+    "Lo más difícil no es cambiar una sonrisa: es cambiarla y que se vea natural. Por qué la simetría absoluta atenta contra la belleza en estética dental.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "Por qué la sonrisa perfecta es un error | Dr. Ariel Merino",
