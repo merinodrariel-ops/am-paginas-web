@@ -87,6 +87,27 @@ const medicalSchema = {
   url: CANONICAL,
   inLanguage: "en",
   about: { "@type": "MedicalProcedure", name: "Dental implant", bodyLocation: "Maxilla and mandible" },
+  author: {
+    "@type": "Person",
+    name: "Dr. Ariel Merino",
+    jobTitle: "Specialist in Aesthetic Dentistry and High-Complexity Oral Rehabilitation",
+    alumniOf: "UCALP",
+    award: "Guest Lecturer at University of Pennsylvania",
+  },
+  provider: {
+    "@type": "Dentist",
+    name: "AM Estética Dental",
+    url: "https://www.amesteticadental.com",
+    telephone: "+54 9 11 7021-9298",
+    priceRange: "$$$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Camila O'Gorman 412, Office 101",
+      addressLocality: "Puerto Madero",
+      addressRegion: "Ciudad Autónoma de Buenos Aires",
+      addressCountry: "AR",
+    },
+  },
 };
 
 const OPTIONS = [
