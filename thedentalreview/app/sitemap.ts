@@ -12,9 +12,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE}/noticias`,
-      lastModified: new Date("2026-07-17"),
+      lastModified: new Date("2026-11-01"),
       changeFrequency: "weekly",
       priority: 0.8,
+    },
+    {
+      url: `${SITE}/noticias/resinas-3d-carillas-dentales-fin-tecnica-manual-2026`,
+      lastModified: new Date("2026-11-01"),
+      changeFrequency: "weekly",
+      priority: 0.85,
     },
     {
       url: `${SITE}/acerca-de`,

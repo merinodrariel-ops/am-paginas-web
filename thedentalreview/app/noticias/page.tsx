@@ -14,6 +14,13 @@ export const metadata: Metadata = {
 // Al publicar una nota nueva hay que agregarla en este array Y en app/sitemap.ts.
 const NEWS = [
   {
+    href: "/noticias/resinas-3d-carillas-dentales-fin-tecnica-manual-2026",
+    title: "Resinas impresas en 3D: ¿el fin de la técnica a mano alzada en estética dental?",
+    description: "La combinación de fotopolímeros híbridos con más del 60% de carga cerámica y sistemas de escaneo óptico plantea un debate que divide aguas en la odontología restauradora.",
+    image: "https://i.ytimg.com/vi/QzcwYPHyYDU/maxresdefault.jpg",
+    alt: "Carillas impresas en resina 3D sostenidas por el Dr. Ariel Merino en AM Estética Dental",
+  },
+  {
     href: "/noticias/pacientes-llegan-con-sonrisa-generada-por-ia",
     title: "Los pacientes llegan con la sonrisa ya diseñada por IA",
     description: "Cinco de cada diez primeras consultas de una clínica porteña se originan hoy en una conversación con un asistente de inteligencia artificial. Hace seis meses la categoría no existía.",

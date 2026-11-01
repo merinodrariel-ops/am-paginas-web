@@ -12,6 +12,7 @@ const RUTAS: { path: string; priority: number; changeFrequency: "weekly" | "mont
   { path: PENN.path, priority: 0.9, changeFrequency: "monthly" },
   { path: "/ia-en-la-consulta", priority: 0.85, changeFrequency: "monthly" },
   { path: "/la-sonrisa-perfecta-es-un-error", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/ia-en-la-consulta/carillas-impresas-3d-vs-tecnica-manual", priority: 0.85, changeFrequency: "weekly" },
   { path: "/prensa", priority: 0.85, changeFrequency: "monthly" },
   { path: "/contacto", priority: 0.7, changeFrequency: "monthly" },
 ];

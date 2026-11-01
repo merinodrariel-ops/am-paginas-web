@@ -265,6 +265,13 @@ export const treatmentPages: Record<string, TreatmentPage> = {
           "Prometer cero desgaste sería más fácil de vender y menos honesto. El compromiso real de AM es otro: la menor preparación compatible con un resultado estable, decidida sobre el diagnóstico de cada caso y no sobre un eslogan.",
         ],
       },
+      {
+        heading: "Innovación 3D: Carillas aditivas ultrafinas (0.1 a 0.2 mm)",
+        body: [
+          "La incorporación de resinas de impresión 3D con más del 60% de carga cerámica y diseño CAD/CAM representa el estándar aditivo más conservador de la región: láminas ultrafinas tipo lente de contacto que se cementan directamente sin desgastar esmalte sano.",
+          "El Dr. Ariel Merino expone en su análisis clínico cómo la tecnología aditiva y el post-curado térmico de laboratorio permiten piezas ultrarresistentes con terminación estética natural para los pacientes de Carrasco y Montevideo.",
+        ],
+      },
     ],
     bullets: [
       { label: "Material", text: "Cerámica de laboratorio, seleccionada según el caso y el color de base del diente." },
