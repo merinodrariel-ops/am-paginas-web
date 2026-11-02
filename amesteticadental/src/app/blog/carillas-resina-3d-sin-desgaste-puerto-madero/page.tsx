@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import CasosBanda from "@/components/CasosBanda";
+import Testimonios from "@/components/Testimonios";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -166,7 +166,12 @@ export default function PaginaCarillasResina3DAM() {
 
             </article>
 
-            <CasosBanda />
+            {/* Testimonios reales de pacientes en lugar de fotos viejas sueltas */}
+            <section className="py-16 bg-[#0a0a0a] border-t border-[#1f1f1f]">
+                <div className="max-w-6xl mx-auto px-6">
+                    <Testimonios />
+                </div>
+            </section>
         </main>
     );
 }
