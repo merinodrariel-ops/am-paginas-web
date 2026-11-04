@@ -7,6 +7,24 @@ import { hreflangFor } from "@/lib/i18n-routes";
 
 const CANONICAL = "https://www.amesteticadental.com/financiacion";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FinancialProduct",
+  name: "Planes de Financiación Propia · AM Estética Dental Puerto Madero",
+  url: CANONICAL,
+  description: "Financiación directa para carillas de porcelana, implantes y diseño de sonrisa en Puerto Madero, Buenos Aires.",
+  provider: {
+    "@type": "Dentist",
+    "@id": "https://www.amesteticadental.com/#clinic",
+    name: "AM Estética Dental",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Camila O'Gorman 412, Oficina 101",
+      addressLocality: "Puerto Madero, Ciudad Autónoma de Buenos Aires",
+    },
+  },
+};
+
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Financiación propia | AM Estética Dental",
@@ -24,6 +42,7 @@ export const metadata: Metadata = {
 export default function FinanciacionPage() {
     return (
         <main className="bg-carbon text-crema font-manrope min-h-screen">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
             <BreadcrumbsSchema
                 items={[
                     { name: "Inicio", item: "/" },

@@ -33,7 +33,7 @@ const IMG_HERO = `${CDN}/v1789964570/salud-longevidad/boca-torrente-sanguineo-co
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: `Salud bucal y longevidad: qué dice la evidencia | AM`,
-    description: `Las encías inflamadas no se quedan en la boca. Qué relación encontró la ciencia entre salud bucal, sueño y envejecimiento, por el Dr. Merino.`,
+    description: `Las encías inflamadas no se quedan en la boca. Relación entre salud bucal, sueño y envejecimiento por el Dr. Ariel Merino en Puerto Madero, Buenos Aires.`,
     alternates: { canonical: CANONICAL, languages: hreflangFor("/salud-bucal-y-longevidad") },
     openGraph: {
         title: "Salud bucal y longevidad: qué dice la evidencia",
@@ -165,7 +165,7 @@ export default function SaludBucalYLongevidad() {
                             un proceso que el resto del organismo también paga.
                         </p>
                         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-manrope text-xs text-crema/35">
-                            <span>Dr. Ariel Merino · M.N. 34.869</span>
+                            <span>Dr. Ariel Merino · M.N. 34.869 · Puerto Madero, Buenos Aires</span>
                             <span>·</span>
                             <span>Columnista de La Nación y Ámbito</span>
                             <span>·</span>

@@ -8,6 +8,30 @@ import { hreflangFor } from "@/lib/i18n-routes";
 const CANONICAL = "https://www.amesteticadental.com/casos-antes-y-despues";
 export const revalidate = 60;
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Casos Clínicos Antes y Después · Dr. Ariel Merino en Puerto Madero",
+  url: CANONICAL,
+  description: "Evidencia clínica real documentada paso a paso: carillas de porcelana, resinas 3D, ortodoncia invisible y rehabilitación oral en Puerto Madero.",
+  publisher: {
+    "@type": "Dentist",
+    "@id": "https://www.amesteticadental.com/#clinic",
+    name: "AM Estética Dental",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Camila O'Gorman 412, Oficina 101",
+      addressLocality: "Puerto Madero, Ciudad Autónoma de Buenos Aires",
+    },
+  },
+  author: {
+    "@type": "Person",
+    name: "Dr. Ariel Merino",
+    identifier: "MN 34.869",
+    jobTitle: "Especialista en Estética Dental y Rehabilitación Oral",
+  },
+};
+
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
@@ -30,6 +54,7 @@ export default async function CasosPage() {
     const casos = ordenarGaleria(await getCasosPublicadosMerged());
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
             <Navbar />
             <CasosClient todos={casos} fijos={CASOS_FIJOS} />
         </>

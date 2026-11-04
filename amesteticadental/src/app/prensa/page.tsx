@@ -20,11 +20,35 @@ export const metadata: Metadata = {
   },
 };
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  name: "Sala de Prensa y Media Kit · Dr. Ariel Merino / AM Estética Dental",
+  url: "https://www.amesteticadental.com/prensa",
+  founder: {
+    "@type": "Person",
+    name: "Dr. Ariel Merino",
+    identifier: "MN 34.869",
+    jobTitle: "Especialista en Estética Dental y Rehabilitación Oral",
+  },
+  parentOrganization: {
+    "@type": "Dentist",
+    "@id": "https://www.amesteticadental.com/#clinic",
+    name: "AM Estética Dental",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Camila O'Gorman 412, Oficina 101",
+      addressLocality: "Puerto Madero, Ciudad Autónoma de Buenos Aires",
+    },
+  },
+};
+
 const WA_PRENSA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Me%20comunico%20desde%20un%20medio%20de%20prensa%20para%20una%20nota.";
 
 export default function PrensaPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <BreadcrumbsSchema 
         items={[
           { name: "Inicio", item: "/" },

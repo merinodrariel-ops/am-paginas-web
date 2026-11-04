@@ -8,6 +8,35 @@ import { hreflangFor } from "@/lib/i18n-routes";
 
 const CANONICAL = "https://www.amesteticadental.com/en/clinic";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "@id": "https://www.amesteticadental.com/#clinic",
+  name: "AM Estética Dental · Puerto Madero Boutique Clinic",
+  url: CANONICAL,
+  logo: "https://www.amesteticadental.com/images/am-logo.png",
+  description: "Boutique dental clinic in Puerto Madero, Buenos Aires. High-complexity cosmetic dentistry, digital smile design, and porcelain veneers led by Dr. Ariel Merino.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Camila O'Gorman 412, Suite 101",
+    addressLocality: "Puerto Madero, Buenos Aires",
+    postalCode: "C1107DED",
+    addressCountry: "AR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -34.6145,
+    longitude: -58.3615,
+  },
+  telephone: "+54 9 11 7021-9298",
+  founder: {
+    "@type": "Person",
+    name: "Dr. Ariel Merino",
+    jobTitle: "Specialist in Aesthetic Dentistry and High-Complexity Oral Rehabilitation",
+    identifier: "MN 34.869",
+  },
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Clínica AM in Puerto Madero · AM Estética Dental",
@@ -28,6 +57,7 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I'd%20l
 export default function ClinicPage() {
   return (
     <main className="bg-carbon text-crema font-manrope min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <BreadcrumbsSchema
         items={[
           { name: "Home", item: "/" },

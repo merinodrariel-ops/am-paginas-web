@@ -5,6 +5,26 @@ import LeadForm from "@/components/LeadForm";
 import { hreflangFor } from "@/lib/i18n-routes";
 
 const CANONICAL = "https://www.amesteticadental.com/contacto";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contacto · AM Estética Dental Puerto Madero",
+  url: CANONICAL,
+  mainEntity: {
+    "@type": "Dentist",
+    "@id": "https://www.amesteticadental.com/#clinic",
+    name: "AM Estética Dental",
+    telephone: "+54 9 11 7021-9298",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Camila O'Gorman 412, Oficina 101",
+      addressLocality: "Puerto Madero, Ciudad Autónoma de Buenos Aires",
+      postalCode: "C1107DED",
+      addressCountry: "AR",
+    },
+  },
+};
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n.";
 
 export const metadata: Metadata = {
@@ -24,6 +44,7 @@ export const metadata: Metadata = {
 export default function ContactoPage() {
   return (
     <main className="bg-carbon text-crema font-manrope min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
         <Link href="/" className="font-cormorant italic text-oro text-xl">
           AM Estética Dental

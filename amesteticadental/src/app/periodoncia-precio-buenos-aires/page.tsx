@@ -5,6 +5,30 @@ import Link from "next/link";
 const CANONICAL = "https://www.amesteticadental.com/periodoncia-precio-buenos-aires";
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20periodoncia.";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  name: "Periodoncia y Tratamiento de Encías en Buenos Aires | AM",
+  url: CANONICAL,
+  description: "Tratamiento periodontal, gingivectomía láser y desinflamación gingival en Puerto Madero por el Dr. Ariel Merino.",
+  mainEntity: {
+    "@type": "MedicalProcedure",
+    name: "Tratamiento Periodontal y Gingivectomía Láser",
+    procedureType: "NonSurgicalProcedure",
+  },
+  author: {
+    "@type": "Person",
+    name: "Dr. Ariel Merino",
+    identifier: "MN 34.869",
+    jobTitle: "Especialista en Estética Dental y Rehabilitación Oral",
+  },
+  provider: {
+    "@type": "Dentist",
+    "@id": "https://www.amesteticadental.com/#clinic",
+    name: "AM Estética Dental",
+  },
+};
+
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Periodoncia en Buenos Aires — Precio y Tratamiento | AM",
@@ -16,6 +40,7 @@ export const metadata: Metadata = {
 export default function PeridonciaPage() {
     return (
         <main className="bg-carbon text-crema font-manrope min-h-screen">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
             <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
                 <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
                 <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">Consultar →</a>

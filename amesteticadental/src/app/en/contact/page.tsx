@@ -6,6 +6,25 @@ import Navbar from "@/components/Navbar";
 import { hreflangFor } from "@/lib/i18n-routes";
 
 const CANONICAL = "https://www.amesteticadental.com/en/contact";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact AM Estética Dental · Puerto Madero, Buenos Aires",
+  url: CANONICAL,
+  mainEntity: {
+    "@type": "Dentist",
+    "@id": "https://www.amesteticadental.com/#clinic",
+    name: "AM Estética Dental",
+    telephone: "+54 9 11 7021-9298",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Camila O'Gorman 412, Suite 101",
+      addressLocality: "Puerto Madero, Buenos Aires",
+      addressCountry: "AR",
+    },
+  },
+};
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I'd%20like%20some%20information.";
 
 export const metadata: Metadata = {
@@ -25,6 +44,7 @@ export const metadata: Metadata = {
 export default function ContactEnPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
       <main className="bg-carbon text-crema font-manrope min-h-screen pt-24">
         <section className="px-6 py-20 max-w-5xl mx-auto">

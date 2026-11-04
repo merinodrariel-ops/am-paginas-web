@@ -8,6 +8,35 @@ import { hreflangFor } from "@/lib/i18n-routes";
 
 const CANONICAL = "https://www.amesteticadental.com/clinica";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "@id": "https://www.amesteticadental.com/#clinic",
+  name: "AM Estética Dental · Clínica Puerto Madero",
+  url: CANONICAL,
+  logo: "https://www.amesteticadental.com/images/am-logo.png",
+  description: "Sede boutique de AM Estética Dental en Puerto Madero. Consultorios de alta complejidad, privacidad y tecnología digital dirigida por el Dr. Ariel Merino.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Camila O'Gorman 412, Oficina 101",
+    addressLocality: "Puerto Madero, Ciudad Autónoma de Buenos Aires",
+    postalCode: "C1107DED",
+    addressCountry: "AR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -34.6145,
+    longitude: -58.3615,
+  },
+  telephone: "+54 9 11 7021-9298",
+  founder: {
+    "@type": "Person",
+    name: "Dr. Ariel Merino",
+    jobTitle: "Especialista en Estética Dental y Rehabilitación Oral",
+    identifier: "MN 34.869",
+  },
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amesteticadental.com"),
   title: "Clínica AM en Puerto Madero · AM Estética Dental",
@@ -27,6 +56,7 @@ const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20qui
 export default function ClinicaPage() {
   return (
     <main className="bg-carbon text-crema font-manrope min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <BreadcrumbsSchema
         items={[
           { name: "Inicio", item: "/" },

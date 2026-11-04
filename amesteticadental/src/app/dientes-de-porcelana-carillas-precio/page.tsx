@@ -6,6 +6,30 @@ const CANONICAL = "https://www.amesteticadental.com/dientes-de-porcelana-carilla
 const WA = "https://api.whatsapp.com/send?phone=5491170219298&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20dientes%20de%20porcelana.";
 const CDN = "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  name: "Dientes de Porcelana y Carillas Cerámicas en Buenos Aires | AM",
+  url: CANONICAL,
+  description: "Tratamiento con carillas de porcelana y lentes cerámicos en Puerto Madero. Precios, comparativa de materiales y planificación con el Dr. Ariel Merino.",
+  mainEntity: {
+    "@type": "MedicalProcedure",
+    name: "Colocación de Carillas Dentales de Porcelana",
+    procedureType: "NonSurgicalProcedure",
+  },
+  author: {
+    "@type": "Person",
+    name: "Dr. Ariel Merino",
+    identifier: "MN 34.869",
+    jobTitle: "Especialista en Estética Dental y Rehabilitación Oral",
+  },
+  provider: {
+    "@type": "Dentist",
+    "@id": "https://www.amesteticadental.com/#clinic",
+    name: "AM Estética Dental",
+  },
+};
+
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.amesteticadental.com"),
     title: "Carillas de Porcelana y Precio | AM Estética Dental",
@@ -23,6 +47,7 @@ const DIFERENCIAS = [
 export default function DientesPorcelanaPage() {
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
             <main className="bg-carbon text-crema font-manrope min-h-screen">
                 <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
                     <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
