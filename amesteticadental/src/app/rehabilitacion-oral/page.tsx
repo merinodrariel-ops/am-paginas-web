@@ -187,7 +187,7 @@ export default function RehabilitacionOralPage() {
                                     loop
                                     playsInline
                                     preload="metadata"
-                                    poster="https://res.cloudinary.com/drctvgyqd/image/upload/v1791845553/tratamientos/carillas-resina-impresas-3d-am-estetica-dental-puerto-madero.jpg"
+                                    poster="https://res.cloudinary.com/drctvgyqd/image/upload/w_1080,c_limit,q_auto,f_auto/v1791845553/tratamientos/carillas-resina-impresas-3d-am-estetica-dental-puerto-madero.jpg"
                                     aria-label="Animación digital 3D de restauración cerámica de alta precisión — AM Estética Dental"
                                     className="absolute inset-0 h-full w-full object-cover"
                                 >

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         title: "Dentista en Puerto Madero | AM Estética Dental",
         description: "Clínica dental boutique en Puerto Madero. Carillas, diseño de sonrisa e implantes. Dr. Ariel Merino · 4.9★ en Google.",
         url: CANONICAL,
-        images: ["https://res.cloudinary.com/drctvgyqd/image/upload/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg"],
+        images: ["https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg"],
     },
 };
 
@@ -86,7 +86,7 @@ const schema = {
         // Google viera dos puntuaciones para la misma clínica.
         {
             "@id": "https://www.amesteticadental.com/#clinic",
-            image: "https://res.cloudinary.com/drctvgyqd/image/upload/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg",
+            image: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg",
         },
         {
             "@type": "FAQPage",

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     locale: "es_AR",
     type: "website",
     images: [
-      "https://res.cloudinary.com/drctvgyqd/image/upload/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg",
+      "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/v1782405026/clinica/recepcion-clinica-odontologica-am-estetica-dental-puerto-madero.jpg",
     ],
   },
 };
