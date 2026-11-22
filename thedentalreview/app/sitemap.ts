@@ -95,6 +95,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: `${SITE}/conferencias/cou-2026-dr-ariel-merino-innovacion-estetica-dental-odontologia-digital`,
+      lastModified: new Date("2026-11-21"),
+      changeFrequency: "monthly",
+      priority: 0.92,
+    },
+    {
       url: `${SITE}/conferencias/expodent-2026-dr-ariel-merino-inteligencia-artificial-diseno-sonrisa`,
       lastModified: new Date("2026-07-17"),
       changeFrequency: "monthly",

@@ -114,6 +114,13 @@ export const DOCENCIA: ItemDocencia[] = [
       "Formación de odontólogos en diseño de sonrisa digital, carillas de porcelana y estética mínimamente invasiva.",
   },
   {
+    titulo: "Disertante — Congreso Odontológico Uruguayo 2026",
+    institucion: "Asociación Odontológica Uruguaya · Montevideo",
+    detalle:
+      "Conferencia sobre innovación en estética dental y odontología digital en el COU 2026, ante unos 800 profesionales, en el 80° aniversario de la AOU.",
+    href: "/congreso-odontologico-uruguayo-2026",
+  },
+  {
     titulo: "Disertante — Expodent Buenos Aires",
     institucion: "Expodent",
     detalle: "Una de las exposiciones odontológicas de mayor convocatoria de la Argentina.",

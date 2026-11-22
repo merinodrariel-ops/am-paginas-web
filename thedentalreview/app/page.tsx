@@ -22,6 +22,19 @@ type Articulo = {
 
 const ARTICULOS: Articulo[] = [
   {
+    slug: "cou-2026-dr-ariel-merino-innovacion-estetica-dental-odontologia-digital",
+    href: "/conferencias/cou-2026-dr-ariel-merino-innovacion-estetica-dental-odontologia-digital",
+    categoria: "Conferencia",
+    titulo: "COU 2026: el Dr. Ariel Merino y la vanguardia en estética dental y odontología digital",
+    subtitulo:
+      "Invitado por la Asociación Odontológica Uruguaya en su 80° aniversario, el Dr. Merino habló en Montevideo sobre qué significa innovar en estética dental frente a unos 800 profesionales.",
+    autor: "Dr. Ariel Merino",
+    fecha: "Noviembre 2026",
+    portada:
+      "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_900,c_fill,g_auto,q_auto,f_auto/casos/cou-2026/cou-2026-dr-ariel-merino-selfie-publico-charla-innovacion-estetica-dental.jpg",
+    portadaAlt: "Dr. Ariel Merino con el público de su charla en el Congreso Odontológico Uruguayo 2026",
+  },
+  {
     slug: "ia-diagnostico-odontologico",
     href: "/noticias/ia-diagnostico-odontologico",
     categoria: "Actualidad",

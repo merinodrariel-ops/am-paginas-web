@@ -30,6 +30,7 @@ export default function DoctorPage() {
           <p>Su voz aparece con regularidad en cobertura editorial sobre estética dental, inteligencia artificial aplicada al diseño de sonrisa y tecnología clínica.</p>
           <p className="doctor-links">
             <Link href="/penn-dental-medicine" className="text-link">Docencia en Penn</Link>
+            <Link href="/congreso-odontologico-uruguayo-2026" className="text-link">Congreso Odontológico Uruguayo 2026</Link>
             <a href={`${ARGENTINA_URL}/dr-ariel-merino`} target="_blank" rel="noreferrer" className="text-link">Trayectoria completa</a>
             <a href={PERSON_URL} data-track="uy_person_site_click" target="_blank" rel="noreferrer" className="text-link">arielmerino.com</a>
             <a href={REVIEW_URL} data-track="uy_tdr_click" target="_blank" rel="noreferrer" className="text-link">The Dental Review</a>

@@ -973,6 +973,8 @@ export const INDEXABLE_ROUTES: { path: string; priority: number; changeFrequency
   // es una nota de blog con otro enfoque, no la versión es-AR de esta. Emparejar
   // páginas que no son equivalentes le pide a Google que reemplace una por otra.
   { path: "/penn-dental-medicine", priority: 0.8, changeFrequency: "monthly" },
+  // Igual que Penn: sin equivalente es-AR, fuera del cluster hreflang.
+  { path: "/congreso-odontologico-uruguayo-2026", priority: 0.8, changeFrequency: "monthly" },
   // Vuelve al sitemap: dejó de ser un redirect externo y ahora es una página real
   // con el formulario de postulación.
   { path: "/trabaja-en-am", priority: 0.75, changeFrequency: "monthly" },

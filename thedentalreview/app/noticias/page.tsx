@@ -14,6 +14,13 @@ export const metadata: Metadata = {
 // Al publicar una nota nueva hay que agregarla en este array Y en app/sitemap.ts.
 const NEWS = [
   {
+    href: "/conferencias/cou-2026-dr-ariel-merino-innovacion-estetica-dental-odontologia-digital",
+    title: "COU 2026: vanguardia en estética dental y odontología digital en Montevideo",
+    description: "El Dr. Ariel Merino disertó en el Congreso Odontológico Uruguayo, invitado por la AOU en su 80° aniversario, ante unos 800 profesionales.",
+    image: "https://res.cloudinary.com/drctvgyqd/image/upload/w_1200,h_800,c_fill,g_auto,q_auto,f_auto/casos/cou-2026/cou-2026-dr-ariel-merino-selfie-publico-charla-innovacion-estetica-dental.jpg",
+    alt: "Dr. Ariel Merino con el público de su charla en el Congreso Odontológico Uruguayo 2026",
+  },
+  {
     href: "/noticias/resinas-3d-carillas-dentales-fin-tecnica-manual-2026",
     title: "Resinas impresas en 3D: ¿el fin de la técnica a mano alzada en estética dental?",
     description: "La combinación de fotopolímeros híbridos con más del 60% de carga cerámica y sistemas de escaneo óptico plantea un debate que divide aguas en la odontología restauradora.",
