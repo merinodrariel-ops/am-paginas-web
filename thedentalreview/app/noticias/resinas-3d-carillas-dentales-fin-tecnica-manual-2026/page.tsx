@@ -8,9 +8,9 @@ const CANONICAL = "https://www.thedentalreview.com/noticias/resinas-3d-carillas-
 const OG_IMAGE = "https://i.ytimg.com/vi/QzcwYPHyYDU/maxresdefault.jpg";
 
 export const metadata: Metadata = {
-  title: "Resinas 3D en odontología estética: ¿el fin de la técnica a mano?",
+  title: "Resinas 3D en estética dental: ¿el fin de la técnica a mano?",
   description:
-    "El auge de las resinas biocompatibles de alta carga y la impresión 3D reconfigura el sector: restauraciones ultrafinas de 0.1 mm con tolerancias micrométricas.",
+    "Las resinas biocompatibles de alta carga y la impresión 3D reconfiguran el sector: restauraciones ultrafinas de 0.1 mm con tolerancias micrométricas.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "Resinas 3D en odontología estética: ¿el fin de la técnica manual en 2026?",

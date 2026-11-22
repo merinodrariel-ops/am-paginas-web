@@ -7,9 +7,9 @@ const PATH = "/ia-en-la-consulta/carillas-impresas-3d-vs-tecnica-manual";
 const CANONICAL = `${SITE}${PATH}`;
 
 export const metadata: Metadata = {
-  title: "Carillas Impresas en Resina 3D vs. Técnica a Mano: El Cambio de Paradigma",
+  title: "Carillas en resina 3D vs. técnica a mano",
   description:
-    "Análisis clínico y académico por el Dr. Ariel Merino: curva de aprendizaje de 5 años, conversión monomérica a 200°C y democratización de la odontología estética con resinas 3D.",
+    "Análisis clínico del Dr. Ariel Merino: curva de aprendizaje de 5 años, conversión monomérica a 200°C y democratización de la estética dental con resinas 3D.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "Carillas Impresas en Resina 3D vs. Técnica a Mano | Dr. Ariel Merino",
