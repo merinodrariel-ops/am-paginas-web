@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NewsletterForm from "./NewsletterForm";
 
 // Pie único del sitio.
 //
@@ -15,6 +16,7 @@ import Link from "next/link";
 
 const SECCIONES = [
   { href: "/noticias", label: "Noticias" },
+  { href: "/newsletter", label: "Newsletter" },
   { href: "/acerca-de", label: "Criterios editoriales" },
 ];
 
@@ -30,8 +32,16 @@ const linkBase = {
   textDecoration: "none",
 } as const;
 
-export default function SiteFooter() {
+export default function SiteFooter({ sinNewsletter = false }: { sinNewsletter?: boolean }) {
   return (
+    <>
+    {/* Alta al newsletter en todas las páginas que usan el pie (notas, casos,
+        conferencias, home). /newsletter lo apaga para no duplicarlo. */}
+    {sinNewsletter ? null : (
+      <div style={{ maxWidth: 760, margin: "0 auto", padding: "0 24px" }}>
+        <NewsletterForm origen="pie" />
+      </div>
+    )}
     <footer style={{ borderTop: "1px solid var(--paper-dim, #e8e4da)", padding: "36px 24px", marginTop: 72 }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", flexDirection: "column", gap: 22 }}>
 
@@ -73,5 +83,6 @@ export default function SiteFooter() {
 
       </div>
     </footer>
+    </>
   );
 }

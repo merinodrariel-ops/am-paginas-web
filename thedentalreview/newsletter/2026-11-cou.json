@@ -1,0 +1,25 @@
+{
+  "edicion": "Edición N.º 1 · Noviembre 2026",
+  "asunto": "Vanguardia en estética dental: lo que dejó el COU 2026",
+  "preheader": "Innovación, odontología digital y 800 colegas en Montevideo.",
+  "intro": "Este es el primer newsletter de The Dental Review. Una vez por mes vas a recibir las notas nuevas sobre estética dental, odontología digital y lo que se discute en los congresos de la región. Arrancamos por Montevideo.",
+  "notas": [
+    {
+      "titulo": "COU 2026: vanguardia en estética dental y odontología digital",
+      "bajada": "Invitado por la Asociación Odontológica Uruguaya en su 80.º aniversario, hablé ante unos 800 colegas sobre qué significa innovar hoy en estética dental, y qué no.",
+      "url": "https://www.thedentalreview.com/conferencias/cou-2026-dr-ariel-merino-innovacion-estetica-dental-odontologia-digital?utm_source=newsletter&utm_medium=email&utm_campaign=2026-11",
+      "imagen": "https://res.cloudinary.com/drctvgyqd/image/upload/w_976,h_650,c_fill,g_auto,q_auto,f_jpg/casos/cou-2026/cou-2026-dr-ariel-merino-selfie-publico-charla-innovacion-estetica-dental.jpg"
+    },
+    {
+      "titulo": "Resinas impresas en 3D: ¿el fin de la técnica a mano alzada?",
+      "bajada": "Fotopolímeros con más del 60% de carga cerámica y escaneo óptico plantean un debate que divide aguas en la odontología restauradora.",
+      "url": "https://www.thedentalreview.com/noticias/resinas-3d-carillas-dentales-fin-tecnica-manual-2026?utm_source=newsletter&utm_medium=email&utm_campaign=2026-11",
+      "imagen": "https://i.ytimg.com/vi/QzcwYPHyYDU/maxresdefault.jpg"
+    },
+    {
+      "titulo": "Los pacientes llegan con la sonrisa ya diseñada por IA",
+      "bajada": "Cinco de cada diez primeras consultas de una clínica porteña se originan hoy en una conversación con un asistente de inteligencia artificial.",
+      "url": "https://www.thedentalreview.com/noticias/pacientes-llegan-con-sonrisa-generada-por-ia?utm_source=newsletter&utm_medium=email&utm_campaign=2026-11"
+    }
+  ]
+}
