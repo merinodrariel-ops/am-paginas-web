@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ADDRESS, ARGENTINA_URL, PERSON_URL, REVIEW_URL, treatmentPages, whatsappFor } from "./site-data";
 
-const TREATMENT_LINKS = Object.entries(treatmentPages).slice(0, 6);
+const TREATMENT_LINKS = Object.entries(treatmentPages);
 
 /**
  * Footer de red.
