@@ -24,6 +24,15 @@ export const metadata: Metadata = {
 
 const ARTICULOS = [
     {
+        slug: "20-carillas-en-5-dias-caso-mendoza-turismo-dental",
+        imagen: "/images/casos/mendoza/caso-mendoza-antes-despues-carillas-porcelana-rostro-labios-dr-ariel-merino.webp",
+        alt: "Antes y después de 20 carillas cerámicas en 5 días en paciente de Mendoza — Dr. Ariel Merino",
+        titulo: "20 carillas en 5 días: cómo resolver una sonrisa completa en tiempo récord para pacientes del interior",
+        descripcion: "Un paciente abogado viajó desde Mendoza a Buenos Aires para transformar su sonrisa. Gracias a la planificación 2D, encerado virtual 3D y fresado robotizado VHF, colocamos 20 carillas cerámicas de 0.3 mm en menos de una semana.",
+        categoria: "Turismo Dental",
+        lectura: "5 min",
+    },
+    {
         slug: "alineadores-con-memoria-de-forma",
         imagen: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/alineadores/alineador-impreso-3d-memoria-de-forma-am.jpg",
         alt: "Alineador invisible impreso en 3D con tecnología de memoria de forma y activación térmica — AM Estética Dental",

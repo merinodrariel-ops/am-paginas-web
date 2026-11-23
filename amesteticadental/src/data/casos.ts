@@ -82,6 +82,108 @@ export function localizeCaso(caso: Caso, lang: "es" | "en"): Caso {
 
 export const CASOS: Caso[] = [
     {
+        slug: "20-carillas-ceramicas-tiempo-record-paciente-mendoza",
+        titulo: "Viajó desde Mendoza y en 5 días renovó su sonrisa completa",
+        subtitulo: "20 carillas cerámicas en disilicato de litio IPS e.max de 0.3 mm: flujo 100% digital 3D, encerado virtual y fresado VHF en tiempo récord.",
+        descripcion: "Caso de turismo dental en Buenos Aires: paciente abogado que viajó desde Mendoza para rehabilitar su sonrisa en 5 días con 20 carillas cerámicas en disilicato de litio IPS e.max de 0.3 mm, encerado 3D y fresado VHF por el Dr. Ariel Merino en AM Estética Dental, Puerto Madero.",
+        seoTitle: "20 Carillas Cerámicas en 5 Días | Paciente de Mendoza",
+        seoDescription: "Caso real de turismo dental: 20 carillas cerámicas de disilicato de litio de 0.3 mm en 5 días con flujo 100% digital 3D y fresado VHF. Dr. Ariel Merino.",
+        categorias: ["Carillas de porcelana", "Diseño de sonrisa", "Rehabilitación oral"],
+        duracion: "5 días",
+        piezas: "20 carillas cerámicas (10 superiores y 10 inferiores) tipo lentes de contacto en disilicato de litio IPS e.max de 0.3 mm",
+        tecnica: "Flujo 100% digital 3D: escaneo intraoral, diseño digital 2D/3D (DSD), encerado virtual de alta precisión y fresado CNC con máquina VHF",
+        fotoPortada: {
+            src: "/images/casos/mendoza/caso-mendoza-antes-despues-carillas-porcelana-rostro-labios-dr-ariel-merino.webp",
+            alt: "Antes y después de 20 carillas cerámicas en disilicato de litio IPS e.max en paciente de Mendoza — Dr. Ariel Merino, AM Estética Dental, Puerto Madero, Buenos Aires",
+            caption: "Antes y después — 20 carillas cerámicas en 5 días",
+        },
+        fotos: [
+            {
+                src: "/images/casos/mendoza/caso-mendoza-antes-despues-carillas-porcelana-rostro-labios-dr-ariel-merino.webp",
+                alt: "Antes y después facial y macro de 20 carillas cerámicas en paciente de Mendoza — Dr. Ariel Merino, AM Estética Dental",
+                caption: "Antes y después — rostro y macro de la sonrisa",
+            },
+            {
+                src: "/images/casos/mendoza/caso-mendoza-planificacion-digital-2d-3d-fresado-vhf-resultado-real.webp",
+                alt: "Secuencia clínica digital: diseño 2D, encerado digital 3D en malla STL y resultado final real en boca — AM Estética Dental",
+                caption: "Flujo 100% digital 3D: 2D DSD, malla 3D y resultado final",
+            },
+            {
+                src: "/images/casos/mendoza/caso-mendoza-antes-despues-rostro-completo.webp",
+                alt: "Comparativa antes y después en rostro completo de paciente de Mendoza tras rehabilitación con carillas cerámicas — Dr. Ariel Merino",
+                caption: "Rostro completo — transformación armónica y natural",
+            },
+            {
+                src: "/images/casos/mendoza/caso-mendoza-antes-despues-macro-sonrisa-carillas.webp",
+                alt: "Macro de la sonrisa antes y después: carillas cerámicas ultra delgadas de 0.3 mm en disilicato de litio — AM Estética Dental",
+                caption: "Macro de labios y dientes — textura, brillo y adaptación marginal",
+            },
+            {
+                src: "/images/casos/mendoza/caso-mendoza-planificacion-2d-diseno-digital.webp",
+                alt: "Paso 1: Planificación digital 2D sobre la fotografía inicial con contornos ideales — Dr. Ariel Merino",
+                caption: "Paso 1 — Diseño digital 2D (Digital Smile Design)",
+            },
+            {
+                src: "/images/casos/mendoza/caso-mendoza-encerado-digital-3d-malla-stl.webp",
+                alt: "Paso 2: Encerado digital 3D y generación de malla STL para mecanizado en fresadora VHF — AM Estética Dental",
+                caption: "Paso 2 — Encerado virtual 3D y arquitectura anatómica",
+            },
+            {
+                src: "/images/casos/mendoza/caso-mendoza-resultado-final-carillas-disilicato-litio.webp",
+                alt: "Paso 3: Carillas cerámicas de 0.3 mm cementadas en boca con integración biológica y naturalidad — Dr. Ariel Merino",
+                caption: "Paso 3 — Resultado clínico final en boca con integración gingival",
+            },
+        ],
+        copy: `Cuando un paciente se toma un avión para transformar su sonrisa, el tiempo y la precisión no admiten margen de error.
+
+Este paciente, un reconocido abogado de la provincia de Mendoza, viajó a Buenos Aires con un objetivo claro: mejorar radicalmente la armonía, el color y la proporción de sus dientes sin someterse a tratamientos invasivos ni a meses de esperas interminables.
+
+Gracias al flujo 100% digital y a la tecnología CAD/CAM que integramos en AM Estética Dental, logramos completar su rehabilitación integral en tiempo récord: exactamente 5 días.
+
+El protocolo clínico comenzó con un escaneo intraoral de alta fidelidad y una planificación fotográfica 2D (Digital Smile Design). A partir de allí, diseñamos virtualmente el encerado digital 3D, evaluando cada milímetro de volumen, curvatura y oclusión. Con ese archivo STL calibrado, ejecutamos el fresado robotizado de alta precisión con tecnología alemana VHF, confeccionando carillas cerámicas tipo lentes de contacto en disilicato de litio IPS e.max con un espesor de apenas 0.3 mm.
+
+En menos de una semana, las 20 carillas (10 superiores y 10 inferiores) estaban confeccionadas, probadas y cementadas con adhesión de última generación. El resultado es una sonrisa luminosa, fresca y perfectamente natural que respeta la estructura biológica de sus dientes, con mínima intervención y máxima durabilidad.
+
+Hoy el paciente regresó a Mendoza sonriendo con total seguridad y naturalidad en sus audiencias y en su vida diaria.`,
+        copyRedes: `Viajó desde Mendoza a Buenos Aires y en sólo 5 días transformó su sonrisa completa.
+
+20 carillas cerámicas en disilicato de litio IPS e.max de 0.3 mm de espesor (lentes de contacto ultra conservadoras), planificadas en 2D, enceradas en 3D y fresadas con tecnología VHF de ultra precisión.
+
+Tecnología digital de vanguardia al servicio de la estética dental.`,
+        publicado: true,
+        en: {
+            titulo: "He flew in from Mendoza and renewed his entire smile in 5 days",
+            subtitulo: "20 ceramic veneers in 0.3 mm IPS e.max lithium disilicate: 3D digital workflow, virtual wax-up, and VHF milling in record time.",
+            descripcion: "Dental tourism clinical case in Buenos Aires: attorney patient who traveled from Mendoza to rehabilitate his smile in 5 days with 20 IPS e.max lithium disilicate ceramic veneers (0.3 mm), 3D wax-up, and VHF precision milling by Dr. Ariel Merino in Puerto Madero.",
+            seoTitle: "20 Ceramic Veneers in 5 Days | Mendoza Patient",
+            seoDescription: "Real dental tourism case: 20 lithium disilicate ceramic veneers (0.3 mm) completed in 5 days using 100% 3D digital workflow and VHF milling. Dr. Ariel Merino.",
+            categorias: ["Porcelain veneers", "Smile design", "Full rehabilitation"],
+            duracion: "5 days",
+            piezas: "20 ceramic veneers (10 upper and 10 lower) contact-lens style in 0.3 mm IPS e.max lithium disilicate",
+            tecnica: "100% 3D digital workflow: intraoral scanning, 2D/3D digital design (DSD), virtual wax-up and VHF CNC precision milling",
+            copy: `When a patient takes a flight to transform their smile, time and precision leave no room for error.
+
+This patient, a prominent attorney from the province of Mendoza, traveled to Buenos Aires with a clear goal: radically improving the harmony, shade, and proportions of his teeth without invasive treatments or months of endless appointments.
+
+Thanks to the 100% digital workflow and CAD/CAM technology integrated at AM Estética Dental, we completed his comprehensive rehabilitation in record time: exactly 5 days.
+
+The clinical protocol began with a high-fidelity intraoral scan and 2D photographic planning (Digital Smile Design). From there, we virtually designed the 3D digital wax-up, calibrating every millimeter of volume, curvature, and occlusion. Using this STL file, we performed high-precision robotic milling with German VHF technology, crafting contact-lens ceramic veneers in IPS e.max lithium disilicate with a thickness of just 0.3 mm.
+
+In less than a week, all 20 veneers (10 upper and 10 lower) were milled, clinically fitted, and bonded with state-of-the-art adhesive protocols. The result is a bright, fresh, and remarkably natural smile that preserves healthy tooth enamel, offering minimal intervention and long-term durability.
+
+Today, he has returned to Mendoza, smiling with complete confidence in court and in his everyday life.`,
+            fotos: [
+                { alt: "Before and after facial and macro view of 20 ceramic veneers in Mendoza patient — Dr. Ariel Merino, AM Estética Dental", caption: "Before and after — portrait and macro smile" },
+                { alt: "Digital clinical workflow: 2D design, 3D STL mesh digital wax-up and final real outcome in mouth — AM Estética Dental", caption: "100% 3D digital workflow: 2D DSD, 3D mesh, and real result" },
+                { alt: "Full face comparison before and after ceramic veneers in Mendoza patient — Dr. Ariel Merino", caption: "Full face — harmonious and natural transformation" },
+                { alt: "Macro smile before and after: ultra-thin 0.3 mm lithium disilicate ceramic veneers — AM Estética Dental", caption: "Macro lips and teeth — texture, shine, and marginal fit" },
+                { alt: "Step 1: 2D digital planning over initial photograph with ideal smile contours — Dr. Ariel Merino", caption: "Step 1 — 2D Digital Smile Design" },
+                { alt: "Step 2: 3D digital wax-up and STL mesh generation for VHF milling — AM Estética Dental", caption: "Step 2 — 3D virtual wax-up and anatomical architecture" },
+                { alt: "Step 3: 0.3 mm ceramic veneers bonded in mouth with biological integration — Dr. Ariel Merino", caption: "Step 3 — Final clinical outcome with gingival integration" },
+            ],
+        },
+    },
+    {
         slug: "rehabilitacion-oral-completa-carillas-coronas-implantes",
         titulo: "Renovó su sonrisa completa en menos de un mes",
         subtitulo: "Recambio de coronas, puentes y coronas sobre implantes + carillas cerámicas en dientes naturales, con mejora de la mordida.",

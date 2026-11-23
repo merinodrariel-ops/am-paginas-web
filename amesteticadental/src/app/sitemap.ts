@@ -134,6 +134,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/blog/cepillo-electrico-dyson-opinion-odontologo", changeFrequency: "monthly", priority: 0.7 },
   { path: "/blog/carillas-resina-3d-sin-desgaste-puerto-madero", changeFrequency: "weekly", priority: 0.85 },
   { path: "/blog/alineadores-con-memoria-de-forma", changeFrequency: "weekly", priority: 0.85 },
+  { path: "/blog/20-carillas-en-5-dias-caso-mendoza-turismo-dental", changeFrequency: "weekly", priority: 0.85 },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

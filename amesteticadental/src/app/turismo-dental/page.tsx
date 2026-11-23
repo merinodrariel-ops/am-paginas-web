@@ -402,18 +402,24 @@ export default function TurismoDentalPage() {
                             <h2 className="text-2xl font-manrope font-light text-crema">
                                 Resultados que viajan <span className="font-cormorant italic text-oro">desde Buenos Aires al mundo.</span>
                             </h2>
-                            <p className="text-crema/45 font-manrope text-sm mt-3 max-w-xl">Pacientes internacionales que eligieron AM Estética Dental en Puerto Madero. Transformaciones reales, sin filtros.</p>
+                            <p className="text-crema/45 font-manrope text-sm mt-3 max-w-xl">Pacientes internacionales y del interior del país que eligieron AM Estética Dental en Puerto Madero. Transformaciones reales, en tiempo récord y sin filtros.</p>
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
                             {[
-                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-rostro-fondo-blanco-portada-transformacion-completa-dr-ariel-merino-am-estetica-dental", alt: "Transformación completa agenesia dental — antes y después rostro fondo blanco — Dr. Ariel Merino AM Estética Dental" },
-                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan/diseno-sonrisa-plano-quebrado-carillas-ceramicas-antes-despues-portada-paciente-italia-milan-dr-ariel-merino-am-estetica-dental", alt: "Diseño de sonrisa con carillas cerámicas — paciente de Italia — Dr. Ariel Merino AM Estética Dental" },
-                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/galeria/caso-extremo-carillas-veneers-03-dr-ariel-merino-am-estetica-dental", alt: "Caso extremo carillas veneers — Dr. Ariel Merino AM Estética Dental" },
+                                { src: "/images/casos/mendoza/caso-mendoza-antes-despues-carillas-porcelana-rostro-labios-dr-ariel-merino.webp", alt: "Paciente de Mendoza — 20 carillas cerámicas en 5 días — Dr. Ariel Merino AM Estética Dental", href: "/casos/20-carillas-ceramicas-tiempo-record-paciente-mendoza", tag: "Mendoza · 5 días" },
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan/diseno-sonrisa-plano-quebrado-carillas-ceramicas-antes-despues-portada-paciente-italia-milan-dr-ariel-merino-am-estetica-dental", alt: "Diseño de sonrisa con carillas cerámicas — paciente de Italia — Dr. Ariel Merino AM Estética Dental", href: "/casos/diseno-sonrisa-plano-quebrado-carillas-ceramicas-paciente-italia-milan", tag: "Milán · 1 semana" },
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/agenesia-dental/caso-agenesia-dental-antes-despues-rostro-fondo-blanco-portada-transformacion-completa-dr-ariel-merino-am-estetica-dental", alt: "Transformación completa agenesia dental — antes y después rostro fondo blanco — Dr. Ariel Merino AM Estética Dental", href: "/casos/agenesia-dental-rehabilitacion-completa-implantes-24-ceramicas", tag: "Agenesia dental" },
+                                { src: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/casos/galeria/caso-extremo-carillas-veneers-03-dr-ariel-merino-am-estetica-dental", alt: "Caso extremo carillas veneers — Dr. Ariel Merino AM Estética Dental", href: "/casos-antes-y-despues", tag: "Rehabilitación" },
                             ].map((foto) => (
-                                <div key={foto.src} className="relative aspect-square rounded-2xl overflow-hidden border border-oro/10 group">
-                                    <Image src={foto.src} alt={foto.alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-carbon/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                </div>
+                                <Link key={foto.src} href={foto.href} className="relative aspect-square rounded-2xl overflow-hidden border border-oro/10 group block">
+                                    <Image src={foto.src} alt={foto.alt} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-carbon/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+                                    <div className="absolute bottom-3 left-3 right-3">
+                                        <span className="inline-block bg-carbon/70 backdrop-blur-xs border border-oro/30 text-oro text-[9px] font-manrope uppercase tracking-widest px-2.5 py-0.5 rounded-full">
+                                            {foto.tag}
+                                        </span>
+                                    </div>
+                                </Link>
                             ))}
                         </div>
                         <div className="mt-8 text-center">
