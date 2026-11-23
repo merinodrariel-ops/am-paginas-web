@@ -24,6 +24,15 @@ export const metadata: Metadata = {
 
 const ARTICULOS = [
     {
+        slug: "alineadores-con-memoria-de-forma",
+        imagen: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/alineadores/alineador-impreso-3d-memoria-de-forma-am.jpg",
+        alt: "Alineador invisible impreso en 3D con tecnología de memoria de forma y activación térmica — AM Estética Dental",
+        titulo: "Alineadores con memoria de forma: la nueva generación de ortodoncia 3D",
+        descripcion: "Por qué el termoformado tradicional pierde fuerza a los pocos días y cómo las resinas impresas en 3D con activación térmica logran fuerza continua, eliminan los ataches y reducen los tiempos de tratamiento.",
+        categoria: "Ortodoncia 3D",
+        lectura: "7 min",
+    },
+    {
         slug: "como-combatir-el-bruxismo-botox-y-placa",
         imagen: "https://res.cloudinary.com/drctvgyqd/image/upload/q_auto,f_auto/bruxismo/bruxismo-nocturno-mano-mandibula-portada-editorial-dr-ariel-merino-am-estetica-dental-buenos-aires",
         alt: "Persona durmiendo de noche con la mano apoyada junto a la mandíbula, en penumbra con luz cálida — bruxismo nocturno, AM Estética Dental",

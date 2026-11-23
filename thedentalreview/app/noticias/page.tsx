@@ -14,6 +14,13 @@ export const metadata: Metadata = {
 // Al publicar una nota nueva hay que agregarla en este array Y en app/sitemap.ts.
 const NEWS = [
   {
+    href: "/noticias/alineadores-memoria-de-forma-impresion-3d-directa-2026",
+    title: "Alineadores con memoria de forma: el salto del termoformado a la impresión 3D directa",
+    description: "Polímeros con memoria de forma (SMP), activación por temperatura intraoral y calibración de espesor por vóxeles: la biomecánica ortodóncica entra en su fase aditiva definitiva.",
+    image: "https://res.cloudinary.com/drctvgyqd/image/upload/v1791888815/alineadores/alineador-impreso-3d-memoria-de-forma-am.jpg",
+    alt: "Alineador transparente impreso en 3D con tecnología de memoria de forma",
+  },
+  {
     href: "/conferencias/cou-2026-dr-ariel-merino-innovacion-estetica-dental-odontologia-digital",
     title: "COU 2026: vanguardia en estética dental y odontología digital en Montevideo",
     description: "El Dr. Ariel Merino disertó en el Congreso Odontológico Uruguayo, invitado por la AOU en su 80° aniversario, ante unos 800 profesionales.",

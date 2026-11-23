@@ -17,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${SITE}/noticias/alineadores-memoria-de-forma-impresion-3d-directa-2026`,
+      lastModified: new Date("2026-11-23"),
+      changeFrequency: "weekly",
+      priority: 0.88,
+    },
+    {
       url: `${SITE}/noticias/resinas-3d-carillas-dentales-fin-tecnica-manual-2026`,
       lastModified: new Date("2026-11-01"),
       changeFrequency: "weekly",

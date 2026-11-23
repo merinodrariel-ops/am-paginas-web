@@ -22,6 +22,19 @@ type Articulo = {
 
 const ARTICULOS: Articulo[] = [
   {
+    slug: "alineadores-memoria-de-forma-impresion-3d-directa-2026",
+    href: "/noticias/alineadores-memoria-de-forma-impresion-3d-directa-2026",
+    categoria: "Tecnología",
+    titulo: "Alineadores con memoria de forma: el salto del termoformado a la impresión 3D directa",
+    subtitulo:
+      "Polímeros con memoria de forma (SMP), activación por temperatura intraoral y calibración de espesor por vóxeles: la biomecánica ortodóncica entra en su fase aditiva definitiva.",
+    autor: "The Dental Review",
+    fecha: "Noviembre 2026",
+    portada:
+      "https://res.cloudinary.com/drctvgyqd/image/upload/v1791888815/alineadores/alineador-impreso-3d-memoria-de-forma-am.jpg",
+    portadaAlt: "Alineador transparente impreso en 3D con tecnología de memoria de forma",
+  },
+  {
     slug: "cou-2026-dr-ariel-merino-innovacion-estetica-dental-odontologia-digital",
     href: "/conferencias/cou-2026-dr-ariel-merino-innovacion-estetica-dental-odontologia-digital",
     categoria: "Conferencia",
