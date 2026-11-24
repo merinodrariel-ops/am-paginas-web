@@ -87,6 +87,12 @@ export const clinicAssets = [
 
 export const sharedCases = [
   {
+    slug: "20-carillas-ceramicas-tiempo-record-paciente-mendoza",
+    title: "20 carillas cerámicas en 5 días (tiempo récord)",
+    treatment: "Diseño de sonrisa 3D y carillas en disilicato de litio de 0.3 mm",
+    image: "https://www.amesteticadental.com/images/casos/mendoza/caso-mendoza-antes-despues-carillas-porcelana-rostro-labios-dr-ariel-merino.webp",
+  },
+  {
     slug: "rehabilitacion-oral-completa-carillas-coronas-implantes",
     title: "Renovó su sonrisa completa en menos de un mes",
     treatment: "Rehabilitación oral, carillas, coronas e implantes",

@@ -95,6 +95,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     {
+      url: `${SITE}/casos/20-carillas-ceramicas-tiempo-record-flujo-digital-3d-fresado-vhf`,
+      lastModified: new Date("2026-11-23"),
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
       url: `${SITE}/casos/gingivectomia-laser-micro-diseno-sonrisa-resina`,
       lastModified: new Date("2026-07-14"),
       changeFrequency: "monthly",

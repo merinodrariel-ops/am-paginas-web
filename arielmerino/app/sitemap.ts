@@ -13,6 +13,7 @@ const RUTAS: { path: string; priority: number; changeFrequency: "weekly" | "mont
   { path: "/ia-en-la-consulta", priority: 0.85, changeFrequency: "monthly" },
   { path: "/la-sonrisa-perfecta-es-un-error", priority: 0.85, changeFrequency: "monthly" },
   { path: "/ia-en-la-consulta/carillas-impresas-3d-vs-tecnica-manual", priority: 0.85, changeFrequency: "weekly" },
+  { path: "/ia-en-la-consulta/flujo-digital-3d-carillas-en-tiempo-record", priority: 0.85, changeFrequency: "weekly" },
   { path: "/ia-en-la-consulta/alineadores-con-memoria-de-forma", priority: 0.85, changeFrequency: "weekly" },
   { path: "/congreso-odontologico-uruguayo-2026", priority: 0.85, changeFrequency: "monthly" },
   { path: "/prensa", priority: 0.85, changeFrequency: "monthly" },
