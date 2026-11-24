@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   // con la que gana la comparación en vez de perderla.
   //
   // OJO: esto reinicia la medición a 28 días que arrancó a la mañana.
-  title: `Implantes dentales a partir de USD 1.500 — precios ${ANIO} | AM`,
+  title: `Implantes dentales: precios ${ANIO}, Neodent y Straumann | AM`,
   description:
-    `El implante a partir de USD 1.500 (Neodent) o USD 2.000 (Straumann). Terminado con corona, desde USD 3.000. Cirugía, extracción e injertos incluidos.`,
+    `Cuánto cuesta un implante dental en ${ANIO}: Neodent desde USD 1.500 y Straumann USD 2.000, con cirugía e injertos incluidos. Financiación en Puerto Madero.`,
   keywords: `precio implantes dentales Buenos Aires, costo implante dental Argentina, implantes dentales precio ${ANIO}, financiación implantes Puerto Madero, cuánto cuestan los implantes dentales`,
   alternates: {
     canonical: "https://www.amesteticadental.com/precio-implantes-dentales-buenos-aires",

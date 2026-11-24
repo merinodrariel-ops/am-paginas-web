@@ -100,6 +100,7 @@ const COLUMNAS_ES: Columna[] = [
             { href: "/equipo-am", label: "Equipo AM" },
             { href: "/franquicias", label: "Franquicias AM" },
             { href: "/contacto", label: "Contacto" },
+            { href: "/privacidad", label: "Política de privacidad" },
             { href: "/trabaja-en-am", label: "Trabajá en AM" },
             { href: "/en", label: "English site" },
         ],
@@ -212,7 +213,13 @@ export default function SiteFooter() {
 
             <div className="mx-auto mt-14 flex max-w-6xl flex-col gap-2 border-t border-crema/5 pt-8 font-manrope text-[11px] tracking-wide text-crema/25 sm:flex-row sm:items-center sm:justify-between">
                 <span>{t.direccion}</span>
-                <span>{t.legal}</span>
+                <div className="flex items-center gap-3">
+                    <Link href="/privacidad" className="hover:text-oro transition-colors">
+                        Política de Privacidad
+                    </Link>
+                    <span>·</span>
+                    <span>{t.legal}</span>
+                </div>
             </div>
         </footer>
     );

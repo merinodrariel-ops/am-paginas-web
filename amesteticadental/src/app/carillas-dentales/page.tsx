@@ -364,6 +364,44 @@ export default function CarillasDentalesPage() {
                     </div>
                 </section>
 
+                {/* Artículos y guías clínicas especializadas */}
+                <section className="py-16 px-6 md:px-12 bg-carbon">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="mb-10">
+                            <span className="text-oro font-manrope uppercase tracking-[0.4em] text-[10px] block mb-3">Guías de decisión</span>
+                            <h2 className="text-2xl font-manrope font-light text-crema">
+                                Artículos y respuestas <span className="font-cormorant italic text-oro">sobre carillas dentales.</span>
+                            </h2>
+                            <p className="text-crema/45 font-manrope text-sm mt-3 max-w-xl">
+                                Información clínica profunda, comparativas de materiales y respuestas a las dudas más frecuentes antes del tratamiento.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {[
+                                { titulo: "Antes y después con carillas de porcelana", desc: "Qué cambios reales esperar en forma, color y proporción dental.", href: "/blog/carillas-porcelana-antes-despues" },
+                                { titulo: "Disilicato de litio vs porcelana feldespática", desc: "Diferencias técnicas, resistencia estructural y naturalidad estética.", href: "/blog/carillas-disilicato-vs-porcelana-feldespatica" },
+                                { titulo: "Cuánto cuestan las carillas en Argentina", desc: "Guía de precios detallada, qué define el valor y costos ocultos a evitar.", href: "/blog/cuanto-cuestan-las-carillas-dentales-en-argentina" },
+                                { titulo: "Preguntas clave antes de hacerte carillas", desc: "Los 5 puntos que tenés que evaluar con tu odontólogo en la consulta.", href: "/blog/preguntas-antes-de-hacerse-carillas" },
+                                { titulo: "Sonrisa natural vs estética Hollywood", desc: "Cómo evitar el efecto plano y blanco artificial en cerámicas.", href: "/blog/sonrisa-natural-vs-hollywood" },
+                                { titulo: "¿Puede la Inteligencia Artificial diseñar tu sonrisa?", desc: "El rol del software 3D y por qué el criterio clínico sigue siendo insustituible.", href: "/blog/chatgpt-puede-disenar-tu-sonrisa" },
+                                { titulo: "20 carillas en 5 días: turismo dental", desc: "Caso real de rehabilitación intensiva con laboratorio propio en Puerto Madero.", href: "/blog/20-carillas-en-5-dias-caso-mendoza-turismo-dental" },
+                            ].map((a) => (
+                                <Link
+                                    key={a.titulo}
+                                    href={a.href}
+                                    className="border border-oro/15 rounded-2xl p-5 bg-carbon-soft hover:border-oro/40 transition-colors group flex flex-col justify-between"
+                                >
+                                    <div>
+                                        <h3 className="text-crema font-manrope font-medium text-sm mb-2 group-hover:text-oro transition-colors">{a.titulo}</h3>
+                                        <p className="text-crema/55 font-manrope text-xs leading-relaxed">{a.desc}</p>
+                                    </div>
+                                    <span className="text-oro/40 group-hover:text-oro transition-colors text-xs font-medium mt-4 block">Leer artículo →</span>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
                 {/* Galería — casos reales */}
                 <section className="py-16 px-6 md:px-12 bg-carbon-soft border-y border-oro/10">
                     <div className="max-w-6xl mx-auto">

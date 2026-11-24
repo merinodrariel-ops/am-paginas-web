@@ -82,6 +82,7 @@ const STATIC_ROUTES: SitemapEntry[] = [
   { path: "/simulador-diseno-de-sonrisa-ia", changeFrequency: "monthly", priority: 0.9 },
   { path: "/franquicias", changeFrequency: "monthly", priority: 0.9 },
   { path: "/contacto", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/privacidad", changeFrequency: "monthly", priority: 0.5 },
   { path: "/turismo-dental", changeFrequency: "monthly", priority: 0.9 },
   // Sitio en inglés (/en) — se agrega cada página a medida que se traduce.
   { path: "/en", changeFrequency: "weekly", priority: 0.95 },
