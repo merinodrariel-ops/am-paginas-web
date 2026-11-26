@@ -125,7 +125,7 @@ export default function BruxismoTratamientoPage() {
             <main className="bg-carbon text-crema font-manrope min-h-screen">
                 <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
                     <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
-                    <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">Consultar →</a>
+                    <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">Consultar →</a>
                 </header>
 
                 {/* ── HERO ── */}
@@ -140,7 +140,7 @@ export default function BruxismoTratamientoPage() {
                             <p className="text-crema/65 text-lg font-light leading-relaxed mb-8">
                                 Los dos pilares del tratamiento en un solo plan: la placa que protege y guía el movimiento de tu mandíbula, y la toxina botulínica que le baja la fuerza al músculo que aprieta.
                             </p>
-                            <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">
+                            <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                                 Evaluar mi caso por WhatsApp →
                             </a>
                         </div>
@@ -347,7 +347,7 @@ export default function BruxismoTratamientoPage() {
                     <p className="text-crema/50 text-base mb-8 max-w-md mx-auto">
                         Pero el que viene sí se frena. Cuanto antes, menos hay que reconstruir después.
                     </p>
-                    <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">
+                    <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Consultar por WhatsApp →
                     </a>
                     <p className="text-crema/25 text-xs mt-4">Camila O&apos;Gorman 412, Puerto Madero · Buenos Aires</p>

@@ -426,7 +426,7 @@ export default function InversionImplantesPage() {
                     incluido: "Incluido en el presupuesto"
                   }
                 ].map((item) => (
-                  <div key={item.num} className="border border-oro/15 hover:border-oro/40 bg-carbon-soft p-6 rounded-2xl transition-all duration-300 group flex items-start gap-5">
+                  <div key={item.num} className="border border-oro/15 hover:border-oro/40 bg-carbon-soft p-6 rounded-2xl transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] duration-300 group flex items-start gap-5">
                     <span className="font-cormorant italic text-3xl text-oro/40 group-hover:text-oro transition-colors leading-none pt-1">
                       {item.num}
                     </span>

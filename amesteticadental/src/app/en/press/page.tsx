@@ -52,7 +52,7 @@ export default function PressEnPage() {
                         <p className="text-crema/65 text-lg font-light leading-relaxed max-w-2xl mb-8">
                             Official resources designed for journalists, content creators and public relations: approved biography, credentials and verifiable facts to ensure accurate coverage.
                         </p>
-                        <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">
+                        <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                             Direct contact for interviews →
                         </a>
                     </div>

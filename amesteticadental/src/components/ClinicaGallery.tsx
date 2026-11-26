@@ -280,7 +280,7 @@ export default function ClinicaGallery({ lang = "es" }: { lang?: "es" | "en" }) 
 
       {/* ── LIGHTBOX ── */}
       {activeIdx !== null && (
-        <div className="fixed inset-0 z-[200] flex flex-col justify-between bg-carbon/95 backdrop-blur-md p-4 md:p-6 transition-all duration-300 animate-fade-in">
+        <div className="fixed inset-0 z-[200] flex flex-col justify-between bg-carbon/95 backdrop-blur-md p-4 md:p-6 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] duration-300 animate-fade-in">
           {/* Header del Lightbox */}
           <div className="flex items-center justify-between w-full z-10 pt-4 px-4">
             <div className="text-left">

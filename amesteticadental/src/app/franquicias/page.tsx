@@ -165,13 +165,13 @@ export default function FranquiciasPage() {
                                     href={WA}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-lg shadow-oro/10"
+                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] shadow-lg shadow-oro/10"
                                 >
                                     Solicitar dossier de franquicia por WhatsApp →
                                 </a>
                                 <Link
                                     href="#modelo"
-                                    className="inline-flex items-center gap-2 border border-oro/30 text-crema px-7 py-4 rounded-full font-medium text-sm hover:border-oro transition-all"
+                                    className="inline-flex items-center gap-2 border border-oro/30 text-crema px-7 py-4 rounded-full font-medium text-sm hover:border-oro transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
                                 >
                                     Ver modelo de negocio
                                 </Link>
@@ -246,7 +246,7 @@ export default function FranquiciasPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {VENTAJAS.map((v) => (
-                            <div key={v.num} className="border border-oro/15 rounded-2xl p-7 bg-carbon/40 hover:border-oro/40 transition-all flex flex-col justify-between">
+                            <div key={v.num} className="border border-oro/15 rounded-2xl p-7 bg-carbon/40 hover:border-oro/40 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] flex flex-col justify-between">
                                 <div>
                                     <span className="text-oro font-cormorant italic text-3xl block mb-2">{v.num}</span>
                                     <h3 className="text-crema text-lg font-medium mb-3">{v.titulo}</h3>
@@ -305,7 +305,7 @@ export default function FranquiciasPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {PASOS.map((p) => (
-                            <div key={p.paso} className="border border-oro/15 rounded-2xl p-7 bg-carbon/40 hover:border-oro/40 transition-all flex flex-col justify-between">
+                            <div key={p.paso} className="border border-oro/15 rounded-2xl p-7 bg-carbon/40 hover:border-oro/40 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] flex flex-col justify-between">
                                 <div>
                                     <span className="text-oro font-cormorant italic text-sm tracking-widest uppercase block mb-2">{p.paso}</span>
                                     <h3 className="text-crema text-lg font-medium mb-3">{p.nombre}</h3>
@@ -356,7 +356,7 @@ export default function FranquiciasPage() {
                         href={WA}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-oro text-carbon px-9 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-xl shadow-oro/10"
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-9 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] shadow-xl shadow-oro/10"
                     >
                         Solicitar entrevista de franquicia por WhatsApp →
                     </a>

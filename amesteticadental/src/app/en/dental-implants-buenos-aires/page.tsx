@@ -144,7 +144,7 @@ export default function DentalImplantsPage() {
               href={WA}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all"
+              className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
             >
               Find out if you need an implant →
             </a>

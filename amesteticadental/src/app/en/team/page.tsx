@@ -161,9 +161,9 @@ export default function TeamPage() {
                 <article
                   key={miembro.slug}
                   id={miembro.slug}
-                  className="group scroll-mt-28 transition-all duration-300"
+                  className="group scroll-mt-28 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] duration-300"
                 >
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-oro/12 bg-carbon-soft/60 backdrop-blur-sm transition-all duration-300 group-hover:border-oro/30 group-hover:-translate-y-1 shadow-md group-hover:shadow-oro/5">
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-oro/12 bg-carbon-soft/60 backdrop-blur-sm transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] duration-300 group-hover:border-oro/30 group-hover:-translate-y-1 shadow-md group-hover:shadow-oro/5">
                     <RetratoMiembro miembro={miembro} idioma="en" sizes="(max-width: 768px) 100vw, 33vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-carbon/78 via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-5">
@@ -206,8 +206,8 @@ export default function TeamPage() {
 
             <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
               {supportTeam.map((miembro) => (
-                <article key={miembro.slug} className="group transition-all duration-300">
-                  <div className="relative aspect-square overflow-hidden rounded-2xl border border-oro/12 bg-carbon/60 backdrop-blur-sm transition-all duration-300 group-hover:border-oro/30 group-hover:-translate-y-1 shadow-md group-hover:shadow-oro/5">
+                <article key={miembro.slug} className="group transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] duration-300">
+                  <div className="relative aspect-square overflow-hidden rounded-2xl border border-oro/12 bg-carbon/60 backdrop-blur-sm transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] duration-300 group-hover:border-oro/30 group-hover:-translate-y-1 shadow-md group-hover:shadow-oro/5">
                     <RetratoMiembro miembro={miembro} idioma="en" sizes="(max-width: 768px) 50vw, 25vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-carbon/75 via-transparent to-transparent" />
                   </div>

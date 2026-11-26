@@ -127,7 +127,7 @@ export default function Clinica({ lang = "es" }: { lang?: "es" | "en" }) {
                         <div className="pt-2">
                             <Link
                                 href={ui.ctaHref}
-                                className="inline-flex items-center gap-2 bg-oro text-carbon px-6 py-3.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-lg hover:shadow-oro/10"
+                                className="inline-flex items-center gap-2 bg-oro text-carbon px-6 py-3.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] shadow-lg hover:shadow-oro/10"
                             >
                                 {ui.cta}
                             </Link>

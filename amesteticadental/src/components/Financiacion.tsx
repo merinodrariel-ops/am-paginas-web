@@ -96,7 +96,7 @@ export default function Financiacion() {
                                     <button
                                         key={porcentaje}
                                         onClick={() => setAnticipoPorcentaje(porcentaje)}
-                                        className={`py-3 rounded-xl font-manrope font-medium text-sm transition-all border ${
+                                        className={`py-3 rounded-xl font-manrope font-medium text-sm transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] border ${
                                             anticipoPorcentaje === porcentaje
                                                 ? "bg-oro text-carbon border-oro"
                                                 : "bg-carbon border-oro/20 text-crema/70 hover:border-oro/40"
@@ -179,7 +179,7 @@ export default function Financiacion() {
                             href={`https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Simul%C3%A9%20un%20tratamiento%20de%20USD%20${monto}%20con%20${Math.round(anticipoPorcentaje * 100)}%20de%20anticipo.%20Me%20gustar%C3%ADa%20agendar%20una%20consulta.`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full flex items-center justify-center gap-3 bg-oro text-carbon px-6 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-all"
+                            className="w-full flex items-center justify-center gap-3 bg-oro text-carbon px-6 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
                         >
                             Consultar este plan por WhatsApp
                             <span>→</span>

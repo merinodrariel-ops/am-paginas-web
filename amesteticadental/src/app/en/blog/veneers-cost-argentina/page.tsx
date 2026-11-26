@@ -118,7 +118,7 @@ export default function VeneersCostArgentinaPage() {
                         <p className="text-crema/60 font-manrope text-sm mb-8 max-w-lg mx-auto">
                             Send us photos and we will give you a preliminary assessment and an estimated investment before you plan anything.
                         </p>
-                        <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro-light transition-all">
+                        <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro-light transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                             Ask on WhatsApp →
                         </a>
                     </div>

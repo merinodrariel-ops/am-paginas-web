@@ -112,7 +112,7 @@ export default function CoronasPage() {
                 <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
                     <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Consultar precio →
                     </a>
                 </header>
@@ -129,7 +129,7 @@ export default function CoronasPage() {
                     </p>
                     <p className="text-oro font-manrope text-sm mb-10">Piezas cerámicas de laboratorio · desde USD 1.000 por pieza</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Consultar precio →
                     </a>
                 </section>
@@ -141,7 +141,7 @@ export default function CoronasPage() {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {TIPOS.map((t) => (
-                            <div key={t.titulo} className="border border-oro/15 rounded-2xl p-7 hover:border-oro/40 transition-all">
+                            <div key={t.titulo} className="border border-oro/15 rounded-2xl p-7 hover:border-oro/40 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                                 <h3 className="text-oro font-cormorant italic text-xl mb-3">{t.titulo}</h3>
                                 <p className="text-crema/70 text-sm leading-relaxed mb-4">{t.desc}</p>
                                 <p className="text-crema/45 text-xs">Ideal para: {t.ideal}</p>
@@ -181,7 +181,7 @@ export default function CoronasPage() {
                         <span className="font-cormorant italic text-oro">cerámica de alta resistencia.</span>
                     </h2>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Consultar por WhatsApp →
                     </a>
                 </section>
@@ -243,7 +243,7 @@ export default function CoronasPage() {
                     </h2>
                     <p className="text-crema/55 mb-8 max-w-xl mx-auto">Dr. Ariel Merino · AM Estética Dental · Camila O&apos;Gorman 412, Puerto Madero, Buenos Aires.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Escribinos por WhatsApp →
                     </a>
                 </section>

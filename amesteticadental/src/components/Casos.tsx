@@ -161,7 +161,7 @@ export default function Casos({ lang = "es" }: { lang?: "es" | "en" }) {
                         href={ui.wa}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro-light transition-all"
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro-light transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
                     >
                         {ui.ctaBtn}
                         <span>→</span>

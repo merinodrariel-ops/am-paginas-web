@@ -53,7 +53,7 @@ export default function ContactoPage() {
           href={WA}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all"
+          className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
         >
           WhatsApp →
         </a>

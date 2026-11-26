@@ -87,7 +87,7 @@ export default function VeneersVsAlignersPage() {
             <p className="text-crema/68 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-2xl">
               The right decision does not depend on which treatment sounds better, but on which problem you want to solve: colour and shape, or position and bite.
             </p>
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
               Ask which one I need →
             </a>
           </div>

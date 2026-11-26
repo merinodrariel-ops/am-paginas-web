@@ -147,13 +147,13 @@ export default function PlacasBruxismoPage() {
                                     href={WA}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-lg shadow-oro/10"
+                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] shadow-lg shadow-oro/10"
                                 >
                                     Solicitar evaluación de bruxismo por WhatsApp →
                                 </a>
                                 <Link
                                     href="#protocolo"
-                                    className="inline-flex items-center gap-2 border border-oro/30 text-crema px-7 py-4 rounded-full font-medium text-sm hover:border-oro transition-all"
+                                    className="inline-flex items-center gap-2 border border-oro/30 text-crema px-7 py-4 rounded-full font-medium text-sm hover:border-oro transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
                                 >
                                     Ver cómo se calibra
                                 </Link>
@@ -228,7 +228,7 @@ export default function PlacasBruxismoPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {PILARES.map((p) => (
-                            <div key={p.num} className="border border-oro/15 rounded-2xl p-7 bg-carbon/40 hover:border-oro/40 transition-all">
+                            <div key={p.num} className="border border-oro/15 rounded-2xl p-7 bg-carbon/40 hover:border-oro/40 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                                 <span className="text-oro font-cormorant italic text-3xl block mb-4">{p.num}</span>
                                 <h3 className="text-crema text-lg font-medium mb-3">{p.titulo}</h3>
                                 <p className="text-crema/65 text-sm leading-relaxed font-light">{p.desc}</p>
@@ -351,7 +351,7 @@ export default function PlacasBruxismoPage() {
                         href={WA}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-oro text-carbon px-9 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-xl shadow-oro/10"
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-9 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] shadow-xl shadow-oro/10"
                     >
                         Agendar consulta de bruxismo por WhatsApp →
                     </a>

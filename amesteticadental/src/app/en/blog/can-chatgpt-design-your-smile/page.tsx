@@ -321,7 +321,7 @@ export default function CanChatGptDesignYourSmilePage() {
                         <p className="text-crema/60 font-manrope text-sm mb-8 max-w-lg mx-auto">
                             If you generated a simulation of your smile, show it. It is the fastest way for us to understand what you are after. Dr. Merino handles cosmetic and smile design cases personally, with the ceramic laboratory inside the clinic.
                         </p>
-                        <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro-light transition-all">
+                        <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro-light transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                             Ask on WhatsApp →
                         </a>
                     </div>

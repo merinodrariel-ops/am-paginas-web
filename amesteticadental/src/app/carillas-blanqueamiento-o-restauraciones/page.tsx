@@ -151,13 +151,13 @@ export default function GuiaDecisionSonrisaPage() {
                                     href={WA}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-lg shadow-oro/10"
+                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] shadow-lg shadow-oro/10"
                                 >
                                     Consultar con nuestro equipo por WhatsApp →
                                 </a>
                                 <Link
                                     href="#comparativa"
-                                    className="inline-flex items-center gap-2 border border-oro/30 text-crema px-7 py-4 rounded-full font-medium text-sm hover:border-oro transition-all"
+                                    className="inline-flex items-center gap-2 border border-oro/30 text-crema px-7 py-4 rounded-full font-medium text-sm hover:border-oro transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
                                 >
                                     Ver cuadro comparativo
                                 </Link>
@@ -232,7 +232,7 @@ export default function GuiaDecisionSonrisaPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {COMPARATIVA.map((c) => (
-                            <div key={c.tratamiento} className="border border-oro/15 rounded-2xl overflow-hidden hover:border-oro/40 transition-all bg-carbon/40 flex flex-col justify-between group">
+                            <div key={c.tratamiento} className="border border-oro/15 rounded-2xl overflow-hidden hover:border-oro/40 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] bg-carbon/40 flex flex-col justify-between group">
                                 <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-oro/10 bg-carbon-soft">
                                     <Image
                                         src={c.img}
@@ -369,7 +369,7 @@ export default function GuiaDecisionSonrisaPage() {
                         href={WA}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-oro text-carbon px-9 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-xl shadow-oro/10"
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-9 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] shadow-xl shadow-oro/10"
                     >
                         Solicitar evaluación privada por WhatsApp →
                     </a>

@@ -44,7 +44,7 @@ function VideoPlayer({ url, aspect, thumbnail }: { url: string; aspect: "16/9" |
                     {/* Círculo exterior pulsante */}
                     <div className="absolute w-20 h-20 rounded-full border border-oro/30 animate-ping opacity-30" />
                     {/* Círculo principal */}
-                    <div className="w-16 h-16 rounded-full border border-oro/60 bg-carbon/70 backdrop-blur-sm flex items-center justify-center group-hover:bg-oro/10 group-hover:border-oro transition-all duration-300">
+                    <div className="w-16 h-16 rounded-full border border-oro/60 bg-carbon/70 backdrop-blur-sm flex items-center justify-center group-hover:bg-oro/10 group-hover:border-oro transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] duration-300">
                         {/* Triángulo play */}
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M7 4L16 10L7 16V4Z" fill="#C9A96E" />
@@ -119,7 +119,7 @@ export default function CasoGaleria({ fotos, videoUrl, videoAspect = "16/9" }: P
                     {/* Overlay que aparece en hover */}
                     <div className="absolute inset-0 bg-gradient-to-t from-carbon/70 via-carbon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <Watermark />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] duration-500">
                         {fotoPortada.caption && (
                             <p className="font-manrope text-xs text-crema/70 uppercase tracking-widest mb-2">
                                 {fotoPortada.caption}

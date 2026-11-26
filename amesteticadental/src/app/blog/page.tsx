@@ -209,7 +209,7 @@ export default function BlogPage() {
                                 <Link
                                     key={art.slug}
                                     href={`/blog/${art.slug}`}
-                                    className="overflow-hidden border border-oro/15 rounded-2xl bg-carbon-soft hover:border-oro/35 transition-all group"
+                                    className="overflow-hidden border border-oro/15 rounded-2xl bg-carbon-soft hover:border-oro/35 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] group"
                                 >
                                     <div className="relative aspect-[16/9] overflow-hidden">
                                         <Image

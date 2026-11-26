@@ -71,7 +71,7 @@ function CasoCard({ caso }: { caso: typeof casos[0] }) {
 
                 {/* Badge dinámico */}
                 <div className="absolute top-4 left-4">
-                    <span className={`inline-flex items-center gap-1.5 font-manrope text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full transition-all duration-300 ${
+                    <span className={`inline-flex items-center gap-1.5 font-manrope text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] duration-300 ${
                         hover
                             ? "bg-oro text-carbon"
                             : "bg-carbon/70 backdrop-blur-sm text-crema border border-crema/20"
@@ -163,7 +163,7 @@ export default function Archive() {
                         href="https://api.whatsapp.com/send?phone=5491170219298&text=Hola!%20Vi%20los%20casos%20antes%2Fdespu%C3%A9s%20y%20quiero%20agendar%20una%20consulta."
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-all hover:scale-[1.02]"
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-sm hover:bg-oro-light transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] hover:scale-[1.02]"
                     >
                         Quiero un resultado así
                         <span>→</span>

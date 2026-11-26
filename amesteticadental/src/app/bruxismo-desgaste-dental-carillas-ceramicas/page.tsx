@@ -62,7 +62,7 @@ export default function BruxismoPage() {
                 <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
                     <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Consultar por WhatsApp →
                     </a>
                 </header>
@@ -83,7 +83,7 @@ export default function BruxismoPage() {
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <a href={WA} target="_blank" rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">
+                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                                     Evaluar mi caso por WhatsApp
                                 </a>
                                 <a href={`${CANONICAL}#antes-despues`}
@@ -132,7 +132,7 @@ export default function BruxismoPage() {
                         <div className="mt-10 text-center">
                             <p className="text-crema/50 text-sm mb-4">Si marcás 2 o más, el bruxismo probablemente ya está afectando tu sonrisa.</p>
                             <a href={WA} target="_blank" rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">
+                                className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                                 Evaluar mi caso por WhatsApp →
                             </a>
                         </div>
@@ -207,7 +207,7 @@ export default function BruxismoPage() {
                         <div className="text-center">
                             <p className="text-crema/50 text-sm mb-6">Primera evaluación de tu caso</p>
                             <a href={WA} target="_blank" rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">
+                                className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                                 Agendá tu consulta →
                             </a>
                             <p className="text-crema/25 text-xs mt-4">Camila O&apos;Gorman 412, Puerto Madero · Buenos Aires</p>
@@ -249,7 +249,7 @@ export default function BruxismoPage() {
                         Cuanto antes tratás el bruxismo, menos estructura dentaria perdés. Escribinos hoy.
                     </p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Quiero evaluar mi caso →
                     </a>
                 </section>

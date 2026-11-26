@@ -150,7 +150,7 @@ export default function SimuladorIAPage() {
                             <div className="flex flex-col sm:flex-row gap-4 items-start">
                                 <Link
                                     href="/sonrisa"
-                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-lg shadow-oro/10"
+                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] shadow-lg shadow-oro/10"
                                 >
                                     Probar el simulador con IA gratis →
                                 </Link>
@@ -158,7 +158,7 @@ export default function SimuladorIAPage() {
                                     href={WA}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 border border-oro/30 text-crema px-7 py-4 rounded-full font-medium text-sm hover:border-oro transition-all"
+                                    className="inline-flex items-center gap-2 border border-oro/30 text-crema px-7 py-4 rounded-full font-medium text-sm hover:border-oro transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
                                 >
                                     Agendar evaluación clínica
                                 </a>
@@ -233,7 +233,7 @@ export default function SimuladorIAPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {ETAPAS.map((e) => (
-                            <div key={e.num} className="border border-oro/15 rounded-2xl p-7 bg-carbon/40 hover:border-oro/40 transition-all flex flex-col justify-between">
+                            <div key={e.num} className="border border-oro/15 rounded-2xl p-7 bg-carbon/40 hover:border-oro/40 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] flex flex-col justify-between">
                                 <div>
                                     <span className="text-oro font-cormorant italic text-3xl block mb-2">{e.num}</span>
                                     <h3 className="text-crema text-lg font-medium mb-1">{e.titulo}</h3>
@@ -295,7 +295,7 @@ export default function SimuladorIAPage() {
                         </p>
                         <Link
                             href="/sonrisa"
-                            className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-xl shadow-oro/10"
+                            className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] shadow-xl shadow-oro/10"
                         >
                             Ingresar al Simulador con IA →
                         </Link>
@@ -342,7 +342,7 @@ export default function SimuladorIAPage() {
                         href={WA}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-oro text-carbon px-9 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-xl shadow-oro/10"
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-9 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] shadow-xl shadow-oro/10"
                     >
                         Solicitar consulta personalizada por WhatsApp →
                     </a>

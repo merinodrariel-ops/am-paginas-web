@@ -165,13 +165,13 @@ export default function RehabilitacionOralPage() {
                                     href={WA}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-lg shadow-oro/10"
+                                    className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] shadow-lg shadow-oro/10"
                                 >
                                     Solicitar evaluación inicial por WhatsApp →
                                 </a>
                                 <Link
                                     href="#pilares"
-                                    className="inline-flex items-center gap-2 border border-oro/30 text-crema px-7 py-4 rounded-full font-medium text-sm hover:border-oro transition-all"
+                                    className="inline-flex items-center gap-2 border border-oro/30 text-crema px-7 py-4 rounded-full font-medium text-sm hover:border-oro transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
                                 >
                                     Cómo se combina el tratamiento
                                 </Link>
@@ -254,7 +254,7 @@ export default function RehabilitacionOralPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {PILARES.map((p) => (
-                            <div key={p.numero} className="border border-oro/15 rounded-2xl overflow-hidden hover:border-oro/40 transition-all bg-carbon/40 flex flex-col justify-between group">
+                            <div key={p.numero} className="border border-oro/15 rounded-2xl overflow-hidden hover:border-oro/40 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] bg-carbon/40 flex flex-col justify-between group">
                                 <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-oro/10">
                                     <Image
                                         src={p.img}
@@ -403,7 +403,7 @@ export default function RehabilitacionOralPage() {
                         href={WA}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-oro text-carbon px-9 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all shadow-xl shadow-oro/10"
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-9 py-4 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] shadow-xl shadow-oro/10"
                     >
                         Escribinos por WhatsApp →
                     </a>

@@ -94,7 +94,7 @@ export default function CarillasResinaPage() {
                 <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
                     <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Consultar precio →
                     </a>
                 </header>
@@ -110,7 +110,7 @@ export default function CarillasResinaPage() {
                         Una alternativa válida para mejorar la estética dental en una sola visita. Te explicamos honestamente cuándo conviene la resina y cuándo la porcelana.
                     </p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Consultar precio →
                     </a>
                 </section>
@@ -206,7 +206,7 @@ export default function CarillasResinaPage() {
                     </h2>
                     <p className="text-crema/55 mb-8 max-w-xl mx-auto">Te explicamos qué opción es la más adecuada para tu caso, tu presupuesto y tu objetivo estético.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Consultar por WhatsApp →
                     </a>
                 </section>
@@ -243,7 +243,7 @@ export default function CarillasResinaPage() {
                             { href: "/lentes-de-contacto-dental-precio-buenos-aires", label: "Lentes de contacto dental" },
                         ].map(({ href, label }) => (
                             <Link key={href} href={href}
-                                className="text-crema/60 hover:text-oro text-sm border border-oro/15 hover:border-oro/40 rounded-full px-4 py-2 transition-all">
+                                className="text-crema/60 hover:text-oro text-sm border border-oro/15 hover:border-oro/40 rounded-full px-4 py-2 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                                 {label}
                             </Link>
                         ))}
@@ -288,7 +288,7 @@ export default function CarillasResinaPage() {
                     </h2>
                     <p className="text-crema/55 mb-8 max-w-xl mx-auto">Dr. Ariel Merino · AM Estética Dental · Camila O&apos;Gorman 412, Puerto Madero, Buenos Aires.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Escribinos por WhatsApp →
                     </a>
                 </section>

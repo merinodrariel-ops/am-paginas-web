@@ -29,7 +29,7 @@ export default function AlineadoresBAPage() {
             <main className="bg-carbon text-crema font-manrope min-h-screen">
                 <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
                     <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
-                    <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">Quiero saber si soy candidato →</a>
+                    <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">Quiero saber si soy candidato →</a>
                 </header>
 
                 <section className="px-6 py-20 max-w-6xl mx-auto">
@@ -41,7 +41,7 @@ export default function AlineadoresBAPage() {
                         Ortodoncia sin brackets, sin alambre, sin que nadie lo note. Planificación digital completa desde el primer día. Ves tu resultado final antes de empezar.
                     </p>
                     <div className="flex flex-wrap gap-4">
-                        <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">Quiero saber si soy candidato →</a>
+                        <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">Quiero saber si soy candidato →</a>
                         <Link href="/alineadores-invisibles" className="inline-flex items-center gap-2 border border-oro/25 text-oro px-6 py-4 rounded-full text-sm hover:border-oro/50 transition-colors">Ver más sobre alineadores AM →</Link>
                     </div>
                 </section>
@@ -127,7 +127,7 @@ export default function AlineadoresBAPage() {
                 <section className="px-6 py-16 text-center border-t border-oro/10">
                     <h2 className="font-light text-3xl text-crema mb-4">Tu sonrisa alineada, <span className="font-cormorant italic text-oro">sin que nadie lo note.</span></h2>
                     <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Valoración clínica inicial. Te decimos si sos candidato y cuánto dura tu caso.</p>
-                    <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">Consultar por WhatsApp →</a>
+                    <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">Consultar por WhatsApp →</a>
                     <p className="text-crema/25 text-xs mt-4">Camila O&apos;Gorman 412, Puerto Madero · Buenos Aires</p>
                 </section>
             </main>

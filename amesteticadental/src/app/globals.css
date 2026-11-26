@@ -29,6 +29,8 @@
 :root {
   --background: var(--color-carbon);
   --foreground: var(--color-crema);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 body {
@@ -36,6 +38,28 @@ body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+}
+
+/* Mantiene las interacciones previsibles: solo se animan propiedades visuales,
+ * nunca cambios de layout introducidos accidentalmente por `transition-all`. */
+button,
+a,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Los halos decorativos (`absolute … w-[400px] h-[400px] rounded-full blur-…`)

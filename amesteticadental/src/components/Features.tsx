@@ -182,7 +182,7 @@ export default function Features({ lang = "es" }: { lang?: "es" | "en" }) {
                     </a>
                     <Link
                         href={ui.secondaryHref}
-                        className="inline-flex items-center justify-center gap-2 border border-crema/25 text-crema px-8 py-4 rounded-full font-manrope font-medium text-sm hover:bg-crema/5 transition-all"
+                        className="inline-flex items-center justify-center gap-2 border border-crema/25 text-crema px-8 py-4 rounded-full font-manrope font-medium text-sm hover:bg-crema/5 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
                     >
                         {ui.secondary}
                     </Link>

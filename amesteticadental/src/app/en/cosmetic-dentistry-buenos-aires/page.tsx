@@ -97,7 +97,7 @@ export default function CosmeticDentistryPage() {
             <p className="text-crema/68 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-2xl">
               Porcelain veneers, digital smile design, invisible aligners and implants. One clinic, one specialist, and an in-house laboratory that turns months into days.
             </p>
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
               Find out which treatment fits your case →
             </a>
             <div className="flex flex-wrap items-center gap-6 mt-14 pt-8 border-t border-oro/10">

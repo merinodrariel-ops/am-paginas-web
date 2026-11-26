@@ -193,7 +193,7 @@ export default function LeadForm({ defaultTreatment, context, lang = "es" }: Pro
                 type="button"
                 key={t.value}
                 onClick={() => toggleTag(t.value)}
-                className={`text-xs px-3 py-2 rounded-full border transition-all ${
+                className={`text-xs px-3 py-2 rounded-full border transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] ${
                   active
                     ? "border-oro bg-oro text-carbon"
                     : "border-oro/20 text-crema/70 hover:border-oro/50"
@@ -227,7 +227,7 @@ export default function LeadForm({ defaultTreatment, context, lang = "es" }: Pro
       <button
         type="submit"
         disabled={submitting}
-        className="w-full bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-all disabled:opacity-50"
+        className="w-full bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] disabled:opacity-50"
       >
         {submitting ? c.sending : c.submit}
       </button>

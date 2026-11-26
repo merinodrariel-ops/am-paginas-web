@@ -85,7 +85,7 @@ export default function ScheduleAgenda() {
                                 <div
                                     key={`${dIdx}-${hIdx}`}
                                     className={clsx(
-                                        "h-10 rounded-xl border flex items-center justify-center transition-all duration-300",
+                                        "h-10 rounded-xl border flex items-center justify-center transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] duration-300",
                                         isSelected
                                             ? "bg-arcilla text-crema border-arcilla shadow-lg scale-105 z-10"
                                             : isPast

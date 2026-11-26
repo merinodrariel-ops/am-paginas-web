@@ -43,7 +43,7 @@ export default function PeridonciaPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
             <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
                 <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
-                <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">Consultar →</a>
+                <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">Consultar →</a>
             </header>
 
             <section className="px-6 py-20 max-w-6xl mx-auto">
@@ -54,7 +54,7 @@ export default function PeridonciaPage() {
                 <p className="text-crema/65 text-lg font-light leading-relaxed mb-8 max-w-xl">
                     Tratamiento de encías, gingivitis, periodontitis y gingivectomía láser. La salud periodontal es la base de cualquier tratamiento estético. Sin encías sanas, ninguna carilla queda bien.
                 </p>
-                <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">Quiero evaluar mis encías →</a>
+                <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">Quiero evaluar mis encías →</a>
             </section>
 
             <section className="px-6 py-16 border-y border-oro/8 max-w-6xl mx-auto">
@@ -126,7 +126,7 @@ export default function PeridonciaPage() {
             <section className="px-6 py-16 text-center border-t border-oro/10">
                 <h2 className="font-light text-3xl text-crema mb-4">Encías sanas, <span className="font-cormorant italic text-oro">sonrisa durable.</span></h2>
                 <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Valoración periodontal clínica. Base obligatoria de cualquier tratamiento estético.</p>
-                <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">Consultar por WhatsApp →</a>
+                <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">Consultar por WhatsApp →</a>
                 <p className="text-crema/25 text-xs mt-4">Camila O&apos;Gorman 412, Puerto Madero · Buenos Aires</p>
             </section>
         </main>

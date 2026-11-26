@@ -233,7 +233,7 @@ function VideoCard({
                         e.stopPropagation();
                         onPlay?.();
                     }}
-                    className="relative flex h-16 w-16 items-center justify-center rounded-full transition-all duration-500 group-hover:scale-110"
+                    className="relative flex h-16 w-16 items-center justify-center rounded-full transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] duration-500 group-hover:scale-110"
                     aria-label={ui.conSonido}
                 >
                     <span className="absolute inset-0 rounded-full bg-[linear-gradient(120deg,#8f5b11_0%,#c88412_18%,#f0b10d_36%,#fff0b1_52%,#f4c646_68%,#8f5b11_100%)] shadow-[0_0_22px_rgba(242,185,13,0.26)]" />
@@ -525,7 +525,7 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
                         <button
                             key={i}
                             onClick={() => irA(i)}
-                            className={`h-1.5 rounded-full transition-all duration-300 ${
+                            className={`h-1.5 rounded-full transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] duration-300 ${
                                 i === activo ? "w-6 bg-oro" : "w-1.5 bg-crema/20"
                             }`}
                             aria-label={`Ir al testimonio ${i + 1}`}
@@ -537,7 +537,7 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
                 <div className="flex gap-3">
                     <button
                         onClick={prev}
-                        className="flex h-10 w-10 items-center justify-center rounded-full border border-oro/20 text-crema/60 transition-all hover:border-oro/50 hover:text-oro"
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-oro/20 text-crema/60 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] hover:border-oro/50 hover:text-oro"
                         aria-label={ui.prev}
                     >
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -546,7 +546,7 @@ function VideoCarousel({ lang = "es" }: { lang?: "es" | "en" }) {
                     </button>
                     <button
                         onClick={next}
-                        className="flex h-10 w-10 items-center justify-center rounded-full border border-oro/20 text-crema/60 transition-all hover:border-oro/50 hover:text-oro"
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-oro/20 text-crema/60 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] hover:border-oro/50 hover:text-oro"
                         aria-label={ui.next}
                     >
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">

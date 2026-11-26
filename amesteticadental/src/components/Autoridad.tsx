@@ -167,7 +167,7 @@ export default function Autoridad({ lang = "es" }: { lang?: "es" | "en" }) {
                         href="https://g.page/r/CQ3df5Xn-J6oEBM/review"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/google relative overflow-hidden rounded-2xl border border-oro/18 bg-[radial-gradient(circle_at_top,rgba(242,185,13,0.12),transparent_48%),linear-gradient(180deg,rgba(22,22,22,1),rgba(13,13,13,1))] p-8 block transition-all hover:border-oro/35"
+                        className="group/google relative overflow-hidden rounded-2xl border border-oro/18 bg-[radial-gradient(circle_at_top,rgba(242,185,13,0.12),transparent_48%),linear-gradient(180deg,rgba(22,22,22,1),rgba(13,13,13,1))] p-8 block transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] hover:border-oro/35"
                     >
                         <div
                             className="pointer-events-none absolute inset-0 rounded-2xl p-px"

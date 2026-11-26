@@ -121,7 +121,7 @@ export default function BarrioLanding({ barrio }: { barrio: Barrio }) {
             href={wa}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all"
+            className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
           >
             Agendá tu consulta →
           </a>
@@ -155,7 +155,7 @@ export default function BarrioLanding({ barrio }: { barrio: Barrio }) {
                 href={wa}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all"
+                className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
               >
                 Consultar por WhatsApp
               </a>
@@ -284,7 +284,7 @@ export default function BarrioLanding({ barrio }: { barrio: Barrio }) {
                 Atiende personalmente cada caso de carillas y diseño de sonrisa desde Puerto Madero.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/dr-ariel-merino" className="inline-flex items-center gap-2 text-oro text-sm hover:gap-3 transition-all">
+                <Link href="/dr-ariel-merino" className="inline-flex items-center gap-2 text-oro text-sm hover:gap-3 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                   Conocé su trayectoria →
                 </Link>
                 <a
@@ -430,7 +430,7 @@ export default function BarrioLanding({ barrio }: { barrio: Barrio }) {
             href={wa}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all"
+            className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
           >
             Agendá por WhatsApp →
           </a>

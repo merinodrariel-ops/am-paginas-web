@@ -52,7 +52,7 @@ export default function DientesPorcelanaPage() {
                 <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
                     <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Consultar precio →
                     </a>
                 </header>
@@ -70,7 +70,7 @@ export default function DientesPorcelanaPage() {
                                 Carillas de porcelana y lentes de contacto dental. La tecnología cerámica más avanzada para transformar tu sonrisa con resultados naturales y durables.
                             </p>
                             <a href={WA} target="_blank" rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">
+                                className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                                 Consultar precio →
                             </a>
                         </div>
@@ -179,7 +179,7 @@ export default function DientesPorcelanaPage() {
                     <h2 className="font-light text-3xl text-crema mb-4">La sonrisa que querés, <span className="font-cormorant italic text-oro">en 10 días.</span></h2>
                     <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Valoración clínica inicial. Te decimos qué necesitás y cuál sería la inversión antes de decidir.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Consultar por WhatsApp →
                     </a>
                     <p className="text-crema/25 text-xs mt-4">Camila O&apos;Gorman 412, Puerto Madero · Buenos Aires</p>

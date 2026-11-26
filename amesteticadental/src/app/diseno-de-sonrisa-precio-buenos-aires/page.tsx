@@ -45,7 +45,7 @@ export default function DisenoDeSonrisaLanding() {
                 <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
                     <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Quiero ver cómo quedaría mi sonrisa →
                     </a>
                 </header>
@@ -68,7 +68,7 @@ export default function DisenoDeSonrisaLanding() {
                                 Dr. Ariel Merino — reconocido por Forbes Argentina — lleva {ANIOS_TRAYECTORIA} años transformando sonrisas en Puerto Madero.
                             </p>
                             <a href={WA} target="_blank" rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">
+                                className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                                 Quiero saber la inversión →
                             </a>
                         </div>
@@ -112,7 +112,7 @@ export default function DisenoDeSonrisaLanding() {
                         </p>
                         <div className="text-center">
                             <a href={WA} target="_blank" rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">
+                                className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                                 Consultá la inversión de tu caso →
                             </a>
                         </div>
@@ -178,7 +178,7 @@ export default function DisenoDeSonrisaLanding() {
                         Evaluamos tu caso por WhatsApp y te orientamos sobre qué necesitás y cuál sería la inversión.
                     </p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Empezar mi diseño de sonrisa →
                     </a>
                     <p className="text-crema/25 text-xs mt-4">Puerto Madero · Buenos Aires</p>

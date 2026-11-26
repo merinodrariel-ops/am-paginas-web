@@ -217,13 +217,13 @@ export default function CasoMendozaBlogPage() {
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                                 <Link
                                     href="/casos/20-carillas-ceramicas-tiempo-record-paciente-mendoza"
-                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-oro text-oro hover:bg-oro hover:text-carbon px-6 py-3.5 rounded-full font-manrope text-sm font-semibold transition-all"
+                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-oro text-oro hover:bg-oro hover:text-carbon px-6 py-3.5 rounded-full font-manrope text-sm font-semibold transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
                                 >
                                     Ver caso clínico completo →
                                 </Link>
                                 <Link
                                     href="/turismo-dental"
-                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-oro text-carbon hover:bg-oro/90 px-6 py-3.5 rounded-full font-manrope text-sm font-semibold transition-all"
+                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-oro text-carbon hover:bg-oro/90 px-6 py-3.5 rounded-full font-manrope text-sm font-semibold transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
                                 >
                                     Conocer Turismo Dental
                                 </Link>

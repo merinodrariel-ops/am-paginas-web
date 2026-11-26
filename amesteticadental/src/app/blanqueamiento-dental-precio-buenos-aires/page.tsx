@@ -69,7 +69,7 @@ export default function BlanqueamientoPage() {
                 <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
                     <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Consultar precio →
                     </a>
                 </header>
@@ -98,7 +98,7 @@ export default function BlanqueamientoPage() {
                                 </div>
                             </div>
                             <a href={WA} target="_blank" rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">
+                                className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                                 Consultar precio de mi caso →
                             </a>
                         </div>
@@ -241,7 +241,7 @@ export default function BlanqueamientoPage() {
                     <h2 className="font-light text-3xl text-crema mb-4">Cubetas a medida. Vos elegís cuándo usarlas.</h2>
                     <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Consultanos por WhatsApp y coordinamos tu turno en Puerto Madero para el escaneo.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Agendá tu blanqueamiento ambulatorio →
                     </a>
                     <p className="text-crema/25 text-xs mt-4">Camila O&apos;Gorman 412, Puerto Madero · Buenos Aires</p>

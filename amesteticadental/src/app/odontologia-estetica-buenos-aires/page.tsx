@@ -38,7 +38,7 @@ export default function OdontologiaEsteticaPage() {
             <main className="bg-carbon text-crema font-manrope min-h-screen">
                 <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
                     <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
-                    <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">Agendá tu consulta →</a>
+                    <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">Agendá tu consulta →</a>
                 </header>
 
                 <section className="px-6 py-20 max-w-6xl mx-auto">
@@ -50,7 +50,7 @@ export default function OdontologiaEsteticaPage() {
                         AM Estética Dental es una clínica especializada en estética dental de alta complejidad. Ubicada en Puerto Madero, Buenos Aires. Dirigida por el Dr. Ariel Merino, reconocido por Forbes Argentina.
                     </p>
                     <div className="flex flex-wrap gap-4">
-                        <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all">Agendá tu consulta</a>
+                        <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">Agendá tu consulta</a>
                         <Link href="/casos-antes-y-despues" className="inline-flex items-center gap-2 border border-oro/25 text-oro px-6 py-4 rounded-full text-sm hover:border-oro/50 transition-colors">Ver casos reales →</Link>
                     </div>
                 </section>
@@ -115,7 +115,7 @@ export default function OdontologiaEsteticaPage() {
                 <section className="px-6 py-16 text-center border-t border-oro/10">
                     <h2 className="font-light text-3xl text-crema mb-4">Valoración clínica <span className="font-cormorant italic text-oro">personalizada.</span></h2>
                     <p className="text-crema/50 text-base mb-8 max-w-sm mx-auto">Evaluamos tu caso y te explicamos qué tratamiento aplica para vos y cuál sería la inversión.</p>
-                    <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-all">Agendá por WhatsApp →</a>
+                    <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-oro text-carbon px-10 py-5 rounded-full font-semibold text-lg hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">Agendá por WhatsApp →</a>
                     <p className="text-crema/25 text-xs mt-4">Camila O&apos;Gorman 412, Puerto Madero · Buenos Aires</p>
                 </section>
             </main>

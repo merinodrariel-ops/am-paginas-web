@@ -225,7 +225,7 @@ export default function JobApplicationForm() {
                   const dropped = event.dataTransfer.files?.[0];
                   if (dropped) aceptarArchivo(dropped);
                 }}
-                className={`flex min-h-[168px] cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border px-6 py-8 text-center transition-all ${
+                className={`flex min-h-[168px] cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border px-6 py-8 text-center transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] ${
                   dragging
                     ? "border-solid border-oro bg-oro/12 scale-[1.01]"
                     : cvFile

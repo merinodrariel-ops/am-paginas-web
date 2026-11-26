@@ -132,7 +132,7 @@ export default function CarillasResinaImpresas3DPage() {
                 <header className="px-6 py-5 border-b border-oro/10 flex items-center justify-between">
                     <Link href="/" className="font-cormorant italic text-oro text-xl">AM Estética Dental</Link>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Consultar →
                     </a>
                 </header>
@@ -157,7 +157,7 @@ export default function CarillasResinaImpresas3DPage() {
                         </p>
                         <div className="flex flex-wrap gap-3 justify-center md:justify-start">
                             <a href={WA} target="_blank" rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-all">
+                                className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                                 Consultar por WhatsApp →
                             </a>
                             <a href="#comparativa"
@@ -273,7 +273,7 @@ export default function CarillasResinaImpresas3DPage() {
                         Te explicamos con criterio clínico si te conviene la resina impresa, la porcelana o combinar tratamientos.
                     </p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Consultar por WhatsApp →
                     </a>
                 </section>
@@ -348,7 +348,7 @@ export default function CarillasResinaImpresas3DPage() {
                     <div className="flex flex-wrap gap-3 justify-center">
                         {RELACIONADOS.map(({ href, label }) => (
                             <Link key={href} href={href}
-                                className="text-crema/60 hover:text-oro text-sm border border-oro/15 hover:border-oro/40 rounded-full px-4 py-2 transition-all">
+                                className="text-crema/60 hover:text-oro text-sm border border-oro/15 hover:border-oro/40 rounded-full px-4 py-2 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                                 {label}
                             </Link>
                         ))}
@@ -363,7 +363,7 @@ export default function CarillasResinaImpresas3DPage() {
                     </h2>
                     <p className="text-crema/55 mb-8 max-w-xl mx-auto">Dr. Ariel Merino · AM Estética Dental · Camila O&apos;Gorman 412, Puerto Madero, Buenos Aires.</p>
                     <a href={WA} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-all">
+                        className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]">
                         Escribinos por WhatsApp →
                     </a>
                 </section>

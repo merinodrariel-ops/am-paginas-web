@@ -100,7 +100,7 @@ export default function CasosClient({ todos, fijos = [], lang = "es" }: { todos:
                             <button
                                 key={f.value}
                                 onClick={() => setFiltro(f.value)}
-                                className={`inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-manrope text-[10px] uppercase tracking-[0.3em] transition-all duration-200 ${
+                                className={`inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-manrope text-[10px] uppercase tracking-[0.3em] transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] duration-200 ${
                                     active
                                         ? "bg-oro text-carbon border border-oro"
                                         : "border border-crema/10 text-crema/40 hover:border-oro/30 hover:text-oro/70"
@@ -181,7 +181,7 @@ export default function CasosClient({ todos, fijos = [], lang = "es" }: { todos:
                     <a
                         href={t.wa}
                         target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro/90 transition-all"
+                        className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
                     >
                         {t.ctaBtn} <span>→</span>
                     </a>

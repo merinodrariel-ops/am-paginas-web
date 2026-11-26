@@ -149,7 +149,7 @@ export default async function EnglishCasePage({ params }: Props) {
                             href="https://api.whatsapp.com/send?phone=5491170219298&text=Hi!%20I%20saw%20the%20before%20and%20after%20case%20and%20I'd%20like%20a%20consultation."
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro/90 transition-all"
+                            className="inline-flex items-center gap-3 bg-oro text-carbon px-8 py-4 rounded-full font-manrope font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
                         >
                             Book your consultation <span>→</span>
                         </a>

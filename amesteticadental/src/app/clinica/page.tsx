@@ -83,13 +83,13 @@ export default function ClinicaPage() {
               href={WA}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-all shadow-lg hover:shadow-oro/20"
+              className="inline-flex items-center gap-2 bg-oro text-carbon px-8 py-4 rounded-full font-semibold text-base hover:bg-oro/90 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter] shadow-lg hover:shadow-oro/20"
             >
               Agendar Visita por WhatsApp →
             </a>
             <a
               href="#instalaciones"
-              className="inline-flex items-center justify-center border border-crema/20 text-crema px-8 py-4 rounded-full font-medium text-base hover:bg-crema/5 transition-all"
+              className="inline-flex items-center justify-center border border-crema/20 text-crema px-8 py-4 rounded-full font-medium text-base hover:bg-crema/5 transition-[color,background-color,border-color,opacity,box-shadow,transform,filter]"
             >
               Ver Instalaciones
             </a>
